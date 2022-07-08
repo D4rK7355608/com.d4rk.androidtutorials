@@ -1,0 +1,38 @@
+<androidx.preference.PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.preference.PreferenceCategory
+        android:title="@string/android_start"
+        android:icon="@drawable/ic_category_start">
+        <androidx.preference.Preference
+            android:title="@string/android_start"
+            android:summary="@string/android_start_sum"
+            android:icon="@drawable/ic_flag">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="com.d4rk.androidtutorials"
+                android:targetClass="com.d4rk.androidtutorials.ui.android.AndroidStartProjectActivity"/>
+        </androidx.preference.Preference>
+    </androidx.preference.PreferenceCategory>
+    <androidx.preference.PreferenceCategory
+        android:title="@string/android_implementations"
+        android:icon="@drawable/ic_category_implementations">
+        <androidx.preference.Preference
+            android:title="@string/implement_toggle"
+            android:summary="@string/toggle_sum"
+            android:icon="@drawable/ic_toggle">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="com.d4rk.androidtutorials"
+                android:targetClass="com.d4rk.androidtutorials.ui.android.toggle.ToggleActivity" />
+        </androidx.preference.Preference>
+        <androidx.preference.Preference
+            android:title="@string/implement_buttons"
+            android:summary="@string/implement_buttons_sum"
+            android:icon="@drawable/ic_touch_button">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="com.d4rk.androidtutorials"
+                android:targetClass="com.d4rk.androidtutorials.ui.android.buttons.ButtonsActivity" />
+        </androidx.preference.Preference>
+    </androidx.preference.PreferenceCategory>
+</androidx.preference.PreferenceScreen>

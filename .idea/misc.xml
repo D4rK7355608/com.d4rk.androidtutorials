@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/AndroidTutorials/app/src/main/res/drawable/ic_more.xml" value="0.2075" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/AndroidTutorials/app/src/main/res/drawable/ic_settings_tinted.xml" value="0.179" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/AndroidTutorials/app/src/main/res/layout/activity_android_start_project.xml" value="0.3416666666666667" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/AndroidTutorials/app/src/main/res/layout/fragment_about.xml" value="0.1703125" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/AndroidTutorials/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3416666666666667" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/AndroidTutorials/app/src/main/res/mipmap-anydpi/ic_launcher.xml" value="0.179" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/AndroidTutorials/app/src/main/res/xml/settings.xml" value="0.25" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable/ic_about.xml" value="0.1655" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable/ic_android.xml" value="0.1655" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable/ic_category_implementations.xml" value="0.1655" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable/ic_category_start.xml" value="0.1655" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable/ic_changelog.xml" value="0.2075" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable/ic_code.xml" value="0.1655" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable/ic_code_of_conduct.xml" value="0.2075" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable/ic_community.xml" value="0.1655" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable/ic_feedback.xml" value="0.2075" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable/ic_flag.xml" value="0.1655" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable/ic_github.xml" value="0.1655" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable/ic_home.xml" value="0.1655" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable/ic_language.xml" value="0.1655" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1655" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable/ic_libraries.xml" value="0.1655" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable/ic_more.xml" value="0.2075" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable/ic_permissions.xml" value="0.2075" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable/ic_privacy_policy.xml" value="0.2075" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable/ic_settings.xml" value="0.2075" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable/ic_settings_tinted.xml" value="0.2075" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable/ic_shop.xml" value="0.2075" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable/ic_terms_of_service.xml" value="0.2075" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable/ic_theme.xml" value="0.2075" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable/ic_toggle.xml" value="0.1655" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable/ic_touch_button.xml" value="0.1655" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable/ic_twitter.xml" value="0.1655" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable/ic_update.xml" value="0.2075" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable/ic_xda.xml" value="0.2075" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable/ic_youtube.xml" value="0.2075" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable/toggle_kotlin_code.xml" value="0.2075" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/layout/activity_feedback.xml" value="0.18" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/layout/activity_language.xml" value="0.3416666666666667" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/xml/permissions_preferences.xml" value="0.3101851851851852" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/xml/settings.xml" value="0.33" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

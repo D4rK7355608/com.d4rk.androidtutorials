@@ -1,0 +1,14 @@
+<resources>
+    <string-array name="dark_mode_entries">
+        <item>Follow System</item>
+        <item>Light Mode</item>
+        <item>Dark Mode</item>
+        <item>Auto Battery Dark Mode</item>
+    </string-array>
+    <string-array name="dark_mode_values">
+        <item>MODE_NIGHT_FOLLOW_SYSTEM</item>
+        <item>MODE_NIGHT_NO</item>
+        <item>MODE_NIGHT_YES</item>
+        <item>MODE_NIGHT_AUTO_BATTERY</item>
+    </string-array>
+</resources>

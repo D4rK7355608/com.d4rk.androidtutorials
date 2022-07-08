@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "289497233341",
+    "project_id": "d4rk-apps",
+    "storage_bucket": "d4rk-apps.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:289497233341:android:22b03d8c9ef12bd02c84d4",
+        "android_client_info": {
+          "package_name": "com.d4rk.androidtutorials"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "289497233341-33ic66r4d80qg7f793jgve1gvrlanrkk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4pDjHrxVmwSpSjuYc6Qi2MOxb6IsCtIQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "289497233341-33ic66r4d80qg7f793jgve1gvrlanrkk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

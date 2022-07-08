@@ -1,0 +1,24 @@
+<resources>
+    <style name="AppTheme" parent="@style/AppThemeActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="AppThemeActionBar" parent="Theme.Material3.DynamicColors.DayNight">
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:dialogCornerRadius">21dp</item>
+        <item name="android:colorBackground">@color/colorBackground</item>
+        <item name="actionBarStyle">@style/ActionBarTheme</item>
+        <item name="actionOverflowMenuStyle">@style/OverflowMenuTheme</item>
+    </style>
+    <style name="ActionBarTheme" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="background">@android:color/transparent</item>
+    </style>
+    <style name="OverflowMenuTheme" parent="@style/Widget.Material3.PopupMenu.Overflow">
+        <item name="android:popupBackground">@drawable/menu_card</item>
+    </style>
+</resources>
