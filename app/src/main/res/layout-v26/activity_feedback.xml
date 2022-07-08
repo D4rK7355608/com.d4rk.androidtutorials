@@ -29,6 +29,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/rate_us"
                 android:textColor="@android:color/white"
+                android:tooltipText="@string/feedback_tooltip"
                 app:cornerRadius="12dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

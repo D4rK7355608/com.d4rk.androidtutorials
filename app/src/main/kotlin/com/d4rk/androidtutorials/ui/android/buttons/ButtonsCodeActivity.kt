@@ -1,3 +1,4 @@
+@file:Suppress("DEPRECATION")
 package com.d4rk.androidtutorials.ui.android.buttons
 import android.os.Bundle
 import androidx.fragment.app.Fragment

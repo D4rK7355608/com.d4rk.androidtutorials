@@ -1,8 +1,8 @@
+@file:Suppress("DEPRECATION")
 package com.d4rk.androidtutorials.ui.settings
 import android.content.Context
 import android.preference.PreferenceManager
 import java.util.Locale
-@Suppress("DEPRECATION")
 object LocaleHelper {
     private const val SELECTED_LANGUAGE = "Locale.Helper.Selected.Language"
     fun setLocale(context: Context, language: String): Context {

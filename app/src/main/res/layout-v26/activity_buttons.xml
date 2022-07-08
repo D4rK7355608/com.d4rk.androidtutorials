@@ -36,6 +36,7 @@
         android:layout_margin="16dp"
         android:contentDescription="@string/show_code"
         android:src="@drawable/ic_code"
+        android:tooltipText="@string/show_code"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

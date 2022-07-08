@@ -10,7 +10,7 @@ android {
     def tagName = '1.0_aplha-debug1'
     defaultConfig {
         applicationId "com.d4rk.androidtutorials"
-        minSdk 31
+        minSdk 23
         targetSdk 32
         versionCode 1
         versionName tagName

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.d4rk.androidtutorials">
     <uses-permission android:name="android.permission.INTERNET"/>
     <queries>
@@ -17,7 +18,8 @@
         android:resizeableActivity="true"
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@style/AppThemeActionBar">
+        android:theme="@style/AppThemeActionBar"
+        tools:targetApi="o">
         <activity
             android:name=".ui.settings.LanguageActivity"
             android:label="@string/language"

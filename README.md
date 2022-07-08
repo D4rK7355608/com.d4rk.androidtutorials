@@ -29,7 +29,10 @@ App presents examples of codes for layouts in XML and for activities/fragments i
 
 Android Studio Tutorials Application is very user-friendly offering a lot to learn android for the users. It abstracts the details for you and helps you focus on key point required to Learn Android App Development.
 
-Bugs can be reported here.
+Story time!
+This app was initially a school project to show my teacher I can do simple, but beautiful things using Android Studio IDE. I wanted to share it to everyone who wants to learn Android Studio. I'll try to keep app updated with latest notions!
+
+# Bugs can be reported here.
 
 ## Opening Issues :warning:
 
@@ -42,6 +45,7 @@ __Android Studio Tutorials is 100% free, open source, ad free, and helps you lea
 
 ## 🛠️ Features!
 - ⭐️ Kotlin & XML examples.
+- ⭐️ Easy to understand examples.
 - ⭐️ No internet required.
 - ⭐️ Adaptive themes + Material-You.
 - ⭐️ Simple and easy to use.
