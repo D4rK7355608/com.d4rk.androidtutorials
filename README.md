@@ -58,10 +58,11 @@ __❗️Note❗️__ Some features are still in progress or needs more improveme
 
 ## Screenshots:
 
-<img src="/app/src/main/play/listings/en-US/graphics/phone-screenshots/5-screenshot_all.png">
+<img src="/app/src/main/play/listings/en-US/graphics/phone-screenshots/1-screenshot_main.png"  width="400">
 
 ## 🛑 Disclaimer!
-- This Application is made only for Education Purpose... Is made for mew Android App developers who want to get an idea with examples about android application development with Android Studio IDE.
+- This Application is made only for Education Purpose.
+- App is made for mew Android App developers who want to get an idea with examples about android application development with Android Studio IDE.
 
 ## 💬 Feedback!
 If you have any suggested features or improvement, please leave a comment. In case something is not working correctly please let me know. When posting low rating please describe what is wrong to give the possibility to fix that issue.

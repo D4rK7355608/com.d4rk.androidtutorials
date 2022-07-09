@@ -20,13 +20,13 @@ Story time!
 This app was initially a school project to show my teacher I can do simple, but beautiful things using Android Studio IDE. I wanted to share it to everyone who wants to learn Android Studio. I'll try to keep app updated with latest notions!
 
 ⚠ Opening Issues⚠
-Bugs can be reported here: https://github.com/D4rK7355608/com.d4rk.englishwithlidia.plus/issues
+Bugs can be reported here: https://github.com/D4rK7355608/com.d4rk.androidtutorials/issues
 
 • Only use the GitHub Issues section if you discovered issues with the code itself. Do not mistake the Issues page as a help desk. For support, informations and requests, please contact d4rk7355608@gmail.com.
 
 Create an code/general bug.  🐞
 
-GitHub: https://github.com/D4rK7355608/com.d4rk.englishwithlidia.plus
+GitHub: https://github.com/D4rK7355608/com.d4rk.androidtutorials
 
 🛠️ Features!
 ⭐️ Kotlin & XML examples.
@@ -38,7 +38,8 @@ GitHub: https://github.com/D4rK7355608/com.d4rk.englishwithlidia.plus
 ⭐️ Free Open source & secure.
 
 🛑 Disclaimer!
-• This Application is made only for Education Purpose... Is made for mew Android App developers who want to get an idea with examples about android application development with Android Studio IDE.
+• This Application is made only for Education Purpose.
+• App is made for mew Android App developers who want to get an idea with examples about android application development with Android Studio IDE.
 
 👨‍💻 More about me:
 ● Google Developers - https://developers.google.com/profile/u/D4rK7355608

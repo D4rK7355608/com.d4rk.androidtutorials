@@ -70,6 +70,7 @@
         </activity>
         <activity
             android:name=".ui.android.toggle.ToggleActivity"
+            android:label="@string/toggle"
             android:exported="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -77,6 +78,7 @@
         </activity>
         <activity
             android:name=".ui.android.buttons.ButtonsActivity"
+            android:label="@string/buttons"
             android:exported="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -84,6 +86,7 @@
         </activity>
         <activity
             android:name=".ui.android.AndroidStartProjectActivity"
+            android:label="@string/android_start"
             android:exported="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
