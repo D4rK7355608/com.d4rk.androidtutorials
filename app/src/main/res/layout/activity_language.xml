@@ -31,7 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:text="@string/language_default" />
+                android:text="@string/language_default"/>
             <RadioGroup
                 android:id="@+id/languageGroup"
                 android:layout_width="match_parent"
@@ -42,19 +42,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layoutDirection="rtl"
-                    android:text="@string/language_ro" />
+                    android:text="@string/language_ro"/>
                 <androidx.appcompat.widget.AppCompatRadioButton
                     android:id="@+id/englishButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layoutDirection="rtl"
-                    android:text="@string/language_en" />
+                    android:text="@string/language_en"/>
                 <androidx.appcompat.widget.AppCompatRadioButton
                     android:id="@+id/bulgarButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layoutDirection="rtl"
-                    android:text="@string/language_bu" />
+                    android:text="@string/language_bu"/>
             </RadioGroup>
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"

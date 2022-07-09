@@ -7,6 +7,6 @@
             app:title="@string/internet"
             app:summary="@string/internet_sum"
             app:useSimpleSummaryProvider="true"
-            app:iconSpaceReserved="false" />
+            app:iconSpaceReserved="false"/>
     </androidx.preference.PreferenceCategory>
 </androidx.preference.PreferenceScreen>

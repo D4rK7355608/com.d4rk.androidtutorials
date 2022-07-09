@@ -16,11 +16,11 @@
             android:background="@color/colorBackground"
             app:tabTextColor="@color/colorAccent"
             app:tabGravity="fill"
-            app:tabMode="fixed" />
+            app:tabMode="fixed"/>
     </com.google.android.material.appbar.AppBarLayout>
 <androidx.viewpager.widget.ViewPager
     android:id="@+id/viewpager"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
