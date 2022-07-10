@@ -12,6 +12,9 @@
     <string name="google_dev">Google Dev</string>
     <string name="libraries">Third Party Libraries</string>
     <string name="more">More</string>
+    <string name="cool">Cool!</string>
+    <string name="music_sleep_timer">Music Sleep Timer.</string>
+    <string name="english_with_lidia">English with Lidia.</string>
     <string name="feedback_toast">Thanks for rating us!</string>
     <string name="privacy_policy">Privacy policy</string>
     <string name="terms_of_service">Terms of service</string>
@@ -58,4 +61,8 @@
     <string name="implement_buttons">Implement buttons</string>
     <string name="implement_buttons_sum">Discover more things about general buttons and what you can do with them. Learn how to make them look beauty and clean.</string>
     <string name="still_in_progress">Still in Progress…</string>
+    <string name="changes"><b>Version 1.0_r1:\n</b>
+        • Initial stable version.
+        <br> </br>
+    </string>
 </resources>

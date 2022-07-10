@@ -9,13 +9,13 @@
 ![GitHub Pull Requests](https://img.shields.io/github/issues-pr/D4rK7355608/com.d4rk.androidtutorials?style=for-the-badge&logo=github)
 ![GitHub License](https://img.shields.io/github/license/D4rK7355608/com.d4rk.androidtutorials?style=for-the-badge&logo=github)
 
-## Android Studio Tutorials
+## 📱Android Studio Tutorials📱
 
 - ╔╦╦╦═╦╗╔═╦═╦══╦═╗
 - ║║║║╩╣╚╣═╣║║║║║╩╣
 - ╚══╩═╩═╩═╩═╩╩╩╩═╝
 
-## Learn how to make simple apps in Android Studio.
+## Learn how to make simple apps in Android Studio. 📱
 
 Start learning Android Studio!
 
@@ -29,12 +29,12 @@ App presents examples of codes for layouts in XML and for activities/fragments i
 
 Android Studio Tutorials Application is very user-friendly offering a lot to learn android for the users. It abstracts the details for you and helps you focus on key point required to Learn Android App Development.
 
-Story time!
+Story time! \
 This app was initially a school project to show my teacher I can do simple, but beautiful things using Android Studio IDE. I wanted to share it to everyone who wants to learn Android Studio. I'll try to keep app updated with latest notions!
 
-# Bugs can be reported here.
+## ⚠ Opening Issues ⚠
 
-## Opening Issues :warning:
+Bugs can be reported [here](https://github.com/D4rK7355608/com.d4rk.androidtutorials/issues).
 
 > Only use the GitHub Issues section if you discovered issues with the code itself. Do not mistake the Issues page as a help desk.
 > For support, informations and requests, please contact <d4rk7355608@gmail.com>.
@@ -52,11 +52,11 @@ __Android Studio Tutorials is 100% free, open source, ad free, and helps you lea
 - ⭐️ Fast and lightweight.
 - ⭐️ Free Open source & secure.
 
-__❗️Note❗️__ Some features are still in progress or needs more improvements and investigations.
+__❗Note❗__ Some features are still in progress or needs more improvements and investigations.
 
-## Changelog [here](https://raw.githubusercontent.com/D4rK7355608/com.d4rk.musicsleeptimer.plus/master/CHANGELOG.md)!
+## 📝 Changelog [here](https://raw.githubusercontent.com/D4rK7355608/com.d4rk.musicsleeptimer.plus/master/CHANGELOG.md)!
 
-## Screenshots:
+## 🖼️ Screenshots:
 
 <img src="/app/src/main/play/listings/en-US/graphics/phone-screenshots/1-screenshot_main.png"  width="400">
 
@@ -81,9 +81,7 @@ Rate us 5 stars ⭐⭐⭐⭐⭐ if you are happy with the app.
 <a href="https://www.youtube.com/c/D4rK7355608/"><img src="https://img.shields.io/youtube/channel/subscribers/UCLDi-rmSRry0pNL-oVvGJAw?color=darkred&label=D4rK&logo=youtube&logoColor=darkred&style=for-the-badge"/></a>
 <a href="https://github.com/D4rK7355608/"><img src="https://img.shields.io/github/followers/D4rK7355608?color=white&logo=GitHub&style=for-the-badge"/></a>
 
-[<img src="https://raw.githubusercontent.com/steverichey/google-play-badge-svg/master/img/en_get.svg"
-alt="Get it on Google Play"
-height="90">](https://play.google.com/store/apps/details?id=com.d4rk.androidtutorials)
+[<img src="https://raw.githubusercontent.com/steverichey/google-play-badge-svg/master/img/en_get.svg" alt="Get it on Google Play" height="90">](https://play.google.com/store/apps/details?id=com.d4rk.androidtutorials)
 
 __Privacy Policy__ [here](https://sites.google.com/view/d4rk7355608/more/apps/android-studio-tutorials/privacy-policy).
 __Terms of Service__ [here](https://sites.google.com/view/d4rk7355608/more/apps/android-studio-tutorials/terms-of-service).

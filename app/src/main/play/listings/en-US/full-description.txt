@@ -19,7 +19,8 @@ Android Studio Tutorials Application is very user-friendly offering a lot to lea
 Story time!
 This app was initially a school project to show my teacher I can do simple, but beautiful things using Android Studio IDE. I wanted to share it to everyone who wants to learn Android Studio. I'll try to keep app updated with latest notions!
 
-⚠ Opening Issues⚠
+⚠ Opening Issues ⚠
+
 Bugs can be reported here: https://github.com/D4rK7355608/com.d4rk.androidtutorials/issues
 
 • Only use the GitHub Issues section if you discovered issues with the code itself. Do not mistake the Issues page as a help desk. For support, informations and requests, please contact d4rk7355608@gmail.com.
@@ -53,6 +54,6 @@ GitHub: https://github.com/D4rK7355608/com.d4rk.androidtutorials
 💬 Feedback!
 If you have any suggested features or improvement, please leave a comment. In case something is not working correctly please let me know. When posting low rating please describe what is wrong to give the possibility to fix that issue.
 
-❗️Note❗️ Some features are still in progress or needs more improvements and investigations.
+❗Note❗ Some features are still in progress or needs more improvements and investigations.
 
 Rate us 5 stars ⭐⭐⭐⭐⭐ if you are happy with the app.
