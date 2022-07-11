@@ -54,7 +54,7 @@ __🖤 Android Studio Tutorials is 100% Free, Open Source and helps you learn An
 
 __❗Note❗__ Some features are still in progress or needs more improvements and investigations.
 
-## 📝 Changelog [here](https://raw.githubusercontent.com/D4rK7355608/com.d4rk.musicsleeptimer.plus/master/CHANGELOG.md)!
+## 📝 Changelog [here](https://raw.githubusercontent.com/D4rK7355608/com.d4rk.androidtutorials/master/CHANGELOG.md)!
 
 ## 🖼️ Screenshots:
 
