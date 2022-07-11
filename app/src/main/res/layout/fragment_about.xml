@@ -9,9 +9,10 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="21dp"
+        app:cardCornerRadius="24dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
         app:strokeWidth="0dp"
         app:cardBackgroundColor="@color/colorBackground3">
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -169,7 +170,6 @@
         android:layout_gravity="bottom"
         android:layout_marginBottom="76dp"
         app:lottie_autoPlay="true"
-        app:lottie_rawRes="@raw/phone"
-        app:lottie_loop="false"
-        app:lottie_speed="0.25"/>
+        app:lottie_rawRes="@raw/anim_phone"
+        app:lottie_loop="false" app:lottie_speed="0.25"/>
 </FrameLayout>

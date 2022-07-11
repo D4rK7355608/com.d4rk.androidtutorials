@@ -44,7 +44,7 @@ class AboutFragment : Fragment(R.layout.fragment_about) {
             }
         }
         binding.itemSettingsMoreAboutGithub.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/D4rK7355608"))
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/D4rK7355608/com.d4rk.androidtutorials"))
             if (intent.resolveActivity(requireContext().packageManager) != null) {
                 startActivity(intent)
             }

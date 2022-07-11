@@ -12,6 +12,15 @@
                 android:targetPackage="com.d4rk.androidtutorials"
                 android:targetClass="com.d4rk.androidtutorials.ui.android.AndroidStartProjectActivity"/>
         </androidx.preference.Preference>
+        <androidx.preference.Preference
+            android:title="@string/android_sdk"
+            android:summary="@string/android_sdk_sum"
+            android:icon="@drawable/ic_android_sdk">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="com.d4rk.androidtutorials"
+                android:targetClass="com.d4rk.androidtutorials.ui.android.sdk.AndroidSDK"/>
+        </androidx.preference.Preference>
     </androidx.preference.PreferenceCategory>
     <androidx.preference.PreferenceCategory
         android:title="@string/android_implementations"

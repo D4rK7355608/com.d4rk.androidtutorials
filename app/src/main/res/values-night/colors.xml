@@ -3,8 +3,9 @@
     <color name="colorAccent">#5d74ad</color>
     <color name="colorContainer">#2a3041</color>
     <color name="colorSurface">#585e6f</color>
+    <color name="colorBackground0">#2D2D2D</color>
     <color name="colorBackground">#191b21</color>
     <color name="colorBackground2">#2f3037</color>
     <color name="colorBackground3">#45474d</color>
-    <color name="colorLauncherBackground">@android:color/background_dark</color>
+    <color name="colorBackground4">#414758</color>
 </resources>

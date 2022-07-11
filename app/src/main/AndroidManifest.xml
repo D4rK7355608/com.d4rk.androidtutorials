@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.d4rk.androidtutorials">
     <uses-permission android:name="android.permission.INTERNET"/>
     <queries>
@@ -16,10 +16,9 @@
         android:label="@string/app_name"
         android:logo="@mipmap/ic_launcher"
         android:resizeableActivity="true"
-        android:roundIcon="@mipmap/ic_launcher"
+        android:banner="@drawable/banner"
         android:supportsRtl="true"
-        android:theme="@style/AppThemeActionBar"
-        tools:targetApi="o">
+        android:theme="@style/AppThemeActionBar">
         <activity
             android:name=".ui.settings.LanguageActivity"
             android:label="@string/language"
@@ -91,6 +90,14 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.android.AndroidStartProjectActivity"/>
+        </activity>
+        <activity
+            android:name=".ui.android.sdk.AndroidSDK"
+            android:label="@string/android_sdk"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.android.sdk.AndroidSDK"/>
         </activity>
         <activity
             android:name=".MainActivity"

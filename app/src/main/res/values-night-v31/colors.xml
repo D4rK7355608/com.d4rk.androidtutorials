@@ -6,4 +6,5 @@
     <color name="colorBackground">@android:color/system_neutral2_900</color>
     <color name="colorBackground2">@android:color/system_neutral2_800</color>
     <color name="colorBackground3">@android:color/system_neutral2_700</color>
+    <color name="colorBackground4">@android:color/system_neutral2_800</color>
 </resources>

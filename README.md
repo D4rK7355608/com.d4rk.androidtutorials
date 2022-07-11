@@ -41,7 +41,7 @@ Bugs can be reported [here](https://github.com/D4rK7355608/com.d4rk.androidtutor
 
 - Create an code/general bug.  🐞
 
-__Android Studio Tutorials is 100% free, open source, ad free, and helps you learn Android Studio!__
+__🖤 Android Studio Tutorials is 100% Free, Open Source and helps you learn Android Studio better! 🖤__
 
 ## 🛠️ Features!
 - ⭐️ Kotlin & XML examples.

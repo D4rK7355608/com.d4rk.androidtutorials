@@ -10,8 +10,29 @@
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/AndroidTutorials/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3416666666666667" />
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/AndroidTutorials/app/src/main/res/mipmap-anydpi/ic_launcher.xml" value="0.179" />
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/AndroidTutorials/app/src/main/res/xml/settings.xml" value="0.25" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable-anydpi/banner.xml" value="0.179" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable-anydpi/ic_about.xml" value="0.2165" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable-anydpi/ic_about_filled.xml" value="0.2165" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable-anydpi/ic_android.xml" value="0.2165" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable-anydpi/ic_android_sdk.xml" value="0.2165" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable-anydpi/ic_category_implementations.xml" value="0.179" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable-anydpi/ic_category_start.xml" value="0.2165" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable-anydpi/ic_changelog.xml" value="0.2165" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable-anydpi/ic_code_of_conduct.xml" value="0.179" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable-anydpi/ic_community.xml" value="0.179" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable-anydpi/ic_home.xml" value="0.2165" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable-anydpi/ic_home_filled.xml" value="0.2165" />
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable-anydpi/ic_launcher_foreground.xml" value="0.2075" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable-anydpi/ic_launcher_foreground_music_sleep_timer.xml" value="0.2165" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable-anydpi/ic_launcher_foreground_qr_codes_canner.xml" value="0.2165" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable-anydpi/ic_launcher_foreground_qr_codes_scanner.xml" value="0.2165" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable-anydpi/ic_libraries.xml" value="0.2165" />
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable-anydpi/ic_more.xml" value="0.2075" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable-anydpi/nav_about.xml" value="0.2165" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable-anydpi/nav_home.xml" value="0.2165" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable-anydpi/toggle_kotlin_code.xml" value="0.2165" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable-anydpi/toggle_xml_code.xml" value="0.5" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable-anydpi/valuecellborder.xml" value="0.2165" />
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable/ic_about.xml" value="0.1655" />
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable/ic_android.xml" value="0.1655" />
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable/ic_category_implementations.xml" value="0.1655" />
@@ -42,13 +63,32 @@
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable/ic_xda.xml" value="0.2075" />
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable/ic_youtube.xml" value="0.2075" />
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/drawable/toggle_kotlin_code.xml" value="0.2075" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/layout/activity_android_sdk.xml" value="0.33" />
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/layout/activity_android_start_project.xml" value="0.3059360730593607" />
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/layout/activity_buttons.xml" value="0.15138888888888888" />
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/layout/activity_feedback.xml" value="0.18" />
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/layout/activity_language.xml" value="0.3416666666666667" />
-        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/layout/activity_main.xml" value="0.3059360730593607" />
-        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/layout/fragment_dialog.xml" value="0.22" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/layout/activity_tab_layout.xml" value="0.3059360730593607" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/layout/activity_toggle.xml" value="0.3059360730593607" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/layout/fragment_about.xml" value="0.3059360730593607" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/layout/fragment_buttons_code.xml" value="0.3101851851851852" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/layout/fragment_buttons_layout.xml" value="0.25" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/layout/fragment_dialog.xml" value="0.33" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/layout/fragment_home.xml" value="0.3101851851851852" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/layout/fragment_toggle_code.xml" value="0.3059360730593607" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/layout/fragment_toggle_layout.xml" value="0.3059360730593607" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/layout/permissions_activity.xml" value="0.3101851851851852" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/layout/settings_activity.xml" value="0.3101851851851852" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3059360730593607" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.178" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/mipmap-anydpi-v26/ic_launcher_english_with_lidia.xml" value="0.2165" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/mipmap-anydpi-v26/ic_launcher_music_sleep_timer.xml" value="0.2165" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/mipmap-anydpi-v26/ic_launcher_qr_codes_canner.xml" value="0.2165" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/mipmap-anydpi-v26/ic_launcher_qr_codes_scanner.xml" value="0.179" />
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/mipmap-anydpi/ic_launcher.xml" value="0.2075" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/mipmap-anydpi/ic_launcher_english_with_lidia.xml" value="0.2165" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/xml/android_studio.xml" value="0.33" />
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/xml/permissions_preferences.xml" value="0.3101851851851852" />
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.androidtutorials/app/src/main/res/xml/settings.xml" value="0.33" />
       </map>

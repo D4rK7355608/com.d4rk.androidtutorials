@@ -93,7 +93,6 @@
             android:layout_width="match_parent"
             android:layout_height="256dp"
             android:layout_margin="24dp"
-            android:forceDarkAllowed="true"
             android:src="@drawable/step3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -107,7 +106,7 @@
             app:layout_constraintTop_toBottomOf="@id/image_step3"
             app:lottie_autoPlay="true"
             app:lottie_loop="false"
-            app:lottie_rawRes="@raw/programmer"
+            app:lottie_rawRes="@raw/anim_programmer"
             app:lottie_speed="0.25"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

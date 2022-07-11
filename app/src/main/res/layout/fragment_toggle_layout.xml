@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.android.toggle.tabs.TabLayoutFragment">
+    tools:context=".ui.android.toggle.tabs.ToggleTabLayoutFragment">
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialCardView6"
         android:layout_width="0dp"
@@ -16,27 +16,16 @@
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
         app:cardBackgroundColor="@color/colorBackground3"
-        app:cardCornerRadius="21dp"
+        app:cardCornerRadius="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:strokeWidth="0dp">
-        <RelativeLayout
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <com.jsibbold.zoomage.ZoomageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="12dp"
-                android:src="@drawable/toggle_xml_code"
-                app:zoomage_restrictBounds="false"
-                app:zoomage_animateOnReset="true"
-                app:zoomage_autoResetMode="UNDER"
-                app:zoomage_autoCenter="true"
-                app:zoomage_zoomable="true"
-                app:zoomage_minScale="0.6"
-                app:zoomage_maxScale="8"/>
-        </RelativeLayout>
+            android:layout_height="match_parent"
+            android:layout_margin="12dp"
+            android:id="@+id/toggleXMLText"/>
     </com.google.android.material.card.MaterialCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

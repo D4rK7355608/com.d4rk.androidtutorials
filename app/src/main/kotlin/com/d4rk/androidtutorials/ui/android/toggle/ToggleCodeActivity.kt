@@ -6,8 +6,8 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.d4rk.androidtutorials.R
-import com.d4rk.androidtutorials.ui.android.toggle.tabs.TabCodeFragment
-import com.d4rk.androidtutorials.ui.android.toggle.tabs.TabLayoutFragment
+import com.d4rk.androidtutorials.ui.android.toggle.tabs.ToggleTabCodeFragment
+import com.d4rk.androidtutorials.ui.android.toggle.tabs.ToggleTabLayoutFragment
 import com.google.android.material.tabs.TabLayout
 import com.kieronquinn.monetcompat.app.MonetCompatActivity
 class ToggleCodeActivity: MonetCompatActivity() {
@@ -21,8 +21,8 @@ class ToggleCodeActivity: MonetCompatActivity() {
     }
     private fun setupViewPager(viewPager: ViewPager) {
         val adapter = ViewPagerAdapter(supportFragmentManager)
-        adapter.addFragment(TabCodeFragment(), getString(R.string.code_kotlin))
-        adapter.addFragment(TabLayoutFragment(), getString(R.string.layout_xml))
+        adapter.addFragment(ToggleTabCodeFragment(), getString(R.string.code_kotlin))
+        adapter.addFragment(ToggleTabLayoutFragment(), getString(R.string.layout_xml))
         viewPager.adapter = adapter
     }
     internal inner class ViewPagerAdapter(manager: FragmentManager) : FragmentPagerAdapter(manager) {

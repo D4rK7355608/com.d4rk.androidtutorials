@@ -48,6 +48,7 @@ class SettingsActivity : MonetCompatActivity(), SharedPreferences.OnSharedPrefer
                     val view: View = layoutInflater.inflate(R.layout.fragment_dialog, null)
                     val musicSleepTimerString: MaterialTextView = view.findViewById(R.id.musicSleepTimerString)
                     val englishWithLidiaString: MaterialTextView = view.findViewById(R.id.englishWithLidiaString)
+                    val qrCodeScannerString: MaterialTextView = view.findViewById(R.id.qrCodeScannerString)
                     alertDialog.setView(view)
                     alertDialog.create()
                     view.findViewById<View?>(R.id.musicSleepTimer)?.setOnClickListener {
@@ -64,6 +65,14 @@ class SettingsActivity : MonetCompatActivity(), SharedPreferences.OnSharedPrefer
                     }
                     englishWithLidiaString.setOnClickListener {
                         val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.d4rk.englishwithlidia.plus"))
+                        startActivity(intent)
+                    }
+                    view.findViewById<View?>(R.id.qrCodeScanner)?.setOnClickListener {
+                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.d4rk.qrcodescanner.plus"))
+                        startActivity(intent)
+                    }
+                    qrCodeScannerString.setOnClickListener {
+                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.d4rk.qrcodescanner.plus"))
                         startActivity(intent)
                     }
                     alertDialog.setNegativeButton(R.string.cool, null)

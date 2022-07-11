@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:lottie_autoPlay="true"
         app:lottie_loop="false"
-        app:lottie_rawRes="@raw/android_studio"
+        app:lottie_rawRes="@raw/anim_android_studio"
         app:lottie_speed="1"/>
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/learningAnimation"
@@ -30,7 +30,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/learning"
+        app:lottie_rawRes="@raw/anim_learning"
         app:lottie_speed="1"/>
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialCardView"
@@ -38,8 +38,8 @@
         android:layout_height="266dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        app:cardBackgroundColor="@color/colorBackground2"
-        app:cardCornerRadius="21dp"
+        app:cardBackgroundColor="@color/colorBackground3"
+        app:cardCornerRadius="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,7 +53,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:lottie_autoPlay="true"
             app:lottie_loop="false"
-            app:lottie_rawRes="@raw/hello_world"
+            app:lottie_rawRes="@raw/anim_hello_world"
             app:lottie_speed="0.5"/>
     </com.google.android.material.card.MaterialCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

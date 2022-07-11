@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Android Studio Tutorials</string>
-    <string name="app_description">Learn how to make simple apps in Android Studio.</string>
+    <string name="app_description">Learn how to make simple apps in Android Studio. 📱</string>
     <string name="title_home">Home</string>
     <string name="title_android_studio">Android Studio</string>
     <string name="title_about">About</string>
@@ -15,26 +15,29 @@
     <string name="cool">Cool!</string>
     <string name="music_sleep_timer">Music Sleep Timer.</string>
     <string name="english_with_lidia">English with Lidia.</string>
+    <string name="qr_code_scanner">QR &amp; Bar Code Scanner.</string>
     <string name="feedback_toast">Thanks for rating us!</string>
-    <string name="privacy_policy">Privacy policy</string>
-    <string name="terms_of_service">Terms of service</string>
-    <string name="code_of_conduct">Code of conduct</string>
-    <string name="check_for_updates">Check for updates</string>
-    <string name="feedback">Feedback</string>
-    <string name="changelog">Changelog</string>
-    <string name="more_apps">More apps</string>
-    <string name="feedback_tooltip">Send us your review on Google Play Store</string>
-    <string name="internet">Internet</string>
-    <string name="internet_sum">Used to send error reports</string>
-    <string name="normal">Normal</string>
+    <string name="privacy_policy">Privacy policy.</string>
+    <string name="terms_of_service">Terms of service.</string>
+    <string name="code_of_conduct">Code of conduct.</string>
+    <string name="check_for_updates">Check for updates…</string>
+    <string name="feedback">Feedback.</string>
+    <string name="changelog">Changelog.</string>
+    <string name="more_apps">More apps.</string>
+    <string name="feedback_tooltip">Send us your review on Google Play Store.</string>
+    <string name="internet">Internet.</string>
+    <string name="internet_sum">Used to send error reports.</string>
+    <string name="normal">Normal!</string>
     <string name="rate_us">Rate our app!</string>
-    <string name="permissions">Permissions</string>
-    <string name="theme">Theme</string>
+    <string name="permissions">Permissions.</string>
+    <string name="theme">Theme.</string>
     <string name="theme_def_value">MODE_NIGHT_FOLLOW_SYSTEM</string>
     <string name="settings">Settings</string>
-    <string name="android_start">Start a new project</string>
+    <string name="android_sdk">Android SDKs</string>
+    <string name="android_sdk_sum">Android SDKs are used to recognize Android versions by numbers for every version of Android.</string>
+    <string name="android_start">Start a new project…</string>
     <string name="android_start_sum">Learn the base of how to start a new Android Studio project, how to configure, how to set package, API levels and many more…</string>
-    <string name="android_implementations">Android implementations</string>
+    <string name="android_implementations">Android implementations.</string>
     <string name="implement_toggle">Implement toggle &amp; switches buttons</string>
     <string name="toggle_sum">Discover more things about toggle buttons and what you can do with them. Learn implementations of toggle buttons here. Also learn how to make them look beauty and clean.</string>
     <string name="step1">Step 1</string>
@@ -61,8 +64,16 @@
     <string name="implement_buttons">Implement buttons</string>
     <string name="implement_buttons_sum">Discover more things about general buttons and what you can do with them. Learn how to make them look beauty and clean.</string>
     <string name="still_in_progress">Still in Progress…</string>
-    <string name="changes"><b>Version 1.0_r1:\n</b>
-        • Initial stable version.
+    <string name="changes"><b>Version 1.0_b1:\n</b>
+        • Target SDK now is 26;\n
+        • Added QR &amp; Bar Code Scanner in more dialog;\n
+        • Updated some colors;\n
+        • Updated app description in manifest;\n
+        • Update app description in Google Play Store;\n
+        • Fixed GitHub link;\n
+        • Added Android SDKs table;\n
+        • Remastered show code syntax;\n
+        • Maybe is more but I forget.
         <br> </br>
     </string>
 </resources>

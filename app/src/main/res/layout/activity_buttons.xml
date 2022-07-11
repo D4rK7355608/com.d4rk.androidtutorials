@@ -23,12 +23,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="45dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:gravity="center"
-        android:text="@string/still_in_progress"/>
+        android:text="@string/still_in_progress"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/showButtonCodeSyntax"
         android:layout_width="wrap_content"
@@ -36,6 +36,7 @@
         android:layout_margin="16dp"
         android:contentDescription="@string/show_code"
         android:src="@drawable/ic_code"
+        android:tooltipText="@string/show_code"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
