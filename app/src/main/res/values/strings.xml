@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Android Studio Tutorials</string>
     <string name="app_description">Learn how to make simple apps in Android Studio. 📱</string>
+    <string name="dev_feedback">Email to dev</string>
     <string name="title_home">Home</string>
     <string name="title_android_studio">Android Studio</string>
     <string name="title_about">About</string>
@@ -18,12 +19,15 @@
     <string name="qr_code_scanner">QR &amp; Bar Code Scanner.</string>
     <string name="feedback_toast">Thanks for rating us!</string>
     <string name="privacy_policy">Privacy policy.</string>
+    <string name="license">License.</string>
+    <string name="license_sum">General Public License-3.0.</string>
     <string name="terms_of_service">Terms of service.</string>
     <string name="code_of_conduct">Code of conduct.</string>
     <string name="check_for_updates">Check for updates…</string>
     <string name="feedback">Feedback.</string>
     <string name="changelog">Changelog.</string>
     <string name="more_apps">More apps.</string>
+    <string name="language_sum">Set application language.</string>
     <string name="feedback_tooltip">Send us your review on Google Play Store.</string>
     <string name="internet">Internet.</string>
     <string name="internet_sum">Used to send error reports.</string>
@@ -47,10 +51,22 @@
     <string name="step2_sum">Second time you have to choose your activity type you want for the app. You have some presets to make your work more easier. Choose one of them and click on next button.</string>
     <string name="step3_sum">Third and final step is to set your app name, package name, preferred programming language and minimum SDK your app will use. You can search more about them on <a href="https://developer.android.com/">Android Developers</a>.</string>
     <string name="language_default">Default</string>
+    <string name="toggle_desc">You can add a basic toggle button to your layout with the ToggleButton object. Android 4.0 (API level 14) introduces another kind of toggle button called a switch that provides a slider control, which you can add with a Switch object. SwitchCompat is a version of the Switch widget which runs on devices back to API 7.</string>
+    <string name="button_1_normal">Button 1 (normal)</string>
+    <string name="button_2_outlined">Button 2 (outlined)</string>
+    <string name="button_3_elevated">Button 3 (elevated)</string>
     <string name="toggle">Toggle</string>
+    <string name="textbox">Text Box</string>
     <string name="toggle_me">Toggle me</string>
     <string name="show_code">Show code syntax</string>
+    <string name="type_here">Type here…</string>
+    <string name="print_text">Print text.</string>
+    <string name="implement_textbox">Implement Text Box</string>
+    <string name="implement_textbox_sum">A user interface element for entering and modifying text. When you define an edit text widget, you must specify the R.styleable.TextView_inputType attribute…</string>
     <string name="open_me">Open me :)</string>
+    <string name="buttonToast">Normal button clicked!</string>
+    <string name="button2Toast">Outlined button clicked!</string>
+    <string name="button3Toast">Elevated button clicked!</string>
     <string name="monetSwitchToast">Toggled Monet Switch!</string>
     <string name="appCompatToggleButtonToast">Toggled Compat Toggle Button!</string>
     <string name="switchMaterialToast">Toggled Material Switch!</string>
@@ -64,16 +80,8 @@
     <string name="implement_buttons">Implement buttons</string>
     <string name="implement_buttons_sum">Discover more things about general buttons and what you can do with them. Learn how to make them look beauty and clean.</string>
     <string name="still_in_progress">Still in Progress…</string>
-    <string name="changes"><b>Version 1.0_b1:\n</b>
-        • Target SDK now is 26;\n
-        • Added QR &amp; Bar Code Scanner in more dialog;\n
-        • Updated some colors;\n
-        • Updated app description in manifest;\n
-        • Update app description in Google Play Store;\n
-        • Fixed GitHub link;\n
-        • Added Android SDKs table;\n
-        • Remastered show code syntax;\n
-        • Maybe is more but I forget.
+    <string name="changes"><b>Version 1.0_r1:\n</b>
+        • Initial stable version.
         <br> </br>
     </string>
 </resources>

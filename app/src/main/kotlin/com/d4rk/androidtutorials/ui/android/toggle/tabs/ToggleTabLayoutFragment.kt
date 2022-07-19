@@ -9,7 +9,6 @@ import com.d4rk.androidtutorials.databinding.FragmentToggleLayoutBinding
 import java.io.ByteArrayOutputStream
 import java.io.IOException
 import java.io.InputStream
-
 class ToggleTabLayoutFragment : Fragment() {
     private lateinit var _binding: FragmentToggleLayoutBinding
     private val binding get() = _binding

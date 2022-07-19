@@ -7,12 +7,12 @@ plugins {
 }
 android {
     compileSdk 32
-    def tagName = '1.0_b1'
+    def tagName = '1.0_r1'
     defaultConfig {
         applicationId "com.d4rk.androidtutorials"
         minSdk 26
         targetSdk 32
-        versionCode 3
+        versionCode 4
         versionName tagName
         archivesBaseName = "com.d4rk.androidtutorials-v${versionName}"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"

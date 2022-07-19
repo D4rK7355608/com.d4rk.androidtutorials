@@ -1,16 +1,16 @@
 @file:Suppress("DEPRECATION")
 package com.d4rk.androidtutorials.ui.android.buttons
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.d4rk.androidtutorials.R
-import com.d4rk.androidtutorials.ui.android.buttons.tabs.TabCodeFragment
-import com.d4rk.androidtutorials.ui.android.buttons.tabs.TabLayoutFragment
+import com.d4rk.androidtutorials.ui.android.buttons.tabs.ButtonsTabCodeFragment
+import com.d4rk.androidtutorials.ui.android.buttons.tabs.ButtonsTabLayoutFragment
 import com.google.android.material.tabs.TabLayout
-import com.kieronquinn.monetcompat.app.MonetCompatActivity
-class ButtonsCodeActivity: MonetCompatActivity() {
+class ButtonsCodeActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tab_layout)
@@ -21,8 +21,8 @@ class ButtonsCodeActivity: MonetCompatActivity() {
     }
     private fun setupViewPager(viewPager: ViewPager) {
         val adapter = ViewPagerAdapter(supportFragmentManager)
-        adapter.addFragment(TabCodeFragment(), getString(R.string.code_kotlin))
-        adapter.addFragment(TabLayoutFragment(), getString(R.string.layout_xml))
+        adapter.addFragment(ButtonsTabCodeFragment(), getString(R.string.code_kotlin))
+        adapter.addFragment(ButtonsTabLayoutFragment(), getString(R.string.layout_xml))
         viewPager.adapter = adapter
     }
     internal inner class ViewPagerAdapter(manager: FragmentManager) : FragmentPagerAdapter(manager) {

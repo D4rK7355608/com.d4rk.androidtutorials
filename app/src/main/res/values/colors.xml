@@ -3,9 +3,7 @@
     <color name="colorAccent">#93aae5</color>
     <color name="colorContainer">#d8e1fc</color>
     <color name="colorSurface">#585e6f</color>
-    <color name="colorBackground0">#FFFFFF</color>
+    <color name="colorDialogBackground">#fdfbfe</color>
+    <color name="colorLauncherBackground">#FFFFFF</color>
     <color name="colorBackground">#edf0fd</color>
-    <color name="colorBackground2">#fdfbfe</color>
-    <color name="colorBackground3">#c5c6cf</color>
-    <color name="colorBackground4">#FDFBFE</color>
 </resources>

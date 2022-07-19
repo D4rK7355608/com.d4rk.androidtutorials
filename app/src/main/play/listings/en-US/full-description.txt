@@ -33,6 +33,7 @@ GitHub: https://github.com/D4rK7355608/com.d4rk.androidtutorials
 
 🛠️ Features!
 ⭐️ Kotlin & XML examples.
+⭐️ Binding examples.
 ⭐️ Easy to understand examples.
 ⭐️ No internet required.
 ⭐️ Adaptive themes + Material-You.

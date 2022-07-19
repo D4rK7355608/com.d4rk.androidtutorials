@@ -1,12 +1,12 @@
 package com.d4rk.androidtutorials
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import androidx.preference.PreferenceManager
 import com.d4rk.androidtutorials.databinding.ActivityMainBinding
-import com.kieronquinn.monetcompat.app.MonetCompatActivity
-class MainActivity : MonetCompatActivity() {
+class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

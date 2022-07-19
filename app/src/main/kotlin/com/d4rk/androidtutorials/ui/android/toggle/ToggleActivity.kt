@@ -12,16 +12,16 @@ class ToggleActivity : MonetCompatActivity() {
         binding = ActivityToggleBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.monetSwitch.setOnClickListener {
-            Toast.makeText(this@ToggleActivity,  R.string.monetSwitchToast, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,  R.string.monetSwitchToast, Toast.LENGTH_SHORT).show()
         }
         binding.appCompatToggleButton.setOnClickListener {
-            Toast.makeText(this@ToggleActivity, R.string.appCompatToggleButtonToast, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.appCompatToggleButtonToast, Toast.LENGTH_SHORT).show()
         }
         binding.switchMaterial.setOnClickListener {
-            Toast.makeText(this@ToggleActivity, R.string.switchMaterialToast, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.switchMaterialToast, Toast.LENGTH_SHORT).show()
         }
         binding.showToggleCodeSyntax.setOnClickListener {
-            val intent = Intent(this@ToggleActivity, ToggleCodeActivity::class.java)
+            val intent = Intent(this, ToggleCodeActivity::class.java)
             startActivity(intent)
         }
     }

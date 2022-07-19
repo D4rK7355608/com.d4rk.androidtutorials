@@ -1,6 +1,7 @@
 @file:Suppress("DEPRECATION")
 package com.d4rk.androidtutorials.ui.android.toggle
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
@@ -9,8 +10,7 @@ import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.ui.android.toggle.tabs.ToggleTabCodeFragment
 import com.d4rk.androidtutorials.ui.android.toggle.tabs.ToggleTabLayoutFragment
 import com.google.android.material.tabs.TabLayout
-import com.kieronquinn.monetcompat.app.MonetCompatActivity
-class ToggleCodeActivity: MonetCompatActivity() {
+class ToggleCodeActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tab_layout)

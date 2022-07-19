@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.android.toggle.tabs.ToggleTabLayoutFragment">
     <com.google.android.material.card.MaterialCardView
+        style="@style/Widget.Material3.CardView.Elevated"
         android:id="@+id/materialCardView4"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -15,11 +16,16 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
-        app:cardBackgroundColor="@color/colorBackground3"
         app:cardCornerRadius="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:strokeWidth="0dp"/>
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="12dp"
+            android:textIsSelectable="true"
+            android:id="@+id/buttonsXMLText"/>
+    </com.google.android.material.card.MaterialCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

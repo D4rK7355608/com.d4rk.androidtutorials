@@ -6,16 +6,17 @@
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
-        <item name="android:dialogCornerRadius">21dp</item>
+        <item name="android:dialogCornerRadius">24dp</item>
         <item name="android:colorBackground">@color/colorBackground</item>
         <item name="actionBarStyle">@style/ActionBarTheme</item>
         <item name="alertDialogTheme">@style/DialogTheme</item>
+        <item name="switchStyle">@style/SwitchTheme</item>
         <item name="actionOverflowMenuStyle">@style/OverflowMenuTheme</item>
     </style>
     <style name="DialogTheme" parent="Theme.Material3.DayNight.Dialog.Alert">
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorPrimary">@color/colorAccent</item>
-        <item name="android:colorBackground">@color/colorBackground4</item>
+        <item name="android:colorBackground">@color/colorDialogBackground</item>
         <item name="android:dialogCornerRadius">24dp</item>
     </style>
 </resources>

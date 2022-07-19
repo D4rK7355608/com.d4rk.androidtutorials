@@ -27,39 +27,27 @@ class AboutFragment : Fragment(R.layout.fragment_about) {
         }
         binding.itemSettingsMoreAboutIcon.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://sites.google.com/view/d4rk7355608"))
-            if (intent.resolveActivity(requireContext().packageManager) != null) {
-                startActivity(intent)
-            }
+            startActivity(intent)
         }
         binding.itemSettingsMoreAboutGoogleDev.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://developers.google.com/profile/u/D4rK7355608"))
-            if (intent.resolveActivity(requireContext().packageManager) != null) {
-                startActivity(intent)
-            }
+            startActivity(intent)
         }
         binding.itemSettingsMoreAboutYoutube.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/c/D4rK7355608"))
-            if (intent.resolveActivity(requireContext().packageManager) != null) {
-                startActivity(intent)
-            }
+            startActivity(intent)
         }
         binding.itemSettingsMoreAboutGithub.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/D4rK7355608/com.d4rk.androidtutorials"))
-            if (intent.resolveActivity(requireContext().packageManager) != null) {
-                startActivity(intent)
-            }
+            startActivity(intent)
         }
         binding.itemSettingsMoreAboutTwitter.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/D4rK7355608"))
-            if (intent.resolveActivity(requireContext().packageManager) != null) {
-                startActivity(intent)
-            }
+            startActivity(intent)
         }
         binding.itemSettingsMoreAboutXda.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://forum.xda-developers.com/m/d4rk7355608.10095012"))
-            if (intent.resolveActivity(requireContext().packageManager) != null) {
-                startActivity(intent)
-            }
+            startActivity(intent)
         }
         binding.itemSettingsMoreAboutLibraries.setOnClickListener {
             OssLicensesMenuActivity.setActivityTitle(getString(R.string.libraries))

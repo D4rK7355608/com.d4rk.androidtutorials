@@ -5,6 +5,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
@@ -12,8 +13,7 @@ import androidx.preference.PreferenceManager
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.databinding.SettingsActivityBinding
 import com.google.android.material.textview.MaterialTextView
-import com.kieronquinn.monetcompat.app.MonetCompatActivity
-class SettingsActivity : MonetCompatActivity(), SharedPreferences.OnSharedPreferenceChangeListener {
+class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceChangeListener {
     private lateinit var binding: SettingsActivityBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

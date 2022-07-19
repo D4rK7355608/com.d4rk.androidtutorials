@@ -12,7 +12,7 @@
         app:layout_constraintBottom_toTopOf="@+id/tableRow"
         app:layout_constraintTop_toTopOf="@+id/tableRow"
         tools:context=".ui.android.sdk.AndroidSDK">
-        <androidx.appcompat.widget.AppCompatTextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/androidSdkText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -21,7 +21,7 @@
             android:text="This is an overview of all Android versions and their corresponding identifiers for Android developers. Anyone is welcome to open an issue or pull request. Happy developing!"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
-        <androidx.appcompat.widget.AppCompatTextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/androidText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -32,12 +32,11 @@
             app:layout_constraintTop_toBottomOf="@id/androidSdkText"
             tools:ignore="HardcodedText"/>
         <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.Material3.CardView.Elevated"
             android:id="@+id/tableCardLayout"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            app:strokeWidth="0dp"
             app:cardCornerRadius="24dp"
-            app:cardBackgroundColor="@color/colorBackground3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/androidText">
@@ -55,27 +54,27 @@
                     android:layout_height="wrap_content"
                     android:divider="@color/colorAccent"
                     android:showDividers="middle">
-                    <androidx.appcompat.widget.AppCompatTextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
                         android:text="Version"
                         android:textSize="11sp"
                         tools:ignore="HardcodedText"/>
-                    <androidx.appcompat.widget.AppCompatTextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
-                        android:text="SDK / API level"
+                        android:text="SDK/API level"
                         android:textSize="11sp"
                         tools:ignore="HardcodedText" />
-                    <androidx.appcompat.widget.AppCompatTextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
                         android:text="Version code"
                         android:textSize="11sp"
                         tools:ignore="HardcodedText"/>
-                    <androidx.appcompat.widget.AppCompatTextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
                         android:text="Codename"
                         android:textSize="11sp"
                         tools:ignore="HardcodedText" />
-                    <androidx.appcompat.widget.AppCompatTextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
                         android:text="Year"
                         android:textSize="11sp"
@@ -86,25 +85,25 @@
                     android:layout_height="wrap_content"
                     android:divider="@color/colorAccent"
                     android:showDividers="middle">
-                    <androidx.appcompat.widget.AppCompatTextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
                         android:text="1.0"
                         android:textSize="11sp"
                         tools:ignore="HardcodedText"/>
-                    <androidx.appcompat.widget.AppCompatTextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:text="1"
                         android:textSize="11sp"
                         tools:ignore="HardcodedText"/>
-                    <androidx.appcompat.widget.AppCompatTextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:text="BASE"
                         android:textSize="11sp"
                         tools:ignore="HardcodedText"/>
-                    <androidx.appcompat.widget.AppCompatTextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:text="None"
                         tools:ignore="HardcodedText"
                         android:textSize="11sp"
                         android:textStyle="italic"/>
-                    <androidx.appcompat.widget.AppCompatTextView
+                    <com.google.android.material.textview.MaterialTextView
                         tools:ignore="HardcodedText"
                         android:textSize="11sp"
                         android:text="2008"/>
@@ -114,24 +113,24 @@
                     android:layout_height="wrap_content"
                     android:divider="@color/colorAccent"
                     android:showDividers="middle">
-                    <androidx.appcompat.widget.AppCompatTextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
                         tools:ignore="HardcodedText"
                         android:textSize="11sp"
                         android:text="1.1"/>
-                    <androidx.appcompat.widget.AppCompatTextView
+                    <com.google.android.material.textview.MaterialTextView
                         tools:ignore="HardcodedText"
                         android:textSize="11sp"
                         android:text="2"/>
-                    <androidx.appcompat.widget.AppCompatTextView
+                    <com.google.android.material.textview.MaterialTextView
                         tools:ignore="HardcodedText"
                         android:textSize="11sp"
                         android:text="BASE_1_1"/>
-                    <androidx.appcompat.widget.AppCompatTextView
+                    <com.google.android.material.textview.MaterialTextView
                         tools:ignore="HardcodedText"
                         android:textSize="11sp"
                         android:text="Petit Four"/>
-                    <androidx.appcompat.widget.AppCompatTextView
+                    <com.google.android.material.textview.MaterialTextView
                         tools:ignore="HardcodedText"
                         android:textSize="11sp"
                         android:text="2009"/>
@@ -307,7 +306,7 @@
                         android:gravity="center"
                         tools:ignore="HardcodedText"
                         android:textSize="11sp"
-                        android:text="2.3.0 / 2.3.2"/>
+                        android:text="2.3.0/2.3.2"/>
                     <androidx.appcompat.widget.AppCompatTextView
                         tools:ignore="HardcodedText"
                         android:textSize="11sp"
@@ -334,7 +333,7 @@
                         android:gravity="center"
                         tools:ignore="HardcodedText"
                         android:textSize="11sp"
-                        android:text="2.3.3 / 2.3.7"/>
+                        android:text="2.3.3/2.3.7"/>
                     <androidx.appcompat.widget.AppCompatTextView
                         tools:ignore="HardcodedText"
                         android:textSize="11sp"
@@ -441,7 +440,7 @@
                         android:gravity="center"
                         tools:ignore="HardcodedText"
                         android:textSize="11sp"
-                        android:text="4.0.1 / 4.0.2"/>
+                        android:text="4.0.1/4.0.2"/>
                     <androidx.appcompat.widget.AppCompatTextView
                         tools:ignore="HardcodedText"
                         android:textSize="11sp"
@@ -468,7 +467,7 @@
                         android:gravity="center"
                         tools:ignore="HardcodedText"
                         android:textSize="11sp"
-                        android:text="4.0.3 / 4.0.4"/>
+                        android:text="4.0.3/4.0.4"/>
                     <androidx.appcompat.widget.AppCompatTextView
                         tools:ignore="HardcodedText"
                         android:textSize="11sp"

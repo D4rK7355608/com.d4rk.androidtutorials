@@ -1,0 +1,24 @@
+package com.dev.example
+import android.content.Intent
+import android.os.Bundle
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.dev.example.R
+import com.dev.example.databinding.ActivityMainBinding
+class MainActivity : AppCompatActivity() {
+    private lateinit var binding : ActivityMainBinding
+    private var edittext: EditText? = null
+    private var button: Button? = null
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        addKeyListener()
+    }
+    private fun addKeyListener() {
+        edittext = findViewById<View>(R.id.editText) as EditText
+        binding.button1.setOnClickListener {
+            Toast.makeText(this, edittext.text, Toast.LENGTH_LONG).show()
+        }
+    }
+}

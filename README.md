@@ -45,6 +45,7 @@ __🖤 Android Studio Tutorials is 100% Free, Open Source and helps you learn An
 
 ## 🛠️ Features!
 - ⭐️ Kotlin & XML examples.
+- ⭐️ Binding examples.
 - ⭐️ Easy to understand examples.
 - ⭐️ No internet required.
 - ⭐️ Adaptive themes + Material-You.
@@ -56,7 +57,7 @@ __❗Note❗__ Some features are still in progress or needs more improvements an
 
 ## 📝 Changelog [here](https://raw.githubusercontent.com/D4rK7355608/com.d4rk.androidtutorials/master/CHANGELOG.md)!
 
-## 🖼️ Screenshots:
+## 🖼️ App preview:
 
 <img src="/app/src/main/play/listings/en-US/graphics/phone-screenshots/1-screenshot_main.png"  width="400">
 

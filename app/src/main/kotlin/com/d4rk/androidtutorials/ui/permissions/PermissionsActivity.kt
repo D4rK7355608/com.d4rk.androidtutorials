@@ -1,10 +1,10 @@
 package com.d4rk.androidtutorials.ui.permissions
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceFragmentCompat
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.databinding.PermissionsActivityBinding
-import com.kieronquinn.monetcompat.app.MonetCompatActivity
-class PermissionsActivity : MonetCompatActivity() {
+class PermissionsActivity : AppCompatActivity() {
     private lateinit var binding: PermissionsActivityBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
