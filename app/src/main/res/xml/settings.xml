@@ -28,13 +28,13 @@
             android:icon="@drawable/ic_privacy_policy"
             app:title="@string/privacy_policy">
             <intent android:action="android.intent.action.VIEW"
-                android:data="https://sites.google.com/view/d4rk7355608/more/apps/android-studio-tutorials/privacy-policy"/>
+                android:data="https://sites.google.com/view/d4rk7355608/more/apps/privacy-policy"/>
         </androidx.preference.Preference>
         <androidx.preference.Preference
             android:icon="@drawable/ic_terms_of_service"
             app:title="@string/terms_of_service">
             <intent android:action="android.intent.action.VIEW"
-                android:data="https://sites.google.com/view/d4rk7355608/more/apps/android-studio-tutorials/terms-of-service"/>
+                android:data="https://sites.google.com/view/d4rk7355608/more/apps/terms-of-service"/>
         </androidx.preference.Preference>
         <androidx.preference.Preference
             android:icon="@drawable/ic_code_of_conduct"

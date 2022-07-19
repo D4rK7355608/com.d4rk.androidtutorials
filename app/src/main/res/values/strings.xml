@@ -80,8 +80,10 @@
     <string name="implement_buttons">Implement buttons</string>
     <string name="implement_buttons_sum">Discover more things about general buttons and what you can do with them. Learn how to make them look beauty and clean.</string>
     <string name="still_in_progress">Still in Progress…</string>
-    <string name="changes"><b>Version 1.0_r1:\n</b>
-        • Initial stable version.
+    <string name="changes"><b>Version 1.0_r2:\n</b>
+        • Updated policy and terms of service;\n
+        • Added SoftInputMode for TextBox;\n
+        • Under the hood improvements.
         <br> </br>
     </string>
 </resources>

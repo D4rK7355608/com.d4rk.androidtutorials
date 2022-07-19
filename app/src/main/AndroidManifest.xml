@@ -39,6 +39,7 @@
         <activity
             android:name=".ui.android.textbox.TextboxActivity"
             android:exported="false"
+            android:windowSoftInputMode="adjustResize"
             android:label="@string/textbox">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
