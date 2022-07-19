@@ -84,7 +84,7 @@ Rate us 5 stars ⭐⭐⭐⭐⭐ if you are happy with the app.
 
 [<img src="https://raw.githubusercontent.com/steverichey/google-play-badge-svg/master/img/en_get.svg" alt="Get it on Google Play" height="90">](https://play.google.com/store/apps/details?id=com.d4rk.androidtutorials)
 
-__Privacy Policy__ [here](https://sites.google.com/view/d4rk7355608/more/apps/android-studio-tutorials/privacy-policy).
-__Terms of Service__ [here](https://sites.google.com/view/d4rk7355608/more/apps/android-studio-tutorials/terms-of-service).
+__Privacy Policy__ [here](https://sites.google.com/view/d4rk7355608/more/apps/privacy-policy).
+__Terms of Service__ [here](https://sites.google.com/view/d4rk7355608/more/apps/terms-of-service).
 
 ![license](https://imgur.com/QQlcEVT.png)
