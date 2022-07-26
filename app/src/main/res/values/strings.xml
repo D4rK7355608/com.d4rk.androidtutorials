@@ -41,6 +41,14 @@
     <string name="android_sdk_sum">Android SDKs are used to recognize Android versions by numbers for every version of Android.</string>
     <string name="android_start">Start a new project…</string>
     <string name="android_start_sum">Learn the base of how to start a new Android Studio project, how to configure, how to set package, API levels and many more…</string>
+    <string name="implement_alert_dialog">Implement Alert Dialog</string>
+    <string name="implement_alert_dialog_sum">A dialog is a small window that prompts the user to make a decision or enter additional information. A dialog does not fill the screen and is normally used for modal events that require users to take an action before they can proceed.</string>
+    <string name="show_dialog">Show Alert Dialog</string>
+    <string name="alert_dialog">Alert Dialog</string>
+    <string name="alert_dialog_button_positive">O.K.</string>
+    <string name="alert_dialog_button_negative">Cancel</string>
+    <string name="alert_dialog_title">Your title</string>
+    <string name="alert_dialog_message">This will be the message you will see on screen!</string>
     <string name="android_implementations">Android implementations.</string>
     <string name="implement_toggle">Implement toggle &amp; switches buttons</string>
     <string name="toggle_sum">Discover more things about toggle buttons and what you can do with them. Learn implementations of toggle buttons here. Also learn how to make them look beauty and clean.</string>
@@ -64,6 +72,7 @@
     <string name="implement_textbox">Implement Text Box</string>
     <string name="implement_textbox_sum">A user interface element for entering and modifying text. When you define an edit text widget, you must specify the R.styleable.TextView_inputType attribute…</string>
     <string name="open_me">Open me :)</string>
+    <string name="language_selected">Language already selected!</string>
     <string name="buttonToast">Normal button clicked!</string>
     <string name="button2Toast">Outlined button clicked!</string>
     <string name="button3Toast">Elevated button clicked!</string>
@@ -80,9 +89,11 @@
     <string name="implement_buttons">Implement buttons</string>
     <string name="implement_buttons_sum">Discover more things about general buttons and what you can do with them. Learn how to make them look beauty and clean.</string>
     <string name="still_in_progress">Still in Progress…</string>
-    <string name="changes"><b>Version 1.0_r2:\n</b>
-        • Updated policy and terms of service;\n
-        • Added SoftInputMode for TextBox;\n
+    <string name="changes"><b>Version 1.1_r1:\n</b>
+        • Minor tweaks;\n
+        • Fixed minor &amp; major bugs;\n
+        • Fixed Text Box lesson;\n
+        • Added alert dialog lesson;\n
         • Under the hood improvements.
         <br> </br>
     </string>

@@ -9,7 +9,7 @@
 ![GitHub Pull Requests](https://img.shields.io/github/issues-pr/D4rK7355608/com.d4rk.androidtutorials?style=for-the-badge&logo=github)
 ![GitHub License](https://img.shields.io/github/license/D4rK7355608/com.d4rk.androidtutorials?style=for-the-badge&logo=github)
 
-## 📱Android Studio Tutorials📱
+## 📱 Android Studio Tutorials 📱
 
 - ╔╦╦╦═╦╗╔═╦═╦══╦═╗
 - ║║║║╩╣╚╣═╣║║║║║╩╣
@@ -17,7 +17,7 @@
 
 ## Learn how to make simple apps in Android Studio. 📱
 
-Start learning Android Studio!
+Start learning Android Studio! 📱
 
 Android Studio Tutorials app is a guide on developing Android apps using Android Studio IDE. Tutorials helps you building your first Android app. In the app, you can also learn the basic concepts of android app development using Android Studio. It also contains examples with complete source codes.
 

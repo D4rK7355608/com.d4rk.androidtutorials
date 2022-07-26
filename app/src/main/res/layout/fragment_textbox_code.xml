@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.android.buttons.tabs.ButtonsTabCodeFragment">
+    tools:context=".ui.android.textbox.tabs.TextboxTabCodeFragment">
     <com.google.android.material.card.MaterialCardView
         style="@style/Widget.Material3.CardView.Elevated"
         android:id="@+id/materialCardView3"

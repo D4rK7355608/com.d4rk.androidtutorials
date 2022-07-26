@@ -8,7 +8,6 @@
     tools:context=".ui.android.toggle.tabs.ToggleTabCodeFragment">
     <com.google.android.material.card.MaterialCardView
         style="@style/Widget.Material3.CardView.Elevated"
-        android:id="@+id/materialCardView5"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="24dp"

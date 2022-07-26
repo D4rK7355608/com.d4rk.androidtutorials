@@ -35,33 +35,21 @@
             <RadioGroup
                 android:id="@+id/languageGroup"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="12dp">
-                <com.google.android.material.radiobutton.MaterialRadioButton
+                android:layout_margin="12dp"
+                android:layout_height="wrap_content">
+                <androidx.appcompat.widget.AppCompatRadioButton
                     android:id="@+id/romanianButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layoutDirection="rtl"
                     android:text="@string/language_ro"/>
-                <com.google.android.material.radiobutton.MaterialRadioButton
+                <androidx.appcompat.widget.AppCompatRadioButton
                     android:id="@+id/englishButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layoutDirection="rtl"
                     android:text="@string/language_en"/>
-                <com.google.android.material.radiobutton.MaterialRadioButton
-                    android:id="@+id/bulgarButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layoutDirection="rtl"
-                    android:text="@string/language_bu"/>
             </RadioGroup>
-            <com.google.android.material.textview.MaterialTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center|bottom"
-                android:layout_marginBottom="45dp"
-                android:text="@string/still_in_progress"/>
         </LinearLayout>
         <com.airbnb.lottie.LottieAnimationView
             android:layout_width="wrap_content"

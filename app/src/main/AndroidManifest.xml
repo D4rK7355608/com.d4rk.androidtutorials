@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.d4rk.androidtutorials">
     <uses-permission android:name="android.permission.INTERNET"/>
     <queries>
@@ -21,12 +22,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppThemeActionBar">
         <activity
-            android:name=".ui.settings.LanguageActivity"
+            android:name=".ui.language.LanguageActivity"
             android:label="@string/language"
-            android:exported="false">
+            android:screenOrientation="portrait"
+            android:exported="false"
+            tools:ignore="LockedOrientationActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.settings.LanguageActivity"/>
+                android:value=".ui.language.LanguageActivity"/>
         </activity>
         <activity
             android:name=".ui.android.toggle.ToggleCodeActivity"
@@ -44,6 +47,30 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.android.textbox.TextboxActivity"/>
+        </activity>
+        <activity
+            android:name=".ui.android.textbox.TextboxCodeActivity"
+            android:exported="false"
+            android:label="@string/textbox">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.android.textbox.TextboxCodeActivity"/>
+        </activity>
+        <activity
+            android:name=".ui.android.alertdialog.AlertDialogActivity"
+            android:exported="false"
+            android:label="@string/alert_dialog">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.android.alertdialog.AlertDialogActivity"/>
+        </activity>
+        <activity
+            android:name=".ui.android.alertdialog.AlertDialogCodeActivity"
+            android:exported="false"
+            android:label="@string/alert_dialog">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.android.alertdialog.AlertDialogCodeActivity"/>
         </activity>
         <activity
             android:name=".ui.permissions.PermissionsActivity"

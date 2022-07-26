@@ -52,5 +52,14 @@
                 android:targetPackage="com.d4rk.androidtutorials"
                 android:targetClass="com.d4rk.androidtutorials.ui.android.textbox.TextboxActivity"/>
         </androidx.preference.Preference>
+        <androidx.preference.Preference
+            android:title="@string/implement_alert_dialog"
+            android:summary="@string/implement_alert_dialog_sum"
+            android:icon="@drawable/ic_alert">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="com.d4rk.androidtutorials"
+                android:targetClass="com.d4rk.androidtutorials.ui.android.alertdialog.AlertDialogActivity"/>
+        </androidx.preference.Preference>
     </androidx.preference.PreferenceCategory>
 </androidx.preference.PreferenceScreen>

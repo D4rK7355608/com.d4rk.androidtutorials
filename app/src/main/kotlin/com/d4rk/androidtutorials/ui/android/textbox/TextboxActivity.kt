@@ -7,7 +7,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.databinding.ActivityTextboxBinding
-import com.d4rk.androidtutorials.ui.android.buttons.ButtonsCodeActivity
 class TextboxActivity : AppCompatActivity() {
     private lateinit var binding : ActivityTextboxBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,7 +14,7 @@ class TextboxActivity : AppCompatActivity() {
         binding = ActivityTextboxBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.showButtonCodeSyntax.setOnClickListener {
-            val intent = Intent(this, ButtonsCodeActivity::class.java)
+            val intent = Intent(this, TextboxCodeActivity::class.java)
             startActivity(intent)
         }
         addKeyListener()

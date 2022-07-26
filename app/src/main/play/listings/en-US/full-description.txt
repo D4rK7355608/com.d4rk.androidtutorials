@@ -1,10 +1,10 @@
-📱Android Studio Tutorials📱
+📱  Android Studio Tutorials 📱
 
 ╔╦╦╦═╦╗╔═╦═╦══╦═╗
 ║║║║╩╣╚╣═╣║║║║║╩╣
 ╚══╩═╩═╩═╩═╩╩╩╩═╝
 
-Start learning Android Studio!
+Start learning Android Studio! 📱
 
 Android Studio Tutorials app is a guide on developing Android apps using Android Studio IDE. Tutorials helps you building your first Android app. In the app, you can also learn the basic concepts of android app development using Android Studio. It also contains examples with complete source codes.
 
