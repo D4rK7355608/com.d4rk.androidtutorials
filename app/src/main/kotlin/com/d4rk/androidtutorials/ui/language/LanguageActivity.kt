@@ -53,7 +53,7 @@ class LanguageActivity : MonetCompatActivity() {
             editor.putInt("CheckedId", checkedId)
             editor.apply()
         }
-        binding.romanianButton.setOnClickListener {
+        binding.russianButton.setOnClickListener {
             setLocale("ro")
         }
         binding.englishButton.setOnClickListener {

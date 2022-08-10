@@ -21,6 +21,15 @@
                 android:targetPackage="com.d4rk.androidtutorials"
                 android:targetClass="com.d4rk.androidtutorials.ui.android.sdk.AndroidSDK"/>
         </androidx.preference.Preference>
+        <androidx.preference.Preference
+            android:title="@string/view_binding"
+            android:summary="@string/view_binding_sum"
+            android:icon="@drawable/ic_code_binding">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="com.d4rk.androidtutorials"
+                android:targetClass="com.d4rk.androidtutorials.ui.android.viewbinding.ViewBindingTutorialActivity"/>
+        </androidx.preference.Preference>
     </androidx.preference.PreferenceCategory>
     <androidx.preference.PreferenceCategory
         android:title="@string/android_implementations"
@@ -60,6 +69,33 @@
                 android:action="android.intent.action.VIEW"
                 android:targetPackage="com.d4rk.androidtutorials"
                 android:targetClass="com.d4rk.androidtutorials.ui.android.alertdialog.AlertDialogActivity"/>
+        </androidx.preference.Preference>
+        <androidx.preference.Preference
+            android:title="@string/clock_implementations"
+            android:summary="@string/clock_implementations_sum"
+            android:icon="@drawable/ic_clock">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="com.d4rk.androidtutorials"
+                android:targetClass="com.d4rk.androidtutorials.ui.android.clock.ClockActivity"/>
+        </androidx.preference.Preference>
+        <androidx.preference.Preference
+            android:title="@string/timepicker_implementations"
+            android:summary="@string/timepicker_implementations_sum"
+            android:icon="@drawable/ic_time">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="com.d4rk.androidtutorials"
+                android:targetClass="com.d4rk.androidtutorials.ui.android.timepicker.TimePickerActivity"/>
+        </androidx.preference.Preference>
+        <androidx.preference.Preference
+            android:title="@string/datepicker_implementations"
+            android:summary="@string/datepicker_implementations_sum"
+            android:icon="@drawable/ic_event">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="com.d4rk.androidtutorials"
+                android:targetClass="com.d4rk.androidtutorials.ui.android.datepicker.DatePickerActivity"/>
         </androidx.preference.Preference>
     </androidx.preference.PreferenceCategory>
 </androidx.preference.PreferenceScreen>

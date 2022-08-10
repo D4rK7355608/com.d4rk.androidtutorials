@@ -1,3 +1,14 @@
+# Version 1.2_r1:
+- Added Russian language;
+- Added View Binding lesson;
+- Added Clock lesson;
+- Added Date Picker lesson;
+- Added Time Picker lesson;
+- Added new splash screen;
+- Minor tweaks;
+- Fixed minor & major bugs;
+- Under the hood improvements.
+
 # Version 1.1_r1:
 - Minor tweaks;
 - Fixed minor & major bugs;

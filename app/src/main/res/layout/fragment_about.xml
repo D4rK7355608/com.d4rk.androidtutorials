@@ -152,8 +152,8 @@
         android:layout_width="match_parent"
         android:layout_height="198dp"
         android:layout_gravity="bottom"
-        android:layout_marginBottom="76dp"
         app:lottie_autoPlay="true"
         app:lottie_rawRes="@raw/anim_phone"
-        app:lottie_loop="false" app:lottie_speed="0.25"/>
+        app:lottie_loop="false"
+        app:lottie_speed="0.25"/>
 </FrameLayout>

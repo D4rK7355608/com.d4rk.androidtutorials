@@ -1,0 +1,8 @@
+<resources>
+    <string-array name="dark_mode_entries">
+        <item>Следуйте системе</item>
+        <item>Легкий режим</item>
+        <item>Темный режим</item>
+        <item>Автоматический темный режим батареи</item>
+    </string-array>
+</resources>

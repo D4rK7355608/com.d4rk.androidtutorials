@@ -14,9 +14,10 @@
     <string name="libraries">Third Party Libraries</string>
     <string name="more">More</string>
     <string name="cool">Cool!</string>
-    <string name="music_sleep_timer">Music Sleep Timer.</string>
-    <string name="english_with_lidia">English with Lidia.</string>
-    <string name="qr_code_scanner">QR &amp; Bar Code Scanner.</string>
+    <string name="music_sleep_timer" translatable="false">Music Sleep Timer.</string>
+    <string name="english_with_lidia" translatable="false">English with Lidia.</string>
+    <string name="qr_code_scanner" translatable="false">QR &amp; Bar Code Scanner.</string>
+    <string name="low_brightness" translatable="false">Low Brightness.</string>
     <string name="feedback_toast">Thanks for rating us!</string>
     <string name="privacy_policy">Privacy policy.</string>
     <string name="license">License.</string>
@@ -35,7 +36,7 @@
     <string name="rate_us">Rate our app!</string>
     <string name="permissions">Permissions.</string>
     <string name="theme">Theme.</string>
-    <string name="theme_def_value">MODE_NIGHT_FOLLOW_SYSTEM</string>
+    <string name="theme_def_value" translatable="false">MODE_NIGHT_FOLLOW_SYSTEM</string>
     <string name="settings">Settings</string>
     <string name="android_sdk">Android SDKs</string>
     <string name="android_sdk_sum">Android SDKs are used to recognize Android versions by numbers for every version of Android.</string>
@@ -48,6 +49,36 @@
     <string name="alert_dialog_button_positive">O.K.</string>
     <string name="alert_dialog_button_negative">Cancel</string>
     <string name="alert_dialog_title">Your title</string>
+    <string name="no_kotlin_code_needed">No Kotlin code required for this activity.</string>
+    <string name="current_time">Current Time</string>
+    <string name="change_time">Change Time</string>
+    <string name="timepicker">Time Picker</string>
+    <string name="binding_sum">View binding is a feature that allows you to more easily write code that interacts with views. Once view binding is enabled in a module, it generates a binding class for each XML layout file present in that module. An instance of a binding class contains direct references to all views that have an ID in the corresponding layout.</string>
+    <string name="sdk_sum">This is an overview of all Android versions and their corresponding identifiers for Android developers. Anyone is welcome to open an issue or pull request. Happy developing!</string>
+    <string name="more_about_view_binding">More about View Binding</string>
+    <string name="setup_instructions">Setup instructions</string>
+    <string name="enable_binding_instructions_sum">View binding is enabled on a module by module basis. To enable view binding in a module, set the viewBinding build option to true in the module-level build.gradle file, as shown in the following example:</string>
+    <string name="use_view_binding_in_activities">Use view binding in activities</string>
+    <string name="use_view_binding_in_fragments">Use view binding in fragments</string>
+    <string name="view_binding">View Binding</string>
+    <string name="view_binding_sum">New in Android Studio 3.6, view binding gives you the ability to replace findViewById with generated binding objects to simplify code, remove bugs, and avoid all the boilerplate of findViewById.</string>
+    <string name="support_me">Support me.</string>
+    <string name="support_me_sum">Click here if you want to support me without paying money. Just some time for viewing an add.</string>
+    <string name="timepicker_implementations">Implement Time Picker</string>
+    <string name="timepicker_implementations_sum">Android TimePicker is a user interface control for selecting the time in either 24-hour format or AM/PM mode. It is used to ensure that users pick the valid time for the day in our application. The time picker interface exists basically in two modes one is under XML layout and another is a dialog.</string>
+    <string name="clock">Clock</string>
+    <string name="clock_analog">Analog Clock</string>
+    <string name="clock_text">Text Clock</string>
+    <string name="clock_digital">Digital Clock</string>
+    <string name="clock_desc">Important Note: Digital clock is deprecated in version API 17. From API level 17 you can use TextClock instead of digital clock. Below is the description of Text clock in android.</string>
+    <string name="clock_implementations">Implement Digital, Analog &amp; Text Clock</string>
+    <string name="clock_implementations_sum">A simple way to add digital, analog or text clock in your Android app.</string>
+    <string name="datepicker">Date Picker</string>
+    <string name="current_date">Current Date</string>
+    <string name="change_date">Change Date</string>
+    <string name="datepicker_desc">Important Note: Digital clock is deprecated in version API 17. From API level 17 you can use TextClock instead of digital clock. Below is the description of Text clock in android.</string>
+    <string name="datepicker_implementations">Implement Date Picker</string>
+    <string name="datepicker_implementations_sum">Android provides controls for the user to pick a time or pick a date as ready-to-use dialogs. Each picker provides controls for selecting each part of the time (hour, minute, AM/PM) or date (month, day, year). Using these pickers helps ensure that your users can pick a time or date that is valid, formatted correctly, and adjusted to the user\'s locale.</string>
     <string name="alert_dialog_message">This will be the message you will see on screen!</string>
     <string name="android_implementations">Android implementations.</string>
     <string name="implement_toggle">Implement toggle &amp; switches buttons</string>
@@ -82,18 +113,20 @@
     <string name="code_kotlin">Kotlin</string>
     <string name="layout_xml">XML</string>
     <string name="language">Language</string>
-    <string name="language_en">English (International)</string>
-    <string name="language_ro">Romana (Romania)</string>
-    <string name="language_bu">Bulgar (Bulgaria)</string>
+    <string name="language_en" translatable="false">English (International)</string>
+    <string name="language_ru" translatable="false">Russian (Russia)</string>
     <string name="buttons">Buttons</string>
     <string name="implement_buttons">Implement buttons</string>
     <string name="implement_buttons_sum">Discover more things about general buttons and what you can do with them. Learn how to make them look beauty and clean.</string>
-    <string name="still_in_progress">Still in Progress…</string>
-    <string name="changes"><b>Version 1.1_r1:\n</b>
+    <string name="changes" translatable="false"><b>Version 1.2_r1:\n</b>
+        • Added Russian language;\n
+        • Added View Binding lesson;\n
+        • Added Clock lesson;\n
+        • Added Date Picker lesson;\n
+        • Added Time Picker lesson;\n
+        • Added new splash screen;\n
         • Minor tweaks;\n
         • Fixed minor &amp; major bugs;\n
-        • Fixed Text Box lesson;\n
-        • Added alert dialog lesson;\n
         • Under the hood improvements.
         <br> </br>
     </string>

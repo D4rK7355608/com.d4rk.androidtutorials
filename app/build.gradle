@@ -7,12 +7,12 @@ plugins {
 }
 android {
     compileSdk 32
-    def tagName = '1.1_r1'
+    def tagName = '1.2_r1'
     defaultConfig {
         applicationId "com.d4rk.androidtutorials"
         minSdk 26
         targetSdk 32
-        versionCode 7
+        versionCode 10
         versionName tagName
         archivesBaseName = "com.d4rk.androidtutorials-v${versionName}"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -47,8 +47,8 @@ android {
     }
 }
 dependencies {
-    implementation platform('com.google.firebase:firebase-bom:30.3.0')
-    implementation 'com.google.firebase:firebase-crashlytics-ktx:18.2.11'
+    implementation platform('com.google.firebase:firebase-bom:30.3.2')
+    implementation 'com.google.firebase:firebase-crashlytics-ktx:18.2.12'
     implementation 'com.google.firebase:firebase-analytics-ktx:21.1.0'
     implementation 'com.google.firebase:firebase-perf:20.1.0'
     implementation 'com.google.android.material:material:1.6.1'
@@ -58,11 +58,12 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.core:core-splashscreen:1.0.0'
     implementation 'androidx.gridlayout:gridlayout:1.0.0'
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.0'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.0'
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.0'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.5.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.1'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.1'
     implementation 'androidx.preference:preference-ktx:1.2.0'
     implementation 'com.airbnb.android:lottie:5.2.0'
     implementation 'com.github.KieronQuinn:MonetCompat:0.4.1'

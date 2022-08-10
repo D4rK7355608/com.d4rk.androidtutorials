@@ -16,33 +16,30 @@
         app:layout_constraintTop_toTopOf="parent"
         app:lottie_autoPlay="true"
         app:lottie_loop="false"
-        app:lottie_rawRes="@raw/anim_android_studio"
-        app:lottie_speed="1"/>
+        app:lottie_rawRes="@raw/anim_android_studio"/>
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/learningAnimation"
         android:layout_width="379dp"
-        android:layout_height="232dp"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="260dp"
+        android:layout_height="239dp"
+        android:layout_marginBottom="216dp"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/anim_learning"
-        app:lottie_speed="1"/>
+        app:lottie_rawRes="@raw/anim_learning"/>
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/materialCardView"
+        style="@style/Widget.Material3.CardView.Elevated"
         android:layout_width="0dp"
-        android:layout_height="266dp"
+        android:layout_height="228dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        style="@style/Widget.Material3.CardView.Elevated"
-        app:cardCornerRadius="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.CardView">
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/helloWorldAnimation"
             android:layout_width="match_parent"

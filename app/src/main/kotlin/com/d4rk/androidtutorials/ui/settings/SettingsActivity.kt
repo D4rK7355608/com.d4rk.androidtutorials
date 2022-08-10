@@ -49,6 +49,7 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
                     val musicSleepTimerString: MaterialTextView = view.findViewById(R.id.musicSleepTimerString)
                     val englishWithLidiaString: MaterialTextView = view.findViewById(R.id.englishWithLidiaString)
                     val qrCodeScannerString: MaterialTextView = view.findViewById(R.id.qrCodeScannerString)
+                    val lowBrightnessString: MaterialTextView = view.findViewById(R.id.lowBrightnessString)
                     alertDialog.setView(view)
                     alertDialog.create()
                     view.findViewById<View?>(R.id.musicSleepTimer)?.setOnClickListener {
@@ -73,6 +74,14 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
                     }
                     qrCodeScannerString.setOnClickListener {
                         val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.d4rk.qrcodescanner.plus"))
+                        startActivity(intent)
+                    }
+                    view.findViewById<View?>(R.id.lowBrightness)?.setOnClickListener {
+                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.d4rk.lowbrightness"))
+                        startActivity(intent)
+                    }
+                    lowBrightnessString.setOnClickListener {
+                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.d4rk.lowbrightness"))
                         startActivity(intent)
                     }
                     alertDialog.setNegativeButton(R.string.cool, null)
