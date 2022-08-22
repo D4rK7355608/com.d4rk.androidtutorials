@@ -1,3 +1,10 @@
+# Version 1.3_r1:
+- Added ads;
+- New target SDK;
+- Minor tweaks;
+- Fixed minor bugs;
+- Under the hood improvements.
+- 
 # Version 1.2_r1:
 - Added Russian language;
 - Added View Binding lesson;

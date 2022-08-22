@@ -23,7 +23,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="12dp"
+                android:padding="16dp"
                 android:textIsSelectable="true"
                 android:id="@+id/toggleCodeText"/>
         </me.zhanghai.android.fastscroll.FastScrollScrollView>

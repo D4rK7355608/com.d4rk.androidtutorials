@@ -2,7 +2,6 @@ private var _binding: ResultProfileBinding? = null
 // This property is only valid between onCreateView and
 // onDestroyView.
 private val binding get() = _binding!!
-
 override fun onCreateView(
     inflater: LayoutInflater,
     container: ViewGroup?,
@@ -12,7 +11,6 @@ override fun onCreateView(
     val view = binding.root
     return view
 }
-
 override fun onDestroyView() {
     super.onDestroyView()
     _binding = null

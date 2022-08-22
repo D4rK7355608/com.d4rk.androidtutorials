@@ -23,7 +23,7 @@ class AboutFragment : Fragment(R.layout.fragment_about) {
         binding.itemSettingsMoreAboutVersion.text = content
         binding.itemSettingsMoreAboutSettings.setOnClickListener {
             val intent = Intent (activity, SettingsActivity::class.java)
-            activity?.startActivity(intent)
+            startActivity(intent)
         }
         binding.itemSettingsMoreAboutIcon.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://sites.google.com/view/d4rk7355608"))

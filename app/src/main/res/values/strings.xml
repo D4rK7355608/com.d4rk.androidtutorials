@@ -118,15 +118,11 @@
     <string name="buttons">Buttons</string>
     <string name="implement_buttons">Implement buttons</string>
     <string name="implement_buttons_sum">Discover more things about general buttons and what you can do with them. Learn how to make them look beauty and clean.</string>
-    <string name="changes" translatable="false"><b>Version 1.2_r1:\n</b>
-        • Added Russian language;\n
-        • Added View Binding lesson;\n
-        • Added Clock lesson;\n
-        • Added Date Picker lesson;\n
-        • Added Time Picker lesson;\n
-        • Added new splash screen;\n
+    <string name="changes" translatable="false"><b>Version 1.3_r1:\n</b>
+        • Added ads;\n
+        • New target SDK;\n
         • Minor tweaks;\n
-        • Fixed minor &amp; major bugs;\n
+        • Fixed minor bugs;\n
         • Under the hood improvements.
         <br> </br>
     </string>

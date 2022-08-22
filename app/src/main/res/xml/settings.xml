@@ -64,8 +64,8 @@
         </androidx.preference.Preference>
         <androidx.preference.Preference
             android:icon="@drawable/ic_support"
-            app:title="Support me."
-            android:summary="Click here if you want to support me without paying money. Just some time for viewing an add.">
+            app:title="@string/support_me"
+            android:summary="@string/support_me_sum">
             <intent android:action="android.intent.action.VIEW"
                 android:data="https://bit.ly/3p8bpjj"/>
         </androidx.preference.Preference>
