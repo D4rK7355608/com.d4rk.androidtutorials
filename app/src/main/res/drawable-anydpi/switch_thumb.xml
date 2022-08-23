@@ -6,10 +6,10 @@
         android:right="4dp"
         android:top="4dp">
         <shape android:shape="oval">
-            <solid android:color="#000000" />
+            <solid android:color="#000000"/>
             <size
                 android:width="20dp"
-                android:height="20dp" />
+                android:height="20dp"/>
         </shape>
     </item>
 </layer-list>

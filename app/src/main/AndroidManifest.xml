@@ -211,6 +211,6 @@
             android:value="@integer/google_play_services_version"/>
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-5294151573817700~4228267194" />
+            android:value="ca-app-pub-5294151573817700~4228267194"/>
     </application>
 </manifest>
