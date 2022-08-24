@@ -100,6 +100,17 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
                     true
                 }
             }
+            val share: Preference? = findPreference("share")
+            if (share != null) {
+                share.onPreferenceClickListener = Preference.OnPreferenceClickListener {
+                    val sharingIntent = Intent(Intent.ACTION_SEND)
+                    sharingIntent.type = "text/plain"
+                    sharingIntent.putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=com.d4rk.androidtutorials")
+                    sharingIntent.putExtra(Intent.EXTRA_SUBJECT, R.string.share_subject)
+                    startActivity(Intent.createChooser(sharingIntent, getString(R.string.share_using)))
+                    true
+                }
+            }
         }
     }
 }

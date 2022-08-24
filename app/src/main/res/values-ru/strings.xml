@@ -111,4 +111,7 @@
     <string name="use_view_binding_in_fragments">Использовать привязку представления во фрагментах</string>
     <string name="view_binding">Посмотреть привязку</string>
     <string name="view_binding_sum">Новое в Android Studio 3.6, привязка представления дает вам возможность заменить findViewById сгенерированными объектами привязки, чтобы упростить код, удалить ошибки и избежать всех шаблонов findViewById.</string>
+    <string name="share">Делиться.</string>
+    <string name="share_subject">Попробуй это сейчас!!!</string>
+    <string name="share_using">Поделиться с помощью…</string>
 </resources>

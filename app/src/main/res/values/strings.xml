@@ -113,17 +113,17 @@
     <string name="code_kotlin">Kotlin</string>
     <string name="layout_xml">XML</string>
     <string name="language">Language</string>
+    <string name="share">Share.</string>
+    <string name="share_subject">Try it now!!!</string>
+    <string name="share_using">Share using…</string>
     <string name="language_en" translatable="false">English (International)</string>
     <string name="language_ru" translatable="false">Russian (Russia)</string>
     <string name="buttons">Buttons</string>
     <string name="implement_buttons">Implement buttons</string>
     <string name="implement_buttons_sum">Discover more things about general buttons and what you can do with them. Learn how to make them look beauty and clean.</string>
-    <string name="changes" translatable="false"><b>Version 1.3_r1:\n</b>
-        • Added ads;\n
-        • New target SDK;\n
-        • Minor tweaks;\n
-        • Fixed minor bugs;\n
-        • Under the hood improvements.
+    <string name="changes" translatable="false"><b>Version 1.3_r2:\n</b>
+        • Fixed crashes;\n
+        • Minor tweaks.
         <br> </br>
     </string>
 </resources>

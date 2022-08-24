@@ -8,12 +8,18 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.preference.PreferenceManager
 import com.d4rk.androidtutorials.ads.Ads
 import com.d4rk.androidtutorials.databinding.ActivityMainBinding
+import com.google.firebase.FirebaseApp
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.ktx.Firebase
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private lateinit var firebaseAnalytics: FirebaseAnalytics
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         @Suppress("UNUSED_VARIABLE")
         val splashScreen = installSplashScreen()
+        firebaseAnalytics = Firebase.analytics
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val navController by lazy {
@@ -33,7 +39,9 @@ class MainActivity : AppCompatActivity() {
                 override fun onShowAdComplete() {
                 }
             })
+        FirebaseApp.initializeApp(this)
     }
+    @Deprecated("Deprecated in Java", ReplaceWith("moveTaskToBack(true)"))
     override fun onBackPressed() {
         moveTaskToBack(true)
     }
