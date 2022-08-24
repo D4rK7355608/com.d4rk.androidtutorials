@@ -7,12 +7,12 @@ plugins {
 }
 android {
     compileSdk 33
-    def tagName = '1.3_r2'
+    def tagName = '1.3_r3'
     defaultConfig {
         applicationId "com.d4rk.androidtutorials"
         minSdk 26
         targetSdk 33
-        versionCode 12
+        versionCode 13
         versionName tagName
         multiDexEnabled true
         archivesBaseName = "com.d4rk.androidtutorials-v${versionName}"
@@ -24,15 +24,12 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            resValue "bool", "FIREBASE_CRASH_ENABLED", "true"
-            resValue "bool", "FIREBASE_ANALYTICS_DEACTIVATED", "false"
         }
         debug {
             minifyEnabled true
             shrinkResources true
+            debuggable true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            resValue "bool", "FIREBASE_CRASH_ENABLED", "false"
-            resValue "bool", "FIREBASE_ANALYTICS_DEACTIVATED", "true"
         }
     }
     compileOptions {
@@ -49,7 +46,7 @@ android {
 }
 dependencies {
     implementation platform('com.google.firebase:firebase-bom:30.3.2')
-    implementation 'com.google.firebase:firebase-crashlytics-ktx:18.2.12'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-perf:20.1.0'
     implementation 'com.google.android.gms:play-services-ads:21.1.0'

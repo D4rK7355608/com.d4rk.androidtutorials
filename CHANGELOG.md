@@ -1,3 +1,7 @@
+# Version 1.3_r3:
+- Fixed crashes;
+- Minor tweaks.
+
 # Version 1.3_r2:
 - Fixed crashes;
 - Minor tweaks.

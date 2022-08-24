@@ -1,3 +1,4 @@
+@file:Suppress("DEPRECATION")
 package com.d4rk.androidtutorials.ads
 import android.app.Activity
 import android.app.Application
@@ -26,6 +27,7 @@ class Ads : Application(), Application.ActivityLifecycleCallbacks, LifecycleObse
     ProcessLifecycleOwner.get().lifecycle.addObserver(this)
     appOpenAdManager = AppOpenAdManager()
   }
+  @Suppress("SameParameterValue")
   @OnLifecycleEvent(Lifecycle.Event.ON_START)
   fun onMoveToForeground() {
     currentActivity?.let { appOpenAdManager.showAdIfAvailable(it) }
@@ -75,6 +77,7 @@ class Ads : Application(), Application.ActivityLifecycleCallbacks, LifecycleObse
         }
       )
     }
+    @Suppress("SameParameterValue")
     private fun wasLoadTimeLessThanNHoursAgo(numHours: Long): Boolean {
       val dateDifference: Long = Date().time - loadTime
       val numMilliSecondsPerHour: Long = 3600000
