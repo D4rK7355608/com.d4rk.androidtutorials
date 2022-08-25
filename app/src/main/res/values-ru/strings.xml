@@ -114,4 +114,12 @@
     <string name="share">Делиться.</string>
     <string name="share_subject">Попробуй это сейчас!!!</string>
     <string name="share_using">Поделиться с помощью…</string>
+    <string name="webview">WebView</string>
+    <string name="webview_implementations">Реализовать WebView</string>
+    <string name="webview_implementations_sum">Представление, которое отображает веб -страницы. Основное использование. В большинстве случаев мы рекомендуем использовать стандартный веб -браузер, такой как Chrome, для доставки контента пользователю.</string>
+    <string name="password">Пароль</string>
+    <string name="password_implementations">Реализовать поле пароля</string>
+    <string name="password_implementations_sum">Простое текстовое поле с возможностью скрывать текст. Используется на экранах входа в систему для большинства приложений, чтобы обеспечить безопасность паролей.</string>
+    <string name="password_show">Показать пароль.</string>
+    <string name="password_hint">Введите свой пароль…</string>
 </resources>

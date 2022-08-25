@@ -39,7 +39,7 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
     }
     class SettingsFragment : PreferenceFragmentCompat() {
         override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
-            setPreferencesFromResource(R.xml.settings, rootKey)
+            setPreferencesFromResource(R.xml.settings_preferences, rootKey)
             val moreApps: Preference? = findPreference("more_apps")
             if (moreApps != null) {
                 moreApps.onPreferenceClickListener = Preference.OnPreferenceClickListener {

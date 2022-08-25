@@ -74,6 +74,40 @@
                 android:value=".ui.android.timepicker.TimePickerActivity"/>
         </activity>
         <activity
+            android:name=".ui.android.webview.WebViewActivity"
+            android:exported="false"
+            android:label="@string/webview">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.android.webview.WebViewActivity"/>
+        </activity>
+        <activity
+            android:name=".ui.android.webview.WebViewCodeActivity"
+            android:exported="false"
+            android:label="@string/webview">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.android.webview.WebViewCodeActivity"/>
+        </activity>
+
+        <activity
+            android:name=".ui.android.passwordbox.PasswordBoxActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"
+            android:label="@string/password">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.android.passwordbox.PasswordBoxActivity"/>
+        </activity>
+        <activity
+            android:name=".ui.android.passwordbox.PasswordBoxCodeActivity"
+            android:exported="false"
+            android:label="@string/password">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.android.passwordbox.PasswordBoxCodeActivity"/>
+        </activity>
+        <activity
             android:name=".ui.android.datepicker.DatePickerCodeActivity"
             android:exported="false"
             android:label="@string/datepicker">

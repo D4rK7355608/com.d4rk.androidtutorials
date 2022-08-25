@@ -119,11 +119,22 @@
     <string name="language_en" translatable="false">English (International)</string>
     <string name="language_ru" translatable="false">Russian (Russia)</string>
     <string name="buttons">Buttons</string>
+    <string name="webview">WebView</string>
+    <string name="webview_implementations">Implement WebView</string>
+    <string name="webview_implementations_sum">A View that displays web pages. Basic usage. In most cases, we recommend using a standard web browser, like Chrome, to deliver content to the user.</string>
+    <string name="password">Password</string>
+    <string name="password_show">Show password.</string>
+    <string name="password_hint">Enter your password…</string>
+    <string name="password_implementations">Implement password box</string>
+    <string name="password_implementations_sum">A simple text box with ability to hide text. Is used in login screens for most of the apps to keep passwords safe.</string>
     <string name="implement_buttons">Implement buttons</string>
     <string name="implement_buttons_sum">Discover more things about general buttons and what you can do with them. Learn how to make them look beauty and clean.</string>
-    <string name="changes" translatable="false"><b>Version 1.3_r3:\n</b>
-        • Fixed crashes;\n
-        • Minor tweaks.
+    <string name="changes" translatable="false"><b>Version 1.4_r1:\n</b>
+        • Added WebView lesson;\n
+        • Added Password Box lesson;\n
+        • Minor bug fixes;\n
+        • Minor tweaks;\n
+        • Under the hood improvements.
         <br> </br>
     </string>
 </resources>

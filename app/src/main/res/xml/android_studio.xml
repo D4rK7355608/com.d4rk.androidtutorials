@@ -97,5 +97,23 @@
                 android:targetPackage="com.d4rk.androidtutorials"
                 android:targetClass="com.d4rk.androidtutorials.ui.android.datepicker.DatePickerActivity"/>
         </androidx.preference.Preference>
+        <androidx.preference.Preference
+            android:title="@string/webview_implementations"
+            android:summary="@string/webview_implementations_sum"
+            android:icon="@drawable/ic_webview">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="com.d4rk.androidtutorials"
+                android:targetClass="com.d4rk.androidtutorials.ui.android.webview.WebViewActivity"/>
+        </androidx.preference.Preference>
+        <androidx.preference.Preference
+            android:title="@string/password_implementations"
+            android:summary="@string/password_implementations_sum"
+            android:icon="@drawable/ic_password">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="com.d4rk.androidtutorials"
+                android:targetClass="com.d4rk.androidtutorials.ui.android.passwordbox.PasswordBoxActivity"/>
+        </androidx.preference.Preference>
     </androidx.preference.PreferenceCategory>
 </androidx.preference.PreferenceScreen>

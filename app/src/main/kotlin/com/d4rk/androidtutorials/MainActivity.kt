@@ -7,8 +7,8 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import androidx.preference.PreferenceManager
 import com.d4rk.androidtutorials.ads.Ads
-import com.d4rk.androidtutorials.databinding.ActivityMainBinding
 import com.google.firebase.FirebaseApp
+import com.d4rk.androidtutorials.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {

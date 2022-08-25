@@ -1,3 +1,10 @@
+# Version 1.4_r1:
+- Added WebView lesson;
+- Added Password Box lesson;
+- Minor bug fixes;
+- Minor tweaks;
+- Under the hood improvements.
+
 # Version 1.3_r3:
 - Fixed crashes;
 - Minor tweaks.

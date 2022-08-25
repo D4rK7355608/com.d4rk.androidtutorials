@@ -7,12 +7,12 @@ plugins {
 }
 android {
     compileSdk 33
-    def tagName = '1.3_r3'
+    def tagName = '1.4_r1'
     defaultConfig {
         applicationId "com.d4rk.androidtutorials"
         minSdk 26
         targetSdk 33
-        versionCode 13
+        versionCode 14
         versionName tagName
         multiDexEnabled true
         archivesBaseName = "com.d4rk.androidtutorials-v${versionName}"
@@ -45,9 +45,8 @@ android {
     }
 }
 dependencies {
-    implementation platform('com.google.firebase:firebase-bom:30.3.2')
-    implementation 'com.google.firebase:firebase-crashlytics-ktx'
-    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx:18.2.12'
+    implementation 'com.google.firebase:firebase-analytics-ktx:21.1.0'
     implementation 'com.google.firebase:firebase-perf:20.1.0'
     implementation 'com.google.android.gms:play-services-ads:21.1.0'
     implementation 'com.google.android.material:material:1.6.1'
