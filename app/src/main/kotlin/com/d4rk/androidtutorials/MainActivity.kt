@@ -6,16 +6,14 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import androidx.preference.PreferenceManager
-import com.d4rk.androidtutorials.ads.Ads
-import com.google.firebase.FirebaseApp
 import com.d4rk.androidtutorials.databinding.ActivityMainBinding
+import com.google.firebase.FirebaseApp
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         FirebaseApp.initializeApp(this)
-        @Suppress("UNUSED_VARIABLE")
-        val splashScreen = installSplashScreen()
+        installSplashScreen()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val navController by lazy {
@@ -30,11 +28,6 @@ class MainActivity : AppCompatActivity() {
             darkModeValues[2] -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
             darkModeValues[3] -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO_BATTERY)
         }
-        val application = application as? Ads ?: return
-        application.showAdIfAvailable(this, object : Ads.OnShowAdCompleteListener {
-                override fun onShowAdComplete() {
-                }
-            })
     }
     @Deprecated("Deprecated in Java", ReplaceWith("moveTaskToBack(true)"))
     override fun onBackPressed() {

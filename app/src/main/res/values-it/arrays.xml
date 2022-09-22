@@ -1,0 +1,8 @@
+<resources>
+    <string-array name="dark_mode_entries">
+        <item>Segui Modalità sistema</item>
+        <item>Modalità luce</item>
+        <item>Modalità scura</item>
+        <item>Modalità scura batteria automatica</item>
+    </string-array>
+</resources>

@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -13,26 +12,18 @@
     </queries>
     <application
         android:name=".ads.Ads"
-        android:appCategory="productivity"
+        android:label="@string/app_name"
         android:description="@string/app_description"
-        android:banner="@drawable/banner"
-        android:logo="@mipmap/ic_launcher"
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:resizeableActivity="true"
+        android:logo="@drawable/ic_launcher_foreground"
         android:supportsRtl="true"
-        android:theme="@style/AppThemeActionBar">
-        <activity
-            android:name=".ui.language.LanguageActivity"
-            android:label="@string/language"
-            android:screenOrientation="portrait"
-            android:exported="false"
-            tools:ignore="LockedOrientationActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.language.LanguageActivity"/>
-        </activity>
+        android:resizeableActivity="true"
+        android:enableOnBackInvokedCallback="true"
+        android:appCategory="productivity"
+        android:theme="@style/AppThemeActionBar"
+        android:localeConfig="@xml/locales_config"
+        tools:targetApi="33">
         <activity
             android:name=".ui.android.toggle.ToggleCodeActivity"
             android:exported="false"
@@ -89,7 +80,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.android.webview.WebViewCodeActivity"/>
         </activity>
-
         <activity
             android:name=".ui.android.passwordbox.PasswordBoxActivity"
             android:exported="false"
@@ -233,6 +223,7 @@
             android:exported="true"
             android:theme="@style/Theme.App.Starting">
             <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
@@ -246,5 +237,8 @@
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-5294151573817700~4228267194"/>
+        <meta-data
+            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            android:value="true"/>
     </application>
 </manifest>

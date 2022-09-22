@@ -1,41 +1,40 @@
 <resources>
-    <string name="app_name">Android Studio Tutorials</string>
+    <string name="app_name" translatable="false">Android Studio Tutorials</string>
+    <string name="app_version">Version %1s</string>
     <string name="app_description">Learn how to make simple apps in Android Studio. 📱</string>
+    <string name="copyright" translatable="false">© Copyright %1s made by D4rK!</string>
     <string name="dev_feedback">Email to dev</string>
     <string name="title_home">Home</string>
     <string name="title_android_studio">Android Studio</string>
     <string name="title_about">About</string>
-    <string name="app_version">Version %1s</string>
-    <string name="twitter">Twitter</string>
-    <string name="youtube">YouTube</string>
-    <string name="github">GitHub</string>
-    <string name="xda">XDA</string>
+    <string name="twitter" translatable="false">Twitter</string>
+    <string name="youtube" translatable="false">YouTube</string>
+    <string name="github" translatable="false">GitHub</string>
+    <string name="xda" translatable="false">XDA</string>
     <string name="google_dev">Google Dev</string>
-    <string name="libraries">Third Party Libraries</string>
     <string name="more">More</string>
-    <string name="cool">Cool!</string>
-    <string name="music_sleep_timer" translatable="false">Music Sleep Timer.</string>
-    <string name="english_with_lidia" translatable="false">English with Lidia.</string>
-    <string name="qr_code_scanner" translatable="false">QR &amp; Bar Code Scanner.</string>
-    <string name="low_brightness" translatable="false">Low Brightness.</string>
+    <string name="music_sleep_timer" translatable="false">Music Sleep Timer</string>
+    <string name="english_with_lidia" translatable="false">English with Lidia</string>
+    <string name="qr_code_scanner" translatable="false">QR &amp; Bar Code Scanner</string>
+    <string name="low_brightness" translatable="false">Low Brightness</string>
     <string name="feedback_toast">Thanks for rating us!</string>
-    <string name="privacy_policy">Privacy policy.</string>
-    <string name="license">License.</string>
-    <string name="license_sum">General Public License-3.0.</string>
-    <string name="terms_of_service">Terms of service.</string>
-    <string name="code_of_conduct">Code of conduct.</string>
+    <string name="privacy_policy">Privacy policy</string>
+    <string name="license">License</string>
+    <string name="license_sum" translatable="false">General Public License-3.0</string>
+    <string name="terms_of_service">Terms of service</string>
+    <string name="code_of_conduct">Code of conduct</string>
     <string name="check_for_updates">Check for updates…</string>
-    <string name="feedback">Feedback.</string>
-    <string name="changelog">Changelog.</string>
-    <string name="more_apps">More apps.</string>
-    <string name="language_sum">Set application language.</string>
+    <string name="feedback">Feedback</string>
+    <string name="changelog">Changelog</string>
+    <string name="more_apps">More apps…</string>
     <string name="feedback_tooltip">Send us your review on Google Play Store.</string>
-    <string name="internet">Internet.</string>
+    <string name="internet">Internet [INTERNET]</string>
     <string name="internet_sum">Used to send error reports.</string>
-    <string name="normal">Normal!</string>
+    <string name="normal">Normal</string>
     <string name="rate_us">Rate our app!</string>
-    <string name="permissions">Permissions.</string>
-    <string name="theme">Theme.</string>
+    <string name="appearance">Appearance</string>
+    <string name="permissions">Permissions</string>
+    <string name="theme">Theme</string>
     <string name="theme_def_value" translatable="false">MODE_NIGHT_FOLLOW_SYSTEM</string>
     <string name="settings">Settings</string>
     <string name="android_sdk">Android SDKs</string>
@@ -46,8 +45,6 @@
     <string name="implement_alert_dialog_sum">A dialog is a small window that prompts the user to make a decision or enter additional information. A dialog does not fill the screen and is normally used for modal events that require users to take an action before they can proceed.</string>
     <string name="show_dialog">Show Alert Dialog</string>
     <string name="alert_dialog">Alert Dialog</string>
-    <string name="alert_dialog_button_positive">O.K.</string>
-    <string name="alert_dialog_button_negative">Cancel</string>
     <string name="alert_dialog_title">Your title</string>
     <string name="no_kotlin_code_needed">No Kotlin code required for this activity.</string>
     <string name="current_time">Current Time</string>
@@ -110,14 +107,11 @@
     <string name="monetSwitchToast">Toggled Monet Switch!</string>
     <string name="appCompatToggleButtonToast">Toggled Compat Toggle Button!</string>
     <string name="switchMaterialToast">Toggled Material Switch!</string>
-    <string name="code_kotlin">Kotlin</string>
-    <string name="layout_xml">XML</string>
-    <string name="language">Language</string>
-    <string name="share">Share.</string>
+    <string name="code_kotlin" translatable="false">Kotlin</string>
+    <string name="layout_xml" translatable="false">XML</string>
+    <string name="share">Share</string>
     <string name="share_subject">Try it now!!!</string>
     <string name="share_using">Share using…</string>
-    <string name="language_en" translatable="false">English (International)</string>
-    <string name="language_ru" translatable="false">Russian (Russia)</string>
     <string name="buttons">Buttons</string>
     <string name="webview">WebView</string>
     <string name="webview_implementations">Implement WebView</string>
@@ -129,12 +123,22 @@
     <string name="password_implementations_sum">A simple text box with ability to hide text. Is used in login screens for most of the apps to keep passwords safe.</string>
     <string name="implement_buttons">Implement buttons</string>
     <string name="implement_buttons_sum">Discover more things about general buttons and what you can do with them. Learn how to make them look beauty and clean.</string>
-    <string name="changes" translatable="false"><b>Version 1.4_r1:\n</b>
-        • Added WebView lesson;\n
-        • Added Password Box lesson;\n
-        • Minor bug fixes;\n
-        • Minor tweaks;\n
+    <string name="ad_id">Ad id [AD_ID]</string>
+    <string name="ad_id_sum">Used to allow ads to be shown in Android 13+ devices.</string>
+    <string name="changelog_title" translatable="false">Changelog - Version %1s</string>
+    <string name="changes" translatable="false">\n
+        • Added support for per-app languages (Android 13+);\n
+        • Added Romanian language support;\n
+        • Added Hindi language support;\n
+        • Added Italian language support;\n
+        • Added Indonesian language support;\n
+        • Added French language support;\n
+        • Added Russian language support;\n
+        • Added Japanese language support;\n
+        • Fixed about activity on split screen mode;\n
+        • Fixed feedback activity on split screen mode;\n
+        • Minor code cleanup;\n
+        • UI tweaks;\n
         • Under the hood improvements.
-        <br> </br>
     </string>
 </resources>

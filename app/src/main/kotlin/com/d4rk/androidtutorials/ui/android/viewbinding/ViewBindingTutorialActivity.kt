@@ -5,6 +5,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.databinding.ActivityViewBindingTutorialBinding
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
 import me.zhanghai.android.fastscroll.FastScrollerBuilder
 import java.io.ByteArrayOutputStream
 import java.io.IOException
@@ -16,6 +18,9 @@ class ViewBindingTutorialActivity : AppCompatActivity() {
         binding = ActivityViewBindingTutorialBinding.inflate(layoutInflater)
         setContentView(binding.root)
         FastScrollerBuilder(binding.bindingScrollView).useMd2Style().build()
+        MobileAds.initialize(this)
+        val adRequestBuilder = AdRequest.Builder().build()
+        binding.adView.loadAd(adRequestBuilder)
         val bindingGradle: InputStream = resources.openRawResource(R.raw.text_binding_gradle)
         val bindingActivity: InputStream = resources.openRawResource(R.raw.text_binding_activity)
         val bindingFragment: InputStream = resources.openRawResource(R.raw.text_binding_fragment)

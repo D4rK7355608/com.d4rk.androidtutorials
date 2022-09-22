@@ -5,7 +5,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.d4rk.androidtutorials.databinding.ActivityTimePickerBinding
 import java.text.SimpleDateFormat
-import java.util.Calendar
+import java.util.*
+
 class TimePickerActivity : AppCompatActivity() {
     private lateinit var binding : ActivityTimePickerBinding
     private val calendar: Calendar = Calendar.getInstance()
@@ -13,14 +14,14 @@ class TimePickerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityTimePickerBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val simpleDateFormat = SimpleDateFormat("HH:mm")
+        val simpleDateFormat = SimpleDateFormat("HH:mm", Locale.getDefault())
         val dateTime = simpleDateFormat.format(calendar.time)
         binding.timeTextView.text = dateTime
         binding.changeTimeButton.setOnClickListener {
             val timeSetListener = TimePickerDialog.OnTimeSetListener { _, hour, minute ->
                 calendar.set(Calendar.HOUR_OF_DAY, hour)
                 calendar.set(Calendar.MINUTE, minute)
-                binding.timeTextView.text = SimpleDateFormat("HH:mm").format(calendar.time)
+                binding.timeTextView.text = SimpleDateFormat("HH:mm", Locale.getDefault()).format(calendar.time)
             }
             TimePickerDialog(this, timeSetListener, calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), true).show()
         }

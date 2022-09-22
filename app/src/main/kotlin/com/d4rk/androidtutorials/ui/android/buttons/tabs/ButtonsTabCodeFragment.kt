@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.databinding.FragmentButtonsCodeBinding
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
 import me.zhanghai.android.fastscroll.FastScrollerBuilder
 import java.io.ByteArrayOutputStream
 import java.io.IOException
@@ -16,6 +18,9 @@ class ButtonsTabCodeFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentButtonsCodeBinding.inflate(inflater, container, false)
         FastScrollerBuilder(binding.buttonsScrollView).useMd2Style().build()
+        MobileAds.initialize(requireContext())
+        val adRequestBuilder = AdRequest.Builder().build()
+        binding.adView.loadAd(adRequestBuilder)
         val inputStream: InputStream = resources.openRawResource(R.raw.text_buttons_kotlin)
         val byteArrayOutputStream = ByteArrayOutputStream()
         var i: Int

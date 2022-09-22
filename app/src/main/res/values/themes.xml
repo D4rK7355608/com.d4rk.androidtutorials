@@ -10,15 +10,13 @@
         <item name="windowNoTitle">true</item>
     </style>
     <style name="AppThemeActionBar" parent="Theme.Material3.DynamicColors.DayNight">
-        <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="android:windowLightStatusBar">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@color/colorBackground</item>
+        <item name="android:windowLightStatusBar">true</item>
         <item name="android:colorBackground">@color/colorBackground</item>
         <item name="actionBarStyle">@style/ActionBarTheme</item>
         <item name="alertDialogTheme">@style/DialogTheme</item>
-        <item name="switchStyle">@style/SwitchTheme</item>
         <item name="actionOverflowMenuStyle">@style/OverflowMenuTheme</item>
     </style>
     <style name="ShapeAppearanceOverlay.CardView" parent="">
@@ -27,9 +25,6 @@
         <item name="cornerSizeTopLeft">24dp</item>
         <item name="cornerSizeBottomRight">0dp</item>
         <item name="cornerSizeBottomLeft">0dp</item>
-    </style>
-    <style name="DialogTheme" parent="ThemeOverlay.Material3.MaterialAlertDialog">
-        <item name="colorAccent">@color/colorAccent</item>
     </style>
     <style name="ActionBarTheme" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
         <item name="background">@android:color/transparent</item>
@@ -41,4 +36,5 @@
         <item name="track">@drawable/switch_track</item>
         <item name="android:thumb">@drawable/switch_thumb</item>
     </style>
+    <style name="AppBarLayoutTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
 </resources>

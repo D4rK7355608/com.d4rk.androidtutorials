@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -8,13 +7,13 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.Material3">
+        android:theme="@style/AppBarLayoutTheme">
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorBackground"
-            app:tabTextColor="@color/colorAccent"
+            app:tabTextColor="?attr/colorAccent"
             app:tabGravity="fill"
             app:tabMode="fixed"/>
     </com.google.android.material.appbar.AppBarLayout>

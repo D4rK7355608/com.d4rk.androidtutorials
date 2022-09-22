@@ -1,3 +1,18 @@
+# Version 2.0_r1:
+- Added support for per-app languages (Android 13+);
+- Added Romanian language support;
+- Added Hindi language support;
+- Added Italian language support;
+- Added Indonesian language support;
+- Added French language support;
+- Added Russian language support;
+- Added Japanese language support;
+- Fixed about activity on split screen mode;
+- Fixed feedback activity on split screen mode;
+- Minor code cleanup;
+- UI tweaks;
+- Under the hood improvements.
+
 # Version 1.4_r1:
 - Added WebView lesson;
 - Added Password Box lesson;

@@ -7,20 +7,20 @@ plugins {
 }
 android {
     compileSdk 33
-    def tagName = '1.4_r1'
+    def tagName = '2.0_r1'
     defaultConfig {
         applicationId "com.d4rk.androidtutorials"
         minSdk 26
         targetSdk 33
-        versionCode 14
+        versionCode 16
         versionName tagName
-        multiDexEnabled true
         archivesBaseName = "com.d4rk.androidtutorials-v${versionName}"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField "String", "VERSION_NAME", "\"${tagName}\""
     }
     buildTypes {
         release {
+            multiDexEnabled true
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
@@ -28,6 +28,7 @@ android {
         debug {
             minifyEnabled true
             shrinkResources true
+            multiDexEnabled true
             debuggable true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -43,29 +44,34 @@ android {
         viewBinding true
         buildConfig true
     }
+    bundle {
+        storeArchive {
+            enable = false
+        }
+    }
 }
 dependencies {
-    implementation 'com.google.firebase:firebase-crashlytics-ktx:18.2.12'
-    implementation 'com.google.firebase:firebase-analytics-ktx:21.1.0'
-    implementation 'com.google.firebase:firebase-perf:20.1.0'
-    implementation 'com.google.android.gms:play-services-ads:21.1.0'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx:18.2.13'
+    implementation 'com.google.firebase:firebase-analytics-ktx:21.1.1'
+    implementation 'com.google.firebase:firebase-perf:20.1.1'
+    implementation 'com.google.android.gms:play-services-ads:21.2.0'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'com.google.android.gms:play-services-oss-licenses:17.0.0'
     implementation 'com.google.android.play:review-ktx:2.0.0'
-    implementation 'androidx.core:core-ktx:1.8.0'
-    implementation 'androidx.appcompat:appcompat:1.5.0'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.core:core-splashscreen:1.0.0'
     implementation 'androidx.gridlayout:gridlayout:1.0.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.2'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.2'
+    implementation 'androidx.preference:preference-ktx:1.2.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'
+    implementation 'androidx.lifecycle:lifecycle-process:2.5.1'
+    implementation 'androidx.lifecycle:lifecycle-common-java8:2.5.1'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.1'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.5.1'
-    implementation 'androidx.preference:preference-ktx:1.2.0'
-    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.5.1"
-    implementation "androidx.lifecycle:lifecycle-process:2.5.1"
-    implementation "androidx.lifecycle:lifecycle-common-java8:2.5.1"
     implementation 'com.airbnb.android:lottie:5.2.0'
     implementation 'com.github.KieronQuinn:MonetCompat:0.4.1'
     implementation 'me.zhanghai.android.fastscroll:library:1.1.8'

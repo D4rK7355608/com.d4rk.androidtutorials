@@ -14,7 +14,7 @@ class DatePickerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDatePickerBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val simpleDateFormat = SimpleDateFormat("dd/MM/yyyy")
+        val simpleDateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
         val dateText = simpleDateFormat.format(calendar.time)
         binding.dateTextView.text = dateText
         val dateSetListener = DatePickerDialog.OnDateSetListener { _, year, monthOfYear, dayOfMonth ->

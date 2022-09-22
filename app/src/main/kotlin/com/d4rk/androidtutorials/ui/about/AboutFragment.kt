@@ -12,15 +12,30 @@ import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.databinding.FragmentAboutBinding
 import com.d4rk.androidtutorials.ui.settings.SettingsActivity
 import com.d4rk.androidtutorials.ui.viewmodel.ViewModel
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
-class AboutFragment : Fragment(R.layout.fragment_about) {
+import me.zhanghai.android.fastscroll.FastScrollerBuilder
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Locale
+class AboutFragment : Fragment() {
     private lateinit var _binding: FragmentAboutBinding
     private val binding get() = _binding
+    private val calendar: Calendar = Calendar.getInstance()
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         ViewModelProvider(this)[ViewModel::class.java]
         _binding = FragmentAboutBinding.inflate(inflater, container, false)
+        FastScrollerBuilder(binding.scrollView).useMd2Style().build()
+        MobileAds.initialize(requireContext())
+        val adRequestBuilder = AdRequest.Builder().build()
+        binding.adView.loadAd(adRequestBuilder)
         val content = getString(R.string.app_version, BuildConfig.VERSION_NAME)
         binding.itemSettingsMoreAboutVersion.text = content
+        val simpleDateFormat = SimpleDateFormat("yyyy", Locale.getDefault())
+        val dateText = simpleDateFormat.format(calendar.time)
+        val copyright = requireContext().getString(R.string.copyright, dateText)
+        binding.copyright.text = copyright
         binding.itemSettingsMoreAboutSettings.setOnClickListener {
             val intent = Intent (activity, SettingsActivity::class.java)
             startActivity(intent)
@@ -49,8 +64,7 @@ class AboutFragment : Fragment(R.layout.fragment_about) {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://forum.xda-developers.com/m/d4rk7355608.10095012"))
             startActivity(intent)
         }
-        binding.itemSettingsMoreAboutLibraries.setOnClickListener {
-            OssLicensesMenuActivity.setActivityTitle(getString(R.string.libraries))
+        binding.itemSettingsMoreAboutLicenses.setOnClickListener {
             val intent = Intent(activity, OssLicensesMenuActivity::class.java)
             startActivity(intent)
         }

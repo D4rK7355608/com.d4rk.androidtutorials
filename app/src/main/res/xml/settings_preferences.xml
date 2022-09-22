@@ -2,8 +2,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <androidx.preference.PreferenceCategory
-        app:title="@string/settings"
-        android:icon="@drawable/ic_settings_tinted">
+        app:title="@string/appearance"
+        android:icon="@drawable/ic_appearance_tinted">
         <androidx.preference.ListPreference
             app:defaultValue="@string/theme_def_value"
             app:entries="@array/dark_mode_entries"
@@ -12,14 +12,6 @@
             app:key="@string/theme"
             app:title="@string/theme"
             app:useSimpleSummaryProvider="true"/>
-        <androidx.preference.Preference
-            app:title="@string/language"
-            android:icon="@drawable/ic_language"
-            android:summary="@string/language_sum">
-            <intent
-                android:targetPackage="com.d4rk.androidtutorials"
-                android:targetClass="com.d4rk.androidtutorials.ui.language.LanguageActivity"/>
-        </androidx.preference.Preference>
     </androidx.preference.PreferenceCategory>
     <androidx.preference.PreferenceCategory
         app:title="@string/more"

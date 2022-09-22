@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.PreferenceManager
+import com.d4rk.androidtutorials.BuildConfig
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.databinding.SettingsActivityBinding
 import com.google.android.material.textview.MaterialTextView
@@ -23,9 +24,9 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         PreferenceManager.getDefaultSharedPreferences(this).registerOnSharedPreferenceChangeListener(this)
     }
-    override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
+    override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, rootKey: String?) {
         val darkModeString = getString(R.string.theme)
-        key?.let {
+        rootKey?.let {
             if (it == darkModeString) sharedPreferences?.let { pref ->
                 val darkModeValues = resources.getStringArray(R.array.dark_mode_values)
                 when (pref.getString(darkModeString, darkModeValues[0])) {
@@ -45,6 +46,7 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
                 moreApps.onPreferenceClickListener = Preference.OnPreferenceClickListener {
                     val alertDialog: AlertDialog.Builder = AlertDialog.Builder(requireContext())
                     alertDialog.setTitle(R.string.more_apps)
+                    alertDialog.setIcon(R.drawable.ic_shop)
                     val view: View = layoutInflater.inflate(R.layout.fragment_dialog, null)
                     val musicSleepTimerString: MaterialTextView = view.findViewById(R.id.musicSleepTimerString)
                     val englishWithLidiaString: MaterialTextView = view.findViewById(R.id.englishWithLidiaString)
@@ -84,7 +86,7 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
                         val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.d4rk.lowbrightness"))
                         startActivity(intent)
                     }
-                    alertDialog.setNegativeButton(R.string.cool, null)
+                    alertDialog.setNegativeButton(android.R.string.cancel, null)
                     alertDialog.show()
                     true
                 }
@@ -93,9 +95,11 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
             if (changelog != null) {
                 changelog.onPreferenceClickListener = Preference.OnPreferenceClickListener {
                     val alertDialog: AlertDialog.Builder = AlertDialog.Builder(requireContext())
-                    alertDialog.setTitle(R.string.changelog)
+                    val content = requireContext().getString(R.string.changelog_title, BuildConfig.VERSION_NAME)
+                    alertDialog.setTitle(content)
+                    alertDialog.setIcon(R.drawable.ic_changelog)
                     alertDialog.setMessage(R.string.changes)
-                    alertDialog.setNegativeButton(R.string.cool, null)
+                    alertDialog.setNegativeButton(android.R.string.cancel, null)
                     alertDialog.show()
                     true
                 }

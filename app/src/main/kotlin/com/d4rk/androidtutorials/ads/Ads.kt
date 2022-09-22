@@ -1,4 +1,3 @@
-@file:Suppress("DEPRECATION")
 package com.d4rk.androidtutorials.ads
 import android.app.Activity
 import android.app.Application
@@ -16,18 +15,17 @@ import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.appopen.AppOpenAd
 import com.google.android.gms.ads.appopen.AppOpenAd.AppOpenAdLoadCallback
 import java.util.Date
-private const val AD_UNIT_ID = "\n" + "ca-app-pub-5294151573817700/1738685282"
+private const val AD_UNIT_ID = "ca-app-pub-5294151573817700/1738685282"
 class Ads : Application(), Application.ActivityLifecycleCallbacks, LifecycleObserver {
   private lateinit var appOpenAdManager: AppOpenAdManager
   private var currentActivity: Activity? = null
   override fun onCreate() {
     super.onCreate()
     registerActivityLifecycleCallbacks(this)
-    MobileAds.initialize(this) {}
+    MobileAds.initialize(this)
     ProcessLifecycleOwner.get().lifecycle.addObserver(this)
     appOpenAdManager = AppOpenAdManager()
   }
-  @Suppress("SameParameterValue")
   @OnLifecycleEvent(Lifecycle.Event.ON_START)
   fun onMoveToForeground() {
     currentActivity?.let { appOpenAdManager.showAdIfAvailable(it) }
@@ -77,7 +75,6 @@ class Ads : Application(), Application.ActivityLifecycleCallbacks, LifecycleObse
         }
       )
     }
-    @Suppress("SameParameterValue")
     private fun wasLoadTimeLessThanNHoursAgo(numHours: Long): Boolean {
       val dateDifference: Long = Date().time - loadTime
       val numMilliSecondsPerHour: Long = 3600000
@@ -92,7 +89,8 @@ class Ads : Application(), Application.ActivityLifecycleCallbacks, LifecycleObse
         object : OnShowAdCompleteListener {
           override fun onShowAdComplete() {
           }
-        })
+        }
+      )
     }
     fun showAdIfAvailable(activity: Activity, onShowAdCompleteListener: OnShowAdCompleteListener) {
       if (isShowingAd) {
@@ -103,22 +101,24 @@ class Ads : Application(), Application.ActivityLifecycleCallbacks, LifecycleObse
         loadAd(activity)
         return
       }
-      appOpenAd!!.fullScreenContentCallback = object : FullScreenContentCallback() {
-        override fun onAdDismissedFullScreenContent() {
-              appOpenAd = null
-              isShowingAd = false
-              onShowAdCompleteListener.onShowAdComplete()
-              loadAd(activity)
+      appOpenAd!!.setFullScreenContentCallback(
+        object : FullScreenContentCallback() {
+          override fun onAdDismissedFullScreenContent() {
+            appOpenAd = null
+            isShowingAd = false
+            onShowAdCompleteListener.onShowAdComplete()
+            loadAd(activity)
+          }
+          override fun onAdFailedToShowFullScreenContent(adError: AdError) {
+            appOpenAd = null
+            isShowingAd = false
+            onShowAdCompleteListener.onShowAdComplete()
+            loadAd(activity)
+          }
+          override fun onAdShowedFullScreenContent() {
+          }
         }
-        override fun onAdFailedToShowFullScreenContent(adError: AdError) {
-              appOpenAd = null
-              isShowingAd = false
-              onShowAdCompleteListener.onShowAdComplete()
-              loadAd(activity)
-        }
-        override fun onAdShowedFullScreenContent() {
-        }
-      }
+      )
       isShowingAd = true
       appOpenAd!!.show(activity)
     }

@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val calendar = Calendar.getInstance()
-        val simpleDateFormat = SimpleDateFormat("HH:mm")
+        val simpleDateFormat = SimpleDateFormat("HH:mm", Locale.getDefault())
         val dateTime = simpleDateFormat.format(calendar.time)
         binding.timeTextView.text = dateTime
         binding.changeTimeButton.setOnClickListener {

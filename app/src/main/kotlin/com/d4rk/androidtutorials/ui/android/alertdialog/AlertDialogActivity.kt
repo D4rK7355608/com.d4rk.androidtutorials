@@ -16,8 +16,8 @@ class AlertDialogActivity : AppCompatActivity() {
             alertDialog.setTitle(R.string.alert_dialog_title)
             alertDialog.setMessage(R.string.alert_dialog_message)
             alertDialog.create()
-            alertDialog.setPositiveButton(R.string.alert_dialog_button_positive, null)
-            alertDialog.setNegativeButton(R.string.alert_dialog_button_negative, null)
+            alertDialog.setPositiveButton(android.R.string.ok, null)
+            alertDialog.setNegativeButton(android.R.string.cancel, null)
             alertDialog.show()
         }
         binding.showButtonCodeSyntax.setOnClickListener {

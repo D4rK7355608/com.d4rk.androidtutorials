@@ -1,0 +1,8 @@
+<resources>
+    <string-array name="dark_mode_entries">
+        <item>Follow System Mode</item>
+        <item>Light Mode</item>
+        <item>Dark Mode</item>
+        <item>Auto Battery Dark Mode</item>
+    </string-array>
+</resources>

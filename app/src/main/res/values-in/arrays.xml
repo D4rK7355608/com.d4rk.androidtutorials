@@ -1,0 +1,8 @@
+<resources>
+    <string-array name="dark_mode_entries">
+        <item>Ikuti Mode Sistem</item>
+        <item>Mode Cahaya</item>
+        <item>Mode Gelap</item>
+        <item>Mode Gelap Baterai Otomatis</item>
+    </string-array>
+</resources>

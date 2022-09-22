@@ -1,7 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="AppThemeActionBar" parent="Theme.Material3.DynamicColors.DayNight">
-        <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:windowLightNavigationBar">true</item>
@@ -14,10 +12,7 @@
         <item name="switchStyle">@style/SwitchTheme</item>
         <item name="actionOverflowMenuStyle">@style/OverflowMenuTheme</item>
     </style>
-    <style name="DialogTheme" parent="Theme.Material3.DayNight.Dialog.Alert">
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="colorPrimary">@color/colorAccent</item>
-        <item name="android:colorBackground">@color/colorDialogBackground</item>
+    <style name="DialogTheme" parent="ThemeOverlay.Material3.MaterialAlertDialog.Centered">
         <item name="android:dialogCornerRadius">24dp</item>
     </style>
 </resources>

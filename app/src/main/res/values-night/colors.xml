@@ -1,8 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorAccent">#5d74ad</color>
-    <color name="colorContainer">#2a3041</color>
-    <color name="colorSurface">#585e6f</color>
     <color name="colorDialogBackground">#2f3037</color>
     <color name="colorLauncherBackground">#2D2D2D</color>
     <color name="colorBackground">#191b21</color>
