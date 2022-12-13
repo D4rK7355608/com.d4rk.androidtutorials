@@ -13,16 +13,15 @@ class AlertDialogActivity : AppCompatActivity() {
         setContentView(binding.root)
         binding.button.setOnClickListener {
             val alertDialog: AlertDialog.Builder = AlertDialog.Builder(this)
-            alertDialog.setTitle(R.string.alert_dialog_title)
+            alertDialog.setTitle(R.string.title_alert_dialog)
             alertDialog.setMessage(R.string.alert_dialog_message)
             alertDialog.create()
             alertDialog.setPositiveButton(android.R.string.ok, null)
             alertDialog.setNegativeButton(android.R.string.cancel, null)
             alertDialog.show()
         }
-        binding.showButtonCodeSyntax.setOnClickListener {
-            val intent = Intent(this, AlertDialogCodeActivity::class.java)
-            startActivity(intent)
+        binding.floatingButtonShowSyntax.setOnClickListener {
+            startActivity(Intent(this, AlertDialogCodeActivity::class.java))
         }
     }
 }

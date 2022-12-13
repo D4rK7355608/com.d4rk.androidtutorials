@@ -11,6 +11,7 @@
         <item name="alertDialogTheme">@style/DialogTheme</item>
         <item name="switchStyle">@style/SwitchTheme</item>
         <item name="actionOverflowMenuStyle">@style/OverflowMenuTheme</item>
+        <item name="android:fontFamily">@font/font_poppins</item>
     </style>
     <style name="DialogTheme" parent="ThemeOverlay.Material3.MaterialAlertDialog.Centered">
         <item name="android:dialogCornerRadius">24dp</item>

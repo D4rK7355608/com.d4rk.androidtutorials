@@ -13,9 +13,8 @@ class TextboxActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityTextboxBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.showButtonCodeSyntax.setOnClickListener {
-            val intent = Intent(this, TextboxCodeActivity::class.java)
-            startActivity(intent)
+        binding.floatingButtonShowSyntax.setOnClickListener {
+            startActivity(Intent(this, TextboxCodeActivity::class.java))
         }
         addKeyListener()
     }

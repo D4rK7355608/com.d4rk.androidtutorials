@@ -12,13 +12,13 @@ import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.PreferenceManager
 import com.d4rk.androidtutorials.BuildConfig
 import com.d4rk.androidtutorials.R
-import com.d4rk.androidtutorials.databinding.SettingsActivityBinding
+import com.d4rk.androidtutorials.databinding.ActivitySettingsBinding
 import com.google.android.material.textview.MaterialTextView
 class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceChangeListener {
-    private lateinit var binding: SettingsActivityBinding
+    private lateinit var binding: ActivitySettingsBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = SettingsActivityBinding.inflate(layoutInflater)
+        binding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportFragmentManager.beginTransaction().replace(R.id.settings, SettingsFragment()).commit()
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -40,7 +40,7 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
     }
     class SettingsFragment : PreferenceFragmentCompat() {
         override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
-            setPreferencesFromResource(R.xml.settings_preferences, rootKey)
+            setPreferencesFromResource(R.xml.preferences_settings, rootKey)
             val moreApps: Preference? = findPreference("more_apps")
             if (moreApps != null) {
                 moreApps.onPreferenceClickListener = Preference.OnPreferenceClickListener {
@@ -48,43 +48,35 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
                     alertDialog.setTitle(R.string.more_apps)
                     alertDialog.setIcon(R.drawable.ic_shop)
                     val view: View = layoutInflater.inflate(R.layout.fragment_dialog, null)
-                    val musicSleepTimerString: MaterialTextView = view.findViewById(R.id.musicSleepTimerString)
-                    val englishWithLidiaString: MaterialTextView = view.findViewById(R.id.englishWithLidiaString)
-                    val qrCodeScannerString: MaterialTextView = view.findViewById(R.id.qrCodeScannerString)
-                    val lowBrightnessString: MaterialTextView = view.findViewById(R.id.lowBrightnessString)
+                    val textViewMusicSleepTimer: MaterialTextView = view.findViewById(R.id.text_view_music_sleep_timer)
+                    val textViewEnglishWithLidia: MaterialTextView = view.findViewById(R.id.text_view_english_with_lidia)
+                    val textViewQRCodeScanner: MaterialTextView = view.findViewById(R.id.text_view_qr_code_scanner)
+                    val textViewLowBrightness: MaterialTextView = view.findViewById(R.id.text_view_low_brightness)
                     alertDialog.setView(view)
                     alertDialog.create()
-                    view.findViewById<View?>(R.id.musicSleepTimer)?.setOnClickListener {
-                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.d4rk.musicsleeptimer.plus"))
-                        startActivity(intent)
+                    view.findViewById<View?>(R.id.image_view_music_sleep_timer)?.setOnClickListener {
+                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.d4rk.musicsleeptimer.plus")))
                     }
-                    musicSleepTimerString.setOnClickListener {
-                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.d4rk.musicsleeptimer.plus"))
-                        startActivity(intent)
+                    textViewMusicSleepTimer.setOnClickListener {
+                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.d4rk.musicsleeptimer.plus")))
                     }
-                    view.findViewById<View?>(R.id.englishWithLidia)?.setOnClickListener {
-                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.d4rk.englishwithlidia.plus"))
-                        startActivity(intent)
+                    view.findViewById<View?>(R.id.image_view_english_with_lidia)?.setOnClickListener {
+                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.d4rk.englishwithlidia.plus")))
                     }
-                    englishWithLidiaString.setOnClickListener {
-                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.d4rk.englishwithlidia.plus"))
-                        startActivity(intent)
+                    textViewEnglishWithLidia.setOnClickListener {
+                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.d4rk.englishwithlidia.plus")))
                     }
-                    view.findViewById<View?>(R.id.qrCodeScanner)?.setOnClickListener {
-                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.d4rk.qrcodescanner.plus"))
-                        startActivity(intent)
+                    view.findViewById<View?>(R.id.image_view_qr_and_code_scanner)?.setOnClickListener {
+                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.d4rk.qrcodescanner.plus")))
                     }
-                    qrCodeScannerString.setOnClickListener {
-                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.d4rk.qrcodescanner.plus"))
-                        startActivity(intent)
+                    textViewQRCodeScanner.setOnClickListener {
+                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.d4rk.qrcodescanner.plus")))
                     }
-                    view.findViewById<View?>(R.id.lowBrightness)?.setOnClickListener {
-                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.d4rk.lowbrightness"))
-                        startActivity(intent)
+                    view.findViewById<View?>(R.id.image_view_low_brightness)?.setOnClickListener {
+                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.d4rk.lowbrightness")))
                     }
-                    lowBrightnessString.setOnClickListener {
-                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.d4rk.lowbrightness"))
-                        startActivity(intent)
+                    textViewLowBrightness.setOnClickListener {
+                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.d4rk.lowbrightness")))
                     }
                     alertDialog.setNegativeButton(android.R.string.cancel, null)
                     alertDialog.show()

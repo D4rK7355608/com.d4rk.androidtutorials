@@ -17,9 +17,8 @@ class PasswordBoxActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityPasswordBoxBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.showButtonCodeSyntax.setOnClickListener {
-            val intent = Intent(this, PasswordBoxCodeActivity::class.java)
-            startActivity(intent)
+        binding.floatingButtonShowSyntax.setOnClickListener {
+            startActivity(Intent(this, PasswordBoxCodeActivity::class.java))
         }
         binding.showPasswordButton.setIconResource(R.drawable.ic_visible)
         binding.showPasswordButton.setOnClickListener {

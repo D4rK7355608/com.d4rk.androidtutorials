@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    android:layout_height="match_parent">
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/androidStudioAnimation"
         android:layout_width="92dp"
@@ -15,7 +14,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:lottie_autoPlay="true"
         app:lottie_loop="false"
-        app:lottie_rawRes="@raw/anim_android_studio"/>
+        app:lottie_rawRes="@raw/anim_android_studio"
+        tools:ignore="ImageContrastCheck"/>
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/learningAnimation"
         android:layout_width="379dp"
@@ -49,6 +49,7 @@
             app:lottie_autoPlay="true"
             app:lottie_loop="false"
             app:lottie_rawRes="@raw/anim_hello_world"
-            app:lottie_speed="0.5"/>
+            app:lottie_speed="0.5"
+            tools:ignore="ImageContrastCheck"/>
     </com.google.android.material.card.MaterialCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

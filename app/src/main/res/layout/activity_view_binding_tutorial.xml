@@ -2,41 +2,36 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/bindingScrollView">
+    android:id="@+id/scroll_view">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/bindingDescriptionText"
+            android:id="@+id/text_view_binding_summary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
-            android:text="@string/binding_sum"
+            android:text="@string/summary_view_binding"
             app:layout_constraintTop_toTopOf="parent"/>
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/moreAboutViewBindingButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/more_about_view_binding"
-            android:layout_margin="16dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/bindingDescriptionText"/>
         <com.google.android.material.textview.MaterialTextView
+            style="@style/TextAppearance.Material3.TitleLarge"
             android:id="@+id/bindingSetupText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:padding="16dp"
             android:text="@string/setup_instructions"
+            app:fontFamily="@font/font_poppins"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/moreAboutViewBindingButton"/>
+            app:layout_constraintTop_toBottomOf="@id/text_view_binding_summary"/>
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/bindingInstructionText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/enable_binding_instructions_sum"
+            android:text="@string/summary_enable_binding_instructions"
             android:paddingEnd="16dp"
             android:paddingStart="16dp"
             android:paddingBottom="16dp"
@@ -57,7 +52,11 @@
                 android:id="@+id/bindingText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="16dp"/>
+                android:minWidth="48dp"
+                android:padding="16dp"
+                android:textIsSelectable="true"
+                app:fontFamily="@font/font_audiowide"
+                tools:ignore="SpeakableTextPresentCheck"/>
         </com.google.android.material.card.MaterialCardView>
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/bindingActivitiesUseText"
@@ -84,7 +83,11 @@
                 android:id="@+id/bindingActivitiesText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="16dp"/>
+                android:minWidth="48dp"
+                android:padding="16dp"
+                android:textIsSelectable="true"
+                app:fontFamily="@font/font_audiowide"
+                tools:ignore="SpeakableTextPresentCheck"/>
         </com.google.android.material.card.MaterialCardView>
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/bindingFragmentsUseText"
@@ -111,13 +114,26 @@
                 android:id="@+id/bindingFragmentsText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="16dp"/>
+                android:minWidth="48dp"
+                android:padding="16dp"
+                android:textIsSelectable="true"
+                app:fontFamily="@font/font_audiowide"
+                tools:ignore="SpeakableTextPresentCheck"/>
         </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:id="@+id/moreAboutViewBindingButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/more_about_view_binding"
+            android:layout_margin="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bindingFragmentsCard"/>
         <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/androidJetpackAnimation"
+            android:id="@+id/lottie_animation"
             android:layout_width="match_parent"
             android:layout_height="192dp"
-            app:layout_constraintTop_toBottomOf="@id/bindingFragmentsCard"
+            app:layout_constraintTop_toBottomOf="@id/moreAboutViewBindingButton"
             app:lottie_autoPlay="true"
             app:lottie_rawRes="@raw/anim_jetpack"
             app:lottie_loop="false"/>
@@ -128,7 +144,7 @@
             android:layout_margin="24dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/androidJetpackAnimation"
+            app:layout_constraintTop_toBottomOf="@id/lottie_animation"
             ads:adSize="BANNER"
             ads:adUnitId="ca-app-pub-5294151573817700/4974008668"/>
     </androidx.constraintlayout.widget.ConstraintLayout>

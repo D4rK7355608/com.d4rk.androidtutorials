@@ -1,7 +1,6 @@
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.d4rk.androidtutorials">
+    xmlns:tools="http://schemas.android.com/tools">
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
     <queries>
@@ -22,8 +21,36 @@
         android:enableOnBackInvokedCallback="true"
         android:appCategory="productivity"
         android:theme="@style/AppThemeActionBar"
-        android:localeConfig="@xml/locales_config"
+        android:localeConfig="@xml/config_locales"
         tools:targetApi="33">
+        <activity
+            android:name=".helpers.HelperActivity"
+            android:exported="true"
+            android:theme="@style/SplashScreenTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts"/>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".ui.startup.StartupActivity"
+            android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".ui.language.LanguageActivity"
+            android:exported="false"
+            android:label="@string/language">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.language.LanguageActivity"/>
+        </activity>
         <activity
             android:name=".ui.android.toggle.ToggleCodeActivity"
             android:exported="false"
@@ -155,6 +182,70 @@
                 android:value=".ui.permissions.PermissionsActivity"/>
         </activity>
         <activity
+            android:name=".ui.android.shortcuts.ShortcutsActivity"
+            android:exported="false"
+            android:label="@string/shortcuts">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.android.shortcuts.ShortcutsActivity"/>
+        </activity>
+        <activity
+            android:name=".ui.android.shortcuts.tabs.CodeShortcutsActivity"
+            android:exported="false"
+            android:label="@string/writing_code">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.android.shortcuts.tabs.CodeShortcutsActivity"/>
+        </activity>
+        <activity
+            android:name=".ui.android.shortcuts.tabs.GeneralShortcutsActivity"
+            android:exported="false"
+            android:label="@string/general">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.android.shortcuts.tabs.GeneralShortcutsActivity"/>
+        </activity>
+        <activity
+            android:name=".ui.android.shortcuts.tabs.RefactoringShortcutsActivity"
+            android:exported="false"
+            android:label="@string/refactoring">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.android.shortcuts.tabs.RefactoringShortcutsActivity"/>
+        </activity>
+        <activity
+            android:name=".ui.android.shortcuts.tabs.BuildShortcutsActivity"
+            android:exported="false"
+            android:label="@string/build_and_run">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.android.shortcuts.tabs.BuildShortcutsActivity"/>
+        </activity>
+        <activity
+            android:name=".ui.android.shortcuts.tabs.DebuggingShortcutsActivity"
+            android:exported="false"
+            android:label="@string/debugging">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.android.shortcuts.tabs.DebuggingShortcutsActivity"/>
+        </activity>
+        <activity
+            android:name=".ui.android.shortcuts.tabs.NavigationAndSearchingShortcutsActivity"
+            android:exported="false"
+            android:label="@string/navigation_and_searching">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.android.shortcuts.tabs.NavigationAndSearchingShortcutsActivity"/>
+        </activity>
+        <activity
+            android:name=".ui.android.shortcuts.tabs.VersionControlShortcutsActivity"
+            android:exported="false"
+            android:label="@string/version_control">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.android.shortcuts.tabs.VersionControlShortcutsActivity"/>
+        </activity>
+        <activity
             android:name=".ui.feedback.FeedbackActivity"
             android:label="@string/feedback"
             android:exported="true">
@@ -219,14 +310,12 @@
                 android:value=".ui.android.viewbinding.ViewBindingTutorialActivity"/>
         </activity>
         <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:theme="@style/Theme.App.Starting">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+            android:name=".ui.android.permissions.PermissionsTutorialActivity"
+            android:label="@string/permissions"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.android.permissions.PermissionsTutorialActivity"/>
         </activity>
         <meta-data
             android:name="firebase_performance_logcat_enabled"

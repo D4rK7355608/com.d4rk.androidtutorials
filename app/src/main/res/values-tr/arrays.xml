@@ -1,0 +1,8 @@
+<resources>
+    <string-array name="dark_mode_entries">
+        <item>Sistem Modunu Takip Edin</item>
+        <item>Işık Modu</item>
+        <item>Karanlık Mod</item>
+        <item>Otomatik Pil Karanlık Modu</item>
+    </string-array>
+</resources>

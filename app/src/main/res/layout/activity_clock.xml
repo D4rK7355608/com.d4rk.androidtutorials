@@ -1,52 +1,36 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.android.clock.ClockActivity">
+    android:layout_height="match_parent">
     <com.google.android.material.textview.MaterialTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/clock"
-        android:textColor="?attr/colorAccent"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/simpleDigitalClockText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/clock_analog"
         android:textStyle="bold"
-        android:layout_margin="8dp"
+        android:layout_margin="24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/simpleDigitalClock"/>
+        app:layout_constraintBottom_toTopOf="@id/digital_clock"/>
     <DigitalClock
-        android:id="@+id/simpleDigitalClock"
+        android:id="@+id/digital_clock"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_margin="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/simpleDigitalClockDivider"/>
+        app:layout_constraintBottom_toTopOf="@id/divider_1"/>
     <com.google.android.material.divider.MaterialDivider
-        android:id="@+id/simpleDigitalClockDivider"
+        android:id="@+id/divider_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_margin="8dp"
+        android:layout_margin="24dp"
         app:layout_constraintBottom_toTopOf="@id/simpleTextClockText"/>
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/simpleTextClockText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/clock_text"
-        android:layout_margin="8dp"
+        android:layout_margin="24dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/simpleTextClock"/>
@@ -54,7 +38,7 @@
         android:id="@+id/simpleTextClock"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_margin="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/simpleTextClockDivider"/>
@@ -62,9 +46,7 @@
         android:id="@+id/simpleTextClockDivider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_margin="8dp"
+        android:layout_margin="24dp"
         app:layout_constraintBottom_toTopOf="@id/simpleAnalogClockText"/>
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/simpleAnalogClockText"
@@ -72,14 +54,14 @@
         android:layout_height="wrap_content"
         android:text="@string/clock_analog"
         android:textStyle="bold"
-        android:layout_margin="8dp"
+        android:layout_margin="24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/simpleAnalogClock"/>
     <AnalogClock
         android:id="@+id/simpleAnalogClock"
         android:layout_width="wrap_content"
         android:layout_height="108dp"
-        android:layout_margin="8dp"
+        android:layout_margin="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -92,12 +74,13 @@
         android:text="@string/clock_desc"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/showClockCodeSyntax"/>
+        app:layout_constraintBottom_toTopOf="@id/floating_button_show_syntax"/>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/showClockCodeSyntax"
+        style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Surface"
+        android:id="@+id/floating_button_show_syntax"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_margin="24dp"
         android:contentDescription="@string/show_code"
         android:src="@drawable/ic_code"
         android:tooltipText="@string/show_code"

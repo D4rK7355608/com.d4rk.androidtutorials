@@ -17,7 +17,7 @@ class ButtonsTabCodeFragment : Fragment() {
     private val binding get() = _binding
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentButtonsCodeBinding.inflate(inflater, container, false)
-        FastScrollerBuilder(binding.buttonsScrollView).useMd2Style().build()
+        FastScrollerBuilder(binding.scrollView).useMd2Style().build()
         MobileAds.initialize(requireContext())
         val adRequestBuilder = AdRequest.Builder().build()
         binding.adView.loadAd(adRequestBuilder)
@@ -34,7 +34,7 @@ class ButtonsTabCodeFragment : Fragment() {
         } catch (e: IOException) {
             e.printStackTrace()
         }
-        binding.buttonsCodeText.text = byteArrayOutputStream.toString()
+        binding.textViewButtonsCode.text = byteArrayOutputStream.toString()
         return binding.root
     }
 }

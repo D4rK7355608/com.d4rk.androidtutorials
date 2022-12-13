@@ -1,3 +1,4 @@
+@file:Suppress("DEPRECATION")
 package com.d4rk.androidtutorials.ads
 import android.app.Activity
 import android.app.Application
@@ -7,6 +8,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 import androidx.lifecycle.ProcessLifecycleOwner
+import androidx.multidex.MultiDexApplication
 import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.FullScreenContentCallback
@@ -16,7 +18,8 @@ import com.google.android.gms.ads.appopen.AppOpenAd
 import com.google.android.gms.ads.appopen.AppOpenAd.AppOpenAdLoadCallback
 import java.util.Date
 private const val AD_UNIT_ID = "ca-app-pub-5294151573817700/1738685282"
-class Ads : Application(), Application.ActivityLifecycleCallbacks, LifecycleObserver {
+@Suppress("SameParameterValue")
+class Ads : MultiDexApplication(), Application.ActivityLifecycleCallbacks, LifecycleObserver {
   private lateinit var appOpenAdManager: AppOpenAdManager
   private var currentActivity: Activity? = null
   override fun onCreate() {
@@ -41,9 +44,6 @@ class Ads : Application(), Application.ActivityLifecycleCallbacks, LifecycleObse
   override fun onActivityStopped(activity: Activity) {}
   override fun onActivitySaveInstanceState(activity: Activity, outState: Bundle) {}
   override fun onActivityDestroyed(activity: Activity) {}
-  fun showAdIfAvailable(activity: Activity, onShowAdCompleteListener: OnShowAdCompleteListener) {
-    appOpenAdManager.showAdIfAvailable(activity, onShowAdCompleteListener)
-  }
   interface OnShowAdCompleteListener {
     fun onShowAdComplete()
   }
@@ -101,24 +101,22 @@ class Ads : Application(), Application.ActivityLifecycleCallbacks, LifecycleObse
         loadAd(activity)
         return
       }
-      appOpenAd!!.setFullScreenContentCallback(
-        object : FullScreenContentCallback() {
-          override fun onAdDismissedFullScreenContent() {
-            appOpenAd = null
-            isShowingAd = false
-            onShowAdCompleteListener.onShowAdComplete()
-            loadAd(activity)
-          }
-          override fun onAdFailedToShowFullScreenContent(adError: AdError) {
-            appOpenAd = null
-            isShowingAd = false
-            onShowAdCompleteListener.onShowAdComplete()
-            loadAd(activity)
-          }
-          override fun onAdShowedFullScreenContent() {
-          }
+      appOpenAd!!.fullScreenContentCallback = object : FullScreenContentCallback() {
+        override fun onAdDismissedFullScreenContent() {
+              appOpenAd = null
+              isShowingAd = false
+              onShowAdCompleteListener.onShowAdComplete()
+              loadAd(activity)
         }
-      )
+        override fun onAdFailedToShowFullScreenContent(adError: AdError) {
+              appOpenAd = null
+              isShowingAd = false
+              onShowAdCompleteListener.onShowAdComplete()
+              loadAd(activity)
+        }
+        override fun onAdShowedFullScreenContent() {
+        }
+      }
       isShowingAd = true
       appOpenAd!!.show(activity)
     }

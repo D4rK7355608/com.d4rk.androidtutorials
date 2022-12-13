@@ -26,9 +26,8 @@ class DatePickerActivity : AppCompatActivity() {
         binding.changeDateButton.setOnClickListener {
             DatePickerDialog(this@DatePickerActivity, dateSetListener, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show()
         }
-        binding.showButtonCodeSyntax.setOnClickListener {
-            val intent = Intent(this, DatePickerCodeActivity::class.java)
-            startActivity(intent)
+        binding.floatingButtonShowSyntax.setOnClickListener {
+            startActivity(Intent(this, DatePickerCodeActivity::class.java))
         }
     }
     private fun updateDateInView() {

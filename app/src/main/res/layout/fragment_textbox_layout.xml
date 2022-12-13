@@ -1,11 +1,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.android.textbox.tabs.TextboxTabLayoutFragment">
+    android:layout_height="match_parent">
     <com.google.android.material.card.MaterialCardView
         style="@style/Widget.Material3.CardView.Elevated"
         android:layout_width="0dp"
@@ -20,12 +19,14 @@
             android:id="@+id/textboxScrollView"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textboxXMLText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="16dp"
                 android:textIsSelectable="true"
-                android:id="@+id/textboxXMLText"/>
+                app:fontFamily="@font/font_audiowide"
+                tools:ignore="SpeakableTextPresentCheck"/>
         </me.zhanghai.android.fastscroll.FastScrollScrollView>
     </com.google.android.material.card.MaterialCardView>
     <com.google.android.gms.ads.AdView

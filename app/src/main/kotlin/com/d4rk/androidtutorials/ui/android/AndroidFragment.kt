@@ -4,6 +4,6 @@ import androidx.preference.PreferenceFragmentCompat
 import com.d4rk.androidtutorials.R
 class AndroidFragment : PreferenceFragmentCompat() {
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
-        setPreferencesFromResource(R.xml.android_studio, rootKey)
+        setPreferencesFromResource(R.xml.preferences_android_studio, rootKey)
     }
 }

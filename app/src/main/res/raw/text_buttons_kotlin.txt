@@ -8,12 +8,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.button1.setOnClickListener {
-            Toast.makeText(this, "Elevated button clicked!", Toast.LENGTH_SHORT).show()
-        }
-        binding.showButtonCodeSyntax.setOnClickListener {
-            val intent = Intent(this, ButtonsCodeActivity::class.java)
-            startActivity(intent)
+        binding.YourButton.setOnClickListener {
+            Toast.makeText(this, "Your button clicked!", Toast.LENGTH_SHORT).show()
         }
     }
 }

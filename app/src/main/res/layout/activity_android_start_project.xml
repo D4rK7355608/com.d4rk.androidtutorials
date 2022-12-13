@@ -1,20 +1,18 @@
 <me.zhanghai.android.fastscroll.FastScrollScrollView
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/startProjectScroll"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scroll_view"
     android:layout_height="match_parent"
     android:layout_width="match_parent">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:context=".ui.android.AndroidStartProjectActivity">
+        android:layout_height="wrap_content">
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/step1"
+            android:id="@+id/text_view_first_step"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_margin="24dp"
             android:text="@string/step1"
             android:textColor="?attr/colorSecondary"
             android:textSize="24sp"
@@ -22,91 +20,118 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/step1_sum"
+            android:id="@+id/text_view_first_step_summary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:text="@string/step1_sum"
+            android:layout_margin="24dp"
+            android:text="@string/summary_first_step"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/step1"/>
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/image_step1"
+            app:layout_constraintTop_toBottomOf="@id/text_view_first_step"/>
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.Material3.CardView.Elevated"
+            android:id="@+id/card_view_first_step"
             android:layout_width="match_parent"
             android:layout_height="256dp"
             android:layout_margin="24dp"
-            android:src="@drawable/step1"
+            app:cardCornerRadius="24dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/step1_sum"/>
+            app:layout_constraintTop_toBottomOf="@id/text_view_first_step_summary">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/step1"/>
+        </com.google.android.material.card.MaterialCardView>
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/step2"
+            android:id="@+id/text_view_second_step"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_margin="24dp"
             android:text="@string/step2"
             android:textColor="?attr/colorSecondary"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/image_step1"/>
+            app:layout_constraintTop_toBottomOf="@id/card_view_first_step"/>
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/step2_sum"
+            android:id="@+id/text_view_second_step_summary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:text="@string/step2_sum"
+            android:layout_margin="24dp"
+            android:text="@string/summary_second_step"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/step2"/>
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/image_step2"
+            app:layout_constraintTop_toBottomOf="@id/text_view_second_step"/>
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.Material3.CardView.Elevated"
+            android:id="@+id/card_view_second_step"
             android:layout_width="match_parent"
             android:layout_height="256dp"
             android:layout_margin="24dp"
-            android:src="@drawable/step2"
+            app:cardCornerRadius="24dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/step2_sum"/>
+            app:layout_constraintTop_toBottomOf="@id/text_view_second_step_summary">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/step2"/>
+        </com.google.android.material.card.MaterialCardView>
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/step3"
+            android:id="@+id/text_view_third_step"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_margin="24dp"
             android:text="@string/step3"
             android:textColor="?attr/colorSecondary"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/image_step2"/>
+            app:layout_constraintTop_toBottomOf="@id/card_view_second_step"/>
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/step3_sum"
+            android:id="@+id/text_view_third_step_summary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_margin="24dp"
+            android:text="@string/summary_third_step"
             android:clickable="true"
-            android:text="@string/step3_sum"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/step3"/>
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/image_step3"
+            app:layout_constraintTop_toBottomOf="@id/text_view_third_step"/>
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.Material3.CardView.Elevated"
+            android:id="@+id/card_view_third_step"
             android:layout_width="match_parent"
             android:layout_height="256dp"
             android:layout_margin="24dp"
-            android:src="@drawable/step3"
+            app:cardCornerRadius="24dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/step3_sum"/>
+            app:layout_constraintTop_toBottomOf="@id/text_view_third_step_summary">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/step3"/>
+        </com.google.android.material.card.MaterialCardView>
         <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/runAnimation"
+            android:id="@+id/lottie_animation"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/image_step3"
             app:lottie_autoPlay="true"
             app:lottie_loop="false"
             app:lottie_rawRes="@raw/anim_programmer"
-            app:lottie_speed="0.25"/>
+            app:lottie_speed="0.5"
+            app:layout_constraintTop_toBottomOf="@id/card_view_third_step"/>
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/ad_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lottie_animation"
+            ads:adSize="BANNER"
+            ads:adUnitId="ca-app-pub-5294151573817700/4974008668"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </me.zhanghai.android.fastscroll.FastScrollScrollView>

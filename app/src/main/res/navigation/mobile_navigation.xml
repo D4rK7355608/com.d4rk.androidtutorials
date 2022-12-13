@@ -7,15 +7,15 @@
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.d4rk.androidtutorials.ui.home.HomeFragment"
-        android:label="@string/title_home"
+        android:label="@string/home"
         tools:layout="@layout/fragment_home"/>
     <fragment
         android:id="@+id/navigation_android_studio"
         android:name="com.d4rk.androidtutorials.ui.android.AndroidFragment"
-        android:label="@string/title_android_studio"/>
+        android:label="@string/android_studio"/>
     <fragment
         android:id="@+id/navigation_about"
         android:name="com.d4rk.androidtutorials.ui.about.AboutFragment"
-        android:label="@string/title_about"
+        android:label="@string/about"
         tools:layout="@layout/fragment_about"/>
 </navigation>

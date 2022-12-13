@@ -1,6 +1,7 @@
 <resources>
-    <color name="colorAccent">#93aae5</color>
     <color name="colorDialogBackground">#fdfbfe</color>
     <color name="colorLauncherBackground">#FFFFFF</color>
     <color name="colorBackground">#edf0fd</color>
+    <color name="colorIconShortcutBackground">#C1E8FF</color>
+    <color name="colorIconShortcutForeground">#454749</color>
 </resources>

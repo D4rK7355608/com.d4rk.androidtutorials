@@ -1,9 +1,10 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/tabLayout">
+    android:id="@+id/tab_layout">
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,13 +14,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorBackground"
-            app:tabTextColor="?attr/colorAccent"
             app:tabGravity="fill"
-            app:tabMode="fixed"/>
+            app:tabMode="fixed"
+            app:tabTextColor="?attr/colorAccent"
+            tools:ignore="SpeakableTextPresentCheck"/>
     </com.google.android.material.appbar.AppBarLayout>
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:ignore="SpeakableTextPresentCheck"/>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

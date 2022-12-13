@@ -5,8 +5,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.d4rk.androidtutorials.databinding.ActivityTimePickerBinding
 import java.text.SimpleDateFormat
-import java.util.*
-
+import java.util.Calendar
+import java.util.Locale
 class TimePickerActivity : AppCompatActivity() {
     private lateinit var binding : ActivityTimePickerBinding
     private val calendar: Calendar = Calendar.getInstance()
@@ -25,9 +25,8 @@ class TimePickerActivity : AppCompatActivity() {
             }
             TimePickerDialog(this, timeSetListener, calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), true).show()
         }
-        binding.showButtonCodeSyntax.setOnClickListener {
-            val intent = Intent(this, TimePickerCodeActivity::class.java)
-            startActivity(intent)
+        binding.floatingButtonShowSyntax.setOnClickListener {
+            startActivity(Intent(this, TimePickerCodeActivity::class.java))
         }
     }
 }

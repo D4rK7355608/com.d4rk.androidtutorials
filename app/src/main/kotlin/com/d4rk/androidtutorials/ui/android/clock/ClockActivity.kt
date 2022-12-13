@@ -9,9 +9,8 @@ class ClockActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityClockBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.showClockCodeSyntax.setOnClickListener {
-            val intent = Intent(this, ClockCodeActivity::class.java)
-            startActivity(intent)
+        binding.floatingButtonShowSyntax.setOnClickListener {
+            startActivity(Intent(this, ClockCodeActivity::class.java))
         }
     }
 }

@@ -11,5 +11,6 @@
         <item name="actionOverflowMenuStyle">@style/OverflowMenuTheme</item>
         <item name="alertDialogTheme">@style/DialogTheme</item>
         <item name="switchStyle">@style/SwitchTheme</item>
+        <item name="android:fontFamily">@font/font_poppins</item>
     </style>
 </resources>

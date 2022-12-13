@@ -17,7 +17,7 @@ class ClockTabLayoutFragment : Fragment() {
     private val binding get() = _binding
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentClockLayoutBinding.inflate(inflater, container, false)
-        FastScrollerBuilder(binding.clockScrollView).useMd2Style().build()
+        FastScrollerBuilder(binding.scrollView).useMd2Style().build()
         MobileAds.initialize(requireContext())
         val adRequestBuilder = AdRequest.Builder().build()
         binding.adView.loadAd(adRequestBuilder)
@@ -34,7 +34,7 @@ class ClockTabLayoutFragment : Fragment() {
         } catch (e: IOException) {
             e.printStackTrace()
         }
-        binding.digitalClockXMLText.text = digitalClockXMLText.toString()
+        binding.textViewDigitalClockXml.text = digitalClockXMLText.toString()
         val textClockXMLTextInput: InputStream = resources.openRawResource(R.raw.text_clock_xml)
         val textClockXMLText = ByteArrayOutputStream()
         try {
@@ -47,7 +47,7 @@ class ClockTabLayoutFragment : Fragment() {
         } catch (e: IOException) {
             e.printStackTrace()
         }
-        binding.textClockXMLText.text = textClockXMLText.toString()
+        binding.textViewTextClockXml.text = textClockXMLText.toString()
         val analogClockXMLTextInput: InputStream = resources.openRawResource(R.raw.text_clock_analog_xml)
         val analogClockXMLText = ByteArrayOutputStream()
         try {
@@ -60,7 +60,7 @@ class ClockTabLayoutFragment : Fragment() {
         } catch (e: IOException) {
             e.printStackTrace()
         }
-        binding.analogClockXMLText.text = analogClockXMLText.toString()
+        binding.textViewAnalogClockXml.text = analogClockXMLText.toString()
         return binding.root
     }
 }

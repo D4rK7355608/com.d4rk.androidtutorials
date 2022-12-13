@@ -1,3 +1,21 @@
+# Version 3.0_r1:
+- Added a new startup screen for new users;
+- Added German language support;
+- Added Turkish language support;
+- Added Spanish language support;
+- Added settings launcher shortcut;
+- Added new settings preferences;
+- Added new animations;
+- Added permissions lesson;
+- Added Android Studio keyboard shortcuts lesson;
+- Fixed some activities on split screen mode;
+- Rearranged lessons and placed by categories;
+- Rearranged settings preferences;
+- Reworked & refreshed UI;
+- Code cleanup;
+- Bug fixes;
+- Under the hood improvements.
+
 # Version 2.0_r1:
 - Added support for per-app languages (Android 13+);
 - Added Romanian language support;

@@ -3,19 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="8dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="24dp"
     app:columnCount="2">
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/musicSleepTimer"
+        android:id="@+id/image_view_music_sleep_timer"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_margin="8dp"
-        android:focusable="true"
+        android:background="@android:color/transparent"
         android:clickable="true"
+        android:focusable="true"
         android:src="@mipmap/ic_launcher_music_sleep_timer"
-        android:background="@android:color/transparent"/>
+        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck"/>
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/musicSleepTimerString"
+        android:id="@+id/text_view_music_sleep_timer"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_margin="8dp"
@@ -25,16 +27,17 @@
         android:textStyle="bold"
         android:text="@string/music_sleep_timer"/>
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/englishWithLidia"
+        android:id="@+id/image_view_english_with_lidia"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_margin="8dp"
         android:focusable="true"
         android:clickable="true"
         android:src="@mipmap/ic_launcher_english_with_lidia"
-        android:background="@android:color/transparent"/>
+        android:background="@android:color/transparent"
+        tools:ignore="SpeakableTextPresentCheck"/>
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/englishWithLidiaString"
+        android:id="@+id/text_view_english_with_lidia"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_margin="8dp"
@@ -44,16 +47,17 @@
         android:textStyle="bold"
         android:text="@string/english_with_lidia"/>
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/qrCodeScanner"
+        android:id="@+id/image_view_qr_and_code_scanner"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_margin="8dp"
         android:focusable="true"
         android:clickable="true"
         android:src="@mipmap/ic_launcher_qr_codes_scanner"
-        android:background="@android:color/transparent"/>
+        android:background="@android:color/transparent"
+        tools:ignore="SpeakableTextPresentCheck"/>
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/qrCodeScannerString"
+        android:id="@+id/text_view_qr_code_scanner"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_margin="8dp"
@@ -63,16 +67,17 @@
         android:textStyle="bold"
         android:text="@string/qr_code_scanner"/>
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/lowBrightness"
+        android:id="@+id/image_view_low_brightness"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_margin="8dp"
         android:focusable="true"
         android:clickable="true"
         android:src="@mipmap/ic_launcher_low_brightness"
-        android:background="@android:color/transparent"/>
+        android:background="@android:color/transparent"
+        tools:ignore="SpeakableTextPresentCheck"/>
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/lowBrightnessString"
+        android:id="@+id/text_view_low_brightness"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_margin="8dp"

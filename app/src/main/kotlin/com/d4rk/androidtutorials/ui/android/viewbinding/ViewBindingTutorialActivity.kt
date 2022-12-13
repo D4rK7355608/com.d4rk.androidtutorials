@@ -17,7 +17,7 @@ class ViewBindingTutorialActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityViewBindingTutorialBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        FastScrollerBuilder(binding.bindingScrollView).useMd2Style().build()
+        FastScrollerBuilder(binding.scrollView).useMd2Style().build()
         MobileAds.initialize(this)
         val adRequestBuilder = AdRequest.Builder().build()
         binding.adView.loadAd(adRequestBuilder)
@@ -59,8 +59,7 @@ class ViewBindingTutorialActivity : AppCompatActivity() {
             e.printStackTrace()
         }
         binding.moreAboutViewBindingButton.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://developer.android.com/topic/libraries/view-binding"))
-            startActivity(intent)
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://developer.android.com/topic/libraries/view-binding")))
         }
         binding.bindingText.text = bindingGradleStream.toString()
         binding.bindingActivitiesText.text = bindingActivityStream.toString()
