@@ -14,7 +14,7 @@
             app:useSimpleSummaryProvider="true"/>
         <androidx.preference.Preference
             app:title="@string/language"
-            android:summary="@string/language_summary"
+            android:summary="@string/summary_preference_settings_language"
             android:icon="@drawable/ic_language">
             <intent
                 android:targetPackage="com.d4rk.androidtutorials"
@@ -72,7 +72,7 @@
         <androidx.preference.Preference
             android:icon="@drawable/ic_license"
             app:title="@string/license"
-            android:summary="@string/summary_preference_license">
+            android:summary="@string/summary_preference_settings_license">
             <intent android:action="android.intent.action.VIEW"
                 android:data="https://www.gnu.org/licenses/gpl-3.0"/>
         </androidx.preference.Preference>
@@ -98,7 +98,7 @@
         <androidx.preference.Preference
             android:icon="@drawable/ic_support"
             app:title="@string/support_me"
-            android:summary="@string/summary_preference_support_me">
+            android:summary="@string/summary_preference_settings_support_me">
             <intent android:action="android.intent.action.VIEW"
                 android:data="https://bit.ly/3p8bpjj"/>
         </androidx.preference.Preference>

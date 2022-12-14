@@ -19,7 +19,7 @@
         app:icon="@drawable/ic_category_build_tinted">
         <androidx.preference.Preference
             app:title="@string/shortcuts"
-            app:summary="@string/shortcuts_summary"
+            app:summary="@string/summary_shortcuts"
             app:icon="@drawable/ic_app_shortcuts">
             <intent
                 android:action="android.intent.action.VIEW"
@@ -28,7 +28,7 @@
         </androidx.preference.Preference>
         <androidx.preference.Preference
             app:title="@string/android_sdk"
-            app:summary="@string/summary_android_sdk"
+            app:summary="@string/summary_preference_android_studio_android_sdks"
             app:icon="@drawable/ic_android_sdk">
             <intent
                 android:action="android.intent.action.VIEW"
@@ -37,7 +37,7 @@
         </androidx.preference.Preference>
         <androidx.preference.Preference
             app:title="@string/view_binding"
-            app:summary="@string/summary_preference_view_binding"
+            app:summary="@string/summary_preference_android_studio_view_binding"
             app:icon="@drawable/ic_code_binding">
             <intent
                 android:action="android.intent.action.VIEW"
@@ -46,7 +46,7 @@
         </androidx.preference.Preference>
         <androidx.preference.Preference
             app:title="@string/permissions"
-            app:summary="@string/permissions_summary"
+            app:summary="@string/summary_preference_android_studio_permissions"
             app:icon="@drawable/ic_permissions_tutorial">
             <intent
                 android:action="android.intent.action.VIEW"
@@ -59,7 +59,7 @@
         app:icon="@drawable/ic_category_button_tinted">
         <androidx.preference.Preference
             app:title="@string/implement_buttons"
-            app:summary="@string/implement_buttons_sum"
+            app:summary="@string/summary_preference_android_studio_buttons"
             app:icon="@drawable/ic_touch_button">
             <intent
                 android:action="android.intent.action.VIEW"
@@ -68,7 +68,7 @@
         </androidx.preference.Preference>
         <androidx.preference.Preference
             app:title="@string/implement_toggle"
-            app:summary="@string/toggle_sum"
+            app:summary="@string/summary_preference_android_studio_toggle"
             app:icon="@drawable/ic_toggle">
             <intent
                 android:action="android.intent.action.VIEW"
@@ -81,7 +81,7 @@
         app:icon="@drawable/ic_category_clock_tinted">
         <androidx.preference.Preference
             app:title="@string/clock_implementations"
-            app:summary="@string/summary_preference_clocks"
+            app:summary="@string/summary_preference_android_studio_clocks"
             app:icon="@drawable/ic_clock">
             <intent
                 android:action="android.intent.action.VIEW"
@@ -90,7 +90,7 @@
         </androidx.preference.Preference>
         <androidx.preference.Preference
             app:title="@string/timepicker_implementations"
-            app:summary="@string/summary_preference_timepicker_implementations"
+            app:summary="@string/summary_preference_android_studio_time_picker"
             app:icon="@drawable/ic_time">
             <intent
                 android:action="android.intent.action.VIEW"
@@ -99,7 +99,7 @@
         </androidx.preference.Preference>
         <androidx.preference.Preference
             app:title="@string/datepicker_implementations"
-            app:summary="@string/datepicker_implementations_sum"
+            app:summary="@string/summary_preference_android_studio_date_picker"
             app:icon="@drawable/ic_event">
             <intent
                 android:action="android.intent.action.VIEW"
@@ -112,7 +112,7 @@
         app:icon="@drawable/ic_category_text_tinted">
         <androidx.preference.Preference
             app:title="@string/implement_textbox"
-            app:summary="@string/implement_textbox_sum"
+            app:summary="@string/summary_preference_android_studio_text_box"
             app:icon="@drawable/ic_text">
             <intent
                 android:action="android.intent.action.VIEW"
@@ -121,7 +121,7 @@
         </androidx.preference.Preference>
         <androidx.preference.Preference
             app:title="@string/password_implementations"
-            app:summary="@string/password_implementations_sum"
+            app:summary="@string/summary_preference_android_studio_password_text_box"
             app:icon="@drawable/ic_password">
             <intent
                 android:action="android.intent.action.VIEW"
@@ -134,7 +134,7 @@
         app:icon="@drawable/ic_category_web_tinted">
         <androidx.preference.Preference
             app:title="@string/webview_implementations"
-            app:summary="@string/webview_implementations_sum"
+            app:summary="@string/summary_preference_android_studio_web_view"
             app:icon="@drawable/ic_webview">
             <intent
                 android:action="android.intent.action.VIEW"
@@ -147,7 +147,7 @@
         app:icon="@drawable/ic_category_dialog_tinted">
         <androidx.preference.Preference
             app:title="@string/implement_alert_dialog"
-            app:summary="@string/summary_preference_implement_alert_dialog"
+            app:summary="@string/summary_preference_android_studio_alert_dialog"
             app:icon="@drawable/ic_alert">
             <intent
                 android:action="android.intent.action.VIEW"

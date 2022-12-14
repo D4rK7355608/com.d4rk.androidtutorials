@@ -1,3 +1,7 @@
+# Version 3.1_r1:
+- Added missing translations;
+- Some code stylish;
+
 # Version 3.0_r1:
 - Added a new startup screen for new users;
 - Added German language support;

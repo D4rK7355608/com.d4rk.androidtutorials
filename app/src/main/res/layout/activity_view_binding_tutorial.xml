@@ -31,7 +31,7 @@
             android:id="@+id/bindingInstructionText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/summary_enable_binding_instructions"
+            android:text="@string/summary_enable_binding"
             android:paddingEnd="16dp"
             android:paddingStart="16dp"
             android:paddingBottom="16dp"

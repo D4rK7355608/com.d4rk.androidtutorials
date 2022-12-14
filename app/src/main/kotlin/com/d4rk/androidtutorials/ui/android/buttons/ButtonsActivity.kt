@@ -14,58 +14,58 @@ class ButtonsActivity : AppCompatActivity() {
         setContentView(binding.root)
         FastScrollerBuilder(binding.scrollView).useMd2Style().build()
         binding.buttonNormal.setOnClickListener {
-            Toast.makeText(this, R.string.button_normal_toast, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.toast_button_normal, Toast.LENGTH_SHORT).show()
         }
         binding.buttonOutlined.setOnClickListener {
-            Toast.makeText(this, R.string.button_outlined_toast, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.toast_button_outlined, Toast.LENGTH_SHORT).show()
         }
         binding.buttonElevated.setOnClickListener {
-            Toast.makeText(this, R.string.button_elevated_toast, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.toast_button_elevated, Toast.LENGTH_SHORT).show()
         }
         binding.buttonNormalIcon.setOnClickListener {
-            Toast.makeText(this, R.string.button_normal_icon_toast, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.toast_button_normal_icon, Toast.LENGTH_SHORT).show()
         }
         binding.buttonOutlinedIcon.setOnClickListener {
-            Toast.makeText(this, R.string.button_outlined_icon_toast, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.toast_button_outlined_icon, Toast.LENGTH_SHORT).show()
         }
         binding.buttonElevatedIcon.setOnClickListener {
-            Toast.makeText(this, R.string.button_elevated_icon_toast, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.toast_button_elevated_icon, Toast.LENGTH_SHORT).show()
         }
         binding.extendedFloatingButtonPrimary.setOnClickListener {
-            Toast.makeText(this, R.string.extended_floating_button_primary_toast, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.toast_extended_floating_button_primary, Toast.LENGTH_SHORT).show()
         }
         binding.extendedFloatingButtonSecondary.setOnClickListener {
-            Toast.makeText(this, R.string.extended_floating_button_secondary_toast, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.toast_extended_floating_button_secondary, Toast.LENGTH_SHORT).show()
         }
         binding.extendedFloatingButtonSurface.setOnClickListener {
-            Toast.makeText(this, R.string.extended_floating_button_surface_toast, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.toast_extended_floating_button_surface, Toast.LENGTH_SHORT).show()
         }
         binding.extendedFloatingButtonTertiary.setOnClickListener {
-            Toast.makeText(this, R.string.extended_floating_button_tertiary_toast, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.toast_extended_floating_button_tertiary, Toast.LENGTH_SHORT).show()
         }
         binding.extendedFloatingButtonPrimaryIcon.setOnClickListener {
-            Toast.makeText(this, R.string.extended_floating_button_primary_icon_toast, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.toast_extended_floating_button_primary_icon, Toast.LENGTH_SHORT).show()
         }
         binding.extendedFloatingButtonSecondaryIcon.setOnClickListener {
-            Toast.makeText(this, R.string.extended_floating_button_secondary_icon_toast, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.toast_extended_floating_button_secondary_icon, Toast.LENGTH_SHORT).show()
         }
         binding.extendedFloatingButtonSurfaceIcon.setOnClickListener {
-            Toast.makeText(this, R.string.extended_floating_button_surface_icon_toast, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.toast_extended_floating_button_surface_icon, Toast.LENGTH_SHORT).show()
         }
         binding.extendedFloatingButtonTertiaryIcon.setOnClickListener {
-            Toast.makeText(this, R.string.extended_floating_button_tertiary_icon_toast, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.toast_extended_floating_button_tertiary_icon, Toast.LENGTH_SHORT).show()
         }
         binding.floatingButtonPrimary.setOnClickListener {
-            Toast.makeText(this, R.string.floating_button_primary_toast, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.toast_floating_button_primary, Toast.LENGTH_SHORT).show()
         }
         binding.floatingButtonSecondary.setOnClickListener {
-            Toast.makeText(this, R.string.floating_button_secondary_toast, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.toast_floating_button_secondary, Toast.LENGTH_SHORT).show()
         }
         binding.floatingButtonSurface.setOnClickListener {
-            Toast.makeText(this, R.string.floating_button_surface_toast, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.toast_floating_button_surface, Toast.LENGTH_SHORT).show()
         }
         binding.floatingButtonTertiary.setOnClickListener {
-            Toast.makeText(this, R.string.floating_button_tertiary_toast, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.toast_floating_button_tertiary, Toast.LENGTH_SHORT).show()
         }
         binding.floatingButtonShowSyntax.setOnClickListener {
             startActivity(Intent(this, ButtonsCodeActivity::class.java))

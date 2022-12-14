@@ -35,7 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="24dp"
-        android:text="@string/browse_terms_of_service_and_privacy_policy_sum"
+        android:text="@string/summary_browse_terms_of_service_and_privacy_policy"
         app:layout_constraintTop_toBottomOf="@id/image_view_about"/>
     <com.google.android.material.button.MaterialButton
         style="@style/Widget.Material3.Button.TextButton"

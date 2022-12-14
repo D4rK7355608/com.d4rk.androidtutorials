@@ -13,7 +13,7 @@ android {
         minSdk 26
         targetSdk 33
         versionCode 21
-        versionName '3.0_r1'
+        versionName '3.1_a1'
         archivesBaseName = "${applicationId}-v${versionName}"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         resConfigs 'en', 'de', 'es', 'fr', 'hi', 'in', 'it', 'ja', 'ro', 'ru', 'tr'

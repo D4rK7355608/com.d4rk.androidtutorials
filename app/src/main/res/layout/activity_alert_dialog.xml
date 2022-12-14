@@ -21,8 +21,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="24dp"
         android:src="@drawable/ic_code"
-        android:tooltipText="@string/show_code"
-        android:contentDescription="@string/show_code"
+        android:tooltipText="@string/tooltip_show_code"
+        android:contentDescription="@string/tooltip_show_code"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,10 +14,10 @@ class ToggleActivity : MonetCompatActivity() {
         setContentView(binding.root)
         FastScrollerBuilder(binding.scrollView).useMd2Style().build()
         binding.switchMonet.setOnClickListener {
-            Toast.makeText(this,  R.string.monetSwitchToast, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,  R.string.toast_monet_switch, Toast.LENGTH_SHORT).show()
         }
         binding.buttonToggle.setOnClickListener {
-            Toast.makeText(this, R.string.appCompatToggleButtonToast, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.toast_compat_toggle_button, Toast.LENGTH_SHORT).show()
         }
         binding.switchMaterial.setOnClickListener {
             Toast.makeText(this, R.string.toast_switch_material, Toast.LENGTH_SHORT).show()

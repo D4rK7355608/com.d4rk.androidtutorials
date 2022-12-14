@@ -2,34 +2,6 @@
     <string name="app_name" translatable="false">Android Studio Tutorials</string>
     <string name="app_version">Version %1$s (%2$d)</string>
     <string name="app_description">Learn how to make simple apps in Android Studio. 📱</string>
-    <string name="summary_preference_license" translatable="false">General Public License-3.0</string>
-    <string name="summary_preference_android_start">Learn the base of how to start a new Android Studio project, how to configure, how to set package, API levels and many more…</string>
-    <string name="summary_preference_clocks">A simple way to add digital, analog or text clock in your Android app.</string>
-    <string name="summary_preference_internet">Used to send error reports.</string>
-    <string name="summary_preference_implement_alert_dialog">A dialog is a small window that prompts the user to make a decision or enter additional information. A dialog does not fill the screen and is normally used for modal events that require users to take an action before they can proceed.</string>
-    <string name="summary_view_binding">View binding is a feature that allows you to more easily write code that interacts with views. Once view binding is enabled in a module, it generates a binding class for each XML layout file present in that module. An instance of a binding class contains direct references to all views that have an ID in the corresponding layout.</string>
-    <string name="summary_sdk">This is an overview of all Android versions and their corresponding identifiers for Android developers. Anyone is welcome to open an issue or pull request. Happy developing!</string>
-    <string name="summary_first_step">First time you open Android Studio click on <b>New project</b> button like you can see in the image and go to next the step.</string>
-    <string name="summary_second_step">Second time you have to choose your activity type you want for the app. You have some presets to make your work more easier. Choose one of them and click on next button.</string>
-    <string name="summary_third_step">Third and final step is to set your app name, package name, preferred programming language and minimum SDK your app will use. You can search more about them on <a href="https://developer.android.com/">Android Developers</a>.</string>
-    <string name="summary_preference_support_me">Click here if you want to support me without paying money. Just some time for viewing an add.</string>
-    <string name="summary_preference_timepicker_implementations">Android TimePicker is a user interface control for selecting the time in either 24-hour format or AM/PM mode. It is used to ensure that users pick the valid time for the day in our application. The time picker interface exists basically in two modes one is under XML layout and another is a dialog.</string>
-    <string name="summary_enable_binding_instructions">View binding is enabled on a module by module basis. To enable view binding in a module, set the viewBinding build option to true in the module-level build.gradle file, as shown in the following example:</string>
-    <string name="summary_preference_view_binding">New in Android Studio 3.6, view binding gives you the ability to replace findViewById with generated binding objects to simplify code, remove bugs, and avoid all the boilerplate of findViewById.</string>
-    <string name="summary_preference_ad_id">Used to allow ads to be shown in Android 13+ devices.</string>
-    <string name="summary_android_sdk">Android SDKs are used to recognize Android versions by numbers for every version of Android.</string>
-    <string name="implement_textbox_sum">A user interface element for entering and modifying text. When you define an edit text widget, you must specify the R.styleable.TextView_inputType attribute…</string>
-    <string name="toggle_sum">Discover more things about toggle buttons and what you can do with them. Learn implementations of toggle buttons here. Also learn how to make them look beauty and clean.</string>
-    <string name="datepicker_implementations_sum">Android provides controls for the user to pick a time or pick a date as ready-to-use dialogs. Each picker provides controls for selecting each part of the time (hour, minute, AM/PM) or date (month, day, year). Using these pickers helps ensure that your users can pick a time or date that is valid, formatted correctly, and adjusted to the user\'s locale.</string>
-    <string name="implement_buttons_sum">Discover more things about general buttons and what you can do with them. Learn how to make them look beauty and clean.</string>
-    <string name="webview_implementations_sum">A View that displays web pages. Basic usage. In most cases, we recommend using a standard web browser, like Chrome, to deliver content to the user.</string>
-    <string name="password_implementations_sum">A simple text box with ability to hide text. Is used in login screens for most of the apps to keep passwords safe.</string>
-    <string name="browse_terms_of_service_and_privacy_policy_sum">Read and agree to our Terms of Service and Privacy Policy to continue.</string>
-    <string name="shortcuts_summary">Android Studio includes keyboard shortcuts for many common actions. Keep in mind, because Android Studio is based on IntelliJ IDEA, you can find additional shortcuts in the IntelliJ IDEA keymap reference documentation.</string>
-    <string name="permissions_summary">Permissions are important in Android as you can\'t do tasks, that require permissions, without requesting permissions.</string>
-    <string name="language_summary">Set application language.</string>
-    <string name="clock_desc">Important Note: Digital clock is deprecated in version API 17. From API level 17 you can use TextClock instead of digital clock. Below is the description of Text clock in android.</string>
-    <string name="toggle_desc">You can add a basic toggle button to your layout with the ToggleButton object. Android 4.0 (API level 14) introduces another kind of toggle button called a switch that provides a slider control, which you can add with a Switch object. SwitchCompat is a version of the Switch widget which runs on devices back to API 7.</string>
     <string name="copyright">© Copyright %1s made by D4rK!</string>
     <string name="made_in">Made with ❤ in Romania!</string>
     <string name="mail_to_dev">Email to dev</string>
@@ -46,7 +18,6 @@
     <string name="english_with_lidia" translatable="false">English with Lidia</string>
     <string name="qr_code_scanner" translatable="false">QR &amp; Bar Code Scanner</string>
     <string name="low_brightness" translatable="false">Low Brightness</string>
-    <string name="toast_feedback">Thanks for rating us!</string>
     <string name="privacy_policy">Privacy policy</string>
     <string name="license">License</string>
     <string name="terms_of_service">Terms of service</string>
@@ -55,7 +26,6 @@
     <string name="feedback">Feedback</string>
     <string name="changelog">Changelog</string>
     <string name="more_apps">More apps…</string>
-    <string name="tooltip_feedback">Send us your review on Google Play Store.</string>
     <string name="internet">Internet [INTERNET]</string>
     <string name="normal">Normal</string>
     <string name="rate_us">Rate our app!</string>
@@ -101,17 +71,10 @@
     <string name="toggle">Toggle</string>
     <string name="textbox">Text Box</string>
     <string name="toggle_me">Toggle me</string>
-    <string name="show_code">Show code syntax</string>
     <string name="type_here">Type here…</string>
     <string name="print_text">Print text.</string>
     <string name="implement_textbox">Implement Text Box</string>
     <string name="open_me">Open me :)</string>
-    <string name="button_normal_toast">Normal button clicked!</string>
-    <string name="button_outlined_toast">Outlined button clicked!</string>
-    <string name="button_elevated_toast">Elevated button clicked!</string>
-    <string name="monetSwitchToast">Toggled Monet Switch!</string>
-    <string name="appCompatToggleButtonToast">Toggled Compat Toggle Button!</string>
-    <string name="toast_material_switch">Toggled Material Switch!</string>
     <string name="code_kotlin" translatable="false">Kotlin</string>
     <string name="layout_xml" translatable="false">XML</string>
     <string name="share">Share</string>
@@ -243,25 +206,62 @@
     <string name="floating_button_secondary_icon">Floating Button 2 (secondary)</string>
     <string name="floating_button_surface_icon">Floating Button 3 (surface)</string>
     <string name="floating_button_tertiary_icon">Floating Button 4 (tertiary)</string>
-    <string name="button_normal_icon_toast">Elevated button (icon) clicked!</string>
-    <string name="button_outlined_icon_toast">Elevated button (icon) clicked!</string>
-    <string name="button_elevated_icon_toast">Elevated button (icon) clicked!</string>
-    <string name="extended_floating_button_primary_toast">Extended floating button (primary) clicked!</string>
-    <string name="extended_floating_button_secondary_toast">Extended floating button (secondary) clicked!</string>
-    <string name="extended_floating_button_surface_toast">Extended floating button (surface) clicked!</string>
-    <string name="extended_floating_button_tertiary_toast">Extended floating button (tertiary) clicked!</string>
-    <string name="extended_floating_button_primary_icon_toast">Extended floating button (primary icon) clicked!</string>
-    <string name="extended_floating_button_secondary_icon_toast">Extended floating button (secondary icon) clicked!</string>
-    <string name="extended_floating_button_surface_icon_toast">Extended floating button (surface icon) clicked!</string>
-    <string name="extended_floating_button_tertiary_icon_toast">Extended floating button (tertiary icon) clicked!</string>
-    <string name="floating_button_primary_toast">Floating button (primary) clicked!</string>
-    <string name="floating_button_secondary_toast">Floating button (secondary) clicked!</string>
-    <string name="floating_button_surface_toast">Floating button (surface) clicked!</string>
-    <string name="floating_button_tertiary_toast">Floating button (tertiary) clicked!</string>
-    <string name="more_about_shortcuts" translatable="false">More about shortcuts</string>
-    <string name="same_binding" translatable="false">Use this Kotlin code for all button types.</string>
-    <string name="permission_dialog_example" translatable="false">Permission dialog example</string>
-    <string name="toast_switch_material" translatable="false">Toggled Switch Material!</string>
+    <string name="more_about_shortcuts">More about shortcuts</string>
+    <string name="same_binding">Use this Kotlin code for all button types.</string>
+    <string name="permission_dialog_example">Permission dialog example</string>
+    <string name="summary_preference_permissions_internet">Used to send error reports.</string>
+    <string name="summary_preference_permissions_ad_id">Used to allow ads to be shown in Android 13+ devices.</string>
+    <string name="summary_preference_settings_license" translatable="false">General Public License-3.0</string>
+    <string name="summary_preference_settings_support_me">Click here if you want to support me without paying money. Just some time for viewing an add.</string>
+    <string name="summary_preference_settings_language">Set application language.</string>
+    <string name="summary_preference_android_start">Learn the base of how to start a new Android Studio project, how to configure, how to set package, API levels and many more…</string>
+    <string name="summary_preference_android_studio_clocks">A simple way to add digital, analog or text clock in your Android app.</string>
+    <string name="summary_preference_android_studio_alert_dialog">A dialog is a small window that prompts the user to make a decision or enter additional information. A dialog does not fill the screen and is normally used for modal events that require users to take an action before they can proceed.</string>
+    <string name="summary_preference_android_studio_time_picker">Android TimePicker is a user interface control for selecting the time in either 24-hour format or AM/PM mode. It is used to ensure that users pick the valid time for the day in our application. The time picker interface exists basically in two modes one is under XML layout and another is a dialog.</string>
+    <string name="summary_preference_android_studio_toggle">Discover more things about toggle buttons and what you can do with them. Learn implementations of toggle buttons here. Also learn how to make them look beauty and clean.</string>
+    <string name="summary_preference_android_studio_permissions">Permissions are important in Android as you can\'t do tasks, that require permissions, without requesting permissions.</string>
+    <string name="summary_preference_android_studio_view_binding">New in Android Studio 3.6, view binding gives you the ability to replace findViewById with generated binding objects to simplify code, remove bugs, and avoid all the boilerplate of findViewById.</string>
+    <string name="summary_preference_android_studio_android_sdks">Android SDKs are used to recognize Android versions by numbers for every version of Android.</string>
+    <string name="summary_preference_android_studio_text_box">A user interface element for entering and modifying text. When you define an edit text widget, you must specify the R.styleable.TextView_inputType attribute…</string>
+    <string name="summary_preference_android_studio_date_picker">Android provides controls for the user to pick a time or pick a date as ready-to-use dialogs. Each picker provides controls for selecting each part of the time (hour, minute, AM/PM) or date (month, day, year). Using these pickers helps ensure that your users can pick a time or date that is valid, formatted correctly, and adjusted to the user\'s locale.</string>
+    <string name="summary_preference_android_studio_buttons">Discover more things about general buttons and what you can do with them. Learn how to make them look beauty and clean.</string>
+    <string name="summary_preference_android_studio_web_view">A View that displays web pages. Basic usage. In most cases, we recommend using a standard web browser, like Chrome, to deliver content to the user.</string>
+    <string name="summary_preference_android_studio_password_text_box">A simple text box with ability to hide text. Is used in login screens for most of the apps to keep passwords safe.</string>
+    <string name="summary_sdk">This is an overview of all Android versions and their corresponding identifiers for Android developers. Anyone is welcome to open an issue or pull request. Happy developing!</string>
+    <string name="summary_view_binding">View binding is a feature that allows you to more easily write code that interacts with views. Once view binding is enabled in a module, it generates a binding class for each XML layout file present in that module. An instance of a binding class contains direct references to all views that have an ID in the corresponding layout.</string>
+    <string name="summary_first_step">First time you open Android Studio click on <b>New project</b> button like you can see in the image and go to next the step.</string>
+    <string name="summary_second_step">Second time you have to choose your activity type you want for the app. You have some presets to make your work more easier. Choose one of them and click on next button.</string>
+    <string name="summary_third_step">Third and final step is to set your app name, package name, preferred programming language and minimum SDK your app will use. You can search more about them on <a href="https://developer.android.com/">Android Developers</a>.</string>
+    <string name="summary_enable_binding">View binding is enabled on a module by module basis. To enable view binding in a module, set the viewBinding build option to true in the module-level build.gradle file, as shown in the following example:</string>
+    <string name="summary_browse_terms_of_service_and_privacy_policy">Read and agree to our Terms of Service and Privacy Policy to continue.</string>
+    <string name="summary_shortcuts">Android Studio includes keyboard shortcuts for many common actions. Keep in mind, because Android Studio is based on IntelliJ IDEA, you can find additional shortcuts in the IntelliJ IDEA keymap reference documentation.</string>
+    <string name="summary_toggle">You can add a basic toggle button to your layout with the ToggleButton object. Android 4.0 (API level 14) introduces another kind of toggle button called a switch that provides a slider control, which you can add with a Switch object. SwitchCompat is a version of the Switch widget which runs on devices back to API 7.</string>
+    <string name="summary_clocks">Important Note: Digital clock is deprecated in version API 17. From API level 17 you can use TextClock instead of digital clock. Below is the description of Text clock in android.</string>
+    <string name="toast_switch_material">Toggled Switch Material!</string>
+    <string name="toast_button_normal_icon">Elevated button (icon) clicked!</string>
+    <string name="toast_button_outlined_icon">Elevated button (icon) clicked!</string>
+    <string name="toast_button_elevated_icon">Elevated button (icon) clicked!</string>
+    <string name="toast_extended_floating_button_primary">Extended floating button (primary) clicked!</string>
+    <string name="toast_extended_floating_button_secondary">Extended floating button (secondary) clicked!</string>
+    <string name="toast_extended_floating_button_surface">Extended floating button (surface) clicked!</string>
+    <string name="toast_extended_floating_button_tertiary">Extended floating button (tertiary) clicked!</string>
+    <string name="toast_extended_floating_button_primary_icon">Extended floating button (primary icon) clicked!</string>
+    <string name="toast_extended_floating_button_secondary_icon">Extended floating button (secondary icon) clicked!</string>
+    <string name="toast_extended_floating_button_surface_icon">Extended floating button (surface icon) clicked!</string>
+    <string name="toast_extended_floating_button_tertiary_icon">Extended floating button (tertiary icon) clicked!</string>
+    <string name="toast_floating_button_primary">Floating button (primary) clicked!</string>
+    <string name="toast_floating_button_secondary">Floating button (secondary) clicked!</string>
+    <string name="toast_floating_button_surface">Floating button (surface) clicked!</string>
+    <string name="toast_floating_button_tertiary">Floating button (tertiary) clicked!</string>
+    <string name="toast_feedback">Thanks for rating us!</string>
+    <string name="toast_button_normal">Normal button clicked!</string>
+    <string name="toast_button_outlined">Outlined button clicked!</string>
+    <string name="toast_button_elevated">Elevated button clicked!</string>
+    <string name="toast_monet_switch">Toggled Monet Switch!</string>
+    <string name="toast_compat_toggle_button">Toggled Compat Toggle Button!</string>
+    <string name="toast_material_switch">Toggled Material Switch!</string>
+    <string name="tooltip_feedback">Send us your review on Google Play Store.</string>
+    <string name="tooltip_show_code">Show code syntax</string>
     <string name="changelog_title" translatable="false">Changelog - Version %1s</string>
     <string name="changes" translatable="false">\n
         • Added a new startup screen for new users;\n

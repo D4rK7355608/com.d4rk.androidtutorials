@@ -76,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
                 android:padding="12dp"
-                android:text="@string/toggle_desc"
+                android:text="@string/summary_toggle"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/material_switch"/>
@@ -88,9 +88,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="24dp"
-        android:contentDescription="@string/show_code"
+        android:contentDescription="@string/tooltip_show_code"
         android:src="@drawable/ic_code"
-        android:tooltipText="@string/show_code"
+        android:tooltipText="@string/tooltip_show_code"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

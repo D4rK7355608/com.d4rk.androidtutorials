@@ -80,6 +80,7 @@ class Ads : MultiDexApplication(), Application.ActivityLifecycleCallbacks, Lifec
       val numMilliSecondsPerHour: Long = 3600000
       return dateDifference < numMilliSecondsPerHour * numHours
     }
+    @Suppress("BooleanMethodIsAlwaysInverted")
     private fun isAdAvailable(): Boolean {
       return appOpenAd != null && wasLoadTimeLessThanNHoursAgo(4)
     }
