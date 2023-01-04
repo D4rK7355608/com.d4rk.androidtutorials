@@ -512,6 +512,12 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/text_view_floating_button_tertiary"
                 tools:ignore="ContentDescription"/>
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:text="@string/summary_buttons"
+                app:layout_constraintTop_toBottomOf="@id/floating_button_tertiary"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </me.zhanghai.android.fastscroll.FastScrollScrollView>
     <com.google.android.material.floatingactionbutton.FloatingActionButton

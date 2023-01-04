@@ -56,10 +56,21 @@ class LanguageActivity : AppCompatActivity() {
         binding.buttonLanguageTr.setOnClickListener {
             localeManager.applicationLocales = LocaleList(Locale.forLanguageTag("tr"))
         }
+        binding.buttonLanguageSv.setOnClickListener {
+            localeManager.applicationLocales = LocaleList(Locale.forLanguageTag("sv"))
+        }
+        binding.buttonLanguageBg.setOnClickListener {
+            localeManager.applicationLocales = LocaleList(Locale.forLanguageTag("bg"))
+        }
+        binding.buttonLanguagePl.setOnClickListener {
+            localeManager.applicationLocales = LocaleList(Locale.forLanguageTag("pl"))
+        }
+        binding.buttonLanguageUk.setOnClickListener {
+            localeManager.applicationLocales = LocaleList(Locale.forLanguageTag("uk"))
+        }
     }
     override fun onResume() {
         super.onResume()
-        val defaultLanguage = String.format(resources.getString(R.string.system_default))
         val language = when (localeManager.applicationLocales.toLanguageTags()) {
             "en" -> "English"
             "ro" -> "Română"
@@ -72,9 +83,13 @@ class LanguageActivity : AppCompatActivity() {
             "ja" -> "日本語"
             "ru" -> "Русский"
             "tr" -> "Türkçe"
-            else -> defaultLanguage
+            "sv" -> "Svenska"
+            "bg" -> "български"
+            "pl" -> "Polski"
+            "uk" -> "Ukrainian"
+            else -> resources.getString(R.string.system_default)
         }
-        val currentLanguage = String.format(resources.getString(R.string.current_language), language)
+        val currentLanguage = resources.getString(R.string.current_language, language)
         binding.textViewCurrentLanguage.text = currentLanguage
     }
 }

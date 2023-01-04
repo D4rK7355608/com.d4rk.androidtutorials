@@ -13,20 +13,12 @@
         app:layout_constraintBottom_toTopOf="@+id/tableRow"
         app:layout_constraintTop_toTopOf="@+id/tableRow">
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/text_view_android_sdks_description"
+            android:id="@+id/text_view_android_sdks_summary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/android_sdks"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/text_view_android_versions_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="24dp"
             android:text="@string/summary_sdk"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text_view_android_sdks_description"/>
+            app:layout_constraintTop_toTopOf="parent"/>
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/text_view_android"
             android:layout_width="wrap_content"
@@ -35,8 +27,8 @@
             android:textStyle="bold"
             android:paddingTop="24dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text_view_android_versions_description"
-           tools:ignore="HardcodedText,TextContrastCheck"/>
+            app:layout_constraintTop_toBottomOf="@id/text_view_android_sdks_summary"
+            tools:ignore="HardcodedText,TextContrastCheck"/>
         <com.google.android.material.card.MaterialCardView
             style="@style/Widget.Material3.CardView.Elevated"
             android:id="@+id/card_view_table_layout"
@@ -61,31 +53,31 @@
                         android:text="Version"
                         android:textSize="11sp"
                         android:padding="4dp"
-                       tools:ignore="HardcodedText,TextContrastCheck"/>
+                        tools:ignore="HardcodedText,TextContrastCheck"/>
                     <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
                         android:text="API level"
                         android:textSize="11sp"
                         android:padding="4dp"
-                       tools:ignore="HardcodedText,TextContrastCheck"/>
+                        tools:ignore="HardcodedText,TextContrastCheck"/>
                     <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
                         android:text="Version code"
                         android:textSize="11sp"
                         android:padding="4dp"
-                       tools:ignore="HardcodedText,TextContrastCheck"/>
+                        tools:ignore="HardcodedText,TextContrastCheck"/>
                     <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
                         android:text="Codename"
                         android:textSize="11sp"
                         android:padding="4dp"
-                       tools:ignore="HardcodedText,TextContrastCheck"/>
+                        tools:ignore="HardcodedText,TextContrastCheck"/>
                     <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
                         android:text="Year"
                         android:textSize="11sp"
                         android:padding="4dp"
-                       tools:ignore="HardcodedText,TextContrastCheck"/>
+                        tools:ignore="HardcodedText,TextContrastCheck"/>
                 </TableRow>
                 <TableRow
                     android:layout_width="wrap_content"
@@ -110,12 +102,12 @@
                         tools:ignore="HardcodedText,TextContrastCheck"/>
                     <com.google.android.material.textview.MaterialTextView
                         android:text="None"
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:textStyle="italic"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="2008"/>
@@ -127,27 +119,27 @@
                     android:showDividers="middle">
                     <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="1.1"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="2"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="BASE_1_1"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="Petit Four"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="2009"/>
@@ -159,27 +151,27 @@
                     android:showDividers="middle">
                     <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="1.5"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="3"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="CUPCAKE"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="Cupcake"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="2009"/>
@@ -191,27 +183,27 @@
                     android:showDividers="middle">
                     <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="1.6"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="4"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="DONUT"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="Donut"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="2009"/>
@@ -223,27 +215,27 @@
                     android:showDividers="middle">
                     <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="2.0"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="5"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="ECLAIR"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="Eclair"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="2009"/>
@@ -255,27 +247,27 @@
                     android:showDividers="middle">
                     <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="2.0.1"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="6"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="ECLAIR_0_1"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="Eclair"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="2009"/>
@@ -287,27 +279,27 @@
                     android:showDividers="middle">
                     <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="2.1"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="7"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="ECLAIR_MR1"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="Eclair"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="2010"/>
@@ -319,27 +311,27 @@
                     android:showDividers="middle">
                     <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="2.2"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="8"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="FROYO"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="Froyo"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="2010"/>
@@ -351,27 +343,27 @@
                     android:showDividers="middle">
                     <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="2.3.0/2.3.2"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="9"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="GINGERBREAD"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="Gingerbread"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="2010"/>
@@ -383,27 +375,27 @@
                     android:showDividers="middle">
                     <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="2.3.3/2.3.7"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="10"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="GINGERBREAD_MR1"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="Gingerbread"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="2010"/>
@@ -415,27 +407,27 @@
                     android:showDividers="middle">
                     <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="3.0"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="11"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="HONEYCOMB"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="Honeycomb"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="2011"/>
@@ -453,22 +445,22 @@
                         android:padding="4dp"
                         android:text="3.1"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="12"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="HONEYCOMB_MR1"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="Honeycomb"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="2011"/>
@@ -480,27 +472,27 @@
                     android:showDividers="middle">
                     <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="3.2"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="13"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="HONEYCOMB_MR2"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="Honeycomb"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="2011"/>
@@ -512,27 +504,27 @@
                     android:showDividers="middle">
                     <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="4.0.1/4.0.2"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="14"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="ICE_CREAM_SANDWICH"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="Ice Cream Sandwich"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="2011"/>
@@ -544,27 +536,27 @@
                     android:showDividers="middle">
                     <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="4.0.3/4.0.4"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="15"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="ICE_CREAM_SANDWICH_MR1"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="Ice Cream Sandwich"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="2011"/>
@@ -576,27 +568,27 @@
                     android:showDividers="middle">
                     <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="4.1"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="16"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="JELLYBEAN"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="Jelly Bean"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="202"/>
@@ -608,27 +600,27 @@
                     android:showDividers="middle">
                     <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="4.2"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="17"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="JELLYBEAN_MR1"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="Jelly Bean"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="2012"/>
@@ -640,27 +632,27 @@
                     android:showDividers="middle">
                     <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="4.3"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="18"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="JELLYBEAN_MR2"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="Jelly Bean"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="2013"/>
@@ -672,27 +664,27 @@
                     android:showDividers="middle">
                     <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="4.4"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="19"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="JELLYBEAN_MR2"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="KitKat"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="2013"/>
@@ -704,27 +696,27 @@
                     android:showDividers="middle">
                     <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="4.4W"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="20"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="JKITKAT_WATCH"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="KitKat"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="2013"/>
@@ -736,27 +728,27 @@
                     android:showDividers="middle">
                     <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="5.0"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="21"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="LOLLIPOP, L"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="Lollipop"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="2014"/>
@@ -768,27 +760,27 @@
                     android:showDividers="middle">
                     <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="5.1"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="22"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="LOLLIPOP_MR1"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="Lollipop"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="2015"/>
@@ -800,27 +792,27 @@
                     android:showDividers="middle">
                     <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="6.0"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="23"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="M"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="Marshmallow"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="2015"/>
@@ -832,27 +824,27 @@
                     android:showDividers="middle">
                     <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="7.0"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="24"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="N"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="Nougat"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="2016"/>
@@ -864,27 +856,27 @@
                     android:showDividers="middle">
                     <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="7.1"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="25"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="N_MR1"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="Nougat"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="2016"/>
@@ -896,27 +888,27 @@
                     android:showDividers="middle">
                     <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="8.0"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="26"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="O"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="Oreo"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="2017"/>
@@ -928,27 +920,27 @@
                     android:showDividers="middle">
                     <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="8.1"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="27"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="O_MR1"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="Oreo"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="2017"/>
@@ -960,27 +952,27 @@
                     android:showDividers="middle">
                     <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="9"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="28"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="P"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="Pie"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="2018"/>
@@ -992,27 +984,27 @@
                     android:showDividers="middle">
                     <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="10"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="29"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="Q"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="Quince Tart"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="2019"/>
@@ -1024,27 +1016,27 @@
                     android:showDividers="middle">
                     <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="11"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="30"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="R"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="Red Velvet Cake"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="2020"/>
@@ -1056,27 +1048,27 @@
                     android:showDividers="middle">
                     <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="12"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="31"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="S"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="Snow Cone"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="2021"/>
@@ -1088,27 +1080,27 @@
                     android:showDividers="middle">
                     <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="12L"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="32"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="S_V2"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="Snow Cone"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="2021"/>
@@ -1120,27 +1112,27 @@
                     android:showDividers="middle">
                     <com.google.android.material.textview.MaterialTextView
                         android:gravity="center"
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="13"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="33"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="T"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="Tiramisu"/>
                     <com.google.android.material.textview.MaterialTextView
-                       tools:ignore="HardcodedText,TextContrastCheck"
+                        tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
                         android:text="2022"/>

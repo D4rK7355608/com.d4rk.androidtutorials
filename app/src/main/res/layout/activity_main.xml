@@ -23,9 +23,9 @@
         android:id="@+id/nav_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorBackground"
         app:itemTextAppearanceActive="@style/TextAppearance.Material3.BodyMedium"
         app:itemTextAppearanceInactive="@style/TextAppearance.Material3.BodySmall"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:itemBackground="?attr/colorSurface"
         app:menu="@menu/bottom_nav_menu"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

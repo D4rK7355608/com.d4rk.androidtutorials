@@ -1,8 +1,14 @@
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:installLocation="auto">
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="com.android.vending.CHECK_LICENSE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY"/>
     <queries>
         <intent>
             <action android:name="android.intent.action.VIEW"/>
@@ -24,7 +30,7 @@
         android:localeConfig="@xml/config_locales"
         tools:targetApi="33">
         <activity
-            android:name=".helpers.HelperActivity"
+            android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/SplashScreenTheme">
             <intent-filter>
@@ -37,286 +43,239 @@
                 android:resource="@xml/shortcuts"/>
         </activity>
         <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:theme="@style/AppTheme"/>
-        <activity
             android:name=".ui.startup.StartupActivity"
             android:theme="@style/AppTheme"/>
         <activity
             android:name=".ui.language.LanguageActivity"
             android:exported="false"
-            android:label="@string/language">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.language.LanguageActivity"/>
-        </activity>
+            android:label="@string/language"
+            android:parentActivityName=".ui.language.LanguageActivity"/>
         <activity
-            android:name=".ui.android.toggle.ToggleCodeActivity"
+            android:name=".ui.android.buttons.toggle.ToggleCodeActivity"
             android:exported="false"
-            android:label="@string/toggle">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.android.toggle.ToggleCodeActivity"/>
-        </activity>
+            android:label="@string/toggle"
+            android:parentActivityName=".ui.android.buttons.toggle.ToggleCodeActivity"/>
         <activity
-            android:name=".ui.android.clock.ClockCodeActivity"
+            android:name=".ui.android.buttons.radio.RadioButtonsActivity"
             android:exported="false"
-            android:label="@string/clock">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.android.clock.ClockCodeActivity"/>
-        </activity>
+            android:label="@string/radio_buttons"
+            android:parentActivityName=".ui.android.buttons.radio.RadioButtonsActivity"/>
         <activity
-            android:name=".ui.android.clock.ClockActivity"
+            android:name=".ui.android.buttons.radio.RadioButtonsCodeActivity"
             android:exported="false"
-            android:label="@string/clock">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.android.clock.ClockActivity"/>
-        </activity>
+            android:label="@string/radio_buttons"
+            android:parentActivityName=".ui.android.buttons.radio.RadioButtonsCodeActivity"/>
         <activity
-            android:name=".ui.android.timepicker.TimePickerCodeActivity"
+            android:name=".ui.android.alerts.toast.ToastActivity"
             android:exported="false"
-            android:label="@string/timepicker">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.android.timepicker.TimePickerCodeActivity"/>
-        </activity>
+            android:label="@string/toast"
+            android:parentActivityName=".ui.android.alerts.toast.ToastActivity"/>
         <activity
-            android:name=".ui.android.timepicker.TimePickerActivity"
+            android:name=".ui.android.alerts.toast.ToastCodeActivity"
             android:exported="false"
-            android:label="@string/timepicker">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.android.timepicker.TimePickerActivity"/>
-        </activity>
+            android:label="@string/toast"
+            android:parentActivityName=".ui.android.alerts.toast.ToastCodeActivity"/>
+        <activity
+            android:name=".ui.android.buttons.image.ImageButtonsActivity"
+            android:exported="false"
+            android:label="@string/image_buttons"
+            android:parentActivityName=".ui.android.buttons.image.ImageButtonsActivity"/>
+        <activity
+            android:name=".ui.android.buttons.image.ImageButtonsCodeActivity"
+            android:exported="false"
+            android:label="@string/image_buttons"
+            android:parentActivityName=".ui.android.buttons.image.ImageButtonsCodeActivity"/>
+        <activity
+            android:name=".ui.android.images.ImagesActivity"
+            android:exported="false"
+            android:label="@string/images"
+            android:parentActivityName=".ui.android.images.ImagesActivity"/>
+        <activity
+            android:name=".ui.android.images.ImagesCodeActivity"
+            android:exported="false"
+            android:label="@string/images"
+            android:parentActivityName=".ui.android.images.ImagesCodeActivity"/>
+        <activity
+            android:name=".ui.android.alerts.snackbar.SnackBarActivity"
+            android:exported="false"
+            android:label="@string/snack_bar"
+            android:parentActivityName=".ui.android.alerts.snackbar.SnackBarActivity"/>
+        <activity
+            android:name=".ui.android.alerts.snackbar.SnackBarCodeActivity"
+            android:exported="false"
+            android:label="@string/snack_bar"
+            android:parentActivityName=".ui.android.alerts.snackbar.SnackBarCodeActivity"/>
+        <activity
+            android:name=".ui.android.clocks.clock.ClockCodeActivity"
+            android:exported="false"
+            android:label="@string/clock"
+            android:parentActivityName=".ui.android.clocks.clock.ClockCodeActivity"/>
+        <activity
+            android:name=".ui.android.clocks.clock.ClockActivity"
+            android:exported="false"
+            android:label="@string/clock"
+            android:parentActivityName=".ui.android.clocks.clock.ClockActivity"/>
+        <activity
+            android:name=".ui.android.clocks.timepicker.TimePickerCodeActivity"
+            android:exported="false"
+            android:label="@string/timepicker"
+            android:parentActivityName=".ui.android.clocks.timepicker.TimePickerCodeActivity"/>
+        <activity
+            android:name=".ui.android.clocks.timepicker.TimePickerActivity"
+            android:exported="false"
+            android:label="@string/timepicker"
+            android:parentActivityName=".ui.android.clocks.timepicker.TimePickerActivity"/>
         <activity
             android:name=".ui.android.webview.WebViewActivity"
             android:exported="false"
-            android:label="@string/webview">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.android.webview.WebViewActivity"/>
-        </activity>
+            android:label="@string/webview"
+            android:parentActivityName=".ui.android.webview.WebViewActivity"/>
         <activity
             android:name=".ui.android.webview.WebViewCodeActivity"
             android:exported="false"
-            android:label="@string/webview">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.android.webview.WebViewCodeActivity"/>
-        </activity>
+            android:label="@string/webview"
+            android:parentActivityName=".ui.android.webview.WebViewCodeActivity"/>
         <activity
-            android:name=".ui.android.passwordbox.PasswordBoxActivity"
+            android:name=".ui.android.textboxes.passwordbox.PasswordBoxActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize"
-            android:label="@string/password">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.android.passwordbox.PasswordBoxActivity"/>
-        </activity>
+            android:label="@string/password"
+            android:parentActivityName=".ui.android.textboxes.passwordbox.PasswordBoxActivity"/>
         <activity
-            android:name=".ui.android.passwordbox.PasswordBoxCodeActivity"
+            android:name=".ui.android.textboxes.passwordbox.PasswordBoxCodeActivity"
             android:exported="false"
-            android:label="@string/password">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.android.passwordbox.PasswordBoxCodeActivity"/>
-        </activity>
+            android:label="@string/password"
+            android:parentActivityName=".ui.android.textboxes.passwordbox.PasswordBoxCodeActivity"/>
         <activity
-            android:name=".ui.android.datepicker.DatePickerCodeActivity"
+            android:name=".ui.android.clocks.datepicker.DatePickerCodeActivity"
             android:exported="false"
-            android:label="@string/datepicker">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.android.datepicker.DatePickerCodeActivity"/>
-        </activity>
+            android:label="@string/datepicker"
+            android:parentActivityName=".ui.android.clocks.datepicker.DatePickerCodeActivity"/>
         <activity
-            android:name=".ui.android.datepicker.DatePickerActivity"
+            android:name=".ui.android.clocks.datepicker.DatePickerActivity"
             android:exported="false"
-            android:label="@string/datepicker">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.android.datepicker.DatePickerActivity"/>
-        </activity>
+            android:label="@string/datepicker"
+            android:parentActivityName=".ui.android.clocks.datepicker.DatePickerActivity"/>
         <activity
-            android:name=".ui.android.textbox.TextboxActivity"
+            android:name=".ui.android.textboxes.textbox.TextboxActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize"
-            android:label="@string/textbox">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.android.textbox.TextboxActivity"/>
-        </activity>
+            android:label="@string/textbox"
+            android:parentActivityName=".ui.android.textboxes.textbox.TextboxActivity"/>
         <activity
-            android:name=".ui.android.textbox.TextboxCodeActivity"
+            android:name=".ui.android.textboxes.textbox.TextboxCodeActivity"
             android:exported="false"
-            android:label="@string/textbox">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.android.textbox.TextboxCodeActivity"/>
-        </activity>
+            android:label="@string/textbox"
+            android:parentActivityName=".ui.android.textboxes.textbox.TextboxCodeActivity"/>
         <activity
-            android:name=".ui.android.alertdialog.AlertDialogActivity"
+            android:name=".ui.android.alerts.alertdialog.AlertDialogActivity"
             android:exported="false"
-            android:label="@string/alert_dialog">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.android.alertdialog.AlertDialogActivity"/>
-        </activity>
+            android:label="@string/alert_dialog"
+            android:parentActivityName=".ui.android.alerts.alertdialog.AlertDialogActivity"/>
         <activity
-            android:name=".ui.android.alertdialog.AlertDialogCodeActivity"
+            android:name=".ui.android.alerts.alertdialog.AlertDialogCodeActivity"
             android:exported="false"
-            android:label="@string/alert_dialog">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.android.alertdialog.AlertDialogCodeActivity"/>
-        </activity>
+            android:label="@string/alert_dialog"
+            android:parentActivityName=".ui.android.alerts.alertdialog.AlertDialogCodeActivity"/>
         <activity
             android:name=".ui.permissions.PermissionsActivity"
             android:exported="false"
-            android:label="@string/permissions">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.permissions.PermissionsActivity"/>
-        </activity>
+            android:label="@string/permissions"
+            android:parentActivityName=".ui.permissions.PermissionsActivity"/>
         <activity
-            android:name=".ui.android.shortcuts.ShortcutsActivity"
+            android:name=".ui.android.basics.shortcuts.ShortcutsActivity"
             android:exported="false"
-            android:label="@string/shortcuts">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.android.shortcuts.ShortcutsActivity"/>
-        </activity>
+            android:label="@string/shortcuts"
+            android:parentActivityName=".ui.android.basics.shortcuts.ShortcutsActivity"/>
         <activity
-            android:name=".ui.android.shortcuts.tabs.CodeShortcutsActivity"
+            android:name=".ui.android.basics.shortcuts.tabs.CodeShortcutsActivity"
             android:exported="false"
-            android:label="@string/writing_code">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.android.shortcuts.tabs.CodeShortcutsActivity"/>
-        </activity>
+            android:label="@string/writing_code"
+            android:parentActivityName=".ui.android.basics.shortcuts.tabs.CodeShortcutsActivity"/>
         <activity
-            android:name=".ui.android.shortcuts.tabs.GeneralShortcutsActivity"
+            android:name=".ui.android.basics.shortcuts.tabs.GeneralShortcutsActivity"
             android:exported="false"
-            android:label="@string/general">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.android.shortcuts.tabs.GeneralShortcutsActivity"/>
-        </activity>
+            android:label="@string/general"
+            android:parentActivityName=".ui.android.basics.shortcuts.tabs.GeneralShortcutsActivity"/>
         <activity
-            android:name=".ui.android.shortcuts.tabs.RefactoringShortcutsActivity"
+            android:name=".ui.android.basics.shortcuts.tabs.RefactoringShortcutsActivity"
             android:exported="false"
-            android:label="@string/refactoring">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.android.shortcuts.tabs.RefactoringShortcutsActivity"/>
-        </activity>
+            android:label="@string/refactoring"
+            android:parentActivityName=".ui.android.basics.shortcuts.tabs.RefactoringShortcutsActivity"/>
         <activity
-            android:name=".ui.android.shortcuts.tabs.BuildShortcutsActivity"
+            android:name=".ui.android.basics.shortcuts.tabs.BuildShortcutsActivity"
             android:exported="false"
-            android:label="@string/build_and_run">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.android.shortcuts.tabs.BuildShortcutsActivity"/>
-        </activity>
+            android:label="@string/build_and_run"
+            android:parentActivityName=".ui.android.basics.shortcuts.tabs.BuildShortcutsActivity"/>
         <activity
-            android:name=".ui.android.shortcuts.tabs.DebuggingShortcutsActivity"
+            android:name=".ui.android.basics.shortcuts.tabs.DebuggingShortcutsActivity"
             android:exported="false"
-            android:label="@string/debugging">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.android.shortcuts.tabs.DebuggingShortcutsActivity"/>
-        </activity>
+            android:label="@string/debugging"
+            android:parentActivityName=".ui.android.basics.shortcuts.tabs.DebuggingShortcutsActivity"/>
         <activity
-            android:name=".ui.android.shortcuts.tabs.NavigationAndSearchingShortcutsActivity"
+            android:name=".ui.android.basics.shortcuts.tabs.NavigationAndSearchingShortcutsActivity"
             android:exported="false"
-            android:label="@string/navigation_and_searching">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.android.shortcuts.tabs.NavigationAndSearchingShortcutsActivity"/>
-        </activity>
+            android:label="@string/navigation_and_searching"
+            android:parentActivityName=".ui.android.basics.shortcuts.tabs.NavigationAndSearchingShortcutsActivity"/>
         <activity
-            android:name=".ui.android.shortcuts.tabs.VersionControlShortcutsActivity"
+            android:name=".ui.android.basics.shortcuts.tabs.VersionControlShortcutsActivity"
             android:exported="false"
-            android:label="@string/version_control">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.android.shortcuts.tabs.VersionControlShortcutsActivity"/>
-        </activity>
+            android:label="@string/version_control"
+            android:parentActivityName=".ui.android.basics.shortcuts.tabs.VersionControlShortcutsActivity"/>
         <activity
             android:name=".ui.feedback.FeedbackActivity"
             android:label="@string/feedback"
-            android:exported="true">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.feedback.FeedbackActivity"/>
-        </activity>
+            android:exported="true"
+            android:parentActivityName=".ui.feedback.FeedbackActivity"/>
         <activity
-            android:name=".ui.android.buttons.ButtonsCodeActivity"
+            android:name=".ui.android.buttons.buttons.ButtonsCodeActivity"
             android:exported="false"
-            android:label="@string/buttons">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.android.buttons.ButtonsCodeActivity"/>
-        </activity>
+            android:label="@string/buttons"
+            android:parentActivityName=".ui.android.buttons.buttons.ButtonsCodeActivity"/>
         <activity
             android:name=".ui.settings.SettingsActivity"
             android:exported="false"
-            android:label="@string/settings">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.settings.SettingsActivity"/>
+            android:label="@string/settings"
+            android:parentActivityName=".ui.settings.SettingsActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.APPLICATION_PREFERENCES" />
+            </intent-filter>
         </activity>
         <activity
-            android:name=".ui.android.toggle.ToggleActivity"
+            android:name=".ui.faq.FaqActivity"
+            android:exported="false"
+            android:label="@string/faq"
+            android:parentActivityName=".ui.faq.FaqActivity"/>
+        <activity
+            android:name=".ui.android.buttons.toggle.ToggleActivity"
             android:label="@string/toggle"
-            android:exported="false">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.android.toggle.ToggleActivity"/>
-        </activity>
+            android:exported="false"
+            android:parentActivityName=".ui.android.buttons.toggle.ToggleActivity"/>
         <activity
-            android:name=".ui.android.buttons.ButtonsActivity"
+            android:name=".ui.android.buttons.buttons.ButtonsActivity"
             android:label="@string/buttons"
-            android:exported="false">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.android.buttons.ButtonsActivity"/>
-        </activity>
+            android:exported="false"
+            android:parentActivityName=".ui.android.buttons.buttons.ButtonsActivity"/>
         <activity
-            android:name=".ui.android.AndroidStartProjectActivity"
+            android:name=".ui.android.start.AndroidStartProjectActivity"
             android:label="@string/android_start"
-            android:exported="false">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.android.AndroidStartProjectActivity"/>
-        </activity>
+            android:exported="false"
+            android:parentActivityName=".ui.android.start.AndroidStartProjectActivity"/>
         <activity
-            android:name=".ui.android.sdk.AndroidSDK"
+            android:name=".ui.android.basics.sdk.AndroidSDK"
             android:label="@string/android_sdk"
-            android:exported="false">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.android.sdk.AndroidSDK"/>
-        </activity>
+            android:exported="false"
+            android:parentActivityName=".ui.android.basics.sdk.AndroidSDK"/>
         <activity
-            android:name=".ui.android.viewbinding.ViewBindingTutorialActivity"
+            android:name=".ui.android.basics.viewbinding.ViewBindingTutorialActivity"
             android:label="@string/view_binding"
-            android:exported="false">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.android.viewbinding.ViewBindingTutorialActivity"/>
-        </activity>
+            android:exported="false"
+            android:parentActivityName=".ui.android.basics.viewbinding.ViewBindingTutorialActivity"/>
         <activity
-            android:name=".ui.android.permissions.PermissionsTutorialActivity"
+            android:name=".ui.android.basics.permissions.PermissionsTutorialActivity"
             android:label="@string/permissions"
-            android:exported="false">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.android.permissions.PermissionsTutorialActivity"/>
-        </activity>
+            android:exported="false"
+            android:parentActivityName=".ui.android.basics.permissions.PermissionsTutorialActivity"/>
         <meta-data
             android:name="firebase_performance_logcat_enabled"
             android:value="true"/>

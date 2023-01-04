@@ -4,13 +4,13 @@
         <item name="android:windowLightStatusBar">false</item>
         <item name="android:windowLightNavigationBar">false</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:navigationBarColor">@color/colorBackground</item>
+        <item name="android:navigationBarColor">?attr/colorSurface</item>
         <item name="android:dialogCornerRadius">24dp</item>
-        <item name="android:colorBackground">@color/colorBackground</item>
-        <item name="actionBarStyle">@style/ActionBarTheme</item>
-        <item name="actionOverflowMenuStyle">@style/OverflowMenuTheme</item>
-        <item name="alertDialogTheme">@style/DialogTheme</item>
-        <item name="switchStyle">@style/SwitchTheme</item>
+        <item name="android:colorBackground">?attr/colorSurface</item>
+        <item name="actionBarStyle">@style/actionBarStyle</item>
+        <item name="actionOverflowMenuStyle">@style/actionOverflowMenuStyle</item>
+        <item name="alertDialogTheme">@style/alertDialogTheme</item>
+        <item name="switchPreferenceCompatStyle">@style/switchPreferenceCompatStyle</item>
         <item name="android:fontFamily">@font/font_poppins</item>
     </style>
 </resources>

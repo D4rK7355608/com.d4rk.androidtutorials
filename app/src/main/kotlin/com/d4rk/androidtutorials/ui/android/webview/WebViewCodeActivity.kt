@@ -11,21 +11,23 @@ import com.d4rk.androidtutorials.ui.android.webview.tabs.WebViewTabCodeFragment
 import com.d4rk.androidtutorials.ui.android.webview.tabs.WebViewTabLayoutFragment
 import com.google.android.material.tabs.TabLayout
 class WebViewCodeActivity: AppCompatActivity() {
+    private lateinit var viewPager: ViewPager
+    private lateinit var tabLayout: TabLayout
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tab_layout)
-        val tabs : TabLayout = findViewById(R.id.tabs)
-        val viewpager : ViewPager = findViewById(R.id.viewpager)
-        setupViewPager(viewpager)
-        tabs.setupWithViewPager(viewpager)
+        tabLayout = findViewById(R.id.tabs)
+        viewPager = findViewById(R.id.viewpager)
+        setupViewPager()
+        tabLayout.setupWithViewPager(viewPager)
     }
-    private fun setupViewPager(viewPager: ViewPager) {
+    private fun setupViewPager() {
         val adapter = ViewPagerAdapter(supportFragmentManager)
         adapter.addFragment(WebViewTabCodeFragment(), getString(R.string.code_kotlin))
         adapter.addFragment(WebViewTabLayoutFragment(), getString(R.string.layout_xml))
         viewPager.adapter = adapter
     }
-    internal inner class ViewPagerAdapter(manager: FragmentManager) : FragmentPagerAdapter(manager) {
+    internal inner class ViewPagerAdapter(manager: FragmentManager) : FragmentPagerAdapter(manager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
         private val mFragmentList = ArrayList<Fragment>()
         private val mFragmentTitleList = ArrayList<String>()
         override fun getItem(position: Int): Fragment {

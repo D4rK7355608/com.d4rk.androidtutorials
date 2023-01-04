@@ -1,8 +1,0 @@
-<resources>
-    <string-array name="dark_mode_entries">
-        <item>Suivre le mode système</item>
-        <item>Mode lumière</item>
-        <item>Mode sombre</item>
-        <item>Mode d\'obscurité automatique de la batterie</item>
-    </string-array>
-</resources>

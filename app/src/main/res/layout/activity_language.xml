@@ -151,11 +151,47 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/button_language_ru"
             tools:ignore="HardcodedText"/>
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:id="@+id/button_language_sv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Svenska"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button_language_tr"
+            tools:ignore="HardcodedText"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_language_bg"
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="български"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button_language_sv"
+            tools:ignore="HardcodedText,TextContrastCheck"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_language_pl"
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Polski"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button_language_bg"
+            tools:ignore="HardcodedText,TextContrastCheck"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_language_uk"
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ukrainian"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button_language_pl"
+            tools:ignore="HardcodedText,TextContrastCheck"/>
         <com.airbnb.lottie.LottieAnimationView
             android:layout_width="match_parent"
             android:layout_height="192dp"
             android:layout_margin="24dp"
-            app:layout_constraintTop_toBottomOf="@id/button_language_ru"
+            app:layout_constraintTop_toBottomOf="@id/button_language_uk"
             app:lottie_autoPlay="true"
             app:lottie_speed="0.48"
             app:lottie_loop="false"

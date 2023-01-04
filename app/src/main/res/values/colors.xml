@@ -1,7 +1,5 @@
 <resources>
-    <color name="colorDialogBackground">#fdfbfe</color>
     <color name="colorLauncherBackground">#FFFFFF</color>
-    <color name="colorBackground">#edf0fd</color>
     <color name="colorIconShortcutBackground">#C1E8FF</color>
     <color name="colorIconShortcutForeground">#454749</color>
 </resources>

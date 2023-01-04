@@ -6,17 +6,17 @@ plugins {
     id 'com.google.android.gms.oss-licenses-plugin'
 }
 android {
-    compileSdk 33
+    compileSdkVersion 33
     namespace 'com.d4rk.androidtutorials'
     defaultConfig {
         applicationId 'com.d4rk.androidtutorials'
-        minSdk 26
-        targetSdk 33
-        versionCode 21
-        versionName '3.1_a1'
+        minSdkVersion 26
+        targetSdkVersion 33
+        versionCode 25
+        versionName '3.1_r1'
         archivesBaseName = "${applicationId}-v${versionName}"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
-        resConfigs 'en', 'de', 'es', 'fr', 'hi', 'in', 'it', 'ja', 'ro', 'ru', 'tr'
+        resConfigs 'en', 'de', 'es', 'fr', 'hi', 'in', 'it', 'ja', 'ro', 'ru', 'tr', 'sv', 'bg', 'pl', 'uk'
     }
     buildTypes {
         release {
@@ -27,9 +27,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
+            multiDexEnabled true
             minifyEnabled true
             shrinkResources true
-            multiDexEnabled true
             debuggable true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -42,19 +42,20 @@ android {
         jvmTarget = '1.8'
     }
     buildFeatures {
-        viewBinding true
+        viewBinding = true
     }
     bundle {
         storeArchive {
-            enable = false
+            enable = true
         }
     }
 }
 dependencies {
     implementation 'com.google.android.material:material:1.7.0'
-    implementation 'com.google.android.gms:play-services-ads:21.3.0'
+    implementation 'com.google.android.gms:play-services-ads:21.4.0'
     implementation 'com.google.android.gms:play-services-oss-licenses:17.0.0'
     implementation 'com.google.android.play:review-ktx:2.0.1'
+    implementation 'com.google.android.play:app-update-ktx:2.0.1'
     implementation 'com.google.firebase:firebase-crashlytics-ktx:18.3.2'
     implementation 'com.google.firebase:firebase-analytics-ktx:21.2.0'
     implementation 'com.google.firebase:firebase-perf:20.3.0'

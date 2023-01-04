@@ -1,8 +1,0 @@
-<resources>
-    <string-array name="dark_mode_entries">
-        <item>フォローシステムモード</item>
-        <item>ライトモード</item>
-        <item>ダークモード</item>
-        <item>オートバッテリーダークモード</item>
-    </string-array>
-</resources>

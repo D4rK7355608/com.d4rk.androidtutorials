@@ -11,7 +11,7 @@
             <intent
                 android:action="android.intent.action.VIEW"
                 android:targetPackage="com.d4rk.androidtutorials"
-                android:targetClass="com.d4rk.androidtutorials.ui.android.AndroidStartProjectActivity"/>
+                android:targetClass="com.d4rk.androidtutorials.ui.android.start.AndroidStartProjectActivity"/>
         </androidx.preference.Preference>
     </androidx.preference.PreferenceCategory>
     <androidx.preference.PreferenceCategory
@@ -24,7 +24,7 @@
             <intent
                 android:action="android.intent.action.VIEW"
                 android:targetPackage="com.d4rk.androidtutorials"
-                android:targetClass="com.d4rk.androidtutorials.ui.android.shortcuts.ShortcutsActivity"/>
+                android:targetClass="com.d4rk.androidtutorials.ui.android.basics.shortcuts.ShortcutsActivity"/>
         </androidx.preference.Preference>
         <androidx.preference.Preference
             app:title="@string/android_sdk"
@@ -33,7 +33,7 @@
             <intent
                 android:action="android.intent.action.VIEW"
                 android:targetPackage="com.d4rk.androidtutorials"
-                android:targetClass="com.d4rk.androidtutorials.ui.android.sdk.AndroidSDK"/>
+                android:targetClass="com.d4rk.androidtutorials.ui.android.basics.sdk.AndroidSDK"/>
         </androidx.preference.Preference>
         <androidx.preference.Preference
             app:title="@string/view_binding"
@@ -42,7 +42,7 @@
             <intent
                 android:action="android.intent.action.VIEW"
                 android:targetPackage="com.d4rk.androidtutorials"
-                android:targetClass="com.d4rk.androidtutorials.ui.android.viewbinding.ViewBindingTutorialActivity"/>
+                android:targetClass="com.d4rk.androidtutorials.ui.android.basics.viewbinding.ViewBindingTutorialActivity"/>
         </androidx.preference.Preference>
         <androidx.preference.Preference
             app:title="@string/permissions"
@@ -51,89 +51,107 @@
             <intent
                 android:action="android.intent.action.VIEW"
                 android:targetPackage="com.d4rk.androidtutorials"
-                android:targetClass="com.d4rk.androidtutorials.ui.android.permissions.PermissionsTutorialActivity"/>
+                android:targetClass="com.d4rk.androidtutorials.ui.android.basics.permissions.PermissionsTutorialActivity"/>
         </androidx.preference.Preference>
     </androidx.preference.PreferenceCategory>
     <androidx.preference.PreferenceCategory
         app:title="@string/buttons_and_switches"
         app:icon="@drawable/ic_category_button_tinted">
         <androidx.preference.Preference
-            app:title="@string/implement_buttons"
+            app:title="@string/implementations_buttons"
             app:summary="@string/summary_preference_android_studio_buttons"
             app:icon="@drawable/ic_touch_button">
             <intent
                 android:action="android.intent.action.VIEW"
                 android:targetPackage="com.d4rk.androidtutorials"
-                android:targetClass="com.d4rk.androidtutorials.ui.android.buttons.ButtonsActivity"/>
+                android:targetClass="com.d4rk.androidtutorials.ui.android.buttons.buttons.ButtonsActivity"/>
         </androidx.preference.Preference>
         <androidx.preference.Preference
-            app:title="@string/implement_toggle"
+            app:title="@string/implementations_radio_buttons"
+            app:summary="@string/summary_preference_android_studio_radio_buttons"
+            app:icon="@drawable/ic_radio_button">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="com.d4rk.androidtutorials"
+                android:targetClass="com.d4rk.androidtutorials.ui.android.buttons.radio.RadioButtonsActivity"/>
+        </androidx.preference.Preference>
+        <androidx.preference.Preference
+            app:title="@string/implementations_image_buttons"
+            app:summary="@string/summary_preference_android_studio_image_buttons"
+            app:icon="@drawable/ic_image">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="com.d4rk.androidtutorials"
+                android:targetClass="com.d4rk.androidtutorials.ui.android.buttons.image.ImageButtonsActivity"/>
+        </androidx.preference.Preference>
+        <androidx.preference.Preference
+            app:title="@string/implementations_toggle_buttons"
             app:summary="@string/summary_preference_android_studio_toggle"
             app:icon="@drawable/ic_toggle">
             <intent
                 android:action="android.intent.action.VIEW"
                 android:targetPackage="com.d4rk.androidtutorials"
-                android:targetClass="com.d4rk.androidtutorials.ui.android.toggle.ToggleActivity"/>
+                android:targetClass="com.d4rk.androidtutorials.ui.android.buttons.toggle.ToggleActivity"/>
         </androidx.preference.Preference>
     </androidx.preference.PreferenceCategory>
     <androidx.preference.PreferenceCategory
         app:title="@string/clocks"
         app:icon="@drawable/ic_category_clock_tinted">
         <androidx.preference.Preference
-            app:title="@string/clock_implementations"
+            app:title="@string/implementations_clocks"
             app:summary="@string/summary_preference_android_studio_clocks"
             app:icon="@drawable/ic_clock">
             <intent
                 android:action="android.intent.action.VIEW"
                 android:targetPackage="com.d4rk.androidtutorials"
-                android:targetClass="com.d4rk.androidtutorials.ui.android.clock.ClockActivity"/>
+                android:targetClass="com.d4rk.androidtutorials.ui.android.clocks.clock.ClockActivity"/>
         </androidx.preference.Preference>
         <androidx.preference.Preference
-            app:title="@string/timepicker_implementations"
+            app:title="@string/implementations_time_picker"
             app:summary="@string/summary_preference_android_studio_time_picker"
             app:icon="@drawable/ic_time">
             <intent
                 android:action="android.intent.action.VIEW"
                 android:targetPackage="com.d4rk.androidtutorials"
-                android:targetClass="com.d4rk.androidtutorials.ui.android.timepicker.TimePickerActivity"/>
+                android:targetClass="com.d4rk.androidtutorials.ui.android.clocks.timepicker.TimePickerActivity"/>
         </androidx.preference.Preference>
         <androidx.preference.Preference
-            app:title="@string/datepicker_implementations"
+            app:title="@string/implementations_date_picker"
             app:summary="@string/summary_preference_android_studio_date_picker"
             app:icon="@drawable/ic_event">
             <intent
                 android:action="android.intent.action.VIEW"
                 android:targetPackage="com.d4rk.androidtutorials"
-                android:targetClass="com.d4rk.androidtutorials.ui.android.datepicker.DatePickerActivity"/>
+                android:targetClass="com.d4rk.androidtutorials.ui.android.clocks.datepicker.DatePickerActivity"/>
         </androidx.preference.Preference>
     </androidx.preference.PreferenceCategory>
     <androidx.preference.PreferenceCategory
         app:title="@string/text_boxes"
         app:icon="@drawable/ic_category_text_tinted">
         <androidx.preference.Preference
-            app:title="@string/implement_textbox"
+            app:title="@string/implementations_text_box"
             app:summary="@string/summary_preference_android_studio_text_box"
             app:icon="@drawable/ic_text">
             <intent
                 android:action="android.intent.action.VIEW"
                 android:targetPackage="com.d4rk.androidtutorials"
-                android:targetClass="com.d4rk.androidtutorials.ui.android.textbox.TextboxActivity"/>
+                android:targetClass="com.d4rk.androidtutorials.ui.android.textboxes.textbox.TextboxActivity"/>
         </androidx.preference.Preference>
         <androidx.preference.Preference
-            app:title="@string/password_implementations"
+            app:title="@string/implementations_password"
             app:summary="@string/summary_preference_android_studio_password_text_box"
             app:icon="@drawable/ic_password">
             <intent
                 android:action="android.intent.action.VIEW"
                 android:targetPackage="com.d4rk.androidtutorials"
-                android:targetClass="com.d4rk.androidtutorials.ui.android.passwordbox.PasswordBoxActivity"/>
+                android:targetClass="com.d4rk.androidtutorials.ui.android.textboxes.passwordbox.PasswordBoxActivity"/>
         </androidx.preference.Preference>
     </androidx.preference.PreferenceCategory>
     <androidx.preference.PreferenceCategory
         app:title="@string/web_views"
         app:icon="@drawable/ic_category_web_tinted">
         <androidx.preference.Preference
-            app:title="@string/webview_implementations"
+            app:title="@string/implementations_web_view"
             app:summary="@string/summary_preference_android_studio_web_view"
             app:icon="@drawable/ic_webview">
             <intent
@@ -143,16 +161,47 @@
         </androidx.preference.Preference>
     </androidx.preference.PreferenceCategory>
     <androidx.preference.PreferenceCategory
-        app:title="@string/dialogs"
+        app:title="@string/alerts"
         app:icon="@drawable/ic_category_dialog_tinted">
         <androidx.preference.Preference
-            app:title="@string/implement_alert_dialog"
+            app:title="@string/implementations_alert_dialog"
             app:summary="@string/summary_preference_android_studio_alert_dialog"
-            app:icon="@drawable/ic_alert">
+            app:icon="@drawable/ic_warning">
             <intent
                 android:action="android.intent.action.VIEW"
                 android:targetPackage="com.d4rk.androidtutorials"
-                android:targetClass="com.d4rk.androidtutorials.ui.android.alertdialog.AlertDialogActivity"/>
+                android:targetClass="com.d4rk.androidtutorials.ui.android.alerts.alertdialog.AlertDialogActivity"/>
+        </androidx.preference.Preference>
+        <androidx.preference.Preference
+            app:title="@string/implementations_snack_bar"
+            app:summary="@string/summary_preference_android_studio_snack_bar"
+            app:icon="@drawable/ic_warning_filled">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="com.d4rk.androidtutorials"
+                android:targetClass="com.d4rk.androidtutorials.ui.android.alerts.snackbar.SnackBarActivity"/>
+        </androidx.preference.Preference>
+        <androidx.preference.Preference
+            app:title="@string/implementations_toast"
+            app:summary="@string/summary_preference_android_studio_toast"
+            app:icon="@drawable/ic_warning_filled">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="com.d4rk.androidtutorials"
+                android:targetClass="com.d4rk.androidtutorials.ui.android.alerts.toast.ToastActivity"/>
+        </androidx.preference.Preference>
+    </androidx.preference.PreferenceCategory>
+    <androidx.preference.PreferenceCategory
+        app:title="@string/images"
+        app:icon="@drawable/ic_category_images_tinted">
+        <androidx.preference.Preference
+            app:title="@string/implementations_image_view"
+            app:summary="@string/summary_preference_android_studio_image_view"
+            app:icon="@drawable/ic_wallpaper">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="com.d4rk.androidtutorials"
+                android:targetClass="com.d4rk.androidtutorials.ui.android.images.ImagesActivity"/>
         </androidx.preference.Preference>
     </androidx.preference.PreferenceCategory>
 </androidx.preference.PreferenceScreen>

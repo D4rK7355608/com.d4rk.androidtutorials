@@ -1,8 +1,0 @@
-<resources>
-    <string-array name="dark_mode_entries">
-        <item>Folgen Sie dem Systemmodus</item>
-        <item>Lichtmodus</item>
-        <item>Dunkler Modus</item>
-        <item>Automatischer Akku-Dunkelmodus</item>
-    </string-array>
-</resources>

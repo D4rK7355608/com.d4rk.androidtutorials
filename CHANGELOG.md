@@ -1,6 +1,22 @@
 # Version 3.1_r1:
-- Added missing translations;
-- Some code stylish;
+- Added a new lesson on using Radio Buttons;
+- Added a new lesson on using Image Buttons;
+- Added a new lesson on using Image View;
+- Added a new lesson on using Snackbar;
+- Added a new lesson on using Toast;
+- Added the ability to disable Firebase Analytics and Crashlytics from the app settings;
+- Added the ability to change the style of the navigation bar labels from the app settings;
+- Added an FAQ section to the app;
+- Added update notifications to inform users of new content and features;
+- Added welcome back notifications to greet returning users;
+- Added an exit dialog to confirm the user's intention to leave the app;
+- Added in-app updates to allow users to easily update the app without going through the Play Store;
+- Added language support for Swedish, Bulgarian, Polish, and Ukrainian;
+- Added missing translations for various languages;
+- Simplified, reworked, and updated some existing lessons;
+- Fixed an issue with the predictive back gesture causing unexpected behavior;
+- Fixed various bugs and improved readability, consistency, app performance, and responsiveness by optimizing and styling the outdated code;
+- Made various under-the-hood improvements for a better overall app experience.
 
 # Version 3.0_r1:
 - Added a new startup screen for new users;

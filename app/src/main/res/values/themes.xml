@@ -1,6 +1,6 @@
 <resources>
     <style name="SplashScreenTheme" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenBackground">@color/colorBackground</item>
+        <item name="windowSplashScreenBackground">?attr/colorSurface</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="postSplashScreenTheme">@style/AppTheme</item>
@@ -11,14 +11,14 @@
     </style>
     <style name="AppThemeActionBar" parent="Theme.Material3.DynamicColors.DayNight">
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:navigationBarColor">@color/colorBackground</item>
         <item name="android:windowLightStatusBar">true</item>
-        <item name="android:colorBackground">@color/colorBackground</item>
-        <item name="actionBarStyle">@style/ActionBarTheme</item>
-        <item name="alertDialogTheme">@style/DialogTheme</item>
-        <item name="bottomNavigationStyle">@style/Bottom</item>
-        <item name="actionOverflowMenuStyle">@style/OverflowMenuTheme</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">?attr/colorSurface</item>
+        <item name="android:colorBackground">?attr/colorSurface</item>
+        <item name="actionBarStyle">@style/actionBarStyle</item>
+        <item name="alertDialogTheme">@style/alertDialogTheme</item>
+        <item name="switchPreferenceCompatStyle">@style/switchPreferenceCompatStyle</item>
+        <item name="actionOverflowMenuStyle">@style/actionOverflowMenuStyle</item>
         <item name="android:fontFamily">@font/font_poppins</item>
     </style>
     <style name="ShapeAppearanceOverlay.CardView" parent="">
@@ -32,19 +32,14 @@
         <item name="fontFamily">@font/font_poppins</item>
         <item name="android:fontFamily">@font/font_poppins</item>
     </style>
-    <style name="ActionBarTheme" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+    <style name="actionBarStyle" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
         <item name="background">@android:color/transparent</item>
     </style>
-    <style name="Bottom" parent="@style/Widget.Material3.BottomNavigationView">
-        <item name="background">?attr/colorPrimary</item>
-        <item name="android:statusBarColor">?attr/colorPrimary</item>
-    </style>
-    <style name="OverflowMenuTheme" parent="@style/Widget.Material3.PopupMenu.Overflow">
+    <style name="actionOverflowMenuStyle" parent="@style/Widget.Material3.PopupMenu.Overflow">
         <item name="android:popupBackground">@drawable/background_overflow</item>
     </style>
-    <style name="SwitchTheme" parent="Widget.Material3.CompoundButton.Switch">
-        <item name="track">@drawable/switch_track</item>
-        <item name="android:thumb">@drawable/switch_thumb</item>
+    <style name="switchPreferenceCompatStyle" parent="@style/Preference.SwitchPreferenceCompat.Material">
+        <item name="widgetLayout">@layout/preference_switch_widget_layout</item>
     </style>
     <style name="AppBarLayoutTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
 </resources>

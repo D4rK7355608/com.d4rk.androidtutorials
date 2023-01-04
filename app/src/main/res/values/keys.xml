@@ -1,0 +1,10 @@
+<resources>
+    <string name="key_theme" translatable="false">theme</string>
+    <string name="key_bottom_navigation_bar_labels" translatable="false">labels</string>
+    <string name="key_firebase" translatable="false">firebase</string>
+    <string name="key_more_apps" translatable="false">more_apps</string>
+    <string name="key_share" translatable="false">share</string>
+    <string name="key_changelog" translatable="false">changelog</string>
+    <string name="default_value_bottom_navigation_bar_labels" translatable="false">labeled</string>
+    <string name="default_value_theme" translatable="false">MODE_NIGHT_FOLLOW_SYSTEM</string>
+</resources>

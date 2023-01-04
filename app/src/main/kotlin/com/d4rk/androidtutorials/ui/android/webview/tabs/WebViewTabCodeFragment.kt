@@ -9,32 +9,17 @@ import com.d4rk.androidtutorials.databinding.FragmentWebviewCodeBinding
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
 import me.zhanghai.android.fastscroll.FastScrollerBuilder
-import java.io.ByteArrayOutputStream
-import java.io.IOException
-import java.io.InputStream
 class WebViewTabCodeFragment : Fragment() {
-    private lateinit var _binding: FragmentWebviewCodeBinding
-    private val binding get() = _binding
+    private lateinit var binding: FragmentWebviewCodeBinding
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        _binding = FragmentWebviewCodeBinding.inflate(inflater, container, false)
-        FastScrollerBuilder(binding.alertDialogScrollView).useMd2Style().build()
+        binding = FragmentWebviewCodeBinding.inflate(inflater, container, false)
+        FastScrollerBuilder(binding.scrollView).useMd2Style().build()
         MobileAds.initialize(requireContext())
-        val adRequestBuilder = AdRequest.Builder().build()
-        binding.adView.loadAd(adRequestBuilder)
-        val inputStream: InputStream = resources.openRawResource(R.raw.text_webview_kotlin)
-        val byteArrayOutputStream = ByteArrayOutputStream()
-        var i: Int
-        try {
-            i = inputStream.read()
-            while (i != - 1) {
-                byteArrayOutputStream.write(i)
-                i = inputStream.read()
-            }
-            inputStream.close()
-        } catch (e: IOException) {
-            e.printStackTrace()
-        }
-        binding.webViewCodeText.text = byteArrayOutputStream.toString()
+        binding.adView.loadAd(AdRequest.Builder().build())
+        val inputStream = resources.openRawResource(R.raw.text_webview_kotlin)
+        val  text = inputStream.readBytes().toString(Charsets.UTF_8)
+        inputStream.close()
+        binding.textView.text = text
         return binding.root
     }
 }

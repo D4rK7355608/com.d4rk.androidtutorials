@@ -24,37 +24,39 @@ class FeedbackActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.menu_feedback, menu)
         return true
     }
-    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
-        R.id.dev_mail -> {
-            val email = Intent(Intent.ACTION_SEND)
-            email.type = "text/email"
-            email.putExtra(Intent.EXTRA_EMAIL, arrayOf("d4rk7355608@gmail.com"))
-            email.putExtra(Intent.EXTRA_SUBJECT, "Feedback for Android Studio Tutorials")
-            email.putExtra(Intent.EXTRA_TEXT, "Dear developer, ")
-            startActivity(Intent.createChooser(email, "Send mail to Developer:"))
-            true
-        }  else -> {
-            super.onOptionsItemSelected(item)
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.dev_mail -> {
+                sendFeedbackEmail()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
+    }
+    private fun sendFeedbackEmail() {
+        val emailIntent = Intent(Intent.ACTION_SEND)
+        emailIntent.type = "text/email"
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf("d4rk7355608@gmail.com"))
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Feedback for Android Studio Tutorials")
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "Dear developer, ")
+        startActivity(Intent.createChooser(emailIntent, "Send mail to Developer:"))
     }
     private fun init() {
         reviewManager = ReviewManagerFactory.create(this)
         binding.buttonRateNow.setOnClickListener {
             showRateDialog()
-            Toast.makeText(this@FeedbackActivity, R.string.toast_feedback, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.toast_feedback, Toast.LENGTH_SHORT).show()
         }
     }
-    @Suppress("NAME_SHADOWING")
+    @Suppress("ControlFlowWithEmptyBody")
     private fun showRateDialog() {
-        val request = reviewManager.requestReviewFlow()
-        request.addOnCompleteListener { request ->
-            if (request.isSuccessful) {
-                val reviewInfo = request.result
-                val flow = reviewManager.launchReviewFlow(this, reviewInfo)
-                flow.addOnCompleteListener {
-
+        reviewManager.requestReviewFlow()
+            .addOnCompleteListener {
+                it.result?.let { reviewInfo ->
+                    reviewManager.launchReviewFlow(this, reviewInfo).also {
+                        // Add any additional code here, if needed
+                    }
                 }
             }
-        }
     }
 }
