@@ -75,7 +75,7 @@ dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'com.airbnb.android:lottie:5.2.0'
     implementation 'com.github.KieronQuinn:MonetCompat:0.4.1'
-    implementation 'me.zhanghai.android.fastscroll:library:1.1.8'
+    implementation 'me.zhanghai.android.fastscroll:library:1.2.0'
     implementation 'me.zhanghai.android.materialratingbar:library:1.4.0'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
