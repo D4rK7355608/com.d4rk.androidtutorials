@@ -190,6 +190,14 @@
                 android:targetPackage="com.d4rk.androidtutorials"
                 android:targetClass="com.d4rk.androidtutorials.ui.android.alerts.toast.ToastActivity"/>
         </androidx.preference.Preference>
+        <androidx.preference.Preference
+            app:title="@string/implementations_tooltip"
+            app:summary="@string/summary_preference_android_studio_tooltip"
+            app:icon="@drawable/ic_tips_and_updates">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://developer.android.com/develop/ui/views/components/tooltips#kotlin"/>
+        </androidx.preference.Preference>
     </androidx.preference.PreferenceCategory>
     <androidx.preference.PreferenceCategory
         app:title="@string/images"
@@ -202,6 +210,27 @@
                 android:action="android.intent.action.VIEW"
                 android:targetPackage="com.d4rk.androidtutorials"
                 android:targetClass="com.d4rk.androidtutorials.ui.android.images.ImagesActivity"/>
+        </androidx.preference.Preference>
+    </androidx.preference.PreferenceCategory>
+    <androidx.preference.PreferenceCategory
+        app:title="@string/reviews"
+        app:icon="@drawable/ic_category_reviews_tinted">
+        <androidx.preference.Preference
+            app:title="@string/implementations_rating_bar"
+            app:summary="@string/summary_preference_android_studio_rating_bar"
+            app:icon="@drawable/ic_star">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="com.d4rk.androidtutorials"
+                android:targetClass="com.d4rk.androidtutorials.ui.android.reviews.ratingbar.RatingBarActivity"/>
+        </androidx.preference.Preference>
+        <androidx.preference.Preference
+            app:title="@string/implementations_in_app_review"
+            app:summary="@string/summary_preference_android_studio_in_app_review"
+            app:icon="@drawable/ic_rate_review">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://developer.android.com/guide/playcore/in-app-review/kotlin-java#kotlin"/>
         </androidx.preference.Preference>
     </androidx.preference.PreferenceCategory>
 </androidx.preference.PreferenceScreen>

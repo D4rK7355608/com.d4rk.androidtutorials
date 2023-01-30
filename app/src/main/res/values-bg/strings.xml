@@ -190,6 +190,8 @@
     <string name="show_toast">Покажи тост</string>
     <string name="faq">ЧЗВ</string>
     <string name="advanced">Разширено</string>
+    <string name="runtime">Време за изпълнение</string>
+    <string name="require_restart">Изискване за рестартиране!</string>
     <string name="notification_last_time_used_title">От доста време!</string>
     <string name="notification_update_title">Налична е нова актуализация!</string>
     <string name="question_1">Какво е уроци за Android Studio?</string>
@@ -285,6 +287,7 @@
     <string name="summary_notification_last_time_used">Не позволявайте на вашите умения за разработка на Android да събират прах! Върнете се към учене и подобряване с уроци за Android Studio днес. В нашето приложение има по нещо за всеки, от начинаещи до опитни разработчици.</string>
     <string name="summary_notification_update">Налична е нова версия на приложението. Кликнете, за да актуализирате!</string>
     <string name="summary_image_view">AndroidX AppCompatImageView е подклас на ImageView, който е проектиран да поддържа различни функции на ActionBar и Material Design. Той е част от библиотеката AndroidX, която е набор от библиотеки за поддръжка, които предлагат обратно съвместими версии на API на рамката на Android, както и функции, които са достъпни само чрез API на библиотеката.\n\nAppCompatImageView е предназначен да се използва като капка -в замяна на ImageView, което позволява на разработчиците да използват един и същ код и елементи на потребителския интерфейс в различни версии на Android. Той включва поддръжка за различни функции като оцветяване, зареждане на векторни чертежи и обработка на мащабиране на изображението.\n\nAppCompatImageView също така включва поддръжка за функции на Material Design като издигане, което позволява изгледът на изображението да хвърля сянка и да изглежда като издигнат над повърхността на оформлението. Той също така включва поддръжка за вълнистия ефект на Material Design, който е визуален ефект, който се прилага при докосване на изгледа на изображението.\n\nВ обобщение, AndroidX AppCompatImageView е многофункционален и богат на функции подклас на ImageView, който е проектиран да поддържа широк набор от функции и дизайнерски елементи в приложенията за Android.</string>
+    <string name="summary_require_restart">За да влезе в сила, моля, рестартирайте приложението!</string>
     <string name="toast_this_is_a_toast">Това е тост!</string>
     <string name="toast_switch_material">Материал за превключвател!</string>
     <string name="toast_button_normal_icon">Щракнахте повдигнат бутон (икона)!</string>
@@ -320,4 +323,14 @@
     <string name="summary_preference_permissions_check_license">Използва се за проверка дали приложението се използва в съответствие с условията на лицензионното споразумение и за налагане на лицензионни условия и защита на интелектуалната собственост.</string>
     <string name="summary_preference_permissions_foreground_service">Използва се за създаване и използване на услуги, които се изпълняват на преден план, като им се дава приоритет пред други фонови процеси и се подобрява производителността и надеждността.</string>
     <string name="summary_preference_permissions_access_notification_policy">Използва се за достъп и промяна на политиката за уведомяване на устройството, като контролира как и кога известията се показват на потребителя и предоставя персонализирани функции за управление на известията.</string>
+    <string name="reviews">Отзиви</string>
+    <string name="rating_bar">Лента за оценка</string>
+    <string name="stars">%1$.1f звезди!</string>
+    <string name="rating">Благодарим ви, че ни оценихте с %1$.1f звезди!</string>
+    <string name="summary_preference_android_studio_rating_bar">RatingBar е разширение на SeekBar и ProgressBar, което показва оценка в звезди.</string>
+    <string name="implementations_rating_bar">Внедряване на лента за оценка</string>
+    <string name="implementations_in_app_review">Внедрете преглед в приложението</string>
+    <string name="implementations_tooltip">Внедрете подсказки</string>
+    <string name="summary_preference_android_studio_in_app_review">Приложният програмен интерфейс (API) за преглед в приложението на Google Play ви позволява да подканяте потребителите да изпращат оценки и рецензии в Play Store, без да се налага да напускате приложението или играта си.</string>
+    <string name="summary_preference_android_studio_tooltip">Подсказката е малко описателно съобщение, което се появява близо до изглед, когато потребителите натиснат дълго изгледа или задържат курсора на мишката върху него. Това е полезно, когато приложението ви използва икона за представяне на действие или информация, за да спести място в оформлението.</string>
 </resources>

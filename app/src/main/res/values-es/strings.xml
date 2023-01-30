@@ -281,6 +281,8 @@
     <string name="show_toast">Mostrar tostadas</string>
     <string name="faq">Preguntas más frecuentes</string>
     <string name="advanced">Avanzado</string>
+    <string name="runtime">tiempo de ejecución</string>
+    <string name="require_restart">¡Requiere reinicio!</string>
     <string name="notification_last_time_used_title">¡Ha sido un tiempo!</string>
     <string name="notification_update_title">¡Una nueva actualización disponible!</string>
     <string name="question_1">¿Qué son los tutoriales de Android Studio?</string>
@@ -311,6 +313,7 @@
     <string name="summary_notification_last_time_used">¡No dejes que tus habilidades de desarrollo de Android acumulen polvo! Vuelva a aprender y mejorar con los Tutoriales de Android Studio hoy. Nuestra aplicación tiene algo para todos, desde principiantes hasta desarrolladores experimentados.</string>
     <string name="summary_notification_update">Una nueva versión de la aplicación está disponible. ¡Haz clic para actualizar!</string>
     <string name="summary_image_view">AndroidX AppCompatImageView es una subclase de ImageView que está diseñada para admitir varias funciones de ActionBar y Material Design. Es parte de la biblioteca de AndroidX, que es un conjunto de bibliotecas de soporte que ofrecen versiones compatibles con versiones anteriores de las API del marco de trabajo de Android, así como funciones que solo están disponibles a través de las API de la biblioteca.\n\nAppCompatImageView está diseñado para usarse -en reemplazo de ImageView, lo que permite a los desarrolladores usar el mismo código y elementos de la interfaz de usuario en diferentes versiones de Android. Incluye compatibilidad con varias funciones, como teñido, carga de dibujos vectoriales y manejo del escalado de imágenes.\n\nAppCompatImageView también incluye compatibilidad con funciones de Material Design, como la elevación, que permite que la vista de la imagen proyecte una sombra y parezca que se eleva por encima de la superficie del diseño. También incluye soporte para el efecto dominó de Material Design, que es un efecto visual que se aplica cuando se toca la vista de la imagen.\n\nEn resumen, AndroidX AppCompatImageView es una subclase de ImageView versátil y rica en funciones que está diseñada para admitir una amplia gama de características y elementos de diseño en las aplicaciones de Android.</string>
+    <string name="summary_require_restart">Para que surta efecto, ¡reinicia la aplicación!</string>
     <string name="toast_this_is_a_toast">¡Esto es un brindis!</string>
     <string name="post_notifications">Publicar notificaciones [POST_NOTIFICACIONES]</string>
     <string name="check_license">Verificar licencia [CHECK_LICENSE]</string>
@@ -320,4 +323,14 @@
     <string name="summary_preference_permissions_check_license">Se usa para verificar que la aplicación se usa de acuerdo con los términos del acuerdo de licencia y para hacer cumplir los términos de la licencia y proteger la propiedad intelectual.</string>
     <string name="summary_preference_permissions_foreground_service">Se utiliza para crear y utilizar servicios que se ejecutan en primer plano, dándoles prioridad sobre otros procesos en segundo plano y mejorando el rendimiento y la confiabilidad.</string>
     <string name="summary_preference_permissions_access_notification_policy">Se utiliza para acceder y modificar la política de notificaciones del dispositivo, controlar cómo y cuándo se muestran las notificaciones al usuario y proporcionar funciones de administración de notificaciones personalizadas.</string>
+    <string name="reviews">Reseñas</string>
+    <string name="rating_bar">barra de calificación</string>
+    <string name="stars">¡%1$.1f estrellas!</string>
+    <string name="rating">¡Gracias por calificarnos con %1$.1f estrellas!</string>
+    <string name="summary_preference_android_studio_rating_bar">Una RatingBar es una extensión de SeekBar y ProgressBar que muestra una calificación en estrellas.</string>
+    <string name="implementations_rating_bar">Implementar barra de calificación</string>
+    <string name="implementations_in_app_review">Implementar revisión en la aplicación</string>
+    <string name="implementations_tooltip">Implementar información sobre herramientas</string>
+    <string name="summary_preference_android_studio_in_app_review">La API de revisión en la aplicación de Google Play le permite solicitar a los usuarios que envíen calificaciones y reseñas de Play Store sin el inconveniente de abandonar su aplicación o juego.</string>
+    <string name="summary_preference_android_studio_tooltip">Una información sobre herramientas es un pequeño mensaje descriptivo que aparece cerca de una vista cuando los usuarios mantienen presionada la vista o pasan el mouse sobre ella. Esto es útil cuando su aplicación usa un ícono para representar una acción o información para ahorrar espacio en el diseño.</string>
 </resources>

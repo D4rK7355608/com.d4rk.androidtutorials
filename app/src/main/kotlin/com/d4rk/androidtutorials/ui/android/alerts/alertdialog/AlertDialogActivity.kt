@@ -1,11 +1,10 @@
 package com.d4rk.androidtutorials.ui.android.alerts.alertdialog
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.databinding.ActivityAlertDialogBinding
-
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 class AlertDialogActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAlertDialogBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,8 +19,8 @@ class AlertDialogActivity : AppCompatActivity() {
             startActivity(Intent(this, AlertDialogCodeActivity::class.java))
         }
     }
-    private fun createAlertDialog(): AlertDialog.Builder {
-        return AlertDialog.Builder(this).apply {
+    private fun createAlertDialog(): MaterialAlertDialogBuilder {
+        return MaterialAlertDialogBuilder(this).apply {
             setTitle(R.string.title_alert_dialog)
             setMessage(R.string.alert_dialog_message)
             setIcon(R.drawable.ic_shop)

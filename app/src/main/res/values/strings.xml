@@ -8,10 +8,11 @@
     <string name="home">Home</string>
     <string name="android_studio">Android Studio</string>
     <string name="about">About</string>
-    <string name="music_sleep_timer" translatable="false">Music Sleep Timer</string>
-    <string name="english_with_lidia" translatable="false">English with Lidia</string>
-    <string name="qr_code_scanner" translatable="false">QR &amp; Bar Code Scanner</string>
+    <string name="music_sleep_timer" translatable="false">Music Sleep Timer Plus</string>
+    <string name="english_with_lidia" translatable="false">English with Lidia Plus</string>
+    <string name="qr_code_scanner" translatable="false">QR &amp; Bar Code Scanner Plus</string>
     <string name="low_brightness" translatable="false">Low Brightness</string>
+    <string name="cleaner_plus" translatable="false">Cleaner Plus</string>
     <string name="twitter" translatable="false">Twitter</string>
     <string name="youtube" translatable="false">YouTube</string>
     <string name="github" translatable="false">GitHub</string>
@@ -205,6 +206,12 @@
     <string name="show_toast">Show toast</string>
     <string name="faq">FAQ</string>
     <string name="advanced">Advanced</string>
+    <string name="runtime">Runtime</string>
+    <string name="reviews">Reviews</string>
+    <string name="rating_bar">Rating bar</string>
+    <string name="stars">%1$.1f stars!</string>
+    <string name="rating">Thanks for rating us with %1$.1f stars!</string>
+    <string name="require_restart">Require restart!</string>
     <string name="notification_last_time_used_title">It\'s been a while!</string>
     <string name="notification_update_title">A new update available!</string>
     <string name="question_1">What is Android Studio Tutorials?</string>
@@ -251,6 +258,9 @@
     <string name="implementations_alert_dialog">Implement Alert Dialog</string>
     <string name="implementations_snack_bar">Implement Snack Bar</string>
     <string name="implementations_toast">Implement Toast</string>
+    <string name="implementations_rating_bar">Implement rating bar</string>
+    <string name="implementations_in_app_review">Implement In-App Review</string>
+    <string name="implementations_tooltip">Implement tooltips</string>
     <string name="summary_preference_faq_1">Android Studio Tutorials is a free and open-source app that provides a collection of video tutorials on how to use Android Studio, the official integrated development environment (IDE) for Android app development.</string>
     <string name="summary_preference_faq_2">Android Studio Tutorials is available for download on the Google Play Store. Simply search for \"Android Studio Tutorials\" in the Play Store app on your Android device and tap \"Install\&quot; to download and install the app.</string>
     <string name="summary_preference_faq_3">No, Android Studio Tutorials is currently only available for Android devices.</string>
@@ -288,6 +298,9 @@
     <string name="summary_preference_android_studio_image_view">An Android ImageView is a view used to display images. It is a subclass of the Android View class and is used to show images in applications. ImageViews are used to display images such as graphics or photos. They can be used to display static images or to display images that are updated at runtime.</string>
     <string name="summary_preference_android_studio_snack_bar">Snack bars inform users of a process that an app has performed or will perform. They appear temporarily, towards the bottom of the screen. They shouldn\’t interrupt the user experience, and they don\’t require user input to disappear.</string>
     <string name="summary_preference_android_studio_toast">A toast provides simple feedback about an operation in a small popup. It only fills the amount of space required for the message and the current activity remains visible and interactive.</string>
+    <string name="summary_preference_android_studio_in_app_review">The Google Play In-App Review API lets you prompt users to submit Play Store ratings and reviews without the inconvenience of leaving your app or game.</string>
+    <string name="summary_preference_android_studio_tooltip">A tooltip is a small descriptive message that appears near a view when users long press the view or hover their mouse over it. This is useful when your app uses an icon to represent an action or piece of information to save space in the layout.</string>
+    <string name="summary_preference_android_studio_rating_bar">A RatingBar is an extension of SeekBar and ProgressBar that shows a rating in stars.</string>
     <string name="summary_sdk">The Android Software Development Kit (SDK) is a collection of tools that allow developers to create Android apps. It includes a set of libraries, a debugger, a handset emulator, and documentation. The SDK also includes an API library and a set of API documentation. The packages you download have libraries, which helps you in creating your app.\n\nThis is an overview of all Android versions and their corresponding identifiers for Android developers. Anyone is welcome to open an issue or pull request. Happy developing!</string>
     <string name="summary_view_binding">View binding is a feature that allows you to more easily write code that interacts with views. Once view binding is enabled in a module, it generates a binding class for each XML layout file present in that module. An instance of a binding class contains direct references to all views that have an ID in the corresponding layout.</string>
     <string name="summary_first_step">First time you open Android Studio click on <b>New project</b> button like you can see in the image and go to next the step.</string>
@@ -305,6 +318,7 @@
     <string name="summary_notification_last_time_used">Don\'t let your Android development skills gather dust! Get back to learning and improving with Android Studio Tutorials today. Our app has something for everyone, from beginners to experienced developers.</string>
     <string name="summary_notification_update">A new version of the app is available. Click to update!</string>
     <string name="summary_image_view">AndroidX AppCompatImageView is a subclass of ImageView that is designed to support various features of the ActionBar and Material Design. It is part of the AndroidX library, which is a set of support libraries that offer backward-compatible versions of Android framework APIs as well as features that are only available through the library APIs.\n\nAppCompatImageView is intended to be used as a drop-in replacement for ImageView, allowing developers to use the same code and UI elements across different versions of Android. It includes support for various features such as tinting, loading vector drawables, and handling image scaling.\n\nAppCompatImageView also includes support for Material Design features such as elevation, which allows the image view to cast a shadow and appear to be raised above the surface of the layout. It also includes support for the Material Design ripple effect, which is a visual effect that is applied when the image view is touched.\n\nIn summary, AndroidX AppCompatImageView is a versatile and feature-rich subclass of ImageView that is designed to support a wide range of features and design elements in Android apps.</string>
+    <string name="summary_require_restart">To take effect please restart the app!</string>
     <string name="toast_this_is_a_toast">This is a toast!</string>
     <string name="toast_switch_material">Toggled Switch Material!</string>
     <string name="toast_button_normal_icon">Elevated button (icon) clicked!</string>
@@ -334,23 +348,13 @@
     <string name="tooltip_show_code">Show code syntax</string>
     <string name="changelog_title" translatable="false">Changelog - Version %1s</string>
     <string name="changes" translatable="false">\n
-        • Added a new lesson on using Radio Buttons;\n
-        • Added a new lesson on using Image Buttons;\n
-        • Added a new lesson on using Image View;\n
-        • Added a new lesson on using Snackbar;\n
-        • Added a new lesson on using Toast;\n
-        • Added the ability to disable Firebase Analytics and Crashlytics from the app settings;\n
-        • Added the ability to change the style of the navigation bar labels from the app settings;\n
-        • Added an FAQ section to the app;\n
-        • Added update notifications to inform users of new content and features;\n
-        • Added welcome back notifications to greet returning users;\n
-        • Added an exit dialog to confirm the user\'s intention to leave the app;\n
-        • Added in-app updates to allow users to easily update the app without going through the Play Store;\n
-        • Added language support for Swedish, Bulgarian, Polish, and Ukrainian;\n
-        • Added missing translations for various languages;\n
-        • Simplified, reworked, and updated some existing lessons;\n
-        • Fixed an issue with the predictive back gesture causing unexpected behavior;\n
-        • Fixed various bugs and improved readability, consistency, app performance, and responsiveness by optimizing and styling the outdated code;\n
+        • Added a new lesson on using In-App Review API;\n
+        • Added a new lesson on using Rating Bar;\n
+        • Added a new lesson on using Tooltips;\n
+        • Reworked and improved animations;\n
+        • Small improvements to dark mode &amp; app design;\n
+        • Improved readability and consistency;\n
+        • Fixed various bugs and crashes;\n
         • Made various under-the-hood improvements for a better overall app experience.
     </string>
 </resources>

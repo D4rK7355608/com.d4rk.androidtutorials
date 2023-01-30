@@ -238,7 +238,7 @@
             android:label="@string/settings"
             android:parentActivityName=".ui.settings.SettingsActivity">
             <intent-filter>
-                <action android:name="android.intent.action.APPLICATION_PREFERENCES" />
+                <action android:name="android.intent.action.APPLICATION_PREFERENCES"/>
             </intent-filter>
         </activity>
         <activity
@@ -276,6 +276,16 @@
             android:label="@string/permissions"
             android:exported="false"
             android:parentActivityName=".ui.android.basics.permissions.PermissionsTutorialActivity"/>
+        <activity
+            android:name=".ui.android.reviews.ratingbar.RatingBarActivity"
+            android:exported="false"
+            android:label="@string/rating_bar"
+            android:parentActivityName=".ui.android.reviews.ratingbar.RatingBarActivity"/>
+        <activity
+            android:name=".ui.android.reviews.ratingbar.RatingBarCodeActivity"
+            android:exported="false"
+            android:label="@string/rating_bar"
+            android:parentActivityName=".ui.android.reviews.ratingbar.RatingBarCodeActivity"/>
         <meta-data
             android:name="firebase_performance_logcat_enabled"
             android:value="true"/>

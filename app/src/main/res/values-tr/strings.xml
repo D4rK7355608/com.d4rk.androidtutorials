@@ -281,6 +281,8 @@
     <string name="show_toast">Tostu göster</string>
     <string name="faq">SSS</string>
     <string name="advanced">Gelişmiş</string>
+    <string name="runtime">Çalışma süresi</string>
+    <string name="require_restart">Yeniden başlatma gerektir!</string>
     <string name="notification_last_time_used_title">Bir süre oldu!</string>
     <string name="notification_update_title">Yeni bir güncelleme mevcut!</string>
     <string name="question_1">Android Studio Eğitimleri nedir?</string>
@@ -311,6 +313,7 @@
     <string name="summary_notification_last_time_used">Android geliştirme becerilerinizin tozlanmasına izin vermeyin! Android Studio Eğitimleri ile bugün öğrenmeye ve gelişmeye geri dönün. Uygulamamızda yeni başlayanlardan deneyimli geliştiricilere kadar herkes için bir şeyler var.</string>
     <string name="summary_notification_update">Uygulamanın yeni bir sürümü mevcut. Güncellemek için tıklayın!</string>
     <string name="summary_image_view">AndroidX AppCompatImageView, ActionBar ve Material Design\'ın çeşitli özelliklerini desteklemek için tasarlanmış bir ImageView alt sınıfıdır. Android çerçeve API\'lerinin geriye dönük uyumlu sürümlerinin yanı sıra yalnızca kitaplık API\'leri aracılığıyla kullanılabilen özellikler sunan bir dizi destek kitaplığı olan AndroidX kitaplığının bir parçasıdır.\n\nAppCompatImageView, bir damla olarak kullanılmak üzere tasarlanmıştır. - ImageView yerine, geliştiricilerin aynı kodu ve UI öğelerini Android\'in farklı sürümlerinde kullanmasına izin verir. Renklendirme, vektör çizimlerini yükleme ve görüntü ölçeklendirmeyi yönetme gibi çeşitli özellikler için destek içerir.\n\nAppCompatImageView ayrıca, görüntü görünümünün bir gölge oluşturmasına ve görüntünün üzerinde yükseltilmiş gibi görünmesine olanak tanıyan yükseklik gibi Materyal Tasarımı özelliklerine yönelik desteği içerir. düzenin yüzeyi. Ayrıca, görüntü görünümüne dokunulduğunda uygulanan görsel bir efekt olan Materyal Tasarımı dalgalanma efekti için destek içerir.\n\nÖzetle, AndroidX AppCompatImageView, ImageView\'ün çok yönlü ve zengin özelliklere sahip bir alt sınıfıdır. Android uygulamalarında çok çeşitli özellikler ve tasarım öğeleri.</string>
+    <string name="summary_require_restart">Etkili olması için lütfen uygulamayı yeniden başlatın!</string>
     <string name="toast_this_is_a_toast">Bu bir kadeh kaldırma!</string>
     <string name="post_notifications">Gönderi bildirimleri [POST_NOTIFICATIONS]</string>
     <string name="check_license">Lisansı kontrol edin [CHECK_LICENSE]</string>
@@ -320,4 +323,15 @@
     <string name="summary_preference_permissions_check_license">Uygulamanın lisans sözleşmesinin şartlarına uygun olarak kullanıldığını doğrulamak ve lisanslama şartlarını uygulamak ve fikri mülkiyeti korumak için kullanılır.</string>
     <string name="summary_preference_permissions_foreground_service">Ön planda çalışan, onlara diğer arka plan süreçlerine göre öncelik veren ve performans ile güvenilirliği artıran hizmetler oluşturmak ve kullanmak için kullanılır.</string>
     <string name="summary_preference_permissions_access_notification_policy">Cihazın bildirim ilkesine erişmek ve bunları değiştirmek, bildirimlerin kullanıcıya nasıl ve ne zaman gösterileceğini kontrol etmek ve özel bildirim yönetimi özellikleri sağlamak için kullanılır.</string>
+    <string name="reviews">Yorumlar</string>
+    <string name="rating_bar">Derecelendirme çubuğu</string>
+    <string name="stars">%1$.1f yıldız!</string>
+    <string name="rating">Bizi %1$.1f yıldızla derecelendirdiğiniz için teşekkürler!</string>
+    <string name="summary_preference_android_studio_rating_bar">RatingBar, bir derecelendirmeyi yıldızlarla gösteren SeekBar ve ProgressBar\'ın bir uzantısıdır.</string>
+    <string name="implementations_rating_bar">Derecelendirme çubuğunu uygula</string>
+    <string name="implementations_in_app_review">Uygulama İçi İncelemeyi Uygulayın</string>
+    <string name="implementations_tooltip">Araç ipuçlarını uygulama</string>
+    <string name="summary_preference_android_studio_in_app_review">Google Play Uygulama İçi İnceleme API\'sı, uygulamanızdan veya oyununuzdan ayrılma zahmetine girmeden kullanıcılardan Play Store puanları ve incelemeleri göndermelerini istemenize olanak tanır.</string>
+    <string name="summary_preference_android_studio_tooltip">Araç ipucu, kullanıcılar görünüme uzun bastıklarında veya farelerini görünümün üzerine getirdiklerinde görünümün yanında görünen küçük, açıklayıcı bir mesajdır. Bu, uygulamanız mizanpajda yer kazanmak için bir eylemi veya bilgi parçasını temsil eden bir simge kullandığında kullanışlıdır.</string>
+
 </resources>

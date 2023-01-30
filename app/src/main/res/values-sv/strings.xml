@@ -190,6 +190,8 @@
     <string name="show_toast">Visa rostat bröd</string>
     <string name="faq">FAQ</string>
     <string name="advanced">Avancerad</string>
+    <string name="runtime">Körning</string>
+    <string name="require_restart">Kräv omstart!</string>
     <string name="notification_last_time_used_title">Det var ett tag sedan!</string>
     <string name="notification_update_title">En ny uppdatering tillgänglig!</string>
     <string name="question_1">Vad är Android Studio Tutorials?</string>
@@ -285,6 +287,7 @@
     <string name="summary_notification_last_time_used">Låt inte dina Android-utvecklingsfärdigheter samla damm! Gå tillbaka till lärande och förbättring med Android Studio Tutorials idag. Vår app har något för alla, från nybörjare till erfarna utvecklare.</string>
     <string name="summary_notification_update">En ny version av appen är tillgänglig. Klicka för att uppdatera!</string>
     <string name="summary_image_view">AndroidX AppCompatImageView är en underklass av ImageView som är designad för att stödja olika funktioner i ActionBar och Material Design. Det är en del av AndroidX-biblioteket, som är en uppsättning stödbibliotek som erbjuder bakåtkompatibla versioner av Android-ramverks-API:er samt funktioner som endast är tillgängliga via bibliotekets API:er.\n\nAppCompatImageView är avsedd att användas som en droppe -som ersättning för ImageView, vilket gör att utvecklare kan använda samma kod och UI-element i olika versioner av Android. Den innehåller stöd för olika funktioner som toning, laddar vektorritningar och hantering av bildskalning.\n\nAppCompatImageView inkluderar även stöd för materialdesignfunktioner som höjd, vilket gör att bildvyn kastar en skugga och ser ut att vara upphöjd ovanför layoutens yta. Den innehåller också stöd för krusningseffekten Material Design, som är en visuell effekt som appliceras när bildvyn berörs.\n\nSammanfattningsvis är AndroidX AppCompatImageView en mångsidig och funktionsrik underklass av ImageView som är utformad för att stödja en brett utbud av funktioner och designelement i Android-appar.</string>
+    <string name="summary_require_restart">Starta om appen för att träda i kraft!</string>
     <string name="toast_this_is_a_toast">Det här är en skål!</string>
     <string name="toast_switch_material">Växlingsmaterial!</string>
     <string name="toast_button_normal_icon">Förhöjd knapp (ikon) klickad!</string>
@@ -320,4 +323,14 @@
     <string name="summary_preference_permissions_check_license">Används för att verifiera att appen används i enlighet med villkoren i licensavtalet och för att upprätthålla licensvillkor och skydda immateriella rättigheter.</string>
     <string name="summary_preference_permissions_foreground_service">Används för att skapa och använda tjänster som körs i förgrunden, vilket ger dem prioritet framför andra bakgrundsprocesser och förbättrar prestanda och tillförlitlighet.</string>
     <string name="summary_preference_permissions_access_notification_policy">Används för att komma åt och ändra enhetens meddelandepolicy, kontrollera hur och när aviseringar visas för användaren och tillhandahålla anpassade funktioner för aviseringshantering.</string>
+    <string name="reviews">Recensioner</string>
+    <string name="rating_bar">Betygsfält</string>
+    <string name="stars">%1$.1f stjärnor!</string>
+    <string name="rating">Tack för att du betygsatte oss med %1$.1f stjärnor!</string>
+    <string name="summary_preference_android_studio_rating_bar">En RatingBar är en förlängning av SeekBar och ProgressBar som visar betyg i stjärnor.</string>
+    <string name="implementations_rating_bar">Implementera betygsfältet</string>
+    <string name="implementations_in_app_review">Implementera granskning i appen</string>
+    <string name="implementations_tooltip">Implementera verktygstips</string>
+    <string name="summary_preference_android_studio_in_app_review">Med Google Play In-App Review API kan du uppmana användare att skicka betyg och recensioner i Play Butik utan att behöva lämna din app eller ditt spel.</string>
+    <string name="summary_preference_android_studio_tooltip">Ett verktygstips är ett litet beskrivande meddelande som visas nära en vy när användare länge trycker på vyn eller håller musen över den. Detta är användbart när din app använder en ikon för att representera en åtgärd eller information för att spara utrymme i layouten.</string>
 </resources>

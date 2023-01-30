@@ -281,6 +281,8 @@
     <string name="show_toast">トーストを表示</string>
     <string name="faq">よくある質問</string>
     <string name="advanced">高度</string>
+    <string name="runtime">ランタイム</string>
+    <string name="require_restart">再起動が必要です!</string>
     <string name="notification_last_time_used_title">お久しぶりです！</string>
     <string name="notification_update_title">新しいアップデートが利用可能です！</string>
     <string name="question_1">Android Studio チュートリアルとは何ですか?</string>
@@ -311,6 +313,7 @@
     <string name="summary_notification_last_time_used">あなたの Android 開発スキルにほこりがたまらないようにしましょう!今すぐ Android Studio チュートリアルで学習と改善に戻りましょう。私たちのアプリには、初心者から経験豊富な開発者まで、あらゆる人が楽しめるものがあります。</string>
     <string name="summary_notification_update">アプリの新しいバージョンが利用可能です。クリックして更新してください！</string>
     <string name="summary_image_view">AndroidX AppCompatImageView は、ActionBar と Material Design のさまざまな機能をサポートするように設計された ImageView のサブクラスです。これは AndroidX ライブラリの一部であり、後方互換性のあるバージョンの Android フレームワーク API と、ライブラリ API を介してのみ利用可能な機能を提供する一連のサポート ライブラリです。\n\nAppCompatImageView は、ドロップとして使用することを意図しています。 -ImageView の代わりに、開発者が Android の異なるバージョン間で同じコードと UI 要素を使用できるようにします。色合い、ベクター ドローアブルの読み込み、画像スケーリングの処理など、さまざまな機能のサポートが含まれています。\n\nAppCompatImageView には、画像ビューが影を落として、レイアウトの表面。また、画像ビューがタッチされたときに適用される視覚効果である、マテリアル デザインのリップル エフェクトのサポートも含まれています。 Android アプリの幅広い機能とデザイン要素。</string>
+    <string name="summary_require_restart">有効にするには、アプリを再起動してください。</string>
     <string name="toast_this_is_a_toast">これは乾杯です！</string>
     <string name="post_notifications">通知の投稿 [POST_NOTIFICATIONS]</string>
     <string name="check_license">ライセンスを確認 [CHECK_LICENSE]</string>
@@ -320,4 +323,14 @@
     <string name="summary_preference_permissions_check_license">アプリがライセンス契約の条項に従って使用されていることを確認し、ライセンス条項を強制し、知的財産を保護するために使用されます。</string>
     <string name="summary_preference_permissions_foreground_service">フォアグラウンドで実行されるサービスを作成して使用するために使用され、他のバックグラウンド プロセスよりも優先され、パフォーマンスと信頼性が向上します。</string>
     <string name="summary_preference_permissions_access_notification_policy">デバイスの通知ポリシーにアクセスして変更し、ユーザーに通知を表示する方法とタイミングを制御し、カスタム通知管理機能を提供するために使用されます。</string>
+    <string name="reviews">レビュー</string>
+    <string name="rating_bar">評価バー</string>
+    <string name="stars">%1$.1f つ星!</string>
+    <string name="rating">%1$.1f 星で評価していただきありがとうございます!</string>
+    <string name="summary_preference_android_studio_rating_bar">RatingBar は、評価を星で表示する SeekBar および ProgressBar の拡張です。</string>
+    <string name="implementations_rating_bar">評価バーを実装する</string>
+    <string name="implementations_in_app_review">アプリ内レビューの実装</string>
+    <string name="implementations_tooltip">ツールチップを実装する</string>
+    <string name="summary_preference_android_studio_in_app_review">Google Play In-App Review API を使用すると、アプリやゲームを離れる手間をかけずに、ユーザーに Play ストアの評価とレビューを送信するよう促すことができます。</string>
+    <string name="summary_preference_android_studio_tooltip">ツールチップは、ユーザーがビューを長押しするか、ビューの上にマウスを置いたときに、ビューの近くに表示される小さな説明メッセージです。これは、アプリがアイコンを使用してアクションや情報を表し、レイアウトのスペースを節約する場合に役立ちます。</string>
 </resources>

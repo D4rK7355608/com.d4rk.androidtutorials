@@ -281,6 +281,8 @@
     <string name="show_toast">Toast zeigen</string>
     <string name="faq">FAQ</string>
     <string name="advanced">Fortschrittlich</string>
+    <string name="runtime">Laufzeit</string>
+    <string name="require_restart">Neustart erforderlich!</string>
     <string name="notification_last_time_used_title">Es ist eine Weile her!</string>
     <string name="notification_update_title">Ein neues Update verfügbar!</string>
     <string name="question_1">Was sind Android Studio-Tutorials?</string>
@@ -311,6 +313,7 @@
     <string name="summary_notification_last_time_used">Lassen Sie Ihre Android-Entwicklungsfähigkeiten nicht verstauben! Fangen Sie noch heute an, mit den Android Studio-Tutorials zu lernen und sich zu verbessern. Unsere App bietet für jeden etwas, vom Anfänger bis zum erfahrenen Entwickler.</string>
     <string name="summary_notification_update">Eine neue Version der App ist verfügbar. Zum Aktualisieren klicken!</string>
     <string name="summary_image_view">AndroidX AppCompatImageView ist eine Unterklasse von ImageView, die verschiedene Funktionen von ActionBar und Material Design unterstützen soll. Es ist Teil der AndroidX-Bibliothek, einer Reihe von unterstützenden Bibliotheken, die abwärtskompatible Versionen von Android-Framework-APIs sowie Funktionen bieten, die nur über die Bibliotheks-APIs verfügbar sind.\n\nAppCompatImageView soll als Drop verwendet werden -als Ersatz für ImageView, sodass Entwickler denselben Code und dieselben UI-Elemente in verschiedenen Android-Versionen verwenden können. Es enthält Unterstützung für verschiedene Funktionen wie das Färben, das Laden von zeichnerischen Vektoren und die Handhabung der Bildskalierung.\n\nAppCompatImageView enthält auch Unterstützung für Material Design-Funktionen wie die Höhe, wodurch die Bildansicht einen Schatten wirft und über dem angezeigt wird Oberfläche des Layouts. Es enthält auch Unterstützung für den Welleneffekt von Material Design, einen visuellen Effekt, der angewendet wird, wenn die Bildansicht berührt wird.\n\nZusammenfassend ist AndroidX AppCompatImageView eine vielseitige und funktionsreiche Unterklasse von ImageView, die entwickelt wurde, um a große Auswahl an Funktionen und Designelementen in Android-Apps.</string>
+    <string name="summary_require_restart">Bitte starten Sie die App neu, damit sie wirksam wird!</string>
     <string name="toast_this_is_a_toast">Das ist ein Toast!</string>
     <string name="post_notifications">Benachrichtigungen posten [POST_NOTIFICATIONS]</string>
     <string name="check_license">Lizenz prüfen [CHECK_LICENSE]</string>
@@ -320,4 +323,14 @@
     <string name="summary_preference_permissions_check_license">Wird verwendet, um zu überprüfen, ob die App gemäß den Bedingungen der Lizenzvereinbarung verwendet wird, und um Lizenzbedingungen durchzusetzen und geistiges Eigentum zu schützen.</string>
     <string name="summary_preference_permissions_foreground_service">Wird verwendet, um Dienste zu erstellen und zu verwenden, die im Vordergrund ausgeführt werden, wodurch sie Vorrang vor anderen Hintergrundprozessen erhalten und Leistung und Zuverlässigkeit verbessern.</string>
     <string name="summary_preference_permissions_access_notification_policy">Wird verwendet, um auf die Benachrichtigungsrichtlinie des Geräts zuzugreifen und diese zu ändern, um zu steuern, wie und wann Benachrichtigungen dem Benutzer angezeigt werden, und um benutzerdefinierte Benachrichtigungsverwaltungsfunktionen bereitzustellen.</string>
+    <string name="reviews">Bewertungen</string>
+    <string name="rating_bar">Bewertungsleiste</string>
+    <string name="stars">%1$.1f Sterne!</string>
+    <string name="rating">Danke, dass Sie uns mit %1$.1f Sternen bewertet haben!</string>
+    <string name="summary_preference_android_studio_rating_bar">Eine RatingBar ist eine Erweiterung von SeekBar und ProgressBar, die eine Bewertung in Sternen anzeigt.</string>
+    <string name="implementations_rating_bar">Bewertungsleiste implementieren</string>
+    <string name="implementations_in_app_review">Implementieren Sie die In-App-Überprüfung</string>
+    <string name="implementations_tooltip">Implementieren Sie Tooltips</string>
+    <string name="summary_preference_android_studio_in_app_review">Mit der Google Play In-App Review API können Sie Benutzer auffordern, Play Store-Bewertungen und -Rezensionen abzugeben, ohne Ihre App oder Ihr Spiel verlassen zu müssen.</string>
+    <string name="summary_preference_android_studio_tooltip">Ein Tooltip ist eine kleine beschreibende Meldung, die in der Nähe einer Ansicht angezeigt wird, wenn Benutzer lange auf die Ansicht drücken oder mit der Maus darüber fahren. Dies ist nützlich, wenn Ihre App ein Symbol verwendet, um eine Aktion oder Information darzustellen, um Platz im Layout zu sparen.</string>
 </resources>

@@ -18,7 +18,8 @@
             android:layout_height="wrap_content"
             android:text="@string/summary_sdk"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="VisualLintLongText"/>
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/text_view_android"
             android:layout_width="wrap_content"
@@ -591,7 +592,7 @@
                         tools:ignore="HardcodedText,TextContrastCheck"
                         android:textSize="11sp"
                         android:padding="4dp"
-                        android:text="202"/>
+                        android:text="2012"/>
                 </TableRow>
                 <TableRow
                     android:layout_width="wrap_content"

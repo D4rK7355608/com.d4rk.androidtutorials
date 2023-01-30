@@ -281,6 +281,8 @@
     <string name="show_toast">Arată pâine prăjită</string>
     <string name="faq">FAQ</string>
     <string name="advanced">Avansat</string>
+    <string name="runtime">Timp de rulare</string>
+    <string name="require_restart">Necesită repornirea!</string>
     <string name="notification_last_time_used_title">A trecut ceva timp!</string>
     <string name="notification_update_title">O nouă actualizare disponibilă!</string>
     <string name="question_1">Ce este Android Studio Tutorials?</string>
@@ -311,6 +313,7 @@
     <string name="summary_notification_last_time_used">Nu lăsați abilitățile dvs. de dezvoltare Android să adune praf! Reveniți la învățare și îmbunătățire cu tutorialele Android Studio astăzi. Aplicația noastră are ceva pentru toată lumea, de la începători la dezvoltatori experimentați.</string>
     <string name="summary_notification_update">Este disponibilă o nouă versiune a aplicației. Click pentru a actualiza!</string>
     <string name="summary_image_view">AndroidX AppCompatImageView este o subclasă a ImageView care este concepută pentru a suporta diferite caracteristici ale ActionBar și Material Design. Face parte din biblioteca AndroidX, care este un set de biblioteci de asistență care oferă versiuni compatibile cu versiunea anterioară ale API-urilor de cadru Android, precum și funcții care sunt disponibile numai prin intermediul API-urilor de bibliotecă.\n\nAppCompatImageView este destinat să fie utilizat ca drop. -în înlocuire pentru ImageView, permițând dezvoltatorilor să folosească același cod și elemente de interfață de utilizare în diferite versiuni de Android. Acesta include suport pentru diverse caracteristici, cum ar fi nuanțarea, încărcarea desenelor vectoriale și gestionarea scalarii imaginii.\n\nAppCompatImageView include și suport pentru caracteristici de Material Design, cum ar fi elevația, care permite vizualizarii imaginii să arunce o umbră și să pară ridicată deasupra suprafața planului. Include, de asemenea, suport pentru efectul de ondulare Material Design, care este un efect vizual care este aplicat atunci când este atinsă vizualizarea imaginii.\n\nÎn rezumat, AndroidX AppCompatImageView este o subclasă versatilă și bogată în funcții de ImageView, care este proiectată să accepte un gamă largă de funcții și elemente de design în aplicațiile Android.</string>
+    <string name="summary_require_restart">Pentru a intra în vigoare, reporniți aplicația!</string>
     <string name="toast_this_is_a_toast">Acesta este un toast!</string>
     <string name="post_notifications">Postați notificări [POST_NOTIFICATIONS]</string>
     <string name="check_license">Verificați licența [CHECK_LICENSE]</string>
@@ -320,4 +323,14 @@
     <string name="summary_preference_permissions_check_license">Folosit pentru a verifica dacă aplicația este utilizată în conformitate cu termenii acordului de licență și pentru a aplica termenii de licență și pentru a proteja proprietatea intelectuală.</string>
     <string name="summary_preference_permissions_foreground_service">Folosit pentru a crea și utiliza servicii care rulează în prim-plan, dându-le prioritate față de alte procese de fundal și îmbunătățind performanța și fiabilitatea.</string>
     <string name="summary_preference_permissions_access_notification_policy">Folosit pentru a accesa și modifica politica de notificare a dispozitivului, controlând cum și când notificările sunt afișate utilizatorului și oferind funcții personalizate de gestionare a notificărilor.</string>
+    <string name="reviews">Recenzii</string>
+    <string name="rating_bar">Bara de rating</string>
+    <string name="stars">%1$.1f stele!</string>
+    <string name="rating">Vă mulțumim că ne-ați evaluat cu %1$.1f stele!</string>
+    <string name="summary_preference_android_studio_rating_bar">Un RatingBar este o extensie a SeekBar și ProgressBar care arată o evaluare în stele.</string>
+    <string name="implementations_rating_bar">Implementați bara de evaluare</string>
+    <string name="implementations_in_app_review">Implementați examinarea în aplicație</string>
+    <string name="implementations_tooltip">Implementați sfaturi cu instrumente</string>
+    <string name="summary_preference_android_studio_in_app_review">API-ul Google Play In-App Review vă permite să solicitați utilizatorilor să trimită evaluări și recenzii în Magazinul Play fără inconvenientul de a părăsi aplicația sau jocul dvs.</string>
+    <string name="summary_preference_android_studio_tooltip">Un balon explicativ este un mic mesaj descriptiv care apare lângă o vizualizare atunci când utilizatorii apasă lung pe vizualizare sau trec mouse-ul peste ea. Acest lucru este util atunci când aplicația dvs. folosește o pictogramă pentru a reprezenta o acțiune sau o informație pentru a economisi spațiu în aspect.</string>
 </resources>

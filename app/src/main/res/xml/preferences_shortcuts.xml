@@ -4,7 +4,6 @@
     <androidx.preference.Preference
         app:title="@string/general"
         app:icon="@drawable/ic_shortcut"
-        app:useSimpleSummaryProvider="true"
         app:allowDividerAbove="true"
         app:allowDividerBelow="true">
         <intent
@@ -15,7 +14,6 @@
     <androidx.preference.Preference
         app:title="@string/refactoring"
         app:icon="@drawable/ic_shortcut"
-        app:useSimpleSummaryProvider="true"
         app:allowDividerAbove="true"
         app:allowDividerBelow="true">
         <intent
@@ -26,7 +24,6 @@
     <androidx.preference.Preference
         app:title="@string/build_and_run"
         app:icon="@drawable/ic_shortcut"
-        app:useSimpleSummaryProvider="true"
         app:allowDividerAbove="true"
         app:allowDividerBelow="true">
         <intent
@@ -37,7 +34,6 @@
     <androidx.preference.Preference
         app:title="@string/debugging"
         app:icon="@drawable/ic_shortcut"
-        app:useSimpleSummaryProvider="true"
         app:allowDividerAbove="true"
         app:allowDividerBelow="true">
         <intent
@@ -48,7 +44,6 @@
     <androidx.preference.Preference
         app:title="@string/navigation_and_searching"
         app:icon="@drawable/ic_shortcut"
-        app:useSimpleSummaryProvider="true"
         app:allowDividerAbove="true"
         app:allowDividerBelow="true">
         <intent
@@ -59,7 +54,6 @@
     <androidx.preference.Preference
         app:title="@string/writing_code"
         app:icon="@drawable/ic_shortcut"
-        app:useSimpleSummaryProvider="true"
         app:allowDividerAbove="true"
         app:allowDividerBelow="true">
         <intent
@@ -70,7 +64,6 @@
     <androidx.preference.Preference
         app:title="@string/version_control"
         app:icon="@drawable/ic_shortcut"
-        app:useSimpleSummaryProvider="true"
         app:allowDividerAbove="true"
         app:allowDividerBelow="true">
         <intent

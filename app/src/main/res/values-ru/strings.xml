@@ -281,6 +281,8 @@
     <string name="show_toast">Показати тост</string>
     <string name="faq">FAQ</string>
     <string name="advanced">Просунутий</string>
+    <string name="runtime">Время выполнения</string>
+    <string name="require_restart">Требовать перезагрузки!</string>
     <string name="notification_last_time_used_title">Пройшло багато часу!</string>
     <string name="notification_update_title">Доступне нове оновлення!</string>
     <string name="question_1">Що таке Android Studio Tutorials?</string>
@@ -311,6 +313,7 @@
     <string name="summary_notification_last_time_used">Не дозволяйте вашим навичкам розробки Android припадати пилом! Поверніться до навчання та вдосконалення з підручниками Android Studio сьогодні. У нашому додатку знайдеться щось для кожного, від новачка до досвідченого розробника.</string>
     <string name="summary_notification_update">Доступна нова версія програми. Натисніть, щоб оновити!</string>
     <string name="summary_image_view">AndroidX AppCompatImageView — це підклас ImageView, розроблений для підтримки різних функцій ActionBar і Material Design. Це частина бібліотеки AndroidX, яка являє собою набір бібліотек підтримки, які пропонують зворотно-сумісні версії API фреймворку Android, а також функції, які доступні лише через API бібліотеки.\n\nAppCompatImageView призначений для використання як відкидання -в заміну ImageView, що дозволяє розробникам використовувати той самий код і елементи інтерфейсу в різних версіях Android. Він включає підтримку різних функцій, таких як тонування, завантаження векторних малюнків і обробка масштабування зображення.\n\nAppCompatImageView також включає підтримку функцій матеріального дизайну, таких як висота, що дозволяє перегляду зображення відкидати тінь і виглядати піднятим над поверхню макета. Він також включає підтримку хвильового ефекту Material Design, який є візуальним ефектом, який застосовується під час торкання зображення.\n\nПідсумовуючи, AndroidX AppCompatImageView — це універсальний і багатофункціональний підклас ImageView, розроблений для підтримки широкий спектр функцій і елементів дизайну в програмах Android.</string>
+    <string name="summary_require_restart">Чтобы изменения вступили в силу, перезапустите приложение!</string>
     <string name="toast_this_is_a_toast">Це тост!</string>
     <string name="post_notifications">Сповіщення про публікації [POST_NOTIFICATIONS]</string>
     <string name="check_license">Перевірити ліцензію [CHECK_LICENSE]</string>
@@ -320,4 +323,14 @@
     <string name="summary_preference_permissions_check_license">Використовується для перевірки того, що програма використовується відповідно до умов ліцензійної угоди, а також для забезпечення виконання умов ліцензування та захисту інтелектуальної власності.</string>
     <string name="summary_preference_permissions_foreground_service">Використовується для створення та використання служб, які працюють на передньому плані, надаючи їм пріоритет над іншими фоновими процесами та покращуючи продуктивність і надійність.</string>
     <string name="summary_preference_permissions_access_notification_policy">Використовується для доступу та зміни політики сповіщень пристрою, керування тим, як і коли сповіщення відображаються користувачеві, і надання спеціальних функцій керування сповіщеннями.</string>
+    <string name="reviews">Відгуки</string>
+    <string name="rating_bar">Панель оцінок</string>
+    <string name="stars">%1$.1f зірок!</string>
+    <string name="rating">Дякуємо, що поставили нам %1$.1f зірок!</string>
+    <string name="summary_preference_android_studio_rating_bar">RatingBar — це розширення SeekBar і ProgressBar, яке показує рейтинг у зірочках.</string>
+    <string name="implementations_rating_bar">Впровадити панель оцінок</string>
+    <string name="implementations_in_app_review">Впровадити перевірку в програмі</string>
+    <string name="implementations_tooltip">Реалізація підказок</string>
+    <string name="summary_preference_android_studio_in_app_review">Google Play In-App Review API дає змогу пропонувати користувачам надіслати оцінки та відгуки Play Store, не виходячи з програми чи гри.</string>
+    <string name="summary_preference_android_studio_tooltip">Спливаюча підказка — це невелике описове повідомлення, яке з’являється біля подання, коли користувачі довго натискають подання або наводять на нього курсор миші. Це корисно, коли ваша програма використовує піктограму для представлення дії або частини інформації, щоб заощадити місце в макеті.</string>
 </resources>

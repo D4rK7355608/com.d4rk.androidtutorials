@@ -190,6 +190,8 @@
     <string name="show_toast">Pokaż tosty</string>
     <string name="faq">Często zadawane pytania</string>
     <string name="advanced">Zaawansowany</string>
+    <string name="runtime">Czas działania</string>
+    <string name="require_restart">Wymagaj ponownego uruchomienia!</string>
     <string name="notification_last_time_used_title">Minęło trochę czasu!</string>
     <string name="notification_update_title">Dostępna nowa aktualizacja!</string>
     <string name="question_1">Co to są samouczki Android Studio?</string>
@@ -285,6 +287,7 @@
     <string name="summary_notification_last_time_used">Nie pozwól, aby Twoje umiejętności programistyczne na Androida zbierały kurz! Już dziś wróć do nauki i doskonalenia dzięki samouczkom Android Studio. W naszej aplikacji każdy znajdzie coś dla siebie, od początkujących po doświadczonych programistów.</string>
     <string name="summary_notification_update">Dostępna jest nowa wersja aplikacji. Kliknij, aby zaktualizować!</string>
     <string name="summary_image_view">AndroidX AppCompatImageView to podklasa ImageView, która została zaprojektowana do obsługi różnych funkcji ActionBar i Material Design. Jest częścią biblioteki AndroidX, która jest zestawem bibliotek pomocniczych oferujących wstecznie kompatybilne wersje interfejsów API platformy Android, a także funkcje dostępne tylko za pośrednictwem interfejsów API biblioteki.\n\nAppCompatImageView ma być używany jako zrzut -w zamian za ImageView, umożliwiając programistom używanie tego samego kodu i elementów interfejsu użytkownika w różnych wersjach Androida. Obejmuje obsługę różnych funkcji, takich jak barwienie, ładowanie rysunków wektorowych i obsługę skalowania obrazu.\n\nAppCompatImageView obejmuje również obsługę funkcji Material Design, takich jak elewacja, która pozwala widokowi obrazu rzucić cień i wydaje się, że jest uniesiony ponad powierzchnia układu. Obejmuje również obsługę efektu marszczenia Material Design, który jest efektem wizualnym stosowanym po dotknięciu widoku obrazu.\n\nPodsumowując, AndroidX AppCompatImageView to wszechstronna i bogata w funkcje podklasa ImageView, która została zaprojektowana do obsługi szeroki zakres funkcji i elementów konstrukcyjnych w aplikacjach na Androida.</string>
+    <string name="summary_require_restart">Aby zastosować, uruchom ponownie aplikację!</string>
     <string name="toast_this_is_a_toast">To jest toast!</string>
     <string name="toast_switch_material">Materiał przełącznika przełączanego!</string>
     <string name="toast_button_normal_icon">Podwyższony przycisk (ikona) kliknięty!</string>
@@ -320,4 +323,14 @@
     <string name="summary_preference_permissions_check_license">Służy do sprawdzania, czy aplikacja jest używana zgodnie z warunkami umowy licencyjnej oraz do egzekwowania warunków licencji i ochrony własności intelektualnej.</string>
     <string name="summary_preference_permissions_foreground_service">Służy do tworzenia i korzystania z usług, które działają na pierwszym planie, dając im pierwszeństwo przed innymi procesami w tle oraz poprawiając wydajność i niezawodność.</string>
     <string name="summary_preference_permissions_access_notification_policy">Służy do uzyskiwania dostępu i modyfikowania zasad powiadomień urządzenia, kontrolowania sposobu i czasu wyświetlania powiadomień użytkownikowi oraz zapewniania niestandardowych funkcji zarządzania powiadomieniami.</string>
+    <string name="reviews">Recenzje</string>
+    <string name="rating_bar">Pasek ocen</string>
+    <string name="stars">%1$.1f gwiazdek!</string>
+    <string name="rating">Dziękujemy za przyznanie nam %1$.1f gwiazdek!</string>
+    <string name="summary_preference_android_studio_rating_bar">RatingBar to rozszerzenie SeekBar i ProgressBar, które pokazuje ocenę w gwiazdkach.</string>
+    <string name="implementations_rating_bar">Pasek oceny osprzętu</string>
+    <string name="implementations_in_app_review">Zaimplementuj recenzję w aplikacji</string>
+    <string name="implementations_tooltip">Zaimplementuj podpowiedzi</string>
+    <string name="summary_preference_android_studio_in_app_review">Interfejs Google Play In-App Review API umożliwia zachęcanie użytkowników do przesyłania ocen i recenzji ze Sklepu Play bez niedogodności związanych z opuszczaniem aplikacji lub gry.</string>
+    <string name="summary_preference_android_studio_tooltip">Podpowiedź to mały komunikat opisowy, który pojawia się w pobliżu widoku, gdy użytkownik długo naciska widok lub umieszcza na nim wskaźnik myszy. Jest to przydatne, gdy aplikacja używa ikony do reprezentowania akcji lub informacji w celu zaoszczędzenia miejsca w układzie.</string>
 </resources>

@@ -25,7 +25,7 @@
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
                     android:src="@drawable/image_view"
-                    tools:ignore="ImageContrastCheck" />
+                    tools:ignore="ImageContrastCheck"/>
             </com.google.android.material.card.MaterialCardView>
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"

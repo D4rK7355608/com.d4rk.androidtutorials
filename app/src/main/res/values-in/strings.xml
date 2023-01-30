@@ -281,6 +281,8 @@
     <string name="show_toast">Tunjukkan roti panggang</string>
     <string name="faq">FAQ</string>
     <string name="advanced">Canggih</string>
+    <string name="runtime">Waktu proses</string>
+    <string name="require_restart">Perlu memulai ulang!</string>
     <string name="notification_last_time_used_title">Sudah lama!</string>
     <string name="notification_update_title">Pembaruan baru tersedia!</string>
     <string name="question_1">Apa itu Tutorial Android Studio?</string>
@@ -311,6 +313,7 @@
     <string name="summary_notification_last_time_used">Jangan biarkan keterampilan pengembangan Android Anda menjadi debu! Kembali belajar dan tingkatkan dengan Tutorial Android Studio hari ini. Aplikasi kami memiliki sesuatu untuk semua orang, dari pemula hingga pengembang berpengalaman.</string>
     <string name="summary_notification_update">Versi baru aplikasi tersedia. Klik untuk memperbarui!</string>
     <string name="summary_image_view">AndroidX AppCompatImageView adalah subkelas ImageView yang dirancang untuk mendukung berbagai fitur ActionBar dan Desain Material. Ini adalah bagian dari library AndroidX, yang merupakan kumpulan library dukungan yang menawarkan versi Android Framework API yang kompatibel dengan versi mundur serta fitur yang hanya tersedia melalui API library.\n\nAppCompatImageView ditujukan untuk digunakan sebagai dropship -sebagai pengganti ImageView, memungkinkan pengembang untuk menggunakan kode dan elemen UI yang sama di berbagai versi Android. Ini mencakup dukungan untuk berbagai fitur seperti pewarnaan, pemuatan vektor drawable, dan penanganan penskalaan gambar.\n\nAppCompatImageView juga menyertakan dukungan untuk fitur Desain Material seperti elevasi, yang memungkinkan tampilan gambar membentuk bayangan dan tampak dinaikkan di atas permukaan tata letak. Ini juga mencakup dukungan untuk efek riak Desain Material, yaitu efek visual yang diterapkan saat tampilan gambar disentuh.\n\nSingkatnya, AndroidX AppCompatImageView adalah subkelas ImageView serbaguna dan kaya fitur yang didesain untuk mendukung berbagai fitur dan elemen desain di aplikasi Android.</string>
+    <string name="summary_require_restart">Agar berlaku, harap mulai ulang aplikasi!</string>
     <string name="toast_this_is_a_toast">Ini bersulang!</string>
     <string name="post_notifications">Pemberitahuan pos [POST_NOTIFICATIONS]</string>
     <string name="check_license">Periksa lisensi [CHECK_LICENSE]</string>
@@ -320,4 +323,14 @@
     <string name="summary_preference_permissions_check_license">Digunakan untuk memverifikasi bahwa aplikasi digunakan sesuai dengan persyaratan perjanjian lisensi, dan untuk menegakkan persyaratan lisensi dan melindungi kekayaan intelektual.</string>
     <string name="summary_preference_permissions_foreground_service">Digunakan untuk membuat dan menggunakan layanan yang berjalan di latar depan, memberi mereka prioritas atas proses latar belakang lainnya dan meningkatkan kinerja dan keandalan.</string>
     <string name="summary_preference_permissions_access_notification_policy">Digunakan untuk mengakses dan mengubah kebijakan notifikasi perangkat, mengontrol bagaimana dan kapan notifikasi ditampilkan kepada pengguna dan menyediakan fitur manajemen notifikasi kustom.</string>
+    <string name="reviews">Ulasan</string>
+    <string name="rating_bar">Bilah peringkat</string>
+    <string name="stars">%1$.1f bintang!</string>
+    <string name="rating">Terima kasih telah menilai kami dengan %1$.1f bintang!</string>
+    <string name="summary_preference_android_studio_rating_bar">RatingBar adalah perpanjangan dari SeekBar dan ProgressBar yang menunjukkan peringkat bintang.</string>
+    <string name="implementations_rating_bar">Terapkan bilah peringkat</string>
+    <string name="implementations_in_app_review">Menerapkan Tinjauan Dalam Aplikasi</string>
+    <string name="implementations_tooltip">Terapkan tooltips</string>
+    <string name="summary_preference_android_studio_in_app_review">API Tinjauan Dalam Aplikasi Google Play memungkinkan Anda meminta pengguna untuk mengirimkan peringkat dan ulasan Play Store tanpa harus meninggalkan aplikasi atau game Anda.</string>
+    <string name="summary_preference_android_studio_tooltip">Tip alat adalah pesan deskriptif kecil yang muncul di dekat tampilan saat pengguna menekan lama tampilan atau mengarahkan mouse ke atasnya. Ini berguna saat aplikasi Anda menggunakan ikon untuk merepresentasikan tindakan atau potongan informasi untuk menghemat ruang dalam tata letak.</string>
 </resources>

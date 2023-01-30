@@ -9,7 +9,6 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.app.NotificationCompat
@@ -22,6 +21,7 @@ import androidx.preference.PreferenceManager
 import com.d4rk.androidtutorials.databinding.ActivityMainBinding
 import com.d4rk.androidtutorials.ui.settings.SettingsActivity
 import com.d4rk.androidtutorials.ui.startup.StartupActivity
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.navigation.NavigationBarView
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory
 import com.google.android.play.core.install.model.AppUpdateType
@@ -116,7 +116,7 @@ class MainActivity : AppCompatActivity() {
     @Deprecated("Deprecated in Java")
     @Suppress("DEPRECATION")
     override fun onBackPressed() {
-        AlertDialog.Builder(this)
+        MaterialAlertDialogBuilder(this)
             .setTitle(R.string.close)
             .setMessage(R.string.summary_close)
             .setPositiveButton(android.R.string.yes) { _, _ ->
@@ -128,12 +128,13 @@ class MainActivity : AppCompatActivity() {
     }
     override fun onResume() {
         super.onResume()
+        val prefs = PreferenceManager.getDefaultSharedPreferences(this)
+        val preferenceFirebase = prefs.getBoolean(getString(R.string.key_firebase), true)
+        FirebaseAnalytics.getInstance(this).setAnalyticsCollectionEnabled(preferenceFirebase)
+        FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(preferenceFirebase)
         if (prefs.getBoolean("value", true)) {
             prefs.edit().putBoolean("value", false).apply()
             startActivity(Intent(this, StartupActivity::class.java))
         }
-        val preferenceFirebase = PreferenceManager.getDefaultSharedPreferences(this).getBoolean(getString(R.string.key_firebase), true)
-        FirebaseAnalytics.getInstance(this).setAnalyticsCollectionEnabled(preferenceFirebase)
-        FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(preferenceFirebase)
     }
 }

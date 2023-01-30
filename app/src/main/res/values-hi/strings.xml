@@ -281,6 +281,8 @@
     <string name="show_toast">टोस्ट दिखाओ</string>
     <string name="faq">सामान्य प्रश्न</string>
     <string name="advanced">विकसित</string>
+    <string name="runtime">क्रम</string>
+    <string name="require_restart">पुनः आरंभ करने की आवश्यकता है!</string>
     <string name="notification_last_time_used_title">इसे बीते एक अर्सा हो गया है!</string>
     <string name="notification_update_title">एक नया अपडेट उपलब्ध है!</string>
     <string name="question_1">Android स्टूडियो ट्यूटोरियल क्या है?</string>
@@ -311,6 +313,7 @@
     <string name="summary_notification_last_time_used">अपने Android विकास कौशल को धूल न जमने दें! आज ही Android स्टूडियो ट्यूटोरियल के साथ सीखने और सुधारने के लिए वापस आएं। हमारे ऐप में शुरुआती से लेकर अनुभवी डेवलपर्स तक सभी के लिए कुछ न कुछ है।</string>
     <string name="summary_notification_update">ऐप का एक नया संस्करण उपलब्ध है। अपडेट करने के लिए क्लिक करें!</string>
     <string name="summary_image_view">AndroidX AppCompatImageView ImageView का एक उपवर्ग है जिसे ActionBar और सामग्री डिज़ाइन की विभिन्न विशेषताओं का समर्थन करने के लिए डिज़ाइन किया गया है। यह AndroidX लाइब्रेरी का हिस्सा है, जो सपोर्ट लाइब्रेरी का एक सेट है जो Android फ्रेमवर्क API के बैकवर्ड-संगत संस्करणों के साथ-साथ ऐसी सुविधाएँ प्रदान करता है जो केवल लाइब्रेरी API के माध्यम से उपलब्ध हैं।\n\nAppCompatImageView को ड्रॉप के रूप में उपयोग करने का इरादा है ImageView के प्रतिस्थापन में, डेवलपर्स को Android के विभिन्न संस्करणों में समान कोड और UI तत्वों का उपयोग करने की अनुमति देता है। इसमें विभिन्न विशेषताओं जैसे टिनटिंग, वेक्टर ड्रॉएबल को लोड करना और इमेज स्केलिंग को हैंडल करना शामिल है। लेआउट की सतह। इसमें मटेरियल डिज़ाइन रिपल इफ़ेक्ट के लिए समर्थन भी शामिल है, जो एक विज़ुअल इफ़ेक्ट है जो इमेज व्यू को छूने पर लागू होता है। Android ऐप्स में सुविधाओं और डिज़ाइन तत्वों की विस्तृत श्रृंखला।</string>
+    <string name="summary_require_restart">प्रभावी होने के लिए कृपया ऐप को पुनरारंभ करें!</string>
     <string name="toast_this_is_a_toast">यह एक टोस्ट है!</string>
     <string name="post_notifications">पोस्ट सूचनाएं [POST_NOTIFICATIONS]</string>
     <string name="check_license">लाइसेंस जांचें [CHECK_LICENSE]</string>
@@ -320,4 +323,14 @@
     <string name="summary_preference_permissions_check_license">यह सत्यापित करने के लिए उपयोग किया जाता है कि ऐप का उपयोग लाइसेंस समझौते की शर्तों के अनुसार किया जा रहा है, और लाइसेंसिंग शर्तों को लागू करने और बौद्धिक संपदा की रक्षा करने के लिए।</string>
     <string name="summary_preference_permissions_foreground_service">अग्रभूमि में चलने वाली सेवाओं को बनाने और उपयोग करने के लिए उपयोग किया जाता है, जिससे उन्हें अन्य पृष्ठभूमि प्रक्रियाओं पर प्राथमिकता मिलती है और प्रदर्शन और विश्वसनीयता में सुधार होता है।</string>
     <string name="summary_preference_permissions_access_notification_policy">डिवाइस की अधिसूचना नीति को एक्सेस और संशोधित करने के लिए उपयोग किया जाता है, यह नियंत्रित करता है कि उपयोगकर्ता को सूचनाएं कैसे और कब दिखाई जाती हैं और कस्टम अधिसूचना प्रबंधन सुविधाएँ प्रदान करता है।</string>
+    <string name="reviews">समीक्षा</string>
+    <string name="rating_bar">रेटिंग बार</string>
+    <string name="stars">%1$.1f सितारे!</string>
+    <string name="rating">हमें %1$.1f सितारों से रेटिंग देने के लिए धन्यवाद!</string>
+    <string name="summary_preference_android_studio_rating_bar">रेटिंगबार सीकबार और प्रोग्रेसबार का एक विस्तार है जो सितारों में रेटिंग दिखाता है।</string>
+    <string name="implementations_rating_bar">रेटिंग बार लागू करें</string>
+    <string name="implementations_in_app_review">इन-ऐप समीक्षा लागू करें</string>
+    <string name="implementations_tooltip">टूलटिप्स लागू करें</string>
+    <string name="summary_preference_android_studio_in_app_review">Google Play इन-ऐप समीक्षा API आपको अपने ऐप या गेम को छोड़ने की असुविधा के बिना उपयोगकर्ताओं को Play Store रेटिंग और समीक्षा सबमिट करने का संकेत देता है।</string>
+    <string name="summary_preference_android_studio_tooltip">टूलटिप एक छोटा वर्णनात्मक संदेश है जो एक दृश्य के पास दिखाई देता है जब उपयोगकर्ता दृश्य को लंबे समय तक दबाते हैं या उस पर अपने माउस को मँडराते हैं। यह तब उपयोगी होता है जब आपका ऐप लेआउट में जगह बचाने के लिए किसी क्रिया या सूचना के टुकड़े का प्रतिनिधित्व करने के लिए एक आइकन का उपयोग करता है।</string>
 </resources>

@@ -1,3 +1,13 @@
+# Version 3.2_r1:
+- Added a new lesson on using In-App Review API;
+- Added a new lesson on using Rating Bar;
+- Added a new lesson on using Tooltips;
+- Reworked and improved animations;
+- Small improvements to dark mode & app design;
+- Improved readability and consistency;
+- Fixed various bugs and crashes;
+- Made various under-the-hood improvements for a better overall app experience.
+
 # Version 3.1_r1:
 - Added a new lesson on using Radio Buttons;
 - Added a new lesson on using Image Buttons;

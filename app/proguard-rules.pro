@@ -25,7 +25,6 @@
 -keep public class com.google.ads.** {
   public *;
 }
-
 -keep class com.google.firebase.** {
-*;
+  public *;
 }

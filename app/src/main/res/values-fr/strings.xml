@@ -281,6 +281,8 @@
     <string name="show_toast">Afficher le toast</string>
     <string name="faq">FAQ</string>
     <string name="advanced">Avancé</string>
+    <string name="runtime">Durée</string>
+    <string name="require_restart">Exiger un redémarrage!</string>
     <string name="notification_last_time_used_title">Cela fait longtemps!</string>
     <string name="notification_update_title">Une nouvelle mise à jour disponible !</string>
     <string name="question_1">Qu\'est-ce que les didacticiels Android Studio?</string>
@@ -311,6 +313,7 @@
     <string name="summary_notification_last_time_used">Ne laissez pas vos compétences en développement Android prendre la poussière! Revenez à l\'apprentissage et à l\'amélioration avec les didacticiels Android Studio dès aujourd\'hui. Notre application a quelque chose pour tout le monde, des débutants aux développeurs expérimentés.</string>
     <string name="summary_notification_update">Une nouvelle version de l\'application est disponible. Cliquez pour mettre à jour!</string>
     <string name="summary_image_view">AndroidX AppCompatImageView est une sous-classe d\'ImageView conçue pour prendre en charge diverses fonctionnalités de l\'ActionBar et de la conception matérielle. Il fait partie de la bibliothèque AndroidX, qui est un ensemble de bibliothèques de support qui offrent des versions rétrocompatibles des API du framework Android ainsi que des fonctionnalités qui ne sont disponibles que via les API de la bibliothèque.\n\nAppCompatImageView est destiné à être utilisé comme une goutte -en remplacement d\'ImageView, permettant aux développeurs d\'utiliser le même code et les mêmes éléments d\'interface utilisateur sur différentes versions d\'Android. Il inclut la prise en charge de diverses fonctionnalités telles que la teinte, le chargement de vecteurs dessinables et la gestion de la mise à l\'échelle de l\'image.\n\nAppCompatImageView inclut également la prise en charge des fonctionnalités de conception de matériaux telles que l\'élévation, qui permet à la vue de l\'image de projeter une ombre et d\'apparaître au-dessus de la surface de la mise en page. Il inclut également la prise en charge de l\'effet d\'entraînement Material Design, qui est un effet visuel appliqué lorsque la vue de l\'image est touchée.\n\nEn résumé, AndroidX AppCompatImageView est une sous-classe polyvalente et riche en fonctionnalités d\'ImageView conçue pour prendre en charge un large éventail de fonctionnalités et d\'éléments de conception dans les applications Android.</string>
+    <string name="summary_require_restart">Pour prendre effet, veuillez redémarrer l\'application!</string>
     <string name="toast_this_is_a_toast">C\'est un toast!</string>
     <string name="post_notifications">Publier des notifications [POST_NOTIFICATIONS]</string>
     <string name="check_license">Vérifier la licence [CHECK_LICENSE]</string>
@@ -320,4 +323,14 @@
     <string name="summary_preference_permissions_check_license">Utilisé pour vérifier que l\'application est utilisée conformément aux termes du contrat de licence, et pour faire respecter les termes de la licence et protéger la propriété intellectuelle.</string>
     <string name="summary_preference_permissions_foreground_service">Utilisé pour créer et utiliser des services qui s\'exécutent au premier plan, en leur donnant la priorité sur les autres processus d\'arrière-plan et en améliorant les performances et la fiabilité.</string>
     <string name="summary_preference_permissions_access_notification_policy">Utilisé pour accéder et modifier la politique de notification de l\'appareil, contrôler comment et quand les notifications sont présentées à l\'utilisateur et fournir des fonctionnalités de gestion des notifications personnalisées.</string>
+    <string name="reviews">Commentaires</string>
+    <string name="rating_bar">Barre de notation</string>
+    <string name="stars">%1$.1fétoiles!</string>
+    <string name="rating">Merci de nous avoir attribué %1$.1fétoiles!</string>
+    <string name="summary_preference_android_studio_rating_bar">Une RatingBar est une extension de SeekBar et ProgressBar qui affiche une note en étoiles.</string>
+    <string name="implementations_rating_bar">Barre d\'évaluation de l\'outil</string>
+    <string name="implementations_in_app_review">Mettre en œuvre l\'examen intégré à l\'application</string>
+    <string name="implementations_tooltip">Implémenter les info-bulles</string>
+    <string name="summary_preference_android_studio_in_app_review">L\'API Google Play In-App Review vous permet d\'inviter les utilisateurs à soumettre des évaluations et des avis Play Store sans avoir à quitter votre application ou votre jeu.</string>
+    <string name="summary_preference_android_studio_tooltip">Une info-bulle est un petit message descriptif qui apparaît près d\'une vue lorsque les utilisateurs appuient longuement sur la vue ou la survolent avec leur souris. Ceci est utile lorsque votre application utilise une icône pour représenter une action ou une information afin d\'économiser de l\'espace dans la mise en page.</string>
 </resources>

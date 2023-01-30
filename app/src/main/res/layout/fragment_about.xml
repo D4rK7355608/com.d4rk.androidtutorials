@@ -45,11 +45,15 @@
                     app:layout_constraintTop_toBottomOf="@id/image_view_app_icon"/>
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_view_app_version"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:layout_marginTop="8dp"
                     android:text="@string/app_version"
+                    android:drawableStart="@drawable/ic_data_object"
+                    android:drawablePadding="4dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/text_view_app_title"/>
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip_google_dev"
