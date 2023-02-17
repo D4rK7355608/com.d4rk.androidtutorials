@@ -324,6 +324,8 @@
     <string name="summary_preference_permissions_foreground_service">フォアグラウンドで実行されるサービスを作成して使用するために使用され、他のバックグラウンド プロセスよりも優先され、パフォーマンスと信頼性が向上します。</string>
     <string name="summary_preference_permissions_access_notification_policy">デバイスの通知ポリシーにアクセスして変更し、ユーザーに通知を表示する方法とタイミングを制御し、カスタム通知管理機能を提供するために使用されます。</string>
     <string name="reviews">レビュー</string>
+    <string name="predictive_back_gesture">予測戻るジェスチャー</string>
+    <string name="summary_preference_android_studio_predictive_back_gesture">Android 13（APIレベル33）は、スマートフォン、大画面、折り畳み式などのAndroidデバイス向けに、予測戻るジェスチャーを導入します。これは、マルチイヤーリリースの一部で、完全に実装されると、ユーザーが完全に完了する前に戻るジェスチャーの宛先または他の結果をプレビューできるようになり、続けるか現在のビューにとどまるかを決定できます。</string>
     <string name="rating_bar">評価バー</string>
     <string name="stars">%1$.1f つ星!</string>
     <string name="rating">%1$.1f 星で評価していただきありがとうございます!</string>

@@ -318,6 +318,8 @@
     <string name="post_notifications">Benachrichtigungen posten [POST_NOTIFICATIONS]</string>
     <string name="check_license">Lizenz prüfen [CHECK_LICENSE]</string>
     <string name="foreground_service">Vordergrunddienst [FOREGROUND_SERVICE]</string>
+    <string name="predictive_back_gesture">Vorhersagende Rückgeste</string>
+    <string name="summary_preference_android_studio_predictive_back_gesture">Android 13 (API-Level 33) führt eine vorhersagende Rückgeste für Android-Geräte wie Telefone, große Bildschirme und Klapphandys ein. Es ist Teil eines mehrjährigen Releases. Wenn diese Funktion vollständig implementiert ist, können Benutzer das Ziel oder andere Ergebnisse einer Rückgeste vorab anzeigen, bevor sie vollständig abschließen. Dadurch können sie entscheiden, ob sie fortfahren oder in der aktuellen Ansicht bleiben möchten.</string>
     <string name="access_notification_policy">Zugriffsbenachrichtigungsrichtlinie [ACCESS_NOTIFICATION_POLICY]</string>
     <string name="summary_preference_permissions_post_notifications">Wird verwendet, um Benachrichtigungen auf Android 13-Geräten anzuzeigen.</string>
     <string name="summary_preference_permissions_check_license">Wird verwendet, um zu überprüfen, ob die App gemäß den Bedingungen der Lizenzvereinbarung verwendet wird, und um Lizenzbedingungen durchzusetzen und geistiges Eigentum zu schützen.</string>

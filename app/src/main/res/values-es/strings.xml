@@ -43,7 +43,6 @@
     <string name="summary_view_binding">El enlace de vista es una función que le permite escribir código que interactúa con las vistas más fácilmente. Una vez que se habilita el enlace de vista en un módulo, genera una clase de enlace para cada archivo de diseño XML presente en ese módulo. Una instancia de una clase de enlace contiene referencias directas a todas las vistas que tienen un ID en el diseño correspondiente.</string>
     <string name="more_about_view_binding">Más acerca de Ver encuadernación</string>
     <string name="setup_instructions">Instrucciones de configuración</string>
-    <string name="summary_enable_binding">El enlace de vista se habilita módulo por módulo. Para habilitar el enlace de vista en un módulo, establezca la opción de compilación viewBinding en verdadero en el archivo build.gradle del nivel del módulo, como se muestra en el siguiente ejemplo:</string>
     <string name="use_view_binding_in_activities">Usar enlace de vista en actividades</string>
     <string name="use_view_binding_in_fragments">Usar enlace de vista en fragmentos</string>
     <string name="view_binding">Ver encuadernación</string>
@@ -70,9 +69,6 @@
     <string name="step1">Paso 1</string>
     <string name="step2">Paso 2</string>
     <string name="step3">Paso 3</string>
-    <string name="summary_first_step">La primera vez que abre Android Studio, haga clic en<b> Nuevo proyecto</b> como se puede ver en la imagen y vaya al siguiente paso.</string>
-    <string name="summary_second_step">La segunda vez, debe elegir el tipo de actividad que desea para la aplicación. Tienes algunos ajustes preestablecidos para hacer tu trabajo más fácil. Elija uno de ellos y haga clic en el botón siguiente.</string>
-    <string name="summary_third_step">El tercer y último paso es establecer el nombre de su aplicación, el nombre del paquete, el lenguaje de programación preferido y el SDK mínimo que utilizará su aplicación. Puedes buscar más sobre ellos en<a href="https://developer.android.com/"> Desarrolladores de Android</a> .</string>
     <string name="summary_toggle">Puede agregar un botón de alternar básico a su diseño con el objeto ToggleButton. Android 4.0 (API nivel 14) presenta otro tipo de botón de alternar llamado interruptor que proporciona un control deslizante, que puede agregar con un objeto Cambiar. SwitchCompat es una versión del widget Switch que se ejecuta en dispositivos con API 7.</string>
     <string name="button_normal">Botón 1 (normal)</string>
     <string name="button_outlined">Botón 2 (delineado)</string>
@@ -326,11 +322,17 @@
     <string name="reviews">Reseñas</string>
     <string name="rating_bar">barra de calificación</string>
     <string name="stars">¡%1$.1f estrellas!</string>
+    <string name="summary_first_step">El primer paso para crear un nuevo proyecto en Android Studio es hacer clic en el botón <b>Nuevo proyecto</b> como se muestra en la imagen y continuar con el siguiente paso.</string>
+    <string name="summary_second_step">El segundo paso es seleccionar el tipo de actividad que se adapte a su aplicación. Puede elegir entre algunos presets que pueden simplificar su trabajo. Seleccione uno de ellos y haga clic en el botón <b>siguiente</b>.</string>
+    <string name="summary_third_step">El tercer y último paso es configurar la configuración de su aplicación, como el nombre de la aplicación, el <b>nombre del paquete</b>, el <b>idioma de programación preferido</b> y el <b>SDK mínimo</b> preferido. Puede obtener más información sobre ellos en <a href="https://developer.android.com/">Desarrolladores de Android</a>.</string>
+    <string name="summary_enable_binding">La vinculación de vistas se habilita por módulo. Para habilitar la vinculación de vistas en un módulo, configure la opción viewBinding en verdadero en el archivo build.gradle del nivel del módulo, como se muestra en el siguiente ejemplo:</string>
     <string name="rating">¡Gracias por calificarnos con %1$.1f estrellas!</string>
     <string name="summary_preference_android_studio_rating_bar">Una RatingBar es una extensión de SeekBar y ProgressBar que muestra una calificación en estrellas.</string>
     <string name="implementations_rating_bar">Implementar barra de calificación</string>
     <string name="implementations_in_app_review">Implementar revisión en la aplicación</string>
     <string name="implementations_tooltip">Implementar información sobre herramientas</string>
+    <string name="predictive_back_gesture">Gesto de retroceso predictivo</string>
+    <string name="summary_preference_android_studio_predictive_back_gesture">Android 13 (nivel de API 33) introduce un gesto de retroceso predictivo para dispositivos Android como teléfonos, pantallas grandes y plegables. Es parte de una versión de varios años; cuando se implemente por completo, esta función permitirá a los usuarios previsualizar el destino u otro resultado de un gesto de retroceso antes de completarlo por completo, lo que les permitirá decidir si continuar o permanecer en la vista actual.</string>
     <string name="summary_preference_android_studio_in_app_review">La API de revisión en la aplicación de Google Play le permite solicitar a los usuarios que envíen calificaciones y reseñas de Play Store sin el inconveniente de abandonar su aplicación o juego.</string>
     <string name="summary_preference_android_studio_tooltip">Una información sobre herramientas es un pequeño mensaje descriptivo que aparece cerca de una vista cuando los usuarios mantienen presionada la vista o pasan el mouse sobre ella. Esto es útil cuando su aplicación usa un ícono para representar una acción o información para ahorrar espacio en el diseño.</string>
 </resources>

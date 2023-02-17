@@ -48,47 +48,43 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
                 restartDialog.show(childFragmentManager, RequireRestartDialog::class.java.name)
                 true
             }
-            val moreApps: Preference? = findPreference(getString(R.string.key_more_apps))
-            if (moreApps != null) {
-                moreApps.onPreferenceClickListener = Preference.OnPreferenceClickListener {
-                    val view: View = layoutInflater.inflate(R.layout.fragment_dialog, null)
-                    MaterialAlertDialogBuilder(requireContext())
-                        .setTitle(R.string.more_apps)
-                        .setIcon(R.drawable.ic_shop)
-                        .setNegativeButton(android.R.string.cancel, null)
-                        .setView(view)
-                        .create()
-                        .show()
-                    val textViewMusicSleepTimer: MaterialTextView = view.findViewById(R.id.text_view_music_sleep_timer)
-                    val textViewEnglishWithLidia: MaterialTextView = view.findViewById(R.id.text_view_english_with_lidia)
-                    val textViewQRCodeScanner: MaterialTextView = view.findViewById(R.id.text_view_qr_code_scanner)
-                    val textViewLowBrightness: MaterialTextView = view.findViewById(R.id.text_view_low_brightness)
-                    val textViewCleaner: MaterialTextView = view.findViewById(R.id.text_view_cleaner)
-                    val urls = mapOf(textViewCleaner to "https://play.google.com/store/apps/details?id=com.d4rk.cleaner.plus", textViewMusicSleepTimer to "https://play.google.com/store/apps/details?id=com.d4rk.musicsleeptimer.plus", textViewEnglishWithLidia to "https://play.google.com/store/apps/details?id=com.d4rk.englishwithlidia.plus", textViewQRCodeScanner to "https://play.google.com/store/apps/details?id=com.d4rk.qrcodescanner.plus", textViewLowBrightness to "https://play.google.com/store/apps/details?id=com.d4rk.lowbrightness")
-                    urls.forEach { (view, url) -> view.setOnClickListener {
-                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
-                        }
-                    }
-                    true
+            val moreApps = findPreference<Preference>(getString(R.string.key_more_apps))
+            moreApps?.setOnPreferenceClickListener {
+                val view: View = layoutInflater.inflate(R.layout.fragment_dialog, null)
+                MaterialAlertDialogBuilder(requireContext())
+                    .setTitle(R.string.more_apps)
+                    .setIcon(R.drawable.ic_shop)
+                    .setNegativeButton(android.R.string.cancel, null)
+                    .setView(view)
+                    .create()
+                    .show()
+                val textViewMusicSleepTimer: MaterialTextView = view.findViewById(R.id.text_view_music_sleep_timer)
+                val textViewEnglishWithLidia: MaterialTextView = view.findViewById(R.id.text_view_english_with_lidia)
+                val textViewQRCodeScanner: MaterialTextView = view.findViewById(R.id.text_view_qr_code_scanner)
+                val textViewLowBrightness: MaterialTextView = view.findViewById(R.id.text_view_low_brightness)
+                val textViewCleaner: MaterialTextView = view.findViewById(R.id.text_view_cleaner)
+                val urls = mapOf(textViewCleaner to "https://play.google.com/store/apps/details?id=com.d4rk.cleaner.plus", textViewMusicSleepTimer to "https://play.google.com/store/apps/details?id=com.d4rk.musicsleeptimer.plus", textViewEnglishWithLidia to "https://play.google.com/store/apps/details?id=com.d4rk.englishwithlidia.plus", textViewQRCodeScanner to "https://play.google.com/store/apps/details?id=com.d4rk.qrcodescanner.plus", textViewLowBrightness to "https://play.google.com/store/apps/details?id=com.d4rk.lowbrightness")
+                urls.forEach { (view, url) -> view.setOnClickListener {
+                    startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
                 }
-            }
-            val changelogPreference: Preference? = findPreference(getString(R.string.key_changelog))
-            if (changelogPreference != null) {
-                changelogPreference.onPreferenceClickListener = Preference.OnPreferenceClickListener {
-                    MaterialAlertDialogBuilder(requireContext())
-                        .setTitle(requireContext().getString(R.string.changelog_title, BuildConfig.VERSION_NAME))
-                        .setIcon(R.drawable.ic_changelog)
-                        .setMessage(R.string.changes)
-                        .setNegativeButton(android.R.string.cancel, null)
-                        .show()
-                    true
                 }
+                true
             }
-            val sharePreference: Preference? = findPreference(getString(R.string.key_share))
-            sharePreference?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
+            val changelogPreference = findPreference<Preference>(getString(R.string.key_changelog))
+            changelogPreference?.setOnPreferenceClickListener {
+                MaterialAlertDialogBuilder(requireContext())
+                    .setTitle(requireContext().getString(R.string.changelog_title, BuildConfig.VERSION_NAME))
+                    .setIcon(R.drawable.ic_changelog)
+                    .setMessage(R.string.changes)
+                    .setNegativeButton(android.R.string.cancel, null)
+                    .show()
+                true
+            }
+            val sharePreference = findPreference<Preference>(getString(R.string.key_share))
+            sharePreference?.setOnPreferenceClickListener {
                 val sharingIntent = Intent(Intent.ACTION_SEND).apply {
                     type = "text/plain"
-                    putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=com.d4rk.androidtutorials")
+                    putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID)
                     putExtra(Intent.EXTRA_SUBJECT, R.string.share_subject)
                 }
                 startActivity(Intent.createChooser(sharingIntent, getString(R.string.share_using)))

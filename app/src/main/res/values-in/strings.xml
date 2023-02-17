@@ -324,6 +324,8 @@
     <string name="summary_preference_permissions_foreground_service">Digunakan untuk membuat dan menggunakan layanan yang berjalan di latar depan, memberi mereka prioritas atas proses latar belakang lainnya dan meningkatkan kinerja dan keandalan.</string>
     <string name="summary_preference_permissions_access_notification_policy">Digunakan untuk mengakses dan mengubah kebijakan notifikasi perangkat, mengontrol bagaimana dan kapan notifikasi ditampilkan kepada pengguna dan menyediakan fitur manajemen notifikasi kustom.</string>
     <string name="reviews">Ulasan</string>
+    <string name="predictive_back_gesture">Gestur mundur prediktif</string>
+    <string name="summary_preference_android_studio_predictive_back_gesture">Android 13 (tingkat API 33) memperkenalkan gestur mundur prediktif untuk perangkat Android seperti ponsel, layar besar, dan lipat. Ini adalah bagian dari rilis multi-tahun; ketika sepenuhnya diimplementasikan, fitur ini akan memungkinkan pengguna untuk melihat pratinjau tujuan atau hasil lain dari gestur mundur sebelum sepenuhnya menyelesaikannya, memungkinkan mereka untuk memutuskan apakah akan melanjutkan atau tetap berada di tampilan saat ini.</string>
     <string name="rating_bar">Bilah peringkat</string>
     <string name="stars">%1$.1f bintang!</string>
     <string name="rating">Terima kasih telah menilai kami dengan %1$.1f bintang!</string>

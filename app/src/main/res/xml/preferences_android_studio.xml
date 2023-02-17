@@ -53,6 +53,14 @@
                 android:targetPackage="com.d4rk.androidtutorials"
                 android:targetClass="com.d4rk.androidtutorials.ui.android.basics.permissions.PermissionsTutorialActivity"/>
         </androidx.preference.Preference>
+        <androidx.preference.Preference
+            app:title="@string/predictive_back_gesture"
+            app:summary="@string/summary_preference_android_studio_predictive_back_gesture"
+            app:icon="@drawable/ic_swipe_black">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://developer.android.com/guide/navigation/predictive-back-gesture"/>
+        </androidx.preference.Preference>
     </androidx.preference.PreferenceCategory>
     <androidx.preference.PreferenceCategory
         app:title="@string/buttons_and_switches"

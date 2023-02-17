@@ -319,6 +319,8 @@
     <string name="check_license">Sprawdź licencję [CHECK_LICENSE]</string>
     <string name="foreground_service">Usługa pierwszego planu [FOREGROUND_SERVICE]</string>
     <string name="access_notification_policy">Zasady powiadamiania o dostępie [ACCESS_NOTIFICATION_POLICY]</string>
+    <string name="predictive_back_gesture">Przewidywalny gest powrotu</string>
+    <string name="summary_preference_android_studio_predictive_back_gesture">Android 13 (poziom API 33) wprowadza przewidywalny gest powrotu dla urządzeń z systemem Android, takich jak telefony, duże ekrany i urządzenia złożone. To część wieloletniego wydania; gdy funkcja ta zostanie w pełni wdrożona, umożliwi użytkownikom zapoznanie się z miejscem docelowym lub innym wynikiem gestu powrotu przed jego pełnym wykonaniem, co pozwoli im zdecydować, czy kontynuować czy pozostać w bieżącym widoku.</string>
     <string name="summary_preference_permissions_post_notifications">Służy do wyświetlania powiadomień na urządzeniach z Androidem 13.</string>
     <string name="summary_preference_permissions_check_license">Służy do sprawdzania, czy aplikacja jest używana zgodnie z warunkami umowy licencyjnej oraz do egzekwowania warunków licencji i ochrony własności intelektualnej.</string>
     <string name="summary_preference_permissions_foreground_service">Służy do tworzenia i korzystania z usług, które działają na pierwszym planie, dając im pierwszeństwo przed innymi procesami w tle oraz poprawiając wydajność i niezawodność.</string>

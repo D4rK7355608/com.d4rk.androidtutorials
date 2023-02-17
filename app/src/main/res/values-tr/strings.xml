@@ -70,7 +70,6 @@
     <string name="step1">Aşama 1</string>
     <string name="step2">Adım 2</string>
     <string name="step3">Aşama 3</string>
-    <string name="summary_first_step">Android Studio\'yu ilk açtığınızda<b> Yeni proje</b> resimde gördüğünüz gibi butonu ile bir sonraki adıma geçiniz.</string>
     <string name="summary_second_step">İkinci kez, uygulama için istediğiniz aktivite türünü seçmelisiniz. İşinizi daha kolay hale getirmek için bazı ön ayarlarınız var. Bunlardan birini seçin ve ileri butonuna tıklayın.</string>
     <string name="summary_third_step">Üçüncü ve son adım, uygulamanızın adını, paket adını, tercih ettiğiniz programlama dilini ve uygulamanızın kullanacağı minimum SDK\'yı belirlemektir. onlar hakkında daha fazla arama yapabilirsiniz<a href="https://developer.android.com/"> Android Geliştiricileri</a> .</string>
     <string name="summary_toggle">ToggleButton nesnesiyle düzeninize temel bir geçiş düğmesi ekleyebilirsiniz. Android 4.0 (API düzeyi 14), bir Switch nesnesiyle ekleyebileceğiniz, kaydırıcı denetimi sağlayan, anahtar adı verilen başka bir tür geçiş düğmesi sunar. SwitchCompat, API 7\'ye geri dönen cihazlarda çalışan Switch widget\'ının bir sürümüdür.</string>
@@ -94,6 +93,8 @@
     <string name="toast_material_switch">Geçişli Malzeme Anahtarı!</string>
     <string name="share">Paylaşmak</string>
     <string name="share_subject">Şimdi dene!!!</string>
+    <string name="predictive_back_gesture">Tahmin edici geri hareket</string>
+    <string name="summary_preference_android_studio_predictive_back_gesture">Android 13 (API seviyesi 33) telefonlar, büyük ekranlar ve katlanabilir cihazlar gibi Android cihazları için tahmin edici geri hareketi tanıtıyor. Çok yıllık bir yayın serisinin parçasıdır; tam olarak uygulandığında, bu özellik kullanıcıların geri hareketinin hedefini veya diğer sonucunu tamamlamadan önce önizlemesine izin verecek ve onlara devam etmeyi veya mevcut görünümde kalmayı tercih edip etmeyeceklerine karar vermelerine olanak tanıyacaktır.</string>
     <string name="share_using">Kullanarak paylaş…</string>
     <string name="buttons">Düğmeler</string>
     <string name="webview">Web Görünümü</string>
@@ -333,5 +334,5 @@
     <string name="implementations_tooltip">Araç ipuçlarını uygulama</string>
     <string name="summary_preference_android_studio_in_app_review">Google Play Uygulama İçi İnceleme API\'sı, uygulamanızdan veya oyununuzdan ayrılma zahmetine girmeden kullanıcılardan Play Store puanları ve incelemeleri göndermelerini istemenize olanak tanır.</string>
     <string name="summary_preference_android_studio_tooltip">Araç ipucu, kullanıcılar görünüme uzun bastıklarında veya farelerini görünümün üzerine getirdiklerinde görünümün yanında görünen küçük, açıklayıcı bir mesajdır. Bu, uygulamanız mizanpajda yer kazanmak için bir eylemi veya bilgi parçasını temsil eden bir simge kullandığında kullanışlıdır.</string>
-
+    <string name="summary_first_step">Android Studio\'da yeni bir proje oluşturmak için ilk adım, görüntüde gösterildiği gibi <b>Yeni proje</b> düğmesine tıklamaktır ve sonraki adıma devam etmektir.</string>
 </resources>

@@ -330,6 +330,8 @@
     <string name="summary_preference_android_studio_rating_bar">En RatingBar är en förlängning av SeekBar och ProgressBar som visar betyg i stjärnor.</string>
     <string name="implementations_rating_bar">Implementera betygsfältet</string>
     <string name="implementations_in_app_review">Implementera granskning i appen</string>
+    <string name="predictive_back_gesture">Förutsägbar tillbakagester</string>
+    <string name="summary_preference_android_studio_predictive_back_gesture">Android 13 (API-nivå 33) introducerar en förutsägbar tillbakagester för Android-enheter som telefoner, stora skärmar och vikbara enheter. Det är en del av en flerårig utgivning; när funktionen är fullständigt implementerad, kommer den låta användarna förhandsgranska målet eller annat resultat av en tillbakagester innan den fullständigt genomförs, vilket ger dem möjlighet att bestämma om de vill fortsätta eller stanna i nuvarande vy.</string>
     <string name="implementations_tooltip">Implementera verktygstips</string>
     <string name="summary_preference_android_studio_in_app_review">Med Google Play In-App Review API kan du uppmana användare att skicka betyg och recensioner i Play Butik utan att behöva lämna din app eller ditt spel.</string>
     <string name="summary_preference_android_studio_tooltip">Ett verktygstips är ett litet beskrivande meddelande som visas nära en vy när användare länge trycker på vyn eller håller musen över den. Detta är användbart när din app använder en ikon för att representera en åtgärd eller information för att spara utrymme i layouten.</string>

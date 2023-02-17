@@ -326,6 +326,8 @@
     <string name="reviews">समीक्षा</string>
     <string name="rating_bar">रेटिंग बार</string>
     <string name="stars">%1$.1f सितारे!</string>
+    <string name="predictive_back_gesture">पूर्वानुमान वापसी हस्ताक्षर</string>
+    <string name="summary_preference_android_studio_predictive_back_gesture">एंड्रॉयड 13 (एपीआई स्तर 33) फोन, बड़ी स्क्रीन और फोल्डेबल जैसे एंड्रॉयड उपकरणों के लिए एक पूर्वानुमान वापसी हस्ताक्षर पेश करता है। यह एक बहुवर्षीय रिलीज़ का हिस्सा है; पूरी तरह से लागू होने पर, यह सुविधा उपयोगकर्ताओं को वापसी हस्ताक्षर के लक्ष्य या अन्य परिणाम को पूरी तरह से पूरा करने से पहले पूर्वावलोकन करने देगी, जिससे वे निर्णय ले सकेंगे कि क्या जारी रखना चाहते हैं या वर्तमान दृश्य में रहना चाहते हैं।</string>
     <string name="rating">हमें %1$.1f सितारों से रेटिंग देने के लिए धन्यवाद!</string>
     <string name="summary_preference_android_studio_rating_bar">रेटिंगबार सीकबार और प्रोग्रेसबार का एक विस्तार है जो सितारों में रेटिंग दिखाता है।</string>
     <string name="implementations_rating_bar">रेटिंग बार लागू करें</string>

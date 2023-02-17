@@ -179,6 +179,8 @@
     <string name="find_class">Find class</string>
     <string name="find_file">Find file (instead of class)</string>
     <string name="find_path">Find path</string>
+    <string name="predictive_back_gesture">Predictive back gesture</string>
+    <string name="summary_preference_android_studio_predictive_back_gesture">Android 13 (API level 33) introduces a predictive back gesture for Android devices such as phones, large screens, and foldables. It is part of a multi-year release; when fully implemented, this feature will let users preview the destination or other result of a back gesture before fully completing it, allowing them to decide whether to continue or stay in the current view.</string>
     <string name="open_file_structure">Open file structure pop-up</string>
     <string name="navigate_between_open_tabs">Navigate between open editor tabs</string>
     <string name="jump_to_source">Jump to source</string>
@@ -303,10 +305,9 @@
     <string name="summary_preference_android_studio_rating_bar">A RatingBar is an extension of SeekBar and ProgressBar that shows a rating in stars.</string>
     <string name="summary_sdk">The Android Software Development Kit (SDK) is a collection of tools that allow developers to create Android apps. It includes a set of libraries, a debugger, a handset emulator, and documentation. The SDK also includes an API library and a set of API documentation. The packages you download have libraries, which helps you in creating your app.\n\nThis is an overview of all Android versions and their corresponding identifiers for Android developers. Anyone is welcome to open an issue or pull request. Happy developing!</string>
     <string name="summary_view_binding">View binding is a feature that allows you to more easily write code that interacts with views. Once view binding is enabled in a module, it generates a binding class for each XML layout file present in that module. An instance of a binding class contains direct references to all views that have an ID in the corresponding layout.</string>
-    <string name="summary_first_step">First time you open Android Studio click on <b>New project</b> button like you can see in the image and go to next the step.</string>
-    <string name="summary_second_step">Second time you have to choose your activity type you want for the app. You have some presets to make your work more easier. Choose one of them and click on next button.</string>
-    <string name="summary_third_step">Third and final step is to set your app name, package name, preferred programming language and minimum SDK your app will use. You can search more about them on <a href="https://developer.android.com/">Android Developers</a>.</string>
-    <string name="summary_enable_binding">View binding is enabled on a module by module basis. To enable view binding in a module, set the viewBinding build option to true in the module-level build.gradle file, as shown in the following example:</string>
+    <string name="summary_first_step">The first step to create a new project in Android Studio is to click on the <b>New project</b> button as shown in the image and continue to the next step.</string>
+    <string name="summary_second_step">The second step is to select the activity type that suits your app. You can choose from some presets that can simplify your work. Select one of them and click on the <b>next</b> button.</string>
+    <string name="summary_third_step">The third and final step is to configure your app settings, such as the app name, <b>package name</b>, preferred <b>programming language</b> and <b>minimum SDK</b>. You can learn more about them on <a href="https://developer.android.com/">Android Developers</a>.</string><string name="summary_enable_binding">View binding is enabled on a module by module basis. To enable view binding in a module, set the viewBinding build option to true in the module-level build.gradle file, as shown in the following example:</string>
     <string name="summary_browse_terms_of_service_and_privacy_policy">Read and agree to our Terms of Service and Privacy Policy to continue.</string>
     <string name="summary_shortcuts">Android Studio includes keyboard shortcuts for many common actions. Keep in mind, because Android Studio is based on IntelliJ IDEA, you can find additional shortcuts in the IntelliJ IDEA keymap reference documentation.</string>
     <string name="summary_toggle">You can add a basic toggle button to your layout with the ToggleButton object. Android 4.0 (API level 14) introduces another kind of toggle button called a switch that provides a slider control, which you can add with a Switch object. SwitchCompat is a version of the Switch widget which runs on devices back to API 7.</string>
@@ -348,13 +349,8 @@
     <string name="tooltip_show_code">Show code syntax</string>
     <string name="changelog_title" translatable="false">Changelog - Version %1s</string>
     <string name="changes" translatable="false">\n
-        • Added a new lesson on using In-App Review API;\n
-        • Added a new lesson on using Rating Bar;\n
-        • Added a new lesson on using Tooltips;\n
-        • Reworked and improved animations;\n
-        • Small improvements to dark mode &amp; app design;\n
-        • Improved readability and consistency;\n
-        • Fixed various bugs and crashes;\n
+        • Added a new lesson on using predictive back gesture;\n
+        • Small User Interface &amp; translations tweaks;\n
         • Made various under-the-hood improvements for a better overall app experience.
     </string>
 </resources>

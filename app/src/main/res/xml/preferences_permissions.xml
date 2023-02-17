@@ -4,16 +4,8 @@
         app:title="@string/normal"
         app:iconSpaceReserved="false">
         <androidx.preference.Preference
-            app:title="@string/access_network_state"
-            app:summary="@string/summary_preference_permissions_internet"
-            app:iconSpaceReserved="false"/>
-        <androidx.preference.Preference
             app:title="@string/ad_id"
             app:summary="@string/summary_preference_permissions_ad_id"
-            app:iconSpaceReserved="false"/>
-        <androidx.preference.Preference
-            app:title="@string/check_license"
-            app:summary="@string/summary_preference_permissions_check_license"
             app:iconSpaceReserved="false"/>
         <androidx.preference.Preference
             app:title="@string/internet"
@@ -28,8 +20,16 @@
         app:title="@string/runtime"
         app:iconSpaceReserved="false">
         <androidx.preference.Preference
+            app:title="@string/access_network_state"
+            app:summary="@string/summary_preference_permissions_internet"
+            app:iconSpaceReserved="false"/>
+        <androidx.preference.Preference
             app:title="@string/access_notification_policy"
             app:summary="@string/summary_preference_permissions_access_notification_policy"
+            app:iconSpaceReserved="false"/>
+        <androidx.preference.Preference
+            app:title="@string/check_license"
+            app:summary="@string/summary_preference_permissions_check_license"
             app:iconSpaceReserved="false"/>
         <androidx.preference.Preference
             app:title="@string/foreground_service"

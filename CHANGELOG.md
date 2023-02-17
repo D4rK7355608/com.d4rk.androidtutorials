@@ -1,3 +1,8 @@
+# Version 3.2_r2:
+- Added a new lesson on using predictive back gesture;
+- Small User Interface & translations tweaks;
+- Made various under-the-hood improvements for a better overall app experience.
+
 # Version 3.2_r1:
 - Added a new lesson on using In-App Review API;
 - Added a new lesson on using Rating Bar;

@@ -41,7 +41,6 @@
     <string name="summary_view_binding">Legarea vizualizării este o caracteristică care vă permite să scrieți mai ușor cod care interacționează cu vizualizările. Odată ce legarea vizualizării este activată într-un modul, aceasta generează o clasă de legare pentru fiecare fișier de aspect XML prezent în modulul respectiv. O instanță a unei clase de legare conține referințe directe la toate vizualizările care au un ID în aspectul corespunzător.</string>
     <string name="more_about_view_binding">Mai multe despre View Binding</string>
     <string name="setup_instructions">Instrucțiuni de configurare</string>
-    <string name="summary_enable_binding">Legarea vizualizării este activată modul cu modul. Pentru a activa legarea vizualizării într-un modul, setați opțiunea de compilare viewBinding la true în fișierul build.gradle la nivel de modul, așa cum se arată în exemplul următor:</string>
     <string name="use_view_binding_in_activities">Utilizați legarea de vizualizare în activități</string>
     <string name="use_view_binding_in_fragments">Utilizați legarea vizualizării în fragmente</string>
     <string name="view_binding">Vedeți Legarea</string>
@@ -66,9 +65,6 @@
     <string name="step1">Pasul 1</string>
     <string name="step2">Pasul 2</string>
     <string name="step3">Pasul 3</string>
-    <string name="summary_first_step">Prima dată când deschideți Android Studio, faceți clic pe<b> Proiect nou</b> butonul așa cum puteți vedea în imagine și treceți la pasul următor.</string>
-    <string name="summary_second_step">A doua oară trebuie să alegeți tipul de activitate pe care îl doriți pentru aplicație. Aveți câteva presetări pentru a vă ușura munca. Alegeți unul dintre ele și faceți clic pe butonul următor.</string>
-    <string name="summary_third_step">Al treilea și ultimul pas este să setați numele aplicației, numele pachetului, limbajul de programare preferat și SDK-ul minim pe care îl va folosi aplicația. Puteți căuta mai multe despre ele pe<a href="https://developer.android.com/"> Dezvoltatori Android</a> .</string>
     <string name="summary_toggle">Puteți adăuga un buton de comutare de bază la aspectul dvs. cu obiectul ToggleButton. Android 4.0 (API nivel 14) introduce un alt tip de buton de comutare numit comutator care oferă un control glisor, pe care îl puteți adăuga cu un obiect Switch. SwitchCompat este o versiune a widget-ului Switch care rulează pe dispozitive înapoi la API 7.</string>
     <string name="button_normal">Butonul 1 (normal)</string>
     <string name="button_outlined">Butonul 2 (subliniat)</string>
@@ -274,14 +270,14 @@
     <string name="access_network_state">Accesați starea rețelei [ACCESS_NETWORK_STATE]</string>
     <string name="images">Imagini</string>
     <string name="alerts">Alerte</string>
-    <string name="toast">Paine prajita</string>
+    <string name="toast">Toast</string>
     <string name="this_is_a_snackbar">Acesta este un snack bar!</string>
-    <string name="snack_bar">Bar de zi</string>
-    <string name="show_snack_bar">Arată snack bar</string>
-    <string name="show_toast">Arată pâine prăjită</string>
-    <string name="faq">FAQ</string>
+    <string name="snack_bar">Snackbar</string>
+    <string name="show_snack_bar">Afișează snackbar</string>
+    <string name="show_toast">Afișează toast</string>
+    <string name="faq">Întrebări frecvente</string>
     <string name="advanced">Avansat</string>
-    <string name="runtime">Timp de rulare</string>
+    <string name="runtime">Timp de execuție</string>
     <string name="require_restart">Necesită repornirea!</string>
     <string name="notification_last_time_used_title">A trecut ceva timp!</string>
     <string name="notification_update_title">O nouă actualizare disponibilă!</string>
@@ -332,5 +328,11 @@
     <string name="implementations_in_app_review">Implementați examinarea în aplicație</string>
     <string name="implementations_tooltip">Implementați sfaturi cu instrumente</string>
     <string name="summary_preference_android_studio_in_app_review">API-ul Google Play In-App Review vă permite să solicitați utilizatorilor să trimită evaluări și recenzii în Magazinul Play fără inconvenientul de a părăsi aplicația sau jocul dvs.</string>
+    <string name="summary_first_step">Primul pas pentru a crea un nou proiect în Android Studio este să faceți clic pe butonul <b>Noul proiect</b>, așa cum este prezentat în imagine și să continuați cu următorul pas.</string>
+    <string name="summary_second_step">Al doilea pas este să selectați tipul de activitate care se potrivește aplicației dvs. Puteți alege din câteva presetări care pot simplifica munca dvs. Selectați una dintre ele și faceți clic pe butonul <b>următorul</b>.</string>
+    <string name="summary_third_step">Al treilea și ultimul pas este să configurați setările aplicației dvs., cum ar fi numele aplicației, <b>numele pachetului</b>, <b>limbajul de programare preferat</b> și <b>SDK minim</b> preferat. Puteți afla mai multe despre acestea pe <a href="https://developer.android.com/">Dezvoltatorii Android</a>.</string>
+    <string name="summary_enable_binding">Binding-ul vizual este activat în funcție de modulul. Pentru a activa binding-ul vizual într-un modul, setați opțiunea viewBinding la adevărat în fișierul build.gradle de nivelul modulului, așa cum este prezentat în exemplul următor:</string>
+    <string name="predictive_back_gesture">Gest predictiv de revenire</string>
+    <string name="summary_preference_android_studio_predictive_back_gesture">Android 13 (nivel API 33) introduce un gest predictiv de revenire pentru dispozitivele Android, cum ar fi telefoanele, ecranele mari și dispozitivele pliabile. Face parte dintr-un set de lansări pe mai mulți ani; când va fi implementată complet, această funcție va permite utilizatorilor să previzualizeze destinația sau alt rezultat al unui gest de revenire înainte de a-l finaliza complet, permițându-le să decidă dacă să continue sau să rămână în vizualizarea curentă.</string>
     <string name="summary_preference_android_studio_tooltip">Un balon explicativ este un mic mesaj descriptiv care apare lângă o vizualizare atunci când utilizatorii apasă lung pe vizualizare sau trec mouse-ul peste ea. Acest lucru este util atunci când aplicația dvs. folosește o pictogramă pentru a reprezenta o acțiune sau o informație pentru a economisi spațiu în aspect.</string>
 </resources>

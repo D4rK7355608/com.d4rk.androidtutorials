@@ -286,6 +286,14 @@
             android:exported="false"
             android:label="@string/rating_bar"
             android:parentActivityName=".ui.android.reviews.ratingbar.RatingBarCodeActivity"/>
+        <service
+            android:name="androidx.appcompat.app.AppLocalesMetadataHolderService"
+            android:enabled="false"
+            android:exported="false">
+            <meta-data
+                android:name="autoStoreLocales"
+                android:value="true" />
+        </service>
         <meta-data
             android:name="firebase_performance_logcat_enabled"
             android:value="true"/>

@@ -326,6 +326,8 @@
     <string name="reviews">Відгуки</string>
     <string name="rating_bar">Панель оцінок</string>
     <string name="stars">%1$.1f зірок!</string>
+    <string name="predictive_back_gesture">Передбачувальний жест назад</string>
+    <string name="summary_preference_android_studio_predictive_back_gesture">Android 13 (рівень API 33) вводить передбачувальний жест назад для пристроїв на базі Android, таких як телефони, великі екрани та складні пристрої. Це частина багаторічного випуску; коли функція буде повністю реалізована, вона дозволить користувачам переглянути призначення або інший результат жесту назад перед повністю його завершенням, що дозволить їм вирішити, чи продовжувати чи залишатися в поточному виді.</string>
     <string name="rating">Дякуємо, що поставили нам %1$.1f зірок!</string>
     <string name="summary_preference_android_studio_rating_bar">RatingBar — це розширення SeekBar і ProgressBar, яке показує рейтинг у зірочках.</string>
     <string name="implementations_rating_bar">Впровадити панель оцінок</string>
