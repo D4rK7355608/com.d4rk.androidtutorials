@@ -37,9 +37,6 @@ Our app is designed to be simple and easy to use, while also being fast and ligh
 ## ⚠ Opening Issues!
 Bugs can be reported [here](https://github.com/D4rK7355608/com.d4rk.androidtutorials/issues).
 
-> Only use the GitHub Issues section if you discovered issues with the code itself. Do not mistake the Issues page as a help desk.
-> For support, informations and requests, please contact <d4rk7355608@gmail.com>.
-
 - Create an code/general bug.  🐞
 
 ## 🛠️ Features!
@@ -56,7 +53,7 @@ Bugs can be reported [here](https://github.com/D4rK7355608/com.d4rk.androidtutor
 
 ## 🖼️ App preview:
 
-<img src="/app/src/main/play/listings/en-US/graphics/phone-screenshots/1-screenshot_main.png"  width="400">
+<img src="/app/src/main/play/listings/en-US/graphics/phone-screenshots/1-screenshot_main.png" width="400">
 
 ## 🛑 Disclaimer!
 - This Application is made only for Education Purpose.
