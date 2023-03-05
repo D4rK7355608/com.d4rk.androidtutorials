@@ -1,6 +1,7 @@
 package com.d4rk.androidtutorials.ui.android.buttons.toggle
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.widget.Toast
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.databinding.ActivityToggleBinding
@@ -8,6 +9,7 @@ import com.kieronquinn.monetcompat.app.MonetCompatActivity
 import me.zhanghai.android.fastscroll.FastScrollerBuilder
 class ToggleActivity : MonetCompatActivity() {
     private lateinit var binding: ActivityToggleBinding
+    private val handler = Handler()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityToggleBinding.inflate(layoutInflater)
@@ -31,5 +33,8 @@ class ToggleActivity : MonetCompatActivity() {
         binding.floatingButtonShowSyntax.setOnClickListener {
             startActivity(Intent(this, ToggleCodeActivity::class.java))
         }
+        handler.postDelayed({
+            binding.floatingButtonShowSyntax.shrink()
+        }, 5000)
     }
 }

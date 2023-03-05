@@ -2,6 +2,7 @@ package com.d4rk.androidtutorials.ui.android.clocks.timepicker
 import android.app.TimePickerDialog
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import com.d4rk.androidtutorials.databinding.ActivityTimePickerBinding
 import java.text.SimpleDateFormat
@@ -9,6 +10,8 @@ import java.util.Calendar
 import java.util.Locale
 class TimePickerActivity : AppCompatActivity() {
     private lateinit var binding: ActivityTimePickerBinding
+    @Suppress("DEPRECATION")
+    private val handler = Handler()
     private val calendar: Calendar = Calendar.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +29,9 @@ class TimePickerActivity : AppCompatActivity() {
         binding.floatingButtonShowSyntax.setOnClickListener {
             startActivity(Intent(this, TimePickerCodeActivity::class.java))
         }
+        handler.postDelayed({
+            binding.floatingButtonShowSyntax.shrink()
+        }, 5000)
     }
     private fun updateTimeInView() {
         val timeFormat = "HH:mm"

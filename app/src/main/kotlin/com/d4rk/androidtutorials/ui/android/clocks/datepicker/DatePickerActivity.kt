@@ -2,6 +2,7 @@ package com.d4rk.androidtutorials.ui.android.clocks.datepicker
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import com.d4rk.androidtutorials.databinding.ActivityDatePickerBinding
 import java.text.SimpleDateFormat
@@ -9,6 +10,8 @@ import java.util.Calendar
 import java.util.Locale
 class DatePickerActivity : AppCompatActivity() {
     private lateinit var binding : ActivityDatePickerBinding
+    @Suppress("DEPRECATION")
+    private val handler = Handler()
     private val calendar: Calendar = Calendar.getInstance()
     private val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,6 +31,9 @@ class DatePickerActivity : AppCompatActivity() {
         binding.floatingButtonShowSyntax.setOnClickListener {
             startActivity(Intent(this, DatePickerCodeActivity::class.java))
         }
+        handler.postDelayed({
+            binding.floatingButtonShowSyntax.shrink()
+        }, 5000)
     }
     private fun updateDateInView() {
         binding.dateTextView.text = dateFormat.format(calendar.time)

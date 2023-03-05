@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">Android Studio Tutorials</string>
+    <string name="app_name" translatable="false">Android Studio Tutorials: Kotlin Edition</string>
     <string name="app_version">Version %1$s (%2$d)</string>
     <string name="app_description">Learn how to make simple apps in Android Studio. 📱</string>
     <string name="copyright">© Copyright %1s made by D4rK!</string>
@@ -8,6 +8,7 @@
     <string name="home">Home</string>
     <string name="android_studio">Android Studio</string>
     <string name="about">About</string>
+    <string name="android_studio_tutorials_java" translatable="false">Android Studio Tutorials: Java Edition</string>
     <string name="music_sleep_timer" translatable="false">Music Sleep Timer Plus</string>
     <string name="english_with_lidia" translatable="false">English with Lidia Plus</string>
     <string name="qr_code_scanner" translatable="false">QR &amp; Bar Code Scanner Plus</string>
@@ -179,6 +180,16 @@
     <string name="find_class">Find class</string>
     <string name="find_file">Find file (instead of class)</string>
     <string name="find_path">Find path</string>
+    <string name="music">Music</string>
+    <string name="show_code">Show code</string>
+    <string name="info">Info</string>
+    <string name="device_info">Device Info</string>
+    <string name="app_build">App Build: Release\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
+    <string name="manufacturer">Manufacturer:</string>
+    <string name="device_model">Device Model:</string>
+    <string name="android_version">Android Version:</string>
+    <string name="api_level">API Level:</string>
+    <string name="arch" translatable="false">Arch:</string>
     <string name="predictive_back_gesture">Predictive back gesture</string>
     <string name="summary_preference_android_studio_predictive_back_gesture">Android 13 (API level 33) introduces a predictive back gesture for Android devices such as phones, large screens, and foldables. It is part of a multi-year release; when fully implemented, this feature will let users preview the destination or other result of a back gesture before fully completing it, allowing them to decide whether to continue or stay in the current view.</string>
     <string name="open_file_structure">Open file structure pop-up</string>
@@ -216,15 +227,15 @@
     <string name="require_restart">Require restart!</string>
     <string name="notification_last_time_used_title">It\'s been a while!</string>
     <string name="notification_update_title">A new update available!</string>
-    <string name="question_1">What is Android Studio Tutorials?</string>
-    <string name="question_2">How can I download Android Studio Tutorials?</string>
-    <string name="question_3">Is Android Studio Tutorials available for iOS devices?</string>
-    <string name="question_4">Is Android Studio Tutorials suitable for beginners?</string>
-    <string name="question_5">Is Android Studio Tutorials updated regularly?</string>
-    <string name="question_6">How can I get support if I have a question or problem with Android Studio Tutorials?</string>
-    <string name="question_7">How do I disable Firebase analytics and crashlytics in Android Studio Tutorials?</string>
-    <string name="question_8">How do I check for updates to Android Studio Tutorials?</string>
-    <string name="question_9">How can I support the development of Android Studio Tutorials?</string>
+    <string name="question_1">What is Android Studio Tutorials: Kotlin Edition?</string>
+    <string name="question_2">How can I download Android Studio Tutorials: Kotlin Edition?</string>
+    <string name="question_3">Is Android Studio Tutorials: Kotlin Edition available for iOS devices?</string>
+    <string name="question_4">Is Android Studio Tutorials: Kotlin Edition suitable for beginners?</string>
+    <string name="question_5">Is Android Studio Tutorials: Kotlin Edition updated regularly?</string>
+    <string name="question_6">How can I get support if I have a question or problem with Android Studio Tutorials: Kotlin Edition?</string>
+    <string name="question_7">How do I disable Firebase analytics and crashlytics in Android Studio Tutorials: Kotlin Edition?</string>
+    <string name="question_8">How do I check for updates to Android Studio Tutorials: Kotlin Edition?</string>
+    <string name="question_9">How can I support the development of Android Studio Tutorials: Kotlin Edition?</string>
     <string name="button">Button</string>
     <string name="android_versions">Android Versions</string>
     <string name="button_normal_icon">Button 4 (normal icon)</string>
@@ -263,15 +274,15 @@
     <string name="implementations_rating_bar">Implement rating bar</string>
     <string name="implementations_in_app_review">Implement In-App Review</string>
     <string name="implementations_tooltip">Implement tooltips</string>
-    <string name="summary_preference_faq_1">Android Studio Tutorials is a free and open-source app that provides a collection of video tutorials on how to use Android Studio, the official integrated development environment (IDE) for Android app development.</string>
-    <string name="summary_preference_faq_2">Android Studio Tutorials is available for download on the Google Play Store. Simply search for \"Android Studio Tutorials\" in the Play Store app on your Android device and tap \"Install\&quot; to download and install the app.</string>
-    <string name="summary_preference_faq_3">No, Android Studio Tutorials is currently only available for Android devices.</string>
-    <string name="summary_preference_faq_4">Yes, Android Studio Tutorials is suitable for beginners who are new to Android app development and want to learn how to use Android Studio. The app provides a range of video tutorials that cover the basics of using Android Studio, from installing the IDE to building and deploying your first app.</string>
-    <string name="summary_preference_faq_5">Yes, Android Studio Tutorials is updated regularly with new video tutorials and content to keep users up-to-date with the latest features and changes in Android Studio.</string>
-    <string name="summary_preference_faq_6">If you have a question or problem with Android Studio Tutorials, you can contact us through the app\'s support page or by email at d4rk7355608@gmail.com. We\'ll do our best to help you resolve any issues you may be experiencing.</string>
+    <string name="summary_preference_faq_1">Android Studio Tutorials: Kotlin Edition is a free and open-source app that provides a collection of video tutorials on how to use Android Studio, the official integrated development environment (IDE) for Android app development.</string>
+    <string name="summary_preference_faq_2">Android Studio Tutorials: Kotlin Edition is available for download on the Google Play Store. Simply search for \"Android Studio Tutorials\" in the Play Store app on your Android device and tap \"Install\&quot; to download and install the app.</string>
+    <string name="summary_preference_faq_3">No, Android Studio Tutorials: Kotlin Edition is currently only available for Android devices.</string>
+    <string name="summary_preference_faq_4">Yes, Android Studio Tutorials: Kotlin Edition is suitable for beginners who are new to Android app development and want to learn how to use Android Studio. The app provides a range of video tutorials that cover the basics of using Android Studio, from installing the IDE to building and deploying your first app.</string>
+    <string name="summary_preference_faq_5">Yes, Android Studio Tutorials: Kotlin Edition is updated regularly with new video tutorials and content to keep users up-to-date with the latest features and changes in Android Studio.</string>
+    <string name="summary_preference_faq_6">If you have a question or problem with Android Studio Tutorials: Kotlin Edition, you can contact us through the app\'s support page or by email at d4rk7355608@gmail.com. We\'ll do our best to help you resolve any issues you may be experiencing.</string>
     <string name="summary_preference_faq_7">You can disable Firebase analytics and crashlytics by going to the settings menu in the app and toggle the switch for these features.</string>
-    <string name="summary_preference_faq_8">You can check for updates to Android Studio Tutorials by going to the settings menu in the app and selecting the \"Check for updates\" option.</string>
-    <string name="summary_preference_faq_9">ou can support the development of Android Studio Tutorials by leaving a positive review on the Google Play Store, sharing the app with friends and colleagues, and supporting the developers through the \"Share\" option in the settings menu.</string>
+    <string name="summary_preference_faq_8">You can check for updates to Android Studio Tutorials: Kotlin Edition by going to the settings menu in the app and selecting the \"Check for updates\" option.</string>
+    <string name="summary_preference_faq_9">ou can support the development of Android Studio Tutorials: Kotlin Edition by leaving a positive review on the Google Play Store, sharing the app with friends and colleagues, and supporting the developers through the \"Share\" option in the settings menu.</string>
     <string name="summary_preference_permissions_internet">Used to send error reports.</string>
     <string name="summary_preference_permissions_ad_id">Used to allow ads to be shown in Android 13+ devices.</string>
     <string name="summary_preference_permissions_post_notifications">Used to show notifications on Android 13+ devices.</string>
@@ -316,7 +327,7 @@
     <string name="summary_buttons">Buttons are an essential element of any Android app. They allow users to interact with the app and perform actions such as submitting a form, starting a new activity, or making a purchase.\n\nIn Android Studio, buttons are created using the Button class and can be customized in a variety of ways, including setting their text, color, and size. They can also be configured to trigger different actions when clicked, such as starting a new activity or displaying a pop-up message.\n\nButtons can be placed anywhere in an app\'s layout and can be used in conjunction with other UI elements such as text fields and lists to create a fully functional and user-friendly app.\n\nOverall, buttons are a simple but powerful tool for building engaging and interactive Android apps.</string>
     <string name="summary_permissions">For instance, if your app needs to download something, it will require Internet permission.\n\nTake a look on Android Developers website for all permissions and a reference to the official documentation!\n\nAndroid apps must request permission to access certain features or data on a device. These permissions are used to protect the privacy of the user and the device. When an app is installed, the user is prompted to grant or deny the app the permissions it requests. The app will only have access to the features or data it requested permission for.\n\nThere are two types of permissions: normal and dangerous. Normal permissions do not pose a risk to the user\'s privacy. They include things like internet access and vibrate. Dangerous permissions, on the other hand, can potentially access sensitive information or actions and are therefore more restricted. These include permissions such as access to the user\'s location, camera, and contacts.\n\nIt\'s important for app developers to only request the permissions that are absolutely necessary for their app to function properly. This helps protect the user\'s privacy and also makes the app more user-friendly.</string>
     <string name="summary_image_buttons">Image buttons are buttons that contain an image instead of text. They can be used in Android to provide a more visually appealing and interactive user interface. Image buttons can be used to trigger actions, navigate to different screens, or display additional information. They are often used in combination with text labels to provide clear communication to the user about the button\'s purpose.</string>
-    <string name="summary_notification_last_time_used">Don\'t let your Android development skills gather dust! Get back to learning and improving with Android Studio Tutorials today. Our app has something for everyone, from beginners to experienced developers.</string>
+    <string name="summary_notification_last_time_used">Don\'t let your Android development skills gather dust! Get back to learning and improving with Android Studio Tutorials: Kotlin Edition today. Our app has something for everyone, from beginners to experienced developers.</string>
     <string name="summary_notification_update">A new version of the app is available. Click to update!</string>
     <string name="summary_image_view">AndroidX AppCompatImageView is a subclass of ImageView that is designed to support various features of the ActionBar and Material Design. It is part of the AndroidX library, which is a set of support libraries that offer backward-compatible versions of Android framework APIs as well as features that are only available through the library APIs.\n\nAppCompatImageView is intended to be used as a drop-in replacement for ImageView, allowing developers to use the same code and UI elements across different versions of Android. It includes support for various features such as tinting, loading vector drawables, and handling image scaling.\n\nAppCompatImageView also includes support for Material Design features such as elevation, which allows the image view to cast a shadow and appear to be raised above the surface of the layout. It also includes support for the Material Design ripple effect, which is a visual effect that is applied when the image view is touched.\n\nIn summary, AndroidX AppCompatImageView is a versatile and feature-rich subclass of ImageView that is designed to support a wide range of features and design elements in Android apps.</string>
     <string name="summary_require_restart">To take effect please restart the app!</string>
@@ -349,8 +360,10 @@
     <string name="tooltip_show_code">Show code syntax</string>
     <string name="changelog_title" translatable="false">Changelog - Version %1s</string>
     <string name="changes" translatable="false">\n
-        • Added a new lesson on using predictive back gesture;\n
-        • Small User Interface &amp; translations tweaks;\n
-        • Made various under-the-hood improvements for a better overall app experience.
+        • Updated "Show code" button to Extended FAB with a 5-second timer before shrinking to FAB for better user experience.\n\n
+        • Rebranded the app as "Android Studio Tutorials: Kotlin Edition" to reflect the addition of Kotlin-based tutorials.\n\n
+        • Another small User Interface &amp; translations tweaks.\n\n
+        • Made various under-the-hood improvements for a better overall app experience.\n\n
+        • Prepared for upcoming release of "Android Studio Tutorials: Java Edition". Stay tuned!
     </string>
 </resources>

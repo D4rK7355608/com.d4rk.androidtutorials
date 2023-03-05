@@ -281,7 +281,7 @@
     <string name="require_restart">Necesită repornirea!</string>
     <string name="notification_last_time_used_title">A trecut ceva timp!</string>
     <string name="notification_update_title">O nouă actualizare disponibilă!</string>
-    <string name="question_1">Ce este Android Studio Tutorials?</string>
+    <string name="question_1">Ce este Android Studio Tutorials: Kotlin Edition?</string>
     <string name="question_2">Cum pot descărca tutoriale Android Studio?</string>
     <string name="question_3">Tutorialele Android Studio sunt disponibile pentru dispozitivele iOS?</string>
     <string name="question_4">Este Tutorialele Android Studio potrivite pentru începători?</string>
@@ -293,10 +293,10 @@
     <string name="implementations_image_view">Implementați vizualizarea imaginii</string>
     <string name="implementations_snack_bar">Implementați Snack Bar</string>
     <string name="implementations_toast">Implementați Toast</string>
-    <string name="summary_preference_faq_1">Android Studio Tutorials este o aplicație gratuită și open-source care oferă o colecție de tutoriale video despre cum să utilizați Android Studio, mediul oficial de dezvoltare integrată (IDE) pentru dezvoltarea aplicațiilor Android.</string>
+    <string name="summary_preference_faq_1">Android Studio Tutorials: Kotlin Edition este o aplicație gratuită și open-source care oferă o colecție de tutoriale video despre cum să utilizați Android Studio, mediul oficial de dezvoltare integrată (IDE) pentru dezvoltarea aplicațiilor Android.</string>
     <string name="summary_preference_faq_2">Tutorialele Android Studio sunt disponibile pentru descărcare din Magazinul Google Play. Pur și simplu căutați „Tutoriale Android Studio\” în aplicația Magazin Play de pe dispozitivul dvs. Android și atingeți „Instalare” pentru a descărca și instala aplicația.</string>
     <string name="summary_preference_faq_3">Nu, tutorialele Android Studio sunt disponibile momentan numai pentru dispozitivele Android.</string>
-    <string name="summary_preference_faq_4">Da, Android Studio Tutorials este potrivit pentru începătorii care sunt noi în dezvoltarea de aplicații Android și doresc să învețe cum să folosească Android Studio. Aplicația oferă o serie de tutoriale video care acoperă elementele de bază ale utilizării Android Studio, de la instalarea IDE-ului până la construirea și implementarea primei aplicații.</string>
+    <string name="summary_preference_faq_4">Da, Android Studio Tutorials: Kotlin Edition este potrivit pentru începătorii care sunt noi în dezvoltarea de aplicații Android și doresc să învețe cum să folosească Android Studio. Aplicația oferă o serie de tutoriale video care acoperă elementele de bază ale utilizării Android Studio, de la instalarea IDE-ului până la construirea și implementarea primei aplicații.</string>
     <string name="summary_preference_faq_5">Da, Tutorialele Android Studio sunt actualizate în mod regulat cu noi tutoriale video și conținut pentru a menține utilizatorii la curent cu cele mai recente funcții și modificări din Android Studio.</string>
     <string name="summary_preference_faq_6">Dacă aveți o întrebare sau o problemă cu tutorialele Android Studio, ne puteți contacta prin intermediul paginii de asistență a aplicației sau prin e-mail la d4rk7355608@gmail.com. Vom face tot posibilul pentru a vă ajuta să rezolvați orice probleme pe care le puteți întâmpina.</string>
     <string name="summary_preference_faq_7">Puteți dezactiva analizele Firebase și crashlytics accesând meniul de setări din aplicație și comutați comutatorul pentru aceste funcții.</string>
@@ -335,4 +335,13 @@
     <string name="predictive_back_gesture">Gest predictiv de revenire</string>
     <string name="summary_preference_android_studio_predictive_back_gesture">Android 13 (nivel API 33) introduce un gest predictiv de revenire pentru dispozitivele Android, cum ar fi telefoanele, ecranele mari și dispozitivele pliabile. Face parte dintr-un set de lansări pe mai mulți ani; când va fi implementată complet, această funcție va permite utilizatorilor să previzualizeze destinația sau alt rezultat al unui gest de revenire înainte de a-l finaliza complet, permițându-le să decidă dacă să continue sau să rămână în vizualizarea curentă.</string>
     <string name="summary_preference_android_studio_tooltip">Un balon explicativ este un mic mesaj descriptiv care apare lângă o vizualizare atunci când utilizatorii apasă lung pe vizualizare sau trec mouse-ul peste ea. Acest lucru este util atunci când aplicația dvs. folosește o pictogramă pentru a reprezenta o acțiune sau o informație pentru a economisi spațiu în aspect.</string>
+    <string name="music">Muzică</string>
+    <string name="show_code">Afișare cod</string>
+    <string name="info">Informații</string>
+    <string name="device_info">Informații despre dispozitiv</string>
+    <string name="app_build">Build aplicație: Release\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
+    <string name="manufacturer">Producător:</string>
+    <string name="device_model">Model dispozitiv:</string>
+    <string name="android_version">Versiune Android:</string>
+    <string name="api_level">Nivel API:</string>
 </resources>

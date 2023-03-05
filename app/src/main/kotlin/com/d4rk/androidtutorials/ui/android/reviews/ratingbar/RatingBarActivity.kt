@@ -1,6 +1,7 @@
 package com.d4rk.androidtutorials.ui.android.reviews.ratingbar
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.widget.RatingBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +11,8 @@ class RatingBarActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRatingBarBinding
     private var rating: Float = 0f
     private lateinit var formattedString: String
+    @Suppress("DEPRECATION")
+    private val handler = Handler()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRatingBarBinding.inflate(layoutInflater)
@@ -26,6 +29,9 @@ class RatingBarActivity : AppCompatActivity() {
         binding.floatingButtonShowSyntax.setOnClickListener {
             startActivity(Intent(this, RatingBarCodeActivity::class.java))
         }
+        handler.postDelayed({
+            binding.floatingButtonShowSyntax.shrink()
+        }, 5000)
     }
     private fun updateRatingText() {
         formattedString = String.format(getString(R.string.stars), rating)

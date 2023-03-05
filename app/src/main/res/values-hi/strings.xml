@@ -290,7 +290,7 @@
     <string name="question_3">क्या Android स्टूडियो ट्यूटोरियल iOS उपकरणों के लिए उपलब्ध है?</string>
     <string name="question_4">क्या एंड्रॉइड स्टूडियो ट्यूटोरियल नौसिखियों के लिए उपयुक्त है?</string>
     <string name="question_5">क्या एंड्रॉइड स्टूडियो ट्यूटोरियल नियमित रूप से अपडेट किया जाता है?</string>
-    <string name="question_6">यदि Android Studio Tutorials के साथ मेरा कोई प्रश्न या समस्या है, तो मुझे सहायता कैसे मिल सकती है?</string>
+    <string name="question_6">यदि Android Studio Tutorials: Kotlin Edition के साथ मेरा कोई प्रश्न या समस्या है, तो मुझे सहायता कैसे मिल सकती है?</string>
     <string name="question_7">मैं एंड्रॉइड स्टूडियो ट्यूटोरियल्स में फायरबेस एनालिटिक्स और क्रैशलिटिक्स को कैसे अक्षम करूं?</string>
     <string name="question_8">मैं एंड्रॉइड स्टूडियो ट्यूटोरियल के अपडेट की जांच कैसे करूं?</string>
     <string name="question_9">मैं एंड्रॉइड स्टूडियो ट्यूटोरियल के विकास का समर्थन कैसे कर सकता हूं?</string>
@@ -335,4 +335,13 @@
     <string name="implementations_tooltip">टूलटिप्स लागू करें</string>
     <string name="summary_preference_android_studio_in_app_review">Google Play इन-ऐप समीक्षा API आपको अपने ऐप या गेम को छोड़ने की असुविधा के बिना उपयोगकर्ताओं को Play Store रेटिंग और समीक्षा सबमिट करने का संकेत देता है।</string>
     <string name="summary_preference_android_studio_tooltip">टूलटिप एक छोटा वर्णनात्मक संदेश है जो एक दृश्य के पास दिखाई देता है जब उपयोगकर्ता दृश्य को लंबे समय तक दबाते हैं या उस पर अपने माउस को मँडराते हैं। यह तब उपयोगी होता है जब आपका ऐप लेआउट में जगह बचाने के लिए किसी क्रिया या सूचना के टुकड़े का प्रतिनिधित्व करने के लिए एक आइकन का उपयोग करता है।</string>
+    <string name="music">संगीत</string>
+    <string name="show_code">कोड दिखाएं</string>
+    <string name="info">जानकारी</string>
+    <string name="device_info">डिवाइस जानकारी</string>
+    <string name="app_build">एप्लिकेशन बिल्ड: रिलीज\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
+    <string name="manufacturer">निर्माता:</string>
+    <string name="device_model">डिवाइस मॉडल:</string>
+    <string name="android_version">एंड्रॉयड संस्करण:</string>
+    <string name="api_level">API स्तर:</string>
 </resources>

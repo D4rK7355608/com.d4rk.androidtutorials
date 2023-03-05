@@ -296,7 +296,7 @@
     <string name="implementations_image_view">Implémenter la vue image</string>
     <string name="implementations_snack_bar">Implémenter le snackbar</string>
     <string name="implementations_toast">Implémenter le toast</string>
-    <string name="summary_preference_faq_1">Android Studio Tutorials est une application gratuite et open source qui fournit une collection de tutoriels vidéo sur l\'utilisation d\'Android Studio, l\'environnement de développement intégré (IDE) officiel pour le développement d\'applications Android.</string>
+    <string name="summary_preference_faq_1">Android Studio Tutorials: Kotlin Edition est une application gratuite et open source qui fournit une collection de tutoriels vidéo sur l\'utilisation d\'Android Studio, l\'environnement de développement intégré (IDE) officiel pour le développement d\'applications Android.</string>
     <string name="summary_preference_faq_2">Vous pouvez télécharger les tutoriels Android Studio sur le Google Play Store. Cherchez simplement "Tutoriels Android Studio" dans l\'application Play Store sur votre appareil Android et appuyez sur "Installer" pour télécharger et installer l\'application.</string>
     <string name="summary_preference_faq_3">Non, les tutoriels Android Studio sont uniquement disponibles pour les appareils Android.</string><string name="summary_preference_faq_4">Oui, les didacticiels Android Studio conviennent aux débutants qui débutent dans le développement d\'applications Android et qui souhaitent apprendre à utiliser Android Studio. L\'application propose une gamme de didacticiels vidéo qui couvrent les bases de l\'utilisation d\'Android Studio, de l\'installation de l\'IDE à la création et au déploiement de votre première application.</string>
     <string name="summary_preference_faq_5">Oui, les tutoriels Android Studio sont régulièrement mis à jour avec de nouveaux tutoriels vidéo et du contenu pour vous informer des dernières fonctionnalités et modifications d\'Android Studio.</string>
@@ -332,4 +332,13 @@
     <string name="implementations_tooltip">Implémenter les info-bulles</string>
     <string name="summary_preference_android_studio_in_app_review">L\'API Google Play In-App Review vous permet d\'inviter les utilisateurs à soumettre des évaluations et des avis Play Store sans avoir à quitter votre application ou votre jeu.</string>
     <string name="summary_preference_android_studio_tooltip">Une info-bulle est un petit message descriptif qui apparaît près d\'une vue lorsque les utilisateurs appuient longuement sur la vue ou la survolent avec leur souris. Ceci est utile lorsque votre application utilise une icône pour représenter une action ou une information afin d\'économiser de l\'espace dans la mise en page.</string>
+    <string name="music">Musique</string>
+    <string name="show_code">Afficher le code</string>
+    <string name="info">Info</string>
+    <string name="device_info">Informations sur l\'appareil</string>
+    <string name="app_build">Build de l\'application : Release\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
+    <string name="manufacturer">Fabricant :</string>
+    <string name="device_model">Modèle d\'appareil :</string>
+    <string name="android_version">Version d\'Android :</string>
+    <string name="api_level">Niveau de l\'API :</string>
 </resources>

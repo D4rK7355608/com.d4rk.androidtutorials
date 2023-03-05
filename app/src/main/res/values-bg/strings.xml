@@ -238,11 +238,11 @@
     <string name="implementations_alert_dialog">Внедряване на диалогов прозорец за предупреждение</string>
     <string name="implementations_snack_bar">Реализиране на снек бар</string>
     <string name="implementations_toast">Внедрете Тост</string>
-    <string name="summary_preference_faq_1">Android Studio Tutorials е безплатно приложение с отворен код, което предоставя колекция от видео уроци за това как да използвате Android Studio, официалната интегрирана среда за разработка (IDE) за разработка на приложения за Android.</string>
+    <string name="summary_preference_faq_1">Android Studio Tutorials: Kotlin Edition е безплатно приложение с отворен код, което предоставя колекция от видео уроци за това как да използвате Android Studio, официалната интегрирана среда за разработка (IDE) за разработка на приложения за Android.</string>
     <string name="summary_preference_faq_2">Уроците за Android Studio са достъпни за изтегляне от Google Play Store. Просто потърсете \"Уроци за Android Studio\" в приложението Play Store на вашето устройство с Android и докоснете \"Инсталиране\", за да изтеглите и инсталирате приложението.</string>
     <string name="summary_preference_faq_3">Не, уроците за Android Studio в момента са достъпни само за устройства с Android.</string>
     <string name="summary_preference_faq_4">Да, уроците за Android Studio са подходящи за начинаещи, които са нови в разработката на приложения за Android и искат да научат как да използват Android Studio. Приложението предоставя набор от видео уроци, които обхващат основите на използването на Android Studio, от инсталирането на IDE до изграждането и внедряването на първото ви приложение.</string>
-    <string name="summary_preference_faq_5">Да, Android Studio Tutorials се актуализира редовно с нови видеоуроци и съдържание, за да поддържа потребителите в крак с най-новите функции и промени в Android Studio.</string>
+    <string name="summary_preference_faq_5">Да, Android Studio Tutorials: Kotlin Edition се актуализира редовно с нови видеоуроци и съдържание, за да поддържа потребителите в крак с най-новите функции и промени в Android Studio.</string>
     <string name="summary_preference_faq_6">Ако имате въпрос или проблем с уроци за Android Studio, можете да се свържете с нас чрез страницата за поддръжка на приложението или по имейл на d4rk7355608@gmail.com. Ще направим всичко възможно, за да ви помогнем да разрешите всички проблеми, които може да имате.</string>
     <string name="summary_preference_faq_7">Можете да деактивирате Firebase analytics и crashlytics, като отидете в менюто с настройки в приложението и превключите превключвателя за тези функции.</string>
     <string name="summary_preference_faq_8">Можете да проверите за актуализации на уроци за Android Studio, като отидете в менюто с настройки в приложението и изберете опцията \"Проверка за актуализации\".</string>
@@ -335,4 +335,13 @@
     <string name="implementations_tooltip">Внедрете подсказки</string>
     <string name="summary_preference_android_studio_in_app_review">Приложният програмен интерфейс (API) за преглед в приложението на Google Play ви позволява да подканяте потребителите да изпращат оценки и рецензии в Play Store, без да се налага да напускате приложението или играта си.</string>
     <string name="summary_preference_android_studio_tooltip">Подсказката е малко описателно съобщение, което се появява близо до изглед, когато потребителите натиснат дълго изгледа или задържат курсора на мишката върху него. Това е полезно, когато приложението ви използва икона за представяне на действие или информация, за да спести място в оформлението.</string>
+    <string name="music">Музика</string>
+    <string name="show_code">Покажи кода</string>
+    <string name="info">Информация</string>
+    <string name="device_info">Информация за устройството</string>
+    <string name="app_build">Изградено приложение: Release\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
+    <string name="manufacturer">Производител:</string>
+    <string name="device_model">Модел на устройството:</string>
+    <string name="android_version">Версия на Android:</string>
+    <string name="api_level">Ниво на API:</string>
 </resources>

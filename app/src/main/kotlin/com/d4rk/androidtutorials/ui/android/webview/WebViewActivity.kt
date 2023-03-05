@@ -2,11 +2,14 @@ package com.d4rk.androidtutorials.ui.android.webview
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import com.d4rk.androidtutorials.databinding.ActivityWebviewBinding
 import me.zhanghai.android.fastscroll.FastScrollerBuilder
 class WebViewActivity : AppCompatActivity() {
     private lateinit var binding: ActivityWebviewBinding
+    @Suppress("DEPRECATION")
+    private val handler = Handler()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityWebviewBinding.inflate(layoutInflater)
@@ -14,6 +17,9 @@ class WebViewActivity : AppCompatActivity() {
         setupWebView()
         setupFloatingButton()
         setupFastScroller()
+        handler.postDelayed({
+            binding.floatingButtonShowSyntax.shrink()
+        }, 5000)
     }
     @SuppressLint("SetJavaScriptEnabled")
     private fun setupWebView() {

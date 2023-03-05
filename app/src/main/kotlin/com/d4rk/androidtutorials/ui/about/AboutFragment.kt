@@ -4,6 +4,7 @@ import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -17,7 +18,6 @@ import com.d4rk.androidtutorials.databinding.FragmentAboutBinding
 import com.d4rk.androidtutorials.ui.viewmodel.ViewModel
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
-import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import me.zhanghai.android.fastscroll.FastScrollerBuilder
 import java.text.SimpleDateFormat
 import java.util.Calendar
@@ -40,7 +40,9 @@ class AboutFragment : Fragment() {
         binding.textViewAppVersion.setOnLongClickListener {
             val clipboard = requireContext().getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
             clipboard.setPrimaryClip(ClipData.newPlainText("Label", binding.textViewAppVersion.text))
-            Toast.makeText(context, R.string.copied_to_clipboard, Toast.LENGTH_SHORT).show()
+            if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.S_V2) {
+                Toast.makeText(context, R.string.copied_to_clipboard, Toast.LENGTH_SHORT).show()
+            }
             true
         }
         binding.imageViewAppIcon.setOnClickListener {
@@ -60,9 +62,6 @@ class AboutFragment : Fragment() {
         }
         binding.chipXda.setOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://forum.xda-developers.com/m/d4rk7355608.10095012")))
-        }
-        binding.chipOss.setOnClickListener {
-            startActivity(Intent(activity, OssLicensesMenuActivity::class.java))
         }
         return binding.root
     }

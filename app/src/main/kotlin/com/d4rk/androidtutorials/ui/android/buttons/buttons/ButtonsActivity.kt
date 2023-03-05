@@ -1,6 +1,7 @@
 package com.d4rk.androidtutorials.ui.android.buttons.buttons
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.d4rk.androidtutorials.R
@@ -8,6 +9,8 @@ import com.d4rk.androidtutorials.databinding.ActivityButtonsBinding
 import me.zhanghai.android.fastscroll.FastScrollerBuilder
 class ButtonsActivity : AppCompatActivity() {
     private lateinit var binding : ActivityButtonsBinding
+    @Suppress("DEPRECATION")
+    private val handler = Handler()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityButtonsBinding.inflate(layoutInflater)
@@ -70,5 +73,8 @@ class ButtonsActivity : AppCompatActivity() {
         binding.floatingButtonShowSyntax.setOnClickListener {
             startActivity(Intent(this, ButtonsCodeActivity::class.java))
         }
+        handler.postDelayed({
+            binding.floatingButtonShowSyntax.shrink()
+        }, 5000)
     }
 }

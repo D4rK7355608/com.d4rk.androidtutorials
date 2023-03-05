@@ -93,6 +93,10 @@
                 android:targetClass="com.d4rk.androidtutorials.ui.permissions.PermissionsActivity"/>
         </androidx.preference.Preference>
         <androidx.preference.Preference
+            app:key="open_source_licenses"
+            app:title="@string/oss_license_title"
+            app:icon="@drawable/ic_libraries"/>
+        <androidx.preference.Preference
             app:icon="@drawable/ic_faq"
             app:title="@string/faq">
             <intent
@@ -134,5 +138,14 @@
                 android:action="android.intent.action.VIEW"
                 android:data="https://bit.ly/3p8bpjj"/>
         </androidx.preference.Preference>
+    </androidx.preference.PreferenceCategory>
+    <androidx.preference.PreferenceCategory
+        app:title="@string/info"
+        app:icon="@drawable/ic_about">
+        <androidx.preference.Preference
+            app:icon="@drawable/ic_perm_device_information"
+            app:key="@string/key_device_info"
+            app:title="@string/device_info"
+            app:summary="%1$s"/>
     </androidx.preference.PreferenceCategory>
 </androidx.preference.PreferenceScreen>

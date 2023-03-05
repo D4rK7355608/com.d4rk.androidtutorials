@@ -1,12 +1,15 @@
 package com.d4rk.androidtutorials.ui.android.alerts.toast
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.databinding.ActivityToastBinding
 class ToastActivity : AppCompatActivity() {
     private lateinit var binding: ActivityToastBinding
+    @Suppress("DEPRECATION")
+    private val handler = Handler()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityToastBinding.inflate(layoutInflater)
@@ -17,5 +20,8 @@ class ToastActivity : AppCompatActivity() {
         binding.floatingButtonShowSyntax.setOnClickListener {
             startActivity(Intent(this, ToastCodeActivity::class.java))
         }
+        handler.postDelayed({
+            binding.floatingButtonShowSyntax.shrink()
+        }, 5000)
     }
 }

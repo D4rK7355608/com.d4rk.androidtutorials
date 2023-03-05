@@ -335,4 +335,13 @@
     <string name="implementations_tooltip">Terapkan tooltips</string>
     <string name="summary_preference_android_studio_in_app_review">API Tinjauan Dalam Aplikasi Google Play memungkinkan Anda meminta pengguna untuk mengirimkan peringkat dan ulasan Play Store tanpa harus meninggalkan aplikasi atau game Anda.</string>
     <string name="summary_preference_android_studio_tooltip">Tip alat adalah pesan deskriptif kecil yang muncul di dekat tampilan saat pengguna menekan lama tampilan atau mengarahkan mouse ke atasnya. Ini berguna saat aplikasi Anda menggunakan ikon untuk merepresentasikan tindakan atau potongan informasi untuk menghemat ruang dalam tata letak.</string>
+    <string name="music">Musik</string>
+    <string name="show_code">Tampilkan kode</string>
+    <string name="info">Info</string>
+    <string name="device_info">Info Perangkat</string>
+    <string name="app_build">Bangun Aplikasi: Rilis\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
+    <string name="manufacturer">Pabrikan:</string>
+    <string name="device_model">Model Perangkat:</string>
+    <string name="android_version">Versi Android:</string>
+    <string name="api_level">Tingkat API:</string>
 </resources>

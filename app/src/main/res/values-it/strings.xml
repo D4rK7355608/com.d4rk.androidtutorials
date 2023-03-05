@@ -297,10 +297,10 @@
     <string name="implementations_image_view">Implementa la visualizzazione dell\'immagine</string>
     <string name="implementations_snack_bar">Implementare Snack Bar</string>
     <string name="implementations_toast">Implementa Toast</string>
-    <string name="summary_preference_faq_1">Android Studio Tutorials è un\'app gratuita e open source che fornisce una raccolta di tutorial video su come utilizzare Android Studio, l\'ambiente di sviluppo integrato (IDE) ufficiale per lo sviluppo di app Android.</string>
-    <string name="summary_preference_faq_2">Android Studio Tutorial è disponibile per il download su Google Play Store. Basta cercare \"Tutorial Android Studio\" nell\'app Play Store sul tuo dispositivo Android e toccare \"Installa\" per scaricare e installare l\'app.</string>
-    <string name="summary_preference_faq_3">No, Android Studio Tutorial è attualmente disponibile solo per dispositivi Android.</string>
-    <string name="summary_preference_faq_4">Sì, Android Studio Tutorials è adatto ai principianti che non conoscono lo sviluppo di app Android e vogliono imparare a utilizzare Android Studio. L\'app fornisce una serie di tutorial video che coprono le basi dell\'utilizzo di Android Studio, dall\'installazione dell\'IDE alla creazione e distribuzione della tua prima app.</string>
+    <string name="summary_preference_faq_1">Android Studio Tutorials: Kotlin Edition è un\'app gratuita e open source che fornisce una raccolta di tutorial video su come utilizzare Android Studio, l\'ambiente di sviluppo integrato (IDE) ufficiale per lo sviluppo di app Android.</string>
+    <string name="summary_preference_faq_2">Android Studio Tutorials: Kotlin Edition è disponibile per il download su Google Play Store. Basta cercare \"Tutorial Android Studio\" nell\'app Play Store sul tuo dispositivo Android e toccare \"Installa\" per scaricare e installare l\'app.</string>
+    <string name="summary_preference_faq_3">No, Android Studio Tutorials: Kotlin Edition è attualmente disponibile solo per dispositivi Android.</string>
+    <string name="summary_preference_faq_4">Sì, Android Studio Tutorials: Kotlin Edition è adatto ai principianti che non conoscono lo sviluppo di app Android e vogliono imparare a utilizzare Android Studio. L\'app fornisce una serie di tutorial video che coprono le basi dell\'utilizzo di Android Studio, dall\'installazione dell\'IDE alla creazione e distribuzione della tua prima app.</string>
     <string name="summary_preference_faq_5">Sì, i tutorial di Android Studio vengono aggiornati regolarmente con nuovi tutorial video e contenuti per mantenere gli utenti aggiornati con le ultime funzionalità e modifiche in Android Studio.</string>
     <string name="summary_preference_faq_6">Se hai una domanda o un problema con i tutorial di Android Studio, puoi contattarci tramite la pagina di supporto dell\'app o via e-mail all\'indirizzo d4rk7355608@gmail.com. Faremo del nostro meglio per aiutarti a risolvere eventuali problemi che potresti riscontrare.</string>
     <string name="summary_preference_faq_7">Puoi disabilitare Firebase Analytics e Crashlytics accedendo al menu delle impostazioni nell\'app e attivando l\'interruttore per queste funzionalità.</string>
@@ -335,4 +335,13 @@
     <string name="implementations_tooltip">Implementa i suggerimenti</string>
     <string name="summary_preference_android_studio_in_app_review">L\'API di revisione in-app di Google Play ti consente di chiedere agli utenti di inviare valutazioni e recensioni del Play Store senza l\'inconveniente di uscire dall\'app o dal gioco.</string>
     <string name="summary_preference_android_studio_tooltip">Un tooltip è un piccolo messaggio descrittivo che appare vicino a una vista quando gli utenti premono a lungo la vista o ci passano sopra con il mouse. Ciò è utile quando l\'app utilizza un\'icona per rappresentare un\'azione o un\'informazione per risparmiare spazio nel layout.</string>
+    <string name="music">Musica</string>
+    <string name="show_code">Mostra codice</string>
+    <string name="info">Informazioni</string>
+    <string name="device_info">Informazioni sul dispositivo</string>
+    <string name="app_build">Build App: Release\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
+    <string name="manufacturer">Produttore:</string>
+    <string name="device_model">Modello dispositivo:</string>
+    <string name="android_version">Versione Android:</string>
+    <string name="api_level">Livello API:</string>
 </resources>

@@ -296,7 +296,7 @@
     <string name="summary_preference_faq_1">Tutoriales de Android Studio es una aplicación gratuita y de código abierto que proporciona una colección de tutoriales en video sobre cómo usar Android Studio, el entorno de desarrollo integrado (IDE) oficial para el desarrollo de aplicaciones de Android.</string>
     <string name="summary_preference_faq_2">Los tutoriales de Android Studio están disponibles para descargar en Google Play Store. Simplemente busque \"Tutoriales de Android Studio\" en la aplicación Play Store en su dispositivo Android y toque \"Instalar\" para descargar e instalar la aplicación.</string>
     <string name="summary_preference_faq_3">No, los tutoriales de Android Studio actualmente solo están disponibles para dispositivos Android.</string>
-    <string name="summary_preference_faq_4">Sí, Android Studio Tutorials es adecuado para principiantes que son nuevos en el desarrollo de aplicaciones de Android y desean aprender a usar Android Studio. La aplicación proporciona una variedad de tutoriales en video que cubren los aspectos básicos del uso de Android Studio, desde la instalación del IDE hasta la creación e implementación de su primera aplicación.</string>
+    <string name="summary_preference_faq_4">Sí, Android Studio Tutorials: Kotlin Edition es adecuado para principiantes que son nuevos en el desarrollo de aplicaciones de Android y desean aprender a usar Android Studio. La aplicación proporciona una variedad de tutoriales en video que cubren los aspectos básicos del uso de Android Studio, desde la instalación del IDE hasta la creación e implementación de su primera aplicación.</string>
     <string name="summary_preference_faq_5">Sí, los tutoriales de Android Studio se actualizan regularmente con nuevos tutoriales en video y contenido para mantener a los usuarios actualizados con las últimas funciones y cambios en Android Studio.</string>
     <string name="summary_preference_faq_6">Si tiene alguna pregunta o problema con los Tutoriales de Android Studio, puede comunicarse con nosotros a través de la página de soporte de la aplicación o por correo electrónico a d4rk7355608@gmail.com. Haremos todo lo posible para ayudarlo a resolver cualquier problema que pueda estar experimentando.</string>
     <string name="summary_preference_faq_7">Puede deshabilitar Firebase Analytics y Crashlytics yendo al menú de configuración en la aplicación y alternando el interruptor para estas funciones.</string>
@@ -335,4 +335,13 @@
     <string name="summary_preference_android_studio_predictive_back_gesture">Android 13 (nivel de API 33) introduce un gesto de retroceso predictivo para dispositivos Android como teléfonos, pantallas grandes y plegables. Es parte de una versión de varios años; cuando se implemente por completo, esta función permitirá a los usuarios previsualizar el destino u otro resultado de un gesto de retroceso antes de completarlo por completo, lo que les permitirá decidir si continuar o permanecer en la vista actual.</string>
     <string name="summary_preference_android_studio_in_app_review">La API de revisión en la aplicación de Google Play le permite solicitar a los usuarios que envíen calificaciones y reseñas de Play Store sin el inconveniente de abandonar su aplicación o juego.</string>
     <string name="summary_preference_android_studio_tooltip">Una información sobre herramientas es un pequeño mensaje descriptivo que aparece cerca de una vista cuando los usuarios mantienen presionada la vista o pasan el mouse sobre ella. Esto es útil cuando su aplicación usa un ícono para representar una acción o información para ahorrar espacio en el diseño.</string>
+    <string name="music">Música</string>
+    <string name="show_code">Mostrar código</string>
+    <string name="info">Información</string>
+    <string name="device_info">Información del dispositivo</string>
+    <string name="app_build">Construcción de la aplicación: Release\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
+    <string name="manufacturer">Fabricante:</string>
+    <string name="device_model">Modelo de dispositivo:</string>
+    <string name="android_version">Versión de Android:</string>
+    <string name="api_level">Nivel de API:</string>
 </resources>

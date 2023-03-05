@@ -7,6 +7,26 @@
     android:layout_margin="24dp"
     app:columnCount="2">
     <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/image_view_android_studio_tutorials_java"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="8dp"
+        android:background="@android:color/transparent"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@mipmap/ic_launcher_android_studio_tutorials_java"
+        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck"/>
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/text_view_android_studio_tutorials_java"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_margin="8dp"
+        android:focusable="true"
+        android:clickable="true"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="@string/android_studio_tutorials_java"/>
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/image_view_cleaner"
         android:layout_width="48dp"
         android:layout_height="48dp"

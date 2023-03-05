@@ -335,4 +335,13 @@
     <string name="implementations_tooltip">ツールチップを実装する</string>
     <string name="summary_preference_android_studio_in_app_review">Google Play In-App Review API を使用すると、アプリやゲームを離れる手間をかけずに、ユーザーに Play ストアの評価とレビューを送信するよう促すことができます。</string>
     <string name="summary_preference_android_studio_tooltip">ツールチップは、ユーザーがビューを長押しするか、ビューの上にマウスを置いたときに、ビューの近くに表示される小さな説明メッセージです。これは、アプリがアイコンを使用してアクションや情報を表し、レイアウトのスペースを節約する場合に役立ちます。</string>
+    <string name="music">音楽</string>
+    <string name="show_code">コードを表示する</string>
+    <string name="info">情報</string>
+    <string name="device_info">デバイス情報</string>
+    <string name="app_build">アプリビルド：リリース\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
+    <string name="manufacturer">メーカー:</string>
+    <string name="device_model">デバイスモデル:</string>
+    <string name="android_version">Androidバージョン:</string>
+    <string name="api_level">APIレベル:</string>
 </resources>

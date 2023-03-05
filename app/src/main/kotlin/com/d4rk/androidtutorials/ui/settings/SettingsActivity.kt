@@ -1,9 +1,10 @@
 package com.d4rk.androidtutorials.ui.settings
-import android.content.Intent
-import android.content.SharedPreferences
+import android.content.*
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.preference.ListPreference
@@ -14,6 +15,7 @@ import com.d4rk.androidtutorials.BuildConfig
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.databinding.ActivitySettingsBinding
 import com.d4rk.androidtutorials.ui.dialogs.RequireRestartDialog
+import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.textview.MaterialTextView
 class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceChangeListener {
@@ -63,7 +65,8 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
                 val textViewQRCodeScanner: MaterialTextView = view.findViewById(R.id.text_view_qr_code_scanner)
                 val textViewLowBrightness: MaterialTextView = view.findViewById(R.id.text_view_low_brightness)
                 val textViewCleaner: MaterialTextView = view.findViewById(R.id.text_view_cleaner)
-                val urls = mapOf(textViewCleaner to "https://play.google.com/store/apps/details?id=com.d4rk.cleaner.plus", textViewMusicSleepTimer to "https://play.google.com/store/apps/details?id=com.d4rk.musicsleeptimer.plus", textViewEnglishWithLidia to "https://play.google.com/store/apps/details?id=com.d4rk.englishwithlidia.plus", textViewQRCodeScanner to "https://play.google.com/store/apps/details?id=com.d4rk.qrcodescanner.plus", textViewLowBrightness to "https://play.google.com/store/apps/details?id=com.d4rk.lowbrightness")
+                val textViewAndroidStudioTutorialsJava: MaterialTextView = view.findViewById(R.id.text_view_android_studio_tutorials_java)
+                val urls = mapOf(textViewAndroidStudioTutorialsJava to "https://play.google.com/store/apps/details?id=com.d4rk.androidtutorials.java", textViewCleaner to "https://play.google.com/store/apps/details?id=com.d4rk.cleaner.plus", textViewMusicSleepTimer to "https://play.google.com/store/apps/details?id=com.d4rk.musicsleeptimer.plus", textViewEnglishWithLidia to "https://play.google.com/store/apps/details?id=com.d4rk.englishwithlidia.plus", textViewQRCodeScanner to "https://play.google.com/store/apps/details?id=com.d4rk.qrcodescanner.plus", textViewLowBrightness to "https://play.google.com/store/apps/details?id=com.d4rk.lowbrightness")
                 urls.forEach { (view, url) -> view.setOnClickListener {
                     startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
                 }
@@ -88,6 +91,30 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
                     putExtra(Intent.EXTRA_SUBJECT, R.string.share_subject)
                 }
                 startActivity(Intent.createChooser(sharingIntent, getString(R.string.share_using)))
+                true
+            }
+            val ossPreference = findPreference<Preference>(getString(R.string.key_open_source_licenses))
+            ossPreference?.setOnPreferenceClickListener {
+                startActivity(Intent(activity, OssLicensesMenuActivity::class.java))
+                true
+            }
+            val deviceInfoPreference = findPreference<Preference>(getString(R.string.key_device_info))
+            val version = String.format(
+                resources.getString(R.string.app_build),
+                "${resources.getString(R.string.manufacturer)} ${Build.MANUFACTURER}",
+                "${resources.getString(R.string.device_model)} ${Build.MODEL}",
+                "${resources.getString(R.string.android_version)} ${Build.VERSION.RELEASE}",
+                "${resources.getString(R.string.api_level)} ${Build.VERSION.SDK_INT}",
+                "${resources.getString(R.string.arch)} ${Build.SUPPORTED_ABIS.joinToString()}"
+            )
+            deviceInfoPreference?.summary = version
+            deviceInfoPreference?.setOnPreferenceClickListener {
+                val clipboard = requireContext().getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+                val clip = ClipData.newPlainText("text", version)
+                clipboard.setPrimaryClip(clip)
+                if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.S_V2) {
+                    Toast.makeText(context, R.string.copied_to_clipboard, Toast.LENGTH_SHORT).show()
+                }
                 true
             }
         }

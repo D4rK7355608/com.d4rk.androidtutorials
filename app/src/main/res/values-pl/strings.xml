@@ -335,4 +335,13 @@
     <string name="implementations_tooltip">Zaimplementuj podpowiedzi</string>
     <string name="summary_preference_android_studio_in_app_review">Interfejs Google Play In-App Review API umożliwia zachęcanie użytkowników do przesyłania ocen i recenzji ze Sklepu Play bez niedogodności związanych z opuszczaniem aplikacji lub gry.</string>
     <string name="summary_preference_android_studio_tooltip">Podpowiedź to mały komunikat opisowy, który pojawia się w pobliżu widoku, gdy użytkownik długo naciska widok lub umieszcza na nim wskaźnik myszy. Jest to przydatne, gdy aplikacja używa ikony do reprezentowania akcji lub informacji w celu zaoszczędzenia miejsca w układzie.</string>
+    <string name="music">Muzyka</string>
+    <string name="show_code">Pokaż kod</string>
+    <string name="info">Informacje</string>
+    <string name="device_info">Informacje o urządzeniu</string>
+    <string name="app_build">Build aplikacji: Release\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
+    <string name="manufacturer">Producent:</string>
+    <string name="device_model">Model urządzenia:</string>
+    <string name="android_version">Wersja Androida:</string>
+    <string name="api_level">Poziom API:</string>
 </resources>

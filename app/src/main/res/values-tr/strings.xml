@@ -293,19 +293,19 @@
     <string name="question_5">Android Studio Eğitimleri düzenli olarak güncelleniyor mu?</string>
     <string name="question_6">Android Studio Eğitimleri ile ilgili bir sorum veya sorunum olursa nasıl destek alabilirim?</string>
     <string name="question_7">Android Studio Eğitimlerinde Firebase analitiğini ve crashlytics\'i nasıl devre dışı bırakırım?</string>
-    <string name="question_8">Android Studio Tutorials güncellemelerini nasıl kontrol ederim?</string>
+    <string name="question_8">Android Studio Tutorials: Kotlin Edition güncellemelerini nasıl kontrol ederim?</string>
     <string name="question_9">Android Studio Eğitimlerinin geliştirilmesini nasıl destekleyebilirim?</string>
     <string name="implementations_image_view">Resim Görünümünü Uygula</string>
     <string name="implementations_snack_bar">Snack Bar\'ı Uygulayın</string>
     <string name="implementations_toast">Tost uygula</string>
-    <string name="summary_preference_faq_1">Android Studio Tutorials, Android uygulama geliştirme için resmi tümleşik geliştirme ortamı (IDE) olan Android Studio\'nun nasıl kullanılacağına ilişkin bir video eğitim koleksiyonu sağlayan ücretsiz ve açık kaynaklı bir uygulamadır.</string>
+    <string name="summary_preference_faq_1">Android Studio Tutorials: Kotlin Edition, Android uygulama geliştirme için resmi tümleşik geliştirme ortamı (IDE) olan Android Studio\'nun nasıl kullanılacağına ilişkin bir video eğitim koleksiyonu sağlayan ücretsiz ve açık kaynaklı bir uygulamadır.</string>
     <string name="summary_preference_faq_2">Android Studio Eğitimleri, Google Play Store\'dan indirilebilir. Android cihazınızdaki Play Store uygulamasında \"Android Studio Tutorials\" araması yapın ve uygulamayı indirip yüklemek için \"Yükle\"ye dokunun.</string>
     <string name="summary_preference_faq_3">Hayır, Android Studio Eğitimleri şu anda yalnızca Android cihazlarda kullanılabilir.</string>
     <string name="summary_preference_faq_4">Evet, Android Studio Eğitimleri, Android uygulama geliştirmede yeni olan ve Android Studio\'yu nasıl kullanacağını öğrenmek isteyen yeni başlayanlar için uygundur. Uygulama, IDE\'yi yüklemekten ilk uygulamanızı oluşturmaya ve dağıtmaya kadar Android Studio\'yu kullanmanın temellerini kapsayan bir dizi video eğitimi sağlar.</string>
     <string name="summary_preference_faq_5">Evet, Android Studio Eğitimleri, kullanıcıları Android Studio\'daki en son özellikler ve değişikliklerle güncel tutmak için yeni eğitim videoları ve içeriklerle düzenli olarak güncellenir.</string>
-    <string name="summary_preference_faq_6">Android Studio Tutorials ile ilgili bir sorunuz veya sorununuz varsa, uygulamanın destek sayfası aracılığıyla veya d4rk7355608@gmail.com adresinden e-posta yoluyla bizimle iletişime geçebilirsiniz. Karşılaşabileceğiniz sorunları çözmenize yardımcı olmak için elimizden gelenin en iyisini yapacağız.</string>
+    <string name="summary_preference_faq_6">Android Studio Tutorials: Kotlin Edition ile ilgili bir sorunuz veya sorununuz varsa, uygulamanın destek sayfası aracılığıyla veya d4rk7355608@gmail.com adresinden e-posta yoluyla bizimle iletişime geçebilirsiniz. Karşılaşabileceğiniz sorunları çözmenize yardımcı olmak için elimizden gelenin en iyisini yapacağız.</string>
     <string name="summary_preference_faq_7">Uygulamadaki ayarlar menüsüne gidip bu özelliklerin anahtarını değiştirerek Firebase analizlerini ve crashlytics\'i devre dışı bırakabilirsiniz.</string>
-    <string name="summary_preference_faq_8">Uygulamadaki ayarlar menüsüne gidip \"Güncellemeleri kontrol et\" seçeneğini belirleyerek Android Studio Tutorials güncellemelerini kontrol edebilirsiniz.</string>
+    <string name="summary_preference_faq_8">Uygulamadaki ayarlar menüsüne gidip \"Güncellemeleri kontrol et\" seçeneğini belirleyerek Android Studio Tutorials: Kotlin Edition güncellemelerini kontrol edebilirsiniz.</string>
     <string name="summary_preference_faq_9">Google Play Store\'da olumlu bir inceleme bırakarak, uygulamayı arkadaşlarınızla ve iş arkadaşlarınızla paylaşarak ve ayarlar menüsündeki \"Paylaş\" seçeneği aracılığıyla geliştiricileri destekleyerek Android Studio Eğitimlerinin geliştirilmesini destekleyebilirsiniz.</string>
     <string name="summary_preference_android_studio_image_view">Bir Android ImageView, görüntüleri görüntülemek için kullanılan bir görünümdür. Android View sınıfının bir alt sınıfıdır ve uygulamalarda resim göstermek için kullanılır. ImageView\'ler, grafik veya fotoğraf gibi görüntüleri görüntülemek için kullanılır. Statik görüntüleri veya çalışma zamanında güncellenen görüntüleri görüntülemek için kullanılabilirler.</string>
     <string name="summary_preference_android_studio_snack_bar">Snack çubukları, kullanıcıları bir uygulamanın gerçekleştirdiği veya gerçekleştireceği bir işlem hakkında bilgilendirir. Geçici olarak ekranın altına doğru görünürler. Kullanıcı deneyimini kesintiye uğratmamalıdırlar ve ortadan kaybolmak için kullanıcı girişi gerektirmezler.</string>
@@ -335,4 +335,13 @@
     <string name="summary_preference_android_studio_in_app_review">Google Play Uygulama İçi İnceleme API\'sı, uygulamanızdan veya oyununuzdan ayrılma zahmetine girmeden kullanıcılardan Play Store puanları ve incelemeleri göndermelerini istemenize olanak tanır.</string>
     <string name="summary_preference_android_studio_tooltip">Araç ipucu, kullanıcılar görünüme uzun bastıklarında veya farelerini görünümün üzerine getirdiklerinde görünümün yanında görünen küçük, açıklayıcı bir mesajdır. Bu, uygulamanız mizanpajda yer kazanmak için bir eylemi veya bilgi parçasını temsil eden bir simge kullandığında kullanışlıdır.</string>
     <string name="summary_first_step">Android Studio\'da yeni bir proje oluşturmak için ilk adım, görüntüde gösterildiği gibi <b>Yeni proje</b> düğmesine tıklamaktır ve sonraki adıma devam etmektir.</string>
+    <string name="music">Müzik</string>
+    <string name="show_code">Kodu göster</string>
+    <string name="info">Bilgi</string>
+    <string name="device_info">Cihaz Bilgisi</string>
+    <string name="app_build">Uygulama Yapısı: Yayın\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
+    <string name="manufacturer">Üretici:</string>
+    <string name="device_model">Cihaz Modeli:</string>
+    <string name="android_version">Android Sürümü:</string>
+    <string name="api_level">API Seviyesi:</string>
 </resources>
