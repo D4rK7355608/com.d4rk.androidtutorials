@@ -1,4 +1,4 @@
-# Version 3.3_r1:
+# Version 3.3_r1 & 3.3_r2:
 - Updated "Show code" button to Extended FAB with a 5-second timer before shrinking to FAB for better user experience.
 - Rebranded the app as "Android Studio Tutorials: Kotlin Edition" to reflect the addition of Kotlin-based tutorials.
 - Another small User Interface & translations tweaks.

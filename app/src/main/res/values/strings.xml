@@ -290,7 +290,7 @@
     <string name="summary_preference_permissions_foreground_service">Used to create and use services that run in the foreground, giving them priority over other background processes and improving performance and reliability.</string>
     <string name="summary_preference_permissions_access_notification_policy">Used to access and modify the notification policy of the device, controlling how and when notifications are shown to the user and providing custom notification management features.</string>
     <string name="summary_preference_settings_license" translatable="false">General Public License-3.0</string>
-    <string name="summary_preference_settings_support_me">Click here if you want to support me without paying money. Just some time for viewing an add.</string>
+    <string name="summary_preference_settings_support_me">Click here if you want to support me without paying money. Just some time for viewing an ad.</string>
     <string name="summary_preference_settings_language">Set application language.</string>
     <string name="summary_preference_settings_firebase">This let us collect information about app performance and crash logs.</string>
     <string name="summary_preference_android_start">Learn the base of how to start a new Android Studio project, how to configure, how to set package, API levels and many more…</string>
@@ -360,10 +360,6 @@
     <string name="tooltip_show_code">Show code syntax</string>
     <string name="changelog_title" translatable="false">Changelog - Version %1s</string>
     <string name="changes" translatable="false">\n
-        • Updated "Show code" button to Extended FAB with a 5-second timer before shrinking to FAB for better user experience.\n\n
-        • Rebranded the app as "Android Studio Tutorials: Kotlin Edition" to reflect the addition of Kotlin-based tutorials.\n\n
-        • Another small User Interface &amp; translations tweaks.\n\n
-        • Made various under-the-hood improvements for a better overall app experience.\n\n
-        • Prepared for upcoming release of "Android Studio Tutorials: Java Edition". Stay tuned!
+        • Made various under-the-hood improvements for a better overall app experience.
     </string>
 </resources>
