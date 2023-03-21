@@ -272,6 +272,11 @@
             android:exported="false"
             android:parentActivityName=".ui.android.basics.viewbinding.ViewBindingTutorialActivity"/>
         <activity
+            android:name=".ui.android.basics.history.AndroidHistory"
+            android:label="@string/history_of_android"
+            android:exported="false"
+            android:parentActivityName=".ui.android.basics.history.AndroidHistory"/>
+        <activity
             android:name=".ui.android.basics.permissions.PermissionsTutorialActivity"
             android:label="@string/permissions"
             android:exported="false"

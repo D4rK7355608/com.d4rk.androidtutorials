@@ -9,6 +9,7 @@ import com.kieronquinn.monetcompat.app.MonetCompatActivity
 import me.zhanghai.android.fastscroll.FastScrollerBuilder
 class ToggleActivity : MonetCompatActivity() {
     private lateinit var binding: ActivityToggleBinding
+    @Suppress("DEPRECATION")
     private val handler = Handler()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name" translatable="false">Android Studio Tutorials: Kotlin Edition</string>
     <string name="app_version">Version %1$s (%2$d)</string>
     <string name="app_description">Learn how to make simple apps in Android Studio. 📱</string>
@@ -14,6 +14,7 @@
     <string name="qr_code_scanner" translatable="false">QR &amp; Bar Code Scanner Plus</string>
     <string name="low_brightness" translatable="false">Low Brightness</string>
     <string name="cleaner_plus" translatable="false">Cleaner Plus</string>
+    <string name="cart_calculator" translatable="false">Cart Calculator</string>
     <string name="twitter" translatable="false">Twitter</string>
     <string name="youtube" translatable="false">YouTube</string>
     <string name="github" translatable="false">GitHub</string>
@@ -254,7 +255,7 @@
     <string name="floating_button_surface_icon">Floating Button 3 (surface)</string>
     <string name="floating_button_tertiary_icon">Floating Button 4 (tertiary)</string>
     <string name="more_about_shortcuts">More about shortcuts</string>
-    <string name="same_binding">Use this Kotlin code for all button types.</string>
+    <string name="same_binding_buttons">Use this Kotlin code for all button types.</string>
     <string name="permission_dialog_example">Permission dialog example</string>
     <string name="alert_dialog_message">This will be the message you will see on screen!</string>
     <string name="implementations_radio_buttons">Implement Radio Buttons</string>
@@ -333,8 +334,8 @@
     <string name="summary_require_restart">To take effect please restart the app!</string>
     <string name="toast_this_is_a_toast">This is a toast!</string>
     <string name="toast_switch_material">Toggled Switch Material!</string>
-    <string name="toast_button_normal_icon">Elevated button (icon) clicked!</string>
-    <string name="toast_button_outlined_icon">Elevated button (icon) clicked!</string>
+    <string name="toast_button_normal_icon">Normal button (icon) clicked!</string>
+    <string name="toast_button_outlined_icon">Outlined button (icon) clicked!</string>
     <string name="toast_button_elevated_icon">Elevated button (icon) clicked!</string>
     <string name="toast_extended_floating_button_primary">Extended floating button (primary) clicked!</string>
     <string name="toast_extended_floating_button_secondary">Extended floating button (secondary) clicked!</string>
@@ -358,8 +359,20 @@
     <string name="toast_material_switch">Toggled Material Switch!</string>
     <string name="tooltip_feedback">Send us your review on Google Play Store.</string>
     <string name="tooltip_show_code">Show code syntax</string>
+    <string name="history_of_android">History of Android</string>
+    <string name="android_history" tools:ignore="StringFormatCount">Android is a mobile operating system developed by Google. It was first released as a beta version on November 5, 2007 and the first commercial version, Android 1.0, was launched on September 23, 2008. Android is based on a modified version of the Linux kernel and other open source software.\n\nAndroid Studio is the official integrated development environment (IDE) for Android app development. It was announced by Google at its I/O conference on May 15, 2013 and released for public use on December 8, 2014. Android Studio is based on IntelliJ IDEA, a popular Java IDE.\n\nKotlin is a cross-platform programming language that can run on Java Virtual Machine (JVM), Android, browser and native platforms. It was created by JetBrains, a software company based in Prague. Kotlin was first announced in July 2011 and released as an open source project in February 2012.\n\nGoogle announced its support for Kotlin as an official language for Android app development at its I/O conference on May 17, 2017. Since then, Kotlin has become one of the most popular languages for Android developers. According to Google\'s data from October 2020, more than 70% of the top 1000 apps on Google Play use Kotlin.</string>
+    <string name="android_features">Android is not only an operating system, but also a platform that offers a range of features and capabilities for users and developers. Some of the features of Android include:\n\n- Near Field Communication (NFC), which allows you to share data, make payments, and connect with other devices wirelessly.\n- Alternate keyboards, which let you customize your input method with different layouts, languages, and themes.\n- IR transmission, which enables you to use your phone as a remote control for TVs, air conditioners, and other appliances.\n- No-touch control, which lets you perform actions on your phone without touching the screen by using gestures or voice commands.\n- Automation, which allows you to set up routines and triggers for your phone to perform certain tasks automatically.\n- Wireless app downloads, which let you install apps from your computer or web browser without connecting your phone with a cable.\n- Storage and battery swap, which give you the option to expand your phone\'s memory or replace its battery easily.\n- Custom home screen, which lets you personalize your phone\'s appearance with widgets, wallpapers, icons, and launchers.\n\nAndroid Studio is the best tool for developing Android apps. It offers many features and benefits for developers such as:\n\n- Code editor with syntax highlighting, code completion, refactoring, debugging, testing, and linting tools.\n- Layout editor with drag-and-drop interface for designing user interfaces.\n- Emulator with fast boot and snapshot support for testing apps on different devices and configurations.\n- Firebase integration with services such as authentication, database, storage, analytics, crash reporting etc. \n- Gradle-based build system with dependency management,\ncustomization,\noptimization,\nsigning,\ndistribution options etc. \n\nWith Android Studio,\nyou can create amazing apps for Android devices using Kotlin,\na modern programming language that is concise,\nsafe,\nexpressive,\nand interoperable with Java.</string>
+    <string name="features">Features</string>
+    <string name="history">History</string>
+    <string name="summary_preference_android_studio_history_of_android">Learn about the history of Android, from its beta release in 2007 to becoming the world\'s most popular mobile operating system. Discover the features that make Android unique and the benefits of using Android Studio to develop your apps with Kotlin.</string>
     <string name="changelog_title" translatable="false">Changelog - Version %1s</string>
     <string name="changes" translatable="false">\n
+        • Added Android &amp; Android Studio history.\n\n
+        • Added functionality to \"Music\" chip.\n\n
+        • Added app updater dialog and ability to update in background.\n\n
+        • Added comments to the Kotlin code samples for better understanding.\n\n
+        • Fixed all crash reports from Google Play Console and Google Firebase.\n\n
+        • Made various improvements to languages and fixed some typos.\n\n
         • Made various under-the-hood improvements for a better overall app experience.
     </string>
 </resources>

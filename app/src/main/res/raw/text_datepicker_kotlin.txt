@@ -1,3 +1,4 @@
+// Import necessary classes from Android and Java libraries
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
@@ -5,29 +6,67 @@ import androidx.appcompat.app.AppCompatActivity
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
+
+// Define MainActivity class which extends AppCompatActivity class
 class MainActivity : AppCompatActivity() {
+    // Declare a private lateinit variable for binding the layout with this activity
     private lateinit var binding : ActivityMainBinding
+
+    // Declare a private val variable for calendar instance
     private val calendar: Calendar = Calendar.getInstance()
+
+    // Override onCreate method which is called when the activity is first created
     override fun onCreate(savedInstanceState: Bundle?) {
+        // Call super.onCreate to complete the creation of activity
         super.onCreate(savedInstanceState)
+
+        // Inflate the layout for this activity using layoutInflater and assign it to binding variable
         binding = ActivityMainBinding.inflate(layoutInflater)
+
+        // Set the content view for this activity using the root view from binding variable
         setContentView(binding.root)
+
+        // Create a SimpleDateFormat object with desired date format and locale
         val simpleDateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+
+        // Format current date using simpleDateFormat object and assign it to dateText variable
         val dateText = simpleDateFormat.format(calendar.time)
+
+        // Set text of dateTextView in layout to dateText value
         binding.dateTextView.text = dateText
+
+        // Create an OnDateSetListener object for DatePickerDialog
         val dateSetListener = DatePickerDialog.OnDateSetListener { _, year, monthOfYear, dayOfMonth ->
+            // Update calendar instance with selected year, month and day values
             calendar.set(Calendar.YEAR, year)
             calendar.set(Calendar.MONTH, monthOfYear)
             calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth)
-                updateDateInView()
-            }
-        binding.changeDateButton.setOnClickListener {
-            DatePickerDialog(this@DatePickerActivity, dateSetListener, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show()
+
+            // Call updateDateInView method to update text of dateTextView in layout with selected values
+            updateDateInView()
         }
+
+        // Set an onClickListener for changeDateButton in layout
+        binding.changeDateButton.setOnClickListener {
+            // Show DatePickerDialog when changeDateButton is clicked with current year, month and day values from calendar instance as default values
+            DatePickerDialog(this@DatePickerActivity, dateSetListener,
+                calendar.get(Calendar.YEAR),
+                calendar.get(Calendar.MONTH),
+                calendar.get(Calendar.DAY_OF_MONTH)).show()
+
+                }
     }
+
+    // Define a private method updateDateInView which updates text of dateTextView in layout with selected values from DatePickerDialog
     private fun updateDateInView() {
-        val myFormat = "dd/MM/yyyy"
-        val sdf = SimpleDateFormat(myFormat, Locale.US)
-        binding.dateTextView.text = sdf.format(calendar.time)
-    }
+
+        	// Define desired format for displaying selected date value
+        	val myFormat = "dd/MM/yyyy"
+
+        	// Create a SimpleDateFormat object with desired format and locale
+        	val sdf = SimpleDateFormat(myFormat, Locale.US)
+
+        	// Format selected date value using sdf object and set text of dateTextView in layout to formatted value
+        	binding.dateTextView.text = sdf.format(calendar.time)
+    	}
 }

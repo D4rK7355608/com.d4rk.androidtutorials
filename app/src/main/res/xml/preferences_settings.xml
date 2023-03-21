@@ -20,6 +20,14 @@
             app:key="@string/key_bottom_navigation_bar_labels"
             app:title="@string/bottom_navigation_bar_labels"
             app:useSimpleSummaryProvider="true"/>
+        <androidx.preference.Preference
+            app:title="@string/language"
+            app:summary="@string/summary_preference_settings_language"
+            app:icon="@drawable/ic_language">
+            <intent
+                android:targetPackage="com.d4rk.androidtutorials"
+                android:targetClass="com.d4rk.androidtutorials.ui.language.LanguageActivity"/>
+        </androidx.preference.Preference>
     </androidx.preference.PreferenceCategory>
     <androidx.preference.PreferenceCategory
         app:title="@string/advanced"

@@ -63,6 +63,9 @@ class AboutFragment : Fragment() {
         binding.chipXda.setOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://forum.xda-developers.com/m/d4rk7355608.10095012")))
         }
+        binding.chipMusic.setOnClickListener {
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://sites.google.com/view/d4rk7355608/tracks")))
+        }
         return binding.root
     }
 }

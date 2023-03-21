@@ -1,3 +1,12 @@
+# Version 4.0_r1:
+- Added Android & Android Studio history.
+- Added functionality to "Music" chip.
+- Added app updater dialog and ability to update in background.
+- Added comments to the Kotlin code samples for better understanding.
+- Fixed all crash reports from Google Play Console and Google Firebase.
+- Made various improvements to languages and fixed some typos.
+- Made various under-the-hood improvements for a better overall app experience.
+
 # Version 3.3_r1 & 3.3_r2:
 - Updated "Show code" button to Extended FAB with a 5-second timer before shrinking to FAB for better user experience.
 - Rebranded the app as "Android Studio Tutorials: Kotlin Edition" to reflect the addition of Kotlin-based tutorials.

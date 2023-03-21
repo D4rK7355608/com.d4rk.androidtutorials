@@ -23,7 +23,9 @@ import com.d4rk.androidtutorials.ui.settings.SettingsActivity
 import com.d4rk.androidtutorials.ui.startup.StartupActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.navigation.NavigationBarView
+import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory
+import com.google.android.play.core.install.model.ActivityResult
 import com.google.android.play.core.install.model.AppUpdateType
 import com.google.android.play.core.install.model.UpdateAvailability
 import com.google.firebase.analytics.FirebaseAnalytics
@@ -31,11 +33,14 @@ import com.google.firebase.crashlytics.FirebaseCrashlytics
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var prefs: SharedPreferences
+    private lateinit var appUpdateManager: AppUpdateManager
+    private val requestUpdateCode = 1
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         installSplashScreen()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        appUpdateManager = AppUpdateManagerFactory.create(this)
         prefs = getSharedPreferences("startup", MODE_PRIVATE)
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
         val themeKey = getString(R.string.key_theme)
@@ -135,6 +140,26 @@ class MainActivity : AppCompatActivity() {
         if (prefs.getBoolean("value", true)) {
             prefs.edit().putBoolean("value", false).apply()
             startActivity(Intent(this, StartupActivity::class.java))
+        }
+        appUpdateManager.appUpdateInfo.addOnSuccessListener { appUpdateInfo ->
+            if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.FLEXIBLE)) {
+                appUpdateManager.startUpdateFlowForResult(appUpdateInfo, AppUpdateType.FLEXIBLE, this, requestUpdateCode)
+            }
+        }
+    }
+    @Deprecated("Deprecated in Java")
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        @Suppress("DEPRECATION")
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == requestUpdateCode) {
+            when (resultCode) {
+                RESULT_OK -> {
+                }
+                RESULT_CANCELED -> {
+                }
+                ActivityResult.RESULT_IN_APP_UPDATE_FAILED -> {
+                }
+            }
         }
     }
 }

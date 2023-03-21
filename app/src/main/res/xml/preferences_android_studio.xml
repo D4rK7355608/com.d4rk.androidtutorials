@@ -27,6 +27,15 @@
                 android:targetClass="com.d4rk.androidtutorials.ui.android.basics.shortcuts.ShortcutsActivity"/>
         </androidx.preference.Preference>
         <androidx.preference.Preference
+            app:title="@string/history_of_android"
+            app:summary="@string/summary_preference_android_studio_history_of_android"
+            app:icon="@drawable/ic_history_edu">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="com.d4rk.androidtutorials"
+                android:targetClass="com.d4rk.androidtutorials.ui.android.basics.history.AndroidHistory"/>
+        </androidx.preference.Preference>
+        <androidx.preference.Preference
             app:title="@string/android_sdk"
             app:summary="@string/summary_preference_android_studio_android_sdks"
             app:icon="@drawable/ic_android_sdk">

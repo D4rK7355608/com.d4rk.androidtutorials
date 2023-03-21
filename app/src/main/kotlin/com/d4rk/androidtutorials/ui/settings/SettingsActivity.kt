@@ -52,7 +52,7 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
             }
             val moreApps = findPreference<Preference>(getString(R.string.key_more_apps))
             moreApps?.setOnPreferenceClickListener {
-                val view: View = layoutInflater.inflate(R.layout.fragment_dialog, null)
+                val view: View = layoutInflater.inflate(R.layout.dialog_more_apps, null)
                 MaterialAlertDialogBuilder(requireContext())
                     .setTitle(R.string.more_apps)
                     .setIcon(R.drawable.ic_shop)
@@ -66,7 +66,8 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
                 val textViewLowBrightness: MaterialTextView = view.findViewById(R.id.text_view_low_brightness)
                 val textViewCleaner: MaterialTextView = view.findViewById(R.id.text_view_cleaner)
                 val textViewAndroidStudioTutorialsJava: MaterialTextView = view.findViewById(R.id.text_view_android_studio_tutorials_java)
-                val urls = mapOf(textViewAndroidStudioTutorialsJava to "https://play.google.com/store/apps/details?id=com.d4rk.androidtutorials.java", textViewCleaner to "https://play.google.com/store/apps/details?id=com.d4rk.cleaner.plus", textViewMusicSleepTimer to "https://play.google.com/store/apps/details?id=com.d4rk.musicsleeptimer.plus", textViewEnglishWithLidia to "https://play.google.com/store/apps/details?id=com.d4rk.englishwithlidia.plus", textViewQRCodeScanner to "https://play.google.com/store/apps/details?id=com.d4rk.qrcodescanner.plus", textViewLowBrightness to "https://play.google.com/store/apps/details?id=com.d4rk.lowbrightness")
+                val textViewCartCalculator: MaterialTextView = view.findViewById(R.id.text_view_cart_calculator)
+                val urls = mapOf(textViewCartCalculator to "https://play.google.com/store/apps/details?id=com.d4rk.cartcalculator", textViewAndroidStudioTutorialsJava to "https://play.google.com/store/apps/details?id=com.d4rk.androidtutorials.java", textViewCleaner to "https://play.google.com/store/apps/details?id=com.d4rk.cleaner.plus", textViewMusicSleepTimer to "https://play.google.com/store/apps/details?id=com.d4rk.musicsleeptimer.plus", textViewEnglishWithLidia to "https://play.google.com/store/apps/details?id=com.d4rk.englishwithlidia.plus", textViewQRCodeScanner to "https://play.google.com/store/apps/details?id=com.d4rk.qrcodescanner.plus", textViewLowBrightness to "https://play.google.com/store/apps/details?id=com.d4rk.lowbrightness")
                 urls.forEach { (view, url) -> view.setOnClickListener {
                     startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
                 }

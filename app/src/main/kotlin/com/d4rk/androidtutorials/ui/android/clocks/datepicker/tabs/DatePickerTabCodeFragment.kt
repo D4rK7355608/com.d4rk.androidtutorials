@@ -5,14 +5,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.d4rk.androidtutorials.R
-import com.d4rk.androidtutorials.databinding.FragmentDatePickerCodeBinding
+import com.d4rk.androidtutorials.databinding.FragmentCodeBinding
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
 import me.zhanghai.android.fastscroll.FastScrollerBuilder
 class DatePickerTabCodeFragment : Fragment() {
-    private lateinit var binding: FragmentDatePickerCodeBinding
+    private lateinit var binding: FragmentCodeBinding
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        binding = FragmentDatePickerCodeBinding.inflate(inflater, container, false)
+        binding = FragmentCodeBinding.inflate(inflater, container, false)
         FastScrollerBuilder(binding.scrollView).useMd2Style().build()
         MobileAds.initialize(requireContext())
         binding.adView.loadAd(AdRequest.Builder().build())
