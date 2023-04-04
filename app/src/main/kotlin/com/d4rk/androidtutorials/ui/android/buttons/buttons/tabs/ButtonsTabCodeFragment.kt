@@ -1,9 +1,12 @@
 package com.d4rk.androidtutorials.ui.android.buttons.buttons.tabs
+import android.graphics.Typeface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
+import androidx.preference.PreferenceManager
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.databinding.FragmentSameCodeBinding
 import com.google.android.gms.ads.AdRequest
@@ -22,5 +25,14 @@ class ButtonsTabCodeFragment : Fragment() {
         binding.textViewCode.text = text
         binding.textViewWarning.text = getString(R.string.same_binding_buttons)
         return binding.root
+    }
+    override fun onResume() {
+        super.onResume()
+        val preference = PreferenceManager.getDefaultSharedPreferences(requireContext())
+        val preferenceFont = preference.getBoolean(getString(R.string.key_monospace_font), false)
+        if (preferenceFont) {
+            val monospaceFont: Typeface? = ResourcesCompat.getFont(requireContext(), R.font.font_roboto_mono)
+            binding.textViewCode.typeface = monospaceFont
+        }
     }
 }

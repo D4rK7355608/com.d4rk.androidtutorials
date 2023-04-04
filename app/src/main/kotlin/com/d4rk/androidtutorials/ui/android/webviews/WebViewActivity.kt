@@ -1,4 +1,4 @@
-package com.d4rk.androidtutorials.ui.android.webview
+package com.d4rk.androidtutorials.ui.android.webviews
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle

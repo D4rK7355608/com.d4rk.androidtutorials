@@ -1,4 +1,4 @@
-package com.d4rk.androidtutorials.ui.faq
+package com.d4rk.androidtutorials.ui.settings.faq
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceFragmentCompat

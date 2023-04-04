@@ -346,6 +346,13 @@
     <string name="api_level">API Seviyesi:</string>
     <string name="features">Özellikler</string>
     <string name="history">Tarihçe</string>
+    <string name="code_font">Kod yazı tipi</string>
+    <string name="default_tab">Varsayılan sekme</string>
+    <string name="notifications">Bildirimler</string>
+    <string name="notification_settings">Bildirim ayarları</string>
+    <string name="app_usage_notifications">Uygulama Kullanım Bildirimleri</string>
+    <string name="update_notifications">Güncelleme Bildirimleri</string>
+    <string name="summary_preference_settings_code_font">Kodu görüntülemek için <i>Audiowide</i>\'ın yerine <i>Roboto Mono</i> yazı tipini kullanın.</string>
     <string name="summary_preference_android_studio_history_of_android">Android\'in tarihini öğrenin; 2007\'de beta sürümünün yayınlanmasından dünyanın en popüler mobil işletim sistemi haline gelmesine kadar. Android\'i benzersiz kılan özellikleri ve uygulamalarınızı Kotlin ile geliştirmek için Android Studio\'yu kullanmanın avantajlarını keşfedin.</string>
     <string name="history_of_android">Android Tarihi</string>
     <string name="android_history">Android, Google tarafından geliştirilen bir mobil işletim sistemidir. İlk olarak 5 Kasım 2007\'de beta sürümü olarak yayınlandı ve ilk ticari sürümü olan Android 1.0, 23 Eylül 2008\'de piyasaya sürüldü. Android, Linux çekirdeğinin değiştirilmiş bir sürümü ve diğer açık kaynak yazılımlarına dayanmaktadır.\n\nAndroid Studio, Android uygulama geliştirme için resmi entegre geliştirme ortamıdır (IDE). Google tarafından I/O konferansında 15 Mayıs 2013\'te duyuruldu ve 8 Aralık 2014\'te halka açık kullanıma sunuldu. Android Studio popüler bir Java IDE olan IntelliJ IDEA\'ya dayanmaktadır.\n\nKotlin, Java Sanal Makinesi (JVM), Android, tarayıcı ve yerel platformlarda çalışabilen platformlar arası bir programlama dilidir. Prag merkezli bir yazılım şirketi olan JetBrains tarafından oluşturulmuştur. Kotlin ilk olarak Temmuz 2011\'de duyuruldu ve Şubat 2012\'de açık kaynaklı bir proje olarak yayınlandı.\n\nGoogle, I/O konferansında 17 Mayıs 2017\'de Kotlin\'i resmi bir dil olarak Android uygulama geliştirme için desteklediğini duyurdu. O zamandan beri Kotlin, Android geliştiricileri için en popüler dillerden biri haline geldi. Google\'ın Ekim 2020 verilerine göre Google Play\'in en iyi bin uygulamasının %70\'inden fazlası Kotlin kullanıyor.</string>

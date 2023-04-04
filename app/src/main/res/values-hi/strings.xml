@@ -346,6 +346,13 @@
     <string name="api_level">API स्तर:</string>
     <string name="features">विशेषताएं</string>
     <string name="history">इतिहास</string>
+    <string name="code_font">कोड फ़ॉन्ट</string>
+    <string name="default_tab">डिफ़ॉल्ट टैब</string>
+    <string name="notifications">सूचनाएं</string>
+    <string name="notification_settings">सूचना सेटिंग्स</string>
+    <string name="app_usage_notifications">ऐप उपयोग सूचनाएं</string>
+    <string name="update_notifications">अद्यतन सूचनाएं</string>
+    <string name="summary_preference_settings_code_font"><i>Roboto Mono</i> फ़ॉन्ट का उपयोग करें बजाय <i>Audiowide</i> कोड प्रदर्शित करने के लिए।</string>
     <string name="summary_preference_android_studio_history_of_android">Android के इतिहास के बारे में जानें, 2007 में इसकी बीटा रिलीज़ से लेकर दुनिया का सबसे लोकप्रिय मोबाइल ऑपरेटिंग सिस्टम होने तक। Android को अद्वितीय बनाने वाली सुविधाओं को पहचानें और Kotlin के साथ Android Studio का प्रयोग करके अपनी Apps का Development करने के Benefits पता करें।</string>
     <string name="history_of_android">Android का Itihaas</string>
     <string name="android_history">Android एक मोबाइल ऑपरेटिंग सिस्टम है जो Google द्वारा विकसित किया गया है। इसे पहली बार 5 नवंबर 2007 को एक बीटा संस्करण के रूप में जारी किया गया था, पहला कमर्शियल संस्करण Android 1.0 23 सितंबर 2008 को प्रकाशित हुआ। Android Linux के मॉडीफाइड संस्करण पर आधारित है।\n\nAndroid Studio Android App Development के लिए Official Integrated Development Environment (IDE) है। Google I/O Conference में 15 मई 2013 को Google Android Studio की पेशकश की, 8 December 2014 को Public Use में Released हुआ। IntelliJ IDEA Java IDE पर Android Studio Based है.\n\nKotlin JVM (Java Virtual Machine), Android, Browser and Native Platforms पर Run होने में सक्षम Cross-Platform Programming Language है. JetBrains Prague-based Software Company Kotlin Create की. Kotlin July 2011 में First Announced and February 2012 Open Source Project Released.\n\nGoogle I/O Conference May 17, 2017 Official Language for Android App Development Kotlin Support Announced. Since then Kotlin has become one of the most popular languages for Android developers. According to Google\'s data from October 2020 more than seventy percent (70%) of the top thousand apps available on Google Play use Kotlin.</string>

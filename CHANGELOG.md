@@ -1,3 +1,11 @@
+# Version 4.1_r1:
+- Added a new setting to let user choose the home page.
+- Added a new setting to switch the code font from Audiowide to Roboto Monospace.
+- Added a new setting for notifications.
+- Added a scroll view to the "More apps" dialog for easier navigation.
+- Enhanced project structure for better readability and maintainability.
+- Made various under-the-hood improvements for a better overall app experience.
+
 # Version 4.0_r1:
 - Added Android & Android Studio history.
 - Added functionality to "Music" chip.

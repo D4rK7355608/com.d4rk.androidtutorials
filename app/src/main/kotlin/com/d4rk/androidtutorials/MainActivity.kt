@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var prefs: SharedPreferences
     private lateinit var appUpdateManager: AppUpdateManager
     private val requestUpdateCode = 1
+    private var startFragmentId = R.id.navigation_home
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         installSplashScreen()
@@ -45,8 +46,13 @@ class MainActivity : AppCompatActivity() {
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
         val themeKey = getString(R.string.key_theme)
         val labelKey = getString(R.string.key_bottom_navigation_bar_labels)
+        val defaultTabKey = getString(R.string.key_default_tab)
+        val defaultTabValue = getString(R.string.default_value_tab)
+        val defaultTabValues = resources.getStringArray(R.array.preference_default_tab_values)
         val themeValues = resources.getStringArray(R.array.preference_theme_values)
         val themeDefaultValue = getString(R.string.default_value_theme)
+        val bottomNavigationBarLabelsValues = resources.getStringArray(R.array.preference_bottom_navigation_bar_labels_values)
+        val labelDefaultValue = getString(R.string.default_value_bottom_navigation_bar_labels)
         val nightMode = when (sharedPreferences.getString(themeKey, themeDefaultValue)) {
             themeValues[0] -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
             themeValues[1] -> AppCompatDelegate.MODE_NIGHT_NO
@@ -55,8 +61,6 @@ class MainActivity : AppCompatActivity() {
             else -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
         }
         AppCompatDelegate.setDefaultNightMode(nightMode)
-        val bottomNavigationBarLabelsValues = resources.getStringArray(R.array.preference_bottom_navigation_bar_labels_values)
-        val labelDefaultValue = getString(R.string.default_value_bottom_navigation_bar_labels)
         binding.navView.labelVisibilityMode = when (sharedPreferences.getString(labelKey, labelDefaultValue)) {
             bottomNavigationBarLabelsValues[0] -> NavigationBarView.LABEL_VISIBILITY_LABELED
             bottomNavigationBarLabelsValues[1] -> NavigationBarView.LABEL_VISIBILITY_SELECTED
@@ -67,6 +71,14 @@ class MainActivity : AppCompatActivity() {
             val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main) as NavHostFragment
             navHostFragment.navController
         }
+        startFragmentId = when (sharedPreferences.getString(defaultTabKey, defaultTabValue)) {
+            defaultTabValues[0] -> R.id.navigation_home
+            defaultTabValues[1] -> R.id.navigation_android_studio
+            defaultTabValues[2] -> R.id.navigation_about
+            else -> R.id.navigation_home
+        }
+        navController.graph.setStartDestination(startFragmentId)
+        navController.navigate(startFragmentId)
         binding.navView.setupWithNavController(navController)
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -77,11 +89,11 @@ class MainActivity : AppCompatActivity() {
         val currentTimestamp = System.currentTimeMillis()
         val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         if (currentTimestamp - lastUsedTimestamp > 3 * 24 * 60 * 60 * 1000) {
-            val channelId = "app_usage_channel"
-            val channel = NotificationChannel(channelId, "App Usage Notifications", NotificationManager.IMPORTANCE_HIGH)
-            notificationManager.createNotificationChannel(channel)
-            val builder = NotificationCompat.Builder(this, channelId)
-                .setSmallIcon(R.drawable.ic_notification)
+            val appUsageChannelId = "app_usage_channel"
+            val appUsageChannel = NotificationChannel(appUsageChannelId, getString(R.string.app_usage_notifications), NotificationManager.IMPORTANCE_HIGH)
+            notificationManager.createNotificationChannel(appUsageChannel)
+            val builder = NotificationCompat.Builder(this, appUsageChannelId)
+                .setSmallIcon(R.drawable.ic_notification_important)
                 .setContentTitle(getString(R.string.notification_last_time_used_title))
                 .setContentText(getString(R.string.summary_notification_last_time_used))
                 .setAutoCancel(true)
@@ -93,7 +105,7 @@ class MainActivity : AppCompatActivity() {
             if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
                 && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.FLEXIBLE)) {
                 val updateChannelId = "update_channel"
-                val updateChannel = NotificationChannel(updateChannelId, "Update Notifications", NotificationManager.IMPORTANCE_HIGH)
+                val updateChannel = NotificationChannel(updateChannelId, getString(R.string.update_notifications), NotificationManager.IMPORTANCE_HIGH)
                 notificationManager.createNotificationChannel(updateChannel)
                 val updateBuilder = NotificationCompat.Builder(this, updateChannelId)
                     .setSmallIcon(R.drawable.ic_notification_update)

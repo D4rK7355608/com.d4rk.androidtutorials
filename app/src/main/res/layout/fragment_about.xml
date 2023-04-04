@@ -179,7 +179,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="24dp"
-            android:src="@drawable/illustration_about"
+            android:src="@drawable/il_about"
             app:layout_constraintTop_toBottomOf="@id/animation_about"/>
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/text_view_made_in"

@@ -1,6 +1,9 @@
 <resources>
     <string name="key_theme" translatable="false">theme</string>
+    <string name="key_default_tab" translatable="false">default_tab</string>
     <string name="key_bottom_navigation_bar_labels" translatable="false">labels</string>
+    <string name="key_monospace_font" translatable="false">monospace_font</string>
+    <string name="key_notifications_settings" translatable="false">notifications_settings</string>
     <string name="key_firebase" translatable="false">firebase</string>
     <string name="key_more_apps" translatable="false">more_apps</string>
     <string name="key_share" translatable="false">share</string>
@@ -8,5 +11,6 @@
     <string name="key_device_info" translatable="false">device_info</string>
     <string name="key_open_source_licenses" translatable="false">open_source_licenses</string>
     <string name="default_value_bottom_navigation_bar_labels" translatable="false">labeled</string>
+    <string name="default_value_tab" translatable="false">home</string>
     <string name="default_value_theme" translatable="false">MODE_NIGHT_FOLLOW_SYSTEM</string>
 </resources>

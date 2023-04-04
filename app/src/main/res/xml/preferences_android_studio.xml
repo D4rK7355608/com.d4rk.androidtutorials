@@ -174,7 +174,7 @@
             <intent
                 android:action="android.intent.action.VIEW"
                 android:targetPackage="com.d4rk.androidtutorials"
-                android:targetClass="com.d4rk.androidtutorials.ui.android.webview.WebViewActivity"/>
+                android:targetClass="com.d4rk.androidtutorials.ui.android.webviews.WebViewActivity"/>
         </androidx.preference.Preference>
     </androidx.preference.PreferenceCategory>
     <androidx.preference.PreferenceCategory

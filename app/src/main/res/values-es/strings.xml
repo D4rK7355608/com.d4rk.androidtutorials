@@ -346,6 +346,13 @@
     <string name="api_level">Nivel de API:</string>
     <string name="features">Características</string>
     <string name="history">Historia</string>
+    <string name="code_font">Fuente de código</string>
+    <string name="default_tab">Pestaña predeterminada</string>
+    <string name="notifications">Notificaciones</string>
+    <string name="notification_settings">Configuración de notificaciones</string>
+    <string name="app_usage_notifications">Notificaciones de uso de aplicaciones</string>
+    <string name="update_notifications">Notificaciones de actualización</string>
+    <string name="summary_preference_settings_code_font">Use la fuente <i>Roboto Mono</i> en lugar de <i>Audiowide</i> para mostrar el código.</string>
     <string name="summary_preference_android_studio_history_of_android">Conozca la historia de Android, desde su lanzamiento beta en 2007 hasta convertirse en el sistema operativo móvil más popular del mundo. Descubra las características que hacen único a Android y los beneficios de usar Android Studio para desarrollar sus aplicaciones con Kotlin.</string>
     <string name="history_of_android">Historia de Android</string>
     <string name="android_history">Android es un sistema operativo móvil desarrollado por Google. Fue lanzado por primera vez como una versión beta el 5 de noviembre de 2007 y la primera versión comercial, Android 1.0, se lanzó el 23 de septiembre de 2008. Android está basado en una versión modificada del kernel de Linux y otro software de código abierto.\n\nAndroid Studio es el entorno de desarrollo integrado (IDE) oficial para el desarrollo de aplicaciones para Android. Fue anunciado por Google en su conferencia I/O el 15 de mayo de 2013 y se lanzó para uso público el 8 de diciembre de 2014. Android Studio está basado en IntelliJ IDEA, un popular IDE para Java.\n\nKotlin es un lenguaje de programación multiplataforma que puede ejecutarse en la Máquina Virtual Java (JVM), Android, navegador y plataformas nativas. Fue creado por JetBrains, una empresa de software con sede en Praga. Kotlin fue anunciado por primera vez en julio de 2011 y se lanzó como un proyecto open source en febrero de 2012.\n\nGoogle anunció su apoyo a Kotlin como lenguaje oficial para el desarrollo de aplicaciones para Android en su conferencia I/O el 17 de mayo del año 2017. Desde entonces, Kotlin se ha convertido en uno de los lenguajes más populares entre los desarrolladores para Android. Según datos proporcionados por Google a partir del mes octubre del año 2020 más del setenta por ciento (70%) entre las mil aplicaciones más populares que están disponibles en Google Play utilizan Kotlin.</string>

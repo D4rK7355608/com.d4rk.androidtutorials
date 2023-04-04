@@ -40,7 +40,7 @@
         <item name="background">@android:color/transparent</item>
     </style>
     <style name="actionOverflowMenuStyle" parent="@style/Widget.Material3.PopupMenu.Overflow">
-        <item name="android:popupBackground">@drawable/background_overflow</item>
+        <item name="android:popupBackground">@drawable/bg_overflow</item>
     </style>
     <style name="switchPreferenceCompatStyle" parent="@style/Preference.SwitchPreferenceCompat.Material">
         <item name="widgetLayout">@layout/preference_switch_widget_layout</item>

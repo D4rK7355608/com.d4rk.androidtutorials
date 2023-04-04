@@ -364,15 +364,21 @@
     <string name="android_features">Android is not only an operating system, but also a platform that offers a range of features and capabilities for users and developers. Some of the features of Android include:\n\n- Near Field Communication (NFC), which allows you to share data, make payments, and connect with other devices wirelessly.\n- Alternate keyboards, which let you customize your input method with different layouts, languages, and themes.\n- IR transmission, which enables you to use your phone as a remote control for TVs, air conditioners, and other appliances.\n- No-touch control, which lets you perform actions on your phone without touching the screen by using gestures or voice commands.\n- Automation, which allows you to set up routines and triggers for your phone to perform certain tasks automatically.\n- Wireless app downloads, which let you install apps from your computer or web browser without connecting your phone with a cable.\n- Storage and battery swap, which give you the option to expand your phone\'s memory or replace its battery easily.\n- Custom home screen, which lets you personalize your phone\'s appearance with widgets, wallpapers, icons, and launchers.\n\nAndroid Studio is the best tool for developing Android apps. It offers many features and benefits for developers such as:\n\n- Code editor with syntax highlighting, code completion, refactoring, debugging, testing, and linting tools.\n- Layout editor with drag-and-drop interface for designing user interfaces.\n- Emulator with fast boot and snapshot support for testing apps on different devices and configurations.\n- Firebase integration with services such as authentication, database, storage, analytics, crash reporting etc. \n- Gradle-based build system with dependency management,\ncustomization,\noptimization,\nsigning,\ndistribution options etc. \n\nWith Android Studio,\nyou can create amazing apps for Android devices using Kotlin,\na modern programming language that is concise,\nsafe,\nexpressive,\nand interoperable with Java.</string>
     <string name="features">Features</string>
     <string name="history">History</string>
+    <string name="code_font">Code font</string>
+    <string name="default_tab">Default tab</string>
+    <string name="notifications">Notifications</string>
+    <string name="notification_settings">Notification settings</string>
+    <string name="app_usage_notifications">App Usage Notifications</string>
+    <string name="update_notifications">Update Notifications</string>
+    <string name="summary_preference_settings_code_font">Use the <i>Roboto Mono</i> font instead of <i>Audiowide</i> for displaying code.</string>
     <string name="summary_preference_android_studio_history_of_android">Learn about the history of Android, from its beta release in 2007 to becoming the world\'s most popular mobile operating system. Discover the features that make Android unique and the benefits of using Android Studio to develop your apps with Kotlin.</string>
     <string name="changelog_title" translatable="false">Changelog - Version %1s</string>
     <string name="changes" translatable="false">\n
-        • Added Android &amp; Android Studio history.\n\n
-        • Added functionality to \"Music\" chip.\n\n
-        • Added app updater dialog and ability to update in background.\n\n
-        • Added comments to the Kotlin code samples for better understanding.\n\n
-        • Fixed all crash reports from Google Play Console and Google Firebase.\n\n
-        • Made various improvements to languages and fixed some typos.\n\n
+        • Added a new setting to let user choose the home page.\n\n
+        • Added a new setting to switch the code font from Audiowide to Roboto Monospace.\n\n
+        • Added a new setting for notifications.\n\n
+        • Added a scroll view to the "More apps" dialog for easier navigation.\n\n
+        • Enhanced project structure for better readability and maintainability.\n\n
         • Made various under-the-hood improvements for a better overall app experience.
     </string>
 </resources>

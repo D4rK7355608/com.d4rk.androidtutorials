@@ -13,6 +13,14 @@
             app:title="@string/theme"
             app:useSimpleSummaryProvider="true"/>
         <androidx.preference.ListPreference
+            android:defaultValue="@string/default_value_tab"
+            android:entries="@array/preference_default_tab_entries"
+            android:entryValues="@array/preference_default_tab_values"
+            android:icon="@drawable/ic_home"
+            app:key="@string/key_default_tab"
+            app:title="@string/default_tab"
+            app:useSimpleSummaryProvider="true"/>
+        <androidx.preference.ListPreference
             app:defaultValue="@string/default_value_bottom_navigation_bar_labels"
             app:entries="@array/preference_bottom_navigation_bar_labels_entries"
             app:entryValues="@array/preference_bottom_navigation_bar_labels_values"
@@ -20,14 +28,28 @@
             app:key="@string/key_bottom_navigation_bar_labels"
             app:title="@string/bottom_navigation_bar_labels"
             app:useSimpleSummaryProvider="true"/>
+        <androidx.preference.SwitchPreferenceCompat
+            app:title="@string/code_font"
+            app:key="@string/key_monospace_font"
+            app:defaultValue="false"
+            app:summary="@string/summary_preference_settings_code_font"
+            app:icon="@drawable/ic_font_download"/>
         <androidx.preference.Preference
             app:title="@string/language"
             app:summary="@string/summary_preference_settings_language"
             app:icon="@drawable/ic_language">
             <intent
                 android:targetPackage="com.d4rk.androidtutorials"
-                android:targetClass="com.d4rk.androidtutorials.ui.language.LanguageActivity"/>
+                android:targetClass="com.d4rk.androidtutorials.ui.settings.language.LanguageActivity"/>
         </androidx.preference.Preference>
+    </androidx.preference.PreferenceCategory>
+    <androidx.preference.PreferenceCategory
+        app:title="@string/notifications"
+        app:icon="@drawable/ic_notifications_tinted">
+        <androidx.preference.Preference
+            app:key="@string/key_notifications_settings"
+            app:icon="@drawable/ic_edit_notifications"
+            app:title="@string/notification_settings"/>
     </androidx.preference.PreferenceCategory>
     <androidx.preference.PreferenceCategory
         app:title="@string/advanced"
@@ -90,7 +112,7 @@
             app:title="@string/permissions">
             <intent
                 android:targetPackage="com.d4rk.androidtutorials"
-                android:targetClass="com.d4rk.androidtutorials.ui.permissions.PermissionsActivity"/>
+                android:targetClass="com.d4rk.androidtutorials.ui.settings.permissions.PermissionsActivity"/>
         </androidx.preference.Preference>
         <androidx.preference.Preference
             app:key="open_source_licenses"
@@ -101,7 +123,7 @@
             app:title="@string/faq">
             <intent
                 android:targetPackage="com.d4rk.androidtutorials"
-                android:targetClass="com.d4rk.androidtutorials.ui.faq.FaqActivity"/>
+                android:targetClass="com.d4rk.androidtutorials.ui.settings.faq.FaqActivity"/>
         </androidx.preference.Preference>
         <androidx.preference.Preference
             app:icon="@drawable/ic_license"
@@ -120,7 +142,7 @@
             app:title="@string/feedback">
             <intent
                 android:targetPackage="com.d4rk.androidtutorials"
-                android:targetClass="com.d4rk.androidtutorials.ui.feedback.FeedbackActivity"/>
+                android:targetClass="com.d4rk.androidtutorials.ui.settings.feedback.FeedbackActivity"/>
         </androidx.preference.Preference>
         <androidx.preference.Preference
             app:key="@string/key_share"

@@ -21,4 +21,14 @@
         <item>selected</item>
         <item>unlabeled</item>
     </string-array>
+    <string-array name="preference_default_tab_entries">
+        <item>@string/home</item>
+        <item>@string/android_studio</item>
+        <item>@string/about</item>
+    </string-array>
+    <string-array name="preference_default_tab_values">
+        <item>home</item>
+        <item>android_studio</item>
+        <item>about</item>
+    </string-array>
 </resources>

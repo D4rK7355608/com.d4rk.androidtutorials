@@ -1,5 +1,5 @@
 @file:Suppress("DEPRECATION")
-package com.d4rk.androidtutorials.ui.android.webview
+package com.d4rk.androidtutorials.ui.android.webviews
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -7,8 +7,8 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.d4rk.androidtutorials.R
-import com.d4rk.androidtutorials.ui.android.webview.tabs.WebViewTabCodeFragment
-import com.d4rk.androidtutorials.ui.android.webview.tabs.WebViewTabLayoutFragment
+import com.d4rk.androidtutorials.ui.android.webviews.tabs.WebViewTabCodeFragment
+import com.d4rk.androidtutorials.ui.android.webviews.tabs.WebViewTabLayoutFragment
 import com.google.android.material.tabs.TabLayout
 class WebViewCodeActivity: AppCompatActivity() {
     private lateinit var viewPager: ViewPager

@@ -24,7 +24,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="128dp"
                     android:layout_margin="24dp"
-                    android:src="@drawable/ic_feedback_card"
+                    android:src="@drawable/il_feedback_card"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintBottom_toTopOf="@id/button_rate_now"

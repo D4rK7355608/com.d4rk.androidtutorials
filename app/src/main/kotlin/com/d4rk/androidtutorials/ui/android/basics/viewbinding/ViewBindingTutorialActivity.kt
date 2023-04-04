@@ -1,8 +1,11 @@
 package com.d4rk.androidtutorials.ui.android.basics.viewbinding
 import android.content.Intent
+import android.graphics.Typeface
 import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.res.ResourcesCompat
+import androidx.preference.PreferenceManager
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.databinding.ActivityViewBindingTutorialBinding
 import com.google.android.gms.ads.AdRequest
@@ -34,6 +37,17 @@ class ViewBindingTutorialActivity : AppCompatActivity() {
             it.bufferedReader().use { reader ->
                 reader.readText()
             }
+        }
+    }
+    override fun onResume() {
+        super.onResume()
+        val preference = PreferenceManager.getDefaultSharedPreferences(this)
+        val preferenceFont = preference.getBoolean(getString(R.string.key_monospace_font), false)
+        if (preferenceFont) {
+            val monospaceFont: Typeface? = ResourcesCompat.getFont(this, R.font.font_roboto_mono)
+            binding.bindingText.typeface = monospaceFont
+            binding.bindingActivitiesText.typeface = monospaceFont
+            binding.bindingFragmentsText.typeface = monospaceFont
         }
     }
 }

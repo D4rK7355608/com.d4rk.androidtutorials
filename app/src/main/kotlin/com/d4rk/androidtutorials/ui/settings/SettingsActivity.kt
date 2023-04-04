@@ -13,6 +13,7 @@ import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.PreferenceManager
 import com.d4rk.androidtutorials.BuildConfig
 import com.d4rk.androidtutorials.R
+import android.provider.Settings
 import com.d4rk.androidtutorials.databinding.ActivitySettingsBinding
 import com.d4rk.androidtutorials.ui.dialogs.RequireRestartDialog
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
@@ -46,6 +47,12 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
             setPreferencesFromResource(R.xml.preferences_settings, rootKey)
             val labelVisibilityMode = findPreference<ListPreference>(getString(R.string.key_bottom_navigation_bar_labels))
             labelVisibilityMode?.setOnPreferenceChangeListener { _, _ ->
+                val restartDialog = RequireRestartDialog()
+                restartDialog.show(childFragmentManager, RequireRestartDialog::class.java.name)
+                true
+            }
+            val defaultTab = findPreference<ListPreference>(getString(R.string.key_default_tab))
+            defaultTab?.setOnPreferenceChangeListener {_, _ ->
                 val restartDialog = RequireRestartDialog()
                 restartDialog.show(childFragmentManager, RequireRestartDialog::class.java.name)
                 true
@@ -97,6 +104,13 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
             val ossPreference = findPreference<Preference>(getString(R.string.key_open_source_licenses))
             ossPreference?.setOnPreferenceClickListener {
                 startActivity(Intent(activity, OssLicensesMenuActivity::class.java))
+                true
+            }
+            val notificationsSettings = findPreference<Preference>(getString(R.string.key_notifications_settings))
+            notificationsSettings?.setOnPreferenceClickListener {
+                val intent = Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS)
+                intent.putExtra(Settings.EXTRA_APP_PACKAGE, context?.packageName)
+                startActivity(intent)
                 true
             }
             val deviceInfoPreference = findPreference<Preference>(getString(R.string.key_device_info))

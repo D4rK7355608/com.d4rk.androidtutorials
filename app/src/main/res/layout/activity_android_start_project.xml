@@ -41,7 +41,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="fitXY"
-                android:src="@drawable/step1"/>
+                android:src="@drawable/im_step1"/>
         </com.google.android.material.card.MaterialCardView>
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/text_view_second_step"
@@ -76,7 +76,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="fitXY"
-                android:src="@drawable/step2"/>
+                android:src="@drawable/im_step2"/>
         </com.google.android.material.card.MaterialCardView>
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/text_view_third_step"
@@ -112,7 +112,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="fitXY"
-                android:src="@drawable/step3"/>
+                android:src="@drawable/im_step3"/>
         </com.google.android.material.card.MaterialCardView>
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/lottie_animation"

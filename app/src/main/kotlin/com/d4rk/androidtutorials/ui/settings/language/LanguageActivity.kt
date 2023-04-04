@@ -1,4 +1,4 @@
-package com.d4rk.androidtutorials.ui.language
+package com.d4rk.androidtutorials.ui.settings.language
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.LocaleManager

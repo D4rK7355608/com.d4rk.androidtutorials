@@ -46,10 +46,10 @@
             android:name=".ui.startup.StartupActivity"
             android:theme="@style/AppTheme"/>
         <activity
-            android:name=".ui.language.LanguageActivity"
+            android:name=".ui.settings.language.LanguageActivity"
             android:exported="false"
             android:label="@string/language"
-            android:parentActivityName=".ui.language.LanguageActivity"/>
+            android:parentActivityName=".ui.settings.language.LanguageActivity"/>
         <activity
             android:name=".ui.android.buttons.toggle.ToggleCodeActivity"
             android:exported="false"
@@ -126,15 +126,15 @@
             android:label="@string/timepicker"
             android:parentActivityName=".ui.android.clocks.timepicker.TimePickerActivity"/>
         <activity
-            android:name=".ui.android.webview.WebViewActivity"
+            android:name=".ui.android.webviews.WebViewActivity"
             android:exported="false"
             android:label="@string/webview"
-            android:parentActivityName=".ui.android.webview.WebViewActivity"/>
+            android:parentActivityName=".ui.android.webviews.WebViewActivity"/>
         <activity
-            android:name=".ui.android.webview.WebViewCodeActivity"
+            android:name=".ui.android.webviews.WebViewCodeActivity"
             android:exported="false"
             android:label="@string/webview"
-            android:parentActivityName=".ui.android.webview.WebViewCodeActivity"/>
+            android:parentActivityName=".ui.android.webviews.WebViewCodeActivity"/>
         <activity
             android:name=".ui.android.textboxes.passwordbox.PasswordBoxActivity"
             android:exported="false"
@@ -178,10 +178,10 @@
             android:label="@string/alert_dialog"
             android:parentActivityName=".ui.android.alerts.alertdialog.AlertDialogCodeActivity"/>
         <activity
-            android:name=".ui.permissions.PermissionsActivity"
+            android:name=".ui.settings.permissions.PermissionsActivity"
             android:exported="false"
             android:label="@string/permissions"
-            android:parentActivityName=".ui.permissions.PermissionsActivity"/>
+            android:parentActivityName=".ui.settings.permissions.PermissionsActivity"/>
         <activity
             android:name=".ui.android.basics.shortcuts.ShortcutsActivity"
             android:exported="false"
@@ -223,10 +223,10 @@
             android:label="@string/version_control"
             android:parentActivityName=".ui.android.basics.shortcuts.tabs.VersionControlShortcutsActivity"/>
         <activity
-            android:name=".ui.feedback.FeedbackActivity"
+            android:name=".ui.settings.feedback.FeedbackActivity"
             android:label="@string/feedback"
             android:exported="true"
-            android:parentActivityName=".ui.feedback.FeedbackActivity"/>
+            android:parentActivityName=".ui.settings.feedback.FeedbackActivity"/>
         <activity
             android:name=".ui.android.buttons.buttons.ButtonsCodeActivity"
             android:exported="false"
@@ -242,10 +242,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.faq.FaqActivity"
+            android:name=".ui.settings.faq.FaqActivity"
             android:exported="false"
             android:label="@string/faq"
-            android:parentActivityName=".ui.faq.FaqActivity"/>
+            android:parentActivityName=".ui.settings.faq.FaqActivity"/>
         <activity
             android:name=".ui.android.buttons.toggle.ToggleActivity"
             android:label="@string/toggle"

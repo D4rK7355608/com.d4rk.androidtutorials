@@ -346,6 +346,13 @@
     <string name="api_level">APIレベル:</string>
     <string name="features">機能</string>
     <string name="history">履歴</string>
+    <string name="code_font">コードフォント</string>
+    <string name="default_tab">デフォルトタブ</string>
+    <string name="notifications">通知</string>
+    <string name="notification_settings">通知設定</string>
+    <string name="app_usage_notifications">アプリ使用通知</string>
+    <string name="update_notifications">更新通知</string>
+    <string name="summary_preference_settings_code_font"><i>Audiowide</i> の代わりに <i>Roboto Mono</i> フォントを使用してコードを表示します。</string>
     <string name="summary_preference_android_studio_history_of_android">Androidの歴史について学びましょう。2007年のベータリリースから、世界で最も人気のあるモバイルオペレーティングシステムになるまで。Androidをユニークにする機能や、Kotlinでアプリを開発するためのAndroid Studioの利点を発見してください。</string>
     <string name="history_of_android">Androidの歴史</string>
     <string name="android_history" tools:ignore="StringFormatCount">Androidは、Googleによって開発されたモバイルオペレーティングシステムです。2007年11月5日に初めてベータ版がリリースされ、最初の商用版であるAndroid 1.0は2008年9月23日にリリースされました。Androidは、Linuxカーネルとその他のオープンソースソフトウェアの修正版に基づいています。\n\nAndroid Studioは、Androidアプリ開発用の公式統合開発環境（IDE）です。2013年5月15日にGoogle I/OカンファレンスでGoogleによって発表され、2014年12月8日に一般公開されました。Android Studioは、人気のあるJava IDEであるIntelliJ IDEAをベースとしています。\n\nKotlinは、Java仮想マシン（JVM）、Android、ブラウザーおよびネイティブプラットフォームで実行可能なクロスプラットフォームプログラミング言語です。プラハを拠点とするソフトウェア会社JetBrainsが作成しました。Kotlinは2011年7月に初めて発表され、2012年2月にオープンソースプロジェクトとしてリリースされました。\n\nGoogleは2017年5月17日のI/OカンファレンスでKotlinをAndroidアプリ開発の公式言語としてサポートすることを発表しました。それ以来、KotlinはAndroidデベロッパー向けの最も人気のある言語の1つとなりました。2020年10月時点でGoogleから提供されたデータによると、Google Playで利用可能な最も人気のある1000個のアプリのうち70％以上がKotlinを使用しています。</string>
