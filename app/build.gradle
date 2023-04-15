@@ -12,8 +12,8 @@ android {
         applicationId 'com.d4rk.androidtutorials'
         minSdkVersion 26
         targetSdkVersion 33
-        versionCode 43
-        versionName '4.1_r1'
+        versionCode 44
+        versionName '4.2_r1'
         archivesBaseName = "${applicationId}-v${versionName}"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         resConfigs 'en', 'de', 'es', 'fr', 'hi', 'in', 'it', 'ja', 'ro', 'ru', 'tr', 'sv', 'bg', 'pl', 'uk'
@@ -43,6 +43,7 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
     bundle {
         storeArchive {
@@ -57,11 +58,11 @@ dependencies {
     implementation 'com.google.android.play:review-ktx:2.0.1'
     implementation 'com.google.android.play:app-update-ktx:2.0.1'
     implementation 'com.google.firebase:firebase-crashlytics-ktx:18.3.6'
-    implementation 'com.google.firebase:firebase-analytics-ktx:21.2.1'
+    implementation 'com.google.firebase:firebase-analytics-ktx:21.2.2'
     implementation 'com.google.firebase:firebase-perf:20.3.1'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.core:core-ktx:1.10.0'
     implementation 'androidx.core:core-splashscreen:1.0.0'
     implementation 'androidx.gridlayout:gridlayout:1.0.0'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'

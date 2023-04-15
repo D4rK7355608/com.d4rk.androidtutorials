@@ -374,11 +374,6 @@
     <string name="summary_preference_android_studio_history_of_android">Learn about the history of Android, from its beta release in 2007 to becoming the world\'s most popular mobile operating system. Discover the features that make Android unique and the benefits of using Android Studio to develop your apps with Kotlin.</string>
     <string name="changelog_title" translatable="false">Changelog - Version %1s</string>
     <string name="changes" translatable="false">\n
-        • Added a new setting to let user choose the home page.\n\n
-        • Added a new setting to switch the code font from Audiowide to Roboto Monospace.\n\n
-        • Added a new setting for notifications.\n\n
-        • Added a scroll view to the "More apps" dialog for easier navigation.\n\n
-        • Enhanced project structure for better readability and maintainability.\n\n
         • Made various under-the-hood improvements for a better overall app experience.
     </string>
 </resources>

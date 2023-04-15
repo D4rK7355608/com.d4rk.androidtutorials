@@ -1,3 +1,6 @@
+# Version 4.2_r1:
+- Made various under-the-hood improvements for a better overall app experience.
+
 # Version 4.1_r1:
 - Added a new setting to let user choose the home page.
 - Added a new setting to switch the code font from Audiowide to Roboto Monospace.
@@ -11,7 +14,6 @@
 - Added functionality to "Music" chip.
 - Added app updater dialog and ability to update in background.
 - Added comments to the Kotlin code samples for better understanding.
-- Fixed all crash reports from Google Play Console and Google Firebase.
 - Made various improvements to languages and fixed some typos.
 - Made various under-the-hood improvements for a better overall app experience.
 
