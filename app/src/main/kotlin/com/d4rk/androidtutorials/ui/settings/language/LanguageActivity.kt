@@ -1,6 +1,4 @@
 package com.d4rk.androidtutorials.ui.settings.language
-import android.annotation.SuppressLint
-import android.app.Activity
 import android.app.LocaleManager
 import android.content.Context
 import android.content.res.Configuration
@@ -27,14 +25,14 @@ class LanguageActivity : AppCompatActivity() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 localeManager?.applicationLocales = LocaleList.getEmptyLocaleList()
             } else {
-                setAppLocale(Locale.getDefault().language, this)
+                setAppLocale( this, Locale.getDefault().language)
             }
         }
         binding.buttonLanguageEn.setOnClickListener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 localeManager?.applicationLocales = LocaleList(Locale.forLanguageTag("en"))
             } else {
-                setAppLocale("en", this)
+                setAppLocale( this, "en")
             }
             recreate()
         }
@@ -42,7 +40,7 @@ class LanguageActivity : AppCompatActivity() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 localeManager?.applicationLocales = LocaleList(Locale.forLanguageTag("ro"))
             } else {
-                setAppLocale("ro", this)
+                setAppLocale( this, "ro")
             }
             recreate()
         }
@@ -50,7 +48,7 @@ class LanguageActivity : AppCompatActivity() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 localeManager?.applicationLocales = LocaleList(Locale.forLanguageTag("de"))
             } else {
-                setAppLocale("de", this)
+                setAppLocale( this, "de")
             }
             recreate()
         }
@@ -58,7 +56,7 @@ class LanguageActivity : AppCompatActivity() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 localeManager?.applicationLocales = LocaleList(Locale.forLanguageTag("es"))
             } else {
-                setAppLocale("es", this)
+                setAppLocale( this, "es")
             }
             recreate()
         }
@@ -66,7 +64,7 @@ class LanguageActivity : AppCompatActivity() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 localeManager?.applicationLocales = LocaleList(Locale.forLanguageTag("fr"))
             } else {
-                setAppLocale("fr", this)
+                setAppLocale( this, "fr")
             }
             recreate()
         }
@@ -74,7 +72,7 @@ class LanguageActivity : AppCompatActivity() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 localeManager?.applicationLocales = LocaleList(Locale.forLanguageTag("hi"))
             } else {
-                setAppLocale("hi", this)
+                setAppLocale( this, "hi")
             }
             recreate()
         }
@@ -82,7 +80,7 @@ class LanguageActivity : AppCompatActivity() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 localeManager?.applicationLocales = LocaleList(Locale.forLanguageTag("in"))
             } else {
-                setAppLocale("in", this)
+                setAppLocale( this, "in")
             }
             recreate()
         }
@@ -90,7 +88,7 @@ class LanguageActivity : AppCompatActivity() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 localeManager?.applicationLocales = LocaleList(Locale.forLanguageTag("it"))
             } else {
-                setAppLocale("it", this)
+                setAppLocale( this, "it")
             }
             recreate()
         }
@@ -98,7 +96,7 @@ class LanguageActivity : AppCompatActivity() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 localeManager?.applicationLocales = LocaleList(Locale.forLanguageTag("ja"))
             } else {
-                setAppLocale("ja", this)
+                setAppLocale( this, "ja")
             }
             recreate()
         }
@@ -106,7 +104,7 @@ class LanguageActivity : AppCompatActivity() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 localeManager?.applicationLocales = LocaleList(Locale.forLanguageTag("ru"))
             } else {
-                setAppLocale("ru", this)
+                setAppLocale( this, "ru")
             }
             recreate()
         }
@@ -114,7 +112,7 @@ class LanguageActivity : AppCompatActivity() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 localeManager?.applicationLocales = LocaleList(Locale.forLanguageTag("tr"))
             } else {
-                setAppLocale("tr", this)
+                setAppLocale( this, "tr")
             }
             recreate()
         }
@@ -122,7 +120,7 @@ class LanguageActivity : AppCompatActivity() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 localeManager?.applicationLocales = LocaleList(Locale.forLanguageTag("bg"))
             } else {
-                setAppLocale("bg", this)
+                setAppLocale( this, "bg")
             }
             recreate()
         }
@@ -130,7 +128,7 @@ class LanguageActivity : AppCompatActivity() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 localeManager?.applicationLocales = LocaleList(Locale.forLanguageTag("pl"))
             } else {
-                setAppLocale("pl", this)
+                setAppLocale( this, "pl")
             }
             recreate()
         }
@@ -138,19 +136,20 @@ class LanguageActivity : AppCompatActivity() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 localeManager?.applicationLocales = LocaleList(Locale.forLanguageTag("uk"))
             } else {
-                setAppLocale("uk", this)
+                setAppLocale( this, "uk")
             }
             recreate()
         }
     }
-    @SuppressLint("AppBundleLocaleChanges")
-    private fun setAppLocale(language: String, activity: Activity) {
-        val locale = Locale(language)
-        Locale.setDefault(locale)
+    @Suppress("DEPRECATION")
+    private fun setAppLocale(context: Context, language: String) {
         val config = Configuration()
-        config.setLocale(locale)
-        @Suppress("DEPRECATION")
-        activity.baseContext.resources.updateConfiguration(config, activity.baseContext.resources.displayMetrics)
+        config.setLocale(Locale.Builder().setLanguageTag(language).build())
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            val localeManager = context.getSystemService(Context.LOCALE_SERVICE) as LocaleManager
+            localeManager.applicationLocales = LocaleList(Locale.forLanguageTag(language))
+        }
+        context.resources.updateConfiguration(config, context.resources.displayMetrics)
     }
     override fun onResume() {
         super.onResume()

@@ -374,6 +374,6 @@
     <string name="summary_preference_android_studio_history_of_android">Learn about the history of Android, from its beta release in 2007 to becoming the world\'s most popular mobile operating system. Discover the features that make Android unique and the benefits of using Android Studio to develop your apps with Kotlin.</string>
     <string name="changelog_title" translatable="false">Changelog - Version %1s</string>
     <string name="changes" translatable="false">\n
-        • Made various under-the-hood improvements for a better overall app experience.
+        • Made minor under-the-hood improvements for a better overall app experience.
     </string>
 </resources>

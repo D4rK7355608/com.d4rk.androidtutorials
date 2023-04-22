@@ -1,3 +1,6 @@
+# Version 4.2_r2:
+- Made minor under-the-hood improvements for a better overall app experience.
+
 # Version 4.2_r1:
 - Made various under-the-hood improvements for a better overall app experience.
 
