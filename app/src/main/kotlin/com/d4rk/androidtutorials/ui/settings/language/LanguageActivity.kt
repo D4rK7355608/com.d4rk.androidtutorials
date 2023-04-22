@@ -1,181 +1,70 @@
 package com.d4rk.androidtutorials.ui.settings.language
-import android.app.LocaleManager
-import android.content.Context
-import android.content.res.Configuration
-import android.os.Build
 import android.os.Bundle
-import android.os.LocaleList
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.os.LocaleListCompat
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.databinding.ActivityLanguageBinding
 import me.zhanghai.android.fastscroll.FastScrollerBuilder
 import java.util.Locale
 class LanguageActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLanguageBinding
-    private var localeManager: LocaleManager? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLanguageBinding.inflate(layoutInflater)
         setContentView(binding.root)
         FastScrollerBuilder(binding.scrollView).useMd2Style().build()
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            localeManager = getSystemService(Context.LOCALE_SERVICE) as LocaleManager
+        val currentLocaleName = if (!AppCompatDelegate.getApplicationLocales().isEmpty) {
+            AppCompatDelegate.getApplicationLocales()[0]?.displayName
+        } else {
+            Locale.getDefault().displayName
         }
+        val currentLanguage = resources.getString(R.string.current_language, currentLocaleName )
+        binding.textViewCurrentLanguage.text = currentLanguage
         binding.buttonDefault.setOnClickListener {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                localeManager?.applicationLocales = LocaleList.getEmptyLocaleList()
-            } else {
-                setAppLocale( this, Locale.getDefault().language)
-            }
+            AppCompatDelegate.setApplicationLocales(LocaleListCompat.getEmptyLocaleList())
         }
         binding.buttonLanguageEn.setOnClickListener {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                localeManager?.applicationLocales = LocaleList(Locale.forLanguageTag("en"))
-            } else {
-                setAppLocale( this, "en")
-            }
-            recreate()
+            AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags("en"))
         }
         binding.buttonLanguageRo.setOnClickListener {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                localeManager?.applicationLocales = LocaleList(Locale.forLanguageTag("ro"))
-            } else {
-                setAppLocale( this, "ro")
-            }
-            recreate()
+            AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags("ro"))
         }
         binding.buttonLanguageDe.setOnClickListener {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                localeManager?.applicationLocales = LocaleList(Locale.forLanguageTag("de"))
-            } else {
-                setAppLocale( this, "de")
-            }
-            recreate()
+            AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags("de"))
         }
         binding.buttonLanguageEs.setOnClickListener {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                localeManager?.applicationLocales = LocaleList(Locale.forLanguageTag("es"))
-            } else {
-                setAppLocale( this, "es")
-            }
-            recreate()
+            AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags("es"))
         }
         binding.buttonLanguageFr.setOnClickListener {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                localeManager?.applicationLocales = LocaleList(Locale.forLanguageTag("fr"))
-            } else {
-                setAppLocale( this, "fr")
-            }
-            recreate()
+            AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags("fr"))
         }
         binding.buttonLanguageHi.setOnClickListener {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                localeManager?.applicationLocales = LocaleList(Locale.forLanguageTag("hi"))
-            } else {
-                setAppLocale( this, "hi")
-            }
-            recreate()
+            AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags("hi"))
         }
         binding.buttonLanguageIn.setOnClickListener {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                localeManager?.applicationLocales = LocaleList(Locale.forLanguageTag("in"))
-            } else {
-                setAppLocale( this, "in")
-            }
-            recreate()
+            AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags("in"))
         }
         binding.buttonLanguageIt.setOnClickListener {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                localeManager?.applicationLocales = LocaleList(Locale.forLanguageTag("it"))
-            } else {
-                setAppLocale( this, "it")
-            }
-            recreate()
+            AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags("it"))
         }
         binding.buttonLanguageJa.setOnClickListener {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                localeManager?.applicationLocales = LocaleList(Locale.forLanguageTag("ja"))
-            } else {
-                setAppLocale( this, "ja")
-            }
-            recreate()
+            AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags("ja"))
         }
         binding.buttonLanguageRu.setOnClickListener {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                localeManager?.applicationLocales = LocaleList(Locale.forLanguageTag("ru"))
-            } else {
-                setAppLocale( this, "ru")
-            }
-            recreate()
+            AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags("ru"))
         }
         binding.buttonLanguageTr.setOnClickListener {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                localeManager?.applicationLocales = LocaleList(Locale.forLanguageTag("tr"))
-            } else {
-                setAppLocale( this, "tr")
-            }
-            recreate()
+            AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags("tr"))
         }
         binding.buttonLanguageBg.setOnClickListener {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                localeManager?.applicationLocales = LocaleList(Locale.forLanguageTag("bg"))
-            } else {
-                setAppLocale( this, "bg")
-            }
-            recreate()
+            AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags("bg"))
         }
         binding.buttonLanguagePl.setOnClickListener {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                localeManager?.applicationLocales = LocaleList(Locale.forLanguageTag("pl"))
-            } else {
-                setAppLocale( this, "pl")
-            }
-            recreate()
+            AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags("pl"))
         }
         binding.buttonLanguageUk.setOnClickListener {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                localeManager?.applicationLocales = LocaleList(Locale.forLanguageTag("uk"))
-            } else {
-                setAppLocale( this, "uk")
-            }
-            recreate()
+            AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags("uk"))
         }
-    }
-    @Suppress("DEPRECATION")
-    private fun setAppLocale(context: Context, language: String) {
-        val config = Configuration()
-        config.setLocale(Locale.Builder().setLanguageTag(language).build())
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            val localeManager = context.getSystemService(Context.LOCALE_SERVICE) as LocaleManager
-            localeManager.applicationLocales = LocaleList(Locale.forLanguageTag(language))
-        }
-        context.resources.updateConfiguration(config, context.resources.displayMetrics)
-    }
-    override fun onResume() {
-        super.onResume()
-        val language = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            when (localeManager?.applicationLocales?.toLanguageTags()) {
-                "en" -> "English"
-                "ro" -> "Română"
-                "de" -> "Deutsch"
-                "es" -> "Español"
-                "fr" -> "Français"
-                "hi" -> "हिन्दी"
-                "in" -> "Indonesia"
-                "it" -> "Italiano"
-                "ja" -> "日本語"
-                "ru" -> "Русский"
-                "tr" -> "Türkçe"
-                "sv" -> "Svenska"
-                "bg" -> "български"
-                "pl" -> "Polski"
-                "uk" -> "Ukrainian"
-                else -> resources.getString(R.string.system_default)
-            }
-        } else {
-            Locale.getDefault().displayLanguage
-        }
-        val currentLanguage = resources.getString(R.string.current_language, language)
-        binding.textViewCurrentLanguage.text = currentLanguage
     }
 }

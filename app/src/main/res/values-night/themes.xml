@@ -7,7 +7,6 @@
         <item name="android:colorBackground">?attr/colorSurface</item>
         <item name="actionBarStyle">@style/actionBarStyle</item>
         <item name="dialogCornerRadius">24dp</item>
-        <item name="actionOverflowMenuStyle">@style/actionOverflowMenuStyle</item>
         <item name="switchPreferenceCompatStyle">@style/switchPreferenceCompatStyle</item>
         <item name="android:alertDialogTheme">@style/ThemeOverlay.Material3.MaterialAlertDialog.Centered</item>
         <item name="materialAlertDialogTheme">@style/ThemeOverlay.Material3.MaterialAlertDialog.Centered</item>

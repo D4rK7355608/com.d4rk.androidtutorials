@@ -18,7 +18,6 @@
         <item name="actionBarStyle">@style/actionBarStyle</item>
         <item name="switchPreferenceCompatStyle">@style/switchPreferenceCompatStyle</item>
         <item name="dialogCornerRadius">24dp</item>
-        <item name="actionOverflowMenuStyle">@style/actionOverflowMenuStyle</item>
         <item name="android:alertDialogTheme">@style/ThemeOverlay.Material3.MaterialAlertDialog.Centered</item>
         <item name="materialAlertDialogTheme">@style/ThemeOverlay.Material3.MaterialAlertDialog.Centered</item>
         <item name="alertDialogTheme">@style/ThemeOverlay.Material3.MaterialAlertDialog.Centered</item>
@@ -38,9 +37,6 @@
     </style>
     <style name="actionBarStyle" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
         <item name="background">@android:color/transparent</item>
-    </style>
-    <style name="actionOverflowMenuStyle" parent="@style/Widget.Material3.PopupMenu.Overflow">
-        <item name="android:popupBackground">@drawable/bg_overflow</item>
     </style>
     <style name="switchPreferenceCompatStyle" parent="@style/Preference.SwitchPreferenceCompat.Material">
         <item name="widgetLayout">@layout/preference_switch_widget_layout</item>
