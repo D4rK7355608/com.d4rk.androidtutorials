@@ -72,6 +72,46 @@
         </androidx.preference.Preference>
     </androidx.preference.PreferenceCategory>
     <androidx.preference.PreferenceCategory
+        app:title="@string/layouts"
+        app:icon="@drawable/ic_category_layout_tinted">
+        <androidx.preference.Preference
+            app:title="@string/linear_layout"
+            app:summary="@string/summary_preference_android_studio_linear_layout"
+            app:icon="@drawable/ic_linear_scale">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="com.d4rk.androidtutorials"
+                android:targetClass="com.d4rk.androidtutorials.ui.android.layouts.linear.LinearLayoutActivity"/>
+        </androidx.preference.Preference>
+        <androidx.preference.Preference
+            app:title="@string/relative_layout"
+            app:summary="@string/summary_preference_android_studio_relative_layout"
+            app:icon="@drawable/ic_view_quilt">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="com.d4rk.androidtutorials"
+                android:targetClass="com.d4rk.androidtutorials.ui.android.layouts.relative.RelativeLayoutActivity"/>
+        </androidx.preference.Preference>
+        <androidx.preference.Preference
+            app:title="@string/table_layout"
+            app:summary="@string/summary_preference_android_studio_table_layout"
+            app:icon="@drawable/ic_table_view">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="com.d4rk.androidtutorials"
+                android:targetClass="com.d4rk.androidtutorials.ui.android.layouts.table.TableLayoutActivity"/>
+        </androidx.preference.Preference>
+        <androidx.preference.Preference
+            app:title="@string/grid_view"
+            app:summary="@string/summary_preference_android_studio_gird_view"
+            app:icon="@drawable/ic_grid_view">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="com.d4rk.androidtutorials"
+                android:targetClass="com.d4rk.androidtutorials.ui.android.views.grid.GirdViewActivity"/>
+        </androidx.preference.Preference>
+    </androidx.preference.PreferenceCategory>
+    <androidx.preference.PreferenceCategory
         app:title="@string/buttons_and_switches"
         app:icon="@drawable/ic_category_button_tinted">
         <androidx.preference.Preference

@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="app_version">Version %1$s (%2$d)</string>
     <string name="app_description">Lär dig hur du skapar enkla appar i Android Studio. 📱</string>
     <string name="copyright">© Copyright %1s gjord av D4rK!</string>
@@ -82,11 +82,11 @@
     <string name="copied_to_clipboard">Kopierat till urklipp!</string>
     <string name="app_updates">Appuppdateringar</string>
     <string name="subscribe_to_beta">Prenumerera på betauppdateringar</string>
-    <string name="recommended">Rekommenderad</string>
+    <string name="table_layout">Tabellayout</string>
+    <string name="grid_view">Rutnätsvy</string>
+    <string name="summary_preference_android_studio_table_layout">Tabellayout är processen att ordna celler, rader och kolumner i en tabell på ett visuellt tilltalande och funktionellt sätt.</string>
+    <string name="summary_preference_android_studio_gird_view">En rutnätsvy är en vygrupp som visar objekt i ett tvådimensionellt rullande rutnät. Rutnätsvyer används ofta för att visa bilder, listor eller andra typer av data i ett rutnätsformat.</string>
     <string name="language">Språk</string>
-    <string name="system_default">Systemfel</string>
-    <string name="current_language">Det aktuella språket i appen är %1$s!</string>
-    <string name="all_languages">Alla språk</string>
     <string name="privacy_and_security">Sekretess och säkerhet</string>
     <string name="basics">Grunderna</string>
     <string name="web_views">Webbvyer</string>
@@ -352,9 +352,15 @@
     <string name="notification_settings">Aviseringsinställningar</string>
     <string name="app_usage_notifications">Appanvändningsaviseringar</string>
     <string name="update_notifications">Uppdateringsaviseringar</string>
-    <string name="summary_preference_settings_code_font">Använd typsnittet <i>Roboto Mono</i> istället för <i>Audiowide</i> för att visa kod.</string>
     <string name="summary_preference_android_studio_history_of_android">Lär dig om historien bakom Android, från dess beta-lansering 2007 till att bli världens mest populära mobila operativsystem. Upptäck funktionerna som gör Android unikt och fördelarna med att använda Android Studio för att utveckla dina appar med Kotlin.</string>
     <string name="history_of_android">Androids historia</string>
-    <string name="android_history" tools:ignore="StringFormatInvalid">Android är ett mobilt operativsystem utvecklat av Google. Det släpptes först som en betaversion den 5 november 2007 och den första kommersiella versionen, Android 1.0, lanserades den 23 september 2008. Android bygger på en modifierad version av Linux-kärnan och annan öppen källkod.\n\nAndroid Studio är den officiella integrerade utvecklingsmiljön (IDE) för Android-apputveckling. Det meddelades av Google på dess I/O-konferens den 15 maj 2013 och släpptes för allmän användning den 8 december 2014. Android Studio bygger på IntelliJ IDEA, en populär Java IDE.\n\nKotlin är ett plattformsoberoende programmeringsspråk som kan köras på Java Virtual Machine (JVM), Android, webbläsare och infödda plattformar. Det skapades av JetBrains, ett mjukvaruföretag baserat i Prag. Kotlin meddelades först i juli 2011 och släpptes som ett öppet källkodsprojekt i februari 2012.\n\nGoogle meddelade sitt stöd för Kotlin som ett officiellt språk för Android-apputveckling på sin I/O-konferens den 17 maj 2017. Sedan dess har Kotlin blivit ett av de mest populära språken för Android-utvecklare. Enligt Googles data från oktober 2020 använder mer än 70% av de topp-1000 apparna på Google Play Kotlin.</string>
+    <string name="vertical">Vertikal</string>
+    <string name="horizontal">Horisontell</string>
+    <string name="relative_layout">Relativ layout</string>
+    <string name="summary_preference_android_studio_relative_layout">Relativ layout är en layouthanterare i Android som placerar sina underordnade vyer relativt varandra eller till föräldralayouten. Detta gör det till en mycket mångsidig layouthanterare, eftersom den kan användas för att skapa en mängd olika layouter.</string>
+    <string name="linear_layout">Linjär layout</string>
+    <string name="layouts">Layouts</string>
+    <string name="summary_preference_android_studio_linear_layout">En linjär layout är en grupp vyer som ordnar sina underordnade vyer i ett enda linjärt läge, antingen horisontellt eller vertikalt. Layoutens orientering kan anges med android:orientation-attributet. En linjär layout kan användas för att skapa en mängd olika användargränssnitt, till exempel listor, knappar och textfält.</string>
+    <string name="android_history">Android är ett mobilt operativsystem utvecklat av Google. Det släpptes först som en betaversion den 5 november 2007 och den första kommersiella versionen, Android 1.0, lanserades den 23 september 2008. Android bygger på en modifierad version av Linux-kärnan och annan öppen källkod.\n\nAndroid Studio är den officiella integrerade utvecklingsmiljön (IDE) för Android-apputveckling. Det meddelades av Google på dess I/O-konferens den 15 maj 2013 och släpptes för allmän användning den 8 december 2014. Android Studio bygger på IntelliJ IDEA, en populär Java IDE.\n\nKotlin är ett plattformsoberoende programmeringsspråk som kan köras på Java Virtual Machine (JVM), Android, webbläsare och infödda plattformar. Det skapades av JetBrains, ett mjukvaruföretag baserat i Prag. Kotlin meddelades först i juli 2011 och släpptes som ett öppet källkodsprojekt i februari 2012.\n\nGoogle meddelade sitt stöd för Kotlin som ett officiellt språk för Android-apputveckling på sin I/O-konferens den 17 maj 2017. Sedan dess har Kotlin blivit ett av de mest populära språken för Android-utvecklare. Enligt Googles data från oktober 2020 använder mer än 70% av de topp-1000 apparna på Google Play Kotlin.</string>
     <string name="android_features">Android är inte bara ett operativsystem, utan också en plattform som erbjuder en rad funktioner och möjligheter för användare och utvecklare. Några av funktionerna i Android inkluderar:\n\n- Near Field Communication (NFC), som låter dig dela data, göra betalningar och ansluta till andra enheter trådlöst.\n- Alternativa tangentbord som låter dig anpassa din inmatningsmetod med olika layouter, språk och teman.\n- IR-överföring, som gör att du kan använda din telefon som fjärrkontroll för TV-apparater, luftkonditioneringsapparater och andra apparater.\n- No-touch-kontroll, som låter dig utföra åtgärder på din telefon utan att röra skärmen genom att använda gester eller röstkommandon.\n- Automatisering, som gör att du kan ställa in rutiner och triggers för att din telefon ska utföra vissa uppgifter automatiskt.\n- Trådlösa appnedladdningar, som låter dig installera appar från din telefon dator eller webbläsare utan att ansluta din telefon med en kabel.\n- Lagring och batteribyte, som ger dig möjlighet att utöka telefonens minne eller enkelt byta ut batteriet.\n- Anpassad startskärm, som låter dig anpassa din telefons utseende med widgets, bakgrundsbild ers, ikoner och startprogram.\n\nAndroid Studio är det bästa verktyget för att utveckla Android-appar. Den erbjuder många funktioner och fördelar för utvecklare som:\n\n- Kodredigerare med syntaxmarkering, kodkomplettering, refactoring, felsökning, testning och linting-verktyg.\n- Layoutredigerare med dra-och-släpp-gränssnitt för design av användare. gränssnitt.\n- Emulator med snabbstart och stöd för ögonblicksbilder för att testa appar på olika enheter och konfigurationer.\n- Firebase-integration med tjänster som autentisering, databas, lagring, analys, kraschrapportering etc. \n- Gradle-baserat byggsystem med beroendehantering,\nanpassning,\noptimering,\nsignering,\ndistributionsalternativ etc. \n\nMed Android Studio kan du skapa fantastiska appar för Android-enheter med Kotlin,\nmodernt programmeringsspråk som är kortfattat,\nsäkert,\nexpressive,\noch kompatibla med Java.</string>
 </resources>

@@ -42,12 +42,17 @@ class ViewBindingTutorialActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         val preference = PreferenceManager.getDefaultSharedPreferences(this)
-        val preferenceFont = preference.getBoolean(getString(R.string.key_monospace_font), false)
-        if (preferenceFont) {
-            val monospaceFont: Typeface? = ResourcesCompat.getFont(this, R.font.font_roboto_mono)
-            binding.bindingText.typeface = monospaceFont
-            binding.bindingActivitiesText.typeface = monospaceFont
-            binding.bindingFragmentsText.typeface = monospaceFont
+        val monospaceFont: Typeface? = when (preference.getString(getString(R.string.key_monospace_font), "0")) {
+            "0" -> ResourcesCompat.getFont(this, R.font.font_audiowide)
+            "1" -> ResourcesCompat.getFont(this, R.font.font_fira_code)
+            "2" -> ResourcesCompat.getFont(this, R.font.font_jetbrains_mono)
+            "3" -> ResourcesCompat.getFont(this, R.font.font_noto_sans_mono)
+            "4" -> ResourcesCompat.getFont(this, R.font.font_poppins)
+            "5" -> ResourcesCompat.getFont(this, R.font.font_roboto_mono)
+            else -> null
         }
+        binding.bindingText.typeface = monospaceFont
+        binding.bindingActivitiesText.typeface = monospaceFont
+        binding.bindingFragmentsText.typeface = monospaceFont
     }
 }

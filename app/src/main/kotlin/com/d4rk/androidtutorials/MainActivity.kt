@@ -12,6 +12,7 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.app.NotificationCompat
+import androidx.core.os.LocaleListCompat
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -60,6 +61,8 @@ class MainActivity : AppCompatActivity() {
             themeValues[3] -> AppCompatDelegate.MODE_NIGHT_AUTO_BATTERY
             else -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
         }
+        val languageCode = sharedPreferences?.getString(getString(R.string.key_language), getString(R.string.default_value_language))
+        AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags(languageCode))
         AppCompatDelegate.setDefaultNightMode(nightMode)
         binding.navView.labelVisibilityMode = when (sharedPreferences.getString(labelKey, labelDefaultValue)) {
             bottomNavigationBarLabelsValues[0] -> NavigationBarView.LABEL_VISIBILITY_LABELED

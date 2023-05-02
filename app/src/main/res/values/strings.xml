@@ -8,19 +8,33 @@
     <string name="home">Home</string>
     <string name="android_studio">Android Studio</string>
     <string name="about">About</string>
-    <string name="android_studio_tutorials_java" translatable="false">Android Studio Tutorials: Java Edition</string>
-    <string name="music_sleep_timer" translatable="false">Music Sleep Timer Plus</string>
-    <string name="english_with_lidia" translatable="false">English with Lidia Plus</string>
-    <string name="qr_code_scanner" translatable="false">QR &amp; Bar Code Scanner Plus</string>
-    <string name="low_brightness" translatable="false">Low Brightness</string>
-    <string name="cleaner_plus" translatable="false">Cleaner Plus</string>
-    <string name="cart_calculator" translatable="false">Cart Calculator</string>
     <string name="twitter" translatable="false">Twitter</string>
     <string name="youtube" translatable="false">YouTube</string>
     <string name="github" translatable="false">GitHub</string>
     <string name="xda" translatable="false">XDA</string>
     <string name="code_kotlin" translatable="false">Kotlin</string>
     <string name="layout_xml" translatable="false">XML</string>
+    <string name="bulgarian" translatable="false">Български</string>
+    <string name="english" translatable="false">English</string>
+    <string name="french" translatable="false">Français</string>
+    <string name="hungarian" translatable="false">Magyar</string>
+    <string name="german" translatable="false">Deutsch</string>
+    <string name="hindi" translatable="false">हिन्दी</string>
+    <string name="indonesian" translatable="false">Bahasa Indonesia</string>
+    <string name="italian" translatable="false">Italiano</string>
+    <string name="japanese" translatable="false">日本語</string>
+    <string name="polish" translatable="false">Polski</string>
+    <string name="romanian" translatable="false">Română</string>
+    <string name="russian" translatable="false">Русский</string>
+    <string name="spanish" translatable="false">Español</string>
+    <string name="turkish" translatable="false">Türkçe</string>
+    <string name="ukrainian" translatable="false">Українська</string>
+    <string name="audiowide" translatable="false">Audiowide</string>
+    <string name="fira_code" translatable="false">Fira Code</string>
+    <string name="jetbrains_mono" translatable="false">JetBrains Mono</string>
+    <string name="noto_sans_mono" translatable="false">Noto Sans Mono</string>
+    <string name="poppins" translatable="false">Poppins</string>
+    <string name="roboto_mono" translatable="false">Roboto Mono</string>
     <string name="google_dev">Google Dev</string>
     <string name="more">More</string>
     <string name="privacy_policy">Privacy policy</string>
@@ -96,11 +110,7 @@
     <string name="copied_to_clipboard">Copied to clipboard!</string>
     <string name="app_updates">App updates</string>
     <string name="subscribe_to_beta">Subscribe to beta updates</string>
-    <string name="recommended">Recommended</string>
     <string name="language">Language</string>
-    <string name="system_default">System default</string>
-    <string name="current_language">Current in-app language is %1$s!</string>
-    <string name="all_languages">All languages</string>
     <string name="privacy_and_security">Privacy and security</string>
     <string name="basics">Basics</string>
     <string name="web_views">Web views</string>
@@ -218,6 +228,17 @@
     <string name="snack_bar">Snack bar</string>
     <string name="show_snack_bar">Show snack bar</string>
     <string name="show_toast">Show toast</string>
+    <string name="vertical">Vertical</string>
+    <string name="horizontal">Horizontal</string>
+    <string name="linear_layout">Linear Layout</string>
+    <string name="layouts">Layouts and views</string>
+    <string name="table_layout">Table Layout</string>
+    <string name="grid_view">Grid View</string>
+    <string name="relative_layout">Relative Layout</string>
+    <string name="features">Features</string>
+    <string name="history">History</string>
+    <string name="code_font">Code font</string>
+    <string name="default_tab">Default tab</string>
     <string name="faq">FAQ</string>
     <string name="advanced">Advanced</string>
     <string name="runtime">Runtime</string>
@@ -299,6 +320,7 @@
     <string name="summary_preference_android_studio_alert_dialog">A dialog is a small window that prompts the user to make a decision or enter additional information. A dialog does not fill the screen and is normally used for modal events that require users to take an action before they can proceed.</string>
     <string name="summary_preference_android_studio_time_picker">Android TimePicker is a user interface control for selecting the time in either 24-hour format or AM/PM mode. It is used to ensure that users pick the valid time for the day in our application. The time picker interface exists basically in two modes one is under XML layout and another is a dialog.</string>
     <string name="summary_preference_android_studio_toggle">Discover more things about toggle buttons and what you can do with them. Learn implementations of toggle buttons here. Also learn how to make them look beauty and clean.</string>
+    <string name="summary_preference_android_studio_history_of_android">Learn about the history of Android, from its beta release in 2007 to becoming the world\'s most popular mobile operating system. Discover the features that make Android unique and the benefits of using Android Studio to develop your apps with Kotlin.</string>
     <string name="summary_preference_android_studio_permissions">Permissions are important in Android as you can\'t do tasks, that require permissions, without requesting permissions.</string>
     <string name="summary_preference_android_studio_view_binding">New in Android Studio 3.6, view binding gives you the ability to replace findViewById with generated binding objects to simplify code, remove bugs, and avoid all the boilerplate of findViewById.</string>
     <string name="summary_preference_android_studio_android_sdks">Android SDKs are used to recognize Android versions by numbers for every version of Android.</string>
@@ -306,6 +328,10 @@
     <string name="summary_preference_android_studio_date_picker">Android provides controls for the user to pick a time or pick a date as ready-to-use dialogs. Each picker provides controls for selecting each part of the time (hour, minute, AM/PM) or date (month, day, year). Using these pickers helps ensure that your users can pick a time or date that is valid, formatted correctly, and adjusted to the user\'s locale.</string>
     <string name="summary_preference_android_studio_buttons">Discover more things about general buttons and what you can do with them. Learn how to make them look beauty and clean.</string>
     <string name="summary_preference_android_studio_web_view">A View that displays web pages. Basic usage. In most cases, we recommend using a standard web browser, like Chrome, to deliver content to the user.</string>
+    <string name="summary_preference_android_studio_linear_layout">A linear layout is a view group that arranges its children in a single, linear direction, either horizontally or vertically. The orientation of the layout can be specified using the android:orientation attribute. A linear layout can be used to create a variety of user interfaces, such as lists, buttons, and text fields.</string>
+    <string name="summary_preference_android_studio_relative_layout">A relative layout is a layout manager in Android that positions its child views relative to each other or to the parent layout. This makes it a very versatile layout manager, as it can be used to create a wide variety of layouts.</string>
+    <string name="summary_preference_android_studio_table_layout">Table layout is the process of arranging the cells, rows, and columns of a table in a visually appealing and functional way.</string>
+    <string name="summary_preference_android_studio_gird_view">A grid view is a view group that displays items in a two-dimensional scrolling grid. Grid views are often used to display images, lists, or other types of data in a grid-like format.</string>
     <string name="summary_preference_android_studio_password_text_box">A simple text box with ability to hide text. Is used in login screens for most of the apps to keep passwords safe.</string>
     <string name="summary_preference_android_studio_radio_buttons">Radio buttons allow the user to select one option from a set. You should use radio buttons for optional sets that are mutually exclusive if you think that the user needs to see all available options side-by-side.</string>
     <string name="summary_preference_android_studio_image_buttons">Displays a button with an image (instead of text) that can be pressed or clicked by the user. By default, an ImageButton looks like a regular Button, with the standard button background that changes color during different button states. The image on the surface of the button is defined either by the android:src attribute in the ImageButton XML element or by the ImageView.setImageResource(int) method.</string>
@@ -362,18 +388,21 @@
     <string name="history_of_android">History of Android</string>
     <string name="android_history" tools:ignore="StringFormatCount">Android is a mobile operating system developed by Google. It was first released as a beta version on November 5, 2007 and the first commercial version, Android 1.0, was launched on September 23, 2008. Android is based on a modified version of the Linux kernel and other open source software.\n\nAndroid Studio is the official integrated development environment (IDE) for Android app development. It was announced by Google at its I/O conference on May 15, 2013 and released for public use on December 8, 2014. Android Studio is based on IntelliJ IDEA, a popular Java IDE.\n\nKotlin is a cross-platform programming language that can run on Java Virtual Machine (JVM), Android, browser and native platforms. It was created by JetBrains, a software company based in Prague. Kotlin was first announced in July 2011 and released as an open source project in February 2012.\n\nGoogle announced its support for Kotlin as an official language for Android app development at its I/O conference on May 17, 2017. Since then, Kotlin has become one of the most popular languages for Android developers. According to Google\'s data from October 2020, more than 70% of the top 1000 apps on Google Play use Kotlin.</string>
     <string name="android_features">Android is not only an operating system, but also a platform that offers a range of features and capabilities for users and developers. Some of the features of Android include:\n\n- Near Field Communication (NFC), which allows you to share data, make payments, and connect with other devices wirelessly.\n- Alternate keyboards, which let you customize your input method with different layouts, languages, and themes.\n- IR transmission, which enables you to use your phone as a remote control for TVs, air conditioners, and other appliances.\n- No-touch control, which lets you perform actions on your phone without touching the screen by using gestures or voice commands.\n- Automation, which allows you to set up routines and triggers for your phone to perform certain tasks automatically.\n- Wireless app downloads, which let you install apps from your computer or web browser without connecting your phone with a cable.\n- Storage and battery swap, which give you the option to expand your phone\'s memory or replace its battery easily.\n- Custom home screen, which lets you personalize your phone\'s appearance with widgets, wallpapers, icons, and launchers.\n\nAndroid Studio is the best tool for developing Android apps. It offers many features and benefits for developers such as:\n\n- Code editor with syntax highlighting, code completion, refactoring, debugging, testing, and linting tools.\n- Layout editor with drag-and-drop interface for designing user interfaces.\n- Emulator with fast boot and snapshot support for testing apps on different devices and configurations.\n- Firebase integration with services such as authentication, database, storage, analytics, crash reporting etc. \n- Gradle-based build system with dependency management,\ncustomization,\noptimization,\nsigning,\ndistribution options etc. \n\nWith Android Studio,\nyou can create amazing apps for Android devices using Kotlin,\na modern programming language that is concise,\nsafe,\nexpressive,\nand interoperable with Java.</string>
-    <string name="features">Features</string>
-    <string name="history">History</string>
-    <string name="code_font">Code font</string>
-    <string name="default_tab">Default tab</string>
     <string name="notifications">Notifications</string>
     <string name="notification_settings">Notification settings</string>
     <string name="app_usage_notifications">App Usage Notifications</string>
     <string name="update_notifications">Update Notifications</string>
-    <string name="summary_preference_settings_code_font">Use the <i>Roboto Mono</i> font instead of <i>Audiowide</i> for displaying code.</string>
-    <string name="summary_preference_android_studio_history_of_android">Learn about the history of Android, from its beta release in 2007 to becoming the world\'s most popular mobile operating system. Discover the features that make Android unique and the benefits of using Android Studio to develop your apps with Kotlin.</string>
     <string name="changelog_title" translatable="false">Changelog - Version %1s</string>
     <string name="changes" translatable="false">\n
-        • Made minor under-the-hood improvements for a better overall app experience.
+        • Added ability to choose from a variety of fonts for your code display.\n\n
+        • Added a new lesson on using Linear Layout.\n\n
+        • Added a new lesson on using Relative Layout.\n\n
+        • Added a new lesson on using Table Layout.\n\n
+        • Added a new lesson on using Grid View.\n\n
+        • Added Android 14 to Android SDK\'s.\n\n
+        • Added language support for Hungarian.\n\n
+        • Reworked language system, making it more accurate and user-friendly.\n\n
+        • Fixed various bugs and improved readability, consistency, app performance, and responsiveness by optimizing and styling the outdated code.\n\n
+        • Made various under-the-hood improvements for a better overall app experience.
     </string>
 </resources>

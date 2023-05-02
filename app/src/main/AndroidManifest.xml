@@ -46,11 +46,6 @@
             android:name=".ui.startup.StartupActivity"
             android:theme="@style/AppTheme"/>
         <activity
-            android:name=".ui.settings.language.LanguageActivity"
-            android:exported="false"
-            android:label="@string/language"
-            android:parentActivityName=".ui.settings.language.LanguageActivity"/>
-        <activity
             android:name=".ui.android.buttons.toggle.ToggleCodeActivity"
             android:exported="false"
             android:label="@string/toggle"
@@ -167,6 +162,46 @@
             android:exported="false"
             android:label="@string/textbox"
             android:parentActivityName=".ui.android.textboxes.textbox.TextboxCodeActivity"/>
+        <activity
+            android:name=".ui.android.layouts.linear.LinearLayoutActivity"
+            android:exported="false"
+            android:label="@string/linear_layout"
+            android:parentActivityName=".ui.android.layouts.linear.LinearLayoutActivity"/>
+        <activity
+            android:name=".ui.android.layouts.linear.LinearLayoutCodeActivity"
+            android:exported="false"
+            android:label="@string/linear_layout"
+            android:parentActivityName=".ui.android.layouts.linear.LinearLayoutCodeActivity"/>
+        <activity
+            android:name=".ui.android.layouts.relative.RelativeLayoutActivity"
+            android:exported="false"
+            android:label="@string/relative_layout"
+            android:parentActivityName=".ui.android.layouts.relative.RelativeLayoutActivity"/>
+        <activity
+            android:name=".ui.android.layouts.relative.RelativeLayoutCodeActivity"
+            android:exported="false"
+            android:label="@string/relative_layout"
+            android:parentActivityName=".ui.android.layouts.relative.RelativeLayoutCodeActivity"/>
+        <activity
+            android:name=".ui.android.layouts.table.TableLayoutActivity"
+            android:exported="false"
+            android:label="@string/table_layout"
+            android:parentActivityName=".ui.android.layouts.table.TableLayoutActivity"/>
+        <activity
+            android:name=".ui.android.layouts.table.TableLayoutCodeActivity"
+            android:exported="false"
+            android:label="@string/table_layout"
+            android:parentActivityName=".ui.android.layouts.table.TableLayoutCodeActivity"/>
+        <activity
+            android:name=".ui.android.views.grid.GirdViewActivity"
+            android:exported="false"
+            android:label="@string/grid_view"
+            android:parentActivityName=".ui.android.views.grid.GirdViewActivity"/>
+        <activity
+            android:name=".ui.android.views.grid.GirdViewCodeActivity"
+            android:exported="false"
+            android:label="@string/grid_view"
+            android:parentActivityName=".ui.android.views.grid.GirdViewCodeActivity"/>
         <activity
             android:name=".ui.android.alerts.alertdialog.AlertDialogActivity"
             android:exported="false"

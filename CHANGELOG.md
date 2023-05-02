@@ -1,3 +1,15 @@
+# Version 5.0_r1:
+- Added ability to choose from a variety of fonts for your code display.
+- Added a new lesson on using Linear Layout.
+- Added a new lesson on using Relative Layout.
+- Added a new lesson on using Table Layout.
+- Added a new lesson on using Grid View.
+- Added Android 14 to Android SDK's.
+- Added language support for Hungarian.
+- Reworked language system, making it more accurate and user-friendly.
+- Fixed various bugs and improved readability, consistency, app performance, and responsiveness by optimizing and styling the outdated code.
+- Made various under-the-hood improvements for a better overall app experience.
+
 # Version 4.2_r3:
 - Made minor under-the-hood improvements for a better overall app experience.
 

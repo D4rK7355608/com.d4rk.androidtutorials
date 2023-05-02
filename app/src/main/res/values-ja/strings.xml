@@ -116,11 +116,11 @@
     <string name="welcome">いらっしゃいませ</string>
     <string name="copied_to_clipboard">クリップボードにコピーしました！</string>
     <string name="privacy_and_security">プライバシーとセキュリティ</string>
-    <string name="recommended">おすすめされた</string>
     <string name="language">言語</string>
-    <string name="system_default">システムのデフォルト</string>
-    <string name="current_language">現在のアプリ内言語は %1$s</string>
-    <string name="all_languages">すべての言語</string>
+    <string name="table_layout">テーブルレイアウト</string>
+    <string name="grid_view">グリッドビュー</string>
+    <string name="summary_preference_android_studio_table_layout">テーブルレイアウトとは、セル、行、列を視覚的に魅力的で機能的な方法で配置するプロセスです。</string>
+    <string name="summary_preference_android_studio_gird_view">グリッドビューとは、2次元スクロールグリッドにアイテムを表示するビューグループです。グリッドビューは、画像、リスト、その他のデータをグリッド形式で表示するためによく使用されます。</string>
     <string name="basics">基本</string>
     <string name="web_views">Web ビュー</string>
     <string name="text_boxes">テキスト ボックス</string>
@@ -352,9 +352,15 @@
     <string name="notification_settings">通知設定</string>
     <string name="app_usage_notifications">アプリ使用通知</string>
     <string name="update_notifications">更新通知</string>
-    <string name="summary_preference_settings_code_font"><i>Audiowide</i> の代わりに <i>Roboto Mono</i> フォントを使用してコードを表示します。</string>
     <string name="summary_preference_android_studio_history_of_android">Androidの歴史について学びましょう。2007年のベータリリースから、世界で最も人気のあるモバイルオペレーティングシステムになるまで。Androidをユニークにする機能や、Kotlinでアプリを開発するためのAndroid Studioの利点を発見してください。</string>
     <string name="history_of_android">Androidの歴史</string>
+    <string name="vertical">垂直方向</string>
+    <string name="horizontal">水平方向</string>
+    <string name="relative_layout">レイアウト</string>
+    <string name="summary_preference_android_studio_relative_layout">レイアウトは、各ビューを相互に、または親レイアウトに相対的に配置するAndroidのレイアウトマネージャーです。これは、多くのレイアウトを作成するのに使用できるため、非常に用途の広いレイアウトマネージャーになります。</string>
+    <string name="linear_layout">线性布局</string>
+    <string name="layouts">布局</string>
+    <string name="summary_preference_android_studio_linear_layout">线性布局是一个视图组，它将其子视图沿着单个线性方向排列，可以是水平方向也可以是垂直方向。布局的方向可以使用 android:orientation 属性来指定。线性布局可用于创建各种用户界面，例如列表、按钮和文本字段。</string>
     <string name="android_history" tools:ignore="StringFormatCount">Androidは、Googleによって開発されたモバイルオペレーティングシステムです。2007年11月5日に初めてベータ版がリリースされ、最初の商用版であるAndroid 1.0は2008年9月23日にリリースされました。Androidは、Linuxカーネルとその他のオープンソースソフトウェアの修正版に基づいています。\n\nAndroid Studioは、Androidアプリ開発用の公式統合開発環境（IDE）です。2013年5月15日にGoogle I/OカンファレンスでGoogleによって発表され、2014年12月8日に一般公開されました。Android Studioは、人気のあるJava IDEであるIntelliJ IDEAをベースとしています。\n\nKotlinは、Java仮想マシン（JVM）、Android、ブラウザーおよびネイティブプラットフォームで実行可能なクロスプラットフォームプログラミング言語です。プラハを拠点とするソフトウェア会社JetBrainsが作成しました。Kotlinは2011年7月に初めて発表され、2012年2月にオープンソースプロジェクトとしてリリースされました。\n\nGoogleは2017年5月17日のI/OカンファレンスでKotlinをAndroidアプリ開発の公式言語としてサポートすることを発表しました。それ以来、KotlinはAndroidデベロッパー向けの最も人気のある言語の1つとなりました。2020年10月時点でGoogleから提供されたデータによると、Google Playで利用可能な最も人気のある1000個のアプリのうち70％以上がKotlinを使用しています。</string>
     <string name="android_features">Android はオペレーティング システムであるだけでなく、ユーザーと開発者にさまざまな機能を提供するプラットフォームでもあります。 Android の機能には次のようなものがあります:\n\n- データの共有、支払い、他のデバイスとのワイヤレス接続を可能にする近距離無線通信 (NFC)。\n- 入力方法をカスタマイズできる代替キーボードさまざまなレイアウト、言語、テーマを使用できます。\n- IR 送信により、スマートフォンをテレビ、エアコン、その他の電化製品のリモコンとして使用できます。\n- ノータッチ コントロールにより、操作を行うことができますジェスチャーや音声コマンドを使用して、画面に触れずにスマートフォンを操作できます。\n- 自動化。スマートフォンで特定のタスクを自動的に実行するためのルーティンとトリガーを設定できます。\n- ワイヤレス アプリのダウンロード。スマートフォンからアプリをインストールできます。スマートフォンをケーブルで接続しなくても、コンピュータやウェブ ブラウザを使用できます。\n- ストレージとバッテリー スワップにより、スマートフォンのメモリを拡張したり、バッテリーを簡単に交換したりできます。\n- カスタム ホーム画面でカスタマイズできます。ウィジェット、壁紙を使用した携帯電話の外観\n\nAndroid Studio は、Android アプリの開発に最適なツールです。次のような多くの機能と利点を開発者に提供します:\n\n- 構文の強調表示、コード補完、リファクタリング、デバッグ、テスト、リンティング ツールを備えたコード エディター。\n- ユーザーを設計するためのドラッグ アンド ドロップ インターフェースを備えたレイアウト エディターインターフェース。\n- さまざまなデバイスや構成でアプリをテストするための高速ブートとスナップショットをサポートするエミュレータ。\n- Firebase と認証、データベース、ストレージ、分析、クラッシュ レポートなどのサービスとの統合。\n- Gradle ベースのビルド システム依存関係管理、\nカスタマイズ、\n最適化、\n署名、\n配布オプションなど。\n\nAndroid Studio を使用すると、\n簡潔で安全な最新のプログラミング言語である Kotlin を使用して、Android デバイス向けの素晴らしいアプリを作成できます。\表現力があり、\nJava と相互運用できます。</string>
 </resources>

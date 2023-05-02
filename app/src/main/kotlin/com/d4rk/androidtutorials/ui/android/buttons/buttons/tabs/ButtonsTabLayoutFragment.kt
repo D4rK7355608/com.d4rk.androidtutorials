@@ -51,27 +51,32 @@ class ButtonsTabLayoutFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         val preference = PreferenceManager.getDefaultSharedPreferences(requireContext())
-        val preferenceFont = preference.getBoolean(getString(R.string.key_monospace_font), false)
-        if (preferenceFont) {
-            val monospaceFont: Typeface? = ResourcesCompat.getFont(requireContext(), R.font.font_roboto_mono)
-            binding.textViewButtonNormalXml.typeface = monospaceFont
-            binding.textViewButtonOutlinedXml.typeface = monospaceFont
-            binding.textViewButtonElevatedXml.typeface = monospaceFont
-            binding.textViewButtonNormalIconXml.typeface = monospaceFont
-            binding.textViewButtonOutlinedIconXml.typeface = monospaceFont
-            binding.textViewButtonElevatedIconXml.typeface = monospaceFont
-            binding.textViewExtendedFloatingButtonPrimaryXml.typeface = monospaceFont
-            binding.textViewExtendedFloatingButtonSecondaryXml.typeface = monospaceFont
-            binding.textViewExtendedFloatingButtonSurfaceXml.typeface = monospaceFont
-            binding.textViewExtendedFloatingButtonTertiaryXml  .typeface = monospaceFont
-            binding.textViewExtendedFloatingButtonPrimaryIconXml.typeface = monospaceFont
-            binding.textViewExtendedFloatingButtonSecondaryIconXml.typeface = monospaceFont
-            binding.textViewExtendedFloatingButtonSurfaceIconXml.typeface = monospaceFont
-            binding.textViewExtendedFloatingButtonTertiaryIconXml .typeface = monospaceFont
-            binding.textViewFloatingButtonPrimaryXml.typeface = monospaceFont
-            binding.textViewFloatingButtonSecondaryXml.typeface = monospaceFont
-            binding.textViewFloatingButtonSurfaceXml.typeface = monospaceFont
-            binding.textViewFloatingButtonTertiaryXml.typeface = monospaceFont
+        val monospaceFont: Typeface? = when (preference.getString(getString(R.string.key_monospace_font), "0")) {
+            "0" -> ResourcesCompat.getFont(requireContext(), R.font.font_audiowide)
+            "1" -> ResourcesCompat.getFont(requireContext(), R.font.font_fira_code)
+            "2" -> ResourcesCompat.getFont(requireContext(), R.font.font_jetbrains_mono)
+            "3" -> ResourcesCompat.getFont(requireContext(), R.font.font_noto_sans_mono)
+            "4" -> ResourcesCompat.getFont(requireContext(), R.font.font_poppins)
+            "5" -> ResourcesCompat.getFont(requireContext(), R.font.font_roboto_mono)
+            else -> null
         }
+        binding.textViewButtonNormalXml.typeface = monospaceFont
+        binding.textViewButtonOutlinedXml.typeface = monospaceFont
+        binding.textViewButtonElevatedXml.typeface = monospaceFont
+        binding.textViewButtonNormalIconXml.typeface = monospaceFont
+        binding.textViewButtonOutlinedIconXml.typeface = monospaceFont
+        binding.textViewButtonElevatedIconXml.typeface = monospaceFont
+        binding.textViewExtendedFloatingButtonPrimaryXml.typeface = monospaceFont
+        binding.textViewExtendedFloatingButtonSecondaryXml.typeface = monospaceFont
+        binding.textViewExtendedFloatingButtonSurfaceXml.typeface = monospaceFont
+        binding.textViewExtendedFloatingButtonTertiaryXml  .typeface = monospaceFont
+        binding.textViewExtendedFloatingButtonPrimaryIconXml.typeface = monospaceFont
+        binding.textViewExtendedFloatingButtonSecondaryIconXml.typeface = monospaceFont
+        binding.textViewExtendedFloatingButtonSurfaceIconXml.typeface = monospaceFont
+        binding.textViewExtendedFloatingButtonTertiaryIconXml .typeface = monospaceFont
+        binding.textViewFloatingButtonPrimaryXml.typeface = monospaceFont
+        binding.textViewFloatingButtonSecondaryXml.typeface = monospaceFont
+        binding.textViewFloatingButtonSurfaceXml.typeface = monospaceFont
+        binding.textViewFloatingButtonTertiaryXml.typeface = monospaceFont
     }
 }
