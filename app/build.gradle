@@ -12,11 +12,11 @@ android {
         applicationId 'com.d4rk.androidtutorials'
         minSdkVersion 26
         targetSdkVersion 33
-        versionCode 50
-        versionName '5.0_r1'
+        versionCode 51
+        versionName '5.0_r2'
         archivesBaseName = "${applicationId}-v${versionName}"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
-        resConfigs 'en', 'de', 'es', 'fr', 'hi', 'in', 'it', 'ja', 'ro', 'ru', 'tr', 'sv', 'bg', 'pl', 'uk'
+        resourceConfigurations += ['en', 'de', 'es', 'fr', 'hi', 'in', 'it', 'ja', 'ro', 'ru', 'tr', 'sv', 'bg', 'pl', 'uk']
     }
     buildTypes {
         release {
@@ -52,7 +52,7 @@ android {
     }
 }
 dependencies {
-    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'com.google.android.material:material:1.9.0'
     implementation 'com.google.android.gms:play-services-ads:22.0.0'
     implementation 'com.google.android.gms:play-services-oss-licenses:17.0.1'
     implementation 'com.google.android.play:review-ktx:2.0.1'

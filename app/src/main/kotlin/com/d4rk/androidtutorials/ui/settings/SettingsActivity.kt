@@ -49,8 +49,7 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
     class SettingsFragment : PreferenceFragmentCompat() {
         override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
             setPreferencesFromResource(R.xml.preferences_settings, rootKey)
-            val labelVisibilityMode =
-                findPreference<ListPreference>(getString(R.string.key_bottom_navigation_bar_labels))
+            val labelVisibilityMode = findPreference<ListPreference>(getString(R.string.key_bottom_navigation_bar_labels))
             labelVisibilityMode?.setOnPreferenceChangeListener { _, _ ->
                 val restartDialog = RequireRestartDialog()
                 restartDialog.show(childFragmentManager, RequireRestartDialog::class.java.name)
