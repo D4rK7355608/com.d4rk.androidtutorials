@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.d4rk.androidtutorials",
+  "variantName": "release",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 53,
+      "versionName": "5.0_r3",
+      "outputFile": "com.d4rk.androidtutorials-v5.0_r3-release.apk"
+    }
+  ],
+  "elementType": "File"
+}

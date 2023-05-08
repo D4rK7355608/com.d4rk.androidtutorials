@@ -12,11 +12,11 @@ android {
         applicationId 'com.d4rk.androidtutorials'
         minSdkVersion 26
         targetSdkVersion 33
-        versionCode 51
-        versionName '5.0_r2'
+        versionCode 53
+        versionName '5.0_r3'
         archivesBaseName = "${applicationId}-v${versionName}"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
-        resourceConfigurations += ['en', 'de', 'es', 'fr', 'hi', 'in', 'it', 'ja', 'ro', 'ru', 'tr', 'sv', 'bg', 'pl', 'uk']
+        resourceConfigurations += ['en', 'de', 'es', 'fr', 'hi', 'hu', 'in', 'it', 'ja', 'ro', 'ru', 'tr', 'sv', 'bg', 'pl', 'uk']
     }
     buildTypes {
         release {
@@ -35,11 +35,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = '11'
+        jvmTarget = '17'
     }
     buildFeatures {
         viewBinding = true
@@ -57,9 +57,9 @@ dependencies {
     implementation 'com.google.android.gms:play-services-oss-licenses:17.0.1'
     implementation 'com.google.android.play:review-ktx:2.0.1'
     implementation 'com.google.android.play:app-update-ktx:2.0.1'
-    implementation 'com.google.firebase:firebase-crashlytics-ktx:18.3.6'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx:18.3.7'
     implementation 'com.google.firebase:firebase-analytics-ktx:21.2.2'
-    implementation 'com.google.firebase:firebase-perf:20.3.1'
+    implementation 'com.google.firebase:firebase-perf:20.3.2'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.core:core-ktx:1.10.0'

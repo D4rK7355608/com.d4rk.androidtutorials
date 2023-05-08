@@ -1,3 +1,6 @@
+# Version 5.0_r3:
+- Made minor under-the-hood improvements for a better overall app experience.
+
 # Version 5.0_r2:
 - Made minor under-the-hood improvements for a better overall app experience.
 
