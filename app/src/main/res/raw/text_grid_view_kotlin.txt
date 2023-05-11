@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 // Class declaration
-class GirdViewActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
     // Late-initialized variable
     private lateinit var binding: ActivityMainBinding

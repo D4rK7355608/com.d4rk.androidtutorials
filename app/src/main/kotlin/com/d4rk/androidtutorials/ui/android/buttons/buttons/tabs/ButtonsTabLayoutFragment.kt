@@ -58,7 +58,7 @@ class ButtonsTabLayoutFragment : Fragment() {
             "3" -> ResourcesCompat.getFont(requireContext(), R.font.font_noto_sans_mono)
             "4" -> ResourcesCompat.getFont(requireContext(), R.font.font_poppins)
             "5" -> ResourcesCompat.getFont(requireContext(), R.font.font_roboto_mono)
-            else -> null
+            else -> ResourcesCompat.getFont(requireContext(), R.font.font_audiowide)
         }
         binding.textViewButtonNormalXml.typeface = monospaceFont
         binding.textViewButtonOutlinedXml.typeface = monospaceFont

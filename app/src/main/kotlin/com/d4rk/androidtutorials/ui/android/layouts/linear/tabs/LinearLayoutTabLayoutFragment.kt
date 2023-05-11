@@ -24,9 +24,9 @@ class LinearLayoutTabLayoutFragment : Fragment() {
         textViewLinearLayoutVerticalInputStream.close()
         binding.textViewVerticalXml.text = textViewLinearLayoutVertical
         val textViewLinearLayoutHorizontalInputStream = resources.openRawResource(R.raw.text_linear_layout_horizontal_xml)
-        val extViewLinearLayoutHorizontal = textViewLinearLayoutHorizontalInputStream.readBytes().toString(Charsets.UTF_8)
+        val textViewLinearLayoutHorizontal = textViewLinearLayoutHorizontalInputStream.readBytes().toString(Charsets.UTF_8)
         textViewLinearLayoutHorizontalInputStream.close()
-        binding.textViewHorizontalXml.text = extViewLinearLayoutHorizontal
+        binding.textViewHorizontalXml.text = textViewLinearLayoutHorizontal
         return binding.root
     }
     override fun onResume() {
@@ -39,7 +39,7 @@ class LinearLayoutTabLayoutFragment : Fragment() {
             "3" -> ResourcesCompat.getFont(requireContext(), R.font.font_noto_sans_mono)
             "4" -> ResourcesCompat.getFont(requireContext(), R.font.font_poppins)
             "5" -> ResourcesCompat.getFont(requireContext(), R.font.font_roboto_mono)
-            else -> null
+            else -> ResourcesCompat.getFont(requireContext(), R.font.font_audiowide)
         }
         binding.textViewVerticalXml.typeface = monospaceFont
         binding.textViewHorizontalXml.typeface = monospaceFont

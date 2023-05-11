@@ -49,7 +49,7 @@ class ViewBindingTutorialActivity : AppCompatActivity() {
             "3" -> ResourcesCompat.getFont(this, R.font.font_noto_sans_mono)
             "4" -> ResourcesCompat.getFont(this, R.font.font_poppins)
             "5" -> ResourcesCompat.getFont(this, R.font.font_roboto_mono)
-            else -> null
+            else -> ResourcesCompat.getFont(this, R.font.font_audiowide)
         }
         binding.bindingText.typeface = monospaceFont
         binding.bindingActivitiesText.typeface = monospaceFont
