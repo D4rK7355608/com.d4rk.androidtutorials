@@ -1,5 +1,5 @@
 @file:Suppress("DEPRECATION")
-package com.d4rk.androidtutorials.ads
+package com.d4rk.androidtutorials.ads.managers
 import android.app.Activity
 import android.app.Application
 import android.content.Context
@@ -15,17 +15,16 @@ import com.google.android.gms.ads.FullScreenContentCallback
 import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.appopen.AppOpenAd
-import com.google.android.gms.ads.appopen.AppOpenAd.AppOpenAdLoadCallback
 import java.util.Date
 private const val AD_UNIT_ID = "ca-app-pub-5294151573817700/1738685282"
 @Suppress("SameParameterValue")
-class Ads : MultiDexApplication(), Application.ActivityLifecycleCallbacks, LifecycleObserver {
+class AppOpenAdManager : MultiDexApplication(), Application.ActivityLifecycleCallbacks, LifecycleObserver {
   private lateinit var appOpenAdManager: AppOpenAdManager
   private var currentActivity: Activity? = null
   override fun onCreate() {
     super.onCreate()
     registerActivityLifecycleCallbacks(this)
-    MobileAds.initialize(this)
+      MobileAds.initialize(this)
     ProcessLifecycleOwner.get().lifecycle.addObserver(this)
     appOpenAdManager = AppOpenAdManager()
   }
@@ -58,22 +57,23 @@ class Ads : MultiDexApplication(), Application.ActivityLifecycleCallbacks, Lifec
       }
       isLoadingAd = true
       val request = AdRequest.Builder().build()
-      AppOpenAd.load(
-        context,
-        AD_UNIT_ID,
-        request,
-        AppOpenAd.APP_OPEN_AD_ORIENTATION_PORTRAIT,
-        object : AppOpenAdLoadCallback() {
-          override fun onAdLoaded(ad: AppOpenAd) {
-            appOpenAd = ad
-            isLoadingAd = false
-            loadTime = Date().time
-          }
-          override fun onAdFailedToLoad(loadAdError: LoadAdError) {
-            isLoadingAd = false
-          }
-        }
-      )
+        AppOpenAd.load(
+            context,
+            AD_UNIT_ID,
+            request,
+            AppOpenAd.APP_OPEN_AD_ORIENTATION_PORTRAIT,
+            object : AppOpenAd.AppOpenAdLoadCallback() {
+                override fun onAdLoaded(ad: AppOpenAd) {
+                    appOpenAd = ad
+                    isLoadingAd = false
+                    loadTime = Date().time
+                }
+
+                override fun onAdFailedToLoad(loadAdError: LoadAdError) {
+                    isLoadingAd = false
+                }
+            }
+        )
     }
     private fun wasLoadTimeLessThanNHoursAgo(numHours: Long): Boolean {
       val dateDifference: Long = Date().time - loadTime

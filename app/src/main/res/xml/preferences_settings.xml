@@ -121,11 +121,11 @@
             app:title="@string/oss_license_title"
             app:icon="@drawable/ic_libraries"/>
         <androidx.preference.Preference
-            app:icon="@drawable/ic_faq"
-            app:title="@string/faq">
+            app:icon="@drawable/ic_help"
+            app:title="@string/help_and_feedback">
             <intent
                 android:targetPackage="com.d4rk.androidtutorials"
-                android:targetClass="com.d4rk.androidtutorials.ui.settings.faq.FaqActivity"/>
+                android:targetClass="com.d4rk.androidtutorials.ui.settings.help.HelpActivity"/>
         </androidx.preference.Preference>
         <androidx.preference.Preference
             app:icon="@drawable/ic_license"
@@ -139,13 +139,6 @@
     <androidx.preference.PreferenceCategory
         app:title="@string/more"
         app:icon="@drawable/ic_more">
-        <androidx.preference.Preference
-            app:icon="@drawable/ic_feedback"
-            app:title="@string/feedback">
-            <intent
-                android:targetPackage="com.d4rk.androidtutorials"
-                android:targetClass="com.d4rk.androidtutorials.ui.settings.feedback.FeedbackActivity"/>
-        </androidx.preference.Preference>
         <androidx.preference.Preference
             app:key="@string/key_share"
             app:icon="@drawable/ic_share"

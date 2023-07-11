@@ -1,5 +1,8 @@
-# Version 5.0_r4:
-- Made minor under-the-hood improvements for a better overall app experience.
+# Version 5.1_r1:
+- Added a new GDPR message to comply with Google Play policy.
+- Added a new help center, with more comprehensive documentation and support options.
+- Made minor project structure enhancements for better readability and maintainability.
+- Made various under-the-hood improvements for a better overall app experience.
 
 # Version 5.0_r3:
 - Made minor under-the-hood improvements for a better overall app experience.

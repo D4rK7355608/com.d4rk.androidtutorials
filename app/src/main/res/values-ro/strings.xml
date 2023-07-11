@@ -1,23 +1,19 @@
 <resources>
     <string name="app_version">Versiunea %1$s (%2$d)</string>
     <string name="app_description">Aflați cum să creați aplicații simple în Android Studio. 📱</string>
-    <string name="mail_to_dev">Mail către dezvoltator</string>
     <string name="home">Acasă</string>
     <string name="android_studio">Android Studio</string>
     <string name="about">Despre</string>
     <string name="google_dev">Google Dev</string>
     <string name="more">Mai multe</string>
-    <string name="toast_feedback">Mulțumim că ne-ați evaluat!</string>
     <string name="privacy_policy">Politica de Confidențialitate</string>
     <string name="license">Licență</string>
     <string name="check_for_updates">Verifică pentru actualizări…</string>
-    <string name="feedback">Părere</string>
     <string name="rate_us">Evaluează aplicația noastră!</string>
     <string name="terms_of_service">Termenii serviciului</string>
     <string name="code_of_conduct">Codul de conduită</string>
     <string name="changelog">Lista cu noutăți</string>
     <string name="more_apps">Mai multe aplicatii…</string>
-    <string name="tooltip_feedback">Trimite-ne recenzia ta pe Google Play Store.</string>
     <string name="internet">Internet [INTERNET]</string>
     <string name="summary_preference_permissions_internet">Folosit pentru a trimite rapoarte de eroare.</string>
     <string name="normal">Normal</string>
@@ -77,7 +73,6 @@
     <string name="print_text">Tipăriți text.</string>
     <string name="implementations_text_box">Implementați caseta de text</string>
     <string name="summary_preference_android_studio_text_box">Un element de interfață cu utilizatorul pentru introducerea și modificarea textului. Când definiți un widget de editare text, trebuie să specificați atributul R.styleable.TextView_inputType…</string>
-    <string name="open_me">Deschide-mă :)</string>
     <string name="toast_button_normal">Buton normal apăsat!</string>
     <string name="toast_button_outlined">S-a făcut clic pe butonul subliniat!</string>
     <string name="toast_button_elevated">S-a făcut clic pe butonul ridicat!</string>
@@ -110,7 +105,6 @@
     <string name="browse_terms_of_service_and_privacy_policy">Răsfoiți <i><u>Termenii și condițiile</u></i> și <i><u>Politica de confidențialitate</u></i></string>
     <string name="summary_browse_terms_of_service_and_privacy_policy">Pentru a continua, citiți și acceptați Termenii și condițiile și Politica de confidențialitate.</string>
     <string name="welcome">Bine ati venit</string>
-    <string name="copied_to_clipboard">Copiat în clipboard!</string>
     <string name="privacy_and_security">Confidențialitate și securitate</string>
     <string name="language">Limbi</string>
     <string name="table_layout">Aranjament tabel</string>
@@ -275,7 +269,10 @@
     <string name="snack_bar">Snackbar</string>
     <string name="show_snack_bar">Afișează snackbar</string>
     <string name="show_toast">Afișează toast</string>
+    <string name="help_and_feedback">Ajutor și feedback</string>
+    <string name="help">Ajutor</string>
     <string name="faq">Întrebări frecvente</string>
+    <string name="send_feedback">Trimite feedback</string>
     <string name="advanced">Avansat</string>
     <string name="runtime">Timp de execuție</string>
     <string name="require_restart">Necesită repornirea!</string>
@@ -363,4 +360,10 @@
     <string name="summary_preference_android_studio_linear_layout">O aranjare liniară este o grupă de elemente care își aranja elementele secundare într-o singură direcție liniară, fie orizontal, fie vertical. Orientarea aranjamentului poate fi specificată utilizând atributul android:orientation. O aranjare liniară poate fi utilizată pentru a crea o varietate de interfețe cu utilizatorul, cum ar fi liste, butoane și câmpuri de text.</string>
     <string name="android_history">Android este un sistem de operare mobil dezvoltat de Google. A fost lansat pentru prima dată ca o versiune beta pe 5 noiembrie 2007 și prima versiune comercială, Android 1.0, a fost lansată pe 23 septembrie 2008. Android se bazează pe o versiune modificată a nucleului Linux și alte programe open source.\n\nAndroid Studio este mediul integrat de dezvoltare (IDE) oficial pentru dezvoltarea aplicațiilor Android. A fost anunțat de Google la conferința sa I/O pe 15 mai 2013 și lansat pentru utilizare publică pe 8 decembrie 2014. Android Studio se bazează pe IntelliJ IDEA, un IDE Java popular.\n\nKotlin este un limbaj de programare cross-platform care poate rula pe Java Virtual Machine (JVM), Android, browser și platforme native. A fost creat de JetBrains, o companie de software din Praga. Kotlin a fost anunțat pentru prima dată în iulie 2011 și lansat ca un proiect open source în februarie 2012.\n\nGoogle a anunțat suportul său pentru Kotlin ca limbaj oficial pentru dezvoltarea aplicațiilor Android la conferința sa I/O pe 17 mai 2017. De atunci, Kotlin a devenit unul dintre cele mai populare limbaje pentru dezvoltatorii Android. Conform datelor Google din octombrie 2020, peste 70 %dintre primele 1000 de aplicații de pe Google Play folosesc Kotlin.</string>
     <string name="android_features">Android is not only an operating system, but also a platform that offers a range of features and capabilities for users and developers. Some of the features of Android include:\n\n- Near Field Communication (NFC), which allows you to share data, make payments, and connect with other devices wirelessly.\n- Alternate keyboards, which let you customize your input method with different layouts, languages, and themes.\n- IR transmission, which enables you to use your phone as a remote control for TVs, air conditioners, and other appliances.\n- No-touch control, which lets you perform actions on your phone without touching the screen by using gestures or voice commands.\n- Automation, which allows you to set up routines and triggers for your phone to perform certain tasks automatically.\n- Wireless app downloads, which let you install apps from your computer or web browser without connecting your phone with a cable.\n- Storage and battery swap, which give you the option to expand your phone\'s memory or replace its battery easily.\n- Custom home screen, which lets you personalize your phone\'s appearance with widgets, wallpapers, icons, and launchers.\n\nAndroid Studio is the best tool for developing Android apps. It offers many features and benefits for developers such as:\n\n- Code editor with syntax highlighting, code completion, refactoring, debugging, testing, and linting tools.\n- Layout editor with drag-and-drop interface for designing user interfaces.\n- Emulator with fast boot and snapshot support for testing apps on different devices and configurations.\n- Firebase integration with services such as authentication, database, storage, analytics, crash reporting etc. \n- Gradle-based build system with dependency management,\ncustomization,\noptimization,\nsigning,\ndistribution options etc. \n\nWith Android Studio,\nyou can create amazing apps for Android devices using Kotlin,\na modern programming language that is concise,\nsafe,\nexpressive,\nand interoperable with Java.</string>
+    <string name="snack_unable_to_open_google_play_store">Nu se poate deschide Google Play Store.</string>
+    <string name="snack_copied_to_clipboard">Copiat în clipboard! 📋</string>
+    <string name="snack_no_app_found">Nu s-a găsit nicio aplicație pentru această acțiune</string>
+    <string name="snack_feedback">Mulțumim pentru evaluarea noastră! ❤️</string>
+    <string name="tooltip_open_me">Deschide-mă 🌐</string>
+    <string name="tooltip_mail_to_dev">Email dezvoltator 📧</string>
 </resources>

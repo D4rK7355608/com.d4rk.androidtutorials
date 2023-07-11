@@ -16,7 +16,7 @@
         </intent>
     </queries>
     <application
-        android:name=".ads.Ads"
+        android:name=".ads.managers.AppOpenAdManager"
         android:label="@string/app_name"
         android:description="@string/app_description"
         android:icon="@mipmap/ic_launcher"
@@ -258,11 +258,6 @@
             android:label="@string/version_control"
             android:parentActivityName=".ui.android.basics.shortcuts.tabs.VersionControlShortcutsActivity"/>
         <activity
-            android:name=".ui.settings.feedback.FeedbackActivity"
-            android:label="@string/feedback"
-            android:exported="true"
-            android:parentActivityName=".ui.settings.feedback.FeedbackActivity"/>
-        <activity
             android:name=".ui.android.buttons.buttons.ButtonsCodeActivity"
             android:exported="false"
             android:label="@string/buttons"
@@ -277,10 +272,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.settings.faq.FaqActivity"
+            android:name=".ui.settings.help.HelpActivity"
+            android:label="@string/help"
             android:exported="false"
-            android:label="@string/faq"
-            android:parentActivityName=".ui.settings.faq.FaqActivity"/>
+            android:parentActivityName=".ui.settings.help.HelpActivity"/>
         <activity
             android:name=".ui.android.buttons.toggle.ToggleActivity"
             android:label="@string/toggle"

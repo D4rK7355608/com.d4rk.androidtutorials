@@ -1,17 +1,10 @@
 package com.d4rk.androidtutorials
-import android.app.NotificationChannel
-import android.app.NotificationManager
-import android.app.PendingIntent
-import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
-import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.core.app.NotificationCompat
 import androidx.core.os.LocaleListCompat
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.fragment.NavHostFragment
@@ -20,6 +13,8 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.preference.PreferenceManager
 import com.d4rk.androidtutorials.databinding.ActivityMainBinding
+import com.d4rk.androidtutorials.notifications.AppUpdateNotificationsManager
+import com.d4rk.androidtutorials.notifications.AppUsageNotificationsManager
 import com.d4rk.androidtutorials.ui.settings.SettingsActivity
 import com.d4rk.androidtutorials.ui.startup.StartupActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -30,51 +25,42 @@ import com.google.android.play.core.install.model.ActivityResult
 import com.google.android.play.core.install.model.AppUpdateType
 import com.google.android.play.core.install.model.UpdateAvailability
 import com.google.firebase.analytics.FirebaseAnalytics
-import com.google.firebase.crashlytics.FirebaseCrashlytics
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private lateinit var prefs: SharedPreferences
     private lateinit var appUpdateManager: AppUpdateManager
     private val requestUpdateCode = 1
-    private var startFragmentId = R.id.navigation_home
+    private lateinit var appUpdateNotificationsManager: AppUpdateNotificationsManager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         installSplashScreen()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        applyAppSettings()
         appUpdateManager = AppUpdateManagerFactory.create(this)
-        prefs = getSharedPreferences("startup", MODE_PRIVATE)
-        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
-        val themeKey = getString(R.string.key_theme)
-        val labelKey = getString(R.string.key_bottom_navigation_bar_labels)
-        val defaultTabKey = getString(R.string.key_default_tab)
-        val defaultTabValue = getString(R.string.default_value_tab)
-        val defaultTabValues = resources.getStringArray(R.array.preference_default_tab_values)
+        appUpdateNotificationsManager = AppUpdateNotificationsManager(this)
+
+    }
+    private fun applyAppSettings() {
         val themeValues = resources.getStringArray(R.array.preference_theme_values)
-        val themeDefaultValue = getString(R.string.default_value_theme)
-        val bottomNavigationBarLabelsValues = resources.getStringArray(R.array.preference_bottom_navigation_bar_labels_values)
-        val labelDefaultValue = getString(R.string.default_value_bottom_navigation_bar_labels)
-        val nightMode = when (sharedPreferences.getString(themeKey, themeDefaultValue)) {
-            themeValues[0] -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
-            themeValues[1] -> AppCompatDelegate.MODE_NIGHT_NO
-            themeValues[2] -> AppCompatDelegate.MODE_NIGHT_YES
-            themeValues[3] -> AppCompatDelegate.MODE_NIGHT_AUTO_BATTERY
-            else -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
+        when (PreferenceManager.getDefaultSharedPreferences(this).getString(getString(R.string.key_theme), getString(R.string.default_value_theme))) {
+            themeValues[0] -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+            themeValues[1] -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            themeValues[2] -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            themeValues[3] -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO_BATTERY)
         }
-        val languageCode = sharedPreferences?.getString(getString(R.string.key_language), getString(R.string.default_value_language))
-        AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags(languageCode))
-        AppCompatDelegate.setDefaultNightMode(nightMode)
-        binding.navView.labelVisibilityMode = when (sharedPreferences.getString(labelKey, labelDefaultValue)) {
+        val bottomNavigationBarLabelsValues = resources.getStringArray(R.array.preference_bottom_navigation_bar_labels_values)
+        binding.navView.labelVisibilityMode = when (PreferenceManager.getDefaultSharedPreferences(this).getString(getString(R.string.key_bottom_navigation_bar_labels), getString(R.string.default_value_bottom_navigation_bar_labels))) {
             bottomNavigationBarLabelsValues[0] -> NavigationBarView.LABEL_VISIBILITY_LABELED
             bottomNavigationBarLabelsValues[1] -> NavigationBarView.LABEL_VISIBILITY_SELECTED
             bottomNavigationBarLabelsValues[2] -> NavigationBarView.LABEL_VISIBILITY_UNLABELED
             else -> NavigationBarView.LABEL_VISIBILITY_AUTO
         }
+        val defaultTabValues = resources.getStringArray(R.array.preference_default_tab_values)
         val navController by lazy {
             val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main) as NavHostFragment
             navHostFragment.navController
         }
-        startFragmentId = when (sharedPreferences.getString(defaultTabKey, defaultTabValue)) {
+        val startFragmentId = when (PreferenceManager.getDefaultSharedPreferences(this).getString(getString(R.string.key_default_tab), getString(R.string.default_value_tab))) {
             defaultTabValues[0] -> R.id.navigation_home
             defaultTabValues[1] -> R.id.navigation_android_studio
             defaultTabValues[2] -> R.id.navigation_about
@@ -87,38 +73,8 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         val appBarConfiguration = AppBarConfiguration(setOf(R.id.navigation_home, R.id.navigation_android_studio, R.id.navigation_about))
         setupActionBarWithNavController(navController, appBarConfiguration)
-        val prefs = getSharedPreferences("app_usage", MODE_PRIVATE)
-        val lastUsedTimestamp = prefs.getLong("last_used", 0)
-        val currentTimestamp = System.currentTimeMillis()
-        val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-        if (currentTimestamp - lastUsedTimestamp > 3 * 24 * 60 * 60 * 1000) {
-            val appUsageChannelId = "app_usage_channel"
-            val appUsageChannel = NotificationChannel(appUsageChannelId, getString(R.string.app_usage_notifications), NotificationManager.IMPORTANCE_HIGH)
-            notificationManager.createNotificationChannel(appUsageChannel)
-            val builder = NotificationCompat.Builder(this, appUsageChannelId)
-                .setSmallIcon(R.drawable.ic_notification_important)
-                .setContentTitle(getString(R.string.notification_last_time_used_title))
-                .setContentText(getString(R.string.summary_notification_last_time_used))
-                .setAutoCancel(true)
-            notificationManager.notify(0, builder.build())
-        }
-        prefs.edit().putLong("last_used", currentTimestamp).apply()
-        val appUpdateInfoTask = AppUpdateManagerFactory.create(this).appUpdateInfo
-        appUpdateInfoTask.addOnSuccessListener { appUpdateInfo ->
-            if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
-                && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.FLEXIBLE)) {
-                val updateChannelId = "update_channel"
-                val updateChannel = NotificationChannel(updateChannelId, getString(R.string.update_notifications), NotificationManager.IMPORTANCE_HIGH)
-                notificationManager.createNotificationChannel(updateChannel)
-                val updateBuilder = NotificationCompat.Builder(this, updateChannelId)
-                    .setSmallIcon(R.drawable.ic_notification_update)
-                    .setContentTitle(getString(R.string.notification_update_title))
-                    .setContentText(getString(R.string.summary_notification_update))
-                    .setAutoCancel(true)
-                    .setContentIntent(PendingIntent.getActivity(this, 0, Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=$packageName")), PendingIntent.FLAG_IMMUTABLE))
-                notificationManager.notify(0, updateBuilder.build())
-            }
-        }
+        val languageCode = PreferenceManager.getDefaultSharedPreferences(this)?.getString(getString(R.string.key_language), getString(R.string.default_value_language))
+        AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags(languageCode))
     }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
@@ -148,18 +104,27 @@ class MainActivity : AppCompatActivity() {
     }
     override fun onResume() {
         super.onResume()
-        val prefs = PreferenceManager.getDefaultSharedPreferences(this)
-        val preferenceFirebase = prefs.getBoolean(getString(R.string.key_firebase), true)
-        FirebaseAnalytics.getInstance(this).setAnalyticsCollectionEnabled(preferenceFirebase)
-        FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(preferenceFirebase)
-        if (prefs.getBoolean("value", true)) {
-            prefs.edit().putBoolean("value", false).apply()
-            startActivity(Intent(this, StartupActivity::class.java))
+        if (!PreferenceManager.getDefaultSharedPreferences(this).getBoolean(getString(R.string.key_firebase), true)) {
+            FirebaseAnalytics.getInstance(this).setAnalyticsCollectionEnabled(false)
+        } else {
+            FirebaseAnalytics.getInstance(this).setAnalyticsCollectionEnabled(true)
         }
+        val appUsageNotificationsManager = AppUsageNotificationsManager(this)
+        appUsageNotificationsManager.checkAndSendAppUsageNotification()
+        appUpdateNotificationsManager.checkAndSendUpdateNotification()
         appUpdateManager.appUpdateInfo.addOnSuccessListener { appUpdateInfo ->
             if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.FLEXIBLE)) {
+                @Suppress("DEPRECATION")
                 appUpdateManager.startUpdateFlowForResult(appUpdateInfo, AppUpdateType.FLEXIBLE, this, requestUpdateCode)
             }
+        }
+        startupScreen()
+    }
+    private fun startupScreen() {
+        val startupPreference = getSharedPreferences("startup", MODE_PRIVATE)
+        if (startupPreference.getBoolean("value", true)) {
+            startupPreference.edit().putBoolean("value", false).apply()
+            startActivity(Intent(this, StartupActivity::class.java))
         }
     }
     @Deprecated("Deprecated in Java")

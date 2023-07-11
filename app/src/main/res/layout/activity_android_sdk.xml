@@ -1172,15 +1172,21 @@
                 </TableRow>
             </TableLayout>
         </com.google.android.material.card.MaterialCardView>
-        <com.google.android.gms.ads.AdView
-            android:id="@+id/ad_view"
-            android:layout_width="wrap_content"
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.Material3.CardView.Outlined"
+            android:id="@+id/card_view_ad"
             android:layout_height="wrap_content"
-            android:layout_margin="24dp"
+            android:layout_width="match_parent"
+            android:layout_marginTop="24dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card_view_table_layout"
-            ads:adSize="BANNER"
-            ads:adUnitId="ca-app-pub-5294151573817700/4974008668"/>
+            app:layout_constraintTop_toBottomOf="@id/card_view_table_layout">
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/ad_view"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                ads:adSize="FULL_BANNER"
+                ads:adUnitId="ca-app-pub-5294151573817700/4974008668"/>
+        </com.google.android.material.card.MaterialCardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </me.zhanghai.android.fastscroll.FastScrollScrollView>

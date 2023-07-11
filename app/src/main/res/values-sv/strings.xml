@@ -3,7 +3,6 @@
     <string name="app_description">Lär dig hur du skapar enkla appar i Android Studio. 📱</string>
     <string name="copyright">© Copyright %1s gjord av D4rK!</string>
     <string name="made_in">Tillverkad med ❤ i Rumänien!</string>
-    <string name="mail_to_dev">Mejla till dev</string>
     <string name="home">Hem</string>
     <string name="android_studio">Android Studio</string>
     <string name="about">Handla om</string>
@@ -14,7 +13,6 @@
     <string name="terms_of_service">Användarvillkor</string>
     <string name="code_of_conduct">Uppförandekod</string>
     <string name="check_for_updates">Sök efter uppdateringar…</string>
-    <string name="feedback">Respons</string>
     <string name="changelog">Ändringslogg</string>
     <string name="more_apps">Fler appar…</string>
     <string name="internet">Internet [INTERNET]</string>
@@ -58,7 +56,6 @@
     <string name="toggle_me">Växla mig</string>
     <string name="type_here">Skriv här…</string>
     <string name="print_text">Skriv ut text.</string>
-    <string name="open_me">Öppna mig :)</string>
     <string name="share">Dela med sig</string>
     <string name="share_subject">Prova det nu!!!</string>
     <string name="share_using">Dela med…</string>
@@ -79,7 +76,6 @@
     <string name="agree">Hålla med</string>
     <string name="browse_terms_of_service_and_privacy_policy">Bläddra i<i>  <u>Terms of Service</u></i> och<i>  <u>Privacy Policy</u></i>  </string>
     <string name="welcome">Välkommen</string>
-    <string name="copied_to_clipboard">Kopierat till urklipp!</string>
     <string name="app_updates">Appuppdateringar</string>
     <string name="subscribe_to_beta">Prenumerera på betauppdateringar</string>
     <string name="table_layout">Tabellayout</string>
@@ -188,7 +184,10 @@
     <string name="snack_bar">Snackbar</string>
     <string name="show_snack_bar">Visa snackbar</string>
     <string name="show_toast">Visa rostat bröd</string>
-    <string name="faq">FAQ</string>
+    <string name="help_and_feedback">Hjälp och feedback</string>
+    <string name="help">Hjälp</string>
+    <string name="faq">Vanliga frågor</string>
+    <string name="send_feedback">Skicka feedback</string>
     <string name="advanced">Avancerad</string>
     <string name="runtime">Körning</string>
     <string name="require_restart">Kräv omstart!</string>
@@ -305,7 +304,6 @@
     <string name="toast_floating_button_secondary">Flytande knapp (sekundär) klickad!</string>
     <string name="toast_floating_button_surface">Flytande knapp (yta) klickade!</string>
     <string name="toast_floating_button_tertiary">Flytande knapp (tertiär) klickade!</string>
-    <string name="toast_feedback">Tack för att du betygsatte oss!</string>
     <string name="toast_image_button">Bildknappen klickade!</string>
     <string name="toast_button_normal">Normal knapp klickad!</string>
     <string name="toast_button_outlined">Den skisserade knappen klickade!</string>
@@ -313,7 +311,6 @@
     <string name="toast_monet_switch">Växla Monet Switch!</string>
     <string name="toast_compat_toggle_button">Toggled Compat Toggle-knapp!</string>
     <string name="toast_material_switch">Växla materialbrytare!</string>
-    <string name="tooltip_feedback">Skicka oss din recension på Google Play Butik.</string>
     <string name="tooltip_show_code">Visa kodsyntax</string>
     <string name="post_notifications">Inläggsaviseringar [POST_NOTIFICATIONS]</string>
     <string name="check_license">Kontrollera licensen [CHECK_LICENSE]</string>
@@ -363,4 +360,10 @@
     <string name="summary_preference_android_studio_linear_layout">En linjär layout är en grupp vyer som ordnar sina underordnade vyer i ett enda linjärt läge, antingen horisontellt eller vertikalt. Layoutens orientering kan anges med android:orientation-attributet. En linjär layout kan användas för att skapa en mängd olika användargränssnitt, till exempel listor, knappar och textfält.</string>
     <string name="android_history" tools:ignore="StringFormatInvalid">Android är ett mobilt operativsystem utvecklat av Google. Det släpptes först som en betaversion den 5 november 2007 och den första kommersiella versionen, Android 1.0, lanserades den 23 september 2008. Android bygger på en modifierad version av Linux-kärnan och annan öppen källkod.\n\nAndroid Studio är den officiella integrerade utvecklingsmiljön (IDE) för Android-apputveckling. Det meddelades av Google på dess I/O-konferens den 15 maj 2013 och släpptes för allmän användning den 8 december 2014. Android Studio bygger på IntelliJ IDEA, en populär Java IDE.\n\nKotlin är ett plattformsoberoende programmeringsspråk som kan köras på Java Virtual Machine (JVM), Android, webbläsare och infödda plattformar. Det skapades av JetBrains, ett mjukvaruföretag baserat i Prag. Kotlin meddelades först i juli 2011 och släpptes som ett öppet källkodsprojekt i februari 2012.\n\nGoogle meddelade sitt stöd för Kotlin som ett officiellt språk för Android-apputveckling på sin I/O-konferens den 17 maj 2017. Sedan dess har Kotlin blivit ett av de mest populära språken för Android-utvecklare. Enligt Googles data från oktober 2020 använder mer än 70% av de topp-1000 apparna på Google Play Kotlin.</string>
     <string name="android_features">Android är inte bara ett operativsystem, utan också en plattform som erbjuder en rad funktioner och möjligheter för användare och utvecklare. Några av funktionerna i Android inkluderar:\n\n- Near Field Communication (NFC), som låter dig dela data, göra betalningar och ansluta till andra enheter trådlöst.\n- Alternativa tangentbord som låter dig anpassa din inmatningsmetod med olika layouter, språk och teman.\n- IR-överföring, som gör att du kan använda din telefon som fjärrkontroll för TV-apparater, luftkonditioneringsapparater och andra apparater.\n- No-touch-kontroll, som låter dig utföra åtgärder på din telefon utan att röra skärmen genom att använda gester eller röstkommandon.\n- Automatisering, som gör att du kan ställa in rutiner och triggers för att din telefon ska utföra vissa uppgifter automatiskt.\n- Trådlösa appnedladdningar, som låter dig installera appar från din telefon dator eller webbläsare utan att ansluta din telefon med en kabel.\n- Lagring och batteribyte, som ger dig möjlighet att utöka telefonens minne eller enkelt byta ut batteriet.\n- Anpassad startskärm, som låter dig anpassa din telefons utseende med widgets, bakgrundsbild ers, ikoner och startprogram.\n\nAndroid Studio är det bästa verktyget för att utveckla Android-appar. Den erbjuder många funktioner och fördelar för utvecklare som:\n\n- Kodredigerare med syntaxmarkering, kodkomplettering, refactoring, felsökning, testning och linting-verktyg.\n- Layoutredigerare med dra-och-släpp-gränssnitt för design av användare. gränssnitt.\n- Emulator med snabbstart och stöd för ögonblicksbilder för att testa appar på olika enheter och konfigurationer.\n- Firebase-integration med tjänster som autentisering, databas, lagring, analys, kraschrapportering etc. \n- Gradle-baserat byggsystem med beroendehantering,\nanpassning,\noptimering,\nsignering,\ndistributionsalternativ etc. \n\nMed Android Studio kan du skapa fantastiska appar för Android-enheter med Kotlin,\nmodernt programmeringsspråk som är kortfattat,\nsäkert,\nexpressive,\noch kompatibla med Java.</string>
+    <string name="snack_unable_to_open_google_play_store">Kan inte öppna Google Play-butiken.</string>
+    <string name="snack_copied_to_clipboard">Kopierat till urklipp! 📋</string>
+    <string name="snack_no_app_found">Ingen app hittades för denna åtgärd</string>
+    <string name="snack_feedback">Tack för att du betygsätter oss! ❤️</string>
+    <string name="tooltip_open_me">Öppna mig 🌐</string>
+    <string name="tooltip_mail_to_dev">E-posta utvecklare 📧</string>
 </resources>

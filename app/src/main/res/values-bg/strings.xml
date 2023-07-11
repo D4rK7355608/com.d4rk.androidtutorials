@@ -3,7 +3,6 @@
     <string name="app_description">Научете как да създавате прости приложения в Android Studio. 📱</string>
     <string name="copyright">© Авторско право %1$s, направено от D4rK!</string>
     <string name="made_in">Произведено с ❤ в Румъния!</string>
-    <string name="mail_to_dev">Имейл до разработчиците</string>
     <string name="home">У дома</string>
     <string name="android_studio">Android Studio</string>
     <string name="about">относно</string>
@@ -14,7 +13,6 @@
     <string name="terms_of_service">Условия за ползване</string>
     <string name="code_of_conduct">Кодекс на поведение</string>
     <string name="check_for_updates">Проверка за актуализации…</string>
-    <string name="feedback">Обратна връзка</string>
     <string name="changelog">Дневник на промените</string>
     <string name="more_apps">Още приложения…</string>
     <string name="internet">Интернет [ИНТЕРНЕТ]</string>
@@ -58,7 +56,6 @@
     <string name="toggle_me">Превключи ме</string>
     <string name="type_here">Пиши тук…</string>
     <string name="print_text">Печат на текст.</string>
-    <string name="open_me">отвори ме :)</string>
     <string name="share">Дял</string>
     <string name="share_subject">Опитай сега!!!</string>
     <string name="share_using">Споделяне чрез…</string>
@@ -79,7 +76,6 @@
     <string name="agree">Съгласен</string>
     <string name="browse_terms_of_service_and_privacy_policy">Разгледайте<i>  <u>Terms of Service</u></i> и<i>  <u>Privacy Policy</u></i>  </string>
     <string name="welcome">Добре дошли</string>
-    <string name="copied_to_clipboard">Копирано в клипборда!</string>
     <string name="app_updates">Актуализации на приложения</string>
     <string name="subscribe_to_beta">Абонирайте се за бета актуализации</string>
     <string name="language">език</string>
@@ -184,7 +180,10 @@
     <string name="snack_bar">Снек-бар</string>
     <string name="show_snack_bar">Покажи снек бар</string>
     <string name="show_toast">Покажи тост</string>
+    <string name="help_and_feedback">Помощ и обратна връзка</string>
+    <string name="help">Помощ</string>
     <string name="faq">ЧЗВ</string>
+    <string name="send_feedback">Изпрати обратна връзка</string>
     <string name="advanced">Разширено</string>
     <string name="runtime">Време за изпълнение</string>
     <string name="require_restart">Изискване за рестартиране!</string>
@@ -301,7 +300,6 @@
     <string name="toast_floating_button_secondary">Плаващ бутон (вторичен) е щракнат!</string>
     <string name="toast_floating_button_surface">Плаващ бутон (повърхност) е щракнат!</string>
     <string name="toast_floating_button_tertiary">Плаващ бутон (третичен) е щракнат!</string>
-    <string name="toast_feedback">Благодаря, че ни оценихте!</string>
     <string name="toast_image_button">Щракнахте върху бутона за изображение!</string>
     <string name="toast_button_normal">Щракнат е нормален бутон!</string>
     <string name="toast_button_outlined">Щракнахте върху очертан бутон!</string>
@@ -309,7 +307,6 @@
     <string name="toast_monet_switch">Превключен превключвател Monet!</string>
     <string name="toast_compat_toggle_button">Превключен бутон за превключване на Compat!</string>
     <string name="toast_material_switch">Превключен превключвател за материали!</string>
-    <string name="tooltip_feedback">Изпратете ни отзива си в Google Play Store.</string>
     <string name="tooltip_show_code">Показване на синтаксиса на кода</string>
     <string name="post_notifications">Известия за публикации [POST_NOTIFICATIONS]</string>
     <string name="check_license">Проверка на лиценз [CHECK_LICENSE]</string>
@@ -363,4 +360,10 @@
     <string name="summary_preference_android_studio_table_layout">Подреждането на клетките, редовете и колоните на таблицата в визуално привлекателен и функционален начин е табличен layout.</string>
     <string name="summary_preference_android_studio_gird_view">Мрежестият изглед е група от изгледи, която показва елементите в двуизмерна пространства за превъртане. Мрежестите изгледи често се използват за показване на изображения, списъци или други видове данни в мрежовиден формат.</string>
     <string name="summary_preference_android_studio_linear_layout">Линейното оформление е група от обекти, които подреждат своите под-елементи в единична линейна посока, хоризонтално или вертикално. Направлението на оформлението може да се зададе с атрибута android:orientation. Линейното оформление може да се използва за създаване на разнообразни потребителски интерфейси, като списъци, бутони и текстови полета.</string>
+    <string name="snack_unable_to_open_google_play_store">Неуспешно отваряне на Google Play Store.</string>
+    <string name="snack_copied_to_clipboard">Копирано в клипборда! 📋</string>
+    <string name="snack_no_app_found">Не е открито приложение за това действие</string>
+    <string name="snack_feedback">Благодарим ви за оценката! ❤️</string>
+    <string name="tooltip_open_me">Отвори ме 🌐</string>
+    <string name="tooltip_mail_to_dev">Изпрати имейл на разработчика 📧</string>
 </resources>

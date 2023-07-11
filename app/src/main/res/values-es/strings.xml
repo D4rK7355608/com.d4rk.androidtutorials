@@ -3,22 +3,18 @@
     <string name="app_description">Aprende a crear aplicaciones simples en Android Studio. 📱</string>
     <string name="copyright">© Copyright %1s creado por D4rK.</string>
     <string name="made_in">Hecho con ❤ en Rumania!</string>
-    <string name="mail_to_dev">Enviar correo electrónico al desarrollador</string>
     <string name="home">Hogar</string>
     <string name="android_studio">Estudio Android</string>
     <string name="about">Sobre</string>
     <string name="google_dev">Desarrollador de Google</string>
     <string name="more">Más</string>
-    <string name="toast_feedback">¡Gracias por calificarnos!</string>
     <string name="privacy_policy">Política de privacidad</string>
     <string name="license">Licencia</string>
     <string name="terms_of_service">Términos de servicio</string>
     <string name="code_of_conduct">Código de conducta</string>
     <string name="check_for_updates">Buscar actualizaciones…</string>
-    <string name="feedback">Retroalimentación</string>
     <string name="changelog">registro de cambios</string>
     <string name="more_apps">Más aplicaciones…</string>
-    <string name="tooltip_feedback">Envíanos tu reseña en Google Play Store.</string>
     <string name="internet">Internet [INTERNET]</string>
     <string name="summary_preference_permissions_internet">Se utiliza para enviar informes de errores.</string>
     <string name="normal">Normal</string>
@@ -81,7 +77,6 @@
     <string name="print_text">Imprimir texto.</string>
     <string name="implementations_text_box">Implementar cuadro de texto</string>
     <string name="summary_preference_android_studio_text_box">Un elemento de la interfaz de usuario para ingresar y modificar texto. Cuando define un widget de edición de texto, debe especificar el atributo R.styleable.TextView_inputType…</string>
-    <string name="open_me">abreme :)</string>
     <string name="toast_button_normal">¡Botón normal pulsado!</string>
     <string name="toast_button_outlined">¡Se hizo clic en el botón contorneado!</string>
     <string name="toast_button_elevated">¡Se hizo clic en el botón elevado!</string>
@@ -108,7 +103,6 @@
     <string name="browse_terms_of_service_and_privacy_policy">Explorar el<i>  <u>Terms of Service</u></i> y<i>  <u>Privacy Policy</u></i>  </string>
     <string name="summary_browse_terms_of_service_and_privacy_policy">Lea y acepte nuestros Términos de servicio y Política de privacidad para continuar.</string>
     <string name="welcome">Bienvenidos</string>
-    <string name="copied_to_clipboard">¡Copiado al portapapeles!</string>
     <string name="app_updates">actualizaciones de la aplicación</string>
     <string name="subscribe_to_beta">Suscríbete a las actualizaciones beta</string>
     <string name="table_layout">Diseño de tabla</string>
@@ -275,7 +269,10 @@
     <string name="snack_bar">Bar</string>
     <string name="show_snack_bar">Mostrar chiringuito</string>
     <string name="show_toast">Mostrar tostadas</string>
-    <string name="faq">Preguntas más frecuentes</string>
+    <string name="help_and_feedback">Ayuda y comentarios</string>
+    <string name="help">Ayuda</string>
+    <string name="faq">Preguntas frecuentes</string>
+    <string name="send_feedback">Enviar comentarios</string>
     <string name="advanced">Avanzado</string>
     <string name="runtime">tiempo de ejecución</string>
     <string name="require_restart">¡Requiere reinicio!</string>
@@ -363,4 +360,10 @@
     <string name="summary_preference_android_studio_linear_layout">Un diseño lineal es un grupo de elementos que organiza sus elementos secundarios en una sola dirección lineal, ya sea horizontal o vertical. La orientación del diseño se puede especificar utilizando el atributo android:orientation. Un diseño lineal se puede utilizar para crear una variedad de interfaces de usuario, como listas, botones y campos de texto.</string>
     <string name="android_history">Android es un sistema operativo móvil desarrollado por Google. Fue lanzado por primera vez como una versión beta el 5 de noviembre de 2007 y la primera versión comercial, Android 1.0, se lanzó el 23 de septiembre de 2008. Android está basado en una versión modificada del kernel de Linux y otro software de código abierto.\n\nAndroid Studio es el entorno de desarrollo integrado (IDE) oficial para el desarrollo de aplicaciones para Android. Fue anunciado por Google en su conferencia I/O el 15 de mayo de 2013 y se lanzó para uso público el 8 de diciembre de 2014. Android Studio está basado en IntelliJ IDEA, un popular IDE para Java.\n\nKotlin es un lenguaje de programación multiplataforma que puede ejecutarse en la Máquina Virtual Java (JVM), Android, navegador y plataformas nativas. Fue creado por JetBrains, una empresa de software con sede en Praga. Kotlin fue anunciado por primera vez en julio de 2011 y se lanzó como un proyecto open source en febrero de 2012.\n\nGoogle anunció su apoyo a Kotlin como lenguaje oficial para el desarrollo de aplicaciones para Android en su conferencia I/O el 17 de mayo del año 2017. Desde entonces, Kotlin se ha convertido en uno de los lenguajes más populares entre los desarrolladores para Android. Según datos proporcionados por Google a partir del mes octubre del año 2020 más del setenta por ciento (70%) entre las mil aplicaciones más populares que están disponibles en Google Play utilizan Kotlin.</string>
     <string name="android_features">Android no es solo un sistema operativo, sino también una plataforma que ofrece una variedad de características y capacidades para usuarios y desarrolladores. Algunas de las funciones de Android incluyen:\n\n- Comunicación de campo cercano (NFC), que le permite compartir datos, realizar pagos y conectarse con otros dispositivos de forma inalámbrica.\n- Teclados alternativos, que le permiten personalizar su método de entrada con diferentes diseños, idiomas y temas.\n- Transmisión IR, que le permite usar su teléfono como control remoto para televisores, acondicionadores de aire y otros electrodomésticos.\n- Control sin contacto, que le permite realizar acciones en tu teléfono sin tocar la pantalla usando gestos o comandos de voz.\n- Automatización, que te permite configurar rutinas y disparadores para que tu teléfono realice ciertas tareas automáticamente.\n- Descargas inalámbricas de aplicaciones, que te permiten instalar aplicaciones desde tu computadora o navegador web sin conectar su teléfono con un cable.\n- Almacenamiento y cambio de batería, que le brindan la opción de expandir la memoria de su teléfono o reemplazar su batería fácilmente.\n- Pantalla de inicio personalizada, que le permite personalizar la apariencia de su teléfono con widgets, wallpap ers, íconos y lanzadores.\n\nAndroid Studio es la mejor herramienta para desarrollar aplicaciones de Android. Ofrece muchas funciones y beneficios para los desarrolladores, como:\n\n- Editor de código con herramientas de resaltado de sintaxis, finalización de código, refactorización, depuración, prueba y linting.\n- Editor de diseño con interfaz de arrastrar y soltar para diseñar usuarios interfaces.\n- Emulador con arranque rápido y soporte de instantáneas para probar aplicaciones en diferentes dispositivos y configuraciones.\n- Integración de Firebase con servicios como autenticación, base de datos, almacenamiento, análisis, informes de fallas, etc. \n- Sistema de compilación basado en Gradle con gestión de dependencias,\npersonalización,\noptimización,\nfirma,\nopciones de distribución, etc. expresivo,\ny compatible con Java.</string>
+    <string name="snack_unable_to_open_google_play_store">No se puede abrir Google Play Store.</string>
+    <string name="snack_copied_to_clipboard">¡Copiado al portapapeles! 📋</string>
+    <string name="snack_no_app_found">No se encontró ninguna aplicación para esta acción</string>
+    <string name="snack_feedback">¡Gracias por valorarnos! ❤️</string>
+    <string name="tooltip_open_me">Ábreme 🌐</string>
+    <string name="tooltip_mail_to_dev">Enviar correo al desarrollador 📧</string>
 </resources>

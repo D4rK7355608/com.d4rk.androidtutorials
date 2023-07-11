@@ -4,7 +4,6 @@
     <string name="app_description">Ismerje meg, hogyan készíthet egyszerű alkalmazásokat az Android Stúdióban. 📱</string>
     <string name="copyright">© Copyright %1s, D4rK!</string>
     <string name="made_in">❤-vel készült Romániában!</string>
-    <string name="mail_to_dev">E-mail a fejlesztőnek</string>
     <string name="home">itthon</string>
     <string name="android_studio">Android Studio</string>
     <string name="about">Ról ről</string>
@@ -15,7 +14,6 @@
     <string name="terms_of_service">Szolgáltatás feltételei</string>
     <string name="code_of_conduct">Magatartási kódex</string>
     <string name="check_for_updates">Frissítések keresése…</string>
-    <string name="feedback">Visszacsatolás</string>
     <string name="changelog">Változási napló</string>
     <string name="more_apps">További alkalmazások…</string>
     <string name="internet">Internet [INTERNET]</string>
@@ -59,7 +57,6 @@
     <string name="toggle_me">Válts rám</string>
     <string name="type_here">Írj ide…</string>
     <string name="print_text">Szöveg nyomtatása.</string>
-    <string name="open_me">Nyiss ki :)</string>
     <string name="share">Ossza meg</string>
     <string name="share_subject">Probáld ki most!!!</string>
     <string name="share_using">Megosztás a…</string>
@@ -80,7 +77,6 @@
     <string name="agree">Egyetért</string>
     <string name="browse_terms_of_service_and_privacy_policy">Böngésszen a<i>  <u>Terms of Service</u></i> és<i>  <u>Privacy Policy</u></i>  </string>
     <string name="welcome">Üdvözöljük</string>
-    <string name="copied_to_clipboard">Vágólapra másolva!</string>
     <string name="app_updates">Alkalmazásfrissítések</string>
     <string name="subscribe_to_beta">Feliratkozás a béta frissítésekre</string>
     <string name="language">Nyelv</string>
@@ -211,7 +207,10 @@
     <string name="history">Történelem</string>
     <string name="code_font">Kód betűtípus</string>
     <string name="default_tab">Alapértelmezett lap</string>
+    <string name="help_and_feedback">Segítség és visszajelzés</string>
+    <string name="help">Segítség</string>
     <string name="faq">GYIK</string>
+    <string name="send_feedback">Visszajelzés küldése</string>
     <string name="advanced">Fejlett</string>
     <string name="runtime">Futásidő</string>
     <string name="reviews">Vélemények</string>
@@ -346,7 +345,6 @@
     <string name="toast_floating_button_secondary">Lebegő gomb (másodlagos) kattintott!</string>
     <string name="toast_floating_button_surface">Lebegő gomb (felület) kattintott!</string>
     <string name="toast_floating_button_tertiary">Lebegő gomb (harmadlagos) kattintott!</string>
-    <string name="toast_feedback">Köszönjük, hogy értékelt minket!</string>
     <string name="toast_image_button">A kép gombra kattintott!</string>
     <string name="toast_button_normal">Normál gomb kattintott!</string>
     <string name="toast_button_outlined">Körvonalas gomb kattintott!</string>
@@ -354,7 +352,6 @@
     <string name="toast_monet_switch">Bekapcsolt Monet Switch!</string>
     <string name="toast_compat_toggle_button">Kapcsolt kompatibilis váltógomb!</string>
     <string name="toast_material_switch">Átkapcsolt anyagkapcsoló!</string>
-    <string name="tooltip_feedback">Küldje el véleményét a Google Play Áruházban.</string>
     <string name="tooltip_show_code">Kód szintaxisának megjelenítése</string>
     <string name="history_of_android">Az Android története</string>
     <string name="android_history" ns0:ignore="StringFormatCount,StringFormatMatches">Az Android a Google által fejlesztett mobil operációs rendszer. Először béta verzióként 2007. november 5-én adták ki, az első kereskedelmi verzió, az Android 1.0 pedig 2008. szeptember 23-án jelent meg. Az Android a Linux kernel és más nyílt forráskódú szoftverek módosított verzióján alapul.\n\Az nAndroid Studio az Android-alkalmazások fejlesztésének hivatalos integrált fejlesztői környezete (IDE). A Google a 2013. május 15-i I/O konferencián jelentette be, és 2014. december 8-án tette közzé nyilvánosan. Az Android Studio az IntelliJ IDEA-n, egy népszerű Java IDE-n alapul.\n\nA Kotlin egy többplatformos programozás Java virtuális gépen (JVM), Androidon, böngészőn és natív platformokon futtatható nyelv. A JetBrains prágai szoftvercég hozta létre. A Kotlint először 2011 júliusában jelentették be, és nyílt forráskódú projektként 2012 februárjában adták ki.\n\nA Google 2017. május 17-én tartott I/O konferenciáján bejelentette, hogy támogatja a Kotlint az Android-alkalmazások fejlesztésének hivatalos nyelveként. A Kotlin az Android-fejlesztők egyik legnépszerűbb nyelvévé vált. A Google 2020 októberi adatai szerint a Google Play 1000 legnépszerűbb alkalmazásának több mint 70%-a használja a Kotlint.</string>
@@ -363,4 +360,10 @@
     <string name="notification_settings">Értesítési beállítások</string>
     <string name="app_usage_notifications">Alkalmazáshasználati értesítések</string>
     <string name="update_notifications">Frissítse az értesítéseket</string>
+    <string name="snack_unable_to_open_google_play_store">Nem sikerült megnyitni a Google Play Áruházat.</string>
+    <string name="snack_copied_to_clipboard">Vágólapra másolva! 📋</string>
+    <string name="snack_no_app_found">Nincs alkalmazás ehhez a művelethez</string>
+    <string name="snack_feedback">Köszönjük az értékelést! ❤️</string>
+    <string name="tooltip_open_me">Nyiss meg 🌐</string>
+    <string name="tooltip_mail_to_dev">E-mail küldése a fejlesztőnek 📧</string>
 </resources>

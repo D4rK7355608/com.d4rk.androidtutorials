@@ -1,22 +1,18 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_version">バージョン %1$s (%2$d)</string>
     <string name="app_description">Android Studio で簡単なアプリを作成する方法を学びます。 📱</string>
-    <string name="mail_to_dev">開発者にメール</string>
     <string name="home">家</string>
     <string name="android_studio">Android スタジオ</string>
     <string name="about">約</string>
     <string name="google_dev">Google 開発者</string>
     <string name="more">もっと</string>
-    <string name="toast_feedback">評価していただきありがとうございます！</string>
     <string name="privacy_policy">プライバシーポリシー</string>
     <string name="license">ライセンス</string>
     <string name="terms_of_service">利用規約</string>
     <string name="code_of_conduct">行動規範</string>
     <string name="check_for_updates">アップデートを確認…</string>
-    <string name="feedback">フィードバック</string>
     <string name="changelog">変更ログ</string>
     <string name="more_apps">より多くのアプリケーション…</string>
-    <string name="tooltip_feedback">Google Play ストアでレビューをお送りください。</string>
     <string name="internet">インターネット [インターネット]</string>
     <string name="summary_preference_permissions_internet">エラー レポートの送信に使用されます。</string>
     <string name="normal">普通</string>
@@ -85,7 +81,6 @@
     <string name="print_text">テキストを印刷します。</string>
     <string name="implementations_text_box">テキスト ボックスの実装</string>
     <string name="summary_preference_android_studio_text_box">テキストを入力および変更するためのユーザー インターフェイス要素。テキスト編集ウィジェットを定義するときは、R.styleable.TextView_inputType 属性を指定する必要があります…</string>
-    <string name="open_me">私を開いてください:)</string>
     <string name="toast_button_normal">通常ボタンがクリックされました！</string>
     <string name="toast_button_outlined">アウトライン化されたボタンがクリックされました!</string>
     <string name="toast_button_elevated">高架ボタンがクリックされました！</string>
@@ -114,7 +109,6 @@
     <string name="browse_terms_of_service_and_privacy_policy"><i><u>サービス利用規約</u></i>と<i><u>プライバシーポリシー</u></i>を参照してください</string>
     <string name="summary_browse_terms_of_service_and_privacy_policy">続行するには、利用規約とプライバシー ポリシーを読み、同意してください。</string>
     <string name="welcome">いらっしゃいませ</string>
-    <string name="copied_to_clipboard">クリップボードにコピーしました！</string>
     <string name="privacy_and_security">プライバシーとセキュリティ</string>
     <string name="language">言語</string>
     <string name="table_layout">テーブルレイアウト</string>
@@ -279,7 +273,10 @@
     <string name="snack_bar">スナックバー</string>
     <string name="show_snack_bar">スナックバーを表示</string>
     <string name="show_toast">トーストを表示</string>
+    <string name="help_and_feedback">ヘルプとフィードバック</string>
+    <string name="help">ヘルプ</string>
     <string name="faq">よくある質問</string>
+    <string name="send_feedback">フィードバックを送信</string>
     <string name="advanced">高度</string>
     <string name="runtime">ランタイム</string>
     <string name="require_restart">再起動が必要です!</string>
@@ -363,4 +360,10 @@
     <string name="summary_preference_android_studio_linear_layout">线性布局是一个视图组，它将其子视图沿着单个线性方向排列，可以是水平方向也可以是垂直方向。布局的方向可以使用 android:orientation 属性来指定。线性布局可用于创建各种用户界面，例如列表、按钮和文本字段。</string>
     <string name="android_history" tools:ignore="StringFormatCount">Androidは、Googleによって開発されたモバイルオペレーティングシステムです。2007年11月5日に初めてベータ版がリリースされ、最初の商用版であるAndroid 1.0は2008年9月23日にリリースされました。Androidは、Linuxカーネルとその他のオープンソースソフトウェアの修正版に基づいています。\n\nAndroid Studioは、Androidアプリ開発用の公式統合開発環境（IDE）です。2013年5月15日にGoogle I/OカンファレンスでGoogleによって発表され、2014年12月8日に一般公開されました。Android Studioは、人気のあるJava IDEであるIntelliJ IDEAをベースとしています。\n\nKotlinは、Java仮想マシン（JVM）、Android、ブラウザーおよびネイティブプラットフォームで実行可能なクロスプラットフォームプログラミング言語です。プラハを拠点とするソフトウェア会社JetBrainsが作成しました。Kotlinは2011年7月に初めて発表され、2012年2月にオープンソースプロジェクトとしてリリースされました。\n\nGoogleは2017年5月17日のI/OカンファレンスでKotlinをAndroidアプリ開発の公式言語としてサポートすることを発表しました。それ以来、KotlinはAndroidデベロッパー向けの最も人気のある言語の1つとなりました。2020年10月時点でGoogleから提供されたデータによると、Google Playで利用可能な最も人気のある1000個のアプリのうち70％以上がKotlinを使用しています。</string>
     <string name="android_features">Android はオペレーティング システムであるだけでなく、ユーザーと開発者にさまざまな機能を提供するプラットフォームでもあります。 Android の機能には次のようなものがあります:\n\n- データの共有、支払い、他のデバイスとのワイヤレス接続を可能にする近距離無線通信 (NFC)。\n- 入力方法をカスタマイズできる代替キーボードさまざまなレイアウト、言語、テーマを使用できます。\n- IR 送信により、スマートフォンをテレビ、エアコン、その他の電化製品のリモコンとして使用できます。\n- ノータッチ コントロールにより、操作を行うことができますジェスチャーや音声コマンドを使用して、画面に触れずにスマートフォンを操作できます。\n- 自動化。スマートフォンで特定のタスクを自動的に実行するためのルーティンとトリガーを設定できます。\n- ワイヤレス アプリのダウンロード。スマートフォンからアプリをインストールできます。スマートフォンをケーブルで接続しなくても、コンピュータやウェブ ブラウザを使用できます。\n- ストレージとバッテリー スワップにより、スマートフォンのメモリを拡張したり、バッテリーを簡単に交換したりできます。\n- カスタム ホーム画面でカスタマイズできます。ウィジェット、壁紙を使用した携帯電話の外観\n\nAndroid Studio は、Android アプリの開発に最適なツールです。次のような多くの機能と利点を開発者に提供します:\n\n- 構文の強調表示、コード補完、リファクタリング、デバッグ、テスト、リンティング ツールを備えたコード エディター。\n- ユーザーを設計するためのドラッグ アンド ドロップ インターフェースを備えたレイアウト エディターインターフェース。\n- さまざまなデバイスや構成でアプリをテストするための高速ブートとスナップショットをサポートするエミュレータ。\n- Firebase と認証、データベース、ストレージ、分析、クラッシュ レポートなどのサービスとの統合。\n- Gradle ベースのビルド システム依存関係管理、\nカスタマイズ、\n最適化、\n署名、\n配布オプションなど。\n\nAndroid Studio を使用すると、\n簡潔で安全な最新のプログラミング言語である Kotlin を使用して、Android デバイス向けの素晴らしいアプリを作成できます。\表現力があり、\nJava と相互運用できます。</string>
+    <string name="snack_unable_to_open_google_play_store">Google Play ストアを開けませんでした。</string>
+    <string name="snack_copied_to_clipboard">クリップボードにコピーされました！ 📋</string>
+    <string name="snack_no_app_found">この操作に適したアプリが見つかりません</string>
+    <string name="snack_feedback">評価ありがとうございます！ ❤️</string>
+    <string name="tooltip_open_me">開きます 🌐</string>
+    <string name="tooltip_mail_to_dev">開発者にメールを送信 📧</string>
 </resources>

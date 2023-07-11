@@ -3,22 +3,18 @@
     <string name="app_description">Android Studio\'da basit uygulamalar yapmayı öğrenin. 📱</string>
     <string name="copyright">© Telif hakkı %1s D4rK tarafından yapılmıştır!</string>
     <string name="made_in">Romanya\'da ❤ ile yapıldı!</string>
-    <string name="mail_to_dev">geliştiriciye e-posta</string>
     <string name="home">Ev</string>
     <string name="android_studio">Android Stüdyosu</string>
     <string name="about">Hakkında</string>
     <string name="google_dev">Google Geliştirici</string>
     <string name="more">Daha</string>
-    <string name="toast_feedback">Bizi değerlendirdiğiniz için teşekkürler!</string>
     <string name="privacy_policy">Gizlilik Politikası</string>
     <string name="license">Lisans</string>
     <string name="terms_of_service">Kullanım Şartları</string>
     <string name="code_of_conduct">Davranış kodu</string>
     <string name="check_for_updates">Güncellemeleri kontrol et…</string>
-    <string name="feedback">Geri bildirim</string>
     <string name="changelog">Değişiklik günlüğü</string>
     <string name="more_apps">Daha fazla uygulama…</string>
-    <string name="tooltip_feedback">Yorumunuzu Google Play Store\'da bize gönderin.</string>
     <string name="internet">İnternet [İNTERNET]</string>
     <string name="summary_preference_permissions_internet">Hata raporları göndermek için kullanılır.</string>
     <string name="normal">Normal</string>
@@ -84,7 +80,6 @@
     <string name="print_text">Metin yazdırın.</string>
     <string name="implementations_text_box">Metin Kutusunu Uygula</string>
     <string name="summary_preference_android_studio_text_box">Metin girmek ve değiştirmek için bir kullanıcı arabirimi öğesi. Bir metin düzenleme widget\'ı tanımladığınızda, R.styleable.TextView_inputType özniteliğini belirtmelisiniz…</string>
-    <string name="open_me">Beni aç :)</string>
     <string name="toast_button_normal">Normal düğme tıklandı!</string>
     <string name="toast_button_outlined">Seviyelendirilmiş düğme tıklandı!</string>
     <string name="toast_button_elevated">Yükseltilmiş düğme tıklandı!</string>
@@ -113,7 +108,6 @@
     <string name="browse_terms_of_service_and_privacy_policy">göz atın<i>  <u>Terms of Service</u></i> ve<i>  <u>Privacy Policy</u></i>  </string>
     <string name="summary_browse_terms_of_service_and_privacy_policy">Devam etmek için Hizmet Şartlarımızı ve Gizlilik Politikamızı okuyun ve kabul edin.</string>
     <string name="welcome">Hoş geldin</string>
-    <string name="copied_to_clipboard">Panoya kopyalandı!</string>
     <string name="app_updates">Uygulama güncellemeleri</string>
     <string name="subscribe_to_beta">Beta güncellemelerine abone olun</string>
     <string name="table_layout">Tablo Düzeni</string>
@@ -280,7 +274,10 @@
     <string name="snack_bar">Snack bar</string>
     <string name="show_snack_bar">Snack barı göster</string>
     <string name="show_toast">Tostu göster</string>
+    <string name="help_and_feedback">Yardım ve Geri Bildirim</string>
+    <string name="help">Yardım</string>
     <string name="faq">SSS</string>
+    <string name="send_feedback">Geri Bildirim Gönder</string>
     <string name="advanced">Gelişmiş</string>
     <string name="runtime">Çalışma süresi</string>
     <string name="require_restart">Yeniden başlatma gerektir!</string>
@@ -363,4 +360,10 @@
     <string name="summary_preference_android_studio_linear_layout">Doğrusal düzen, öğelerini tek bir doğrusal yönde, yatay veya dikey olarak düzenleyen bir görünüm grubudur. Düzenin yönü, android:orientation özniteliği kullanılarak belirtilebilir. Doğrusal düzen, listeler, düğmeler ve metin kutuları gibi çeşitli kullanıcı arayüzleri oluşturmak için kullanılabilir.</string>
     <string name="android_history">Android, Google tarafından geliştirilen bir mobil işletim sistemidir. İlk olarak 5 Kasım 2007\'de beta sürümü olarak yayınlandı ve ilk ticari sürümü olan Android 1.0, 23 Eylül 2008\'de piyasaya sürüldü. Android, Linux çekirdeğinin değiştirilmiş bir sürümü ve diğer açık kaynak yazılımlarına dayanmaktadır.\n\nAndroid Studio, Android uygulama geliştirme için resmi entegre geliştirme ortamıdır (IDE). Google tarafından I/O konferansında 15 Mayıs 2013\'te duyuruldu ve 8 Aralık 2014\'te halka açık kullanıma sunuldu. Android Studio popüler bir Java IDE olan IntelliJ IDEA\'ya dayanmaktadır.\n\nKotlin, Java Sanal Makinesi (JVM), Android, tarayıcı ve yerel platformlarda çalışabilen platformlar arası bir programlama dilidir. Prag merkezli bir yazılım şirketi olan JetBrains tarafından oluşturulmuştur. Kotlin ilk olarak Temmuz 2011\'de duyuruldu ve Şubat 2012\'de açık kaynaklı bir proje olarak yayınlandı.\n\nGoogle, I/O konferansında 17 Mayıs 2017\'de Kotlin\'i resmi bir dil olarak Android uygulama geliştirme için desteklediğini duyurdu. O zamandan beri Kotlin, Android geliştiricileri için en popüler dillerden biri haline geldi. Google\'ın Ekim 2020 verilerine göre Google Play\'in en iyi bin uygulamasının %70\'inden fazlası Kotlin kullanıyor.</string>
     <string name="android_features">Android yalnızca bir işletim sistemi değil, aynı zamanda kullanıcılar ve geliştiriciler için çeşitli özellikler ve yetenekler sunan bir platformdur. Android\'in özelliklerinden bazıları şunlardır:\n\n- Kablosuz olarak veri paylaşmanıza, ödeme yapmanıza ve diğer cihazlara bağlanmanıza olanak tanıyan Yakın Alan İletişimi (NFC).\n- Giriş yönteminizi özelleştirmenizi sağlayan alternatif klavyeler farklı düzenler, diller ve temalar ile.\n- Telefonunuzu TV\'ler, klimalar ve diğer cihazlar için uzaktan kumanda olarak kullanmanızı sağlayan kızılötesi iletimi.\n- Üzerinde işlemler gerçekleştirmenizi sağlayan dokunmadan kontrol Hareketleri veya sesli komutları kullanarak ekrana dokunmadan telefonunuzu açın.\n- Telefonunuzun belirli görevleri otomatik olarak gerçekleştirmesi için rutinler ve tetikleyiciler ayarlamanıza olanak tanıyan otomasyon.\n- Telefonunuzdan uygulamaları yüklemenizi sağlayan kablosuz uygulama indirmeleri telefonunuzu bir kabloyla bağlamanıza gerek kalmadan bilgisayar veya web tarayıcısı.\n- Telefonunuzun belleğini genişletme veya pilini kolayca değiştirme seçeneği sunan depolama ve pil değiştirme.\n- Kişiselleştirmenizi sağlayan özel ana ekran widget\'lar, wallpap ile telefonunuzun görünümü ers, simgeler ve başlatıcılar.\n\nAndroid Studio, Android uygulamaları geliştirmek için en iyi araçtır. Geliştiriciler için aşağıdakiler gibi pek çok özellik ve avantaj sunar:\n\n- Sözdizimi vurgulama, kod tamamlama, yeniden düzenleme, hata ayıklama, test etme ve dizme araçlarına sahip kod düzenleyici.\n- Kullanıcı tasarlamak için sürükle ve bırak arayüzüne sahip düzen düzenleyici arayüzler.\n- Farklı cihazlar ve yapılandırmalardaki uygulamaları test etmek için hızlı önyükleme ve anlık görüntü desteğine sahip emülatör.\n- Kimlik doğrulama, veritabanı, depolama, analitik, kilitlenme raporlaması vb. hizmetlerle Firebase entegrasyonu. \n- Gradle tabanlı derleme sistemi bağımlılık yönetimi,\nözelleştirme,\noptimizasyon,\nimzalama,\ndağıtım seçenekleri vb. ile. \n\nAndroid Studio ile,\nModern bir programlama dili olan Kotlin\'i kullanarak Android cihazlar için harika uygulamalar oluşturabilirsiniz,\nözlü,\ngüvenli,\Etkileyici,\nve Java ile birlikte çalışabilir.</string>
+    <string name="snack_unable_to_open_google_play_store">Google Play Store açılamıyor.</string>
+    <string name="snack_copied_to_clipboard">Panoya kopyalandı! 📋</string>
+    <string name="snack_no_app_found">Bu eylem için uygulama bulunamadı</string>
+    <string name="snack_feedback">Bize puan verdiğiniz için teşekkür ederiz! ❤️</string>
+    <string name="tooltip_open_me">Beni aç 🌐</string>
+    <string name="tooltip_mail_to_dev">Geliştiriciye e-posta gönder 📧</string>
 </resources>

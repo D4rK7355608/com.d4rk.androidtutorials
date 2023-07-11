@@ -13,6 +13,7 @@ class AndroidHistory : AppCompatActivity() {
         setContentView(binding.root)
         MobileAds.initialize(this)
         binding.adView.loadAd(AdRequest.Builder().build())
+        binding.adViewBottom.loadAd(AdRequest.Builder().build())
         FastScrollerBuilder(binding.scrollView).useMd2Style().build()
     }
 }

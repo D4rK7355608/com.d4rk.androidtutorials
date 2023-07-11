@@ -1,23 +1,19 @@
 <resources>
     <string name="app_version">Versi %1$s (%2$d)</string>
     <string name="app_description">Pelajari cara membuat aplikasi sederhana di Android Studio. 📱</string>
-    <string name="mail_to_dev">Email ke dev</string>
     <string name="home">Rumah</string>
     <string name="android_studio">Android Studio</string>
     <string name="about">Tentang</string>
     <string name="google_dev">Google Dev</string>
     <string name="more">Lagi</string>
-    <string name="toast_feedback">Terima kasih telah memberi peringkat pada kami!</string>
     <string name="privacy_policy">Kebijakan pribadi</string>
     <string name="license">Lisensi</string>
     <string name="terms_of_service">Persyaratan layanan</string>
     <string name="code_of_conduct">Kode etik</string>
     <string name="check_for_updates">Periksa pembaruan…</string>
-    <string name="feedback">Masukan</string>
     <string name="changelog">Changelog</string>
     <string name="appearance">Penampilan</string>
     <string name="more_apps">Aplikasi tambahan lainnya…</string>
-    <string name="tooltip_feedback">Kirimkan ulasan Anda kepada kami di Google Play Store.</string>
     <string name="internet">Internet [INTERNET]</string>
     <string name="summary_preference_permissions_internet">Digunakan untuk mengirim laporan kesalahan.</string>
     <string name="ad_id">ID iklan [AD_ID]</string>
@@ -85,7 +81,6 @@
     <string name="print_text">Cetak teks.</string>
     <string name="implementations_text_box">Terapkan Kotak Teks</string>
     <string name="summary_preference_android_studio_text_box">Elemen antarmuka pengguna untuk memasukkan dan memodifikasi teks. Saat Anda menentukan widget edit teks, Anda harus menentukan atribut R.styleable.TextView_inputType…</string>
-    <string name="open_me">Buka saya :)</string>
     <string name="toast_button_normal">Tombol normal diklik!</string>
     <string name="toast_button_outlined">Tombol diuraikan diklik!</string>
     <string name="toast_button_elevated">Tombol yang ditinggikan diklik!</string>
@@ -114,7 +109,6 @@
     <string name="browse_terms_of_service_and_privacy_policy">Jelajahi <i><u>Persyaratan Layanan</u></i> dan <i><u>Kebijakan Privasi</u></i></string>
     <string name="summary_browse_terms_of_service_and_privacy_policy">Baca dan setujui Persyaratan Layanan dan Kebijakan Privasi kami untuk melanjutkan.</string>
     <string name="welcome">Selamat datang</string>
-    <string name="copied_to_clipboard">Disalin ke papan klip!</string>
     <string name="privacy_and_security">Privasi dan keamanan</string>
     <string name="table_layout">Tata Letak Tabel</string>
     <string name="grid_view">Tampilan Grid</string>
@@ -279,7 +273,10 @@
     <string name="snack_bar">Bar makanan ringan</string>
     <string name="show_snack_bar">Tampilkan snack bar</string>
     <string name="show_toast">Tunjukkan roti panggang</string>
+    <string name="help_and_feedback">Bantuan &amp; umpan balik</string>
+    <string name="help">Bantuan</string>
     <string name="faq">FAQ</string>
+    <string name="send_feedback">Kirim umpan balik</string>
     <string name="advanced">Canggih</string>
     <string name="runtime">Waktu proses</string>
     <string name="require_restart">Perlu memulai ulang!</string>
@@ -363,4 +360,10 @@
     <string name="linear_layout">Rencana linear</string>
     <string name="layouts">Rencana</string>
     <string name="summary_preference_android_studio_linear_layout">Rencana linear adalah grup tampilan yang mengatur anak-anaknya dalam satu arah linear, baik horizontal atau vertikal. Orientasi tata letak dapat ditentukan dengan menggunakan atribut android:orientation. Tata letak linier dapat digunakan untuk membuat berbagai antarmuka pengguna, seperti daftar, tombol, dan bidang teks.</string>
+    <string name="snack_unable_to_open_google_play_store">Tidak dapat membuka Google Play Store.</string>
+    <string name="snack_copied_to_clipboard">Tersalin ke papan klip! 📋</string>
+    <string name="snack_no_app_found">Tidak ada aplikasi yang ditemukan untuk tindakan ini</string>
+    <string name="snack_feedback">Terima kasih atas penilaian Anda! ❤️</string>
+    <string name="tooltip_open_me">Buka saya 🌐</string>
+    <string name="tooltip_mail_to_dev">Email pengembang 📧</string>
 </resources>

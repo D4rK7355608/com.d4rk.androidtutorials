@@ -2,7 +2,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/dev_mail"
-        android:title="@string/mail_to_dev"
+        android:title="@string/tooltip_mail_to_dev"
         android:icon="@drawable/ic_gmail"
         app:showAsAction="ifRoom"/>
 </menu>

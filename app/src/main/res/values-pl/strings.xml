@@ -3,7 +3,6 @@
     <string name="app_description">Dowiedz się, jak tworzyć proste aplikacje w Android Studio. 📱</string>
     <string name="copyright">© Prawa autorskie %1s wykonane przez D4rK!</string>
     <string name="made_in">Wykonane z ❤ w Rumunii!</string>
-    <string name="mail_to_dev">E-mail do dev</string>
     <string name="home">Dom</string>
     <string name="android_studio">Studio Androida</string>
     <string name="about">O</string>
@@ -14,7 +13,6 @@
     <string name="terms_of_service">Warunki usługi</string>
     <string name="code_of_conduct">Kodeks postępowania</string>
     <string name="check_for_updates">Sprawdź aktualizacje…</string>
-    <string name="feedback">Informacja zwrotna</string>
     <string name="changelog">Lista zmian</string>
     <string name="more_apps">Więcej aplikacji…</string>
     <string name="internet">Internet [INTERNET]</string>
@@ -58,7 +56,6 @@
     <string name="toggle_me">Przełącz mnie</string>
     <string name="type_here">Pisz tutaj…</string>
     <string name="print_text">Wydrukuj tekst.</string>
-    <string name="open_me">Otwórz mnie :)</string>
     <string name="share">Dzielić</string>
     <string name="share_subject">Spróbuj teraz!!!</string>
     <string name="share_using">Udostępnij za pomocą…</string>
@@ -79,7 +76,6 @@
     <string name="agree">Zgodzić się</string>
     <string name="browse_terms_of_service_and_privacy_policy">Przeglądaj<i>  <u>Terms of Service</u></i> oraz<i>  <u>Privacy Policy</u></i>  </string>
     <string name="welcome">Witamy</string>
-    <string name="copied_to_clipboard">Skopiowane do schowka!</string>
     <string name="app_updates">Aktualizacje aplikacji</string>
     <string name="subscribe_to_beta">Subskrybuj aktualizacje wersji beta</string>
     <string name="table_layout">Układ tabeli</string>
@@ -188,7 +184,10 @@
     <string name="snack_bar">Batonik</string>
     <string name="show_snack_bar">Pokaż bar z przekąskami</string>
     <string name="show_toast">Pokaż tosty</string>
-    <string name="faq">Często zadawane pytania</string>
+    <string name="help_and_feedback">Pomoc i opinie</string>
+    <string name="help">Pomoc</string>
+    <string name="faq">FAQ</string>
+    <string name="send_feedback">Wyślij opinię</string>
     <string name="advanced">Zaawansowany</string>
     <string name="runtime">Czas działania</string>
     <string name="require_restart">Wymagaj ponownego uruchomienia!</string>
@@ -305,7 +304,6 @@
     <string name="toast_floating_button_secondary">Pływający przycisk (pomocniczy) kliknięty!</string>
     <string name="toast_floating_button_surface">Pływający przycisk (powierzchnia) kliknięty!</string>
     <string name="toast_floating_button_tertiary">Pływający przycisk (trzeciorzędny) kliknięty!</string>
-    <string name="toast_feedback">Dziękujemy za ocenę nas!</string>
     <string name="toast_image_button">Przycisk obrazu kliknięty!</string>
     <string name="toast_button_normal">Normalny przycisk kliknięty!</string>
     <string name="toast_button_outlined">Zarysowany przycisk kliknięty!</string>
@@ -313,7 +311,6 @@
     <string name="toast_monet_switch">Przełączony przełącznik Monet!</string>
     <string name="toast_compat_toggle_button">Przełączany przycisk przełączania zgodności!</string>
     <string name="toast_material_switch">Przełączony przełącznik materiału!</string>
-    <string name="tooltip_feedback">Wyślij nam swoją recenzję w sklepie Google Play.</string>
     <string name="tooltip_show_code">Pokaż składnię kodu</string>
     <string name="post_notifications">Powiadomienia o postach [POST_NOTIFICATIONS]</string>
     <string name="check_license">Sprawdź licencję [CHECK_LICENSE]</string>
@@ -363,4 +360,10 @@
     <string name="summary_preference_android_studio_linear_layout">Układ liniowy to grupa widoków, które układają swoje podelementy w jednym kierunku liniowym, w poziomie lub pionie. Orientację układu można określić za pomocą atrybutu android:orientation. Układ liniowy można wykorzystać do tworzenia różnych interfejsów użytkownika, takich jak listy, przyciski i pola tekstowe.</string>
     <string name="android_history">Android to system operacyjny dla urządzeń mobilnych opracowany przez Google. Został po raz pierwszy wydany w wersji beta 5 listopada 2007 roku, a pierwsza wersja komercyjna, Android 1.0, została wydana 23 września 2008 roku. Android opiera się na zmodyfikowanej wersji jądra Linux i innych otwartych źródeł oprogramowania.\n\nAndroid Studio to oficjalne zintegrowane środowisko programistyczne (IDE) do tworzenia aplikacji na Androida. Zostało zapowiedziane przez Google podczas konferencji I/O 15 maja 2013 roku i wydane do użytku publicznego 8 grudnia 2014 roku. Android Studio opiera się na IntelliJ IDEA, popularnym IDE dla Javy.\n\nKotlin to wieloplatformowy język programowania działający na maszynie wirtualnej Javy (JVM), Androidzie, przeglądarce i platformach natywnych. Został stworzony przez JetBrains, firmę zajmującą się oprogramowaniem z siedzibą w Pradze. Kotlin został po raz pierwszy zapowiedziany w lipcu 2011 roku i wydany jako projekt open source w lutym 2012 roku.\n\nGoogle ogłosiło wsparcie dla Kotlina jako oficjalnego języka do tworzenia aplikacji na Androida podczas konferencji I/O dnia 17 maja 2017 roku. Od tego czasu Kotlin stał się jednym z najpopularniejszych języków dla programistów tworzących aplikacje na Androida. Według danych Google od października 2020 roku ponad siedemdziesiąt procent (70%) tysiąca najpopularniejszych aplikacji dostępnych w Google Play korzysta z Kotlina.</string>
     <string name="android_features">Android to nie tylko system operacyjny, ale także platforma oferująca szereg funkcji i możliwości dla użytkowników i programistów. Oto niektóre funkcje Androida:\n\n– Komunikacja bliskiego zasięgu (NFC), która umożliwia udostępnianie danych, dokonywanie płatności i bezprzewodowe łączenie się z innymi urządzeniami.\n– Alternatywne klawiatury, które pozwalają dostosować metodę wprowadzania z różnymi układami, językami i motywami.\n- Transmisja w podczerwieni, która umożliwia używanie telefonu jako pilota do telewizorów, klimatyzatorów i innych urządzeń.\n- Sterowanie bezdotykowe, które umożliwia wykonywanie czynności na telefon bez dotykania ekranu za pomocą gestów lub poleceń głosowych.\n– Automatyzacja, która umożliwia skonfigurowanie procedur i wyzwalaczy, aby telefon automatycznie wykonywał określone zadania.\n– Bezprzewodowe pobieranie aplikacji, które umożliwia instalowanie aplikacji z komputera lub przeglądarki internetowej bez podłączania telefonu kablem.\n– Pamięć i wymiana baterii, które dają możliwość rozszerzenia pamięci telefonu lub łatwej wymiany baterii.\n– Niestandardowy ekran główny, który pozwala spersonalizować wygląd Twojego telefonu za pomocą widżetów, tapet ers, ikony i programy uruchamiające.\n\nAndroid Studio to najlepsze narzędzie do tworzenia aplikacji na Androida. Oferuje wiele funkcji i korzyści dla programistów, takich jak:\n\n– Edytor kodu z podświetlaniem składni, uzupełnianiem kodu, refaktoryzacją, debugowaniem, testowaniem i narzędziami do lintingu.\n– Edytor układu z interfejsem „przeciągnij i upuść” do projektowania użytkownika interfejsy.\n– Emulator z obsługą szybkiego rozruchu i migawek do testowania aplikacji na różnych urządzeniach i konfiguracjach.\n– Integracja Firebase z usługami, takimi jak uwierzytelnianie, baza danych, przechowywanie, analityka, raportowanie awarii itp. \n– System kompilacji oparty na Gradle z zarządzaniem zależnościami,\ndostosowywaniem,\noptymalizacją,\npodpisywaniem,\opcjami dystrybucji itp. \n\nDzięki Android Studio\nmożesz tworzyć niesamowite aplikacje na urządzenia z systemem Android przy użyciu Kotlina,\nnowoczesnego, zwięzłego,\nbezpiecznego języka programowania,\nexpressive\ni współdziała z Javą.</string>
+    <string name="snack_unable_to_open_google_play_store">Nie można otworzyć Sklepu Play.</string>
+    <string name="snack_copied_to_clipboard">Skopiowano do schowka! 📋</string>
+    <string name="snack_no_app_found">Nie znaleziono aplikacji dla tej akcji</string>
+    <string name="snack_feedback">Dziękujemy za ocenę! ❤️</string>
+    <string name="tooltip_open_me">Otwórz mnie 🌐</string>
+    <string name="tooltip_mail_to_dev">Wyślij e-mail do dewelopera 📧</string>
 </resources>
