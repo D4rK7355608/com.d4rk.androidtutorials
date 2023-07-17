@@ -34,6 +34,8 @@ This app was initially a school project to show my teacher I can do simple, but 
 
 Our app is designed to be simple and easy to use, while also being fast and lightweight. Plus, it's free and open-source software!
 
+[<img src="https://img.youtube.com/vi/I1Khg2eZodA/maxresdefault.jpg" alt="Watch the trailer">](https://youtu.be/I1Khg2eZodA)
+
 ## ⚠ Opening Issues!
 Bugs can be reported [here](https://github.com/D4rK7355608/com.d4rk.androidtutorials/issues).
 
