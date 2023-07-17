@@ -1,3 +1,6 @@
+# Version 5.1_r2:
+- Made minor under-the-hood improvements for a better overall app experience.
+
 # Version 5.1_r1:
 - Added a new GDPR message to comply with Google Play policy.
 - Added a new help center, with more comprehensive documentation and support options.

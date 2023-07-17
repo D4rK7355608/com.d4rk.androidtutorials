@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_version">Versione %1$s (%2$d)</string>
     <string name="app_description">Scopri come creare semplici app in Android Studio. 📱</string>
+    <string name="app_version">Versione %1$s (%2$d)</string>
     <string name="home">Casa</string>
     <string name="android_studio">Android Studio</string>
     <string name="about">Di</string>

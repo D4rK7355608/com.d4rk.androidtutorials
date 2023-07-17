@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_version">Wersja %1$s (%2$d)</string>
     <string name="app_description">Dowiedz się, jak tworzyć proste aplikacje w Android Studio. 📱</string>
+    <string name="app_version">Wersja %1$s (%2$d)</string>
     <string name="copyright">© Prawa autorskie %1s wykonane przez D4rK!</string>
     <string name="made_in">Wykonane z ❤ w Rumunii!</string>
     <string name="home">Dom</string>

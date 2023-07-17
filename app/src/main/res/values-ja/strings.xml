@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_version">バージョン %1$s (%2$d)</string>
     <string name="app_description">Android Studio で簡単なアプリを作成する方法を学びます。 📱</string>
+    <string name="app_version">バージョン %1$s (%2$d)</string>
     <string name="home">家</string>
     <string name="android_studio">Android スタジオ</string>
     <string name="about">約</string>

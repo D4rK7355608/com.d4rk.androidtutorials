@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_version">Sürüm %1$s (%2$d)</string>
     <string name="app_description">Android Studio\'da basit uygulamalar yapmayı öğrenin. 📱</string>
+    <string name="app_version">Sürüm %1$s (%2$d)</string>
     <string name="copyright">© Telif hakkı %1s D4rK tarafından yapılmıştır!</string>
     <string name="made_in">Romanya\'da ❤ ile yapıldı!</string>
     <string name="home">Ev</string>

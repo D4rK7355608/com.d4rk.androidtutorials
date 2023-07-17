@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_version">Version %1$s (%2$d)</string>
     <string name="app_description">Lär dig hur du skapar enkla appar i Android Studio. 📱</string>
+    <string name="app_version">Version %1$s (%2$d)</string>
     <string name="copyright">© Copyright %1s gjord av D4rK!</string>
     <string name="made_in">Tillverkad med ❤ i Rumänien!</string>
     <string name="home">Hem</string>

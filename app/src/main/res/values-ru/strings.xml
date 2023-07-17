@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_version">Версия %1$s (%2$d)</string>
     <string name="app_description">Узнайте, как создавать простые приложения в Android Studio. 📱</string>
+    <string name="app_version">Версия %1$s (%2$d)</string>
     <string name="home">Дом</string>
     <string name="android_studio">Android-студия</string>
     <string name="about">О</string>

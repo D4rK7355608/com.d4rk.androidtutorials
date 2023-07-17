@@ -34,9 +34,6 @@
     <string name="send_email_using" translatable="false">Send mail using:</string>
     <string name="changelog_title" translatable="false">Changelog - Version %1s</string>
     <string name="changes" translatable="false">\n
-        • Added a new GDPR message to comply with Google Play policy.\n\n
-        • Added a new help center, with more comprehensive documentation and support options.\n\n
-        • Made minor project structure enhancements for better readability and maintainability.\n\n
-        • Made various under-the-hood improvements for a better overall app experience.
+        • Made minor under-the-hood improvements for a better overall app experience.
     </string>
 </resources>

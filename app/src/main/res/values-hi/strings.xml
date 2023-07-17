@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_version">संस्करण %1$s (%2$d)</string>
     <string name="app_description">Android Studio में सरल ऐप्स बनाना सीखें। मैं 📱</string>
+    <string name="app_version">संस्करण %1$s (%2$d)</string>
     <string name="home">घर</string>
     <string name="android_studio">एंड्रॉइड स्टूडियो</string>
     <string name="about">के बारे में</string>
