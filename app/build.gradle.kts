@@ -7,12 +7,12 @@ plugins {
     id("com.google.android.gms.oss-licenses-plugin")
 }
 android {
-    compileSdk = 33
+    compileSdk = 34
     namespace = "com.d4rk.androidtutorials"
     defaultConfig {
         applicationId = "com.d4rk.androidtutorials"
         minSdk = 26
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 64
         versionName = "6.0_r2"
         archivesName = "${applicationId}-v${versionName}"
