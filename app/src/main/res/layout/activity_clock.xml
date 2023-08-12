@@ -14,78 +14,72 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <com.google.android.material.textview.MaterialTextView
+                style="@style/TextAppearance.Material3.HeadlineLarge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/clock_digital"
-                android:textStyle="bold"
-                android:layout_margin="24dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/digital_clock"/>
-            <DigitalClock
-                android:id="@+id/digital_clock"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="24dp"
-                android:layout_gravity="center"
-                app:layout_constraintBottom_toTopOf="@id/divider_1"/>
-            <com.google.android.material.divider.MaterialDivider
-                android:id="@+id/divider_1"
+                android:layout_marginTop="24dp"
+                android:layout_marginStart="24dp"
+                android:text="@string/description"
+                app:fontFamily="@font/font_poppins"/>
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="24dp"
-                app:layout_constraintBottom_toTopOf="@id/simpleTextClockText"/>
+                app:cardCornerRadius="24dp">
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="24dp"
+                    android:text="@string/summary_clocks"/>
+            </com.google.android.material.card.MaterialCardView>
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/simpleTextClockText"
+                style="@style/TextAppearance.Material3.HeadlineLarge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/clock_text"
-                android:layout_margin="24dp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/simpleTextClock"/>
-            <TextClock
-                android:id="@+id/simpleTextClock"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="24dp"
-                android:layout_gravity="center"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/simpleTextClockDivider"/>
-            <com.google.android.material.divider.MaterialDivider
-                android:id="@+id/simpleTextClockDivider"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="24dp"
-                app:layout_constraintBottom_toTopOf="@id/simpleAnalogClockText"/>
+                android:layout_marginStart="24dp"
+                android:text="@string/layout_preview"
+                app:fontFamily="@font/font_poppins"/>
             <com.google.android.material.textview.MaterialTextView
+                style="@style/TextAppearance.Material3.HeadlineSmall"
                 android:id="@+id/simpleAnalogClockText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/clock_analog"
-                android:textStyle="bold"
                 android:layout_margin="24dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/simpleAnalogClock"/>
+                app:fontFamily="@font/font_poppins"/>
             <AnalogClock
                 android:id="@+id/simpleAnalogClock"
                 android:layout_width="wrap_content"
                 android:layout_height="108dp"
                 android:layout_margin="24dp"
-                android:layout_gravity="center"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                android:layout_gravity="center"/>
             <com.google.android.material.textview.MaterialTextView
+                style="@style/TextAppearance.Material3.HeadlineSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="12dp"
-                android:padding="12dp"
-                android:text="@string/summary_clocks"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/floating_button_show_syntax"/>
+                android:text="@string/clock_digital"
+                android:layout_margin="24dp"
+                app:fontFamily="@font/font_poppins"/>
+            <DigitalClock
+                android:id="@+id/digital_clock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:layout_gravity="center"/>
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/TextAppearance.Material3.HeadlineSmall"
+                android:id="@+id/simpleTextClockText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/clock_text"
+                android:layout_margin="24dp"
+                app:fontFamily="@font/font_poppins"/>
+            <TextClock
+                android:id="@+id/simpleTextClock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:layout_gravity="center"/>
         </androidx.appcompat.widget.LinearLayoutCompat>
     </me.zhanghai.android.fastscroll.FastScrollScrollView>
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton

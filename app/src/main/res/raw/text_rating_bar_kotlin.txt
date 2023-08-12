@@ -1,4 +1,4 @@
-// Import necessary classes from Android libraries
+// Import the necessary classes and libraries
 import android.os.Bundle
 import android.widget.RatingBar
 import android.widget.Toast

@@ -23,7 +23,7 @@ class ButtonsTabCodeFragment : Fragment() {
         val  text = inputStream.readBytes().toString(Charsets.UTF_8)
         inputStream.close()
         binding.textViewCode.text = text
-        binding.textViewWarning.text = getString(R.string.same_binding_buttons)
+        binding.textViewWarning.text = getString(R.string.same_code_buttons)
         return binding.root
     }
     override fun onResume() {

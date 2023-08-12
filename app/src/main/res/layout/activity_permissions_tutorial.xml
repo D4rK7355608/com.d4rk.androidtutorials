@@ -51,10 +51,11 @@
         <com.google.android.material.button.MaterialButton
             style="@style/Widget.Material3.Button.ElevatedButton"
             android:id="@+id/button_more"
-            android:text="@string/more_about_permissions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="24dp"
+            android:text="@string/more_about_permissions"
+            android:tooltipText="@string/more_about_permissions"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/card_view_lottie_animation"/>
         <androidx.appcompat.widget.LinearLayoutCompat

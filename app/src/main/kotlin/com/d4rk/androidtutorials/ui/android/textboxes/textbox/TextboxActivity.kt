@@ -2,9 +2,9 @@ package com.d4rk.androidtutorials.ui.android.textboxes.textbox
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.d4rk.androidtutorials.databinding.ActivityTextboxBinding
+import com.google.android.material.snackbar.Snackbar
 class TextboxActivity : AppCompatActivity() {
     private lateinit var binding: ActivityTextboxBinding
     @Suppress("DEPRECATION")
@@ -27,7 +27,7 @@ class TextboxActivity : AppCompatActivity() {
     private fun addKeyListener() {
         val edittext = binding.editText
         binding.buttonPrintEdit.setOnClickListener {
-            Toast.makeText(this, edittext.text, Toast.LENGTH_LONG).show()
+            Snackbar.make(binding.root, edittext.text.toString(), Snackbar.LENGTH_LONG).show()
         }
     }
 }

@@ -1,4 +1,4 @@
-// Import necessary classes from Android and Java libraries
+// Import the necessary classes and libraries
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle

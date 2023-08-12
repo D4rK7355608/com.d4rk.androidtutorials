@@ -2,13 +2,15 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:installLocation="auto">
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
     <uses-permission android:name="com.android.vending.CHECK_LICENSE"/>
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
-    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY"/>
+
     <queries>
         <intent>
             <action android:name="android.intent.action.VIEW"/>
@@ -46,10 +48,10 @@
             android:name=".ui.startup.StartupActivity"
             android:theme="@style/AppTheme"/>
         <activity
-            android:name=".ui.android.buttons.toggle.ToggleCodeActivity"
+            android:name=".ui.android.buttons.switch.SwitchCodeActivity"
             android:exported="false"
-            android:label="@string/toggle"
-            android:parentActivityName=".ui.android.buttons.toggle.ToggleCodeActivity"/>
+            android:label="@string/switches"
+            android:parentActivityName=".ui.android.buttons.switch.SwitchCodeActivity"/>
         <activity
             android:name=".ui.android.buttons.radio.RadioButtonsActivity"
             android:exported="false"
@@ -60,6 +62,36 @@
             android:exported="false"
             android:label="@string/radio_buttons"
             android:parentActivityName=".ui.android.buttons.radio.RadioButtonsCodeActivity"/>
+        <activity
+            android:name=".ui.android.progress.progressbar.ProgressBarActivity"
+            android:exported="false"
+            android:label="@string/progress_bar"
+            android:parentActivityName=".ui.android.progress.progressbar.ProgressBarActivity"/>
+        <activity
+            android:name=".ui.android.progress.progressbar.ProgressBarCodeActivity"
+            android:exported="false"
+            android:label="@string/progress_bar"
+            android:parentActivityName=".ui.android.progress.progressbar.ProgressBarCodeActivity"/>
+        <activity
+            android:name=".ui.android.notifications.simple.SimpleNotificationActivity"
+            android:exported="false"
+            android:label="@string/simple_notifications"
+            android:parentActivityName=".ui.android.notifications.simple.SimpleNotificationActivity"/>
+        <activity
+            android:name=".ui.android.notifications.simple.SimpleNotificationCodeActivity"
+            android:exported="false"
+            android:label="@string/simple_notifications"
+            android:parentActivityName=".ui.android.notifications.simple.SimpleNotificationCodeActivity"/>
+        <activity
+            android:name=".ui.android.notifications.inbox.InboxNotificationActivity"
+            android:exported="false"
+            android:label="@string/inbox_notifications"
+            android:parentActivityName=".ui.android.notifications.inbox.InboxNotificationActivity"/>
+        <activity
+            android:name=".ui.android.notifications.inbox.InboxNotificationCodeActivity"
+            android:exported="false"
+            android:label="@string/inbox_notifications"
+            android:parentActivityName=".ui.android.notifications.inbox.InboxNotificationCodeActivity"/>
         <activity
             android:name=".ui.android.alerts.toast.ToastActivity"
             android:exported="false"
@@ -81,15 +113,15 @@
             android:label="@string/image_buttons"
             android:parentActivityName=".ui.android.buttons.image.ImageButtonsCodeActivity"/>
         <activity
-            android:name=".ui.android.images.ImagesActivity"
+            android:name="com.d4rk.androidtutorials.ui.android.views.images.ImagesActivity"
             android:exported="false"
-            android:label="@string/images"
-            android:parentActivityName=".ui.android.images.ImagesActivity"/>
+            android:label="@string/image_view"
+            android:parentActivityName="com.d4rk.androidtutorials.ui.android.views.images.ImagesActivity"/>
         <activity
-            android:name=".ui.android.images.ImagesCodeActivity"
+            android:name="com.d4rk.androidtutorials.ui.android.views.images.ImagesCodeActivity"
             android:exported="false"
-            android:label="@string/images"
-            android:parentActivityName=".ui.android.images.ImagesCodeActivity"/>
+            android:label="@string/image_view"
+            android:parentActivityName="com.d4rk.androidtutorials.ui.android.views.images.ImagesCodeActivity"/>
         <activity
             android:name=".ui.android.alerts.snackbar.SnackBarActivity"
             android:exported="false"
@@ -103,12 +135,12 @@
         <activity
             android:name=".ui.android.clocks.clock.ClockCodeActivity"
             android:exported="false"
-            android:label="@string/clock"
+            android:label="@string/clocks"
             android:parentActivityName=".ui.android.clocks.clock.ClockCodeActivity"/>
         <activity
             android:name=".ui.android.clocks.clock.ClockActivity"
             android:exported="false"
-            android:label="@string/clock"
+            android:label="@string/clocks"
             android:parentActivityName=".ui.android.clocks.clock.ClockActivity"/>
         <activity
             android:name=".ui.android.clocks.timepicker.TimePickerCodeActivity"
@@ -121,25 +153,35 @@
             android:label="@string/timepicker"
             android:parentActivityName=".ui.android.clocks.timepicker.TimePickerActivity"/>
         <activity
-            android:name=".ui.android.webviews.WebViewActivity"
+            android:name=".ui.android.clocks.chronometer.ChronometerActivity"
             android:exported="false"
-            android:label="@string/webview"
-            android:parentActivityName=".ui.android.webviews.WebViewActivity"/>
+            android:label="@string/chronometer"
+            android:parentActivityName=".ui.android.clocks.chronometer.ChronometerActivity"/>
         <activity
-            android:name=".ui.android.webviews.WebViewCodeActivity"
+            android:name=".ui.android.clocks.chronometer.ChronometerCodeActivity"
             android:exported="false"
-            android:label="@string/webview"
-            android:parentActivityName=".ui.android.webviews.WebViewCodeActivity"/>
+            android:label="@string/chronometer"
+            android:parentActivityName=".ui.android.clocks.chronometer.ChronometerCodeActivity"/>
+        <activity
+            android:name="com.d4rk.androidtutorials.ui.android.views.web.WebViewActivity"
+            android:exported="false"
+            android:label="@string/web_view"
+            android:parentActivityName="com.d4rk.androidtutorials.ui.android.views.web.WebViewActivity"/>
+        <activity
+            android:name="com.d4rk.androidtutorials.ui.android.views.web.WebViewCodeActivity"
+            android:exported="false"
+            android:label="@string/web_view"
+            android:parentActivityName="com.d4rk.androidtutorials.ui.android.views.web.WebViewCodeActivity"/>
         <activity
             android:name=".ui.android.textboxes.passwordbox.PasswordBoxActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize"
-            android:label="@string/password"
+            android:label="@string/password_box"
             android:parentActivityName=".ui.android.textboxes.passwordbox.PasswordBoxActivity"/>
         <activity
             android:name=".ui.android.textboxes.passwordbox.PasswordBoxCodeActivity"
             android:exported="false"
-            android:label="@string/password"
+            android:label="@string/password_box"
             android:parentActivityName=".ui.android.textboxes.passwordbox.PasswordBoxCodeActivity"/>
         <activity
             android:name=".ui.android.clocks.datepicker.DatePickerCodeActivity"
@@ -218,6 +260,11 @@
             android:label="@string/permissions"
             android:parentActivityName=".ui.settings.permissions.PermissionsActivity"/>
         <activity
+            android:name=".ui.settings.support.SupportActivity"
+            android:exported="false"
+            android:label="@string/support_us"
+            android:parentActivityName=".ui.settings.support.SupportActivity"/>
+        <activity
             android:name=".ui.android.basics.shortcuts.ShortcutsActivity"
             android:exported="false"
             android:label="@string/shortcuts"
@@ -277,10 +324,10 @@
             android:exported="false"
             android:parentActivityName=".ui.settings.help.HelpActivity"/>
         <activity
-            android:name=".ui.android.buttons.toggle.ToggleActivity"
-            android:label="@string/toggle"
+            android:name=".ui.android.buttons.switch.SwitchActivity"
+            android:label="@string/switches"
             android:exported="false"
-            android:parentActivityName=".ui.android.buttons.toggle.ToggleActivity"/>
+            android:parentActivityName=".ui.android.buttons.switch.SwitchActivity"/>
         <activity
             android:name=".ui.android.buttons.buttons.ButtonsActivity"
             android:label="@string/buttons"

@@ -173,10 +173,9 @@
             android:layout_width="match_parent"
             android:layout_height="192dp"
             android:layout_margin="24dp"
-            app:lottie_speed="0.5"
+            app:lottie_speed="0.48"
             app:layout_constraintTop_toBottomOf="@id/card_view_ad"
             app:lottie_autoPlay="true"
-            app:lottie_loop="true"
             app:lottie_rawRes="@raw/anim_about"/>
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/illustration_about"

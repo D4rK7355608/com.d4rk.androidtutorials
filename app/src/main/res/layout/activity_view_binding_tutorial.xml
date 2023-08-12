@@ -125,8 +125,9 @@
             android:id="@+id/moreAboutViewBindingButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/more_about_view_binding"
             android:layout_margin="24dp"
+            android:text="@string/more_about_view_binding"
+            android:tooltipText="@string/more_about_view_binding"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/bindingFragmentsCard"/>
         <com.airbnb.lottie.LottieAnimationView

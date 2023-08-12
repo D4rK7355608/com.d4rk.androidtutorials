@@ -1,11 +1,14 @@
 <resources>
     <string name="app_name" translatable="false">Android Studio Tutorials: Kotlin Edition</string>
+    <string name="shortcut_java_edition_short" translatable="false">Java Edition</string>
+    <string name="shortcut_java_edition_long" translatable="false">Android Studio Tutorials: Java Edition</string>
+    <string name="code_kotlin" translatable="false">Kotlin</string>
+    <string name="layout_xml" translatable="false">XML</string>
     <string name="twitter" translatable="false">Twitter</string>
     <string name="youtube" translatable="false">YouTube</string>
     <string name="github" translatable="false">GitHub</string>
     <string name="xda" translatable="false">XDA</string>
-    <string name="code_kotlin" translatable="false">Kotlin</string>
-    <string name="layout_xml" translatable="false">XML</string>
+    <string name="google_dev" translatable="false">Google Dev</string>
     <string name="bulgarian" translatable="false">Български</string>
     <string name="english" translatable="false">English</string>
     <string name="french" translatable="false">Français</string>

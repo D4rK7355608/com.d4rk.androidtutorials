@@ -25,7 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="24dp"
-            android:text="@string/android_history"
+            android:text="@string/summary_android_history"
             app:layout_constraintTop_toBottomOf="@id/text_view_history"
             tools:ignore="VisualLintLongText"/>
         <com.google.android.material.card.MaterialCardView
@@ -58,7 +58,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="24dp"
-            android:text="@string/android_features"
+            android:text="@string/summary_android_features"
             app:layout_constraintTop_toBottomOf="@id/text_view_features"
             tools:ignore="VisualLintLongText"/>
         <androidx.appcompat.widget.LinearLayoutCompat

@@ -1,4 +1,4 @@
-// Import necessary classes from Android and Java libraries
+// Import the necessary classes and libraries
 import android.app.TimePickerDialog
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

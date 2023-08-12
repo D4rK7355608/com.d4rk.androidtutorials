@@ -15,7 +15,7 @@ class SnackBarActivity : AppCompatActivity() {
         binding = ActivitySnackBarBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.button.setOnClickListener {
-            val snackbar = Snackbar.make(binding.root, R.string.this_is_a_snackbar, Snackbar.LENGTH_INDEFINITE)
+            val snackbar = Snackbar.make(binding.root, R.string.snack_this_is_a_snackbar, Snackbar.LENGTH_INDEFINITE)
             snackbar.setAction(android.R.string.ok) {
                 snackbar.dismiss()
             }

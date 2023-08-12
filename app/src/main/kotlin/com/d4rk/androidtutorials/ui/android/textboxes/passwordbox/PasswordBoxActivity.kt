@@ -5,10 +5,10 @@ import android.os.Bundle
 import android.os.Handler
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.databinding.ActivityPasswordBoxBinding
+import com.google.android.material.snackbar.Snackbar
 class PasswordBoxActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPasswordBoxBinding
     @Suppress("DEPRECATION")
@@ -53,7 +53,7 @@ class PasswordBoxActivity : AppCompatActivity() {
     private fun addKeyListener() {
         val edittext = binding.editText
         binding.buttonShowPassword.setOnClickListener {
-            Toast.makeText(this, edittext.text, Toast.LENGTH_LONG).show()
+            Snackbar.make(binding.root, edittext.text.toString(), Snackbar.LENGTH_LONG).show()
         }
     }
 }

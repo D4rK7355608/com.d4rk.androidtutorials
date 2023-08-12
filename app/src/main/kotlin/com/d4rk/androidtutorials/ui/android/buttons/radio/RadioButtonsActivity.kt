@@ -3,9 +3,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.widget.RadioButton
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.d4rk.androidtutorials.databinding.ActivityRadioButtonsBinding
+import com.google.android.material.snackbar.Snackbar
 class RadioButtonsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRadioButtonsBinding
     @Suppress("DEPRECATION")
@@ -20,7 +20,7 @@ class RadioButtonsActivity : AppCompatActivity() {
         binding.buttonDisplay.setOnClickListener {
             val selectedId = binding.radioGroup.checkedRadioButtonId
             val radioButton = findViewById<RadioButton>(selectedId)
-            Toast.makeText(this, radioButton.text, Toast.LENGTH_SHORT).show()
+            Snackbar.make(binding.root, radioButton.text, Snackbar.LENGTH_SHORT).show()
         }
         handler.postDelayed({
             binding.floatingButtonShowSyntax.shrink()

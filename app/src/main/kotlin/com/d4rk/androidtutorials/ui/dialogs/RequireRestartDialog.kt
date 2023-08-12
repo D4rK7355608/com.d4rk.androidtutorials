@@ -12,8 +12,8 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 class RequireRestartDialog : DialogFragment() {
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return MaterialAlertDialogBuilder(requireContext())
-            .setTitle(R.string.require_restart)
-            .setMessage(R.string.summary_require_restart)
+            .setTitle(R.string.alert_dialog_require_restart)
+            .setMessage(R.string.summary_alert_dialog_require_restart)
             .setPositiveButton(android.R.string.ok) { _, _ ->
                 activity?.recreate()
                 val nManager = requireContext().getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager

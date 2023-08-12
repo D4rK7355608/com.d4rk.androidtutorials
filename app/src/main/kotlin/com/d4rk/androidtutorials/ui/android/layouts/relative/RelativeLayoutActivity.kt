@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import com.d4rk.androidtutorials.databinding.ActivityRelativeLayoutBinding
-
+import me.zhanghai.android.fastscroll.FastScrollerBuilder
 class RelativeLayoutActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRelativeLayoutBinding
     @Suppress("DEPRECATION")
@@ -13,6 +13,7 @@ class RelativeLayoutActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRelativeLayoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        FastScrollerBuilder(binding.scrollView).useMd2Style().build()
         binding.floatingButtonShowSyntax.setOnClickListener {
             startActivity(Intent(this, RelativeLayoutCodeActivity::class.java))
         }

@@ -6,10 +6,12 @@
         <androidx.preference.Preference
             app:title="@string/ad_id"
             app:summary="@string/summary_preference_permissions_ad_id"
+            app:useSimpleSummaryProvider="true"
             app:iconSpaceReserved="false"/>
         <androidx.preference.Preference
             app:title="@string/internet"
             app:summary="@string/summary_preference_permissions_internet"
+            app:useSimpleSummaryProvider="true"
             app:iconSpaceReserved="false"/>
         <androidx.preference.Preference
             app:title="@string/post_notifications"
@@ -21,11 +23,15 @@
         app:iconSpaceReserved="false">
         <androidx.preference.Preference
             app:title="@string/access_network_state"
-            app:summary="@string/summary_preference_permissions_internet"
+            app:summary="@string/summary_preference_permissions_access_network_state"
             app:iconSpaceReserved="false"/>
         <androidx.preference.Preference
             app:title="@string/access_notification_policy"
             app:summary="@string/summary_preference_permissions_access_notification_policy"
+            app:iconSpaceReserved="false"/>
+        <androidx.preference.Preference
+            app:title="@string/billing"
+            app:summary="@string/summary_preference_permissions_billing"
             app:iconSpaceReserved="false"/>
         <androidx.preference.Preference
             app:title="@string/check_license"

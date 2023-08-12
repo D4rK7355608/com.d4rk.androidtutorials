@@ -1,10 +1,17 @@
 package com.d4rk.androidtutorials
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.content.pm.ShortcutInfoCompat
+import androidx.core.content.pm.ShortcutManagerCompat
+import androidx.core.graphics.drawable.IconCompat
 import androidx.core.os.LocaleListCompat
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.fragment.NavHostFragment
@@ -16,29 +23,66 @@ import com.d4rk.androidtutorials.databinding.ActivityMainBinding
 import com.d4rk.androidtutorials.notifications.AppUpdateNotificationsManager
 import com.d4rk.androidtutorials.notifications.AppUsageNotificationsManager
 import com.d4rk.androidtutorials.ui.settings.SettingsActivity
+import com.d4rk.androidtutorials.ui.settings.support.SupportActivity
 import com.d4rk.androidtutorials.ui.startup.StartupActivity
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.navigation.NavigationBarView
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory
 import com.google.android.play.core.install.model.ActivityResult
 import com.google.android.play.core.install.model.AppUpdateType
 import com.google.android.play.core.install.model.UpdateAvailability
 import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.crashlytics.FirebaseCrashlytics
+
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var appUpdateManager: AppUpdateManager
     private val requestUpdateCode = 1
     private lateinit var appUpdateNotificationsManager: AppUpdateNotificationsManager
+    private val handler = Handler(Looper.getMainLooper())
+    private val snackbarInterval: Long = 60L * 24 * 60 * 60 * 1000
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         installSplashScreen()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        MobileAds.initialize(this)
+        binding.adView.loadAd(AdRequest.Builder().build())
+        launcherShortcuts()
         applyAppSettings()
         appUpdateManager = AppUpdateManagerFactory.create(this)
         appUpdateNotificationsManager = AppUpdateNotificationsManager(this)
-
+        handler.postDelayed(::showSnackbar, snackbarInterval)
+    }
+    private fun launcherShortcuts(){
+        val shortcut = ShortcutInfoCompat.Builder(this, "shortcut_id")
+            .setShortLabel(getString(R.string.shortcut_java_edition_short))
+            .setLongLabel(getString(R.string.shortcut_java_edition_long))
+            .setIcon(IconCompat.createWithResource(this, R.mipmap.ic_shortcut_java_edition))
+            .setIntent(Intent(Intent.ACTION_MAIN).apply {
+                if (isAppInstalled("com.d4rk.androidtutorials.java", packageManager)) {
+                    setClassName("com.d4rk.androidtutorials.java", "com.d4rk.androidtutorials.java.MainActivity")
+                } else {
+                    data = Uri.parse("https://play.google.com/store/apps/details?id=com.d4rk.androidtutorials.java")
+                }
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            })
+            .build()
+        ShortcutManagerCompat.pushDynamicShortcut(this, shortcut)
+    }
+    @Suppress("SameParameterValue")
+    private fun isAppInstalled(packageName: String, packageManager: PackageManager): Boolean {
+        return try {
+            @Suppress("DEPRECATION")
+            packageManager.getPackageInfo(packageName, 0)
+            true
+        } catch (e: PackageManager.NameNotFoundException) {
+            false
+        }
     }
     private fun applyAppSettings() {
         val themeValues = resources.getStringArray(R.array.preference_theme_values)
@@ -76,6 +120,15 @@ class MainActivity : AppCompatActivity() {
         val languageCode = PreferenceManager.getDefaultSharedPreferences(this)?.getString(getString(R.string.key_language), getString(R.string.default_value_language))
         AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags(languageCode))
     }
+    private fun showSnackbar() {
+        Snackbar.make(binding.root, getString(R.string.snack_support), Snackbar.LENGTH_LONG)
+            .setAction(getString(android.R.string.ok)) {
+                val intent = Intent(this, SupportActivity::class.java)
+                startActivity(intent)
+            }
+            .show()
+        handler.postDelayed(::showSnackbar, snackbarInterval)
+    }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
         return true
@@ -93,8 +146,8 @@ class MainActivity : AppCompatActivity() {
     @Suppress("DEPRECATION")
     override fun onBackPressed() {
         MaterialAlertDialogBuilder(this)
-            .setTitle(R.string.close)
-            .setMessage(R.string.summary_close)
+            .setTitle(R.string.alert_dialog_close)
+            .setMessage(R.string.summary_alert_dialog_close)
             .setPositiveButton(android.R.string.yes) { _, _ ->
                 super.onBackPressed()
                 moveTaskToBack(true)
@@ -106,8 +159,10 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
         if (!PreferenceManager.getDefaultSharedPreferences(this).getBoolean(getString(R.string.key_firebase), true)) {
             FirebaseAnalytics.getInstance(this).setAnalyticsCollectionEnabled(false)
+            FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(false)
         } else {
             FirebaseAnalytics.getInstance(this).setAnalyticsCollectionEnabled(true)
+            FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(true)
         }
         val appUsageNotificationsManager = AppUsageNotificationsManager(this)
         appUsageNotificationsManager.checkAndSendAppUsageNotification()
@@ -129,7 +184,6 @@ class MainActivity : AppCompatActivity() {
     }
     @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        @Suppress("DEPRECATION")
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == requestUpdateCode) {
             when (resultCode) {

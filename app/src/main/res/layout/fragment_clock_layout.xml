@@ -16,39 +16,48 @@
             android:id="@+id/scroll_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
                 <com.google.android.material.textview.MaterialTextView
+                    style="@style/TextAppearance.Material3.HeadlineSmall"
+                    android:id="@+id/text_view_analog_clock"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="@string/clock_analog"
+                    app:fontFamily="@font/font_poppins"/>
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_view_analog_clock_xml"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:textIsSelectable="true"
+                    app:fontFamily="@font/font_audiowide"/>
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/TextAppearance.Material3.HeadlineSmall"
                     android:id="@+id/text_view_digital_clock"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="16dp"
                     android:text="@string/clock_digital"
-                    android:textStyle="bold"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:fontFamily="@font/font_poppins"/>
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_view_digital_clock_xml"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="16dp"
                     android:textIsSelectable="true"
-                    app:fontFamily="@font/font_audiowide"
-                    app:layout_constraintTop_toBottomOf="@id/text_view_digital_clock"/>
-                <com.google.android.material.divider.MaterialDivider
-                    android:id="@+id/divider_1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="16dp"
-                    app:layout_constraintTop_toBottomOf="@id/text_view_digital_clock_xml"/>
+                    app:fontFamily="@font/font_audiowide"/>
                 <com.google.android.material.textview.MaterialTextView
+                    style="@style/TextAppearance.Material3.HeadlineSmall"
                     android:id="@+id/text_view_text_clock"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="16dp"
-                    android:textStyle="bold"
                     android:text="@string/clock_text"
-                    app:layout_constraintTop_toBottomOf="@id/divider_1"/>
+                    app:fontFamily="@font/font_poppins"/>
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_view_text_clock_xml"
                     android:layout_width="match_parent"
@@ -57,29 +66,7 @@
                     android:textIsSelectable="true"
                     app:fontFamily="@font/font_audiowide"
                     app:layout_constraintTop_toBottomOf="@id/text_view_text_clock"/>
-                <com.google.android.material.divider.MaterialDivider
-                    android:id="@+id/divider_2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="16dp"
-                    app:layout_constraintTop_toBottomOf="@id/text_view_text_clock_xml"/>
-                <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@id/divider_2"
-                    android:padding="16dp"
-                    android:textStyle="bold"
-                    android:text="@string/clock_analog"
-                    android:id="@+id/text_view_analog_clock"/>
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/text_view_analog_clock_xml"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="16dp"
-                    android:textIsSelectable="true"
-                    app:fontFamily="@font/font_audiowide"
-                    app:layout_constraintTop_toBottomOf="@id/text_view_analog_clock"/>
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
         </me.zhanghai.android.fastscroll.FastScrollScrollView>
     </com.google.android.material.card.MaterialCardView>
     <com.google.android.material.card.MaterialCardView
