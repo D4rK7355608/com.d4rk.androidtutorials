@@ -51,30 +51,25 @@ class ApplicationOpenAdManager : MultiDexApplication(), Application.ActivityLife
     private var isLoadingAd = false
     var isShowingAd = false
     private var loadTime: Long = 0
-    fun loadAd(context: Context) {
-      if (isLoadingAd || isAdAvailable()) {
-        return
+      fun loadAd(context: Context) {
+          if (isLoadingAd || isAdAvailable()) {
+              return
+          }
+          isLoadingAd = true
+          val request = AdRequest.Builder().build()
+          AppOpenAd.load(context, AD_UNIT_ID, request, AppOpenAd.APP_OPEN_AD_ORIENTATION_PORTRAIT,
+              object : AppOpenAd.AppOpenAdLoadCallback() {
+                  override fun onAdLoaded(ad: AppOpenAd) {
+                      appOpenAd = ad
+                      isLoadingAd = false
+                      loadTime = Date().time
+                  }
+                  override fun onAdFailedToLoad(loadAdError: LoadAdError) {
+                      isLoadingAd = false
+                  }
+              }
+          )
       }
-      isLoadingAd = true
-      val request = AdRequest.Builder().build()
-        AppOpenAd.load(
-            context,
-            AD_UNIT_ID,
-            request,
-            AppOpenAd.APP_OPEN_AD_ORIENTATION_PORTRAIT,
-            object : AppOpenAd.AppOpenAdLoadCallback() {
-                override fun onAdLoaded(ad: AppOpenAd) {
-                    appOpenAd = ad
-                    isLoadingAd = false
-                    loadTime = Date().time
-                }
-
-                override fun onAdFailedToLoad(loadAdError: LoadAdError) {
-                    isLoadingAd = false
-                }
-            }
-        )
-    }
     private fun wasLoadTimeLessThanNHoursAgo(numHours: Long): Boolean {
       val dateDifference: Long = Date().time - loadTime
       val numMilliSecondsPerHour: Long = 3600000
