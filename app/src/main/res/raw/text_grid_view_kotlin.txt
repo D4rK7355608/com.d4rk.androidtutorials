@@ -8,23 +8,23 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
-// Class declaration
+// This class extends AppCompatActivity and represents the main activity of an Android app
 class MainActivity : AppCompatActivity() {
 
-    // Late-initialized variable
+    // Declare a private lateinit variable for binding the layout with this activity
     private lateinit var binding: ActivityMainBinding
 
     // Array of numbers
     private val numbers = arrayOf("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z")
 
-    // onCreate() method
+    // This method is called when the activity is first created
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Inflate the layout
+        // Inflate the layout and set it as the content view for this activity
         binding = ActivityMainBinding.inflate(layoutInflater)
 
-        // Set the content view
+        // Set the content view to the root view of the inflated layout
         setContentView(binding.root)
 
         // Create an adapter for the grid view

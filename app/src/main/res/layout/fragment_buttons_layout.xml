@@ -36,10 +36,6 @@
                     android:textIsSelectable="true"
                     app:fontFamily="@font/font_audiowide"
                     tools:ignore="SpeakableTextPresentCheck"/>
-                <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="16dp"/>
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/TextAppearance.Material3.HeadlineSmall"
                     android:layout_width="match_parent"
@@ -55,10 +51,6 @@
                     android:textIsSelectable="true"
                     app:fontFamily="@font/font_audiowide"
                     tools:ignore="SpeakableTextPresentCheck"/>
-                <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="16dp"/>
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/TextAppearance.Material3.HeadlineSmall"
                     android:layout_width="match_parent"
@@ -74,10 +66,6 @@
                     android:textIsSelectable="true"
                     app:fontFamily="@font/font_audiowide"
                     tools:ignore="SpeakableTextPresentCheck"/>
-                <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="16dp"/>
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/TextAppearance.Material3.HeadlineSmall"
                     android:layout_width="match_parent"
@@ -93,10 +81,6 @@
                     android:textIsSelectable="true"
                     app:fontFamily="@font/font_audiowide"
                     tools:ignore="SpeakableTextPresentCheck"/>
-                <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="16dp"/>
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/TextAppearance.Material3.HeadlineSmall"
                     android:layout_width="match_parent"
@@ -112,10 +96,6 @@
                     android:textIsSelectable="true"
                     app:fontFamily="@font/font_audiowide"
                     tools:ignore="SpeakableTextPresentCheck"/>
-                <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="16dp"/>
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/TextAppearance.Material3.HeadlineSmall"
                     android:layout_width="match_parent"
@@ -131,10 +111,6 @@
                     android:textIsSelectable="true"
                     app:fontFamily="@font/font_audiowide"
                     tools:ignore="SpeakableTextPresentCheck"/>
-                <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="16dp"/>
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/TextAppearance.Material3.HeadlineSmall"
                     android:layout_width="match_parent"
@@ -150,10 +126,6 @@
                     android:textIsSelectable="true"
                     app:fontFamily="@font/font_audiowide"
                     tools:ignore="SpeakableTextPresentCheck"/>
-                <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="16dp"/>
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/TextAppearance.Material3.HeadlineSmall"
                     android:layout_width="match_parent"
@@ -168,10 +140,6 @@
                     android:padding="16dp"
                     android:textIsSelectable="true"
                     app:fontFamily="@font/font_audiowide"/>
-                <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="16dp"/>
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/TextAppearance.Material3.HeadlineSmall"
                     android:layout_width="match_parent"
@@ -186,10 +154,6 @@
                     android:padding="16dp"
                     android:textIsSelectable="true"
                     app:fontFamily="@font/font_audiowide"/>
-                <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="16dp"/>
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/TextAppearance.Material3.HeadlineSmall"
                     android:layout_width="match_parent"
@@ -204,10 +168,6 @@
                     android:padding="16dp"
                     android:textIsSelectable="true"
                     app:fontFamily="@font/font_audiowide"/>
-                <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="16dp"/>
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/TextAppearance.Material3.HeadlineSmall"
                     android:layout_width="match_parent"
@@ -223,10 +183,6 @@
                     android:textIsSelectable="true"
                     app:fontFamily="@font/font_audiowide"
                     app:layout_constraintTop_toBottomOf="@id/text_view_extended_floating_button_primary_icon"/>
-                <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="16dp"/>
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/TextAppearance.Material3.HeadlineSmall"
                     android:layout_width="match_parent"
@@ -241,10 +197,6 @@
                     android:padding="16dp"
                     android:textIsSelectable="true"
                     app:fontFamily="@font/font_audiowide"/>
-                <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="16dp"/>
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/TextAppearance.Material3.HeadlineSmall"
                     android:layout_width="match_parent"
@@ -259,10 +211,6 @@
                     android:padding="16dp"
                     android:textIsSelectable="true"
                     app:fontFamily="@font/font_audiowide"/>
-                <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="16dp"/>
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/TextAppearance.Material3.HeadlineSmall"
                     android:layout_width="match_parent"
@@ -277,10 +225,6 @@
                     android:padding="16dp"
                     android:textIsSelectable="true"
                     app:fontFamily="@font/font_audiowide"/>
-                <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="16dp"/>
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/TextAppearance.Material3.HeadlineSmall"
                     android:layout_width="match_parent"
@@ -296,10 +240,6 @@
                     android:textIsSelectable="true"
                     app:fontFamily="@font/font_audiowide"
                     tools:ignore="SpeakableTextPresentCheck"/>
-                <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="16dp"/>
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/TextAppearance.Material3.HeadlineSmall"
                     android:layout_width="match_parent"
@@ -315,10 +255,6 @@
                     android:textIsSelectable="true"
                     app:fontFamily="@font/font_audiowide"
                     app:layout_constraintTop_toBottomOf="@id/text_view_floating_button_secondary"/>
-                <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="16dp"/>
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/TextAppearance.Material3.HeadlineSmall"
                     android:layout_width="match_parent"
@@ -333,10 +269,6 @@
                     android:padding="16dp"
                     android:textIsSelectable="true"
                     app:fontFamily="@font/font_audiowide"/>
-                <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="16dp"/>
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/TextAppearance.Material3.HeadlineSmall"
                     android:layout_width="match_parent"
@@ -368,6 +300,6 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             ads:adSize="FULL_BANNER"
-            ads:adUnitId="ca-app-pub-5294151573817700/4974008668"/>
+            ads:adUnitId="ca-app-pub-5294151573817700/3821250346"/>
     </com.google.android.material.card.MaterialCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

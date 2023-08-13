@@ -13,8 +13,8 @@ android {
         applicationId = "com.d4rk.androidtutorials"
         minSdk = 26
         targetSdk = 34
-        versionCode = 64
-        versionName = "6.0_r2"
+        versionCode = 65
+        versionName = "6.0_r3"
         archivesName = "${applicationId}-v${versionName}"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         resourceConfigurations += listOf("en", "de", "es", "fr", "hi", "hu", "in", "it", "ja", "ro", "ru", "tr", "sv", "bg", "pl", "uk")

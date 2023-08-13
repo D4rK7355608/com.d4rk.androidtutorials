@@ -4,7 +4,7 @@ import android.os.Bundle
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import androidx.appcompat.app.AppCompatActivity
 
-// Create a new activity named MainActivity which extends AppCompatActivity
+// This class extends AppCompatActivity and represents the main activity of an Android app
 class MainActivity : AppCompatActivity() {
 
     // Declare a private constant named 'notificationChannelId' of type 'String' and assign it the value "inbox_notification"
@@ -13,14 +13,14 @@ class MainActivity : AppCompatActivity() {
     // Declare a private constant named 'notificationId' of type 'Int' and assign it the value 1
     private val notificationId = 1
 
-    // Declare a private variable named 'binding' of type 'ActivityMainBinding'
+    // Declare a private lateinit variable for binding the layout with this activity
     private lateinit var binding : ActivityMainBinding
 
-    // Override the onCreate method of AppCompatActivity to initialize the UI
+    // This method is called when the activity is first created
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Inflate the layout using the ActivityMainBinding class
+        // Inflate the layout and set it as the content view for this activity
         binding = ActivityMainBinding.inflate(layoutInflater)
 
         // Set the content view to the root view of the inflated layout

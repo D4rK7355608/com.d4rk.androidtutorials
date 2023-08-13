@@ -7,23 +7,24 @@ import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
 
-// Define MainActivity class which extends AppCompatActivity class
+// This class extends AppCompatActivity and represents the main activity of an Android app
 class MainActivity : AppCompatActivity() {
+
     // Declare a private lateinit variable for binding the layout with this activity
     private lateinit var binding : ActivityMainBinding
 
     // Declare a private val variable for calendar instance
     private val calendar: Calendar = Calendar.getInstance()
 
-    // Override onCreate method which is called when the activity is first created
+    // This method is called when the activity is first created
     override fun onCreate(savedInstanceState: Bundle?) {
         // Call super.onCreate to complete the creation of activity
         super.onCreate(savedInstanceState)
 
-        // Inflate the layout for this activity using layoutInflater and assign it to binding variable
+        // Inflate the layout and set it as the content view for this activity
         binding = ActivityMainBinding.inflate(layoutInflater)
 
-        // Set the content view for this activity using the root view from binding variable
+        // Set the content view to the root view of the inflated layout
         setContentView(binding.root)
 
         // Create a SimpleDateFormat object with desired date format and locale
