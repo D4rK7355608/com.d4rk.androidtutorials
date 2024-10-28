@@ -1,4 +1,3 @@
-import org.jetbrains.kotlin.gradle.plugin.mpp.pm20.util.archivesName
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -7,34 +6,37 @@ plugins {
     id("com.google.android.gms.oss-licenses-plugin")
 }
 android {
-    compileSdk = 34
+    compileSdk = 35
     namespace = "com.d4rk.androidtutorials"
     defaultConfig {
         applicationId = "com.d4rk.androidtutorials"
         minSdk = 26
-        targetSdk = 34
-        versionCode = 65
-        versionName = "6.0_r3"
-        archivesName = "${applicationId}-v${versionName}"
+        targetSdk = 35
+        versionCode = 67
+        versionName = "6.0_r5"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         resourceConfigurations += listOf("en", "de", "es", "fr", "hi", "hu", "in", "it", "ja", "ro", "ru", "tr", "sv", "bg", "pl", "uk")
     }
+    
     buildTypes {
-        getByName("release") {
+        release {
             multiDexEnabled = true
             isMinifyEnabled = true
             isShrinkResources = true
             isDebuggable = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile(name = "proguard-android-optimize.txt"), "proguard-rules.pro"
+            )
         }
-        getByName("debug") {
+        debug {
             multiDexEnabled = true
-            isMinifyEnabled = true
-            isShrinkResources = true
             isDebuggable = true
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile(name = "proguard-android-optimize.txt"), "proguard-rules.pro"
+            )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
