@@ -12,12 +12,12 @@ android {
         applicationId = "com.d4rk.androidtutorials"
         minSdk = 26
         targetSdk = 35
-        versionCode = 67
+        versionCode = 70
         versionName = "6.0_r5"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         resourceConfigurations += listOf("en", "de", "es", "fr", "hi", "hu", "in", "it", "ja", "ro", "ru", "tr", "sv", "bg", "pl", "uk")
     }
-    
+
     buildTypes {
         release {
             multiDexEnabled = true
