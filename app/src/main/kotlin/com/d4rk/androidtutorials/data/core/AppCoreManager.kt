@@ -10,8 +10,10 @@ import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 import androidx.lifecycle.ProcessLifecycleOwner
 import androidx.multidex.MultiDexApplication
+import androidx.room.Room
 import com.d4rk.androidtutorials.data.core.ads.AdsCoreManager
 import com.d4rk.androidtutorials.data.core.datastore.DataStoreCoreManager
+import com.d4rk.androidtutorials.data.database.AppDatabase
 //import io.ktor.client.HttpClient
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -33,13 +35,17 @@ class AppCoreManager : MultiDexApplication(), Application.ActivityLifecycleCallb
     private var currentStage = AppInitializationStage.DATA_STORE
     private var isAppLoaded = false
 
-    //val client : HttpClient = HttpClient()
+    companion object {
+        lateinit var database : AppDatabase
+    }
 
     override fun onCreate() {
         super.onCreate()
         registerActivityLifecycleCallbacks(this)
         ProcessLifecycleOwner.get().lifecycle.addObserver(observer = this)
-
+        database = Room.databaseBuilder(this , AppDatabase::class.java , "Android Studio Tutorials")
+                .fallbackToDestructiveMigrationFrom()
+                .build()
         CoroutineScope(Dispatchers.Main).launch {
             if (dataStoreCoreManager.initializeDataStore()) {
                 proceedToNextStage()

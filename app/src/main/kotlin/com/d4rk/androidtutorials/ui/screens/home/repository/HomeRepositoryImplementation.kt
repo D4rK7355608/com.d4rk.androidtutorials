@@ -2,6 +2,8 @@ package com.d4rk.androidtutorials.ui.screens.home.repository
 
 import android.app.Application
 import com.d4rk.androidtutorials.BuildConfig
+import com.d4rk.androidtutorials.data.core.AppCoreManager
+import com.d4rk.androidtutorials.data.database.table.FavoriteLessonTable
 import com.d4rk.androidtutorials.data.datastore.DataStore
 import com.d4rk.androidtutorials.data.model.ui.screens.UiLesson
 import com.google.common.reflect.TypeToken
@@ -23,28 +25,46 @@ abstract class HomeRepositoryImplementation(
         "https://raw.githubusercontent.com/D4rK7355608/com.d4rk.apis/refs/heads/main/Android%20Studio%20Tutorials/release/en/home"
     }
 
-    fun getHomeLessonsImplementation() : List<UiLesson>? {
+    suspend fun getHomeLessonsImplementation() : List<UiLesson>? {
         val url = "$baseUrl/api_get_lessons.json"
-        return URL(url).openConnection().let {
-            it as HttpURLConnection
-            it.requestMethod = "GET"
-            it.connectTimeout = 5000
-            it.readTimeout = 5000
+        val lessons : List<UiLesson>?
 
-            when (it.responseCode) {
-                HttpURLConnection.HTTP_OK -> {
-                    BufferedReader(InputStreamReader(it.inputStream)).use { reader ->
-                        val type = object : TypeToken<List<UiLesson>>() {}.type
-                        Gson().fromJson<List<UiLesson>>(reader.readText() , type)
+        @Suppress("BlockingMethodInNonBlockingContext") URL(url).openConnection()
+                .let { urlConnection ->
+                    urlConnection as HttpURLConnection
+                    urlConnection.requestMethod = "GET"
+                    urlConnection.connectTimeout = 5000
+                    urlConnection.readTimeout = 5000
+
+                    when (urlConnection.responseCode) {
+                        HttpURLConnection.HTTP_OK -> {
+                            BufferedReader(InputStreamReader(urlConnection.inputStream)).use { reader ->
+                                val type = object : TypeToken<List<UiLesson>>() {}.type
+                                lessons = Gson().fromJson<List<UiLesson>>(reader.readText() , type)
+                            }
+                        }
+
+                        // TODO: Handle more cases if needed
+                        else -> {
+                            return null
+                        }
                     }
                 }
 
-                // TODO: Add more case handles
-
-                else -> {
-                    null
-                }
-            }
+        return lessons?.map { lesson ->
+            lesson.copy(favorite = loadFavoritesImplementation().any { it.id == lesson.id })
         }
+    }
+
+    private suspend fun loadFavoritesImplementation() : List<FavoriteLessonTable> {
+        return AppCoreManager.database.favoriteLessonsDao().getAllFavorites()
+    }
+
+    suspend fun addLessonToFavoritesImplementation(lesson : FavoriteLessonTable) {
+        AppCoreManager.database.favoriteLessonsDao().insert(lesson)
+    }
+
+    suspend fun removeLessonFromFavoritesImplementation(lesson : FavoriteLessonTable) {
+        AppCoreManager.database.favoriteLessonsDao().delete(lesson)
     }
 }

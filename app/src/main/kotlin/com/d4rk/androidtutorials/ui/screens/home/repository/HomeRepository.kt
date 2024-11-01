@@ -1,6 +1,7 @@
 package com.d4rk.androidtutorials.ui.screens.home.repository
 
 import android.app.Application
+import com.d4rk.androidtutorials.data.database.table.FavoriteLessonTable
 import com.d4rk.androidtutorials.data.datastore.DataStore
 import com.d4rk.androidtutorials.data.model.ui.screens.UiLesson
 import kotlinx.coroutines.Dispatchers
@@ -20,8 +21,32 @@ class HomeRepository(
     suspend fun getHomeLessonsRepository(onSuccess : (List<UiLesson>) -> Unit) {
         withContext(Dispatchers.IO) {
             val lessons = getHomeLessonsImplementation()
-            withContext(Dispatchers.Main) {
+            return@withContext withContext(Dispatchers.Main) {
                 lessons?.let { onSuccess(it) }
+            }
+        }
+    }
+
+    suspend fun addLessonToFavoritesRepository(
+        lesson : FavoriteLessonTable ,
+        onSuccess : () -> Unit ,
+    ) {
+        withContext(Dispatchers.IO) {
+            addLessonToFavoritesImplementation(lesson)
+            withContext(Dispatchers.Main) {
+                onSuccess()
+            }
+        }
+    }
+
+    suspend fun removeLessonFromFavoritesRepository(
+        lesson : FavoriteLessonTable ,
+        onSuccess : () -> Unit ,
+    ) {
+        withContext(Dispatchers.IO) {
+            removeLessonFromFavoritesImplementation(lesson)
+            withContext(Dispatchers.Main) {
+                onSuccess()
             }
         }
     }

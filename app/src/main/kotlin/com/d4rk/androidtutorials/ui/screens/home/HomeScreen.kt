@@ -24,13 +24,13 @@ fun HomeScreen() {
     val viewModel : HomeViewModel = viewModel()
     val uiErrorModel : UiErrorModel by viewModel.uiErrorModel.collectAsState()
     val lessons : List<UiLesson> by viewModel.lessons.collectAsState()
-    val isLoading: Boolean by viewModel.isLoading.collectAsState()
+    val isLoading : Boolean by viewModel.isLoading.collectAsState()
 
     val context : Context = LocalContext.current
 
-    val transition: Transition<Boolean> =
-            updateTransition(targetState = !isLoading, label = "LoadingTransition")
-    val progressAlpha: Float by transition.animateFloat(label = "Progress Alpha") {
+    val transition : Transition<Boolean> =
+            updateTransition(targetState = ! isLoading , label = "LoadingTransition")
+    val progressAlpha : Float by transition.animateFloat(label = "Progress Alpha") {
         if (it) 0f else 1f
     }
 
@@ -41,7 +41,8 @@ fun HomeScreen() {
 
     if (isLoading) {
         LoadingScreen(progressAlpha)
-    } else {
+    }
+    else {
         LazyColumn(modifier = Modifier.fillMaxSize()) {
             items(lessons) { lesson ->
                 LessonItem(lesson = lesson , context = context)

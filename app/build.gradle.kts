@@ -1,6 +1,5 @@
 import org.jetbrains.kotlin.konan.properties.Properties
 
-
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
@@ -8,6 +7,7 @@ plugins {
     alias(libs.plugins.googleOssServices)
     alias(libs.plugins.googleFirebase)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.devToolsKsp)
 }
 
 android {
@@ -50,7 +50,7 @@ android {
             isMinifyEnabled = true
             isShrinkResources = true
             isDebuggable = false
-                  }
+        }
 
         debug {
             isDebuggable = true
@@ -63,12 +63,10 @@ android {
         properties.load(keystoreFile.inputStream())
         val apiKey = properties.getProperty("API_KEY") ?: ""
 
-        with (buildType) {
+        with(buildType) {
             multiDexEnabled = true
             buildConfigField(
-                type = "String",
-                name = "API_KEY",
-                value = apiKey
+                type = "String" , name = "API_KEY" , value = apiKey
             )
             proguardFiles(
                 getDefaultProguardFile(name = "proguard-android-optimize.txt") ,
@@ -162,6 +160,11 @@ dependencies {
     implementation(dependencyNotation = libs.coil.compose)
     implementation(dependencyNotation = libs.coil.gif)
     implementation(dependencyNotation = libs.coil.network.okhttp)
+
+    // KSP
+    ksp(dependencyNotation = libs.androidx.room.compiler)
+    implementation(dependencyNotation = libs.androidx.room.ktx)
+    implementation(dependencyNotation = libs.androidx.room.runtime)
 
     // Code view
     implementation(dependencyNotation = libs.compose.code.editor)

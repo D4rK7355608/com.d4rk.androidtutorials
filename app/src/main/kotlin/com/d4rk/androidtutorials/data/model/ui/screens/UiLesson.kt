@@ -12,4 +12,5 @@ data class UiLesson(
     @SerializedName("squareImageUrl") var squareImageUrl : String = "" ,
     @SerializedName("deepLinkPath") var deepLinkPath : String = "" ,
     @SerializedName("articleType") var articleType : String = "" ,
+    var favorite: Boolean = false
 )

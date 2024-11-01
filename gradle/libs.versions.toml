@@ -1,5 +1,5 @@
 [versions]
-agp = "8.7.1"
+agp = "8.7.2"
 appcompat = "1.7.0"
 appUpdateKtx = "2.1.0"
 billing = "7.1.1"
@@ -10,14 +10,15 @@ constraintlayoutCompose = "1.1.0"
 coreSplashscreen = "1.0.1"
 datastoreCore = "1.1.1"
 firebaseBom = "33.5.1"
+roomKtx = "2.6.1"
 gson = "2.11.0"
 kotlinxSerializationJson = "1.7.3"
 lifecycle = "2.8.7"
 volley = "1.2.1"
 kotlin = "2.0.10"
+google-devtools-ksp = "2.0.10-1.0.24"
 coreKtx = "1.15.0"
 junit = "4.13.2"
-ktor = "3.0.1"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 kotlinxCoroutinesAndroid = "1.9.0"
@@ -60,10 +61,9 @@ app-update-ktx = { module = "com.google.android.play:app-update-ktx", version.re
 billing = { module = "com.android.billingclient:billing", version.ref = "billing" }
 compose-code-editor = { module = "com.github.qawaz:compose-code-editor", version.ref = "composeCodeEditor" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
-ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
-ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
-ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
-ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomKtx" }
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomKtx" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomKtx" }
 coil-gif = { module = "io.coil-kt.coil3:coil-gif", version.ref = "coil" }
 coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil" }
 coil-network-okhttp = { module = "io.coil-kt.coil3:coil-network-okhttp", version.ref = "coil" }
@@ -102,3 +102,4 @@ googlePlayServices = { id = "com.google.gms.google-services", version.ref = "goo
 googleOssServices = { id = "com.google.android.gms.oss-licenses-plugin", version.ref = "google-oss-services" }
 googleFirebase = { id = "com.google.firebase.crashlytics", version.ref = "google-firebase-crashlytics" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+devToolsKsp = { id = "com.google.devtools.ksp", version.ref = "google-devtools-ksp" }
