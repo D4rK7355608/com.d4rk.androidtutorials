@@ -1,38 +1,78 @@
+import org.jetbrains.kotlin.konan.properties.Properties
+
+
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
-    id("com.google.gms.google-services")
-    id("com.google.firebase.crashlytics")
-    id("com.google.android.gms.oss-licenses-plugin")
+    alias(libs.plugins.androidApplication)
+    alias(libs.plugins.jetbrainsKotlinAndroid)
+    alias(libs.plugins.googlePlayServices)
+    alias(libs.plugins.googleOssServices)
+    alias(libs.plugins.googleFirebase)
+    alias(libs.plugins.compose.compiler)
 }
+
 android {
     compileSdk = 35
     namespace = "com.d4rk.androidtutorials"
     defaultConfig {
         applicationId = "com.d4rk.androidtutorials"
-        minSdk = 26
+        minSdk = 23
         targetSdk = 35
-        versionCode = 70
-        versionName = "6.0_r5"
+        versionCode = 71
+        versionName = "1.0.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        resourceConfigurations += listOf("en", "de", "es", "fr", "hi", "hu", "in", "it", "ja", "ro", "ru", "tr", "sv", "bg", "pl", "uk")
+        resourceConfigurations += listOf(
+            "en" ,
+            "bg-rBG" ,
+            "de-rDE" ,
+            "es-rGQ" ,
+            "fr-rFR" ,
+            "hi-rIN" ,
+            "hu-rHU" ,
+            "in-rID" ,
+            "it-rIT" ,
+            "ja-rJP" ,
+            "pl-rPL" ,
+            "ro-rRO" ,
+            "ru-rRU" ,
+            "sv-rSE" ,
+            "tr-rTR" ,
+            "uk-rUA" ,
+            "zh-rTW" ,
+        )
+
+        vectorDrawables {
+            useSupportLibrary = true
+        }
     }
 
     buildTypes {
         release {
-            multiDexEnabled = true
             isMinifyEnabled = true
             isShrinkResources = true
             isDebuggable = false
-            proguardFiles(
-                getDefaultProguardFile(name = "proguard-android-optimize.txt"), "proguard-rules.pro"
-            )
-        }
+                  }
+
         debug {
-            multiDexEnabled = true
             isDebuggable = true
+        }
+    }
+
+    buildTypes.forEach { buildType ->
+        val keystoreFile = project.rootProject.file("apikeys.properties")
+        val properties = Properties()
+        properties.load(keystoreFile.inputStream())
+        val apiKey = properties.getProperty("API_KEY") ?: ""
+
+        with (buildType) {
+            multiDexEnabled = true
+            buildConfigField(
+                type = "String",
+                name = "API_KEY",
+                value = apiKey
+            )
             proguardFiles(
-                getDefaultProguardFile(name = "proguard-android-optimize.txt"), "proguard-rules.pro"
+                getDefaultProguardFile(name = "proguard-android-optimize.txt") ,
+                "proguard-rules.pro"
             )
         }
     }
@@ -41,47 +81,96 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+
     kotlinOptions {
         jvmTarget = "17"
     }
+
     buildFeatures {
-        viewBinding = true
         buildConfig = true
+        compose = true
     }
+
+    packaging {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
+    }
+
     bundle {
         storeArchive {
             enable = true
         }
     }
 }
+
 dependencies {
-    implementation("com.google.android.material:material:1.9.0")
-    implementation("com.google.android.gms:play-services-ads:22.2.0")
-    implementation("com.google.android.gms:play-services-oss-licenses:17.0.1")
-    implementation("com.google.android.play:review-ktx:2.0.1")
-    implementation("com.google.android.play:app-update-ktx:2.1.0")
-    implementation("com.google.firebase:firebase-crashlytics-ktx:18.4.0")
-    implementation("com.google.firebase:firebase-analytics-ktx:21.3.0")
-    implementation("com.google.firebase:firebase-perf:20.4.0")
-    implementation("com.android.billingclient:billing:6.0.1")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation("androidx.core:core-ktx:1.10.1")
-    implementation("androidx.core:core-splashscreen:1.0.1")
-    implementation("androidx.gridlayout:gridlayout:1.0.0")
-    implementation("androidx.navigation:navigation-fragment-ktx:2.7.0")
-    implementation("androidx.navigation:navigation-ui-ktx:2.7.0")
-    implementation("androidx.preference:preference-ktx:1.2.1")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
-    implementation("androidx.lifecycle:lifecycle-process:2.6.1")
-    implementation("androidx.lifecycle:lifecycle-common-java8:2.6.1")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
-    implementation("androidx.multidex:multidex:2.0.1")
-    implementation("com.airbnb.android:lottie:6.1.0")
-    implementation("me.zhanghai.android.fastscroll:library:1.3.0")
-    implementation("me.zhanghai.android.materialratingbar:library:1.4.0")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
+    //AndroidX
+    implementation(dependencyNotation = libs.androidx.core.ktx)
+    implementation(dependencyNotation = libs.androidx.appcompat)
+    implementation(dependencyNotation = libs.androidx.core.splashscreen)
+    implementation(dependencyNotation = libs.androidx.multidex)
+    implementation(dependencyNotation = libs.androidx.work.runtime.ktx)
+    implementation(dependencyNotation = libs.generativeai)
+
+    // Compose
+    implementation(dependencyNotation = platform(libs.androidx.compose.bom))
+    implementation(dependencyNotation = libs.androidx.ui)
+    implementation(dependencyNotation = libs.androidx.activity.compose)
+    implementation(dependencyNotation = libs.androidx.constraintlayout.compose)
+    implementation(dependencyNotation = libs.androidx.ui.graphics)
+    implementation(dependencyNotation = libs.androidx.compose.runtime)
+    implementation(dependencyNotation = libs.androidx.runtime.livedata)
+    implementation(dependencyNotation = libs.androidx.runtime.rxjava2)
+    implementation(dependencyNotation = libs.androidx.ui.tooling.preview)
+    implementation(dependencyNotation = libs.androidx.material3)
+    implementation(dependencyNotation = libs.androidx.material.icons.extended)
+    implementation(dependencyNotation = libs.datastore.preferences)
+    implementation(dependencyNotation = libs.androidx.datastore.preferences)
+    implementation(dependencyNotation = libs.androidx.foundation)
+    implementation(dependencyNotation = libs.androidx.navigation.compose)
+
+    // Lifecycle
+    implementation(dependencyNotation = libs.kotlinx.coroutines.android)
+    implementation(dependencyNotation = libs.kotlinx.serialization.json)
+    implementation(dependencyNotation = libs.androidx.lifecycle.runtime.ktx)
+    implementation(dependencyNotation = libs.androidx.lifecycle.common.java8)
+    implementation(dependencyNotation = libs.androidx.lifecycle.livedata.ktx)
+    implementation(dependencyNotation = libs.androidx.lifecycle.process)
+    implementation(dependencyNotation = libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(dependencyNotation = libs.androidx.lifecycle.viewmodel.compose)
+    implementation(dependencyNotation = libs.androidx.lifecycle.runtime.compose)
+
+    // Google
+    implementation(dependencyNotation = libs.play.services.ads)
+    implementation(dependencyNotation = libs.billing)
+    implementation(dependencyNotation = libs.play.services.oss.licenses)
+    implementation(dependencyNotation = libs.material)
+    implementation(dependencyNotation = libs.app.update.ktx)
+    implementation(dependencyNotation = libs.review.ktx)
+    implementation(dependencyNotation = libs.volley)
+    implementation(dependencyNotation = libs.gson)
+
+    // Firebase
+    implementation(dependencyNotation = platform(libs.firebase.bom))
+    implementation(dependencyNotation = libs.firebase.analytics.ktx)
+    implementation(dependencyNotation = libs.firebase.crashlytics.ktx)
+    implementation(dependencyNotation = libs.firebase.perf)
+
+    // Images
+    implementation(dependencyNotation = libs.coil.compose)
+    implementation(dependencyNotation = libs.coil.gif)
+    implementation(dependencyNotation = libs.coil.network.okhttp)
+
+    // Code view
+    implementation(dependencyNotation = libs.compose.code.editor)
+
+    // Test
+    testImplementation(dependencyNotation = libs.junit)
+    androidTestImplementation(dependencyNotation = libs.androidx.junit)
+    androidTestImplementation(dependencyNotation = libs.androidx.espresso.core)
+    androidTestImplementation(dependencyNotation = libs.ui.test.junit4)
+    debugImplementation(dependencyNotation = libs.androidx.ui.tooling)
+    debugImplementation(dependencyNotation = libs.androidx.ui.test.manifest)
 }
