@@ -2,10 +2,8 @@ package com.d4rk.androidtutorials.ui.viewmodel
 
 import android.app.Application
 import android.content.ActivityNotFoundException
-import android.content.pm.PackageManager
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
-import com.android.volley.NetworkError
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.constants.error.ErrorType
 import com.d4rk.androidtutorials.data.model.ui.error.UiErrorModel
@@ -14,7 +12,6 @@ import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import java.io.FileNotFoundException
 import java.io.IOException
 
 open class BaseViewModel(application: Application) : AndroidViewModel(application) {

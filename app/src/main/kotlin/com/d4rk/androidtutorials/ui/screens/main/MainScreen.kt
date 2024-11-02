@@ -6,14 +6,11 @@ import androidx.compose.material3.DrawerState
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.d4rk.androidtutorials.data.datastore.DataStore
-import com.d4rk.androidtutorials.data.model.ui.screens.UiMainModel
 import com.d4rk.androidtutorials.ui.components.navigation.NavigationDrawer
 
 @Composable

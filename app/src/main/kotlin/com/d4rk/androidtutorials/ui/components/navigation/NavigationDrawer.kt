@@ -36,7 +36,6 @@ import androidx.navigation.NavHostController
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.data.datastore.DataStore
 import com.d4rk.androidtutorials.data.model.ui.navigation.NavigationDrawerItem
-import com.d4rk.androidtutorials.data.model.ui.screens.UiMainModel
 import com.d4rk.androidtutorials.ui.components.animations.bounceClick
 import com.d4rk.androidtutorials.ui.components.animations.hapticDrawerSwipe
 import com.d4rk.androidtutorials.ui.screens.help.HelpActivity

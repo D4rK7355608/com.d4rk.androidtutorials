@@ -6,36 +6,12 @@
     <string name="summary_notification_last_time_used"> Let\'s free up some space! We are happy you are back!</string>
 
     <string name="welcome">Welcome</string>
-    <string name="browse_terms_of_service_and_privacy_policy">Browse the <i><u>Terms of Service</u></i> and <i><u>Privacy Policy</u></i></string>
     <string name="summary_browse_terms_of_service_and_privacy_policy">Read and agree to our Terms of Service and Privacy Policy to continue</string>
     <string name="agree">Agree</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
 
     <string name="home">Home</string>
-    <string name="delete_forever">Delete forever</string>
-    <string name="move_to_trash">Move to trash</string>
-    <string name="cleaned_space">Cleaned Space</string>
-    <string name="free_space">Free Space</string>
-    <string name="delete_forever_title">Delete Forever</string>
-    <string name="delete_forever_message">Are you sure you want to delete these files forever? This action cannot be undone.</string>
-    <string name="move_to_trash_title">Move to Trash</string>
-    <string name="move_to_trash_message">Are you sure you want to move these files to the trash?</string>
-    <string name="quick_scan">Quick Scan</string>
-    <string name="apks">APKs</string>
-    <string name="archives">Archives</string>
-    <string name="videos">Videos</string>
-    <string name="audios">Audios</string>
-    <string name="other">Other</string>
-    <string name="empty_folders">Empty folders</string>
-    <plurals name="status_selected_files">
-        <item quantity="one">Status: Selected %1$d file</item>
-        <item quantity="other">Status: Selected %1$d files</item>
-    </plurals>
-    <string name="status_no_files_selected">Status: No files selected</string>
-    <string name="select_all">Select All</string>
-    <string name="file_not_found">File not found.</string>
-    <string name="no_files_found">No files found</string>
     <string name="activity_not_found">Activity not found.</string>
     <string name="security_error">A security error occurred. Please try again later.</string>
     <string name="io_error">An input/output error occurred. Please check your network connection or storage and try again.</string>
@@ -43,57 +19,11 @@
     <string name="unknown_error">An unknown error occurred.</string>
 
     <string name="studio_bot">Studio Bot</string>
-    <string name="app_manager">App Manager</string>
-    <string name="installed_apps">Installed apps</string>
-    <string name="system_apps">System apps</string>
-    <string name="app_install_files">App install files (APKs)</string>
-    <string name="uninstall">Uninstall</string>
+
     <string name="share">Share</string>
     <string name="app_info">App info</string>
-    <string name="install">Install"</string>
-    <string name="share_apk">Share APK</string>
-    <string name="no_app_installed">No apps installed</string>
-    <string name="no_apk_found">No APK found</string>
-    <string name="app_loading_error">Error loading apps.</string>
 
     <string name="favorites">Favorites</string>
-    <string name="memory_manager">Memory Manager</string>
-    <string name="storage_information">Storage Information</string>
-    <string name="used">Used:</string>
-    <string name="free">Free:</string>
-    <string name="total">Total:</string>
-    <string name="ram_information">RAM Information</string>
-    <string name="used_ram">Used RAM:</string>
-    <string name="free_ram">Free RAM:</string>
-    <string name="total_ram">Total RAM:</string>
-    <string name="categories">Categories</string>
-    <string name="system">System</string>
-    <string name="music">Music</string>
-    <string name="images">Images</string>
-    <string name="documents">Documents</string>
-    <string name="downloads">Downloads</string>
-    <string name="other_files">Other Files</string>
-
-    <string name="image_optimizer">Image optimizer</string>
-    <string name="summary_select_image">Select the image you want to optimize</string>
-    <string name="choose_image">Choose image</string>
-    <string name="optimize_image">Optimize image</string>
-    <string name="image_saved">Image saved to: </string>
-    <string name="quick_compress">Quick Compress</string>
-    <string name="select_image">Select image</string>
-    <string name="low">Low</string>
-    <string name="medium">Medium</string>
-    <string name="high">High</string>
-    <string name="file_size">File Size (KB)</string>
-    <string name="enter_a_value">Enter a value</string>
-    <string name="manual">Manual</string>
-    <string name="width">Width (px)</string>
-    <string name="height">Height (px)</string>
-    <string name="quality">Quality</string>
-
-    <string name="trash">Trash</string>
-    <string name="trash_is_empty">Trash is empty</string>
-    <string name="restore">Restore</string>
 
     <string name="settings">Settings</string>
 
@@ -127,30 +57,6 @@
     <string name="summary_preference_settings_language">Changes the language used in the app</string>
     <string name="dialog_language_subtitle">Select your preferred language</string>
     <string name="dialog_info_language">Personalize your experience with your preferred language. Any language changes you make take effect right away, ensuring a seamless experience in your chosen language</string>
-
-    <string name="cleaning">Cleaning</string>
-    <string name="summary_preference_settings_cleaning">Customize your cleaning experience</string>
-    <string name="filters">Filters</string>
-    <string name="generic_filter">Generic filter</string>
-    <string name="summary_preference_settings_generic_filter">Delete temp, log, logs, &amp; other useless files &amp; folders</string>
-    <string name="delete_empty_folders">Delete empty folders</string>
-    <string name="delete_archives">Delete archives</string>
-    <string name="summary_preference_settings_archive_filter">Delete archives from your device</string>
-    <string name="delete_corpse_files">Delete corpse files</string>
-    <string name="summary_preference_settings_delete_corpse_files">Delete files left over from uninstalled/removed apps</string>
-    <string name="delete_apk_files">Delete APK files</string>
-    <string name="summary_preference_settings_delete_apk_files">Delete installer files (.apk) files for Android</string>
-    <string name="media">Media</string>
-    <string name="delete_audio">Delete audio</string>
-    <string name="summary_preference_settings_delete_audio">Delete the audio files from the device</string>
-    <string name="delete_video">Delete video</string>
-    <string name="summary_preference_settings_delete_video">Delete the video files from the device</string>
-    <string name="delete_images">Delete images</string>
-    <string name="summary_preference_settings_delete_images">Delete the image files from the device</string>
-    <string name="delete_invalid_media">Delete invalid media</string>
-    <string name="summary_preference_settings_delete_invalid_media">Delete corrupted images</string>
-    <string name="scanner">Scanner</string>
-    <string name="clipboard_clean">Clipboard clean</string>
 
     <string name="notifications">Notifications</string>
     <string name="summary_preference_settings_notifications">Manage app notifications</string>
@@ -194,29 +100,6 @@
     <string name="summary_preference_permissions_check_license">Allows the app to verify its compliance with the license agreement and enforce licensing terms to protect intellectual property.</string>
     <string name="foreground_service">Foreground service [FOREGROUND_SERVICE]</string>
     <string name="summary_preference_permissions_foreground_service">Allows the app to create and use services that run in the foreground, giving them priority over other background processes and improving performance and reliability.</string>
-    <string name="request_delete_packages">Request delete packages [REQUEST_DELETE_PACKAGES]</string>
-    <string name="summary_preference_permissions_request_delete_packages">Allows the app to request the deletion of packages. This can be used to uninstall other apps from the device</string>
-    <string name="storage">Storage</string>
-    <string name="access_media_location">Access media location [ACCESS_MEDIA_LOCATION]</string>
-    <string name="summary_preference_permissions_access_media_location">Allows the app to access the device\'s media files location</string>
-    <string name="action_open_document_tree">Action open document tree [ACTION_OPEN_DOCUMENT_TREE]</string>
-    <string name="summary_preference_permissions_action_open_document_tree">Allows the app to access to a tree of documents, including the ability to read and write files in the tree</string>
-    <string name="manage_external_storage">Manage external storage [MANAGE_EXTERNAL_STORAGE]</string>
-    <string name="summary_preference_permissions_manage_external_storage">Allows the app to perform actions like deleting and renaming files on the device\'s storage, including both internal and external storage</string>
-    <string name="package_usage_stats">Package usage stats [PACKAGE_USAGE_STATS]</string>
-    <string name="summary_preference_permissions_package_usage_stats">Allows the app to access information about the user\'s app usage, including which apps have been used, how long they have been used, and how frequently they have been used</string>
-    <string name="query_all_packages">Query all packages [QUERY_ALL_PACKAGES]</string>
-    <string name="summary_preference_permissions_query_all_packages">Allows the app to query for information about all installed packages on the device. The app uses this information to determine which files to keep or delete</string>
-    <string name="read_external_storage">Read external storage [READ_EXTERNAL_STORAGE]</string>
-    <string name="summary_preference_permissions_read_external_storage">Allows the app to read files from the device\'s storage, including both internal and external storage</string>
-    <string name="read_media_audio">Read media audio [READ_MEDIA_AUDIO]</string>
-    <string name="summary_preference_permissions_read_media_audio">Allows the app to read audio files from the device\'s storage</string>
-    <string name="read_media_images">Read media images [READ_MEDIA_IMAGES]</string>
-    <string name="summary_preference_permissions_read_media_images">Allows the app to read image files from the device\'s storage</string>
-    <string name="read_media_video">Read media video [READ_MEDIA_VIDEO]</string>
-    <string name="summary_preference_permissions_read_media_video">Allows the app to read video files from the device\'s storage</string>
-    <string name="write_external_storage">Write external storage [WRITE_EXTERNAL_STORAGE]</string>
-    <string name="summary_preference_permissions_write_external_storage">Allows the app to write files to the device\'s storage, including both internal and external storage</string>
 
     <string name="ads">Ads</string>
     <string name="summary_preference_settings_ads">Control how we use your information to show you relevant ads</string>
@@ -256,24 +139,24 @@
     <string name="version_info">Version info</string>
     <string name="version">Version %1$s</string>
     <string name="beta_program">Beta program</string>
-    <string name="question_1">What is Cleaner?</string>
-    <string name="summary_preference_faq_1">Cleaner is a free and open-source Android app that helps you optimize your device\'s performance and free up storage space. It can scan your device for unnecessary files and delete them, as well clear your cache to improve your device\'s speed</string>
-    <string name="question_2">Is Cleaner safe to use?</string>
-    <string name="summary_preference_faq_2">Yes, Cleaner is safe to use. It only removes files that are not essential to the operation of your device or apps, and it does not delete any of your personal data or important system files</string>
-    <string name="question_3">How do I use Cleaner?</string>
-    <string name="summary_preference_faq_3">To use Cleaner, simply download and install the app from the Google Play Store or a reputable third-party app store. Then, open the app and follow the prompts to scan your device and delete unnecessary files. You can also access the app\'s settings to customize the types of files that Cleaner looks for and deletes</string>
-    <string name="question_4">Can Cleaner delete app cache?</string>
-    <string name="summary_preference_faq_4">Yes, Cleaner can delete app cache. However, it is important to note that deleting cache may cause the app to take longer to load or perform certain tasks the next time you use it</string>
-    <string name="question_5">Does Cleaner require root access?</string>
-    <string name="summary_preference_faq_5">No, Cleaner does not require root access to work. You can use it on any Android device without rooting your device</string>
-    <string name="question_6">Is Cleaner available for iOS?</string>
-    <string name="summary_preference_faq_6">No, Cleaner is currently only available for Android devices</string>
-    <string name="question_7">Does Cleaner improve battery life?</string>
-    <string name="summary_preference_faq_7">Using Cleaner to clear your cache may help improve your device\'s battery life by reducing the amount of power and resources that are used by unnecessary processes. However, the extent to which Cleaner can improve your battery life will depend on various factors such as your device\'s make and model, the apps you use, and your usage habits</string>
-    <string name="question_8">How often should I use Cleaner?</string>
-    <string name="summary_preference_faq_8">There is no set rule for how often you should use Cleaner, as it will depend on your device\'s usage and the amount of unnecessary files that accumulate over time. Some users may find it helpful to run Cleaner weekly or monthly, while others may only need to use it occasionally</string>
-    <string name="question_9">Is Cleaner compatible with all Android devices?</string>
-    <string name="summary_preference_faq_9">Cleaner should be compatible with most Android devices that meet the app\'s minimum system requirements. However, it is always a good idea to check the app\'s page on the Google Play Store or the app store you are using to confirm compatibility with your specific device. If you encounter any issues while using Cleaner, you can try troubleshooting the problem or contacting the app\'s support team for assistance</string>
+    <string name="question_1">What is Android Studio Tutorials: Kotlin Edition?</string>
+    <string name="summary_preference_faq_1">Android Studio Tutorials: Kotlin Edition is a free and open-source app that provides a collection of video tutorials on how to use Android Studio, the official integrated development environment (IDE) for Android app development.</string>
+    <string name="question_2">How can I download Android Studio Tutorials: Kotlin Edition?</string>
+    <string name="summary_preference_faq_2">Android Studio Tutorials: Kotlin Edition is available for download on the Google Play Store. Simply search for \"Android Studio Tutorials\" in the Play Store app on your Android device and tap \"Install\&quot; to download and install the app.</string>
+    <string name="question_3">Is Android Studio Tutorials: Kotlin Edition available for iOS devices?</string>
+    <string name="summary_preference_faq_3">No, Android Studio Tutorials: Kotlin Edition is currently only available for Android devices.</string>
+    <string name="question_4">Is Android Studio Tutorials: Kotlin Edition suitable for beginners?</string>
+    <string name="summary_preference_faq_4">Yes, Android Studio Tutorials: Kotlin Edition is suitable for beginners who are new to Android app development and want to learn how to use Android Studio. The app provides a range of video tutorials that cover the basics of using Android Studio, from installing the IDE to building and deploying your first app.</string>
+    <string name="question_5">Is Android Studio Tutorials: Kotlin Edition updated regularly?</string>
+    <string name="summary_preference_faq_5">Yes, Android Studio Tutorials: Kotlin Edition is updated regularly with new video tutorials and content to keep users up-to-date with the latest features and changes in Android Studio.</string>
+    <string name="question_6">How can I get support if I have a question or problem with Android Studio Tutorials: Kotlin Edition?</string>
+    <string name="summary_preference_faq_6">If you have a question or problem with Android Studio Tutorials: Kotlin Edition, you can contact us through the app\'s support page or by email at d4rk7355608@gmail.com. We\'ll do our best to help you resolve any issues you may be experiencing.</string>
+    <string name="question_7">How do I disable Firebase analytics and crashlytics in Android Studio Tutorials: Kotlin Edition?</string>
+    <string name="summary_preference_faq_7">You can disable Firebase analytics and crashlytics by going to the settings menu in the app and toggle the switch for these features.</string>
+    <string name="question_8">How do I check for updates to Android Studio Tutorials: Kotlin Edition?</string>
+    <string name="summary_preference_faq_8">You can check for updates to Android Studio Tutorials: Kotlin Edition by going to the settings menu in the app and selecting the \"Check for updates\" option.</string>
+    <string name="question_9">How can I support the development of Android Studio Tutorials: Kotlin Edition?</string>
+    <string name="summary_preference_faq_9">ou can support the development of Android Studio Tutorials: Kotlin Edition by leaving a positive review on the Google Play Store, sharing the app with friends and colleagues, and supporting the developers through the \"Share\" option in the settings menu.</string>
     <string name="feedback">Feedback</string>
 
     <string name="updates">Updates</string>
@@ -294,8 +177,5 @@
     <string name="snack_network_error">Network error occurred while checking for updates</string>
     <string name="snack_general_error">An error occurred while checking for updates</string>
     <string name="summary_close">Are you sure you want to exit?</string>
-    <string name="summary_require_restart">To take effect please restart the app!</string>
 
-    <string name="snack_no_image">No image provided</string>
-    <string name="snack_validate_file">Please select a valid file size</string>
 </resources>

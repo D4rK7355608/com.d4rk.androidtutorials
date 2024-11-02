@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="preference_startup_entries">
-        <item>Home</item>
-        <item>App Manager</item>
-        <item>Memory Manager</item>
+        <item>@string/home</item>
+        <item>@string/studio_bot</item>
+        <item>@string/favorites</item>
     </string-array>
     <string-array name="preference_startup_values">
         <item>home</item>
-        <item>app_manager</item>
-        <item>memory_manager</item>
+        <item>studio_bot</item>
+        <item>favorites</item>
     </string-array>
 
     <string-array name="preference_language_entries">

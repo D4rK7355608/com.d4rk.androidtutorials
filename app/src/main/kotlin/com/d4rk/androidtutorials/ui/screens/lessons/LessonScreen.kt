@@ -2,6 +2,7 @@ package com.d4rk.androidtutorials.ui.screens.lessons
 
 import android.content.Context
 import android.os.Build.VERSION.SDK_INT
+import android.widget.Toast
 import androidx.compose.animation.core.Transition
 import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.updateTransition
@@ -226,7 +227,9 @@ fun CodeBlock(code: String, language: String?) {
                             context = context,
                             label = "Code",
                             text = code,
-                            onShowSnackbar = { showSnackbar = false }
+                            onShowSnackbar = {
+                                Toast.makeText(context , "Code copied to clipboard" , Toast.LENGTH_SHORT).show()
+                            }
                         )
                     },
                     contentPadding = PaddingValues(horizontal = 8.dp)
