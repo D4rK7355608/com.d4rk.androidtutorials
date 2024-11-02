@@ -17,7 +17,7 @@ android {
         applicationId = "com.d4rk.androidtutorials"
         minSdk = 23
         targetSdk = 35
-        versionCode = 71
+        versionCode = 73
         versionName = "1.0.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         resourceConfigurations += listOf(
@@ -47,8 +47,6 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = true
-            isShrinkResources = true
             isDebuggable = false
         }
 
@@ -65,6 +63,8 @@ android {
 
         with(buildType) {
             multiDexEnabled = true
+            isMinifyEnabled = false
+            isShrinkResources = false
             buildConfigField(
                 type = "String" , name = "API_KEY" , value = apiKey
             )

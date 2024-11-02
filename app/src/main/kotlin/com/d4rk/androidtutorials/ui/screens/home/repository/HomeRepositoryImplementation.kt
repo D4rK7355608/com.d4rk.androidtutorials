@@ -25,6 +25,8 @@ abstract class HomeRepositoryImplementation(
         "https://raw.githubusercontent.com/D4rK7355608/com.d4rk.apis/refs/heads/main/Android%20Studio%20Tutorials/release/en/home"
     }
 
+    private val type = object : TypeToken<ArrayList<UiLesson>>() {}.type
+
     suspend fun getHomeLessonsImplementation() : List<UiLesson>? {
         val url = "$baseUrl/api_get_lessons.json"
         val lessons : List<UiLesson>?
@@ -39,12 +41,12 @@ abstract class HomeRepositoryImplementation(
                     when (urlConnection.responseCode) {
                         HttpURLConnection.HTTP_OK -> {
                             BufferedReader(InputStreamReader(urlConnection.inputStream)).use { reader ->
-                                val type = object : TypeToken<List<UiLesson>>() {}.type
                                 lessons = Gson().fromJson<List<UiLesson>>(reader.readText() , type)
                             }
                         }
 
                         // TODO: Handle more cases if needed
+
                         else -> {
                             return null
                         }
@@ -56,7 +58,7 @@ abstract class HomeRepositoryImplementation(
         }
     }
 
-    private suspend fun loadFavoritesImplementation() : List<FavoriteLessonTable> {
+    suspend fun loadFavoritesImplementation() : List<FavoriteLessonTable> {
         return AppCoreManager.database.favoriteLessonsDao().getAllFavorites()
     }
 

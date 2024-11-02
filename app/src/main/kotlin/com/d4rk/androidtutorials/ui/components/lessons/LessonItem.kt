@@ -47,10 +47,10 @@ import com.d4rk.androidtutorials.ui.components.navigation.openLessonDetailActivi
 import com.d4rk.androidtutorials.ui.screens.home.HomeViewModel
 
 @Composable
-fun LessonItem(lesson : UiLesson , context : Context) {
+fun LessonItem(lesson : UiLesson , context : Context, modifier : Modifier) {
     val viewModel : HomeViewModel = viewModel()
     Card(
-        modifier = Modifier
+        modifier = modifier
                 .fillMaxWidth()
                 .padding(16.dp)
     ) {

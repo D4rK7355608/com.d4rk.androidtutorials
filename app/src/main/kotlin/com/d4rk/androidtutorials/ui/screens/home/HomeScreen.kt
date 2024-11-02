@@ -45,7 +45,7 @@ fun HomeScreen() {
     else {
         LazyColumn(modifier = Modifier.fillMaxSize()) {
             items(lessons) { lesson ->
-                LessonItem(lesson = lesson , context = context)
+                LessonItem(lesson = lesson , context = context , modifier = Modifier.animateItem())
             }
         }
     }

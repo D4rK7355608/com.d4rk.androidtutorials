@@ -17,11 +17,9 @@ class HomeViewModel(application : Application) : BaseViewModel(application) {
     private val _lessons = MutableStateFlow<List<UiLesson>>(emptyList())
     val lessons : StateFlow<List<UiLesson>> = _lessons.asStateFlow()
 
-    private val _favorites = MutableStateFlow<List<FavoriteLessonTable>>(emptyList())
-    val favorites : StateFlow<List<FavoriteLessonTable>> = _favorites.asStateFlow()
-
     init {
         getHomeLessons()
+        observeFavorites()
     }
 
     private fun getHomeLessons() {
@@ -34,54 +32,59 @@ class HomeViewModel(application : Application) : BaseViewModel(application) {
         }
     }
 
-    fun toggleFavorite(lesson: UiLesson) {
+    private fun observeFavorites() {
         viewModelScope.launch(coroutineExceptionHandler) {
-            val updatedLesson = lesson.copy(favorite = !lesson.favorite)
-            val updatedLessons = _lessons.value.map {
-                if (it.id == updatedLesson.id) updatedLesson else it
+            repository.observeFavoritesChanges { favorites ->
+                val updatedLessons = _lessons.value.map { lesson ->
+                    lesson.copy(favorite = favorites.any { it.id == lesson.id })
+                }
+                _lessons.value = updatedLessons
+            }
+        }
+    }
+
+    fun toggleFavorite(lesson : UiLesson) {
+        viewModelScope.launch(coroutineExceptionHandler) {
+            val updatedLesson = lesson.copy(favorite = ! lesson.favorite)
+            val updatedLessons = _lessons.value.map { lesson ->
+                if (lesson.id == updatedLesson.id) updatedLesson else lesson
             }
             _lessons.value = updatedLessons
 
             if (updatedLesson.favorite) {
                 addLessonToFavorites(updatedLesson)
-            } else {
+            }
+            else {
                 removeLessonFromFavorites(updatedLesson)
             }
         }
     }
 
-    fun addLessonToFavorites(lesson : UiLesson) {
+    private fun UiLesson.toFavoriteLessonTable() : FavoriteLessonTable = FavoriteLessonTable(
+        id = id ,
+        title = title ,
+        description = description ,
+        type = type ,
+        bannerImageUrl = bannerImageUrl ,
+        squareImageUrl = squareImageUrl ,
+        deepLinkPath = deepLinkPath ,
+        articleType = articleType ,
+        tags = tags ,
+        isFavorite = favorite
+    )
+
+    private fun addLessonToFavorites(lesson : UiLesson) {
         viewModelScope.launch(coroutineExceptionHandler) {
-            val favoriteLesson = FavoriteLessonTable(
-                id = lesson.id,
-                title = lesson.title,
-                description = lesson.description,
-                type = lesson.type,
-                bannerImageUrl = lesson.bannerImageUrl,
-                squareImageUrl = lesson.squareImageUrl,
-                deepLinkPath = lesson.deepLinkPath,
-                articleType = lesson.articleType,
-                isFavorite = lesson.favorite,
-            )
+            val favoriteLesson = lesson.toFavoriteLessonTable()
             repository.addLessonToFavoritesRepository(favoriteLesson) {
 
             }
         }
     }
 
-    fun removeLessonFromFavorites(lesson : UiLesson) {
+    private fun removeLessonFromFavorites(lesson : UiLesson) {
         viewModelScope.launch(coroutineExceptionHandler) {
-            val favoriteLesson = FavoriteLessonTable(
-                id = lesson.id,
-                title = lesson.title,
-                description = lesson.description,
-                type = lesson.type,
-                bannerImageUrl = lesson.bannerImageUrl,
-                squareImageUrl = lesson.squareImageUrl,
-                deepLinkPath = lesson.deepLinkPath,
-                articleType = lesson.articleType,
-                isFavorite = lesson.favorite,
-            )
+            val favoriteLesson = lesson.toFavoriteLessonTable()
             repository.removeLessonFromFavoritesRepository(favoriteLesson) {
 
             }

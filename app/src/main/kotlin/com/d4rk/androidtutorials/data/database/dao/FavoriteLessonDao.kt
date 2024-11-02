@@ -6,6 +6,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.d4rk.androidtutorials.data.database.table.FavoriteLessonTable
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface FavoriteLessonsDao {
@@ -15,9 +16,13 @@ interface FavoriteLessonsDao {
     @Delete
     suspend fun delete(favoriteLesson: FavoriteLessonTable)
 
-    @Query("SELECT * FROM `Favorite Lessons`")
+    @Query("SELECT * FROM `favorite lessons`")
     suspend fun getAllFavorites(): List<FavoriteLessonTable>
 
-    @Query("SELECT COUNT(*) FROM `Favorite Lessons` WHERE id = :lessonId")
+
+    @Query("SELECT * FROM `Favorite Lessons`")
+    fun getAllFavoritesFlow(): Flow<List<FavoriteLessonTable>>
+
+    @Query("SELECT COUNT(*) FROM `favorite lessons` WHERE id = :lessonId")
     suspend fun isFavorite(lessonId: String): Int
 }
