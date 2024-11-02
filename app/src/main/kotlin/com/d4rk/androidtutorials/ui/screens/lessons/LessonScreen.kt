@@ -1,7 +1,5 @@
 package com.d4rk.androidtutorials.ui.screens.lessons
 
-import android.content.ClipData
-import android.content.ClipboardManager
 import android.content.Context
 import android.os.Build.VERSION.SDK_INT
 import androidx.compose.animation.core.Transition
@@ -35,6 +33,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -42,14 +41,11 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.fromHtml
-import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import coil3.ImageLoader
 import coil3.compose.AsyncImage
 import coil3.gif.AnimatedImageDecoder
 import coil3.gif.GifDecoder
-import com.d4rk.androidtutorials.constants.ui.lessons.LessonCodeConstants
 import com.d4rk.androidtutorials.constants.ui.lessons.LessonContentTypes
 import com.d4rk.androidtutorials.data.datastore.DataStore
 import com.d4rk.androidtutorials.data.model.ui.error.UiErrorModel
@@ -60,14 +56,10 @@ import com.d4rk.androidtutorials.ui.components.ads.LargeBannerAdsComposable
 import com.d4rk.androidtutorials.ui.components.animations.bounceClick
 import com.d4rk.androidtutorials.ui.components.dialogs.ErrorAlertDialog
 import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffoldWithBackButton
-import com.d4rk.androidtutorials.ui.screens.home.HomeViewModel
 import com.d4rk.androidtutorials.ui.screens.loading.LoadingScreen
 import com.d4rk.androidtutorials.ui.screens.settings.display.theme.style.Colors
 import com.d4rk.androidtutorials.ui.screens.settings.display.theme.style.TextStyles
-import com.wakaztahir.codeeditor.highlight.model.CodeLang
-import com.wakaztahir.codeeditor.highlight.prettify.PrettifyParser
-import com.wakaztahir.codeeditor.highlight.theme.CodeThemeType
-import com.wakaztahir.codeeditor.highlight.utils.parseCodeAsAnnotatedString
+import com.d4rk.androidtutorials.utils.ClipboardUtil
 
 @Composable
 fun LessonScreen(
@@ -207,60 +199,41 @@ fun StyledImage(
 
 
 @Composable
-fun CodeBlock(code : String , language : String?) {
-    val lang = when (language?.lowercase()) {
-        LessonCodeConstants.JAVA -> CodeLang.Java
-        LessonCodeConstants.XML -> CodeLang.XML
-        else -> CodeLang.Java
-    }
-
-    val parser = remember { PrettifyParser() }
-    val themeState by remember { mutableStateOf(CodeThemeType.Default) }
-    val theme = remember(themeState) { themeState.theme() }
-
-    val textFieldValue by remember {
-        mutableStateOf(
-            TextFieldValue(
-                annotatedString = parseCodeAsAnnotatedString(
-                    parser = parser , theme = theme , lang = lang , code = code
-                )
-            )
-        )
-    }
-
+fun CodeBlock(code: String, language: String?) {
     val context = LocalContext.current
-
-    fun copyToClipboard(text : String) {
-        val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-        val clip = ClipData.newPlainText("Code" , text)
-        clipboard.setPrimaryClip(clip)
-        //Toast.makeText(context, "Code copied to clipboard", Toast.LENGTH_SHORT).show()
-    }
+    var showSnackbar by remember { mutableStateOf(value = false) }
 
     Card(
-        modifier = Modifier
-                .fillMaxWidth()
-                .padding(8.dp)
+        modifier = Modifier.fillMaxWidth()
     ) {
         Column {
             Row(
                 modifier = Modifier
                         .fillMaxWidth()
-                        .padding(horizontal = 8.dp) ,
-                horizontalArrangement = Arrangement.SpaceBetween ,
+                        .padding(horizontal = 16.dp),
+                horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
-                    text = language ?: "unknown" ,
-                    style = MaterialTheme.typography.bodyMedium ,
+                    text = language ?: "unknown",
+                    style = MaterialTheme.typography.bodyMedium,
                     modifier = Modifier.padding(end = 8.dp)
                 )
-                TextButton(modifier = Modifier.bounceClick() ,
-                           onClick = { copyToClipboard(code) } ,
-                           contentPadding = PaddingValues(horizontal = 8.dp)) {
+                TextButton(
+                    modifier = Modifier.bounceClick(),
+                    onClick = {
+                        ClipboardUtil.copyTextToClipboard(
+                            context = context,
+                            label = "Code",
+                            text = code,
+                            onShowSnackbar = { showSnackbar = false }
+                        )
+                    },
+                    contentPadding = PaddingValues(horizontal = 8.dp)
+                ) {
                     Icon(
-                        imageVector = Icons.Outlined.CopyAll ,
-                        contentDescription = "Copy Code" ,
+                        imageVector = Icons.Outlined.CopyAll,
+                        contentDescription = "Copy Code",
                         modifier = Modifier.size(ButtonDefaults.IconSize)
                     )
                     Spacer(modifier = Modifier.width(ButtonDefaults.IconSpacing))
@@ -270,13 +243,13 @@ fun CodeBlock(code : String , language : String?) {
             Spacer(modifier = Modifier.height(2.dp))
             SelectionContainer {
                 Text(
-                    text = textFieldValue.annotatedString ,
+                    text = code,
                     modifier = Modifier
                             .fillMaxWidth()
-                            .padding(horizontal = 8.dp)
+                            .padding(horizontal = 16.dp)
                 )
             }
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(16.dp))
         }
     }
 }
