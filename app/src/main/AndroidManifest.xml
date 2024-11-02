@@ -51,13 +51,18 @@
             android:parentActivityName=".ui.screens.main.MainActivity" />
 
         <activity
-            android:exported="true"
-            android:name=".ui.screens.lessons.LessonActivity">
+            android:name=".ui.screens.lessons.LessonActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="com.d4rk.androidtutorials" android:host="lesson" android:pathPrefix="/"/>
+
+                <data
+                    android:host="lesson"
+                    android:pathPrefix="/"
+                    android:scheme="com.d4rk.androidtutorials" />
             </intent-filter>
         </activity>
 
