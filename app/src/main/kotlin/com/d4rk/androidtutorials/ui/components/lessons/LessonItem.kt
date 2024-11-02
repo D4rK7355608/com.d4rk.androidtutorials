@@ -136,7 +136,7 @@ fun SquareImageLessonItem(lesson : UiLesson , context : Context , viewModel : Ho
                     modifier = Modifier.weight(1f) , verticalArrangement = Arrangement.SpaceBetween
                 ) {
                     TitleAndDescriptionColumn(
-                        title = lesson.title , description = lesson.description
+                        title = lesson.title , description = lesson.description, maxLines = 3,
                     )
                 }
             }
@@ -152,7 +152,7 @@ fun SquareImageLessonItem(lesson : UiLesson , context : Context , viewModel : Ho
 }
 
 @Composable
-fun TitleAndDescriptionColumn(title : String , description : String) {
+fun TitleAndDescriptionColumn(title : String , description : String, maxLines : Int = 2) {
     Column {
         if (title.isNotEmpty()) {
             Text(
@@ -166,7 +166,7 @@ fun TitleAndDescriptionColumn(title : String , description : String) {
             Text(
                 text = description ,
                 style = MaterialTheme.typography.bodyMedium ,
-                maxLines = 2 ,
+                maxLines = maxLines ,
                 overflow = TextOverflow.Ellipsis
             )
         }
