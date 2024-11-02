@@ -1,6 +1,8 @@
 package com.d4rk.androidtutorials.ui.screens.home.repository
 
 import android.app.Application
+import android.content.Intent
+import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.data.core.AppCoreManager
 import com.d4rk.androidtutorials.data.database.table.FavoriteLessonTable
 import com.d4rk.androidtutorials.data.datastore.DataStore
@@ -40,7 +42,7 @@ class HomeRepository(
         }
     }
 
-    suspend fun loadFavoritesRepository(onSuccess: (List<FavoriteLessonTable>) -> Unit) {
+    suspend fun loadFavoritesRepository(onSuccess : (List<FavoriteLessonTable>) -> Unit) {
         withContext(Dispatchers.IO) {
             val favorites = loadFavoritesImplementation()
             withContext(Dispatchers.Main) {
@@ -49,7 +51,7 @@ class HomeRepository(
         }
     }
 
-    suspend fun observeFavoritesChanges(onFavoritesChanged: (List<FavoriteLessonTable>) -> Unit) {
+    suspend fun observeFavoritesChanges(onFavoritesChanged : (List<FavoriteLessonTable>) -> Unit) {
         AppCoreManager.database.favoriteLessonsDao().getAllFavoritesFlow().collect { favorites ->
             withContext(Dispatchers.Main) {
                 onFavoritesChanged(favorites)
@@ -65,6 +67,19 @@ class HomeRepository(
             removeLessonFromFavoritesImplementation(lesson)
             withContext(Dispatchers.Main) {
                 onSuccess()
+            }
+        }
+    }
+
+    suspend fun shareLessonRepository(lesson : UiLesson) {
+        withContext(Dispatchers.IO) {
+            val shareIntent: Intent = shareLessonImplementation(lesson)
+            withContext(Dispatchers.Main) {
+                val chooserIntent : Intent = Intent.createChooser(
+                    shareIntent , application.getString(R.string.share)
+                )
+                chooserIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                application.startActivity(chooserIntent)
             }
         }
     }

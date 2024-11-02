@@ -45,7 +45,7 @@ import com.d4rk.androidtutorials.ui.components.navigation.openLessonDetailActivi
 import com.d4rk.androidtutorials.ui.screens.home.HomeViewModel
 
 @Composable
-fun LessonItem(lesson : UiLesson , context : Context, modifier : Modifier) {
+fun LessonItem(lesson : UiLesson , context : Context , modifier : Modifier) {
     val viewModel : HomeViewModel = viewModel()
     Card(
         modifier = modifier
@@ -55,9 +55,7 @@ fun LessonItem(lesson : UiLesson , context : Context, modifier : Modifier) {
         when (lesson.type) {
             LessonConstants.TYPE_FULL_IMAGE_BANNER -> {
                 FullImageBannerLessonItem(
-                    lesson = lesson ,
-                    context = context ,
-                    viewModel = viewModel
+                    lesson = lesson , context = context , viewModel = viewModel
                 )
                 Spacer(modifier = Modifier.width(8.dp))
             }
@@ -75,7 +73,7 @@ fun FullImageBannerLessonItem(lesson : UiLesson , context : Context , viewModel 
     Card(modifier = Modifier
             .fillMaxWidth()
             .clickable {
-                openLessonDetailActivity(context = context , lessonId = "lesson_${lesson.id}")
+                openLessonDetailActivity(context = context , lesson = lesson)
             }) {
         Column {
             AsyncImage(
@@ -112,7 +110,7 @@ fun SquareImageLessonItem(lesson : UiLesson , context : Context , viewModel : Ho
     Card(modifier = Modifier
             .fillMaxWidth()
             .clickable {
-                openLessonDetailActivity(context = context , lessonId = "lesson_${lesson.id}")
+                openLessonDetailActivity(context = context , lesson = lesson)
             }) {
         Column {
             Spacer(modifier = Modifier.height(12.dp))
@@ -136,7 +134,7 @@ fun SquareImageLessonItem(lesson : UiLesson , context : Context , viewModel : Ho
                     modifier = Modifier.weight(1f) , verticalArrangement = Arrangement.SpaceBetween
                 ) {
                     TitleAndDescriptionColumn(
-                        title = lesson.title , description = lesson.description, maxLines = 3,
+                        title = lesson.title , description = lesson.description , maxLines = 3 ,
                     )
                 }
             }
@@ -152,7 +150,7 @@ fun SquareImageLessonItem(lesson : UiLesson , context : Context , viewModel : Ho
 }
 
 @Composable
-fun TitleAndDescriptionColumn(title : String , description : String, maxLines : Int = 2) {
+fun TitleAndDescriptionColumn(title : String , description : String , maxLines : Int = 2) {
     Column {
         if (title.isNotEmpty()) {
             Text(
@@ -181,8 +179,10 @@ fun ButtonsRow(lesson : UiLesson , viewModel : HomeViewModel) {
     Row(
         modifier = Modifier.fillMaxWidth() , horizontalArrangement = Arrangement.End
     ) {
-        IconButton(modifier = Modifier.bounceClick() ,
-                   onClick = { view.playSoundEffect(SoundEffectConstants.CLICK) }) {
+        IconButton(modifier = Modifier.bounceClick() , onClick = {
+            view.playSoundEffect(SoundEffectConstants.CLICK)
+            viewModel.shareLesson(lesson)
+        }) {
             Icon(
                 imageVector = Icons.Outlined.Share , contentDescription = null
             )

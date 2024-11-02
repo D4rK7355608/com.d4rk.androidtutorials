@@ -57,7 +57,7 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="https" android:host="your.domain.com" android:pathPrefix="/lesson" />
+                <data android:scheme="com.d4rk.androidtutorials" android:host="lesson" android:pathPrefix="/"/>
             </intent-filter>
         </activity>
 

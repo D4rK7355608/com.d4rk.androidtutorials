@@ -1,6 +1,8 @@
 package com.d4rk.androidtutorials.ui.screens.home.repository
 
 import android.app.Application
+import android.content.Intent
+import android.net.Uri
 import com.d4rk.androidtutorials.BuildConfig
 import com.d4rk.androidtutorials.data.core.AppCoreManager
 import com.d4rk.androidtutorials.data.database.table.FavoriteLessonTable
@@ -68,5 +70,24 @@ abstract class HomeRepositoryImplementation(
 
     suspend fun removeLessonFromFavoritesImplementation(lesson : FavoriteLessonTable) {
         AppCoreManager.database.favoriteLessonsDao().delete(lesson)
+    }
+
+    fun shareLessonImplementation(lesson: UiLesson): Intent {
+        return Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_TEXT, "Check out this lesson: ${lesson.deepLinkPath}")
+            putExtra(Intent.EXTRA_SUBJECT, "Discover a New Lesson on ${lesson.title}")
+
+            val imageUrl = lesson.bannerImageUrl.ifEmpty { lesson.squareImageUrl }
+
+            if (imageUrl.isNotEmpty()) {
+                val uri = Uri.parse(imageUrl)
+                putExtra(Intent.EXTRA_STREAM, uri)
+                flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
+                type = "image/*"
+            } else {
+                type = "text/plain"
+            }
+        }
     }
 }

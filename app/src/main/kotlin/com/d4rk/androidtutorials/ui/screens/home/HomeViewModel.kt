@@ -76,18 +76,22 @@ class HomeViewModel(application : Application) : BaseViewModel(application) {
     private fun addLessonToFavorites(lesson : UiLesson) {
         viewModelScope.launch(coroutineExceptionHandler) {
             val favoriteLesson = lesson.toFavoriteLessonTable()
-            repository.addLessonToFavoritesRepository(favoriteLesson) {
-
-            }
+            repository.addLessonToFavoritesRepository(favoriteLesson) { }
         }
     }
 
     private fun removeLessonFromFavorites(lesson : UiLesson) {
         viewModelScope.launch(coroutineExceptionHandler) {
             val favoriteLesson = lesson.toFavoriteLessonTable()
-            repository.removeLessonFromFavoritesRepository(favoriteLesson) {
+            repository.removeLessonFromFavoritesRepository(favoriteLesson) { }
+        }
+    }
 
-            }
+    fun shareLesson(lesson : UiLesson) {
+        viewModelScope.launch(coroutineExceptionHandler) {
+            repository.shareLessonRepository(
+                lesson = lesson ,
+            )
         }
     }
 }

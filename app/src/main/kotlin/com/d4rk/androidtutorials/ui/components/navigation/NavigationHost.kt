@@ -2,6 +2,7 @@ package com.d4rk.androidtutorials.ui.components.navigation
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
@@ -14,9 +15,9 @@ import androidx.navigation.compose.composable
 import com.d4rk.androidtutorials.constants.ui.bottombar.BottomBarRoutes
 import com.d4rk.androidtutorials.data.datastore.DataStore
 import com.d4rk.androidtutorials.data.model.ui.navigation.BottomNavigationScreen
+import com.d4rk.androidtutorials.data.model.ui.screens.UiLesson
 import com.d4rk.androidtutorials.ui.screens.favorites.FavoritesScreen
 import com.d4rk.androidtutorials.ui.screens.home.HomeScreen
-import com.d4rk.androidtutorials.ui.screens.lessons.LessonActivity
 import com.d4rk.androidtutorials.ui.screens.studiobot.StudioBotScreen
 
 @Composable
@@ -47,9 +48,10 @@ fun NavigationHost(
     }
 }
 
-fun openLessonDetailActivity(context : Context , lessonId: String) {
-    val intent = Intent(context, LessonActivity::class.java).apply {
-        putExtra("lessonId", lessonId)
+fun openLessonDetailActivity(context : Context , lesson : UiLesson) {
+    Intent(Intent.ACTION_VIEW , Uri.parse(lesson.deepLinkPath)).let { intent ->
+        intent.resolveActivity(context.packageManager)?.let {
+            context.startActivity(intent)
+        }
     }
-    context.startActivity(intent)
 }

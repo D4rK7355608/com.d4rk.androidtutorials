@@ -19,7 +19,8 @@ class LessonActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            val lessonId = intent.getStringExtra("lessonId")
+            val lessonId = intent?.data?.lastPathSegment
+            println("Android -> lesson id got is: $lessonId")
             lessonId?.let {
                 viewModel.getLesson(it)
             }
