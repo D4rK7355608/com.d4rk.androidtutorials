@@ -203,7 +203,6 @@ fun StyledImage(
     }
 }
 
-
 @Composable
 fun CodeBlock(code : String , language : String?) {
     val context = LocalContext.current

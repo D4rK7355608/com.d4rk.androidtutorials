@@ -99,7 +99,6 @@ class MainActivity : AppCompatActivity() {
     @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode : Int , resultCode : Int , data : Intent?) {
         super.onActivityResult(requestCode , resultCode , data)
-        println("Cleaner for Android -> Play Update: onActivityResult: requestCode=$requestCode, resultCode=$resultCode")
         if (requestCode == 1) {
             when (resultCode) {
                 RESULT_OK -> {
