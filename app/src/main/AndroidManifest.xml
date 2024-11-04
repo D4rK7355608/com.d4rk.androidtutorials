@@ -60,9 +60,9 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="lesson"
-                    android:pathPrefix="/"
-                    android:scheme="com.d4rk.androidtutorials" />
+                    android:scheme="https"
+                    android:host="sites.google.com"
+                    android:pathPrefix="/view/d4rk7355608/androidtutorials/lesson" />
             </intent-filter>
         </activity>
 

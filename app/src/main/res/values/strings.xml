@@ -12,6 +12,11 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
 
     <string name="home">Home</string>
+    <string name="share_lesson_image_url">Hello \n %1$s</string>
+    <string name="share_lesson_text">Check out this lesson: %1$s</string>
+    <string name="share_lesson_title">Discover a new lesson on %1$s</string>
+    <string name="share_lesson_app_install">Make sure you have this app installed: %1$s</string>
+    <string name="share_lesson_subject">Discover a New Lesson on %1$s</string>
     <string name="activity_not_found">Activity not found.</string>
     <string name="security_error">A security error occurred. Please try again later.</string>
     <string name="io_error">An input/output error occurred. Please check your network connection or storage and try again.</string>

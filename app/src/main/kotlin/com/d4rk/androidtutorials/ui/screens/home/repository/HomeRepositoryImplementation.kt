@@ -2,8 +2,8 @@ package com.d4rk.androidtutorials.ui.screens.home.repository
 
 import android.app.Application
 import android.content.Intent
-import android.net.Uri
 import com.d4rk.androidtutorials.BuildConfig
+import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.data.core.AppCoreManager
 import com.d4rk.androidtutorials.data.database.table.FavoriteLessonTable
 import com.d4rk.androidtutorials.data.datastore.DataStore
@@ -73,21 +73,26 @@ abstract class HomeRepositoryImplementation(
     }
 
     fun shareLessonImplementation(lesson: UiLesson): Intent {
+        val imageUrl = lesson.bannerImageUrl.ifEmpty { lesson.squareImageUrl }
+        val playStoreLink = "https://play.google.com/store/apps/details?id=${application.packageName}"
+
         return Intent().apply {
             action = Intent.ACTION_SEND
-            putExtra(Intent.EXTRA_TEXT, "Check out this lesson: ${lesson.deepLinkPath}")
-            putExtra(Intent.EXTRA_SUBJECT, "Discover a New Lesson on ${lesson.title}")
+            type = "text/plain"
 
-            val imageUrl = lesson.bannerImageUrl.ifEmpty { lesson.squareImageUrl }
+            putExtra(Intent.EXTRA_TEXT, buildString {
+                if (imageUrl.isNotEmpty()) {
+                    append(application.resources.getString(R.string.share_lesson_image_url, imageUrl))
+                    append("\n\n")
+                }
+                append(application.resources.getString(R.string.share_lesson_text, lesson.deepLinkPath))
+                append("\n\n")
+                append(application.resources.getString(R.string.share_lesson_title, lesson.title))
+                append("\n\n")
+                append(application.resources.getString(R.string.share_lesson_app_install, playStoreLink))
+            })
 
-            if (imageUrl.isNotEmpty()) {
-                val uri = Uri.parse(imageUrl)
-                putExtra(Intent.EXTRA_STREAM, uri)
-                flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
-                type = "image/*"
-            } else {
-                type = "text/plain"
-            }
+            putExtra(Intent.EXTRA_SUBJECT, application.resources.getString(R.string.share_lesson_subject, lesson.title))
         }
     }
 }

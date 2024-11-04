@@ -11,7 +11,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -37,6 +36,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.TextStyle
@@ -95,68 +95,62 @@ fun LessonScreen(
         else {
             LazyColumn(
                 modifier = Modifier
-                        .fillMaxHeight()
-                        .padding(paddingValues)
+                        .fillMaxSize()
+                        .padding(paddingValues),
+                contentPadding = PaddingValues(16.dp)
             ) {
                 items(lesson.content , key = { item -> item.id }) { contentItem ->
-                    Spacer(modifier = Modifier.height(8.dp))
-                    Column(
-                        modifier = Modifier
-                                .fillMaxSize()
-                                .padding(horizontal = 16.dp)
-                    ) {
-                        when (contentItem.type) {
-                            LessonContentTypes.HEADER -> {
-                                StyledText(
-                                    text = contentItem.text ,
-                                    style = TextStyles.header() ,
-                                    color = Colors.primaryText()
-                                )
-                            }
-
-                            LessonContentTypes.TEXT -> {
-                                StyledText(
-                                    text = contentItem.text ,
-                                    style = TextStyles.body() ,
-                                    color = Colors.secondaryText()
-                                )
-                            }
-
-                            LessonContentTypes.IMAGE -> {
-                                StyledImage(
-                                    imageUrl = contentItem.src , contentDescription = "Lesson Image"
-                                )
-                            }
-
-                            LessonContentTypes.CODE -> {
-                                CodeBlock(code = contentItem.code , language = contentItem.language)
-                            }
-
-                            LessonContentTypes.AD_BANNER -> {
-                                AdBanner(dataStore = DataStore(activity))
-                            }
-
-                            LessonContentTypes.AD_BANNER_FULL -> {
-                                AdBannerFull(dataStore = DataStore(activity))
-                            }
-
-                            LessonContentTypes.AD_LARGE_BANNER -> {
-                                LargeBannerAdsComposable(dataStore = DataStore(activity))
-                            }
-
-                            LessonContentTypes.FULL_IMAGE_BANNER -> {
-                                AsyncImage(
-                                    model = contentItem.url ,
-                                    contentDescription = "full_image_banner"
-                                )
-                            }
-
-                            else -> {
-                                Text(text = "Unsupported content type: ${contentItem.type}")
-                            }
+                    when (contentItem.type) {
+                        LessonContentTypes.HEADER -> {
+                            StyledText(
+                                text = contentItem.text ,
+                                style = TextStyles.header() ,
+                                color = Colors.primaryText()
+                            )
                         }
-                        Spacer(modifier = Modifier.height(8.dp))
+
+                        LessonContentTypes.TEXT -> {
+                            StyledText(
+                                text = contentItem.text ,
+                                style = TextStyles.body() ,
+                                color = Colors.secondaryText()
+                            )
+                        }
+
+                        LessonContentTypes.IMAGE -> {
+                            StyledImage(
+                                imageUrl = contentItem.src , contentDescription = "Lesson Image"
+                            )
+                        }
+
+                        LessonContentTypes.CODE -> {
+                            CodeBlock(code = contentItem.code , language = contentItem.language)
+                        }
+
+                        LessonContentTypes.AD_BANNER -> {
+                            AdBanner(dataStore = DataStore(activity))
+                        }
+
+                        LessonContentTypes.AD_BANNER_FULL -> {
+                            AdBannerFull(dataStore = DataStore(activity))
+                        }
+
+                        LessonContentTypes.AD_LARGE_BANNER -> {
+                            LargeBannerAdsComposable(dataStore = DataStore(activity))
+                        }
+
+                        LessonContentTypes.FULL_IMAGE_BANNER -> {
+                            AsyncImage(
+                                model = contentItem.url ,
+                                contentDescription = "full_image_banner"
+                            )
+                        }
+
+                        else -> {
+                            Text(text = "Unsupported content type: ${contentItem.type}")
+                        }
                     }
+                    Spacer(modifier = Modifier.height(8.dp))
                 }
             }
         }
@@ -196,6 +190,7 @@ fun StyledImage(
     ) {
         AsyncImage(
             model = imageUrl ,
+            contentScale = ContentScale.FillWidth ,
             contentDescription = contentDescription ,
             modifier = Modifier.fillMaxWidth() ,
             imageLoader = imageLoader ,
