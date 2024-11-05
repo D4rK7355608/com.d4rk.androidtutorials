@@ -72,27 +72,24 @@ abstract class HomeRepositoryImplementation(
         AppCoreManager.database.favoriteLessonsDao().delete(lesson)
     }
 
-    fun shareLessonImplementation(lesson: UiLesson): Intent {
-        val imageUrl = lesson.bannerImageUrl.ifEmpty { lesson.squareImageUrl }
-        val playStoreLink = "https://play.google.com/store/apps/details?id=${application.packageName}"
-
+    fun shareLessonImplementation(lesson : UiLesson) : Intent {
         return Intent().apply {
             action = Intent.ACTION_SEND
             type = "text/plain"
-
-            putExtra(Intent.EXTRA_TEXT, buildString {
-                if (imageUrl.isNotEmpty()) {
-                    append(application.resources.getString(R.string.share_lesson_image_url, imageUrl))
-                    append("\n\n")
-                }
-                append(application.resources.getString(R.string.share_lesson_text, lesson.deepLinkPath))
+            putExtra(Intent.EXTRA_TEXT , buildString {
+                append(lesson.description)
                 append("\n\n")
-                append(application.resources.getString(R.string.share_lesson_title, lesson.title))
-                append("\n\n")
-                append(application.resources.getString(R.string.share_lesson_app_install, playStoreLink))
+                append(
+                    application.getString(
+                        R.string.get_the_app_to_watch ,
+                        "https://play.google.com/store/apps/details?id=${application.packageName}"
+                    )
+                )
             })
-
-            putExtra(Intent.EXTRA_SUBJECT, application.resources.getString(R.string.share_lesson_subject, lesson.title))
+            putExtra(
+                Intent.EXTRA_SUBJECT ,
+                application.getString(R.string.share_lesson_subject , lesson.title)
+            )
         }
     }
 }
