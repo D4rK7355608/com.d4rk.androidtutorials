@@ -17,7 +17,7 @@ android {
         applicationId = "com.d4rk.androidtutorials"
         minSdk = 23
         targetSdk = 35
-        versionCode = 78
+        versionCode = 79
         versionName = "1.0.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         resourceConfigurations += listOf(
@@ -32,9 +32,11 @@ android {
             "it-rIT" ,
             "ja-rJP" ,
             "pl-rPL" ,
+            "pt-rBR" ,
             "ro-rRO" ,
             "ru-rRU" ,
             "sv-rSE" ,
+            "th-rTH" ,
             "tr-rTR" ,
             "uk-rUA" ,
             "zh-rTW" ,
@@ -119,7 +121,6 @@ dependencies {
     implementation(dependencyNotation = libs.androidx.ui.graphics)
     implementation(dependencyNotation = libs.androidx.compose.runtime)
     implementation(dependencyNotation = libs.androidx.runtime.livedata)
-    implementation(dependencyNotation = libs.androidx.runtime.rxjava2)
     implementation(dependencyNotation = libs.androidx.ui.tooling.preview)
     implementation(dependencyNotation = libs.androidx.material3)
     implementation(dependencyNotation = libs.androidx.material.icons.extended)
@@ -130,9 +131,7 @@ dependencies {
 
     // Lifecycle
     implementation(dependencyNotation = libs.kotlinx.coroutines.android)
-    implementation(dependencyNotation = libs.kotlinx.serialization.json)
     implementation(dependencyNotation = libs.androidx.lifecycle.runtime.ktx)
-    implementation(dependencyNotation = libs.androidx.lifecycle.common.java8)
     implementation(dependencyNotation = libs.androidx.lifecycle.livedata.ktx)
     implementation(dependencyNotation = libs.androidx.lifecycle.process)
     implementation(dependencyNotation = libs.androidx.lifecycle.viewmodel.ktx)
@@ -146,7 +145,6 @@ dependencies {
     implementation(dependencyNotation = libs.material)
     implementation(dependencyNotation = libs.app.update.ktx)
     implementation(dependencyNotation = libs.review.ktx)
-    implementation(dependencyNotation = libs.volley)
     implementation(dependencyNotation = libs.gson)
 
     // Firebase

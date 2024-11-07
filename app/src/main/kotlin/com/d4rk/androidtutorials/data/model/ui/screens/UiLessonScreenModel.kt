@@ -1,18 +1,18 @@
 package com.d4rk.androidtutorials.data.model.ui.screens
 
-import kotlinx.serialization.SerialName
+import com.google.gson.annotations.SerializedName
 
 data class UiLessonScreenModel(
-    @SerialName("title") val title: String = "" ,
-    @SerialName("content") val content: List<UiLessonContentModel> = emptyList()
+    @SerializedName("title") val title: String = "" ,
+    @SerializedName("content") val content: List<UiLessonContentModel> = emptyList()
 )
 
 data class UiLessonContentModel(
-    @SerialName("id") val id: String = "",
-    @SerialName("type") val type: String = "",
-    @SerialName("text") val text: String = "",
-    @SerialName("language") val language: String = "",
-    @SerialName("code") val code: String = "",
-    @SerialName("url") val url: String = "",
-    @SerialName("bannerImageUrl") val src: String = ""
+    @SerializedName("id") val id: String = "",
+    @SerializedName("type") val type: String = "",
+    @SerializedName("text") val text: String = "",
+    @SerializedName("language") val language: String = "",
+    @SerializedName("code") val code: String = "",
+    @SerializedName("url") val url: String = "",
+    @SerializedName("bannerImageUrl") val src: String = ""
 )
