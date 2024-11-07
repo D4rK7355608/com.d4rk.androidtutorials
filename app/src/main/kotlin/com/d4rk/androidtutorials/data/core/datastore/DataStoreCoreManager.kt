@@ -23,6 +23,6 @@ open class DataStoreCoreManager(protected val context: Context) {
         ).awaitAll()
 
         isDataStoreLoaded = true
-        return@coroutineScope isDataStoreLoaded
+        return@coroutineScope this@DataStoreCoreManager.isDataStoreLoaded
     }
 }
