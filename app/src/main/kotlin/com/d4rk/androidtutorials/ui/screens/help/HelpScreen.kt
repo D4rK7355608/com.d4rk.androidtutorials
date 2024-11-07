@@ -50,12 +50,10 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.constraintlayout.compose.ConstrainedLayoutReference
-import androidx.constraintlayout.compose.ConstraintLayout
 import com.d4rk.androidtutorials.R
+import com.d4rk.androidtutorials.ui.components.animations.bounceClick
 import com.d4rk.androidtutorials.ui.components.dialogs.VersionInfoAlertDialog
 import com.d4rk.androidtutorials.utils.IntentUtils
-import com.d4rk.androidtutorials.ui.components.animations.bounceClick
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import com.google.android.play.core.review.ReviewInfo
 
@@ -75,129 +73,132 @@ fun HelpComposable(activity : HelpActivity , viewModel : HelpViewModel) {
         }
     }
 
-    Scaffold(modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection) , topBar = {
-        LargeTopAppBar(title = { Text(text = stringResource(id = R.string.help)) }, navigationIcon = {
-            IconButton(modifier = Modifier.bounceClick() , onClick = {
-                view.playSoundEffect(SoundEffectConstants.CLICK)
-                activity.finish()
-            }) {
-                Icon(Icons.AutoMirrored.Filled.ArrowBack , contentDescription = null)
-            }
-        } , actions = {
-            IconButton(modifier = Modifier.bounceClick() , onClick = {
-                view.playSoundEffect(SoundEffectConstants.CLICK)
-                showMenu = true
-            }) {
-                Icon(Icons.Default.MoreVert , contentDescription = "Localized description")
-            }
-            DropdownMenu(expanded = showMenu , onDismissRequest = {
-                showMenu = false
-            }) {
-                DropdownMenuItem(
-                    modifier = Modifier.bounceClick() ,
-                    text = { Text(text = stringResource(id = R.string.view_in_google_play_store)) },
-                    onClick = {
+    Scaffold(
+        modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection) ,
+        topBar = {
+            LargeTopAppBar(
+                title = { Text(text = stringResource(id = R.string.help)) } ,
+                navigationIcon = {
+                    IconButton(modifier = Modifier.bounceClick() , onClick = {
                         view.playSoundEffect(SoundEffectConstants.CLICK)
-                        IntentUtils.openUrl(
-                            context ,
-                            url = "https://play.google.com/store/apps/details?id=${activity.packageName}"
+                        activity.finish()
+                    }) {
+                        Icon(
+                            Icons.AutoMirrored.Filled.ArrowBack , contentDescription = null
                         )
-                    })
-                DropdownMenuItem(
-                    modifier = Modifier.bounceClick() ,
-                    text = { Text(text = stringResource(id = R.string.version_info)) },
-                    onClick = {
+                    }
+                } ,
+
+
+                actions = {
+                    IconButton(modifier = Modifier.bounceClick() , onClick = {
                         view.playSoundEffect(SoundEffectConstants.CLICK)
-                        showDialog.value = true
-                    })
-                DropdownMenuItem(
-                    modifier = Modifier.bounceClick() ,
-                    text = { Text(text = stringResource(id = R.string.beta_program)) },
-                    onClick = {
-                        view.playSoundEffect(SoundEffectConstants.CLICK)
-                        IntentUtils.openUrl(
-                            context ,
-                            url = "https://play.google.com/apps/testing/${activity.packageName}"
+                        showMenu = true
+                    }) {
+                        Icon(
+                            Icons.Default.MoreVert , contentDescription = "Localized description"
                         )
-                    })
-                DropdownMenuItem(
-                    modifier = Modifier.bounceClick() ,
-                    text = { Text(text = stringResource(id = R.string.terms_of_service)) },
-                    onClick = {
-                        view.playSoundEffect(SoundEffectConstants.CLICK)
-                        IntentUtils.openUrl(
-                            context ,
-                            url = "https://sites.google.com/view/d4rk7355608/more/apps/terms-of-service"
-                        )
-                    })
-                DropdownMenuItem(
-                    modifier = Modifier.bounceClick() ,
-                    text = { Text(text = stringResource(id = R.string.privacy_policy)) },
-                    onClick = {
-                        view.playSoundEffect(SoundEffectConstants.CLICK)
-                        IntentUtils.openUrl(
-                            context ,
-                            url = "https://sites.google.com/view/d4rk7355608/more/apps/privacy-policy"
-                        )
-                    })
-                DropdownMenuItem(
-                    modifier = Modifier.bounceClick() ,
-                    text = { Text(text = stringResource(com.google.android.gms.oss.licenses.R.string.oss_license_title)) } ,
-                    onClick = {
-                        view.playSoundEffect(SoundEffectConstants.CLICK)
-                        IntentUtils.openActivity(
-                            context , OssLicensesMenuActivity::class.java
-                        )
-                    })
-            }
-            if (showDialog.value) {
-                VersionInfoAlertDialog(onDismiss = { showDialog.value = false })
-            }
-        } , scrollBehavior = scrollBehavior)
-    }) { paddingValues ->
+                    }
+                    DropdownMenu(expanded = showMenu , onDismissRequest = {
+                        showMenu = false
+                    }) {
+                        DropdownMenuItem(modifier = Modifier.bounceClick() ,
+                                         text = { Text(text = stringResource(id = R.string.view_in_google_play_store)) } ,
+                                         onClick = {
+                                             view.playSoundEffect(SoundEffectConstants.CLICK)
+                                             IntentUtils.openUrl(
+                                                 context ,
+                                                 url = "https://play.google.com/store/apps/details?id=${activity.packageName}"
+                                             )
+                                         })
+                        DropdownMenuItem(modifier = Modifier.bounceClick() ,
+                                         text = { Text(text = stringResource(id = R.string.version_info)) } ,
+                                         onClick = {
+                                             view.playSoundEffect(SoundEffectConstants.CLICK)
+                                             showDialog.value = true
+                                         })
+                        DropdownMenuItem(modifier = Modifier.bounceClick() ,
+                                         text = { Text(text = stringResource(id = R.string.beta_program)) } ,
+                                         onClick = {
+                                             view.playSoundEffect(SoundEffectConstants.CLICK)
+                                             IntentUtils.openUrl(
+                                                 context ,
+                                                 url = "https://play.google.com/apps/testing/${activity.packageName}"
+                                             )
+                                         })
+                        DropdownMenuItem(modifier = Modifier.bounceClick() ,
+                                         text = { Text(text = stringResource(id = R.string.terms_of_service)) } ,
+                                         onClick = {
+                                             view.playSoundEffect(SoundEffectConstants.CLICK)
+                                             IntentUtils.openUrl(
+                                                 context ,
+                                                 url = "https://sites.google.com/view/d4rk7355608/more/apps/terms-of-service"
+                                             )
+                                         })
+                        DropdownMenuItem(modifier = Modifier.bounceClick() ,
+                                         text = { Text(text = stringResource(id = R.string.privacy_policy)) } ,
+                                         onClick = {
+                                             view.playSoundEffect(SoundEffectConstants.CLICK)
+                                             IntentUtils.openUrl(
+                                                 context ,
+                                                 url = "https://sites.google.com/view/d4rk7355608/more/apps/privacy-policy"
+                                             )
+                                         })
+                        DropdownMenuItem(modifier = Modifier.bounceClick() ,
+                                         text = { Text(text = stringResource(com.google.android.gms.oss.licenses.R.string.oss_license_title)) } ,
+                                         onClick = {
+                                             view.playSoundEffect(SoundEffectConstants.CLICK)
+                                             IntentUtils.openActivity(
+                                                 context , OssLicensesMenuActivity::class.java
+                                             )
+                                         })
+                    }
+                    if (showDialog.value) {
+                        VersionInfoAlertDialog(onDismiss = { showDialog.value = false })
+                    }
+                } ,
+
+                scrollBehavior = scrollBehavior ,
+
+
+                )
+        } ,
+        floatingActionButton = {
+            ExtendedFloatingActionButton(text = { Text(text = stringResource(id = R.string.feedback)) } ,
+                                         onClick = {
+                                             view.playSoundEffect(SoundEffectConstants.CLICK)
+                                             viewModel.reviewInfo.value?.let { safeReviewInfo ->
+                                                 viewModel.launchReviewFlow(
+                                                     activity ,
+                                                     safeReviewInfo
+                                                 )
+                                             }
+                                         } ,
+                                         icon = {
+                                             Icon(
+                                                 Icons.Default.MailOutline ,
+                                                 contentDescription = null
+                                             )
+                                         } ,
+                                         modifier = Modifier
+                                                 .bounceClick())
+        } ,
+    ) { paddingValues ->
         Box(
             modifier = Modifier
-                .padding(start = 16.dp, end = 16.dp)
-                .fillMaxSize()
-                .safeDrawingPadding()
+                    .padding(start = 16.dp, end = 16.dp)
+                    .fillMaxSize()
+                    .safeDrawingPadding()
         ) {
-            ConstraintLayout(modifier = Modifier.padding(paddingValues)) {
-                val (faqTitle : ConstrainedLayoutReference , faqCard : ConstrainedLayoutReference) = createRefs()
+            Column(modifier = Modifier.padding(paddingValues)) {
                 Text(
                     text = stringResource(id = R.string.faq),
-                     modifier = Modifier
-                         .padding(bottom = 24.dp)
-                         .constrainAs(faqTitle) {
-                             top.linkTo(parent.top)
-                             start.linkTo(parent.start)
-                         })
-                Card(modifier = Modifier
-                    .fillMaxWidth()
-                    .constrainAs(faqCard) {
-                        top.linkTo(faqTitle.bottom)
-                        bottom.linkTo(parent.bottom)
-                    }) {
+                    modifier = Modifier.padding(bottom = 24.dp)
+                )
+                Card(modifier = Modifier.fillMaxWidth()) {
                     FAQComposable()
                 }
             }
-            ExtendedFloatingActionButton(
-                text = { Text(text = stringResource(id = R.string.feedback)) } ,
-                onClick = {
-                    view.playSoundEffect(SoundEffectConstants.CLICK)
-                    viewModel.reviewInfo.value?.let { safeReviewInfo ->
-                        viewModel.launchReviewFlow(activity , safeReviewInfo)
-                    }
-                } ,
-                icon = {
-                    Icon(
-                        Icons.Default.MailOutline , contentDescription = null
-                    )
-                } ,
-                modifier = Modifier
-                    .bounceClick()
-                    .padding(bottom = 16.dp)
-                    .align(Alignment.BottomEnd) ,
-            )
         }
     }
 }
@@ -207,55 +208,55 @@ fun FAQComposable() {
     LazyColumn {
         item {
             QuestionComposable(
-                title = stringResource(id = R.string.question_1),
+                title = stringResource(id = R.string.question_1) ,
                 summary = stringResource(id = R.string.summary_preference_faq_1)
             )
         }
         item {
             QuestionComposable(
-                title = stringResource(id = R.string.question_2),
+                title = stringResource(id = R.string.question_2) ,
                 summary = stringResource(id = R.string.summary_preference_faq_2)
             )
         }
         item {
             QuestionComposable(
-                title = stringResource(id = R.string.question_3),
+                title = stringResource(id = R.string.question_3) ,
                 summary = stringResource(id = R.string.summary_preference_faq_3)
             )
         }
         item {
             QuestionComposable(
-                title = stringResource(id = R.string.question_4),
+                title = stringResource(id = R.string.question_4) ,
                 summary = stringResource(id = R.string.summary_preference_faq_4)
             )
         }
         item {
             QuestionComposable(
-                title = stringResource(id = R.string.question_5),
+                title = stringResource(id = R.string.question_5) ,
                 summary = stringResource(id = R.string.summary_preference_faq_5)
             )
         }
         item {
             QuestionComposable(
-                title = stringResource(id = R.string.question_6),
+                title = stringResource(id = R.string.question_6) ,
                 summary = stringResource(id = R.string.summary_preference_faq_6)
             )
         }
         item {
             QuestionComposable(
-                title = stringResource(id = R.string.question_7),
+                title = stringResource(id = R.string.question_7) ,
                 summary = stringResource(id = R.string.summary_preference_faq_7)
             )
         }
         item {
             QuestionComposable(
-                title = stringResource(id = R.string.question_8),
+                title = stringResource(id = R.string.question_8) ,
                 summary = stringResource(id = R.string.summary_preference_faq_8)
             )
         }
         item {
             QuestionComposable(
-                title = stringResource(id = R.string.question_9),
+                title = stringResource(id = R.string.question_9) ,
                 summary = stringResource(id = R.string.summary_preference_faq_9)
             )
         }
@@ -266,19 +267,19 @@ fun FAQComposable() {
 fun QuestionComposable(title : String , summary : String) {
     Row(
         modifier = Modifier
-            .fillMaxWidth()
-            .padding(16.dp) ,
+                .fillMaxWidth()
+                .padding(16.dp) ,
         verticalAlignment = Alignment.CenterVertically
     ) {
         Icon(
             Icons.Outlined.QuestionAnswer ,
             contentDescription = null ,
             modifier = Modifier
-                .size(48.dp)
-                .background(
-                    color = MaterialTheme.colorScheme.primaryContainer, shape = CircleShape
-                )
-                .padding(8.dp)
+                    .size(48.dp)
+                    .background(
+                        color = MaterialTheme.colorScheme.primaryContainer , shape = CircleShape
+                    )
+                    .padding(8.dp)
         )
         Spacer(modifier = Modifier.width(16.dp))
         Column {

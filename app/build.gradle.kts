@@ -17,7 +17,7 @@ android {
         applicationId = "com.d4rk.androidtutorials"
         minSdk = 23
         targetSdk = 35
-        versionCode = 77
+        versionCode = 78
         versionName = "1.0.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         resourceConfigurations += listOf(
@@ -116,7 +116,6 @@ dependencies {
     implementation(dependencyNotation = platform(libs.androidx.compose.bom))
     implementation(dependencyNotation = libs.androidx.ui)
     implementation(dependencyNotation = libs.androidx.activity.compose)
-    implementation(dependencyNotation = libs.androidx.constraintlayout.compose)
     implementation(dependencyNotation = libs.androidx.ui.graphics)
     implementation(dependencyNotation = libs.androidx.compose.runtime)
     implementation(dependencyNotation = libs.androidx.runtime.livedata)

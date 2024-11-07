@@ -6,7 +6,6 @@ billing = "7.1.1"
 coil = "3.0.0-rc02"
 composeBom = "2024.10.01"
 composeCodeEditor = "2.0.3"
-constraintlayoutCompose = "1.1.0"
 coreSplashscreen = "1.0.1"
 datastoreCore = "1.1.1"
 firebaseBom = "33.5.1"
@@ -40,7 +39,6 @@ workRuntimeKtx = "2.10.0"
 [libraries]
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
 androidx-compose-bom = { module = "androidx.compose:compose-bom", version.ref = "composeBom" }
-androidx-constraintlayout-compose = { module = "androidx.constraintlayout:constraintlayout-compose", version.ref = "constraintlayoutCompose" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-core-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "coreSplashscreen" }
 androidx-datastore-preferences = { module = "androidx.datastore:datastore-core", version.ref = "datastoreCore" }
