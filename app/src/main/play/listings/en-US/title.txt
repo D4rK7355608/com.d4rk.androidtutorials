@@ -1,1 +1,1 @@
-Cleaner for Android
+Android Studio Tutorials
