@@ -120,7 +120,7 @@
     <string name="license">Licens</string>
 
     <string name="about">Om</string>
-    <string name="summary_preference_settings_about">Läs mer om Cleaner</string>
+    <string name="summary_preference_settings_about">Läs mer om Android Studio Tutorials</string>
 
     <string name="app_build_version">Applikationsversion</string>
     <string name="summary_preference_settings_oss">Licensdetaljer för programvara med öppen källkod</string>

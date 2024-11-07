@@ -120,7 +120,7 @@
     <string name="license">Лицензия</string>
 
     <string name="about">О</string>
-    <string name="summary_preference_settings_about">Узнайте больше о очистителе</string>
+    <string name="summary_preference_settings_about">Узнайте больше об учебных пособиях Android Studio</string>
 
     <string name="app_build_version">Версия сборки приложения</string>
     <string name="summary_preference_settings_oss">Подробности лицензии на программное обеспечение с открытым исходным кодом</string>

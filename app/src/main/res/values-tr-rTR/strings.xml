@@ -120,7 +120,7 @@
     <string name="license">Lisans</string>
 
     <string name="about">Hakkında</string>
-    <string name="summary_preference_settings_about">Cleaner hakkında daha fazla bilgi edinin</string>
+    <string name="summary_preference_settings_about">Android Studio Eğitimleri hakkında daha fazla bilgi edinin</string>
 
     <string name="app_build_version">Uygulama derleme sürümü</string>
     <string name="summary_preference_settings_oss">Açık kaynaklı yazılımlar için lisans ayrıntıları</string>
@@ -147,7 +147,7 @@
     <string name="summary_preference_faq_2">Android Studio Tutorials: Kotlin Edition Google Play Store"dan indirilebilir. Android cihazınızdaki Play Store uygulamasında \"Android Studio Tutorials\" ifadesini arayın ve uygulamayı indirip yüklemek için \"Yükle\"ye dokunun.</string>
     <string name="question_3">Android Studio Eğitimleri: Kotlin Sürümü iOS cihazlar için mevcut mu?</string>
     <string name="summary_preference_faq_3">Hayır, Android Studio Eğitimleri: Kotlin Sürümü şu anda yalnızca Android cihazlar için mevcuttur.</string>
-    <string name="question_4">Android Studio Tutorials: Kotlin Edition başlangıç ​​seviyesindekiler için uygun mu?</string>
+    <string name="question_4">Android Studio Tutorials: Kotlin Edition başlangıç seviyesindekiler için uygun mu?</string>
     <string name="summary_preference_faq_4">Evet, Android Studio Eğitimleri: Kotlin Sürümü, Android uygulama geliştirmeye yeni başlayan ve Android Studio"yu nasıl kullanacağını öğrenmek isteyen yeni başlayanlar için uygundur. Uygulama, IDE"yi yüklemekten ilk uygulamanızı oluşturmaya ve dağıtmaya kadar Android Studio"yu kullanmanın temellerini kapsayan bir dizi video eğitimi sunar.</string>
     <string name="question_5">Android Studio Eğitimleri: Kotlin Sürümü düzenli olarak güncelleniyor mu?</string>
     <string name="summary_preference_faq_5">Evet, Android Studio Eğitimleri: Kotlin Sürümü, kullanıcıları Android Studio"daki en son özellikler ve değişiklikler hakkında güncel tutmak için düzenli olarak yeni video eğitimleri ve içeriklerle güncellenmektedir.</string>

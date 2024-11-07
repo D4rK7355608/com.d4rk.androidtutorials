@@ -120,7 +120,7 @@
     <string name="license">ライセンス</string>
 
     <string name="about">について</string>
-    <string name="summary_preference_settings_about">クリーナーについて詳しく見る</string>
+    <string name="summary_preference_settings_about">Android Studioチュートリアルについて詳しくはこちら</string>
 
     <string name="app_build_version">アプリケーションビルドバージョン</string>
     <string name="summary_preference_settings_oss">オープンソースソフトウェアのライセンスの詳細</string>

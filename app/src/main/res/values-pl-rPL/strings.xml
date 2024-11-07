@@ -120,7 +120,7 @@
     <string name="license">Licencja</string>
 
     <string name="about">O</string>
-    <string name="summary_preference_settings_about">Dowiedz się więcej o Cleaner</string>
+    <string name="summary_preference_settings_about">Dowiedz się więcej o Android Studio Tutorials</string>
 
     <string name="app_build_version">Wersja kompilacji aplikacji</string>
     <string name="summary_preference_settings_oss">Szczegóły licencji dla oprogramowania typu open source</string>

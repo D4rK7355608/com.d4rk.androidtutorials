@@ -67,13 +67,8 @@ android {
             multiDexEnabled = true
             isMinifyEnabled = false
             isShrinkResources = false
-            buildConfigField(
-                type = "String" , name = "API_KEY" , value = apiKey
-            )
-            proguardFiles(
-                getDefaultProguardFile(name = "proguard-android-optimize.txt") ,
-                "proguard-rules.pro"
-            )
+            buildConfigField(type = "String" , name = "API_KEY" , value = apiKey)
+            proguardFiles(getDefaultProguardFile(name = "proguard-android-optimize.txt") , "proguard-rules.pro")
         }
     }
 

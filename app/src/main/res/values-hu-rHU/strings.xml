@@ -120,7 +120,7 @@
     <string name="license">Engedély</string>
 
     <string name="about">Körülbelül</string>
-    <string name="summary_preference_settings_about">További információ a Cleanerről</string>
+    <string name="summary_preference_settings_about">További információ a Android Studio Tutorials</string>
 
     <string name="app_build_version">Alkalmazás build verziója</string>
     <string name="summary_preference_settings_oss">A nyílt forráskódú szoftver licenc részletei</string>

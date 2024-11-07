@@ -14,5 +14,5 @@ data class UiLessonContentModel(
     @SerializedName("language") val language: String = "",
     @SerializedName("code") val code: String = "",
     @SerializedName("url") val url: String = "",
-    @SerializedName("bannerImageUrl") val src: String = ""
+    @SerializedName("src") val src: String = ""
 )

@@ -120,7 +120,7 @@
     <string name="license">ใบอนุญาต</string>
 
     <string name="about">เกี่ยวกับ</string>
-    <string name="summary_preference_settings_about">เรียนรู้เพิ่มเติมเกี่ยวกับ Cleaner</string>
+    <string name="summary_preference_settings_about">เรียนรู้เพิ่มเติมเกี่ยวกับ Android Studio Tutorials</string>
 
     <string name="app_build_version">เวอร์ชันการสร้างแอพพลิเคชั่น</string>
     <string name="summary_preference_settings_oss">รายละเอียดใบอนุญาตสำหรับซอฟต์แวร์โอเพ่นซอร์ส</string>

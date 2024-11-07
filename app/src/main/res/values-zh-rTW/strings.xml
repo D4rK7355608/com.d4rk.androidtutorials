@@ -120,7 +120,7 @@
     <string name="license">執照</string>
 
     <string name="about">關於</string>
-    <string name="summary_preference_settings_about">了解有關清潔劑的更多信息</string>
+    <string name="summary_preference_settings_about">瞭解更多關於 Android Studio 教學課程</string>
 
     <string name="app_build_version">應用程式建置版本</string>
     <string name="summary_preference_settings_oss">開源軟體的許可證詳細信息</string>

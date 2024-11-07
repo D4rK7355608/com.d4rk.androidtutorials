@@ -120,7 +120,7 @@
     <string name="license">Лиценз</string>
 
     <string name="about">За</string>
-    <string name="summary_preference_settings_about">Научете повече за Cleaner</string>
+    <string name="summary_preference_settings_about">Научете повече за Android Studio Tutorials</string>
 
     <string name="app_build_version">Версия за изграждане на приложение</string>
     <string name="summary_preference_settings_oss">Подробности за лиценза за софтуер с отворен код</string>
