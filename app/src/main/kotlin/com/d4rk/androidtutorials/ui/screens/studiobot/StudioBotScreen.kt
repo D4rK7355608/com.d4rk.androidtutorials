@@ -14,8 +14,10 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.Send
 import androidx.compose.material3.Card
@@ -55,12 +57,12 @@ fun StudioBotScreen() {
     val chatHistory = viewModel.chatHistory.collectAsState()
 
     if (isLoading) {
-        LoadingScreen(progressAlpha)
+        LoadingScreen(progressAlpha = progressAlpha)
     }
     else {
         Column(modifier = Modifier.fillMaxSize()) {
             Box(modifier = Modifier.weight(1f)) {
-                ChatHistory(chatHistory.value)
+                ChatHistory(messages = chatHistory.value)
             }
             Row(
                 modifier = Modifier
@@ -99,25 +101,22 @@ fun StudioBotScreen() {
 }
 
 @Composable
-fun ChatHistory(messages : List<ApiMessageData>) {
-    LazyColumn(
-        modifier = Modifier.fillMaxWidth() , reverseLayout = true
+fun ChatHistory(messages: List<ApiMessageData>) {
+    Column(
+        modifier = Modifier
+                .fillMaxWidth()
+                .verticalScroll(rememberScrollState())
     ) {
-        items(items = messages.reversed() , key = { message -> message.id }) { message ->
-            val prevMessage = messages.reversed().getOrNull(index = messages.indexOf(message) + 1)
+        messages.forEachIndexed { index, message ->
+            val prevMessage = messages.reversed().getOrNull(index + 1)
             val isLatestBotMessage = message.isBot && message == messages.lastOrNull { it.isBot }
+
             MessageBubble(
-                text = message.text ,
-                isBot = message.isBot ,
+                text = message.text,
+                isBot = message.isBot,
                 showTypingAnimation = isLatestBotMessage
             )
 
-            if (prevMessage == null || prevMessage.isBot != message.isBot) {
-                Spacer(modifier = Modifier.height(8.dp))
-            }
-            else {
-                Spacer(modifier = Modifier.height(2.dp))
-            }
         }
     }
 }
@@ -128,15 +127,18 @@ fun MessageBubble(text : String , isBot : Boolean , showTypingAnimation : Boolea
     val textToDisplay = remember(text , visibleCharacters) { text.substring(0 , visibleCharacters) }
 
     LaunchedEffect(key1 = text , key2 = showTypingAnimation) {
-        if (showTypingAnimation) {
-            visibleCharacters = 0
-            while (visibleCharacters < text.length) {
-                delay(timeMillis = 50)
-                visibleCharacters ++
+        when {
+            showTypingAnimation -> {
+                visibleCharacters = 0
+                while (visibleCharacters < text.length) {
+                    delay(timeMillis = 24)
+                    visibleCharacters ++
+                }
             }
-        }
-        else {
-            visibleCharacters = text.length
+
+            else -> {
+                visibleCharacters = text.length
+            }
         }
     }
 

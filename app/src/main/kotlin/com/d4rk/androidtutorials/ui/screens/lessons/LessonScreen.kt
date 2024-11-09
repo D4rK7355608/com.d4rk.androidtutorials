@@ -139,13 +139,6 @@ fun LessonScreen(
                             LargeBannerAdsComposable(dataStore = DataStore(activity))
                         }
 
-                        LessonContentTypes.FULL_IMAGE_BANNER -> {
-                            AsyncImage(
-                                model = contentItem.url ,
-                                contentDescription = "full_image_banner"
-                            )
-                        }
-
                         else -> {
                             Text(text = "Unsupported content type: ${contentItem.type}")
                         }
