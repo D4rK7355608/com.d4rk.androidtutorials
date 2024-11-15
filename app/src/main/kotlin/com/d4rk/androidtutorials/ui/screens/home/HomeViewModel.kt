@@ -6,16 +6,11 @@ import com.d4rk.androidtutorials.data.database.table.FavoriteLessonTable
 import com.d4rk.androidtutorials.data.datastore.DataStore
 import com.d4rk.androidtutorials.data.model.ui.screens.UiLesson
 import com.d4rk.androidtutorials.ui.screens.home.repository.HomeRepository
-import com.d4rk.androidtutorials.ui.viewmodel.BaseViewModel
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
+import com.d4rk.androidtutorials.ui.viewmodel.LessonsViewModel
 import kotlinx.coroutines.launch
 
-class HomeViewModel(application : Application) : BaseViewModel(application) {
+class HomeViewModel(application : Application) : LessonsViewModel(application) {
     private val repository = HomeRepository(DataStore(application) , application)
-    private val _lessons = MutableStateFlow<List<UiLesson>>(emptyList())
-    val lessons : StateFlow<List<UiLesson>> = _lessons.asStateFlow()
 
     init {
         getHomeLessons()
@@ -29,6 +24,7 @@ class HomeViewModel(application : Application) : BaseViewModel(application) {
                 _lessons.value = fetchedLessons
             }
             hideLoading()
+            initializeVisibilityStates()
         }
     }
 

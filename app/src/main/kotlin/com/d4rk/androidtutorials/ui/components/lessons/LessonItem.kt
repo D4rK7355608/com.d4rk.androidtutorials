@@ -45,12 +45,11 @@ import com.d4rk.androidtutorials.ui.components.navigation.openLessonDetailActivi
 import com.d4rk.androidtutorials.ui.screens.home.HomeViewModel
 
 @Composable
-fun LessonItem(lesson : UiLesson , context : Context , modifier : Modifier) {
+fun LessonItem(lesson : UiLesson , context : Context , modifier : Modifier = Modifier) {
     val viewModel : HomeViewModel = viewModel()
     Card(
         modifier = modifier
                 .fillMaxWidth()
-                .padding(16.dp)
     ) {
         when (lesson.type) {
             LessonConstants.TYPE_FULL_IMAGE_BANNER -> {

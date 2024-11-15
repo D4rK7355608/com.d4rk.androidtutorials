@@ -5,13 +5,13 @@ import androidx.lifecycle.viewModelScope
 import com.d4rk.androidtutorials.data.datastore.DataStore
 import com.d4rk.androidtutorials.data.model.ui.screens.UiLessonScreenModel
 import com.d4rk.androidtutorials.ui.screens.lessons.repository.LessonRepository
-import com.d4rk.androidtutorials.ui.viewmodel.BaseViewModel
+import com.d4rk.androidtutorials.ui.viewmodel.LessonsViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
-class LessonViewModel(application : Application) : BaseViewModel(application) {
+class LessonViewModel(application : Application) : LessonsViewModel(application) {
     private val repository = LessonRepository(DataStore(application) , application)
     private val _lesson = MutableStateFlow<UiLessonScreenModel?>(value = null)
     val lesson : StateFlow<UiLessonScreenModel?> = _lesson.asStateFlow()
