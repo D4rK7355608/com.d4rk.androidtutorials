@@ -24,7 +24,7 @@ open class LessonsViewModel(application : Application) : BaseViewModel(applicati
 
         viewModelScope.launch {
             _visibilityStates.forEachIndexed { index, visibilityState ->
-                delay(timeMillis = index * 50L)
+                delay(timeMillis = index * 48L)
                 visibilityState.value = true
             }
         }
