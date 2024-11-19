@@ -56,7 +56,7 @@ import com.d4rk.androidtutorials.BuildConfig
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.ui.components.animations.bounceClick
 import com.d4rk.androidtutorials.ui.components.dialogs.VersionInfoAlertDialog
-import com.d4rk.androidtutorials.utils.ChangelogUtils
+import com.d4rk.androidtutorials.utils.OpenSourceLicensesUtils
 import com.d4rk.androidtutorials.utils.IntentUtils
 import com.google.android.play.core.review.ReviewInfo
 import com.mikepenz.aboutlibraries.LibsBuilder
@@ -73,14 +73,19 @@ fun HelpComposable(activity : HelpActivity , viewModel : HelpViewModel) {
     val reviewInfo : ReviewInfo? = viewModel.reviewInfo.value
 
     var changelogString by remember { mutableStateOf<String?>(null) }
+    var eulaHtmlString by remember { mutableStateOf<String?>(null) }
 
     LaunchedEffect(Unit) {
-        val markdown = ChangelogUtils.getChangelogMarkdown()
-        changelogString = ChangelogUtils.extractLatestVersionChangelog(
+        val markdown = OpenSourceLicensesUtils.getChangelogMarkdown()
+        changelogString = OpenSourceLicensesUtils.extractLatestVersionChangelog(
             markdown,
             BuildConfig.VERSION_NAME
         )
+
+        val eulaHtml = OpenSourceLicensesUtils.getEulaHtml()
+        eulaHtmlString = eulaHtml
     }
+
 
     if (reviewInfo != null) {
         LaunchedEffect(key1 = reviewInfo) {
@@ -179,7 +184,7 @@ fun HelpComposable(activity : HelpActivity , viewModel : HelpViewModel) {
                                                      .withAboutVersionShownCode(aboutShowVersion = true)
 
                                                      .withAboutSpecial1(aboutAppSpecial1 = context.getString(R.string.eula_title))
-                                                     .withAboutSpecial1Description(aboutAppSpecial1Description = context.getString(R.string.eula))
+                                                     .withAboutSpecial1Description(eulaHtmlString ?: context.getString(R.string.loading_eula))
                                                      .withAboutSpecial2(aboutAppSpecial2 = context.getString(R.string.changelog))
                                                      .withAboutSpecial2Description(
                                                          AnnotatedString.fromHtml(changelogString.toString())
