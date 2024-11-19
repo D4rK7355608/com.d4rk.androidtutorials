@@ -47,7 +47,7 @@ object OpenSourceLicensesUtils {
         var html = ""
         try {
             withContext(Dispatchers.IO) {
-                val url = URL("https://raw.githubusercontent.com/D4rK7355608/com.d4rk.androidtutorials/refs/heads/jetpack_compose_rework/EULA.md")
+                val url = URL("https://raw.githubusercontent.com/D4rK7355608/com.d4rk.androidtutorials/refs/heads/jetpack_compose_rework/EULA.html")
                 val connection = url.openConnection() as HttpURLConnection
                 connection.requestMethod = "GET"
 
