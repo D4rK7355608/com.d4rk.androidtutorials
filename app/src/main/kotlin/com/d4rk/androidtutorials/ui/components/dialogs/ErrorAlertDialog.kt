@@ -8,17 +8,14 @@ import androidx.compose.ui.res.stringResource
 
 @Composable
 fun ErrorAlertDialog(
-    errorMessage: String,
-    onDismiss: () -> Unit
+    errorMessage : String , onDismiss : () -> Unit
 ) {
-    AlertDialog(
-        onDismissRequest = onDismiss,
-        title = { Text(text = "Error") },
-        text = { Text(text = errorMessage) },
-        confirmButton = {
-            TextButton(onClick = onDismiss) {
-                Text(text = stringResource(id = android.R.string.ok))
-            }
-        }
-    )
+    AlertDialog(onDismissRequest = onDismiss ,
+                title = { Text(text = "Error") } ,
+                text = { Text(text = errorMessage) } ,
+                confirmButton = {
+                    TextButton(onClick = onDismiss) {
+                        Text(text = stringResource(id = android.R.string.ok))
+                    }
+                })
 }

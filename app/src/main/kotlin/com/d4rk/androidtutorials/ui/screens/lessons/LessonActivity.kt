@@ -29,7 +29,13 @@ class LessonActivity : AppCompatActivity() {
                     modifier = Modifier.fillMaxSize() , color = MaterialTheme.colorScheme.background
                 ) {
                     val lesson = viewModel.lesson.collectAsState()
-                    lesson.value?.let { LessonScreen(lesson = it , activity = this@LessonActivity, viewModel = viewModel) }
+                    lesson.value?.let {
+                        LessonScreen(
+                            lesson = it ,
+                            activity = this@LessonActivity ,
+                            viewModel = viewModel
+                        )
+                    }
                 }
             }
         }

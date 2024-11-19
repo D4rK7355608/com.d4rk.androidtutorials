@@ -35,30 +35,29 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 @Composable
-fun ThemeSettingsComposable(activity: ThemeSettingsActivity) {
-    val context: Context = LocalContext.current
-    val dataStore: DataStore = DataStore.getInstance(context = context)
-    val scope: CoroutineScope = rememberCoroutineScope()
-    val themeMode: String = dataStore.themeMode.collectAsState(initial = "follow_system").value
-    val isAmoledMode: State<Boolean> = dataStore.amoledMode.collectAsState(initial = false)
+fun ThemeSettingsComposable(activity : ThemeSettingsActivity) {
+    val context : Context = LocalContext.current
+    val dataStore : DataStore = DataStore.getInstance(context = context)
+    val scope : CoroutineScope = rememberCoroutineScope()
+    val themeMode : String = dataStore.themeMode.collectAsState(initial = "follow_system").value
+    val isAmoledMode : State<Boolean> = dataStore.amoledMode.collectAsState(initial = false)
 
-    val themeOptions: List<String> = listOf(
-        stringResource(id = R.string.follow_system),
-        stringResource(id = R.string.dark_mode),
-        stringResource(id = R.string.light_mode),
+    val themeOptions : List<String> = listOf(
+        stringResource(id = R.string.follow_system) ,
+        stringResource(id = R.string.dark_mode) ,
+        stringResource(id = R.string.light_mode) ,
     )
-    TopAppBarScaffoldWithBackButton(
-        title = stringResource(id = R.string.dark_theme),
-        onBackClicked = { activity.finish() }) { paddingValues ->
+    TopAppBarScaffoldWithBackButton(title = stringResource(id = R.string.dark_theme) ,
+                                    onBackClicked = { activity.finish() }) { paddingValues ->
         Box(modifier = Modifier.fillMaxSize()) {
             LazyColumn(
                 modifier = Modifier
-                    .fillMaxSize()
-                    .padding(paddingValues),
+                        .fillMaxSize()
+                        .padding(paddingValues) ,
             ) {
                 item {
                     SwitchCardComposable(
-                        title = stringResource(id = R.string.amoled_mode),
+                        title = stringResource(id = R.string.amoled_mode) ,
                         switchState = isAmoledMode
                     ) { isChecked ->
                         scope.launch(Dispatchers.IO) {
@@ -69,26 +68,25 @@ fun ThemeSettingsComposable(activity: ThemeSettingsActivity) {
                 item {
                     Column(
                         modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(24.dp)
+                                .fillMaxWidth()
+                                .padding(24.dp)
                     ) {
                         themeOptions.forEach { text ->
                             Row(
-                                Modifier.fillMaxWidth(),
+                                Modifier.fillMaxWidth() ,
                                 verticalAlignment = Alignment.CenterVertically
                             ) {
-                                RadioButton(
-                                    modifier = Modifier.bounceClick(),
-                                    selected = (text == themeMode),
-                                    onClick = {
-                                        scope.launch(Dispatchers.IO) {
-                                            dataStore.saveThemeMode(text)
-                                            dataStore.themeModeState.value = text
-                                        }
-                                    })
+                                RadioButton(modifier = Modifier.bounceClick() ,
+                                            selected = (text == themeMode) ,
+                                            onClick = {
+                                                scope.launch(Dispatchers.IO) {
+                                                    dataStore.saveThemeMode(text)
+                                                    dataStore.themeModeState.value = text
+                                                }
+                                            })
                                 Text(
-                                    text = text,
-                                    style = MaterialTheme.typography.bodyMedium.merge(),
+                                    text = text ,
+                                    style = MaterialTheme.typography.bodyMedium.merge() ,
                                     modifier = Modifier.padding(start = 16.dp)
                                 )
                             }
@@ -98,10 +96,10 @@ fun ThemeSettingsComposable(activity: ThemeSettingsActivity) {
                 item {
                     Column(
                         modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(24.dp)
+                                .fillMaxWidth()
+                                .padding(24.dp)
                     ) {
-                        Icon(imageVector = Icons.Outlined.Info, contentDescription = null)
+                        Icon(imageVector = Icons.Outlined.Info , contentDescription = null)
                         Spacer(modifier = Modifier.height(24.dp))
                         Text(text = stringResource(id = R.string.summary_dark_theme))
                     }

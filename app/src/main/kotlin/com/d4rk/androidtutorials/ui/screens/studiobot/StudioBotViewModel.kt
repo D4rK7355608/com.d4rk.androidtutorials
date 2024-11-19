@@ -34,7 +34,7 @@ class StudioBotViewModel(application : Application) : BaseViewModel(application)
         viewModelScope.launch(coroutineExceptionHandler) {
             showLoading()
             repository.createChatSessionRepository(modelName = "gemini-1.0-pro" ,
-                                                   apiKey = BuildConfig.API_KEY,
+                                                   apiKey = BuildConfig.API_KEY ,
                                                    onChatCreated = { chat -> })
             hideLoading()
         }
@@ -48,7 +48,13 @@ class StudioBotViewModel(application : Application) : BaseViewModel(application)
 
             repository.sendMessageRepository(message) { reply ->
                 val updatedHistory = _chatHistory.value.toMutableList()
-                updatedHistory.add(ApiMessageData(id = UUID.randomUUID() , text = reply , isBot = true))
+                updatedHistory.add(
+                    ApiMessageData(
+                        id = UUID.randomUUID() ,
+                        text = reply ,
+                        isBot = true
+                    )
+                )
                 _chatHistory.value = updatedHistory.toList()
             }
         }

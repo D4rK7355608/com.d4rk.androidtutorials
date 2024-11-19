@@ -7,10 +7,7 @@ import android.os.Build
 
 object ClipboardUtil {
     fun copyTextToClipboard(
-        context: Context ,
-        label: String ,
-        text: String ,
-        onShowSnackbar: () -> Unit = {}
+        context : Context , label : String , text : String , onShowSnackbar : () -> Unit = {}
     ) {
         val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
         val clip = ClipData.newPlainText(label , text)

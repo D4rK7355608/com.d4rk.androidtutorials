@@ -73,7 +73,7 @@ class HomeRepository(
 
     suspend fun shareLessonRepository(lesson : UiLesson) {
         withContext(Dispatchers.IO) {
-            val shareIntent: Intent = shareLessonImplementation(lesson)
+            val shareIntent : Intent = shareLessonImplementation(lesson)
             withContext(Dispatchers.Main) {
                 val chooserIntent : Intent = Intent.createChooser(
                     shareIntent , application.getString(R.string.share)

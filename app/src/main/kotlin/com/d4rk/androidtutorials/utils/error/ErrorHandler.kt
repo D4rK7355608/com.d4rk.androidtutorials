@@ -19,9 +19,7 @@ object ErrorHandler {
         (applicationContext as? Activity)?.let { activity ->
             activity.runOnUiThread {
                 Snackbar.make(
-                    activity.findViewById(android.R.id.content) ,
-                    message ,
-                    Snackbar.LENGTH_SHORT
+                    activity.findViewById(android.R.id.content) , message , Snackbar.LENGTH_SHORT
                 ).show()
             }
         }

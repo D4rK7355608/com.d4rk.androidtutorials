@@ -13,26 +13,22 @@ import androidx.compose.ui.Modifier
 
 @Composable
 fun Snackbar(
-    message: String,
-    showSnackbar: Boolean,
-    onDismiss: () -> Unit
+    message : String , showSnackbar : Boolean , onDismiss : () -> Unit
 ) {
     val snackbarHostState = remember { SnackbarHostState() }
 
     LaunchedEffect(showSnackbar) {
         if (showSnackbar) {
-            snackbarHostState.showSnackbar(message, duration = SnackbarDuration.Short)
+            snackbarHostState.showSnackbar(message , duration = SnackbarDuration.Short)
             onDismiss()
         }
     }
 
     Box(
-        modifier = Modifier
-                .fillMaxSize()
+        modifier = Modifier.fillMaxSize()
     ) {
         SnackbarHost(
-            hostState = snackbarHostState,
-            modifier = Modifier.align(Alignment.BottomCenter)
+            hostState = snackbarHostState , modifier = Modifier.align(Alignment.BottomCenter)
         )
     }
 }

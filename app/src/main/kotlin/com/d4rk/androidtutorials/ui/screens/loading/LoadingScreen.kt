@@ -10,12 +10,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 
 @Composable
-fun LoadingScreen(progressAlpha: Float) {
+fun LoadingScreen(progressAlpha : Float) {
     Box(
         modifier = Modifier
-            .fillMaxSize()
-            .animateContentSize()
-            .alpha(progressAlpha),
+                .fillMaxSize()
+                .animateContentSize()
+                .alpha(progressAlpha) ,
         contentAlignment = Alignment.Center
     ) {
         CircularProgressIndicator()

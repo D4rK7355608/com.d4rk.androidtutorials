@@ -17,7 +17,7 @@ android {
         applicationId = "com.d4rk.androidtutorials"
         minSdk = 23
         targetSdk = 35
-        versionCode = 84
+        versionCode = 85
         versionName = "1.0.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         resourceConfigurations += listOf(
@@ -68,7 +68,10 @@ android {
             isMinifyEnabled = false
             isShrinkResources = false
             buildConfigField(type = "String" , name = "API_KEY" , value = apiKey)
-            proguardFiles(getDefaultProguardFile(name = "proguard-android-optimize.txt") , "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile(name = "proguard-android-optimize.txt") ,
+                "proguard-rules.pro"
+            )
         }
     }
 
@@ -159,9 +162,10 @@ dependencies {
 
     // Code view
     implementation(dependencyNotation = libs.compose.code.editor)
-    implementation(dependencyNotation = "io.noties.markwon:core:4.6.2")
 
+    // About
     implementation(dependencyNotation = libs.aboutlibraries)
+    implementation(dependencyNotation = "io.noties.markwon:core:4.6.2")
 
     // Test
     testImplementation(dependencyNotation = libs.junit)

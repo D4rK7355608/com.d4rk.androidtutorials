@@ -7,8 +7,8 @@ import com.d4rk.androidtutorials.data.database.converters.Converters
 import com.d4rk.androidtutorials.data.database.dao.FavoriteLessonsDao
 import com.d4rk.androidtutorials.data.database.table.FavoriteLessonTable
 
-@Database(entities = [FavoriteLessonTable::class], version = 1, exportSchema = false)
+@Database(entities = [FavoriteLessonTable::class] , version = 1 , exportSchema = false)
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
-    abstract fun favoriteLessonsDao(): FavoriteLessonsDao
+    abstract fun favoriteLessonsDao() : FavoriteLessonsDao
 }

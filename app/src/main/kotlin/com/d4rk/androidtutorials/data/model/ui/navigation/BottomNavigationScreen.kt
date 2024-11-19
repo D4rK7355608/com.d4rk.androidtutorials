@@ -12,10 +12,10 @@ import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.constants.ui.bottombar.BottomBarRoutes
 
 sealed class BottomNavigationScreen(
-    val route: String, val icon: ImageVector, val selectedIcon: ImageVector, val title: Int
+    val route : String , val icon : ImageVector , val selectedIcon : ImageVector , val title : Int
 ) {
     data object Home : BottomNavigationScreen(
-        BottomBarRoutes.HOME, Icons.Outlined.Home, Icons.Filled.Home, R.string.home
+        BottomBarRoutes.HOME , Icons.Outlined.Home , Icons.Filled.Home , R.string.home
     )
 
     data object StudioBot : BottomNavigationScreen(

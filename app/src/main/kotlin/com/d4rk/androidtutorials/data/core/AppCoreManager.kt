@@ -19,17 +19,14 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class AppCoreManager : MultiDexApplication(), Application.ActivityLifecycleCallbacks,
+class AppCoreManager : MultiDexApplication() , Application.ActivityLifecycleCallbacks ,
     LifecycleObserver {
 
-    private val dataStoreCoreManager: DataStoreCoreManager =
-        DataStoreCoreManager(context = this)
-    private val adsCoreManager: AdsCoreManager =
-        AdsCoreManager(context = this)
+    private val dataStoreCoreManager : DataStoreCoreManager = DataStoreCoreManager(context = this)
+    private val adsCoreManager : AdsCoreManager = AdsCoreManager(context = this)
 
     private enum class AppInitializationStage {
-        DATA_STORE,
-        ADS
+        DATA_STORE , ADS
     }
 
     private var currentStage = AppInitializationStage.DATA_STORE
@@ -44,8 +41,7 @@ class AppCoreManager : MultiDexApplication(), Application.ActivityLifecycleCallb
         registerActivityLifecycleCallbacks(this)
         ProcessLifecycleOwner.get().lifecycle.addObserver(observer = this)
         database = Room.databaseBuilder(this , AppDatabase::class.java , "Android Studio Tutorials")
-                .fallbackToDestructiveMigrationFrom()
-                .build()
+                .fallbackToDestructiveMigrationFrom().build()
         CoroutineScope(Dispatchers.Main).launch {
             if (dataStoreCoreManager.initializeDataStore()) {
                 proceedToNextStage()
@@ -68,7 +64,7 @@ class AppCoreManager : MultiDexApplication(), Application.ActivityLifecycleCallb
         }
     }
 
-    fun isAppLoaded(): Boolean {
+    fun isAppLoaded() : Boolean {
         return isAppLoaded
     }
 
@@ -81,18 +77,18 @@ class AppCoreManager : MultiDexApplication(), Application.ActivityLifecycleCallb
         currentActivity?.let { adsCoreManager.showAdIfAvailable(it) }
     }
 
-    private var currentActivity: Activity? = null
+    private var currentActivity : Activity? = null
 
-    override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {}
-    override fun onActivityStarted(activity: Activity) {
-        if (!adsCoreManager.isShowingAd) {
+    override fun onActivityCreated(activity : Activity , savedInstanceState : Bundle?) {}
+    override fun onActivityStarted(activity : Activity) {
+        if (! adsCoreManager.isShowingAd) {
             currentActivity = activity
         }
     }
 
-    override fun onActivityResumed(activity: Activity) {}
-    override fun onActivityPaused(activity: Activity) {}
-    override fun onActivityStopped(activity: Activity) {}
-    override fun onActivitySaveInstanceState(activity: Activity, outState: Bundle) {}
-    override fun onActivityDestroyed(activity: Activity) {}
+    override fun onActivityResumed(activity : Activity) {}
+    override fun onActivityPaused(activity : Activity) {}
+    override fun onActivityStopped(activity : Activity) {}
+    override fun onActivitySaveInstanceState(activity : Activity , outState : Bundle) {}
+    override fun onActivityDestroyed(activity : Activity) {}
 }

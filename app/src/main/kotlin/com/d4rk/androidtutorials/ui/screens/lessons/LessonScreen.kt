@@ -73,7 +73,7 @@ fun LessonScreen(
     activity : LessonActivity ,
     viewModel : LessonViewModel ,
 ) {
-    val dataStore: DataStore = DataStore.getInstance(context = activity)
+    val dataStore : DataStore = DataStore.getInstance(context = activity)
     val uiErrorModel : UiErrorModel by viewModel.uiErrorModel.collectAsState()
     val isLoading : Boolean by viewModel.isLoading.collectAsState()
     val transition : Transition<Boolean> =
@@ -87,8 +87,9 @@ fun LessonScreen(
                          onDismiss = { viewModel.dismissErrorDialog() })
     }
 
-    TopAppBarScaffoldWithBackButton(title = lesson.title ,
-                                    onBackClicked = { activity.finish() }) { paddingValues ->
+    TopAppBarScaffoldWithBackButton(
+        title = lesson.title ,
+        onBackClicked = { activity.finish() }) { paddingValues ->
 
         if (isLoading) {
             LoadingScreen(progressAlpha)
@@ -97,36 +98,37 @@ fun LessonScreen(
             LazyColumn(
                 modifier = Modifier
                         .fillMaxSize()
-                        .padding(paddingValues),
+                        .padding(paddingValues) ,
                 contentPadding = PaddingValues(16.dp)
             ) {
-                itemsIndexed(lesson.content, key = { _, item -> item.id }) { index, contentItem ->
+                itemsIndexed(
+                    lesson.content ,
+                    key = { _ , item -> item.id }) { index , contentItem ->
                     when (contentItem.type) {
                         LessonContentTypes.HEADER -> {
                             StyledText(
-                                text = contentItem.text,
-                                style = TextStyles.header(),
+                                text = contentItem.text ,
+                                style = TextStyles.header() ,
                                 color = Colors.primaryText()
                             )
                         }
 
                         LessonContentTypes.TEXT -> {
                             StyledText(
-                                text = contentItem.text,
-                                style = TextStyles.body(),
+                                text = contentItem.text ,
+                                style = TextStyles.body() ,
                                 color = Colors.secondaryText()
                             )
                         }
 
                         LessonContentTypes.IMAGE -> {
                             StyledImage(
-                                imageUrl = contentItem.src,
-                                contentDescription = "Lesson Image"
+                                imageUrl = contentItem.src , contentDescription = "Lesson Image"
                             )
                         }
 
                         LessonContentTypes.CODE -> {
-                            CodeBlock(code = contentItem.code, language = contentItem.language)
+                            CodeBlock(code = contentItem.code , language = contentItem.language)
                         }
 
                         LessonContentTypes.AD_BANNER -> {
@@ -378,20 +380,19 @@ fun CodeBlock(code : String , language : String?) {
                     style = MaterialTheme.typography.bodyMedium ,
                     modifier = Modifier.padding(end = 8.dp)
                 )
-                TextButton(
-                    modifier = Modifier.bounceClick() , onClick = {
-                        ClipboardUtil.copyTextToClipboard(context = context ,
-                                                          label = "Code" ,
-                                                          text = code ,
-                                                          onShowSnackbar = {
-                                                              Toast.makeText(
-                                                                  context ,
-                                                                  "Code copied to clipboard" ,
-                                                                  Toast.LENGTH_SHORT
-                                                              ).show()
-                                                          })
-                    } , contentPadding = PaddingValues(horizontal = 8.dp)
-                ) {
+                TextButton(modifier = Modifier.bounceClick() , onClick = {
+                    ClipboardUtil.copyTextToClipboard(
+                        context = context ,
+                        label = "Code" ,
+                        text = code ,
+                        onShowSnackbar = {
+                            Toast.makeText(
+                                context ,
+                                "Code copied to clipboard" ,
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        })
+                } , contentPadding = PaddingValues(horizontal = 8.dp)) {
                     Icon(
                         imageVector = Icons.Outlined.CopyAll ,
                         contentDescription = "Copy Code" ,

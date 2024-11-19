@@ -48,8 +48,7 @@ import com.d4rk.androidtutorials.ui.screens.home.HomeViewModel
 fun LessonItem(lesson : UiLesson , context : Context , modifier : Modifier = Modifier) {
     val viewModel : HomeViewModel = viewModel()
     Card(
-        modifier = modifier
-                .fillMaxWidth()
+        modifier = modifier.fillMaxWidth()
     ) {
         when (lesson.type) {
             LessonConstants.TYPE_FULL_IMAGE_BANNER -> {

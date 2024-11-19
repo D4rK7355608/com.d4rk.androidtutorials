@@ -30,74 +30,73 @@ import com.d4rk.androidtutorials.ui.screens.settings.privacy.PrivacySettingsActi
 import com.d4rk.androidtutorials.utils.IntentUtils
 
 @Composable
-fun SettingsComposable(activity: SettingsActivity) {
-    val context: Context = LocalContext.current
+fun SettingsComposable(activity : SettingsActivity) {
+    val context : Context = LocalContext.current
 
-    TopAppBarScaffoldWithBackButton(
-        title = stringResource(id = R.string.settings),
-        onBackClicked = { activity.finish() }) { paddingValues ->
+    TopAppBarScaffoldWithBackButton(title = stringResource(id = R.string.settings) ,
+                                    onBackClicked = { activity.finish() }) { paddingValues ->
         LazyColumn(
             modifier = Modifier
-                .fillMaxHeight()
-                .padding(paddingValues),
+                    .fillMaxHeight()
+                    .padding(paddingValues) ,
         ) {
             item {
                 Spacer(modifier = Modifier.height(24.dp))
                 Column(
                     modifier = Modifier
-                        .padding(start = 16.dp, end = 16.dp)
-                        .clip(RoundedCornerShape(24.dp))
+                            .padding(start = 16.dp , end = 16.dp)
+                            .clip(RoundedCornerShape(24.dp))
                 ) {
-                    SettingsPreferenceItem(Icons.Outlined.Notifications,
-                        title = stringResource(id = R.string.notifications),
-                        summary = stringResource(id = R.string.summary_preference_settings_notifications),
-                        onClick = {
-                            IntentUtils.openAppNotificationSettings(context)
-                        })
+                    SettingsPreferenceItem(Icons.Outlined.Notifications ,
+                                           title = stringResource(id = R.string.notifications) ,
+                                           summary = stringResource(id = R.string.summary_preference_settings_notifications) ,
+                                           onClick = {
+                                               IntentUtils.openAppNotificationSettings(context)
+                                           })
                     Spacer(modifier = Modifier.height(2.dp))
-                    SettingsPreferenceItem(Icons.Outlined.Palette,
-                        title = stringResource(id = R.string.display),
-                        summary = stringResource(id = R.string.summary_preference_settings_display),
-                        onClick = {
-                            IntentUtils.openActivity(
-                                context, DisplaySettingsActivity::class.java
-                            )
-                        })
+                    SettingsPreferenceItem(Icons.Outlined.Palette ,
+                                           title = stringResource(id = R.string.display) ,
+                                           summary = stringResource(id = R.string.summary_preference_settings_display) ,
+                                           onClick = {
+                                               IntentUtils.openActivity(
+                                                   context , DisplaySettingsActivity::class.java
+                                               )
+                                           })
                 }
                 Spacer(modifier = Modifier.height(24.dp))
             }
             item {
                 Column(
                     modifier = Modifier
-                        .padding(start = 16.dp, end = 16.dp)
-                        .clip(RoundedCornerShape(24.dp))
+                            .padding(start = 16.dp , end = 16.dp)
+                            .clip(RoundedCornerShape(24.dp))
                 ) {
-                    SettingsPreferenceItem(Icons.Outlined.SafetyCheck,
-                        title = stringResource(id = R.string.security_and_privacy),
-                        summary = stringResource(id = R.string.summary_preference_settings_privacy_and_security),
-                        onClick = {
-                            IntentUtils.openActivity(
-                                context, PrivacySettingsActivity::class.java
-                            )
-                        })
+                    SettingsPreferenceItem(Icons.Outlined.SafetyCheck ,
+                                           title = stringResource(id = R.string.security_and_privacy) ,
+                                           summary = stringResource(id = R.string.summary_preference_settings_privacy_and_security) ,
+                                           onClick = {
+                                               IntentUtils.openActivity(
+                                                   context , PrivacySettingsActivity::class.java
+                                               )
+                                           })
                     Spacer(modifier = Modifier.height(2.dp))
-                    SettingsPreferenceItem(Icons.Outlined.Build,
-                        title = stringResource(id = R.string.advanced),
-                        summary = stringResource(id = R.string.summary_preference_settings_advanced),
-                        onClick = {
-                            IntentUtils.openActivity(
-                                context, AdvancedSettingsActivity::class.java
-                            )
-                        })
+                    SettingsPreferenceItem(Icons.Outlined.Build ,
+                                           title = stringResource(id = R.string.advanced) ,
+                                           summary = stringResource(id = R.string.summary_preference_settings_advanced) ,
+                                           onClick = {
+                                               IntentUtils.openActivity(
+                                                   context , AdvancedSettingsActivity::class.java
+                                               )
+                                           })
                     Spacer(modifier = Modifier.height(2.dp))
-                    SettingsPreferenceItem(Icons.Outlined.Info,
-                        title = stringResource(id = R.string.about),
-                        summary = stringResource(id = R.string.summary_preference_settings_about),
-                        onClick = {
-                            IntentUtils.openActivity(
-                                context, AboutSettingsActivity::class.java
-                            )
-                        })
+                    SettingsPreferenceItem(Icons.Outlined.Info ,
+                                           title = stringResource(id = R.string.about) ,
+                                           summary = stringResource(id = R.string.summary_preference_settings_about) ,
+                                           onClick = {
+                                               IntentUtils.openActivity(
+                                                   context , AboutSettingsActivity::class.java
+                                               )
+                                           })
                 }
             }
         }

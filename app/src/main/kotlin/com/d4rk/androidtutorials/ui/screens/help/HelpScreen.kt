@@ -56,8 +56,8 @@ import com.d4rk.androidtutorials.BuildConfig
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.ui.components.animations.bounceClick
 import com.d4rk.androidtutorials.ui.components.dialogs.VersionInfoAlertDialog
-import com.d4rk.androidtutorials.utils.OpenSourceLicensesUtils
 import com.d4rk.androidtutorials.utils.IntentUtils
+import com.d4rk.androidtutorials.utils.OpenSourceLicensesUtils
 import com.google.android.play.core.review.ReviewInfo
 import com.mikepenz.aboutlibraries.LibsBuilder
 
@@ -72,20 +72,19 @@ fun HelpComposable(activity : HelpActivity , viewModel : HelpViewModel) {
     val showDialog : MutableState<Boolean> = remember { mutableStateOf(value = false) }
     val reviewInfo : ReviewInfo? = viewModel.reviewInfo.value
 
-    var changelogString by remember { mutableStateOf<String?>(null) }
+    var changelogHtmlString by remember { mutableStateOf<String?>(null) }
     var eulaHtmlString by remember { mutableStateOf<String?>(null) }
 
     LaunchedEffect(Unit) {
         val markdown = OpenSourceLicensesUtils.getChangelogMarkdown()
-        changelogString = OpenSourceLicensesUtils.extractLatestVersionChangelog(
-            markdown,
-            BuildConfig.VERSION_NAME
+        val extractedMarkdown = OpenSourceLicensesUtils.extractLatestVersionChangelog(
+            markdown , BuildConfig.VERSION_NAME
         )
+        changelogHtmlString = OpenSourceLicensesUtils.convertMarkdownToHtml(extractedMarkdown)
 
         val eulaHtml = OpenSourceLicensesUtils.getEulaHtml()
         eulaHtmlString = eulaHtml
     }
-
 
     if (reviewInfo != null) {
         LaunchedEffect(key1 = reviewInfo) {
@@ -168,29 +167,36 @@ fun HelpComposable(activity : HelpActivity , viewModel : HelpViewModel) {
                                          text = { Text(text = stringResource(R.string.oss_license_title)) } ,
                                          onClick = {
                                              view.playSoundEffect(SoundEffectConstants.CLICK)
-                                             LibsBuilder()
-                                                     .withActivityTitle(activityTitle =  context.getString(R.string.oss_license_title))
-                                                     .withEdgeToEdge(asEdgeToEdge = true)
+                                             LibsBuilder().withActivityTitle(
+                                                         activityTitle = context.getString(R.string.oss_license_title)
+                                                     ).withEdgeToEdge(asEdgeToEdge = true)
                                                      .withShowLoadingProgress(showLoadingProgress = true)
                                                      .withSearchEnabled(searchEnabled = true)
                                                      .withAboutIconShown(aboutShowIcon = true)
-                                                     .withAboutAppName(aboutAppName = context.getString(R.string.app_name))
-                                                     .withVersionShown(showVersion = true)
-                                                     .withAboutVersionString(aboutVersionString = BuildConfig.VERSION_NAME)
+                                                     .withAboutAppName(
+                                                         aboutAppName = context.getString(R.string.app_name)
+                                                     ).withVersionShown(showVersion = true)
+                                                     .withAboutVersionString(aboutVersionString = "${BuildConfig.VERSION_NAME} (${BuildConfig.VERSION_CODE})")
 
                                                      .withLicenseShown(showLicense = true)
                                                      .withAboutVersionShown(aboutShowVersion = true)
                                                      .withAboutVersionShownName(aboutShowVersion = true)
                                                      .withAboutVersionShownCode(aboutShowVersion = true)
 
-                                                     .withAboutSpecial1(aboutAppSpecial1 = context.getString(R.string.eula_title))
-                                                     .withAboutSpecial1Description(eulaHtmlString ?: context.getString(R.string.loading_eula))
-                                                     .withAboutSpecial2(aboutAppSpecial2 = context.getString(R.string.changelog))
-                                                     .withAboutSpecial2Description(
-                                                         AnnotatedString.fromHtml(changelogString.toString())
-                                                                 .toString())
-                                                     .withAboutSpecial3("5withAboutSpecial3")
-                                                     .withAboutSpecial3Description(context.getString(R.string.app_short_description))
+                                                     .withAboutSpecial1(
+                                                         aboutAppSpecial1 = context.getString(
+                                                             R.string.eula_title
+                                                         )
+                                                     ).withAboutSpecial1Description(
+                                                         aboutAppSpecial1Description = eulaHtmlString
+                                                             ?: context.getString(R.string.loading_eula)
+                                                     ).withAboutSpecial2(
+                                                         aboutAppSpecial2 = context.getString(R.string.changelog)
+                                                     ).withAboutSpecial2Description(
+                                                         AnnotatedString
+                                                                 .fromHtml(changelogHtmlString.toString())
+                                                                 .toString()
+                                                     )
 
                                                      .withAboutDescription(context.getString(R.string.app_short_description))
                                                      .activity(context)
@@ -212,8 +218,7 @@ fun HelpComposable(activity : HelpActivity , viewModel : HelpViewModel) {
                                              view.playSoundEffect(SoundEffectConstants.CLICK)
                                              viewModel.reviewInfo.value?.let { safeReviewInfo ->
                                                  viewModel.launchReviewFlow(
-                                                     activity ,
-                                                     safeReviewInfo
+                                                     activity , safeReviewInfo
                                                  )
                                              }
                                          } ,
@@ -223,19 +228,18 @@ fun HelpComposable(activity : HelpActivity , viewModel : HelpViewModel) {
                                                  contentDescription = null
                                              )
                                          } ,
-                                         modifier = Modifier
-                                                 .bounceClick())
+                                         modifier = Modifier.bounceClick())
         } ,
     ) { paddingValues ->
         Box(
             modifier = Modifier
-                    .padding(start = 16.dp, end = 16.dp)
+                    .padding(start = 16.dp , end = 16.dp)
                     .fillMaxSize()
                     .safeDrawingPadding()
         ) {
             Column(modifier = Modifier.padding(paddingValues)) {
                 Text(
-                    text = stringResource(id = R.string.faq),
+                    text = stringResource(id = R.string.faq) ,
                     modifier = Modifier.padding(bottom = 24.dp)
                 )
                 Card(modifier = Modifier.fillMaxWidth()) {

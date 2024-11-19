@@ -14,12 +14,12 @@ import com.google.android.gms.ads.AdView
 
 @Composable
 fun AdBanner(
-    modifier: Modifier = Modifier, dataStore: DataStore
+    modifier : Modifier = Modifier , dataStore : DataStore
 ) {
-    val showAds: Boolean by dataStore.ads.collectAsState(initial = true)
+    val showAds : Boolean by dataStore.ads.collectAsState(initial = true)
 
     if (showAds) {
-        AndroidView(modifier = modifier.fillMaxWidth(), factory = { context ->
+        AndroidView(modifier = modifier.fillMaxWidth() , factory = { context ->
             AdView(context).apply {
                 setAdSize(AdSize.BANNER)
                 adUnitId = AdsConstants.BANNER_AD_UNIT_ID
@@ -31,12 +31,12 @@ fun AdBanner(
 
 @Composable
 fun AdBannerFull(
-    modifier: Modifier = Modifier, dataStore: DataStore
+    modifier : Modifier = Modifier , dataStore : DataStore
 ) {
-    val showAds: Boolean by dataStore.ads.collectAsState(initial = true)
+    val showAds : Boolean by dataStore.ads.collectAsState(initial = true)
 
     if (showAds) {
-        AndroidView(modifier = modifier.fillMaxWidth(), factory = { context ->
+        AndroidView(modifier = modifier.fillMaxWidth() , factory = { context ->
             AdView(context).apply {
                 setAdSize(AdSize.FULL_BANNER)
                 adUnitId = AdsConstants.BANNER_AD_UNIT_ID
@@ -48,12 +48,12 @@ fun AdBannerFull(
 
 @Composable
 fun LargeBannerAdsComposable(
-    modifier: Modifier = Modifier, dataStore: DataStore
+    modifier : Modifier = Modifier , dataStore : DataStore
 ) {
-    val showAds: Boolean by dataStore.ads.collectAsState(initial = true)
+    val showAds : Boolean by dataStore.ads.collectAsState(initial = true)
 
     if (showAds) {
-        AndroidView(modifier = modifier.fillMaxWidth(), factory = { context ->
+        AndroidView(modifier = modifier.fillMaxWidth() , factory = { context ->
             AdView(context).apply {
                 setAdSize(AdSize.LARGE_BANNER)
                 adUnitId = AdsConstants.BANNER_AD_UNIT_ID

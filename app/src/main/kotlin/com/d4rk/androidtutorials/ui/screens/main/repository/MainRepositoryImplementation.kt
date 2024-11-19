@@ -55,7 +55,10 @@ abstract class MainRepositoryImplementation(val application : Application) {
         FirebaseCrashlytics.getInstance().isCrashlyticsCollectionEnabled = isEnabled
     }
 
-    suspend fun checkForUpdatesLogic(activity : Activity, appUpdateManager : AppUpdateManager) : Int {
+    suspend fun checkForUpdatesLogic(
+        activity : Activity ,
+        appUpdateManager : AppUpdateManager
+    ) : Int {
 
         try {
             var updateResult = Activity.RESULT_CANCELED

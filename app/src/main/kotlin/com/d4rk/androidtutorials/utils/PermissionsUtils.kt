@@ -20,12 +20,13 @@ object PermissionsUtils {
      * @param context The application context.
      * @return True if the permission is granted, false otherwise.
      */
-    fun hasNotificationPermission(context: Context): Boolean {
+    fun hasNotificationPermission(context : Context) : Boolean {
         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             ContextCompat.checkSelfPermission(
-                context, Manifest.permission.POST_NOTIFICATIONS
+                context , Manifest.permission.POST_NOTIFICATIONS
             ) == PackageManager.PERMISSION_GRANTED
-        } else {
+        }
+        else {
             true
         }
     }
@@ -35,11 +36,11 @@ object PermissionsUtils {
      *
      * @param activity The Activity instance required to request the permission.
      */
-    fun requestNotificationPermission(activity: Activity) {
+    fun requestNotificationPermission(activity : Activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             ActivityCompat.requestPermissions(
-                activity,
-                arrayOf(Manifest.permission.POST_NOTIFICATIONS),
+                activity ,
+                arrayOf(Manifest.permission.POST_NOTIFICATIONS) ,
                 PermissionsConstants.REQUEST_CODE_NOTIFICATION_PERMISSION
             )
         }

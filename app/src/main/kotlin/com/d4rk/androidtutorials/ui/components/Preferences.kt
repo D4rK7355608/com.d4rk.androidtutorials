@@ -94,17 +94,16 @@ fun SettingsPreferenceItem(
     Card(
         modifier = Modifier
                 .fillMaxWidth()
-                .clip(RoundedCornerShape(2.dp)),
+                .clip(RoundedCornerShape(2.dp)) ,
         shape = RoundedCornerShape(2.dp) ,
     ) {
-        PreferenceItem(
-            rippleEffectDp = rippleEffectDp ,
-            icon = icon ,
-            title = title ,
-            summary = summary ,
-            onClick = {
-                onClick()
-            })
+        PreferenceItem(rippleEffectDp = rippleEffectDp ,
+                       icon = icon ,
+                       title = title ,
+                       summary = summary ,
+                       onClick = {
+                           onClick()
+                       })
     }
 }
 
@@ -226,11 +225,9 @@ fun SwitchPreferenceItem(
                 Text(text = it , style = MaterialTheme.typography.bodyMedium)
             }
         }
-        Switch(
-            checked = checked , onCheckedChange = { isChecked ->
-                onCheckedChange(isChecked)
-            } , modifier = Modifier.padding(16.dp)
-        )
+        Switch(checked = checked , onCheckedChange = { isChecked ->
+            onCheckedChange(isChecked)
+        } , modifier = Modifier.padding(16.dp))
     }
 }
 

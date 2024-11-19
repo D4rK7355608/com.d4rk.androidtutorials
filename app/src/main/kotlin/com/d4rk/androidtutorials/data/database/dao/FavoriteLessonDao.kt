@@ -11,18 +11,18 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface FavoriteLessonsDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(favoriteLesson: FavoriteLessonTable)
+    suspend fun insert(favoriteLesson : FavoriteLessonTable)
 
     @Delete
-    suspend fun delete(favoriteLesson: FavoriteLessonTable)
+    suspend fun delete(favoriteLesson : FavoriteLessonTable)
 
     @Query("SELECT * FROM `favorite lessons`")
-    suspend fun getAllFavorites(): List<FavoriteLessonTable>
+    suspend fun getAllFavorites() : List<FavoriteLessonTable>
 
 
     @Query("SELECT * FROM `Favorite Lessons`")
-    fun getAllFavoritesFlow(): Flow<List<FavoriteLessonTable>>
+    fun getAllFavoritesFlow() : Flow<List<FavoriteLessonTable>>
 
     @Query("SELECT COUNT(*) FROM `favorite lessons` WHERE id = :lessonId")
-    suspend fun isFavorite(lessonId: String): Int
+    suspend fun isFavorite(lessonId : String) : Int
 }

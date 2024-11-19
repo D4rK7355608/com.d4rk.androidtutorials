@@ -29,8 +29,9 @@ fun AboutSettingsComposable(activity : AboutSettingsActivity) {
 
     var showSnackbar : Boolean by remember { mutableStateOf(value = false) }
 
-    TopAppBarScaffoldWithBackButton(title = stringResource(id = R.string.about) ,
-                                    onBackClicked = { activity.finish() }) { paddingValues ->
+    TopAppBarScaffoldWithBackButton(
+        title = stringResource(id = R.string.about) ,
+        onBackClicked = { activity.finish() }) { paddingValues ->
         Box(modifier = Modifier.padding(paddingValues)) {
             LazyColumn(
                 modifier = Modifier.fillMaxHeight()
@@ -54,12 +55,12 @@ fun AboutSettingsComposable(activity : AboutSettingsActivity) {
                     PreferenceItem(title = stringResource(R.string.oss_license_title) ,
                                    summary = stringResource(id = R.string.summary_preference_settings_oss) ,
                                    onClick = {
-                                       LibsBuilder()
-                                               .withVersionShown(showVersion = true)
+                                       LibsBuilder().withVersionShown(showVersion = true)
                                                .withAboutIconShown(aboutShowIcon = true)
                                                .withAboutAppName(aboutAppName = context.getString(R.string.app_name))
-                                               .withActivityTitle(activityTitle = context.getString(R.string.oss_license_title))
-                                               .withEdgeToEdge(asEdgeToEdge = true)
+                                               .withActivityTitle(
+                                                   activityTitle = context.getString(R.string.oss_license_title)
+                                               ).withEdgeToEdge(asEdgeToEdge = true)
                                                .withLicenseShown(showLicense = true)
                                                .withSearchEnabled(searchEnabled = true)
                                                .withShowLoadingProgress(showLoadingProgress = true)

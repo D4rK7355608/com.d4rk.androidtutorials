@@ -17,7 +17,10 @@ class LessonRepository(
     dataStore : DataStore , application : Application ,
 ) : LessonRepositoryImplementation(application , dataStore) {
 
-    suspend fun getLessonRepository(lessonId : String , onSuccess : (UiLessonScreenModel?) -> Unit) {
+    suspend fun getLessonRepository(
+        lessonId : String ,
+        onSuccess : (UiLessonScreenModel?) -> Unit
+    ) {
         withContext(Dispatchers.IO) {
             val lesson = getLessonImplementation(lessonId = lessonId)
             withContext(Dispatchers.Main) {

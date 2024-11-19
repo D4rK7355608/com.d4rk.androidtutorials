@@ -6,5 +6,5 @@ data class ApiMessageData(
     val id : UUID ,
     val text : String ,
     val isBot : Boolean ,
-    val firstTimeMessage : Boolean = false,
+    val firstTimeMessage : Boolean = false ,
 )

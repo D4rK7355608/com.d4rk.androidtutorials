@@ -23,22 +23,23 @@ import com.d4rk.androidtutorials.ui.components.animations.bounceClick
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TopAppBarScaffoldWithBackButton(
-    title: String, onBackClicked: () -> Unit, content: @Composable (PaddingValues) -> Unit
+    title : String , onBackClicked : () -> Unit , content : @Composable (PaddingValues) -> Unit
 ) {
-    val scrollBehaviorState: TopAppBarScrollBehavior =
-        TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
-    val view: View = LocalView.current
+    val scrollBehaviorState : TopAppBarScrollBehavior =
+            TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
+    val view : View = LocalView.current
 
-    Scaffold(modifier = Modifier.nestedScroll(scrollBehaviorState.nestedScrollConnection),
+    Scaffold(
+        modifier = Modifier.nestedScroll(scrollBehaviorState.nestedScrollConnection) ,
         topBar = {
-            LargeTopAppBar(title = { Text(title) }, navigationIcon = {
-                IconButton(modifier = Modifier.bounceClick(), onClick = {
+            LargeTopAppBar(title = { Text(title) } , navigationIcon = {
+                IconButton(modifier = Modifier.bounceClick() , onClick = {
                     onBackClicked()
                     view.playSoundEffect(SoundEffectConstants.CLICK)
                 }) {
-                    Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = null)
+                    Icon(Icons.AutoMirrored.Filled.ArrowBack , contentDescription = null)
                 }
-            }, scrollBehavior = scrollBehaviorState
+            } , scrollBehavior = scrollBehaviorState
             )
         }) { paddingValues ->
         content(paddingValues)
@@ -48,14 +49,16 @@ fun TopAppBarScaffoldWithBackButton(
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TopAppBarScaffold(
-    title: String, content: @Composable (PaddingValues) -> Unit
+    title : String , content : @Composable (PaddingValues) -> Unit
 ) {
-    val scrollBehaviorState: TopAppBarScrollBehavior =
-        TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
+    val scrollBehaviorState : TopAppBarScrollBehavior =
+            TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
 
-    Scaffold(modifier = Modifier.nestedScroll(scrollBehaviorState.nestedScrollConnection),
+    Scaffold(
+        modifier = Modifier.nestedScroll(scrollBehaviorState.nestedScrollConnection) ,
         topBar = {
-            LargeTopAppBar(title = { Text(title) }, scrollBehavior = scrollBehaviorState
+            LargeTopAppBar(
+                title = { Text(title) } , scrollBehavior = scrollBehaviorState
             )
         }) { paddingValues ->
         content(paddingValues)

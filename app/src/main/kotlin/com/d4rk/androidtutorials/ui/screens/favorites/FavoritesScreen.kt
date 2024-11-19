@@ -67,7 +67,9 @@ fun FavoritesScreen() {
                         LessonItem(
                             lesson = lesson ,
                             context = context ,
-                            modifier = Modifier.animateVisibility(visible = isVisible).animateItem()
+                            modifier = Modifier
+                                    .animateVisibility(visible = isVisible)
+                                    .animateItem()
                         )
                     }
                 }

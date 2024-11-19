@@ -24,8 +24,8 @@ object IntentUtils {
      * @param context The Android context in which the URL should be opened.
      * @param url The URL to open.
      */
-    fun openUrl(context: Context, url: String) {
-        Intent(Intent.ACTION_VIEW, Uri.parse(url)).let { intent ->
+    fun openUrl(context : Context , url : String) {
+        Intent(Intent.ACTION_VIEW , Uri.parse(url)).let { intent ->
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             context.startActivity(intent)
         }
@@ -39,8 +39,8 @@ object IntentUtils {
      * @param context The Android context in which the activity should be opened.
      * @param activityClass The class of the activity to open.
      */
-    fun openActivity(context: Context, activityClass: Class<*>) {
-        Intent(context, activityClass).let { intent ->
+    fun openActivity(context : Context , activityClass : Class<*>) {
+        Intent(context , activityClass).let { intent ->
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             context.startActivity(intent)
         }
@@ -54,15 +54,16 @@ object IntentUtils {
      *
      * @param context The Android context in which the app's notification settings should be opened.
      */
-    fun openAppNotificationSettings(context: Context) {
+    fun openAppNotificationSettings(context : Context) {
         val intent = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS).apply {
-                putExtra(Settings.EXTRA_APP_PACKAGE, context.packageName)
+                putExtra(Settings.EXTRA_APP_PACKAGE , context.packageName)
             }
-        } else {
+        }
+        else {
             Intent().apply {
                 action = "android.settings.APPLICATION_DETAILS_SETTINGS"
-                data = Uri.fromParts("package", context.packageName, null)
+                data = Uri.fromParts("package" , context.packageName , null)
             }
         }
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
@@ -77,19 +78,19 @@ object IntentUtils {
      *
      * @param context The Android context in which the share sheet should be opened.
      */
-    fun shareApp(context: Context) {
-        val shareMessage: String = context.getString(
-            R.string.summary_share_message,
+    fun shareApp(context : Context) {
+        val shareMessage : String = context.getString(
+            R.string.summary_share_message ,
             "https://play.google.com/store/apps/details?id=${context.packageName}"
         )
-        val shareIntent: Intent = Intent().apply {
+        val shareIntent : Intent = Intent().apply {
             action = Intent.ACTION_SEND
-            putExtra(Intent.EXTRA_TEXT, shareMessage)
+            putExtra(Intent.EXTRA_TEXT , shareMessage)
             type = "text/plain"
         }
         context.startActivity(
             Intent.createChooser(
-                shareIntent, context.resources.getText(R.string.send_email_using)
+                shareIntent , context.resources.getText(R.string.send_email_using)
             )
         )
     }
@@ -104,21 +105,21 @@ object IntentUtils {
      *
      * @param context The Android context used to access resources and start the activity.
      */
-    fun sendEmailToDeveloper(context: Context) {
+    fun sendEmailToDeveloper(context : Context) {
         val developerEmail = "d4rk7355608@gmail.com"
-        val appName: String = context.getString(R.string.app_name)
-        val subject: String = context.getString(R.string.feedback_for) + appName
-        val body: String = context.getString(R.string.dear_developer) + "\n\n"
+        val appName : String = context.getString(R.string.app_name)
+        val subject : String = context.getString(R.string.feedback_for) + appName
+        val body : String = context.getString(R.string.dear_developer) + "\n\n"
 
-        val emailIntent: Intent = Intent(Intent.ACTION_SENDTO).apply {
+        val emailIntent : Intent = Intent(Intent.ACTION_SENDTO).apply {
             data = Uri.parse("mailto:$developerEmail")
-            putExtra(Intent.EXTRA_SUBJECT, subject)
-            putExtra(Intent.EXTRA_TEXT, body)
+            putExtra(Intent.EXTRA_SUBJECT , subject)
+            putExtra(Intent.EXTRA_TEXT , body)
         }
 
         context.startActivity(
             Intent.createChooser(
-                emailIntent, context.resources.getText(R.string.send_email_using)
+                emailIntent , context.resources.getText(R.string.send_email_using)
             )
         )
     }

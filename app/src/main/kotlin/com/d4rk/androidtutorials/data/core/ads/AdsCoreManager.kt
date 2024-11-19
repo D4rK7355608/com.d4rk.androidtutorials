@@ -15,11 +15,11 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import java.util.Date
 
-open class AdsCoreManager(protected val context: Context) {
+open class AdsCoreManager(protected val context : Context) {
 
-    private lateinit var dataStore: DataStore
-    private var appOpenAdManager: AppOpenAdManager? = null
-    val isShowingAd: Boolean
+    private lateinit var dataStore : DataStore
+    private var appOpenAdManager : AppOpenAdManager? = null
+    val isShowingAd : Boolean
         get() = appOpenAdManager?.isShowingAd == true
 
     fun initializeAds() {
@@ -27,71 +27,68 @@ open class AdsCoreManager(protected val context: Context) {
         appOpenAdManager = AppOpenAdManager()
     }
 
-    fun showAdIfAvailable(activity: Activity) {
+    fun showAdIfAvailable(activity : Activity) {
         appOpenAdManager?.showAdIfAvailable(activity)
     }
 
-    fun setDataStore(dataStore: DataStore) {
+    fun setDataStore(dataStore : DataStore) {
         this.dataStore = dataStore
     }
 
     private inner class AppOpenAdManager {
-        private var appOpenAd: AppOpenAd? = null
+        private var appOpenAd : AppOpenAd? = null
         private var isLoadingAd = false
         var isShowingAd = false
-        private var loadTime: Long = 0
+        private var loadTime : Long = 0
 
-        fun loadAd(context: Context) {
+        fun loadAd(context : Context) {
             if (isLoadingAd || isAdAvailable()) {
                 return
             }
             isLoadingAd = true
-            val request: AdRequest = AdRequest.Builder().build()
-            @Suppress("DEPRECATION")
-            AppOpenAd.load(context,
-                AdsConstants.APP_OPEN_UNIT_ID,
-                request,
-                AppOpenAd.APP_OPEN_AD_ORIENTATION_PORTRAIT,
-                object : AppOpenAd.AppOpenAdLoadCallback() {
-                    override fun onAdLoaded(ad: AppOpenAd) {
-                        appOpenAd = ad
-                        isLoadingAd = false
-                        loadTime = Date().time
-                    }
+            val request : AdRequest = AdRequest.Builder().build()
+            @Suppress("DEPRECATION") AppOpenAd.load(context ,
+                                                    AdsConstants.APP_OPEN_UNIT_ID ,
+                                                    request ,
+                                                    AppOpenAd.APP_OPEN_AD_ORIENTATION_PORTRAIT ,
+                                                    object : AppOpenAd.AppOpenAdLoadCallback() {
+                                                        override fun onAdLoaded(ad : AppOpenAd) {
+                                                            appOpenAd = ad
+                                                            isLoadingAd = false
+                                                            loadTime = Date().time
+                                                        }
 
-                    override fun onAdFailedToLoad(loadAdError: LoadAdError) {
-                        isLoadingAd = false
-                    }
-                })
+                                                        override fun onAdFailedToLoad(loadAdError : LoadAdError) {
+                                                            isLoadingAd = false
+                                                        }
+                                                    })
         }
 
-        private fun wasLoadTimeLessThanNHoursAgo(): Boolean {
-            val dateDifference: Long = Date().time - loadTime
-            val numMilliSecondsPerHour: Long = 3600000
+        private fun wasLoadTimeLessThanNHoursAgo() : Boolean {
+            val dateDifference : Long = Date().time - loadTime
+            val numMilliSecondsPerHour : Long = 3600000
             return dateDifference < numMilliSecondsPerHour * 4
         }
 
-        private fun isAdAvailable(): Boolean {
+        private fun isAdAvailable() : Boolean {
             return appOpenAd != null && wasLoadTimeLessThanNHoursAgo()
         }
 
-        fun showAdIfAvailable(activity: Activity) {
-            showAdIfAvailable(activity, object : OnShowAdCompleteListener {
+        fun showAdIfAvailable(activity : Activity) {
+            showAdIfAvailable(activity , object : OnShowAdCompleteListener {
                 override fun onShowAdComplete() {
                 }
             })
         }
 
         fun showAdIfAvailable(
-            activity: Activity,
-            onShowAdCompleteListener: OnShowAdCompleteListener
+            activity : Activity , onShowAdCompleteListener : OnShowAdCompleteListener
         ) {
-            val isAdsChecked: Boolean =
-                runBlocking { dataStore.ads.first() }
-            if (isShowingAd || !isAdsChecked) {
+            val isAdsChecked : Boolean = runBlocking { dataStore.ads.first() }
+            if (isShowingAd || ! isAdsChecked) {
                 return
             }
-            if (!isAdAvailable()) {
+            if (! isAdAvailable()) {
                 onShowAdCompleteListener.onShowAdComplete()
                 loadAd(activity)
                 return
@@ -104,7 +101,7 @@ open class AdsCoreManager(protected val context: Context) {
                     loadAd(activity)
                 }
 
-                override fun onAdFailedToShowFullScreenContent(adError: AdError) {
+                override fun onAdFailedToShowFullScreenContent(adError : AdError) {
                     appOpenAd = null
                     isShowingAd = false
                     onShowAdCompleteListener.onShowAdComplete()
