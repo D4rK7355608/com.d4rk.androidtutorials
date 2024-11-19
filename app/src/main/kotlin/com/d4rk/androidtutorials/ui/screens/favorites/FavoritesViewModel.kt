@@ -34,8 +34,8 @@ class FavoritesViewModel(application : Application) : LessonsViewModel(applicati
         viewModelScope.launch(coroutineExceptionHandler) {
             showLoading()
             repository.loadFavoritesRepository(onSuccess = { favorites : List<FavoriteLessonTable> ->
-                _lessons.value = favorites.map {
-                    it.toUiLesson()
+                _lessons.value = favorites.map { lessons ->
+                    lessons.toUiLesson()
                 }
             })
             hideLoading()

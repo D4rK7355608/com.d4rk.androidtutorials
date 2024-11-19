@@ -22,17 +22,17 @@ abstract class LessonRepositoryImplementation(
         "https://raw.githubusercontent.com/D4rK7355608/com.d4rk.apis/refs/heads/main/Android%20Studio%20Tutorials/release/en/lessons"
     }
 
-    fun getLessonImplementation(lessonId : String) : UiLessonScreenModel? {
+    fun getLessonImplementation(lessonId : String) : UiLessonScreenModel {
         val url = "$baseUrl/api_get_$lessonId.json"
-        return URL(url).openConnection().let {
-            it as HttpURLConnection
-            it.requestMethod = "GET"
-            it.connectTimeout = 5000
-            it.readTimeout = 5000
+        return URL(url).openConnection().let { apiUrl ->
+            apiUrl as HttpURLConnection
+            apiUrl.requestMethod = "GET"
+            apiUrl.connectTimeout = 5000
+            apiUrl.readTimeout = 5000
 
-            when (it.responseCode) {
+            when (apiUrl.responseCode) {
                 HttpURLConnection.HTTP_OK -> {
-                    BufferedReader(InputStreamReader(it.inputStream)).use { reader ->
+                    return@let BufferedReader(InputStreamReader(apiUrl.inputStream)).use { reader ->
                         Gson().fromJson(reader.readText() , UiLessonScreenModel::class.java)
                     }
                 }
@@ -40,7 +40,7 @@ abstract class LessonRepositoryImplementation(
                 // TODO: Add more case handles
 
                 else -> {
-                    null
+                    return@let UiLessonScreenModel()
                 }
             }
         }

@@ -4,7 +4,7 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid) apply false
     alias(libs.plugins.compose.compiler) apply false
     alias(libs.plugins.googlePlayServices) apply false
-    alias(libs.plugins.googleOssServices) apply false
     alias(libs.plugins.googleFirebase) apply false
     alias(libs.plugins.devToolsKsp) apply false
+    alias(libs.plugins.about.libraries) apply true
 }

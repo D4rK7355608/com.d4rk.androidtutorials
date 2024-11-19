@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_description">Ultimul Android Cleaner de care veți avea nevoie vreodată pentru utilizarea zilnică!</string>
+    <string name="app_short_description">Află cum să creezi aplicații simple în Android Studio.</string>
     <string name="notification_update_title">O nouă actualizare disponibilă!</string>
     <string name="summary_notification_update">Este disponibilă o nouă versiune a aplicației. Click pentru a actualiza!</string>
     <string name="notification_last_time_used_title">A trecut ceva timp!</string>

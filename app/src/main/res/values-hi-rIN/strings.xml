@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_description">आखिरी एंड्रॉयड क्लीनर जिसकी आपको हर दिन उपयोग के लिए आवश्यकता होगी!</string>
+    <string name="app_short_description">सीखें कि कैसे आसान एप्लिकेशन्स बनाएं Android Studio में।</string>
     <string name="notification_update_title">एक नया अद्यतन उपलब्ध!</string>
     <string name="summary_notification_update">ऐप का नया संस्करण उपलब्ध है। अपडेट करने के लिए क्लिक करें!</string>
     <string name="notification_last_time_used_title">इसे बीते एक अर्सा हो गया है!</string>

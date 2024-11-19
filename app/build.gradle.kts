@@ -4,10 +4,10 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.googlePlayServices)
-    alias(libs.plugins.googleOssServices)
     alias(libs.plugins.googleFirebase)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.devToolsKsp)
+    alias(libs.plugins.about.libraries)
 }
 
 android {
@@ -17,7 +17,7 @@ android {
         applicationId = "com.d4rk.androidtutorials"
         minSdk = 23
         targetSdk = 35
-        versionCode = 81
+        versionCode = 84
         versionName = "1.0.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         resourceConfigurations += listOf(
@@ -136,7 +136,6 @@ dependencies {
     // Google
     implementation(dependencyNotation = libs.play.services.ads)
     implementation(dependencyNotation = libs.billing)
-    implementation(dependencyNotation = libs.play.services.oss.licenses)
     implementation(dependencyNotation = libs.material)
     implementation(dependencyNotation = libs.app.update.ktx)
     implementation(dependencyNotation = libs.review.ktx)
@@ -160,6 +159,9 @@ dependencies {
 
     // Code view
     implementation(dependencyNotation = libs.compose.code.editor)
+    implementation(dependencyNotation = "io.noties.markwon:core:4.6.2")
+
+    implementation(dependencyNotation = libs.aboutlibraries)
 
     // Test
     testImplementation(dependencyNotation = libs.junit)

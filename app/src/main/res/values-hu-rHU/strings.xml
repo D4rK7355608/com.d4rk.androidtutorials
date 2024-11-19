@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_description">Az utolsó Android Cleaner, amelyre a mindennapi használat során szüksége lesz!</string>
+    <string name="app_short_description">Ismerd meg, hogyan készíts egyszerű alkalmazásokat az Android Studioval.</string>
     <string name="notification_update_title">Új frissítés érhető el!</string>
     <string name="summary_notification_update">Elérhető az alkalmazás új verziója. Kattintson a frissítéshez!</string>
     <string name="notification_last_time_used_title">Már egy ideje!</string>

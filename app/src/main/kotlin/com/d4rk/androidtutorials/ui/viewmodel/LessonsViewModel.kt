@@ -10,47 +10,23 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 open class LessonsViewModel(application : Application) : BaseViewModel(application = application) {
+
     val _lessons = MutableStateFlow<List<UiLesson>>(emptyList())
     val lessons : StateFlow<List<UiLesson>> = _lessons.asStateFlow()
 
-    private val _visibilityStates = mutableListOf<MutableStateFlow<Boolean>>()
+    private val _visibilityStates = MutableStateFlow<List<Boolean>>(emptyList())
+    val visibilityStates : StateFlow<List<Boolean>> = _visibilityStates.asStateFlow()
 
     fun initializeVisibilityStates() {
-        if (_visibilityStates.size < _lessons.value.size) {
-            _visibilityStates.addAll(List(size = _lessons.value.size - _visibilityStates.size) { MutableStateFlow(
-                value = false
-            ) })
-        }
-
-        viewModelScope.launch {
-            _visibilityStates.forEachIndexed { index, visibilityState ->
-                delay(timeMillis = index * 48L)
-                visibilityState.value = true
-            }
-        }
-    }
-
-
-    fun getVisibilityState(index : Int) : StateFlow<Boolean> {
-        val lessonsSize = _lessons.value.size
-
-        if (index in 0 until lessonsSize && index >= _visibilityStates.size) {
-            synchronized(_visibilityStates) {
-                repeat(times = lessonsSize - _visibilityStates.size) {
-                    _visibilityStates.add(MutableStateFlow(false))
-                }
-            }
-
-            viewModelScope.launch {
-                _visibilityStates.asReversed().withIndex().forEach { (i , state) ->
-                    if (! state.value && i >= index) {
-                        delay(timeMillis = i * 50L)
-                        state.value = true
-                    }
+        viewModelScope.launch(coroutineExceptionHandler) {
+            delay(timeMillis = 50L)
+            _visibilityStates.value = List(_lessons.value.size) { false }
+            _lessons.value.indices.forEach { index ->
+                delay(timeMillis = index * 8L)
+                _visibilityStates.value = List(_visibilityStates.value.size) { lessonIndex ->
+                    lessonIndex == index || _visibilityStates.value[lessonIndex]
                 }
             }
         }
-
-        return _visibilityStates.getOrElse(index) { MutableStateFlow(false) }
     }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_description">Der letzte Android Cleaner, den Sie jemals für den täglichen Gebrauch brauchen werden!</string>
+    <string name="app_short_description">Erfahren Sie, wie Sie einfache Apps in Android Studio erstellen.</string>
     <string name="notification_update_title">Ein neues Update verfügbar!</string>
     <string name="summary_notification_update">Eine neue Version der App ist verfügbar. Klicken Sie hier, um zu aktualisieren!</string>
     <string name="notification_last_time_used_title">Es ist schon eine Weile her!</string>

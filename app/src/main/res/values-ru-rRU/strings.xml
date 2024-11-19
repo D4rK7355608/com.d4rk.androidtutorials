@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_description">Последний очиститель Android, который вам когда-либо понадобится для повседневного использования!</string>
+    <string name="app_short_description">Изучите, как создавать простые приложения в Android Studio.</string>
     <string name="notification_update_title">Доступно новое обновление!</string>
     <string name="summary_notification_update">Доступна новая версия приложения. Нажмите для обновления!</string>
     <string name="notification_last_time_used_title">Прошло много времени!</string>

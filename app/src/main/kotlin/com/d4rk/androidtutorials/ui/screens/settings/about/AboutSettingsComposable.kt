@@ -21,8 +21,7 @@ import com.d4rk.androidtutorials.ui.components.PreferenceItem
 import com.d4rk.androidtutorials.ui.components.Snackbar
 import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffoldWithBackButton
 import com.d4rk.androidtutorials.utils.ClipboardUtil
-import com.d4rk.androidtutorials.utils.IntentUtils
-import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
+import com.mikepenz.aboutlibraries.LibsBuilder
 
 @Composable
 fun AboutSettingsComposable(activity : AboutSettingsActivity) {
@@ -52,12 +51,20 @@ fun AboutSettingsComposable(activity : AboutSettingsActivity) {
                     )
                 }
                 item(key = "oss_licenses") {
-                    PreferenceItem(title = stringResource(com.google.android.gms.oss.licenses.R.string.oss_license_title) ,
+                    PreferenceItem(title = stringResource(R.string.oss_license_title) ,
                                    summary = stringResource(id = R.string.summary_preference_settings_oss) ,
                                    onClick = {
-                                       IntentUtils.openActivity(
-                                           context , OssLicensesMenuActivity::class.java
-                                       )
+                                       LibsBuilder()
+                                               .withVersionShown(showVersion = true)
+                                               .withAboutIconShown(aboutShowIcon = true)
+                                               .withAboutAppName(aboutAppName = context.getString(R.string.app_name))
+                                               .withActivityTitle(activityTitle = context.getString(R.string.oss_license_title))
+                                               .withEdgeToEdge(asEdgeToEdge = true)
+                                               .withLicenseShown(showLicense = true)
+                                               .withSearchEnabled(searchEnabled = true)
+                                               .withShowLoadingProgress(showLoadingProgress = true)
+                                               .withAboutDescription(context.getString(R.string.app_short_description))
+                                               .activity(context)
                                    })
                 }
                 item(key = "device_info_category") {

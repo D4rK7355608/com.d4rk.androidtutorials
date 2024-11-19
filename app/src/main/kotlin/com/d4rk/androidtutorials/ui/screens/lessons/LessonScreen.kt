@@ -18,7 +18,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.CopyAll
@@ -73,6 +73,7 @@ fun LessonScreen(
     activity : LessonActivity ,
     viewModel : LessonViewModel ,
 ) {
+    val dataStore: DataStore = DataStore.getInstance(context = activity)
     val uiErrorModel : UiErrorModel by viewModel.uiErrorModel.collectAsState()
     val isLoading : Boolean by viewModel.isLoading.collectAsState()
     val transition : Transition<Boolean> =
@@ -99,51 +100,54 @@ fun LessonScreen(
                         .padding(paddingValues),
                 contentPadding = PaddingValues(16.dp)
             ) {
-                items(lesson.content , key = { item -> item.id }) { contentItem ->
+                itemsIndexed(lesson.content, key = { _, item -> item.id }) { index, contentItem ->
                     when (contentItem.type) {
                         LessonContentTypes.HEADER -> {
                             StyledText(
-                                text = contentItem.text ,
-                                style = TextStyles.header() ,
+                                text = contentItem.text,
+                                style = TextStyles.header(),
                                 color = Colors.primaryText()
                             )
                         }
 
                         LessonContentTypes.TEXT -> {
                             StyledText(
-                                text = contentItem.text ,
-                                style = TextStyles.body() ,
+                                text = contentItem.text,
+                                style = TextStyles.body(),
                                 color = Colors.secondaryText()
                             )
                         }
 
                         LessonContentTypes.IMAGE -> {
                             StyledImage(
-                                imageUrl = contentItem.src , contentDescription = "Lesson Image"
+                                imageUrl = contentItem.src,
+                                contentDescription = "Lesson Image"
                             )
                         }
 
                         LessonContentTypes.CODE -> {
-                            CodeBlock(code = contentItem.code , language = contentItem.language)
+                            CodeBlock(code = contentItem.code, language = contentItem.language)
                         }
 
                         LessonContentTypes.AD_BANNER -> {
-                            AdBanner(dataStore = DataStore(activity))
+                            AdBanner(dataStore = dataStore)
                         }
 
                         LessonContentTypes.AD_BANNER_FULL -> {
-                            AdBannerFull(dataStore = DataStore(activity))
+                            AdBannerFull(dataStore = dataStore)
                         }
 
                         LessonContentTypes.AD_LARGE_BANNER -> {
-                            LargeBannerAdsComposable(dataStore = DataStore(activity))
+                            LargeBannerAdsComposable(dataStore = dataStore)
                         }
 
                         else -> {
                             Text(text = "Unsupported content type: ${contentItem.type}")
                         }
                     }
-                    Spacer(modifier = Modifier.height(8.dp))
+                    if (index < lesson.content.lastIndex) {
+                        Spacer(modifier = Modifier.height(8.dp))
+                    }
                 }
             }
         }

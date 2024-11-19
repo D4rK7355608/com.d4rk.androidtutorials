@@ -26,54 +26,49 @@ import com.d4rk.androidtutorials.ui.components.animations.bounceClick
 
 @Composable
 fun BottomNavigationBar(
-    navController: NavController,
-    dataStore: DataStore,
-    view: View
+    navController : NavController , dataStore : DataStore , view : View
 ) {
-    val bottomBarItems: List<BottomNavigationScreen> = listOf(
+    val bottomBarItems : List<BottomNavigationScreen> = listOf(
         BottomNavigationScreen.Home ,
         BottomNavigationScreen.StudioBot ,
         BottomNavigationScreen.Favorites
     )
-    val showLabels: Boolean =
-        dataStore.getShowBottomBarLabels().collectAsState(initial = true).value
+    val showLabels : Boolean =
+            dataStore.getShowBottomBarLabels().collectAsState(initial = true).value
 
     Column {
         AdBannerFull(
-            modifier = Modifier.fillMaxWidth(), dataStore = dataStore
+            modifier = Modifier.fillMaxWidth() , dataStore = dataStore
         )
         NavigationBar {
-            val navBackStackEntry: NavBackStackEntry? by navController.currentBackStackEntryAsState()
-            val currentRoute: String? = navBackStackEntry?.destination?.route
+            val navBackStackEntry : NavBackStackEntry? by navController.currentBackStackEntryAsState()
+            val currentRoute : String? = navBackStackEntry?.destination?.route
             bottomBarItems.forEach { screen ->
-                NavigationBarItem(modifier = Modifier.bounceClick(),
-                    icon = {
-                        val iconResource: ImageVector =
+                NavigationBarItem(icon = {
+                    val iconResource : ImageVector =
                             if (currentRoute == screen.route) screen.selectedIcon else screen.icon
-                        Icon(
-                            iconResource,
-                            contentDescription = null
-                        )
-                    },
-                    label = {
-                        if (showLabels) Text(
-                            text = stringResource(id = screen.title),
-                            overflow = TextOverflow.Ellipsis,
-                            modifier = Modifier.basicMarquee()
-                        )
-                    },
-                    selected = currentRoute == screen.route,
-                    onClick = {
-                        view.playSoundEffect(SoundEffectConstants.CLICK)
-                        if (currentRoute != screen.route) {
-                            navController.navigate(screen.route) {
-                                popUpTo(navController.graph.startDestinationId) {
-                                    saveState = true
-                                }
-                                launchSingleTop = true
+                    Icon(
+                        imageVector = iconResource ,
+                        modifier = Modifier.bounceClick() ,
+                        contentDescription = null
+                    )
+                } , label = {
+                    if (showLabels) Text(
+                        text = stringResource(id = screen.title) ,
+                        overflow = TextOverflow.Ellipsis ,
+                        modifier = Modifier.basicMarquee()
+                    )
+                } , selected = currentRoute == screen.route , onClick = {
+                    view.playSoundEffect(SoundEffectConstants.CLICK)
+                    if (currentRoute != screen.route) {
+                        navController.navigate(screen.route) {
+                            popUpTo(navController.graph.startDestinationId) {
+                                saveState = false
                             }
+                            launchSingleTop = true
                         }
-                    })
+                    }
+                })
             }
         }
     }

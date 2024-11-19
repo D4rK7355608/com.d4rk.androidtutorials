@@ -49,13 +49,17 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.fromHtml
 import androidx.compose.ui.unit.dp
+import com.d4rk.androidtutorials.BuildConfig
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.ui.components.animations.bounceClick
 import com.d4rk.androidtutorials.ui.components.dialogs.VersionInfoAlertDialog
+import com.d4rk.androidtutorials.utils.ChangelogUtils
 import com.d4rk.androidtutorials.utils.IntentUtils
-import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import com.google.android.play.core.review.ReviewInfo
+import com.mikepenz.aboutlibraries.LibsBuilder
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -67,6 +71,17 @@ fun HelpComposable(activity : HelpActivity , viewModel : HelpViewModel) {
     val view : View = LocalView.current
     val showDialog : MutableState<Boolean> = remember { mutableStateOf(value = false) }
     val reviewInfo : ReviewInfo? = viewModel.reviewInfo.value
+
+    var changelogString by remember { mutableStateOf<String?>(null) }
+
+    LaunchedEffect(Unit) {
+        val markdown = ChangelogUtils.getChangelogMarkdown()
+        changelogString = ChangelogUtils.extractLatestVersionChangelog(
+            markdown,
+            BuildConfig.VERSION_NAME
+        )
+    }
+
     if (reviewInfo != null) {
         LaunchedEffect(key1 = reviewInfo) {
             viewModel.requestReviewFlow()
@@ -145,12 +160,35 @@ fun HelpComposable(activity : HelpActivity , viewModel : HelpViewModel) {
                                              )
                                          })
                         DropdownMenuItem(modifier = Modifier.bounceClick() ,
-                                         text = { Text(text = stringResource(com.google.android.gms.oss.licenses.R.string.oss_license_title)) } ,
+                                         text = { Text(text = stringResource(R.string.oss_license_title)) } ,
                                          onClick = {
                                              view.playSoundEffect(SoundEffectConstants.CLICK)
-                                             IntentUtils.openActivity(
-                                                 context , OssLicensesMenuActivity::class.java
-                                             )
+                                             LibsBuilder()
+                                                     .withActivityTitle(activityTitle =  context.getString(R.string.oss_license_title))
+                                                     .withEdgeToEdge(asEdgeToEdge = true)
+                                                     .withShowLoadingProgress(showLoadingProgress = true)
+                                                     .withSearchEnabled(searchEnabled = true)
+                                                     .withAboutIconShown(aboutShowIcon = true)
+                                                     .withAboutAppName(aboutAppName = context.getString(R.string.app_name))
+                                                     .withVersionShown(showVersion = true)
+                                                     .withAboutVersionString(aboutVersionString = BuildConfig.VERSION_NAME)
+
+                                                     .withLicenseShown(showLicense = true)
+                                                     .withAboutVersionShown(aboutShowVersion = true)
+                                                     .withAboutVersionShownName(aboutShowVersion = true)
+                                                     .withAboutVersionShownCode(aboutShowVersion = true)
+
+                                                     .withAboutSpecial1(aboutAppSpecial1 = context.getString(R.string.eula_title))
+                                                     .withAboutSpecial1Description(aboutAppSpecial1Description = context.getString(R.string.eula))
+                                                     .withAboutSpecial2(aboutAppSpecial2 = context.getString(R.string.changelog))
+                                                     .withAboutSpecial2Description(
+                                                         AnnotatedString.fromHtml(changelogString.toString())
+                                                                 .toString())
+                                                     .withAboutSpecial3("5withAboutSpecial3")
+                                                     .withAboutSpecial3Description(context.getString(R.string.app_short_description))
+
+                                                     .withAboutDescription(context.getString(R.string.app_short_description))
+                                                     .activity(context)
                                          })
                     }
                     if (showDialog.value) {
