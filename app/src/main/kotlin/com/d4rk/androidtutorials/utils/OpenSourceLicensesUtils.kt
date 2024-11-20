@@ -1,6 +1,13 @@
 package com.d4rk.androidtutorials.utils
 
-import android.util.Log
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.State
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import com.d4rk.androidtutorials.BuildConfig
+import com.d4rk.androidtutorials.R
+import com.d4rk.androidtutorials.utils.helpers.getStringResource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.commonmark.parser.Parser
@@ -12,70 +19,79 @@ import java.net.URL
 
 object OpenSourceLicensesUtils {
 
-    suspend fun getChangelogMarkdown() : String {
-        var markdown = ""
-        try {
-            withContext(Dispatchers.IO) {
-                val url =
-                        URL("https://raw.githubusercontent.com/D4rK7355608/com.d4rk.androidtutorials/refs/heads/jetpack_compose_rework/CHANGELOG.md")
-                val connection = url.openConnection() as HttpURLConnection
-                connection.requestMethod = "GET"
-
-                if (connection.responseCode == HttpURLConnection.HTTP_OK) {
-                    val reader = BufferedReader(InputStreamReader(connection.inputStream))
-                    reader.use { text ->
-                        markdown = text.readText()
+    private suspend fun getChangelogMarkdown(): String {
+        return withContext(Dispatchers.IO) {
+            val url = URL("https://raw.githubusercontent.com/D4rK7355608/com.d4rk.androidtutorials/refs/heads/jetpack_compose_rework/CHANGELOG.md")
+            (url.openConnection() as? HttpURLConnection)?.let { connection ->
+                try {
+                    connection.requestMethod = "GET"
+                    if (connection.responseCode == HttpURLConnection.HTTP_OK) {
+                        BufferedReader(InputStreamReader(connection.inputStream)).use { reader ->
+                            return@withContext reader.readText()
+                        }
+                    } else {
+                        getStringResource(R.string.error_loading_changelog)
                     }
+                } finally {
+                    connection.disconnect()
                 }
-                else {
-                    markdown = "Error loading changelog"
-                }
-                connection.disconnect()
-            }
-        } catch (e : Exception) {
-            Log.e("Changelog" , "Exception" , e)
+            } ?: getStringResource(R.string.error_loading_changelog)
         }
-
-        return markdown
     }
 
-    fun extractLatestVersionChangelog(markdown : String , currentVersion : String) : String {
-        val regex = Regex(pattern = "# Version\\s+$currentVersion:\\s*((?:- .*\\n?)+)")
+    private suspend fun getEulaMarkdown(): String {
+        return withContext(Dispatchers.IO) {
+            val url = URL("https://raw.githubusercontent.com/D4rK7355608/com.d4rk.androidtutorials/refs/heads/jetpack_compose_rework/EULA.md")
+            (url.openConnection() as? HttpURLConnection)?.let { connection ->
+                try {
+                    connection.requestMethod = "GET"
+                    if (connection.responseCode == HttpURLConnection.HTTP_OK) {
+                        BufferedReader(InputStreamReader(connection.inputStream)).use { reader ->
+                            return@withContext reader.readText()
+                        }
+                    } else {
+                        getStringResource(R.string.error_loading_eula)
+                    }
+                } finally {
+                    connection.disconnect()
+                }
+            } ?: getStringResource(R.string.error_loading_eula)
+        }
+    }
+
+    private fun extractLatestVersionChangelog(markdown: String): String {
+        val currentVersion = BuildConfig.VERSION_NAME
+        val regex = Regex(pattern = "# Version\\s+$currentVersion:\\s*([\\s\\S]*?)(?=# Version|$)")
         val match = regex.find(markdown)
-        return match?.groups?.get(1)?.value ?: "No changelog available for version $currentVersion"
+        return match?.groups?.get(1)?.value?.trim() ?: "No changelog available for version $currentVersion"
     }
 
-    fun convertMarkdownToHtml(markdown : String) : String {
+    private fun convertMarkdownToHtml(markdown: String): String {
         val parser = Parser.builder().build()
         val renderer = HtmlRenderer.builder().build()
         val document = parser.parse(markdown)
         return renderer.render(document)
     }
 
-    suspend fun getEulaHtml() : String {
-        var html = ""
-        try {
-            withContext(Dispatchers.IO) {
-                val url =
-                        URL("https://raw.githubusercontent.com/D4rK7355608/com.d4rk.androidtutorials/refs/heads/jetpack_compose_rework/EULA.html")
-                val connection = url.openConnection() as HttpURLConnection
-                connection.requestMethod = "GET"
+    suspend fun loadHtmlData(): Pair<String?, String?> {
+        val changelogMarkdown = getChangelogMarkdown()
+        val extractedChangelog = extractLatestVersionChangelog(changelogMarkdown)
+        val changelogHtml = convertMarkdownToHtml(extractedChangelog)
 
-                if (connection.responseCode == HttpURLConnection.HTTP_OK) {
-                    val reader = BufferedReader(InputStreamReader(connection.inputStream))
-                    reader.use { text ->
-                        html = text.readText()
-                    }
-                }
-                else {
-                    html = "Error loading EULA"
-                }
-                connection.disconnect()
-            }
-        } catch (e : Exception) {
-            Log.e("EULA" , "Exception" , e)
-        }
+        val eulaMarkdown = getEulaMarkdown()
+        val eulaHtml = convertMarkdownToHtml(eulaMarkdown)
 
-        return html
+        return changelogHtml to eulaHtml
     }
+}
+
+@Composable
+fun rememberHtmlData(): State<Pair<String?, String?>> {
+    val htmlDataState = remember { mutableStateOf<Pair<String?, String?>>(value = null to null) }
+
+    LaunchedEffect(Unit) {
+        htmlDataState.value = OpenSourceLicensesUtils.loadHtmlData()
+    }
+
+    return htmlDataState
 }

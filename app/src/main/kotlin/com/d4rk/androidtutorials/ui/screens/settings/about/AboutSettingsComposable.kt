@@ -21,7 +21,8 @@ import com.d4rk.androidtutorials.ui.components.PreferenceItem
 import com.d4rk.androidtutorials.ui.components.Snackbar
 import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffoldWithBackButton
 import com.d4rk.androidtutorials.utils.ClipboardUtil
-import com.mikepenz.aboutlibraries.LibsBuilder
+import com.d4rk.androidtutorials.utils.IntentUtils
+import com.d4rk.androidtutorials.utils.rememberHtmlData
 
 @Composable
 fun AboutSettingsComposable(activity : AboutSettingsActivity) {
@@ -29,9 +30,12 @@ fun AboutSettingsComposable(activity : AboutSettingsActivity) {
 
     var showSnackbar : Boolean by remember { mutableStateOf(value = false) }
 
-    TopAppBarScaffoldWithBackButton(
-        title = stringResource(id = R.string.about) ,
-        onBackClicked = { activity.finish() }) { paddingValues ->
+    val htmlData = rememberHtmlData()
+    val changelogHtmlString = htmlData.value.first
+    val eulaHtmlString = htmlData.value.second
+
+    TopAppBarScaffoldWithBackButton(title = stringResource(id = R.string.about) ,
+                                    onBackClicked = { activity.finish() }) { paddingValues ->
         Box(modifier = Modifier.padding(paddingValues)) {
             LazyColumn(
                 modifier = Modifier.fillMaxHeight()
@@ -55,17 +59,11 @@ fun AboutSettingsComposable(activity : AboutSettingsActivity) {
                     PreferenceItem(title = stringResource(R.string.oss_license_title) ,
                                    summary = stringResource(id = R.string.summary_preference_settings_oss) ,
                                    onClick = {
-                                       LibsBuilder().withVersionShown(showVersion = true)
-                                               .withAboutIconShown(aboutShowIcon = true)
-                                               .withAboutAppName(aboutAppName = context.getString(R.string.app_name))
-                                               .withActivityTitle(
-                                                   activityTitle = context.getString(R.string.oss_license_title)
-                                               ).withEdgeToEdge(asEdgeToEdge = true)
-                                               .withLicenseShown(showLicense = true)
-                                               .withSearchEnabled(searchEnabled = true)
-                                               .withShowLoadingProgress(showLoadingProgress = true)
-                                               .withAboutDescription(context.getString(R.string.app_short_description))
-                                               .activity(context)
+                                       IntentUtils.openLicensesScreen(
+                                           context = context ,
+                                           eulaHtmlString = eulaHtmlString ,
+                                           changelogHtmlString = changelogHtmlString
+                                       )
                                    })
                 }
                 item(key = "device_info_category") {

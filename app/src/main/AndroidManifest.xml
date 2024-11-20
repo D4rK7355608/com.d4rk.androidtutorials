@@ -118,14 +118,6 @@
             android:parentActivityName=".ui.screens.settings.SettingsActivity" />
 
         <activity
-            android:name="com.google.android.gms.oss.licenses.OssLicensesMenuActivity"
-            android:theme="@style/AppThemeActionBar" />
-
-        <activity
-            android:name="com.google.android.gms.oss.licenses.OssLicensesActivity"
-            android:theme="@style/AppThemeActionBar" />
-
-        <activity
             android:name=".ui.screens.help.HelpActivity"
             android:parentActivityName=".ui.screens.main.MainActivity" />
 

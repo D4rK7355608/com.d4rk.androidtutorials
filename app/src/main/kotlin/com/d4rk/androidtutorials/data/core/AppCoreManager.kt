@@ -2,6 +2,7 @@
 
 package com.d4rk.androidtutorials.data.core
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.Application
 import android.os.Bundle
@@ -34,10 +35,14 @@ class AppCoreManager : MultiDexApplication() , Application.ActivityLifecycleCall
 
     companion object {
         lateinit var database : AppDatabase
+        @SuppressLint("StaticFieldLeak")
+        lateinit var instance: AppCoreManager
+            private set
     }
 
     override fun onCreate() {
         super.onCreate()
+        instance = this
         registerActivityLifecycleCallbacks(this)
         ProcessLifecycleOwner.get().lifecycle.addObserver(observer = this)
         database = Room.databaseBuilder(this , AppDatabase::class.java , "Android Studio Tutorials")

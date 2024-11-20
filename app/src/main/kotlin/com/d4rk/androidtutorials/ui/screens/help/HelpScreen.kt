@@ -49,17 +49,13 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.AnnotatedString
-import androidx.compose.ui.text.fromHtml
 import androidx.compose.ui.unit.dp
-import com.d4rk.androidtutorials.BuildConfig
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.ui.components.animations.bounceClick
 import com.d4rk.androidtutorials.ui.components.dialogs.VersionInfoAlertDialog
 import com.d4rk.androidtutorials.utils.IntentUtils
-import com.d4rk.androidtutorials.utils.OpenSourceLicensesUtils
+import com.d4rk.androidtutorials.utils.rememberHtmlData
 import com.google.android.play.core.review.ReviewInfo
-import com.mikepenz.aboutlibraries.LibsBuilder
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -72,19 +68,9 @@ fun HelpComposable(activity : HelpActivity , viewModel : HelpViewModel) {
     val showDialog : MutableState<Boolean> = remember { mutableStateOf(value = false) }
     val reviewInfo : ReviewInfo? = viewModel.reviewInfo.value
 
-    var changelogHtmlString by remember { mutableStateOf<String?>(null) }
-    var eulaHtmlString by remember { mutableStateOf<String?>(null) }
-
-    LaunchedEffect(Unit) {
-        val markdown = OpenSourceLicensesUtils.getChangelogMarkdown()
-        val extractedMarkdown = OpenSourceLicensesUtils.extractLatestVersionChangelog(
-            markdown , BuildConfig.VERSION_NAME
-        )
-        changelogHtmlString = OpenSourceLicensesUtils.convertMarkdownToHtml(extractedMarkdown)
-
-        val eulaHtml = OpenSourceLicensesUtils.getEulaHtml()
-        eulaHtmlString = eulaHtml
-    }
+    val htmlData = rememberHtmlData()
+    val changelogHtmlString = htmlData.value.first
+    val eulaHtmlString = htmlData.value.second
 
     if (reviewInfo != null) {
         LaunchedEffect(key1 = reviewInfo) {
@@ -167,39 +153,11 @@ fun HelpComposable(activity : HelpActivity , viewModel : HelpViewModel) {
                                          text = { Text(text = stringResource(R.string.oss_license_title)) } ,
                                          onClick = {
                                              view.playSoundEffect(SoundEffectConstants.CLICK)
-                                             LibsBuilder().withActivityTitle(
-                                                         activityTitle = context.getString(R.string.oss_license_title)
-                                                     ).withEdgeToEdge(asEdgeToEdge = true)
-                                                     .withShowLoadingProgress(showLoadingProgress = true)
-                                                     .withSearchEnabled(searchEnabled = true)
-                                                     .withAboutIconShown(aboutShowIcon = true)
-                                                     .withAboutAppName(
-                                                         aboutAppName = context.getString(R.string.app_name)
-                                                     ).withVersionShown(showVersion = true)
-                                                     .withAboutVersionString(aboutVersionString = "${BuildConfig.VERSION_NAME} (${BuildConfig.VERSION_CODE})")
-
-                                                     .withLicenseShown(showLicense = true)
-                                                     .withAboutVersionShown(aboutShowVersion = true)
-                                                     .withAboutVersionShownName(aboutShowVersion = true)
-                                                     .withAboutVersionShownCode(aboutShowVersion = true)
-
-                                                     .withAboutSpecial1(
-                                                         aboutAppSpecial1 = context.getString(
-                                                             R.string.eula_title
-                                                         )
-                                                     ).withAboutSpecial1Description(
-                                                         aboutAppSpecial1Description = eulaHtmlString
-                                                             ?: context.getString(R.string.loading_eula)
-                                                     ).withAboutSpecial2(
-                                                         aboutAppSpecial2 = context.getString(R.string.changelog)
-                                                     ).withAboutSpecial2Description(
-                                                         AnnotatedString
-                                                                 .fromHtml(changelogHtmlString.toString())
-                                                                 .toString()
-                                                     )
-
-                                                     .withAboutDescription(context.getString(R.string.app_short_description))
-                                                     .activity(context)
+                                             IntentUtils.openLicensesScreen(
+                                                 context = context ,
+                                                 eulaHtmlString = eulaHtmlString ,
+                                                 changelogHtmlString = changelogHtmlString
+                                             )
                                          })
                     }
                     if (showDialog.value) {
