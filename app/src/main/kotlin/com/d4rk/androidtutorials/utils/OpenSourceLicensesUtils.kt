@@ -61,7 +61,7 @@ object OpenSourceLicensesUtils {
 
     private fun extractLatestVersionChangelog(markdown: String): String {
         val currentVersion = BuildConfig.VERSION_NAME
-        val regex = Regex(pattern = "# Version\\s+$currentVersion:\\s*([\\s\\S]*?)(?=# Version|$)")
+        val regex = Regex(pattern = "(# Version\\s+$currentVersion:\\s*[\\s\\S]*?)(?=# Version|$)")
         val match = regex.find(markdown)
         return match?.groups?.get(1)?.value?.trim() ?: "No changelog available for version $currentVersion"
     }
