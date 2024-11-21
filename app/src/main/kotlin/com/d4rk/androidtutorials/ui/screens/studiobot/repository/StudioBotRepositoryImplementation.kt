@@ -11,7 +11,7 @@ abstract class StudioBotRepositoryImplementation(val application : Application) 
     fun createChatSessionImplementation(modelName : String , apiKey : String) : Chat {
         val generationConfig = com.google.ai.client.generativeai.type.generationConfig {
             temperature = 1f
-            topK = 64
+            topK = 40
             topP = 0.95f
             maxOutputTokens = 8192
             responseMimeType = "text/plain"
@@ -23,8 +23,7 @@ abstract class StudioBotRepositoryImplementation(val application : Application) 
         return createdChat
     }
 
-
     suspend fun sendMessageToChatImplementation(message : String) : GenerateContentResponse {
-        return chat.sendMessage(message)
+        return chat.sendMessage(message.trim())
     }
 }
