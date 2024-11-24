@@ -26,7 +26,6 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.ExtendedFloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.LargeTopAppBar
@@ -39,6 +38,7 @@ import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -51,6 +51,7 @@ import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.d4rk.androidtutorials.R
+import com.d4rk.androidtutorials.ui.components.AnimatedExtendedFloatingActionButton
 import com.d4rk.androidtutorials.ui.components.animations.bounceClick
 import com.d4rk.androidtutorials.ui.components.dialogs.VersionInfoAlertDialog
 import com.d4rk.androidtutorials.utils.IntentUtils
@@ -65,6 +66,7 @@ fun HelpScreen(activity : HelpActivity , viewModel : HelpViewModel) {
     var showMenu : Boolean by remember { mutableStateOf(value = false) }
     val context : Context = LocalContext.current
     val view : View = LocalView.current
+    val isFabVisible by viewModel.isFabVisible.collectAsState()
     val showDialog : MutableState<Boolean> = remember { mutableStateOf(value = false) }
     val reviewInfo : ReviewInfo? = viewModel.reviewInfo.value
 
@@ -150,7 +152,7 @@ fun HelpScreen(activity : HelpActivity , viewModel : HelpViewModel) {
                                              )
                                          })
                         DropdownMenuItem(modifier = Modifier.bounceClick() ,
-                                         text = { Text(text = stringResource(R.string.oss_license_title)) } ,
+                                         text = { Text(text = stringResource(id= R.string.oss_license_title)) } ,
                                          onClick = {
                                              view.playSoundEffect(SoundEffectConstants.CLICK)
                                              IntentUtils.openLicensesScreen(
@@ -171,22 +173,20 @@ fun HelpScreen(activity : HelpActivity , viewModel : HelpViewModel) {
                 )
         } ,
         floatingActionButton = {
-            ExtendedFloatingActionButton(text = { Text(text = stringResource(id = R.string.feedback)) } ,
-                                         onClick = {
-                                             view.playSoundEffect(SoundEffectConstants.CLICK)
-                                             viewModel.reviewInfo.value?.let { safeReviewInfo ->
-                                                 viewModel.launchReviewFlow(
-                                                     activity , safeReviewInfo
-                                                 )
-                                             }
-                                         } ,
-                                         icon = {
-                                             Icon(
-                                                 Icons.Default.MailOutline ,
-                                                 contentDescription = null
-                                             )
-                                         } ,
-                                         modifier = Modifier.bounceClick())
+            AnimatedExtendedFloatingActionButton(
+                visible = isFabVisible,
+                onClick = {
+                    view.playSoundEffect(SoundEffectConstants.CLICK)
+                    viewModel.reviewInfo.value?.let { safeReviewInfo ->
+                        viewModel.launchReviewFlow(
+                            activity , safeReviewInfo
+                        )
+                    }
+                } , text = { Text(text = stringResource(id = R.string.feedback)) } , icon = {
+                    Icon(
+                        Icons.Default.MailOutline , contentDescription = null
+                    )
+                })
         } ,
     ) { paddingValues ->
         Box(
