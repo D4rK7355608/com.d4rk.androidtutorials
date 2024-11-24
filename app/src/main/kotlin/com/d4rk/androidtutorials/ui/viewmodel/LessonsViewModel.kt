@@ -14,9 +14,6 @@ open class LessonsViewModel(application : Application) : BaseViewModel(applicati
     val _lessons = MutableStateFlow<List<UiLesson>>(emptyList())
     val lessons : StateFlow<List<UiLesson>> = _lessons.asStateFlow()
 
-    private val _visibilityStates = MutableStateFlow<List<Boolean>>(emptyList())
-    val visibilityStates : StateFlow<List<Boolean>> = _visibilityStates.asStateFlow()
-
     fun initializeVisibilityStates() {
         viewModelScope.launch(coroutineExceptionHandler) {
             delay(timeMillis = 50L)
