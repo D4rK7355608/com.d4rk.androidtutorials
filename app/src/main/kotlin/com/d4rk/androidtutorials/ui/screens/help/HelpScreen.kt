@@ -59,7 +59,7 @@ import com.google.android.play.core.review.ReviewInfo
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HelpComposable(activity : HelpActivity , viewModel : HelpViewModel) {
+fun HelpScreen(activity : HelpActivity , viewModel : HelpViewModel) {
     val scrollBehavior : TopAppBarScrollBehavior =
             TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
     var showMenu : Boolean by remember { mutableStateOf(value = false) }

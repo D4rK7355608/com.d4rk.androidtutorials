@@ -8,14 +8,13 @@ import com.d4rk.androidtutorials.data.database.converters.Converters
 @Entity(tableName = "Favorite Lessons")
 @TypeConverters(Converters::class)
 data class FavoriteLessonTable(
-    @PrimaryKey val id : String ,
-    val title : String ,
-    val description : String ,
-    val type : String ,
-    val tags : List<String> ,
-    val bannerImageUrl : String ,
+    @PrimaryKey val lessonId : String ,
+    val lessonTitle : String ,
+    val lessonDescription : String ,
+    val lessonType : String ,
+    val lessonTags : List<String> ,
+    val thumbnailImageUrl : String ,
     val squareImageUrl : String ,
     val deepLinkPath : String ,
-    val articleType : String ,
     val isFavorite : Boolean
 )

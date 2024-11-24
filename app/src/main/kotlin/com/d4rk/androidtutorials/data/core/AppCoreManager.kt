@@ -15,6 +15,7 @@ import androidx.room.Room
 import com.d4rk.androidtutorials.data.core.ads.AdsCoreManager
 import com.d4rk.androidtutorials.data.core.datastore.DataStoreCoreManager
 import com.d4rk.androidtutorials.data.database.AppDatabase
+import com.d4rk.androidtutorials.data.database.MIGRATION_1_2
 //import io.ktor.client.HttpClient
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -45,8 +46,10 @@ class AppCoreManager : MultiDexApplication() , Application.ActivityLifecycleCall
         instance = this
         registerActivityLifecycleCallbacks(this)
         ProcessLifecycleOwner.get().lifecycle.addObserver(observer = this)
-        database = Room.databaseBuilder(this , AppDatabase::class.java , "Android Studio Tutorials")
-                .fallbackToDestructiveMigrationFrom().build()
+        database = Room.databaseBuilder(this, AppDatabase::class.java, "Android Studio Tutorials")
+                .addMigrations(MIGRATION_1_2) // Add the migration here
+                .fallbackToDestructiveMigration() // Add this if you want destructive migrations in case of future changes
+                .build()
         CoroutineScope(Dispatchers.Main).launch {
             if (dataStoreCoreManager.initializeDataStore()) {
                 proceedToNextStage()

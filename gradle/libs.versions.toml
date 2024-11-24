@@ -7,6 +7,7 @@ coil = "3.0.3"
 aboutlibraries = "11.2.3"
 composeBom = "2024.11.00"
 composeCodeEditor = "2.0.3"
+core = "4.6.2"
 coreSplashscreen = "1.0.1"
 datastoreCore = "1.1.1"
 firebaseBom = "33.6.0"
@@ -54,6 +55,7 @@ androidx-work-runtime-ktx = { module = "androidx.work:work-runtime-ktx", version
 app-update-ktx = { module = "com.google.android.play:app-update-ktx", version.ref = "appUpdateKtx" }
 billing = { module = "com.android.billingclient:billing", version.ref = "billing" }
 compose-code-editor = { module = "com.github.qawaz:compose-code-editor", version.ref = "composeCodeEditor" }
+core = { module = "io.noties.markwon:core", version.ref = "core" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomKtx" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomKtx" }

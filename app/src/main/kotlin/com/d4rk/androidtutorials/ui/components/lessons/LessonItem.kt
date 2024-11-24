@@ -1,6 +1,7 @@
 package com.d4rk.androidtutorials.ui.components.lessons
 
 import android.content.Context
+import android.os.Build.VERSION.SDK_INT
 import android.view.SoundEffectConstants
 import android.view.View
 import androidx.compose.foundation.clickable
@@ -37,7 +38,10 @@ import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import coil3.ImageLoader
 import coil3.compose.AsyncImage
+import coil3.gif.AnimatedImageDecoder
+import coil3.gif.GifDecoder
 import com.d4rk.androidtutorials.constants.ui.lessons.LessonConstants
 import com.d4rk.androidtutorials.data.model.ui.screens.UiLesson
 import com.d4rk.androidtutorials.ui.components.animations.bounceClick
@@ -47,19 +51,35 @@ import com.d4rk.androidtutorials.ui.screens.home.HomeViewModel
 @Composable
 fun LessonItem(lesson : UiLesson , context : Context , modifier : Modifier = Modifier) {
     val viewModel : HomeViewModel = viewModel()
+    val imageLoader = ImageLoader.Builder(context).components {
+        if (SDK_INT >= 28) {
+            add(AnimatedImageDecoder.Factory())
+        }
+        else {
+            add(GifDecoder.Factory())
+        }
+    }.build()
     Card(
         modifier = modifier.fillMaxWidth()
     ) {
-        when (lesson.type) {
+        when (lesson.lessonType) {
             LessonConstants.TYPE_FULL_IMAGE_BANNER -> {
                 FullImageBannerLessonItem(
-                    lesson = lesson , context = context , viewModel = viewModel
+                    lesson = lesson ,
+                    context = context ,
+                    viewModel = viewModel ,
+                    imageLoader = imageLoader
                 )
                 Spacer(modifier = Modifier.width(8.dp))
             }
 
             LessonConstants.TYPE_SQUARE_IMAGE -> {
-                SquareImageLessonItem(lesson = lesson , context = context , viewModel = viewModel)
+                SquareImageLessonItem(
+                    lesson = lesson ,
+                    context = context ,
+                    viewModel = viewModel ,
+                    imageLoader = imageLoader
+                )
                 Spacer(modifier = Modifier.width(8.dp))
             }
         }
@@ -67,7 +87,12 @@ fun LessonItem(lesson : UiLesson , context : Context , modifier : Modifier = Mod
 }
 
 @Composable
-fun FullImageBannerLessonItem(lesson : UiLesson , context : Context , viewModel : HomeViewModel) {
+fun FullImageBannerLessonItem(
+    lesson : UiLesson ,
+    context : Context ,
+    viewModel : HomeViewModel ,
+    imageLoader : ImageLoader
+) {
     Card(modifier = Modifier
             .fillMaxWidth()
             .clickable {
@@ -75,7 +100,8 @@ fun FullImageBannerLessonItem(lesson : UiLesson , context : Context , viewModel 
             }) {
         Column {
             AsyncImage(
-                model = lesson.bannerImageUrl ,
+                imageLoader = imageLoader ,
+                model = lesson.thumbnailImageUrl ,
                 contentDescription = null ,
                 modifier = Modifier
                         .fillMaxWidth()
@@ -89,11 +115,14 @@ fun FullImageBannerLessonItem(lesson : UiLesson , context : Context , viewModel 
                         .padding(horizontal = 16.dp) ,
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                TitleAndDescriptionColumn(title = lesson.title , description = lesson.description)
+                TitleAndDescriptionColumn(
+                    title = lesson.lessonTitle ,
+                    description = lesson.lessonDescription
+                )
             }
-            if (lesson.tags.isNotEmpty()) {
+            if (lesson.lessonTags.isNotEmpty()) {
                 Spacer(modifier = Modifier.height(12.dp))
-                TagRow(lesson.tags)
+                TagRow(lesson.lessonTags)
             }
             Spacer(modifier = Modifier.height(12.dp))
             ButtonsRow(lesson = lesson , viewModel = viewModel)
@@ -104,7 +133,12 @@ fun FullImageBannerLessonItem(lesson : UiLesson , context : Context , viewModel 
 
 
 @Composable
-fun SquareImageLessonItem(lesson : UiLesson , context : Context , viewModel : HomeViewModel) {
+fun SquareImageLessonItem(
+    lesson : UiLesson ,
+    context : Context ,
+    viewModel : HomeViewModel ,
+    imageLoader : ImageLoader
+) {
     Card(modifier = Modifier
             .fillMaxWidth()
             .clickable {
@@ -119,6 +153,7 @@ fun SquareImageLessonItem(lesson : UiLesson , context : Context , viewModel : Ho
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 AsyncImage(
+                    imageLoader = imageLoader ,
                     model = lesson.squareImageUrl ,
                     contentDescription = null ,
                     modifier = Modifier
@@ -132,13 +167,15 @@ fun SquareImageLessonItem(lesson : UiLesson , context : Context , viewModel : Ho
                     modifier = Modifier.weight(1f) , verticalArrangement = Arrangement.SpaceBetween
                 ) {
                     TitleAndDescriptionColumn(
-                        title = lesson.title , description = lesson.description , maxLines = 3 ,
+                        title = lesson.lessonTitle ,
+                        description = lesson.lessonDescription ,
+                        maxLines = 3 ,
                     )
                 }
             }
-            if (lesson.tags.isNotEmpty()) {
+            if (lesson.lessonTags.isNotEmpty()) {
                 Spacer(modifier = Modifier.height(12.dp))
-                TagRow(lesson.tags)
+                TagRow(lesson.lessonTags)
             }
             Spacer(modifier = Modifier.height(12.dp))
             ButtonsRow(lesson = lesson , viewModel = viewModel)
@@ -172,7 +209,7 @@ fun TitleAndDescriptionColumn(title : String , description : String , maxLines :
 @Composable
 fun ButtonsRow(lesson : UiLesson , viewModel : HomeViewModel) {
     val view : View = LocalView.current
-    val isFavorite = lesson.favorite
+    val isFavorite = lesson.isFavorite
 
     Row(
         modifier = Modifier.fillMaxWidth() , horizontalArrangement = Arrangement.End

@@ -23,6 +23,6 @@ interface FavoriteLessonsDao {
     @Query("SELECT * FROM `Favorite Lessons`")
     fun getAllFavoritesFlow() : Flow<List<FavoriteLessonTable>>
 
-    @Query("SELECT COUNT(*) FROM `favorite lessons` WHERE id = :lessonId")
+    @Query("SELECT COUNT(*) FROM `favorite lessons` WHERE lessonId = :lessonId")
     suspend fun isFavorite(lessonId : String) : Int
 }

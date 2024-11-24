@@ -32,7 +32,7 @@ class HomeViewModel(application : Application) : LessonsViewModel(application) {
         viewModelScope.launch(coroutineExceptionHandler) {
             repository.observeFavoritesChanges { favorites ->
                 val updatedLessons = _lessons.value.map { lesson ->
-                    lesson.copy(favorite = favorites.any { it.id == lesson.id })
+                    lesson.copy(isFavorite = favorites.any { it.lessonId == lesson.lessonId })
                 }
                 _lessons.value = updatedLessons
             }
@@ -41,13 +41,13 @@ class HomeViewModel(application : Application) : LessonsViewModel(application) {
 
     fun toggleFavorite(lesson : UiLesson) {
         viewModelScope.launch(coroutineExceptionHandler) {
-            val updatedLesson = lesson.copy(favorite = ! lesson.favorite)
+            val updatedLesson = lesson.copy(isFavorite = ! lesson.isFavorite)
             val updatedLessons = _lessons.value.map { lesson ->
-                if (lesson.id == updatedLesson.id) updatedLesson else lesson
+                if (lesson.lessonId == updatedLesson.lessonId) updatedLesson else lesson
             }
             _lessons.value = updatedLessons
 
-            if (updatedLesson.favorite) {
+            if (updatedLesson.isFavorite) {
                 addLessonToFavorites(updatedLesson)
             }
             else {
@@ -57,16 +57,15 @@ class HomeViewModel(application : Application) : LessonsViewModel(application) {
     }
 
     private fun UiLesson.toFavoriteLessonTable() : FavoriteLessonTable = FavoriteLessonTable(
-        id = id ,
-        title = title ,
-        description = description ,
-        type = type ,
-        bannerImageUrl = bannerImageUrl ,
+        lessonId = lessonId ,
+        lessonTitle = lessonTitle ,
+        lessonDescription = lessonDescription ,
+        lessonType = lessonType ,
+        thumbnailImageUrl = thumbnailImageUrl ,
         squareImageUrl = squareImageUrl ,
         deepLinkPath = deepLinkPath ,
-        articleType = articleType ,
-        tags = tags ,
-        isFavorite = favorite
+        lessonTags = lessonTags ,
+        isFavorite = isFavorite
     )
 
     private fun addLessonToFavorites(lesson : UiLesson) {

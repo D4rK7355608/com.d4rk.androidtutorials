@@ -18,10 +18,11 @@ import java.net.HttpURLConnection
 import java.net.URL
 
 object OpenSourceLicensesUtils {
+    const val packageName = BuildConfig.APPLICATION_ID
 
     private suspend fun getChangelogMarkdown(): String {
         return withContext(Dispatchers.IO) {
-            val url = URL("https://raw.githubusercontent.com/D4rK7355608/com.d4rk.androidtutorials/refs/heads/jetpack_compose_rework/CHANGELOG.md")
+            val url = URL("https://raw.githubusercontent.com/D4rK7355608/$packageName/refs/heads/master/CHANGELOG.md")
             (url.openConnection() as? HttpURLConnection)?.let { connection ->
                 try {
                     connection.requestMethod = "GET"
@@ -30,18 +31,18 @@ object OpenSourceLicensesUtils {
                             return@withContext reader.readText()
                         }
                     } else {
-                        getStringResource(R.string.error_loading_changelog)
+                        getStringResource(id= R.string.error_loading_changelog)
                     }
                 } finally {
                     connection.disconnect()
                 }
-            } ?: getStringResource(R.string.error_loading_changelog)
+            } ?: getStringResource(id= R.string.error_loading_changelog)
         }
     }
 
     private suspend fun getEulaMarkdown(): String {
         return withContext(Dispatchers.IO) {
-            val url = URL("https://raw.githubusercontent.com/D4rK7355608/com.d4rk.androidtutorials/refs/heads/jetpack_compose_rework/EULA.md")
+            val url = URL("https://raw.githubusercontent.com/D4rK7355608/$packageName/refs/heads/master/EULA.md")
             (url.openConnection() as? HttpURLConnection)?.let { connection ->
                 try {
                     connection.requestMethod = "GET"
@@ -50,12 +51,12 @@ object OpenSourceLicensesUtils {
                             return@withContext reader.readText()
                         }
                     } else {
-                        getStringResource(R.string.error_loading_eula)
+                        getStringResource(id= R.string.error_loading_eula)
                     }
                 } finally {
                     connection.disconnect()
                 }
-            } ?: getStringResource(R.string.error_loading_eula)
+            } ?: getStringResource(id= R.string.error_loading_eula)
         }
     }
 

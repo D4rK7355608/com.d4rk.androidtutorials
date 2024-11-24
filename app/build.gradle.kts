@@ -1,13 +1,13 @@
 import org.jetbrains.kotlin.konan.properties.Properties
 
 plugins {
-    alias(libs.plugins.androidApplication)
-    alias(libs.plugins.jetbrainsKotlinAndroid)
-    alias(libs.plugins.googlePlayServices)
-    alias(libs.plugins.googleFirebase)
-    alias(libs.plugins.compose.compiler)
-    alias(libs.plugins.devToolsKsp)
-    alias(libs.plugins.about.libraries)
+    alias(notation = libs.plugins.androidApplication)
+    alias(notation = libs.plugins.jetbrainsKotlinAndroid)
+    alias(notation = libs.plugins.googlePlayServices)
+    alias(notation = libs.plugins.googleFirebase)
+    alias(notation = libs.plugins.compose.compiler)
+    alias(notation = libs.plugins.devToolsKsp)
+    alias(notation = libs.plugins.about.libraries)
 }
 
 android {
@@ -17,7 +17,7 @@ android {
         applicationId = "com.d4rk.androidtutorials"
         minSdk = 23
         targetSdk = 35
-        versionCode = 86
+        versionCode = 87
         versionName = "1.0.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         resourceConfigurations += listOf(
@@ -165,7 +165,7 @@ dependencies {
 
     // About
     implementation(dependencyNotation = libs.aboutlibraries)
-    implementation(dependencyNotation = "io.noties.markwon:core:4.6.2")
+    implementation(dependencyNotation = libs.core)
 
     // Test
     testImplementation(dependencyNotation = libs.junit)

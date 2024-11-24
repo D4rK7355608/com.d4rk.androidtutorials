@@ -1,9 +1,9 @@
 package com.d4rk.androidtutorials.constants.ui.lessons
 
 object LessonContentTypes {
-    const val TEXT = "text"
+    const val TEXT = "content_text"
     const val HEADER = "header"
-    const val CODE = "code"
+    const val CODE = "content_code"
     const val IMAGE = "image"
     const val AD_BANNER = "ad_banner"
     const val AD_BANNER_FULL = "ad_banner_full"

@@ -18,16 +18,15 @@ class FavoritesViewModel(application : Application) : LessonsViewModel(applicati
     }
 
     private fun FavoriteLessonTable.toUiLesson() = UiLesson(
-        id = id ,
-        title = title ,
-        description = description ,
-        type = type ,
-        bannerImageUrl = bannerImageUrl ,
+        lessonId = lessonId ,
+        lessonTitle = lessonTitle ,
+        lessonDescription = lessonDescription ,
+        lessonType = lessonType ,
+        thumbnailImageUrl = thumbnailImageUrl ,
         squareImageUrl = squareImageUrl ,
         deepLinkPath = deepLinkPath ,
-        articleType = articleType ,
-        tags = tags ,
-        favorite = isFavorite
+        lessonTags = lessonTags ,
+        isFavorite = isFavorite
     )
 
     private fun loadFavorites() {

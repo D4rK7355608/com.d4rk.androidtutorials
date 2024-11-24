@@ -56,7 +56,7 @@ abstract class HomeRepositoryImplementation(
                 }
 
         return lessons?.map { lesson ->
-            lesson.copy(favorite = loadFavoritesImplementation().any { it.id == lesson.id })
+            lesson.copy(isFavorite = loadFavoritesImplementation().any { it.lessonId == lesson.lessonId })
         }
     }
 
@@ -77,7 +77,7 @@ abstract class HomeRepositoryImplementation(
             action = Intent.ACTION_SEND
             type = "text/plain"
             putExtra(Intent.EXTRA_TEXT , buildString {
-                append(lesson.description)
+                append(lesson.lessonDescription)
                 append("\n\n")
                 append(
                     application.getString(
@@ -88,7 +88,7 @@ abstract class HomeRepositoryImplementation(
             })
             putExtra(
                 Intent.EXTRA_SUBJECT ,
-                application.getString(R.string.share_lesson_subject , lesson.title)
+                application.getString(R.string.share_lesson_subject , lesson.lessonTitle)
             )
         }
     }

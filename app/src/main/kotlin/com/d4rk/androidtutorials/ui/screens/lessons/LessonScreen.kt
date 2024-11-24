@@ -17,9 +17,9 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.selection.SelectionContainer
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.CopyAll
 import androidx.compose.material3.ButtonDefaults
@@ -77,6 +77,7 @@ fun LessonScreen(
     val dataStore : DataStore = DataStore.getInstance(context = activity)
     val uiErrorModel : UiErrorModel by viewModel.uiErrorModel.collectAsState()
     val isLoading : Boolean by viewModel.isLoading.collectAsState()
+    val scrollState = rememberScrollState()
     val transition : Transition<Boolean> =
             updateTransition(targetState = ! isLoading , label = "LoadingTransition")
     val progressAlpha : Float by transition.animateFloat(label = "Progress Alpha") {
@@ -88,27 +89,24 @@ fun LessonScreen(
                          onDismiss = { viewModel.dismissErrorDialog() })
     }
 
-    TopAppBarScaffoldWithBackButton(
-        title = lesson.title ,
-        onBackClicked = { activity.finish() }) { paddingValues ->
-
+    TopAppBarScaffoldWithBackButton(title = lesson.lessonTitle ,
+                                    onBackClicked = { activity.finish() }) { paddingValues ->
         if (isLoading) {
             LoadingScreen(progressAlpha)
         }
         else {
-            LazyColumn(
+            Column(
                 modifier = Modifier
                         .fillMaxSize()
-                        .padding(paddingValues) ,
-                contentPadding = PaddingValues(16.dp)
+                        .padding(paddingValues)
+                        .padding(horizontal = 16.dp)
+                        .verticalScroll(scrollState)
             ) {
-                itemsIndexed(
-                    lesson.content ,
-                    key = { _ , item -> item.id }) { index , contentItem ->
-                    when (contentItem.type) {
+                lesson.lessonContent.forEachIndexed { index , contentItem ->
+                    when (contentItem.contentType) {
                         LessonContentTypes.HEADER -> {
                             StyledText(
-                                text = contentItem.text ,
+                                text = contentItem.contentText ,
                                 style = TextStyles.header() ,
                                 color = Colors.primaryText()
                             )
@@ -116,7 +114,7 @@ fun LessonScreen(
 
                         LessonContentTypes.TEXT -> {
                             StyledText(
-                                text = contentItem.text ,
+                                text = contentItem.contentText ,
                                 style = TextStyles.body() ,
                                 color = Colors.secondaryText()
                             )
@@ -124,12 +122,14 @@ fun LessonScreen(
 
                         LessonContentTypes.IMAGE -> {
                             StyledImage(
-                                imageUrl = contentItem.src , contentDescription = "Lesson Image"
+                                imageUrl = contentItem.contentImageSrc , contentDescription = "Lesson Image"
                             )
                         }
 
                         LessonContentTypes.CODE -> {
-                            CodeBlock(code = contentItem.code , language = contentItem.language)
+                            CodeBlock(
+                                code = contentItem.contentCode , language = contentItem.programmingLanguage
+                            )
                         }
 
                         LessonContentTypes.AD_BANNER -> {
@@ -145,10 +145,10 @@ fun LessonScreen(
                         }
 
                         else -> {
-                            Text(text = "Unsupported content type: ${contentItem.type}")
+                            Text(text = "Unsupported content type: ${contentItem.contentType}")
                         }
                     }
-                    if (index < lesson.content.lastIndex) {
+                    if (index < lesson.lessonContent.lastIndex) {
                         Spacer(modifier = Modifier.height(8.dp))
                     }
                 }
@@ -382,17 +382,16 @@ fun CodeBlock(code : String , language : String?) {
                     modifier = Modifier.padding(end = 8.dp)
                 )
                 TextButton(modifier = Modifier.bounceClick() , onClick = {
-                    ClipboardUtil.copyTextToClipboard(
-                        context = context ,
-                        label = "Code" ,
-                        text = code ,
-                        onShowSnackbar = {
-                            Toast.makeText(
-                                context ,
-                                "Code copied to clipboard" ,
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        })
+                    ClipboardUtil.copyTextToClipboard(context = context ,
+                                                      label = "Code" ,
+                                                      text = code ,
+                                                      onShowSnackbar = {
+                                                          Toast.makeText(
+                                                              context ,
+                                                              "Code copied to clipboard" ,
+                                                              Toast.LENGTH_SHORT
+                                                          ).show()
+                                                      })
                 } , contentPadding = PaddingValues(horizontal = 8.dp)) {
                     Icon(
                         imageVector = Icons.Outlined.CopyAll ,
