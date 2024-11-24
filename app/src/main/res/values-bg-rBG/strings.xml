@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_short_description">Научете как да създавате прости приложения в Android Studio.</string>
+    <string name="notification_update_title">Налична е нова актуализация!</string>
+    <string name="summary_notification_update">Налична е нова версия на приложението. Кликнете, за да актуализирате!</string>
+    <string name="notification_last_time_used_title">Мина известно време!</string>
+    <string name="summary_notification_last_time_used">Нека освободим малко място! Радваме се, че се върна!</string>
+
+    <string name="welcome">Добре дошли</string>
+    <string name="summary_browse_terms_of_service_and_privacy_policy">Прочетете и се съгласете с нашите Условия за ползване и Политика за поверителност, за да продължите</string>
+    <string name="agree">Съгласен</string>
+
+    <string name="navigation_drawer_open">Отворете чекмеджето за навигация</string>
+
+    <string name="home">Начало</string>
+    <string name="get_the_app_to_watch">Вземете приложението и вижте пълния урок: %1$s</string>
+    <string name="activity_not_found">Дейността не е намерена.</string>
+    <string name="security_error">Възникна грешка в сигурността. Моля, опитайте отново по-късно.</string>
+    <string name="io_error">Възникна входно/изходна грешка. Моля, проверете вашата мрежова връзка или хранилище и опитайте отново.</string>
+    <string name="illegal_argument_error">Предоставен е невалиден вход или аргумент. Моля, проверете информацията и опитайте отново.</string>
+    <string name="unknown_error">Възникна неизвестна грешка.</string>
+
+    <string name="studio_bot">Студио бот</string>
+
+    <string name="share">Споделете</string>
+    <string name="app_info">Информация за приложението</string>
+
+    <string name="favorites">Любими</string>
+
+    <string name="settings">Настройки</string>
+
+    <string name="display">Дисплей</string>
+    <string name="summary_preference_settings_display">Персонализирайте облика и усещането на вашето приложение</string>
+
+    <string name="appearance">Външен вид</string>
+    <string name="dark_theme">Тъмна тема</string>
+    <string name="will_turn_on_automatically_by_system">Ще се включи автоматично от системата</string>
+    <string name="will_never_turn_on_automatically">Никога няма да се включи автоматично</string>
+    <string name="amoled_mode">AMOLED режим</string>
+    <string name="follow_system">Следвайте системния режим</string>
+    <string name="light_mode">Светлинен режим</string>
+    <string name="dark_mode">Тъмен режим</string>
+    <string name="summary_dark_theme">Тъмната тема използва дълбок фон, за да поддържа батерията ви жива по-дълго</string>
+
+    <string name="dynamic_colors">Динамични цветове</string>
+    <string name="summary_preference_settings_dynamic_colors">Приложете цветове от тапети към темата на приложението</string>
+
+    <string name="app_behavior">Поведение на приложението</string>
+    <string name="bounce_buttons">Отскачащо щракване</string>
+    <string name="summary_preference_settings_bounce_buttons">Прилага фина анимация на отскачане към всички елементи, върху които може да се кликне, когато се щракне</string>
+
+    <string name="navigation">Навигация</string>
+    <string name="startup_page">Стартова страница</string>
+    <string name="summary_preference_settings_startup_page">Изберете екрана, който да се показва при стартиране на приложението.</string>
+    <string name="dialog_startup_subtitle">Изберете предпочитаната от вас начална страница:</string>
+    <string name="dialog_info_startup">Конфигурира началния екран, представен на потребителите при стартиране на приложението. Тази настройка влияе върху първото взаимодействие на потребителя с приложението и може да бъде съобразена с конкретни потребителски сегменти или продуктови цели.</string>
+
+    <string name="language">език</string>
+    <string name="summary_preference_settings_language">Променя езика, използван в приложението</string>
+    <string name="dialog_language_subtitle">Изберете предпочитания от вас език</string>
+    <string name="dialog_info_language">Персонализирайте изживяването си с предпочитания от вас език. Всички промени на езика, които правите, влизат в сила веднага, като гарантират безпроблемно изживяване на избрания от вас език</string>
+
+    <string name="notifications">Известия</string>
+    <string name="summary_preference_settings_notifications">Управление на известия за приложения</string>
+
+    <string name="app_usage_notifications">Известия за използване на приложението</string>
+    <string name="update_notifications">Известия за актуализиране</string>
+
+    <string name="advanced">Разширено</string>
+    <string name="summary_preference_settings_advanced">Разгледайте по-разширени настройки</string>
+    <string name="error_reporting">Докладване за грешка</string>
+    <string name="bug_report">Доклад за грешка</string>
+    <string name="summary_preference_settings_bug_report">Изпращайте доклади за грешки и заявки за функции до страницата за проблеми с хранилището на GitHub на приложението</string>
+
+    <string name="security_and_privacy">Сигурност и усилвател поверителност</string>
+    <string name="summary_preference_settings_privacy_and_security">Управлявайте настройките си за поверителност</string>
+    <string name="privacy">Поверителност</string>
+    <string name="privacy_policy">Политика за поверителност</string>
+    <string name="summary_preference_settings_privacy_policy">Вижте политиката, която урежда начина, по който обработваме вашите данни</string>
+    <string name="terms_of_service">Условия за ползване</string>
+    <string name="summary_preference_settings_terms_of_service">Прегледайте условията, с които се съгласявате, когато използвате нашата услуга</string>
+    <string name="code_of_conduct">Кодекс на поведение</string>
+    <string name="summary_preference_settings_code_of_conduct">Разберете правилата и насоките за поведение в нашата услуга</string>
+
+    <string name="permissions">Разрешения</string>
+    <string name="summary_preference_settings_permissions">Управлявайте разрешенията, предоставени на нашата услуга</string>
+    <string name="normal">нормално</string>
+    <string name="ad_id">Рекламен идентификатор [AD_ID]</string>
+    <string name="summary_preference_permissions_ad_id">Позволява на приложението да извлича и използва рекламния идентификатор, свързан с устройството на потребителя, като предоставя персонализирани реклами, измерва ефективността на рекламите и показва реклами на устройства с Android 13 или по-нови версии.</string>
+    <string name="internet">Интернет [ИНТЕРНЕТ]</string>
+    <string name="summary_preference_permissions_internet">Позволява на приложението да установи интернет връзка, за да изпраща отчети за грешки или да проверява за актуализации.</string>
+    <string name="post_notifications">Известия за публикации [POST_NOTIFICATIONS]</string>
+    <string name="summary_preference_permissions_post_notifications">Позволява на приложението да показва известия на устройства с Android 13 или по-нова версия.</string>
+    <string name="runtime">Време за изпълнение</string>
+    <string name="access_network_state">Състояние на мрежата за достъп [ACCESS_NETWORK_STATE]</string>
+    <string name="summary_preference_permissions_access_network_state">Позволява на приложението да проверява мрежовата свързаност и да извлича информация за Wi-Fi, включително активирано състояние и имена на свързани Wi-Fi устройства.</string>
+    <string name="access_notification_policy">Правила за уведомяване за достъп [ACCESS_NOTIFICATION_POLICY]</string>
+    <string name="summary_preference_permissions_access_notification_policy">Позволява на приложението да осъществява достъп и да променя правилата за известяване на устройството, като контролира как и кога известията се показват на потребителя и предоставя персонализирани функции за управление на известията.</string>
+    <string name="billing">Таксуване [BILLING]</string>
+    <string name="summary_preference_permissions_billing">Разрешава на приложението да използва библиотеката за таксуване на Google Play, за да обработва покупки и дарения в приложението</string>
+    <string name="check_license">Проверка на лиценз [CHECK_LICENSE]</string>
+    <string name="summary_preference_permissions_check_license">Позволява на приложението да провери съответствието си с лицензионното споразумение и да наложи лицензионните условия за защита на интелектуалната собственост.</string>
+    <string name="foreground_service">Услуга на преден план [FOREGROUND_SERVICE]</string>
+    <string name="summary_preference_permissions_foreground_service">Позволява на приложението да създава и използва услуги, които работят на преден план, като им дава приоритет пред други фонови процеси и подобрява производителността и надеждността.</string>
+
+    <string name="ads">реклами</string>
+    <string name="summary_preference_settings_ads">Контролирайте как използваме вашата информация, за да ви показваме подходящи реклами</string>
+    <string name="display_ads">Показване на реклами</string>
+    <string name="personalized_ads">Персонализирани реклами</string>
+    <string name="summary_ads_personalized_ads">Изберете как да персонализираме рекламите за вас въз основа на вашите интереси</string>
+    <string name="summary_ads">Вижте реклами, които са подходящи за вас. Управлявайте информацията, използвана за показване на персонализирани реклами въз основа на активността ви в приложението. Винаги можете да изключите персонализирането тук.\n</string>
+
+    <string name="usage_and_diagnostics">Използване и диагностика</string>
+    <string name="summary_preference_settings_usage_and_diagnostics">Споделяйте данни, за да помогнете за подобряването на Cleaner за Android</string>
+    <string name="summary_usage_and_diagnostics">Помогнете да подобрите вашето изживяване, като автоматично ни изпращате данни за диагностика, устройство и използване на приложения. Това ще помогне за подобряване на производителността, стабилността и други подобрения на приложението. Някои обобщени данни също ще помогнат на нашите приложения.\n\nТова е обща информация за вашето устройство и как използвате нашите приложения (като ниво на батерията, активност на системата и приложението и грешки). Данните ще се използват за подобряване на нашите приложения\n\nИзключването на тази функция не засяга способността на вашето устройство да изпраща информацията, необходима за основни услуги, като актуализации на приложения и сигурност.\n</string>
+
+    <string name="legal">Законни</string>
+    <string name="legal_notices">Правни бележки</string>
+    <string name="summary_preference_settings_legal_notices">Вижте правна информация за нашата услуга</string>
+    <string name="license">Лиценз</string>
+
+    <string name="about">За</string>
+    <string name="summary_preference_settings_about">Научете повече за Android Studio Tutorials</string>
+
+    <string name="app_build_version">Версия за изграждане на приложение</string>
+    <string name="summary_preference_settings_oss">Подробности за лиценза за софтуер с отворен код</string>
+    <string name="device_info">Информация за устройството</string>
+    <string name="app_build">Компилация на приложението: %6$s\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
+    <string name="debug">Отстраняване на грешки</string>
+    <string name="release">Освобождаване</string>
+    <string name="manufacturer">производител:</string>
+    <string name="device_model">Модел на устройството:</string>
+    <string name="android_version">Версия на Android:</string>
+    <string name="api_level">API ниво:</string>
+    <string name="snack_device_info_copied">Информацията за устройството е копирана в клипборда</string>
+
+    <string name="help_and_feedback">Помощ &amp; обратна връзка</string>
+    <string name="help">Помощ</string>
+    <string name="faq">ЧЗВ</string>
+    <string name="view_in_google_play_store">Вижте в Google Play Store</string>
+    <string name="version_info">Информация за версията</string>
+    <string name="version">Версия %1$s</string>
+    <string name="beta_program">Бета програма</string>
+    <string name="question_1">Какво е Android Studio Tutorials: Kotlin Edition?</string>
+    <string name="summary_preference_faq_1">Уроци за Android Studio: Kotlin Edition е безплатно приложение с отворен код, което предоставя колекция от видео уроци за това как да използвате Android Studio, официалната интегрирана среда за разработка (IDE) за разработка на приложения за Android.</string>
+    <string name="question_2">Как мога да изтегля уроци за Android Studio: Kotlin Edition?</string>
+    <string name="summary_preference_faq_2">Уроци за Android Studio: Kotlin Edition е достъпно за изтегляне от Google Play Store. Просто потърсете \"Уроци за Android Studio\" в приложението Play Store на вашето устройство с Android и докоснете \"Инсталиране\", за да изтеглите и инсталирате приложението.</string>
+    <string name="question_3">Предлагат ли се уроци за Android Studio: Kotlin Edition за iOS устройства?</string>
+    <string name="summary_preference_faq_3">Не, уроци за Android Studio: изданието Kotlin в момента е достъпно само за устройства с Android.</string>
+    <string name="question_4">Подходящо ли е Android Studio Tutorials: Kotlin Edition за начинаещи?</string>
+    <string name="summary_preference_faq_4">Да, Android Studio Tutorials: Kotlin Edition е подходящо за начинаещи, които са нови в разработката на приложения за Android и искат да научат как да използват Android Studio. Приложението предоставя набор от видео уроци, които обхващат основите на използването на Android Studio, от инсталирането на IDE до изграждането и внедряването на първото ви приложение.</string>
+    <string name="question_5">Уроците за Android Studio: Kotlin Edition актуализират ли се редовно?</string>
+    <string name="summary_preference_faq_5">Да, Android Studio Tutorials: Kotlin Edition се актуализира редовно с нови видео уроци и съдържание, за да поддържа потребителите в крак с най-новите функции и промени в Android Studio.</string>
+    <string name="question_6">Как мога да получа поддръжка, ако имам въпрос или проблем с Android Studio Tutorials: Kotlin Edition?</string>
+    <string name="summary_preference_faq_6">Ако имате въпрос или проблем с Android Studio Tutorials: Kotlin Edition, можете да се свържете с нас чрез страницата за поддръжка на приложението или по имейл на d4rk7355608@gmail.com. Ще направим всичко възможно, за да ви помогнем да разрешите всички проблеми, които може да имате.</string>
+    <string name="question_7">Как да деактивирам Firebase analytics и crashlytics в Android Studio Tutorials: Kotlin Edition?</string>
+    <string name="summary_preference_faq_7">Можете да деактивирате Firebase analytics и crashlytics, като отидете в менюто с настройки в приложението и превключите превключвателя за тези функции.</string>
+    <string name="question_8">Как да проверя за актуализации на Android Studio Tutorials: Kotlin Edition?</string>
+    <string name="summary_preference_faq_8">Можете да проверите за актуализации на Android Studio Tutorials: Kotlin Edition, като отидете в менюто с настройки в приложението и изберете опцията \"Проверка за актуализации\".</string>
+    <string name="question_9">Как мога да подкрепя разработването на уроци за Android Studio: Kotlin Edition?</string>
+    <string name="summary_preference_faq_9">можете да подкрепите разработването на уроци за Android Studio: Kotlin Edition, като оставите положителен отзив в Google Play Store, споделите приложението с приятели и колеги и подкрепите разработчиците чрез опцията \"Споделяне\" в менюто с настройки.</string>
+    <string name="feedback">Обратна връзка</string>
+
+    <string name="updates">Актуализации</string>
+
+    <string name="support_us">Подкрепете ни</string>
+    <string name="paid_support">Платена поддръжка</string>
+    <string name="summary_donations">Без значение колко дарите, вие ще ни помогнете да поддържаме нашето приложение работещо и ще подобрим функциите си. Оценяваме вашата щедрост и доброта!</string>
+    <string name="non_paid_support">Неплатена поддръжка</string>
+    <string name="web_ad">Уеб реклама</string>
+
+    <string name="snack_app_updated">Приложението е успешно актуализирано</string>
+    <string name="snack_update_failed">Процесът на актуализиране срещна проблем</string>
+    <string name="try_again">Опитайте отново</string>
+    <string name="summary_share_message">Вижте това невероятно приложение, което използвам! Има някои наистина страхотни функции, които може да ви се сторят интересни. Можете да го изтеглите от Play Store на: %1$s</string>
+    <string name="learn_more">Научете повече</string>
+
+    <string name="close">затвори?</string>
+    <string name="snack_network_error">Възникна мрежова грешка при проверка за актуализации</string>
+    <string name="snack_general_error">Възникна грешка при проверка за актуализации</string>
+    <string name="summary_close">Сигурни ли сте, че искате да излезете?</string>
+</resources>

@@ -1,45 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="SplashScreenTheme" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">?attr/colorSurface</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="postSplashScreenTheme">@style/AppTheme</item>
     </style>
-    <style name="AppTheme" parent="@style/AppThemeActionBar">
+
+    <style name="AppTheme" parent="Theme.Material3.DynamicColors.DayNight">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
     <style name="AppThemeActionBar" parent="Theme.Material3.DynamicColors.DayNight">
-        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="android:windowLightStatusBar">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">?attr/colorSurface</item>
-        <item name="android:colorBackground">?attr/colorSurface</item>
-        <item name="actionBarStyle">@style/actionBarStyle</item>
-        <item name="switchPreferenceCompatStyle">@style/switchPreferenceCompatStyle</item>
-        <item name="dialogCornerRadius">24dp</item>
-        <item name="android:alertDialogTheme">@style/ThemeOverlay.Material3.MaterialAlertDialog.Centered</item>
-        <item name="materialAlertDialogTheme">@style/ThemeOverlay.Material3.MaterialAlertDialog.Centered</item>
-        <item name="alertDialogTheme">@style/ThemeOverlay.Material3.MaterialAlertDialog.Centered</item>
-        <item name="panelMenuListTheme">@style/ThemeOverlay.Material3.MaterialAlertDialog.Centered</item>
-        <item name="android:fontFamily">@font/font_poppins</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="actionBarStyle">@style/ActionBarTheme</item>
     </style>
-    <style name="ShapeAppearanceOverlay.CardView" parent="">
-        <item name="cornerFamily">rounded</item>
-        <item name="cornerSizeTopRight">24dp</item>
-        <item name="cornerSizeTopLeft">24dp</item>
-        <item name="cornerSizeBottomRight">0dp</item>
-        <item name="cornerSizeBottomLeft">0dp</item>
-    </style>
-    <style name="FontTheme" parent="TextAppearance.AppCompat">
-        <item name="fontFamily">@font/font_poppins</item>
-        <item name="android:fontFamily">@font/font_poppins</item>
-    </style>
-    <style name="actionBarStyle" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+
+    <style name="ActionBarTheme" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
         <item name="background">@android:color/transparent</item>
     </style>
-    <style name="switchPreferenceCompatStyle" parent="@style/Preference.SwitchPreferenceCompat.Material">
-        <item name="widgetLayout">@layout/preference_switch_widget_layout</item>
-    </style>
-    <style name="AppBarLayoutTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
 </resources>

@@ -1,392 +1,162 @@
-<manifest
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:installLocation="auto">
-    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY"/>
-    <uses-permission android:name="com.android.vending.BILLING"/>
-    <uses-permission android:name="com.android.vending.CHECK_LICENSE"/>
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
 
-    <queries>
-        <intent>
-            <action android:name="android.intent.action.VIEW"/>
-            <data android:scheme="https"/>
-        </intent>
-    </queries>
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    <uses-permission android:name="com.android.vending.BILLING" />
+    <uses-permission android:name="com.android.vending.CHECK_LICENSE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
     <application
-        android:name=".ads.managers.ApplicationOpenAdManager"
-        android:label="@string/app_name"
-        android:description="@string/app_description"
-        android:icon="@mipmap/ic_launcher"
-        android:roundIcon="@mipmap/ic_launcher"
-        android:logo="@drawable/ic_launcher_foreground"
-        android:supportsRtl="true"
-        android:resizeableActivity="true"
-        android:enableOnBackInvokedCallback="true"
+        android:name=".data.core.AppCoreManager"
         android:appCategory="productivity"
-        android:theme="@style/AppThemeActionBar"
+        android:banner="@drawable/tv_banner"
+        android:description="@string/app_short_description"
+        android:enableOnBackInvokedCallback="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
         android:localeConfig="@xml/config_locales"
+        android:requestLegacyExternalStorage="true"
+        android:resizeableActivity="true"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
         tools:targetApi="33">
+
+        <activity android:name=".ui.screens.startup.StartupActivity" />
+
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.screens.main.MainActivity"
             android:exported="true"
+            android:launchMode="singleTask"
             android:theme="@style/SplashScreenTheme">
             <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             <meta-data
                 android:name="android.app.shortcuts"
-                android:resource="@xml/shortcuts"/>
+                android:resource="@xml/shortcuts" />
         </activity>
+
         <activity
-            android:name=".ui.startup.StartupActivity"
-            android:theme="@style/AppTheme"/>
+            android:name=".ui.screens.support.SupportActivity"
+            android:parentActivityName=".ui.screens.main.MainActivity" />
+
         <activity
-            android:name=".ui.android.buttons.switch.SwitchCodeActivity"
-            android:exported="false"
-            android:label="@string/switches"
-            android:parentActivityName=".ui.android.buttons.switch.SwitchCodeActivity"/>
-        <activity
-            android:name=".ui.android.buttons.radio.RadioButtonsActivity"
-            android:exported="false"
-            android:label="@string/radio_buttons"
-            android:parentActivityName=".ui.android.buttons.radio.RadioButtonsActivity"/>
-        <activity
-            android:name=".ui.android.buttons.radio.RadioButtonsCodeActivity"
-            android:exported="false"
-            android:label="@string/radio_buttons"
-            android:parentActivityName=".ui.android.buttons.radio.RadioButtonsCodeActivity"/>
-        <activity
-            android:name=".ui.android.progress.progressbar.ProgressBarActivity"
-            android:exported="false"
-            android:label="@string/progress_bar"
-            android:parentActivityName=".ui.android.progress.progressbar.ProgressBarActivity"/>
-        <activity
-            android:name=".ui.android.progress.progressbar.ProgressBarCodeActivity"
-            android:exported="false"
-            android:label="@string/progress_bar"
-            android:parentActivityName=".ui.android.progress.progressbar.ProgressBarCodeActivity"/>
-        <activity
-            android:name=".ui.android.notifications.simple.SimpleNotificationActivity"
-            android:exported="false"
-            android:label="@string/simple_notifications"
-            android:parentActivityName=".ui.android.notifications.simple.SimpleNotificationActivity"/>
-        <activity
-            android:name=".ui.android.notifications.simple.SimpleNotificationCodeActivity"
-            android:exported="false"
-            android:label="@string/simple_notifications"
-            android:parentActivityName=".ui.android.notifications.simple.SimpleNotificationCodeActivity"/>
-        <activity
-            android:name=".ui.android.notifications.inbox.InboxNotificationActivity"
-            android:exported="false"
-            android:label="@string/inbox_notifications"
-            android:parentActivityName=".ui.android.notifications.inbox.InboxNotificationActivity"/>
-        <activity
-            android:name=".ui.android.notifications.inbox.InboxNotificationCodeActivity"
-            android:exported="false"
-            android:label="@string/inbox_notifications"
-            android:parentActivityName=".ui.android.notifications.inbox.InboxNotificationCodeActivity"/>
-        <activity
-            android:name=".ui.android.alerts.toast.ToastActivity"
-            android:exported="false"
-            android:label="@string/toast"
-            android:parentActivityName=".ui.android.alerts.toast.ToastActivity"/>
-        <activity
-            android:name=".ui.android.alerts.toast.ToastCodeActivity"
-            android:exported="false"
-            android:label="@string/toast"
-            android:parentActivityName=".ui.android.alerts.toast.ToastCodeActivity"/>
-        <activity
-            android:name=".ui.android.buttons.image.ImageButtonsActivity"
-            android:exported="false"
-            android:label="@string/image_buttons"
-            android:parentActivityName=".ui.android.buttons.image.ImageButtonsActivity"/>
-        <activity
-            android:name=".ui.android.buttons.image.ImageButtonsCodeActivity"
-            android:exported="false"
-            android:label="@string/image_buttons"
-            android:parentActivityName=".ui.android.buttons.image.ImageButtonsCodeActivity"/>
-        <activity
-            android:name="com.d4rk.androidtutorials.ui.android.views.images.ImagesActivity"
-            android:exported="false"
-            android:label="@string/image_view"
-            android:parentActivityName="com.d4rk.androidtutorials.ui.android.views.images.ImagesActivity"/>
-        <activity
-            android:name="com.d4rk.androidtutorials.ui.android.views.images.ImagesCodeActivity"
-            android:exported="false"
-            android:label="@string/image_view"
-            android:parentActivityName="com.d4rk.androidtutorials.ui.android.views.images.ImagesCodeActivity"/>
-        <activity
-            android:name=".ui.android.alerts.snackbar.SnackBarActivity"
-            android:exported="false"
-            android:label="@string/snack_bar"
-            android:parentActivityName=".ui.android.alerts.snackbar.SnackBarActivity"/>
-        <activity
-            android:name=".ui.android.alerts.snackbar.SnackBarCodeActivity"
-            android:exported="false"
-            android:label="@string/snack_bar"
-            android:parentActivityName=".ui.android.alerts.snackbar.SnackBarCodeActivity"/>
-        <activity
-            android:name=".ui.android.clocks.clock.ClockCodeActivity"
-            android:exported="false"
-            android:label="@string/clocks"
-            android:parentActivityName=".ui.android.clocks.clock.ClockCodeActivity"/>
-        <activity
-            android:name=".ui.android.clocks.clock.ClockActivity"
-            android:exported="false"
-            android:label="@string/clocks"
-            android:parentActivityName=".ui.android.clocks.clock.ClockActivity"/>
-        <activity
-            android:name=".ui.android.clocks.timepicker.TimePickerCodeActivity"
-            android:exported="false"
-            android:label="@string/timepicker"
-            android:parentActivityName=".ui.android.clocks.timepicker.TimePickerCodeActivity"/>
-        <activity
-            android:name=".ui.android.clocks.timepicker.TimePickerActivity"
-            android:exported="false"
-            android:label="@string/timepicker"
-            android:parentActivityName=".ui.android.clocks.timepicker.TimePickerActivity"/>
-        <activity
-            android:name=".ui.android.clocks.chronometer.ChronometerActivity"
-            android:exported="false"
-            android:label="@string/chronometer"
-            android:parentActivityName=".ui.android.clocks.chronometer.ChronometerActivity"/>
-        <activity
-            android:name=".ui.android.clocks.chronometer.ChronometerCodeActivity"
-            android:exported="false"
-            android:label="@string/chronometer"
-            android:parentActivityName=".ui.android.clocks.chronometer.ChronometerCodeActivity"/>
-        <activity
-            android:name="com.d4rk.androidtutorials.ui.android.views.web.WebViewActivity"
-            android:exported="false"
-            android:label="@string/web_view"
-            android:parentActivityName="com.d4rk.androidtutorials.ui.android.views.web.WebViewActivity"/>
-        <activity
-            android:name="com.d4rk.androidtutorials.ui.android.views.web.WebViewCodeActivity"
-            android:exported="false"
-            android:label="@string/web_view"
-            android:parentActivityName="com.d4rk.androidtutorials.ui.android.views.web.WebViewCodeActivity"/>
-        <activity
-            android:name=".ui.android.textboxes.passwordbox.PasswordBoxActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize"
-            android:label="@string/password_box"
-            android:parentActivityName=".ui.android.textboxes.passwordbox.PasswordBoxActivity"/>
-        <activity
-            android:name=".ui.android.textboxes.passwordbox.PasswordBoxCodeActivity"
-            android:exported="false"
-            android:label="@string/password_box"
-            android:parentActivityName=".ui.android.textboxes.passwordbox.PasswordBoxCodeActivity"/>
-        <activity
-            android:name=".ui.android.clocks.datepicker.DatePickerCodeActivity"
-            android:exported="false"
-            android:label="@string/datepicker"
-            android:parentActivityName=".ui.android.clocks.datepicker.DatePickerCodeActivity"/>
-        <activity
-            android:name=".ui.android.clocks.datepicker.DatePickerActivity"
-            android:exported="false"
-            android:label="@string/datepicker"
-            android:parentActivityName=".ui.android.clocks.datepicker.DatePickerActivity"/>
-        <activity
-            android:name=".ui.android.textboxes.textbox.TextboxActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize"
-            android:label="@string/textbox"
-            android:parentActivityName=".ui.android.textboxes.textbox.TextboxActivity"/>
-        <activity
-            android:name=".ui.android.textboxes.textbox.TextboxCodeActivity"
-            android:exported="false"
-            android:label="@string/textbox"
-            android:parentActivityName=".ui.android.textboxes.textbox.TextboxCodeActivity"/>
-        <activity
-            android:name=".ui.android.layouts.linear.LinearLayoutActivity"
-            android:exported="false"
-            android:label="@string/linear_layout"
-            android:parentActivityName=".ui.android.layouts.linear.LinearLayoutActivity"/>
-        <activity
-            android:name=".ui.android.layouts.linear.LinearLayoutCodeActivity"
-            android:exported="false"
-            android:label="@string/linear_layout"
-            android:parentActivityName=".ui.android.layouts.linear.LinearLayoutCodeActivity"/>
-        <activity
-            android:name=".ui.android.layouts.relative.RelativeLayoutActivity"
-            android:exported="false"
-            android:label="@string/relative_layout"
-            android:parentActivityName=".ui.android.layouts.relative.RelativeLayoutActivity"/>
-        <activity
-            android:name=".ui.android.layouts.relative.RelativeLayoutCodeActivity"
-            android:exported="false"
-            android:label="@string/relative_layout"
-            android:parentActivityName=".ui.android.layouts.relative.RelativeLayoutCodeActivity"/>
-        <activity
-            android:name=".ui.android.layouts.table.TableLayoutActivity"
-            android:exported="false"
-            android:label="@string/table_layout"
-            android:parentActivityName=".ui.android.layouts.table.TableLayoutActivity"/>
-        <activity
-            android:name=".ui.android.layouts.table.TableLayoutCodeActivity"
-            android:exported="false"
-            android:label="@string/table_layout"
-            android:parentActivityName=".ui.android.layouts.table.TableLayoutCodeActivity"/>
-        <activity
-            android:name=".ui.android.views.grid.GirdViewActivity"
-            android:exported="false"
-            android:label="@string/grid_view"
-            android:parentActivityName=".ui.android.views.grid.GirdViewActivity"/>
-        <activity
-            android:name=".ui.android.views.grid.GirdViewCodeActivity"
-            android:exported="false"
-            android:label="@string/grid_view"
-            android:parentActivityName=".ui.android.views.grid.GirdViewCodeActivity"/>
-        <activity
-            android:name=".ui.android.alerts.alertdialog.AlertDialogActivity"
-            android:exported="false"
-            android:label="@string/alert_dialog"
-            android:parentActivityName=".ui.android.alerts.alertdialog.AlertDialogActivity"/>
-        <activity
-            android:name=".ui.android.alerts.alertdialog.AlertDialogCodeActivity"
-            android:exported="false"
-            android:label="@string/alert_dialog"
-            android:parentActivityName=".ui.android.alerts.alertdialog.AlertDialogCodeActivity"/>
-        <activity
-            android:name=".ui.settings.permissions.PermissionsActivity"
-            android:exported="false"
-            android:label="@string/permissions"
-            android:parentActivityName=".ui.settings.permissions.PermissionsActivity"/>
-        <activity
-            android:name=".ui.settings.support.SupportActivity"
-            android:exported="false"
-            android:label="@string/support_us"
-            android:parentActivityName=".ui.settings.support.SupportActivity"/>
-        <activity
-            android:name=".ui.android.basics.shortcuts.ShortcutsActivity"
-            android:exported="false"
-            android:label="@string/shortcuts"
-            android:parentActivityName=".ui.android.basics.shortcuts.ShortcutsActivity"/>
-        <activity
-            android:name=".ui.android.basics.shortcuts.tabs.CodeShortcutsActivity"
-            android:exported="false"
-            android:label="@string/writing_code"
-            android:parentActivityName=".ui.android.basics.shortcuts.tabs.CodeShortcutsActivity"/>
-        <activity
-            android:name=".ui.android.basics.shortcuts.tabs.GeneralShortcutsActivity"
-            android:exported="false"
-            android:label="@string/general"
-            android:parentActivityName=".ui.android.basics.shortcuts.tabs.GeneralShortcutsActivity"/>
-        <activity
-            android:name=".ui.android.basics.shortcuts.tabs.RefactoringShortcutsActivity"
-            android:exported="false"
-            android:label="@string/refactoring"
-            android:parentActivityName=".ui.android.basics.shortcuts.tabs.RefactoringShortcutsActivity"/>
-        <activity
-            android:name=".ui.android.basics.shortcuts.tabs.BuildShortcutsActivity"
-            android:exported="false"
-            android:label="@string/build_and_run"
-            android:parentActivityName=".ui.android.basics.shortcuts.tabs.BuildShortcutsActivity"/>
-        <activity
-            android:name=".ui.android.basics.shortcuts.tabs.DebuggingShortcutsActivity"
-            android:exported="false"
-            android:label="@string/debugging"
-            android:parentActivityName=".ui.android.basics.shortcuts.tabs.DebuggingShortcutsActivity"/>
-        <activity
-            android:name=".ui.android.basics.shortcuts.tabs.NavigationAndSearchingShortcutsActivity"
-            android:exported="false"
-            android:label="@string/navigation_and_searching"
-            android:parentActivityName=".ui.android.basics.shortcuts.tabs.NavigationAndSearchingShortcutsActivity"/>
-        <activity
-            android:name=".ui.android.basics.shortcuts.tabs.VersionControlShortcutsActivity"
-            android:exported="false"
-            android:label="@string/version_control"
-            android:parentActivityName=".ui.android.basics.shortcuts.tabs.VersionControlShortcutsActivity"/>
-        <activity
-            android:name=".ui.android.buttons.buttons.ButtonsCodeActivity"
-            android:exported="false"
-            android:label="@string/buttons"
-            android:parentActivityName=".ui.android.buttons.buttons.ButtonsCodeActivity"/>
-        <activity
-            android:name=".ui.settings.SettingsActivity"
-            android:exported="false"
-            android:label="@string/settings"
-            android:parentActivityName=".ui.settings.SettingsActivity">
+            android:name=".ui.screens.lessons.LessonActivity"
+            android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.APPLICATION_PREFERENCES"/>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="lesson"
+                    android:pathPrefix="/"
+                    android:scheme="com.d4rk.androidtutorials" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".ui.settings.help.HelpActivity"
-            android:label="@string/help"
-            android:exported="false"
-            android:parentActivityName=".ui.settings.help.HelpActivity"/>
+            android:name=".ui.screens.settings.SettingsActivity"
+            android:exported="true"
+            android:label="@string/settings"
+            android:parentActivityName=".ui.screens.main.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.APPLICATION_PREFERENCES" />
+            </intent-filter>
+        </activity>
+
         <activity
-            android:name=".ui.android.buttons.switch.SwitchActivity"
-            android:label="@string/switches"
-            android:exported="false"
-            android:parentActivityName=".ui.android.buttons.switch.SwitchActivity"/>
+            android:name=".ui.screens.settings.display.DisplaySettingsActivity"
+            android:parentActivityName=".ui.screens.settings.SettingsActivity" />
+
         <activity
-            android:name=".ui.android.buttons.buttons.ButtonsActivity"
-            android:label="@string/buttons"
-            android:exported="false"
-            android:parentActivityName=".ui.android.buttons.buttons.ButtonsActivity"/>
+            android:name=".ui.screens.settings.display.theme.ThemeSettingsActivity"
+            android:parentActivityName=".ui.screens.settings.display.DisplaySettingsActivity" />
+
         <activity
-            android:name=".ui.android.start.AndroidStartProjectActivity"
-            android:label="@string/android_start"
-            android:exported="false"
-            android:parentActivityName=".ui.android.start.AndroidStartProjectActivity"/>
+            android:name=".ui.screens.settings.advanced.AdvancedSettingsActivity"
+            android:parentActivityName=".ui.screens.settings.SettingsActivity" />
+
         <activity
-            android:name=".ui.android.basics.sdk.AndroidSDK"
-            android:label="@string/android_sdk"
-            android:exported="false"
-            android:parentActivityName=".ui.android.basics.sdk.AndroidSDK"/>
+            android:name=".ui.screens.settings.privacy.PrivacySettingsActivity"
+            android:parentActivityName=".ui.screens.settings.SettingsActivity" />
+
         <activity
-            android:name=".ui.android.basics.viewbinding.ViewBindingTutorialActivity"
-            android:label="@string/view_binding"
-            android:exported="false"
-            android:parentActivityName=".ui.android.basics.viewbinding.ViewBindingTutorialActivity"/>
+            android:name=".ui.screens.settings.privacy.permissions.PermissionsSettingsActivity"
+            android:exported="true"
+            android:parentActivityName=".ui.screens.settings.privacy.PrivacySettingsActivity"
+            android:permission="android.permission.START_VIEW_PERMISSION_USAGE">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW_PERMISSION_USAGE" />
+                <action android:name="android.intent.action.VIEW_PERMISSION_USAGE_FOR_PERIOD" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
         <activity
-            android:name=".ui.android.basics.history.AndroidHistory"
-            android:label="@string/history_of_android"
-            android:exported="false"
-            android:parentActivityName=".ui.android.basics.history.AndroidHistory"/>
+            android:name=".ui.screens.settings.privacy.usage.UsageAndDiagnosticsActivity"
+            android:parentActivityName=".ui.screens.settings.privacy.PrivacySettingsActivity" />
+
         <activity
-            android:name=".ui.android.basics.permissions.PermissionsTutorialActivity"
-            android:label="@string/permissions"
-            android:exported="false"
-            android:parentActivityName=".ui.android.basics.permissions.PermissionsTutorialActivity"/>
+            android:name=".ui.screens.settings.privacy.ads.AdsSettingsActivity"
+            android:parentActivityName=".ui.screens.settings.privacy.PrivacySettingsActivity" />
+
         <activity
-            android:name=".ui.android.reviews.ratingbar.RatingBarActivity"
-            android:exported="false"
-            android:label="@string/rating_bar"
-            android:parentActivityName=".ui.android.reviews.ratingbar.RatingBarActivity"/>
+            android:name=".ui.screens.settings.about.AboutSettingsActivity"
+            android:parentActivityName=".ui.screens.settings.SettingsActivity" />
+
         <activity
-            android:name=".ui.android.reviews.ratingbar.RatingBarCodeActivity"
-            android:exported="false"
-            android:label="@string/rating_bar"
-            android:parentActivityName=".ui.android.reviews.ratingbar.RatingBarCodeActivity"/>
+            android:name=".ui.screens.help.HelpActivity"
+            android:parentActivityName=".ui.screens.main.MainActivity" />
+
         <service
             android:name="androidx.appcompat.app.AppLocalesMetadataHolderService"
             android:enabled="false"
             android:exported="false">
             <meta-data
                 android:name="autoStoreLocales"
-                android:value="true"/>
+                android:value="true" />
         </service>
+
         <meta-data
             android:name="firebase_performance_logcat_enabled"
-            android:value="true"/>
+            android:value="true" />
+
         <meta-data
             android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version"/>
+            android:value="@integer/google_play_services_version" />
+
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-5294151573817700~4228267194"/>
+            android:value="ca-app-pub-5294151573817700~3549716864" />
+
         <meta-data
             android:name="com.google.android.gms.ads.AD_MANAGER_APP"
-            android:value="true"/>
+            android:value="true" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.flag.OPTIMIZE_INITIALIZATION"
+            android:value="true" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.flag.OPTIMIZE_AD_LOADING"
+            android:value="true" />
+
+        <property
+            android:name="android.adservices.AD_SERVICES_CONFIG"
+            android:resource="@xml/gma_ad_services_config"
+            tools:replace="android:resource" />
     </application>
 </manifest>

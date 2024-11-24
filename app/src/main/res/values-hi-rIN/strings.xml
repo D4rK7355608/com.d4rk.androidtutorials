@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_short_description">सीखें कि कैसे आसान एप्लिकेशन्स बनाएं Android Studio में।</string>
+    <string name="notification_update_title">एक नया अद्यतन उपलब्ध!</string>
+    <string name="summary_notification_update">ऐप का नया संस्करण उपलब्ध है। अपडेट करने के लिए क्लिक करें!</string>
+    <string name="notification_last_time_used_title">इसे बीते एक अर्सा हो गया है!</string>
+    <string name="summary_notification_last_time_used">चलो कुछ जगह खाली कर देते हैं! हमें खुशी है कि आप वापस आ गए हैं!</string>
+
+    <string name="welcome">स्वागत</string>
+    <string name="summary_browse_terms_of_service_and_privacy_policy">जारी रखने के लिए हमारी सेवा की शर्तें और गोपनीयता नीति पढ़ें और उनसे सहमत हों</string>
+    <string name="agree">सहमत</string>
+
+    <string name="navigation_drawer_open">नेविगेशन ड्रॉअर खोलें</string>
+
+    <string name="home">घर</string>
+    <string name="get_the_app_to_watch">ऐप प्राप्त करें और पूरा पाठ देखें: %1$s</string>
+    <string name="activity_not_found">गतिविधि नहीं मिली.</string>
+    <string name="security_error">सुरक्षा संबंधी कोई त्रुटि हुई। कृपया बाद में पुनः प्रयास करें।</string>
+    <string name="io_error">इनपुट/आउटपुट त्रुटि हुई। कृपया अपना नेटवर्क कनेक्शन या स्टोरेज जांचें और पुनः प्रयास करें।</string>
+    <string name="illegal_argument_error">गलत इनपुट या तर्क दिया गया है। कृपया जानकारी की जाँच करें और पुनः प्रयास करें।</string>
+    <string name="unknown_error">एक अज्ञात त्रुटि हुई।</string>
+
+    <string name="studio_bot">स्टूडियो बॉट</string>
+
+    <string name="share">शेयर करना</string>
+    <string name="app_info">अनुप्रयोग की जानकारी</string>
+
+    <string name="favorites">पसंदीदा</string>
+
+    <string name="settings">सेटिंग्स</string>
+
+    <string name="display">प्रदर्शन</string>
+    <string name="summary_preference_settings_display">अपने ऐप के लुक और अनुभव को निजीकृत करें</string>
+
+    <string name="appearance">उपस्थिति</string>
+    <string name="dark_theme">डार्क थीम</string>
+    <string name="will_turn_on_automatically_by_system">सिस्टम द्वारा स्वचालित रूप से चालू हो जाएगा</string>
+    <string name="will_never_turn_on_automatically">कभी भी स्वचालित रूप से चालू नहीं होगा</string>
+    <string name="amoled_mode">एमोलेड़ मोड</string>
+    <string name="follow_system">सिस्टम मोड का पालन करें</string>
+    <string name="light_mode">लाइट मोड</string>
+    <string name="dark_mode">डार्क मोड</string>
+    <string name="summary_dark_theme">डार्क थीम आपकी बैटरी को लंबे समय तक चालू रखने में मदद करने के लिए गहरे बैकग्राउंड का उपयोग करती है</string>
+
+    <string name="dynamic_colors">गतिशील रंग</string>
+    <string name="summary_preference_settings_dynamic_colors">वॉलपेपर से रंगों को ऐप थीम पर लागू करें</string>
+
+    <string name="app_behavior">ऐप व्यवहार</string>
+    <string name="bounce_buttons">बाउंस क्लिक</string>
+    <string name="summary_preference_settings_bounce_buttons">क्लिक करने पर सभी क्लिक करने योग्य तत्वों पर एक सूक्ष्म बाउंस एनीमेशन लागू होता है</string>
+
+    <string name="navigation">मार्गदर्शन</string>
+    <string name="startup_page">स्टार्टअप पेज</string>
+    <string name="summary_preference_settings_startup_page">ऐप शुरू होने पर प्रदर्शित होने वाली स्क्रीन चुनें.</string>
+    <string name="dialog_startup_subtitle">अपना पसंदीदा स्टार्टअप पेज चुनें:</string>
+    <string name="dialog_info_startup">एप्लिकेशन लॉन्च करने पर उपयोगकर्ताओं को प्रस्तुत की जाने वाली प्रारंभिक स्क्रीन को कॉन्फ़िगर करता है। यह सेटिंग ऐप के साथ उपयोगकर्ता की पहली बातचीत को प्रभावित करती है और इसे विशिष्ट उपयोगकर्ता खंडों या उत्पाद लक्ष्यों के अनुरूप बनाया जा सकता है।</string>
+
+    <string name="language">भाषा</string>
+    <string name="summary_preference_settings_language">ऐप में इस्तेमाल की जाने वाली भाषा बदल जाती है</string>
+    <string name="dialog_language_subtitle">अपनी पसंदीदा भाषा चुनें</string>
+    <string name="dialog_info_language">अपनी पसंदीदा भाषा के साथ अपने अनुभव को वैयक्तिकृत करें। आपके द्वारा किया गया कोई भी भाषा परिवर्तन तुरंत प्रभावी हो जाता है, जिससे आपकी चुनी हुई भाषा में एक सहज अनुभव सुनिश्चित होता है</string>
+
+    <string name="notifications">सूचनाएं</string>
+    <string name="summary_preference_settings_notifications">ऐप नोटिफ़िकेशन प्रबंधित करें</string>
+
+    <string name="app_usage_notifications">ऐप उपयोग अधिसूचनाएँ</string>
+    <string name="update_notifications">सूचनाएं अपडेट करें</string>
+
+    <string name="advanced">विकसित</string>
+    <string name="summary_preference_settings_advanced">अधिक उन्नत सेटिंग्स का अन्वेषण करें</string>
+    <string name="error_reporting">त्रुटि रिपोर्टिंग</string>
+    <string name="bug_report">बग रिपोर्ट</string>
+    <string name="summary_preference_settings_bug_report">ऐप के GitHub रिपॉजिटरी समस्या पृष्ठ पर बग रिपोर्ट और सुविधा अनुरोध भेजें</string>
+
+    <string name="security_and_privacy">सुरक्षा और गोपनीयता</string>
+    <string name="summary_preference_settings_privacy_and_security">अपनी गोपनीयता सेटिंग प्रबंधित करें</string>
+    <string name="privacy">गोपनीयता</string>
+    <string name="privacy_policy">गोपनीयता नीति</string>
+    <string name="summary_preference_settings_privacy_policy">वह नीति देखें जो यह नियंत्रित करती है कि हम आपके डेटा को कैसे संभालते हैं</string>
+    <string name="terms_of_service">सेवा की शर्तें</string>
+    <string name="summary_preference_settings_terms_of_service">हमारी सेवा का उपयोग करते समय आप जिन शर्तों से सहमत हैं, उनकी समीक्षा करें</string>
+    <string name="code_of_conduct">आचार संहिता</string>
+    <string name="summary_preference_settings_code_of_conduct">हमारी सेवा के अंतर्गत आचरण के नियमों और दिशा-निर्देशों को समझें</string>
+
+    <string name="permissions">अनुमतियां</string>
+    <string name="summary_preference_settings_permissions">हमारी सेवा को दी गई अनुमतियों का प्रबंधन करें</string>
+    <string name="normal">सामान्य</string>
+    <string name="ad_id">विज्ञापन आईडी [AD_ID]</string>
+    <string name="summary_preference_permissions_ad_id">ऐप को उपयोगकर्ता के डिवाइस से जुड़े विज्ञापन पहचानकर्ता को पुनः प्राप्त करने और उसका उपयोग करने, वैयक्तिकृत विज्ञापन प्रदान करने, विज्ञापन प्रभावशीलता को मापने और Android 13 या बाद के डिवाइस पर विज्ञापन दिखाने की अनुमति देता है।</string>
+    <string name="internet">इंटरनेट [इंटरनेट]</string>
+    <string name="summary_preference_permissions_internet">ऐप को त्रुटि रिपोर्ट भेजने या अपडेट की जांच करने के लिए इंटरनेट कनेक्शन स्थापित करने की अनुमति देता है।</string>
+    <string name="post_notifications">पोस्ट अधिसूचनाएँ [POST_NOTIFICATIONS]</string>
+    <string name="summary_preference_permissions_post_notifications">ऐप को Android 13 या उसके बाद वाले डिवाइस पर नोटिफ़िकेशन प्रदर्शित करने की अनुमति देता है.</string>
+    <string name="runtime">क्रम</string>
+    <string name="access_network_state">नेटवर्क स्थिति तक पहुँचें [ACCESS_NETWORK_STATE]</string>
+    <string name="summary_preference_permissions_access_network_state">एप्लिकेशन को नेटवर्क कनेक्टिविटी की जांच करने और सक्षम स्थिति और कनेक्टेड वाई-फाई डिवाइस नामों सहित वाई-फाई के बारे में जानकारी प्राप्त करने की अनुमति देता है।</string>
+    <string name="access_notification_policy">एक्सेस अधिसूचना नीति [ACCESS_NOTIFICATION_POLICY]</string>
+    <string name="summary_preference_permissions_access_notification_policy">ऐप को डिवाइस की अधिसूचना नीति तक पहुंचने और उसे संशोधित करने की अनुमति देता है, यह नियंत्रित करता है कि उपयोगकर्ता को अधिसूचनाएं कैसे और कब दिखाई जाएं और कस्टम अधिसूचना प्रबंधन सुविधाएं प्रदान करता है।</string>
+    <string name="billing">बिलिंग [बिलिंग]</string>
+    <string name="summary_preference_permissions_billing">ऐप को इन-ऐप खरीदारी और दान को संभालने के लिए Google Play बिलिंग लाइब्रेरी का उपयोग करने की अनुमति देता है</string>
+    <string name="check_license">लाइसेंस जांचें [CHECK_LICENSE]</string>
+    <string name="summary_preference_permissions_check_license">ऐप को लाइसेंस अनुबंध के साथ अपने अनुपालन को सत्यापित करने और बौद्धिक संपदा की सुरक्षा के लिए लाइसेंसिंग शर्तों को लागू करने की अनुमति देता है।</string>
+    <string name="foreground_service">अग्रभूमि सेवा [FOREGROUND_SERVICE]</string>
+    <string name="summary_preference_permissions_foreground_service">यह ऐप को अग्रभूमि में चलने वाली सेवाओं को बनाने और उपयोग करने की अनुमति देता है, जिससे उन्हें अन्य पृष्ठभूमि प्रक्रियाओं पर प्राथमिकता मिलती है और प्रदर्शन और विश्वसनीयता में सुधार होता है।</string>
+
+    <string name="ads">विज्ञापन</string>
+    <string name="summary_preference_settings_ads">नियंत्रित करें कि हम आपको प्रासंगिक विज्ञापन दिखाने के लिए आपकी जानकारी का उपयोग कैसे करते हैं</string>
+    <string name="display_ads">प्रदर्शन विज्ञापन</string>
+    <string name="personalized_ads">वैयक्तिकृत विज्ञापन</string>
+    <string name="summary_ads_personalized_ads">चुनें कि हम आपकी रुचियों के आधार पर आपके लिए विज्ञापनों को कैसे वैयक्तिकृत करें</string>
+    <string name="summary_ads">अपने लिए प्रासंगिक विज्ञापन देखें। अपनी ऐप गतिविधि के आधार पर वैयक्तिकृत विज्ञापन दिखाने के लिए उपयोग की जाने वाली जानकारी प्रबंधित करें। आप यहां हमेशा वैयक्तिकरण बंद कर सकते हैं.\n</string>
+
+    <string name="usage_and_diagnostics">उपयोग और निदान</string>
+    <string name="summary_preference_settings_usage_and_diagnostics">Android के लिए Cleaner को बेहतर बनाने में मदद करने के लिए डेटा साझा करें</string>
+    <string name="summary_usage_and_diagnostics">अपने आप निदान, डिवाइस और ऐप उपयोग डेटा हमें भेजकर अपने अनुभव को बेहतर बनाने में सहायता करें। इससे ऐप प्रदर्शन, स्थिरता और अन्य संवर्द्धन को बेहतर बनाने में सहायता मिलेगी। कुछ समेकित डेटा हमारे ऐप्स की भी सहायता करेगा।\n\nयह आपके डिवाइस और आप हमारे ऐप्स का उपयोग कैसे करते हैं (जैसे बैटरी स्तर, सिस्टम और ऐप गतिविधि और त्रुटियाँ) के बारे में सामान्य जानकारी है। डेटा का उपयोग हमारे ऐप्स को बेहतर बनाने के लिए किया जाएगा।\n\nइस सुविधा को बंद करने से आपके डिवाइस की ऐप अपडेट और सुरक्षा जैसी आवश्यक सेवाओं के लिए आवश्यक जानकारी भेजने की क्षमता प्रभावित नहीं होती है।\n</string>
+
+    <string name="legal">कानूनी</string>
+    <string name="legal_notices">कानूनी नोटिस</string>
+    <string name="summary_preference_settings_legal_notices">हमारी सेवा के बारे में कानूनी जानकारी देखें</string>
+    <string name="license">लाइसेंस</string>
+
+    <string name="about">के बारे में</string>
+    <string name="summary_preference_settings_about">Android स्टूडियो ट्यूटोरियल के बारे में अधिक जानें</string>
+
+    <string name="app_build_version">एप्लिकेशन बिल्ड संस्करण</string>
+    <string name="summary_preference_settings_oss">ओपन सोर्स सॉफ्टवेयर के लिए लाइसेंस विवरण</string>
+    <string name="device_info">डिवाइस जानकारी</string>
+    <string name="app_build">ऐप बिल्ड: %6$s\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
+    <string name="debug">डिबग</string>
+    <string name="release">मुक्त करना</string>
+    <string name="manufacturer">निर्माता:</string>
+    <string name="device_model">डिवाइस मॉडल:</string>
+    <string name="android_version">एंड्रॉयड संस्करण:</string>
+    <string name="api_level">एपीआई स्तर:</string>
+    <string name="snack_device_info_copied">डिवाइस की जानकारी क्लिपबोर्ड पर कॉपी की गई</string>
+
+    <string name="help_and_feedback">सहायता और प्रतिक्रिया</string>
+    <string name="help">मदद</string>
+    <string name="faq">सामान्य प्रश्न</string>
+    <string name="view_in_google_play_store">गूगल प्ले स्टोर में देखें</string>
+    <string name="version_info">संस्करण जानकारी</string>
+    <string name="version">संस्करण %1$s</string>
+    <string name="beta_program">बीटा कार्यक्रम</string>
+    <string name="question_1">एंड्रॉइड स्टूडियो ट्यूटोरियल्स: कोटलिन संस्करण क्या है?</string>
+    <string name="summary_preference_faq_1">एंड्रॉइड स्टूडियो ट्यूटोरियल: कोटलिन संस्करण एक निःशुल्क और ओपन-सोर्स ऐप है जो एंड्रॉइड ऐप डेवलपमेंट के लिए आधिकारिक एकीकृत विकास वातावरण (आईडीई) एंड्रॉइड स्टूडियो का उपयोग करने के तरीके पर वीडियो ट्यूटोरियल का संग्रह प्रदान करता है।</string>
+    <string name="question_2">मैं Android Studio ट्यूटोरियल: Kotlin संस्करण कैसे डाउनलोड कर सकता हूँ?</string>
+    <string name="summary_preference_faq_2">Android Studio ट्यूटोरियल: Kotlin संस्करण Google Play Store पर डाउनलोड के लिए उपलब्ध है। बस अपने Android डिवाइस पर Play Store ऐप में \"Android Studio ट्यूटोरियल\" खोजें और ऐप डाउनलोड और इंस्टॉल करने के लिए \"इंस्टॉल\" पर टैप करें।</string>
+    <string name="question_3">क्या Android Studio ट्यूटोरियल: Kotlin संस्करण iOS डिवाइस के लिए उपलब्ध है?</string>
+    <string name="summary_preference_faq_3">नहीं, Android Studio ट्यूटोरियल: Kotlin संस्करण वर्तमान में केवल Android डिवाइसों के लिए उपलब्ध है।</string>
+    <string name="question_4">क्या Android Studio ट्यूटोरियल: Kotlin संस्करण शुरुआती लोगों के लिए उपयुक्त है?</string>
+    <string name="summary_preference_faq_4">हां, Android Studio ट्यूटोरियल: Kotlin एडिशन उन शुरुआती लोगों के लिए उपयुक्त है जो Android ऐप डेवलपमेंट में नए हैं और Android Studio का उपयोग करना सीखना चाहते हैं। ऐप कई तरह के वीडियो ट्यूटोरियल प्रदान करता है जो IDE इंस्टॉल करने से लेकर अपना पहला ऐप बनाने और उसे तैनात करने तक Android Studio का उपयोग करने की मूल बातें कवर करते हैं।</string>
+    <string name="question_5">क्या Android Studio ट्यूटोरियल: Kotlin संस्करण नियमित रूप से अपडेट किया जाता है?</string>
+    <string name="summary_preference_faq_5">हां, एंड्रॉइड स्टूडियो ट्यूटोरियल: कोटलिन संस्करण को नियमित रूप से नए वीडियो ट्यूटोरियल और सामग्री के साथ अपडेट किया जाता है ताकि उपयोगकर्ताओं को एंड्रॉइड स्टूडियो में नवीनतम सुविधाओं और परिवर्तनों के साथ अद्यतित रखा जा सके।</string>
+    <string name="question_6">अगर मुझे Android Studio Tutorials: Kotlin Edition के बारे में कोई प्रश्न या समस्या है तो मैं सहायता कैसे प्राप्त कर सकता हूं?</string>
+    <string name="summary_preference_faq_6">अगर आपको Android Studio Tutorials: Kotlin Edition से जुड़ा कोई सवाल या समस्या है, तो आप ऐप के सहायता पृष्ठ के ज़रिए या d4rk7355608@gmail.com पर ईमेल करके हमसे संपर्क कर सकते हैं। हम आपकी किसी भी समस्या को हल करने में आपकी पूरी मदद करेंगे।</string>
+    <string name="question_7">मैं Android Studio ट्यूटोरियल: Kotlin संस्करण में Firebase एनालिटिक्स और क्रैशलिटिक्स को कैसे अक्षम करूं?</string>
+    <string name="summary_preference_faq_7">आप ऐप में सेटिंग मेनू पर जाकर और इन सुविधाओं के लिए स्विच टॉगल करके फायरबेस एनालिटिक्स और क्रैशलिटिक्स को अक्षम कर सकते हैं।</string>
+    <string name="question_8">मैं Android Studio Tutorials: Kotlin Edition के अपडेट की जांच कैसे करूं?</string>
+    <string name="summary_preference_faq_8">आप ऐप में सेटिंग मेनू पर जाकर और \"अपडेट की जांच करें\" विकल्प चुनकर Android Studio Tutorials: Kotlin Edition के अपडेट की जांच कर सकते हैं।</string>
+    <string name="question_9">मैं Android Studio ट्यूटोरियल्स: Kotlin संस्करण के विकास का समर्थन कैसे कर सकता हूं?</string>
+    <string name="summary_preference_faq_9">आप Google Play स्टोर पर सकारात्मक समीक्षा छोड़कर, दोस्तों और सहकर्मियों के साथ ऐप साझा करके और सेटिंग्स मेनू में \"शेयर\" विकल्प के माध्यम से डेवलपर्स का समर्थन करके Android Studio Tutorials: Kotlin Edition के विकास का समर्थन कर सकते हैं।</string>
+    <string name="feedback">प्रतिक्रिया</string>
+
+    <string name="updates">अपडेट</string>
+
+    <string name="support_us">हमें प्रोत्साहन दें</string>
+    <string name="paid_support">सशुल्क सहायता</string>
+    <string name="summary_donations">चाहे आप कितना भी दान करें, आप हमारे ऐप को चालू रखने और हमारी सुविधाओं को बेहतर बनाने में हमारी मदद करेंगे। हम आपकी उदारता और दयालुता की सराहना करते हैं!</string>
+    <string name="non_paid_support">अवैतनिक सहायता</string>
+    <string name="web_ad">वेब विज्ञापन</string>
+
+    <string name="snack_app_updated">ऐप को सफलतापूर्वक अपडेट कर दिया गया है</string>
+    <string name="snack_update_failed">अद्यतन प्रक्रिया में एक समस्या आई</string>
+    <string name="try_again">पुनः प्रयास करें</string>
+    <string name="summary_share_message">इस अद्भुत ऐप को देखें जिसका मैं उपयोग कर रहा हूँ! इसमें कुछ बहुत ही बढ़िया विशेषताएं हैं जो आपको दिलचस्प लग सकती हैं। आप इसे Play Store से डाउनलोड कर सकते हैं: %1$s</string>
+    <string name="learn_more">और अधिक जानें</string>
+
+    <string name="close">बंद करना?</string>
+    <string name="snack_network_error">अपडेट की जाँच करते समय नेटवर्क त्रुटि हुई</string>
+    <string name="snack_general_error">अपडेट की जाँच करते समय एक त्रुटि हुई</string>
+    <string name="summary_close">क्या आप निश्चित हैं आपकी बाहर निकलने की इच्छा है?</string>
+</resources>
