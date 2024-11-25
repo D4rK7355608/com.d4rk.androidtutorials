@@ -1,7 +1,6 @@
 package com.d4rk.androidtutorials.ui.components.lessons
 
 import android.content.Context
-import android.os.Build.VERSION.SDK_INT
 import android.view.SoundEffectConstants
 import android.view.View
 import androidx.compose.foundation.clickable
@@ -38,10 +37,7 @@ import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import coil3.ImageLoader
 import coil3.compose.AsyncImage
-import coil3.gif.AnimatedImageDecoder
-import coil3.gif.GifDecoder
 import com.d4rk.androidtutorials.constants.ui.lessons.LessonConstants
 import com.d4rk.androidtutorials.data.model.ui.screens.UiLesson
 import com.d4rk.androidtutorials.ui.components.animations.bounceClick
@@ -51,34 +47,20 @@ import com.d4rk.androidtutorials.ui.screens.home.HomeViewModel
 @Composable
 fun LessonItem(lesson : UiLesson , context : Context , modifier : Modifier = Modifier) {
     val viewModel : HomeViewModel = viewModel()
-    val imageLoader = ImageLoader.Builder(context).components {
-        if (SDK_INT >= 28) {
-            add(AnimatedImageDecoder.Factory())
-        }
-        else {
-            add(GifDecoder.Factory())
-        }
-    }.build()
     Card(
         modifier = modifier.fillMaxWidth()
     ) {
         when (lesson.lessonType) {
             LessonConstants.TYPE_FULL_IMAGE_BANNER -> {
                 FullImageBannerLessonItem(
-                    lesson = lesson ,
-                    context = context ,
-                    viewModel = viewModel ,
-                    imageLoader = imageLoader
+                    lesson = lesson , context = context , viewModel = viewModel
                 )
                 Spacer(modifier = Modifier.width(8.dp))
             }
 
             LessonConstants.TYPE_SQUARE_IMAGE -> {
                 SquareImageLessonItem(
-                    lesson = lesson ,
-                    context = context ,
-                    viewModel = viewModel ,
-                    imageLoader = imageLoader
+                    lesson = lesson , context = context , viewModel = viewModel
                 )
                 Spacer(modifier = Modifier.width(8.dp))
             }
@@ -88,7 +70,7 @@ fun LessonItem(lesson : UiLesson , context : Context , modifier : Modifier = Mod
 
 @Composable
 fun FullImageBannerLessonItem(
-    lesson : UiLesson , context : Context , viewModel : HomeViewModel , imageLoader : ImageLoader
+    lesson : UiLesson , context : Context , viewModel : HomeViewModel
 ) {
     Card(modifier = Modifier
             .fillMaxWidth()
@@ -97,7 +79,6 @@ fun FullImageBannerLessonItem(
             }) {
         Column {
             AsyncImage(
-                imageLoader = imageLoader ,
                 model = lesson.thumbnailImageUrl ,
                 contentDescription = null ,
                 modifier = Modifier
@@ -130,7 +111,7 @@ fun FullImageBannerLessonItem(
 
 @Composable
 fun SquareImageLessonItem(
-    lesson : UiLesson , context : Context , viewModel : HomeViewModel , imageLoader : ImageLoader
+    lesson : UiLesson , context : Context , viewModel : HomeViewModel
 ) {
     Card(modifier = Modifier
             .fillMaxWidth()
@@ -146,7 +127,6 @@ fun SquareImageLessonItem(
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 AsyncImage(
-                    imageLoader = imageLoader ,
                     model = lesson.squareImageUrl ,
                     contentDescription = null ,
                     modifier = Modifier
