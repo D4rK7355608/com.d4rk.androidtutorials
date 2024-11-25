@@ -80,7 +80,7 @@ fun StudioBotScreen() {
 
                 OutlinedTextField(
                     value = userInput ,
-                    singleLine = true,
+                    singleLine = true ,
                     onValueChange = { userInput = it } ,
                     modifier = Modifier
                             .fillMaxWidth()
@@ -166,29 +166,25 @@ fun MessageBubble(text : String , isBot : Boolean , showTypingAnimation : Boolea
                     text = textToDisplay , modifier = Modifier.padding(16.dp)
                 )
                 Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.End
+                    modifier = Modifier.fillMaxWidth() , horizontalArrangement = Arrangement.End
                 ) {
                     TextButton(
-                        modifier = Modifier.bounceClick(),
-                        onClick = {
-                            ClipboardUtil.copyTextToClipboard(
-                                context = context,
-                                label = "Message",
-                                text = text,
-                                onShowSnackbar = {
-                                    Toast.makeText(
-                                        context,
-                                        "Message copied to clipboard",
-                                        Toast.LENGTH_SHORT
-                                    ).show()
-                                })
-                        },
-                        contentPadding = PaddingValues(horizontal = 8.dp)
+                        modifier = Modifier.bounceClick() , onClick = {
+                            ClipboardUtil.copyTextToClipboard(context = context ,
+                                                              label = "Message" ,
+                                                              text = text ,
+                                                              onShowSnackbar = {
+                                                                  Toast.makeText(
+                                                                      context ,
+                                                                      "Message copied to clipboard" ,
+                                                                      Toast.LENGTH_SHORT
+                                                                  ).show()
+                                                              })
+                        } , contentPadding = PaddingValues(horizontal = 8.dp)
                     ) {
                         Icon(
-                            imageVector = Icons.Outlined.CopyAll,
-                            contentDescription = "Copy Message",
+                            imageVector = Icons.Outlined.CopyAll ,
+                            contentDescription = "Copy Message" ,
                             modifier = Modifier.size(ButtonDefaults.IconSize)
                         )
                         Spacer(modifier = Modifier.width(ButtonDefaults.IconSpacing))

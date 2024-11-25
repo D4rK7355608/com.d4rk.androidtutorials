@@ -89,8 +89,9 @@ fun LessonScreen(
                          onDismiss = { viewModel.dismissErrorDialog() })
     }
 
-    TopAppBarScaffoldWithBackButton(title = lesson.lessonTitle ,
-                                    onBackClicked = { activity.finish() }) { paddingValues ->
+    TopAppBarScaffoldWithBackButton(
+        title = lesson.lessonTitle ,
+        onBackClicked = { activity.finish() }) { paddingValues ->
         if (isLoading) {
             LoadingScreen(progressAlpha)
         }
@@ -122,13 +123,15 @@ fun LessonScreen(
 
                         LessonContentTypes.IMAGE -> {
                             StyledImage(
-                                imageUrl = contentItem.contentImageSrc , contentDescription = "Lesson Image"
+                                imageUrl = contentItem.contentImageSrc ,
+                                contentDescription = "Lesson Image"
                             )
                         }
 
                         LessonContentTypes.CODE -> {
                             CodeBlock(
-                                code = contentItem.contentCode , language = contentItem.programmingLanguage
+                                code = contentItem.contentCode ,
+                                language = contentItem.programmingLanguage
                             )
                         }
 
@@ -382,16 +385,17 @@ fun CodeBlock(code : String , language : String?) {
                     modifier = Modifier.padding(end = 8.dp)
                 )
                 TextButton(modifier = Modifier.bounceClick() , onClick = {
-                    ClipboardUtil.copyTextToClipboard(context = context ,
-                                                      label = "Code" ,
-                                                      text = code ,
-                                                      onShowSnackbar = {
-                                                          Toast.makeText(
-                                                              context ,
-                                                              "Code copied to clipboard" ,
-                                                              Toast.LENGTH_SHORT
-                                                          ).show()
-                                                      })
+                    ClipboardUtil.copyTextToClipboard(
+                        context = context ,
+                        label = "Code" ,
+                        text = code ,
+                        onShowSnackbar = {
+                            Toast.makeText(
+                                context ,
+                                "Code copied to clipboard" ,
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        })
                 } , contentPadding = PaddingValues(horizontal = 8.dp)) {
                     Icon(
                         imageVector = Icons.Outlined.CopyAll ,

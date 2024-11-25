@@ -38,9 +38,9 @@ fun SelectLanguageAlertDialog(
 ) {
     val selectedLanguage : MutableState<String> = remember { mutableStateOf(value = "") }
     val languageEntries : List<String> =
-            stringArrayResource(R.array.preference_language_entries).toList()
+            stringArrayResource(id = R.array.preference_language_entries).toList()
     val languageValues : List<String> =
-            stringArrayResource(R.array.preference_language_values).toList()
+            stringArrayResource(id = R.array.preference_language_values).toList()
 
     AlertDialog(onDismissRequest = onDismiss , text = {
         SelectLanguageAlertDialogContent(
@@ -87,11 +87,10 @@ fun SelectLanguageAlertDialogContent(
                         verticalAlignment = Alignment.CenterVertically ,
                         horizontalArrangement = Arrangement.Start
                     ) {
-                        RadioButton(
-                            selected = selectedLanguage.value == languageValues[index] ,
-                            onClick = {
-                                selectedLanguage.value = languageValues[index]
-                            })
+                        RadioButton(selected = selectedLanguage.value == languageValues[index] ,
+                                    onClick = {
+                                        selectedLanguage.value = languageValues[index]
+                                    })
                         Text(
                             modifier = Modifier.padding(start = 8.dp) ,
                             text = languageEntries[index] ,

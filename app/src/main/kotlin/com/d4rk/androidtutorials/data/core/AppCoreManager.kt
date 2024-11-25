@@ -36,8 +36,9 @@ class AppCoreManager : MultiDexApplication() , Application.ActivityLifecycleCall
 
     companion object {
         lateinit var database : AppDatabase
+
         @SuppressLint("StaticFieldLeak")
-        lateinit var instance: AppCoreManager
+        lateinit var instance : AppCoreManager
             private set
     }
 
@@ -46,7 +47,7 @@ class AppCoreManager : MultiDexApplication() , Application.ActivityLifecycleCall
         instance = this
         registerActivityLifecycleCallbacks(this)
         ProcessLifecycleOwner.get().lifecycle.addObserver(observer = this)
-        database = Room.databaseBuilder(this, AppDatabase::class.java, "Android Studio Tutorials")
+        database = Room.databaseBuilder(this , AppDatabase::class.java , "Android Studio Tutorials")
                 .addMigrations(MIGRATION_1_2) // Add the migration here
                 .fallbackToDestructiveMigration() // Add this if you want destructive migrations in case of future changes
                 .build()

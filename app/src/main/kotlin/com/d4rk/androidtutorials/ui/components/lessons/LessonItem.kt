@@ -88,10 +88,7 @@ fun LessonItem(lesson : UiLesson , context : Context , modifier : Modifier = Mod
 
 @Composable
 fun FullImageBannerLessonItem(
-    lesson : UiLesson ,
-    context : Context ,
-    viewModel : HomeViewModel ,
-    imageLoader : ImageLoader
+    lesson : UiLesson , context : Context , viewModel : HomeViewModel , imageLoader : ImageLoader
 ) {
     Card(modifier = Modifier
             .fillMaxWidth()
@@ -116,8 +113,7 @@ fun FullImageBannerLessonItem(
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 TitleAndDescriptionColumn(
-                    title = lesson.lessonTitle ,
-                    description = lesson.lessonDescription
+                    title = lesson.lessonTitle , description = lesson.lessonDescription
                 )
             }
             if (lesson.lessonTags.isNotEmpty()) {
@@ -134,10 +130,7 @@ fun FullImageBannerLessonItem(
 
 @Composable
 fun SquareImageLessonItem(
-    lesson : UiLesson ,
-    context : Context ,
-    viewModel : HomeViewModel ,
-    imageLoader : ImageLoader
+    lesson : UiLesson , context : Context , viewModel : HomeViewModel , imageLoader : ImageLoader
 ) {
     Card(modifier = Modifier
             .fillMaxWidth()

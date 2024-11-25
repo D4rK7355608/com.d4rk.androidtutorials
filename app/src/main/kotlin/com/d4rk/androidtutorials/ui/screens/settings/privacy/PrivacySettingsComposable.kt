@@ -20,8 +20,9 @@ import com.d4rk.androidtutorials.utils.IntentUtils
 @Composable
 fun PrivacySettingsComposable(activity : PrivacySettingsActivity) {
     val context : Context = LocalContext.current
-    TopAppBarScaffoldWithBackButton(title = stringResource(id = R.string.settings) ,
-                                    onBackClicked = { activity.finish() }) { paddingValues ->
+    TopAppBarScaffoldWithBackButton(
+        title = stringResource(id = R.string.settings) ,
+        onBackClicked = { activity.finish() }) { paddingValues ->
         LazyColumn(
             modifier = Modifier
                     .fillMaxHeight()

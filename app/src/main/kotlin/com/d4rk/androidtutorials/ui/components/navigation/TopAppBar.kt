@@ -29,19 +29,17 @@ fun TopAppBarScaffoldWithBackButton(
             TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
     val view : View = LocalView.current
 
-    Scaffold(
-        modifier = Modifier.nestedScroll(scrollBehaviorState.nestedScrollConnection) ,
-        topBar = {
-            LargeTopAppBar(title = { Text(title) } , navigationIcon = {
-                IconButton(modifier = Modifier.bounceClick() , onClick = {
-                    onBackClicked()
-                    view.playSoundEffect(SoundEffectConstants.CLICK)
-                }) {
-                    Icon(Icons.AutoMirrored.Filled.ArrowBack , contentDescription = null)
-                }
-            } , scrollBehavior = scrollBehaviorState
-            )
-        }) { paddingValues ->
+    Scaffold(modifier = Modifier.nestedScroll(scrollBehaviorState.nestedScrollConnection) ,
+             topBar = {
+                 LargeTopAppBar(title = { Text(text = title) } , navigationIcon = {
+                     IconButton(modifier = Modifier.bounceClick() , onClick = {
+                         onBackClicked()
+                         view.playSoundEffect(SoundEffectConstants.CLICK)
+                     }) {
+                         Icon(Icons.AutoMirrored.Filled.ArrowBack , contentDescription = null)
+                     }
+                 } , scrollBehavior = scrollBehaviorState)
+             }) { paddingValues ->
         content(paddingValues)
     }
 }
@@ -54,13 +52,11 @@ fun TopAppBarScaffold(
     val scrollBehaviorState : TopAppBarScrollBehavior =
             TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
 
-    Scaffold(
-        modifier = Modifier.nestedScroll(scrollBehaviorState.nestedScrollConnection) ,
-        topBar = {
-            LargeTopAppBar(
-                title = { Text(title) } , scrollBehavior = scrollBehaviorState
-            )
-        }) { paddingValues ->
+    Scaffold(modifier = Modifier.nestedScroll(scrollBehaviorState.nestedScrollConnection) ,
+             topBar = {
+                 LargeTopAppBar(title = { Text(text = title) } ,
+                                scrollBehavior = scrollBehaviorState)
+             }) { paddingValues ->
         content(paddingValues)
     }
 }

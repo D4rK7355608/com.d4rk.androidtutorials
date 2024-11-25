@@ -34,8 +34,9 @@ fun AboutSettingsComposable(activity : AboutSettingsActivity) {
     val changelogHtmlString = htmlData.value.first
     val eulaHtmlString = htmlData.value.second
 
-    TopAppBarScaffoldWithBackButton(title = stringResource(id = R.string.about) ,
-                                    onBackClicked = { activity.finish() }) { paddingValues ->
+    TopAppBarScaffoldWithBackButton(
+        title = stringResource(id = R.string.about) ,
+        onBackClicked = { activity.finish() }) { paddingValues ->
         Box(modifier = Modifier.padding(paddingValues)) {
             LazyColumn(
                 modifier = Modifier.fillMaxHeight()

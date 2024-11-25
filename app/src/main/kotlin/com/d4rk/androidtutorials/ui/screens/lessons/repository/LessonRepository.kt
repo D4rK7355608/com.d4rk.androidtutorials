@@ -18,8 +18,7 @@ class LessonRepository(
 ) : LessonRepositoryImplementation(application , dataStore) {
 
     suspend fun getLessonRepository(
-        lessonId : String ,
-        onSuccess : (UiLessonScreenModel?) -> Unit
+        lessonId : String , onSuccess : (UiLessonScreenModel?) -> Unit
     ) {
         withContext(Dispatchers.IO) {
             val lesson = getLessonImplementation(lessonId = lessonId)

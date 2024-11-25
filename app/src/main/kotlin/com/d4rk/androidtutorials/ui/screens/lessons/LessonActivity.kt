@@ -31,9 +31,7 @@ class LessonActivity : AppCompatActivity() {
                     val lesson = viewModel.lesson.collectAsState()
                     lesson.value?.let {
                         LessonScreen(
-                            lesson = it ,
-                            activity = this@LessonActivity ,
-                            viewModel = viewModel
+                            lesson = it , activity = this@LessonActivity , viewModel = viewModel
                         )
                     }
                 }

@@ -47,8 +47,9 @@ fun ThemeSettingsComposable(activity : ThemeSettingsActivity) {
         stringResource(id = R.string.dark_mode) ,
         stringResource(id = R.string.light_mode) ,
     )
-    TopAppBarScaffoldWithBackButton(title = stringResource(id = R.string.dark_theme) ,
-                                    onBackClicked = { activity.finish() }) { paddingValues ->
+    TopAppBarScaffoldWithBackButton(
+        title = stringResource(id = R.string.dark_theme) ,
+        onBackClicked = { activity.finish() }) { paddingValues ->
         Box(modifier = Modifier.fillMaxSize()) {
             LazyColumn(
                 modifier = Modifier

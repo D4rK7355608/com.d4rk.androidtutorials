@@ -39,9 +39,9 @@ fun SelectStartupScreenAlertDialog(
 ) {
     val defaultPage : MutableState<String> = remember { mutableStateOf(BottomBarRoutes.HOME) }
     val startupEntries : List<String> =
-            stringArrayResource(R.array.preference_startup_entries).toList()
+            stringArrayResource(id = R.array.preference_startup_entries).toList()
     val startupValues : List<String> =
-            stringArrayResource(R.array.preference_startup_values).toList()
+            stringArrayResource(id = R.array.preference_startup_values).toList()
     AlertDialog(onDismissRequest = onDismiss , text = {
         SelectStartupScreenAlertDialogContent(
             defaultPage , dataStore , startupEntries , startupValues
@@ -53,11 +53,11 @@ fun SelectStartupScreenAlertDialog(
             onStartupSelected(defaultPage.value)
             onDismiss()
         }) {
-            Text(stringResource(android.R.string.ok))
+            Text(text = stringResource(id = android.R.string.ok))
         }
     } , dismissButton = {
         TextButton(onClick = onDismiss) {
-            Text(stringResource(android.R.string.cancel))
+            Text(text = stringResource(id = android.R.string.cancel))
         }
     })
 }
@@ -74,7 +74,7 @@ fun SelectStartupScreenAlertDialogContent(
     }
 
     Column {
-        Text(stringResource(id = R.string.dialog_startup_subtitle))
+        Text(text = stringResource(id = R.string.dialog_startup_subtitle))
         Box(
             modifier = Modifier.fillMaxWidth()
         ) {
@@ -85,11 +85,10 @@ fun SelectStartupScreenAlertDialogContent(
                         verticalAlignment = Alignment.CenterVertically ,
                         horizontalArrangement = Arrangement.Start
                     ) {
-                        RadioButton(
-                            selected = selectedPage.value == startupValues[index] ,
-                            onClick = {
-                                selectedPage.value = startupValues[index]
-                            })
+                        RadioButton(selected = selectedPage.value == startupValues[index] ,
+                                    onClick = {
+                                        selectedPage.value = startupValues[index]
+                                    })
                         Text(
                             modifier = Modifier.padding(start = 8.dp) ,
                             text = startupEntries[index] ,
@@ -102,7 +101,7 @@ fun SelectStartupScreenAlertDialogContent(
         Spacer(modifier = Modifier.height(24.dp))
         Icon(imageVector = Icons.Outlined.Info , contentDescription = null)
         Spacer(modifier = Modifier.height(12.dp))
-        Text(stringResource(id = R.string.dialog_info_startup))
+        Text(text = stringResource(id = R.string.dialog_info_startup))
     }
 
     LaunchedEffect(selectedPage.value) {

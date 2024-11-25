@@ -17,7 +17,7 @@ android {
         applicationId = "com.d4rk.androidtutorials"
         minSdk = 23
         targetSdk = 35
-        versionCode = 88
+        versionCode = 89
         versionName = "1.0.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         resourceConfigurations += listOf(

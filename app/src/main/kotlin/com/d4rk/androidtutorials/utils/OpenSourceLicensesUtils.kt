@@ -20,9 +20,10 @@ import java.net.URL
 object OpenSourceLicensesUtils {
     const val packageName = BuildConfig.APPLICATION_ID
 
-    private suspend fun getChangelogMarkdown(): String {
+    private suspend fun getChangelogMarkdown() : String {
         return withContext(Dispatchers.IO) {
-            val url = URL("https://raw.githubusercontent.com/D4rK7355608/$packageName/refs/heads/master/CHANGELOG.md")
+            val url =
+                    URL("https://raw.githubusercontent.com/D4rK7355608/$packageName/refs/heads/master/CHANGELOG.md")
             (url.openConnection() as? HttpURLConnection)?.let { connection ->
                 try {
                     connection.requestMethod = "GET"
@@ -30,19 +31,21 @@ object OpenSourceLicensesUtils {
                         BufferedReader(InputStreamReader(connection.inputStream)).use { reader ->
                             return@withContext reader.readText()
                         }
-                    } else {
-                        getStringResource(id= R.string.error_loading_changelog)
+                    }
+                    else {
+                        getStringResource(id = R.string.error_loading_changelog)
                     }
                 } finally {
                     connection.disconnect()
                 }
-            } ?: getStringResource(id= R.string.error_loading_changelog)
+            } ?: getStringResource(id = R.string.error_loading_changelog)
         }
     }
 
-    private suspend fun getEulaMarkdown(): String {
+    private suspend fun getEulaMarkdown() : String {
         return withContext(Dispatchers.IO) {
-            val url = URL("https://raw.githubusercontent.com/D4rK7355608/$packageName/refs/heads/master/EULA.md")
+            val url =
+                    URL("https://raw.githubusercontent.com/D4rK7355608/$packageName/refs/heads/master/EULA.md")
             (url.openConnection() as? HttpURLConnection)?.let { connection ->
                 try {
                     connection.requestMethod = "GET"
@@ -50,31 +53,33 @@ object OpenSourceLicensesUtils {
                         BufferedReader(InputStreamReader(connection.inputStream)).use { reader ->
                             return@withContext reader.readText()
                         }
-                    } else {
-                        getStringResource(id= R.string.error_loading_eula)
+                    }
+                    else {
+                        getStringResource(id = R.string.error_loading_eula)
                     }
                 } finally {
                     connection.disconnect()
                 }
-            } ?: getStringResource(id= R.string.error_loading_eula)
+            } ?: getStringResource(id = R.string.error_loading_eula)
         }
     }
 
-    private fun extractLatestVersionChangelog(markdown: String): String {
+    private fun extractLatestVersionChangelog(markdown : String) : String {
         val currentVersion = BuildConfig.VERSION_NAME
         val regex = Regex(pattern = "(# Version\\s+$currentVersion:\\s*[\\s\\S]*?)(?=# Version|$)")
         val match = regex.find(markdown)
-        return match?.groups?.get(1)?.value?.trim() ?: "No changelog available for version $currentVersion"
+        return match?.groups?.get(1)?.value?.trim()
+            ?: "No changelog available for version $currentVersion"
     }
 
-    private fun convertMarkdownToHtml(markdown: String): String {
+    private fun convertMarkdownToHtml(markdown : String) : String {
         val parser = Parser.builder().build()
         val renderer = HtmlRenderer.builder().build()
         val document = parser.parse(markdown)
         return renderer.render(document)
     }
 
-    suspend fun loadHtmlData(): Pair<String?, String?> {
+    suspend fun loadHtmlData() : Pair<String? , String?> {
         val changelogMarkdown = getChangelogMarkdown()
         val extractedChangelog = extractLatestVersionChangelog(changelogMarkdown)
         val changelogHtml = convertMarkdownToHtml(extractedChangelog)
@@ -87,8 +92,8 @@ object OpenSourceLicensesUtils {
 }
 
 @Composable
-fun rememberHtmlData(): State<Pair<String?, String?>> {
-    val htmlDataState = remember { mutableStateOf<Pair<String?, String?>>(value = null to null) }
+fun rememberHtmlData() : State<Pair<String? , String?>> {
+    val htmlDataState = remember { mutableStateOf<Pair<String? , String?>>(value = null to null) }
 
     LaunchedEffect(Unit) {
         htmlDataState.value = OpenSourceLicensesUtils.loadHtmlData()

@@ -49,8 +49,9 @@ fun AdsSettingsComposable(activity : AdsSettingsActivity) {
     val dataStore : DataStore = DataStore.getInstance(context = context)
     val switchState : State<Boolean> = dataStore.ads.collectAsState(initial = ! BuildConfig.DEBUG)
     val scope : CoroutineScope = rememberCoroutineScope()
-    TopAppBarScaffoldWithBackButton(title = stringResource(id = R.string.ads) ,
-                                    onBackClicked = { activity.finish() }) { paddingValues ->
+    TopAppBarScaffoldWithBackButton(
+        title = stringResource(id = R.string.ads) ,
+        onBackClicked = { activity.finish() }) { paddingValues ->
         Box(modifier = Modifier.fillMaxSize()) {
             LazyColumn(
                 modifier = Modifier

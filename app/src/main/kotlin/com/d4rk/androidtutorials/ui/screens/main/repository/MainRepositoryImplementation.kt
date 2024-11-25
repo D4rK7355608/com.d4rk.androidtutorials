@@ -56,8 +56,7 @@ abstract class MainRepositoryImplementation(val application : Application) {
     }
 
     suspend fun checkForUpdatesLogic(
-        activity : Activity ,
-        appUpdateManager : AppUpdateManager
+        activity : Activity , appUpdateManager : AppUpdateManager
     ) : Int {
 
         try {

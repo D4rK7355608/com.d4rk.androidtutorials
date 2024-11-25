@@ -126,20 +126,21 @@ object IntentUtils {
         )
     }
 
-    fun openLicensesScreen(context : Context, eulaHtmlString : String?, changelogHtmlString : String?) {
+    fun openLicensesScreen(
+        context : Context ,
+        eulaHtmlString : String? ,
+        changelogHtmlString : String?
+    ) {
         LibsBuilder().withActivityTitle(
             activityTitle = context.getString(R.string.oss_license_title)
-        ).withEdgeToEdge(asEdgeToEdge = true)
-                .withShowLoadingProgress(showLoadingProgress = true)
-                .withSearchEnabled(searchEnabled = true)
-                .withAboutIconShown(aboutShowIcon = true)
+        ).withEdgeToEdge(asEdgeToEdge = true).withShowLoadingProgress(showLoadingProgress = true)
+                .withSearchEnabled(searchEnabled = true).withAboutIconShown(aboutShowIcon = true)
                 .withAboutAppName(
                     aboutAppName = context.getString(R.string.app_name)
                 ).withVersionShown(showVersion = true)
                 .withAboutVersionString(aboutVersionString = "${BuildConfig.VERSION_NAME} (${BuildConfig.VERSION_CODE})")
 
-                .withLicenseShown(showLicense = true)
-                .withAboutVersionShown(aboutShowVersion = true)
+                .withLicenseShown(showLicense = true).withAboutVersionShown(aboutShowVersion = true)
                 .withAboutVersionShownName(aboutShowVersion = true)
                 .withAboutVersionShownCode(aboutShowVersion = true)
 

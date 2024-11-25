@@ -81,65 +81,65 @@ fun NavigationDrawer(
                                   Spacer(modifier = Modifier.height(16.dp))
                                   drawerItems.forEachIndexed { index , item ->
                                       val title : String = stringResource(id = item.title)
-                                      NavigationDrawerItem(
-                                          label = { Text(text = title) } ,
-                                          selected = index == selectedItemIndex ,
-                                          onClick = {
-                                              when (item.title) {
-                                                  R.string.settings -> {
-                                                      view.playSoundEffect(
-                                                          SoundEffectConstants.CLICK
-                                                      )
-                                                      IntentUtils.openActivity(
-                                                          context ,
-                                                          com.d4rk.androidtutorials.ui.screens.settings.SettingsActivity::class.java
-                                                      )
-                                                  }
+                                      NavigationDrawerItem(label = { Text(text = title) } ,
+                                                           selected = index == selectedItemIndex ,
+                                                           onClick = {
+                                                               when (item.title) {
+                                                                   R.string.settings -> {
+                                                                       view.playSoundEffect(
+                                                                           SoundEffectConstants.CLICK
+                                                                       )
+                                                                       IntentUtils.openActivity(
+                                                                           context ,
+                                                                           com.d4rk.androidtutorials.ui.screens.settings.SettingsActivity::class.java
+                                                                       )
+                                                                   }
 
-                                                  R.string.help_and_feedback -> {
-                                                      view.playSoundEffect(
-                                                          SoundEffectConstants.CLICK
-                                                      )
-                                                      IntentUtils.openActivity(
-                                                          context , HelpActivity::class.java
-                                                      )
-                                                  }
+                                                                   R.string.help_and_feedback -> {
+                                                                       view.playSoundEffect(
+                                                                           SoundEffectConstants.CLICK
+                                                                       )
+                                                                       IntentUtils.openActivity(
+                                                                           context ,
+                                                                           HelpActivity::class.java
+                                                                       )
+                                                                   }
 
-                                                  R.string.updates -> {
-                                                      view.playSoundEffect(
-                                                          SoundEffectConstants.CLICK
-                                                      )
-                                                      IntentUtils.openUrl(
-                                                          context ,
-                                                          url = "https://github.com/D4rK7355608/${context.packageName}/blob/master/CHANGELOG.md"
-                                                      )
-                                                  }
+                                                                   R.string.updates -> {
+                                                                       view.playSoundEffect(
+                                                                           SoundEffectConstants.CLICK
+                                                                       )
+                                                                       IntentUtils.openUrl(
+                                                                           context ,
+                                                                           url = "https://github.com/D4rK7355608/${context.packageName}/blob/master/CHANGELOG.md"
+                                                                       )
+                                                                   }
 
-                                                  R.string.share -> {
-                                                      view.playSoundEffect(
-                                                          SoundEffectConstants.CLICK
-                                                      )
-                                                      IntentUtils.shareApp(context)
-                                                  }
-                                              }
-                                              scope.launch { drawerState.close() }
-                                          } ,
-                                          icon = {
-                                              Icon(
-                                                  item.selectedIcon , contentDescription = title
-                                              )
-                                          } ,
-                                          badge = {
-                                              item.badgeText.isNotBlank().let {
-                                                  Text(text = item.badgeText)
-                                              }
-                                          } ,
-                                          modifier = Modifier
-                                                  .padding(
-                                                      NavigationDrawerItemDefaults.ItemPadding
-                                                  )
-                                                  .bounceClick()
-                                      )
+                                                                   R.string.share -> {
+                                                                       view.playSoundEffect(
+                                                                           SoundEffectConstants.CLICK
+                                                                       )
+                                                                       IntentUtils.shareApp(context)
+                                                                   }
+                                                               }
+                                                               scope.launch { drawerState.close() }
+                                                           } ,
+                                                           icon = {
+                                                               Icon(
+                                                                   item.selectedIcon ,
+                                                                   contentDescription = title
+                                                               )
+                                                           } ,
+                                                           badge = {
+                                                               item.badgeText.isNotBlank().let {
+                                                                   Text(text = item.badgeText)
+                                                               }
+                                                           } ,
+                                                           modifier = Modifier
+                                                                   .padding(
+                                                                       NavigationDrawerItemDefaults.ItemPadding
+                                                                   )
+                                                                   .bounceClick())
                                   }
                               }
                           } ,
@@ -147,18 +147,17 @@ fun NavigationDrawer(
                               Scaffold(topBar = {
                                   TopAppBar(title = { Text(text = stringResource(id = R.string.app_name)) } ,
                                             navigationIcon = {
-                                                IconButton(
-                                                    modifier = Modifier.bounceClick() ,
-                                                    onClick = {
-                                                        view.playSoundEffect(
-                                                            SoundEffectConstants.CLICK
-                                                        )
-                                                        scope.launch {
-                                                            drawerState.apply {
-                                                                if (isClosed) open() else close()
-                                                            }
-                                                        }
-                                                    }) {
+                                                IconButton(modifier = Modifier.bounceClick() ,
+                                                           onClick = {
+                                                               view.playSoundEffect(
+                                                                   SoundEffectConstants.CLICK
+                                                               )
+                                                               scope.launch {
+                                                                   drawerState.apply {
+                                                                       if (isClosed) open() else close()
+                                                                   }
+                                                               }
+                                                           }) {
                                                     Icon(
                                                         imageVector = Icons.Default.Menu ,
                                                         contentDescription = stringResource(id = R.string.navigation_drawer_open)
@@ -166,17 +165,16 @@ fun NavigationDrawer(
                                                 }
                                             } ,
                                             actions = {
-                                                IconButton(
-                                                    modifier = Modifier.bounceClick() ,
-                                                    onClick = {
-                                                        view.playSoundEffect(
-                                                            SoundEffectConstants.CLICK
-                                                        )
-                                                        IntentUtils.openActivity(
-                                                            context ,
-                                                            SupportActivity::class.java
-                                                        )
-                                                    }) {
+                                                IconButton(modifier = Modifier.bounceClick() ,
+                                                           onClick = {
+                                                               view.playSoundEffect(
+                                                                   SoundEffectConstants.CLICK
+                                                               )
+                                                               IntentUtils.openActivity(
+                                                                   context ,
+                                                                   SupportActivity::class.java
+                                                               )
+                                                           }) {
                                                     Icon(
                                                         Icons.Outlined.VolunteerActivism ,
                                                         contentDescription = stringResource(id = R.string.support_us)

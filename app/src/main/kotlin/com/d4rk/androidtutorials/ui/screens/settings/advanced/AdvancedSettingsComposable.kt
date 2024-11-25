@@ -17,8 +17,9 @@ import com.d4rk.androidtutorials.utils.IntentUtils
 @Composable
 fun AdvancedSettingsComposable(activity : AdvancedSettingsActivity) {
     val context : Context = LocalContext.current
-    TopAppBarScaffoldWithBackButton(title = stringResource(id = R.string.advanced) ,
-                                    onBackClicked = { activity.finish() }) { paddingValues ->
+    TopAppBarScaffoldWithBackButton(
+        title = stringResource(id = R.string.advanced) ,
+        onBackClicked = { activity.finish() }) { paddingValues ->
         LazyColumn(
             modifier = Modifier
                     .fillMaxHeight()

@@ -50,9 +50,7 @@ class StudioBotViewModel(application : Application) : BaseViewModel(application)
                 val updatedHistory = _chatHistory.value.toMutableList()
                 updatedHistory.add(
                     ApiMessageData(
-                        id = UUID.randomUUID() ,
-                        text = reply ,
-                        isBot = true
+                        id = UUID.randomUUID() , text = reply , isBot = true
                     )
                 )
                 _chatHistory.value = updatedHistory.toList()

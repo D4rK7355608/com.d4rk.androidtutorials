@@ -58,8 +58,9 @@ fun DisplaySettingsComposable(activity : DisplaySettingsActivity) {
     val isDynamicColors : State<Boolean> = dataStore.dynamicColors.collectAsState(initial = true)
     val scope : CoroutineScope = rememberCoroutineScope()
 
-    TopAppBarScaffoldWithBackButton(title = stringResource(id = R.string.display) ,
-                                    onBackClicked = { activity.finish() }) { paddingValues ->
+    TopAppBarScaffoldWithBackButton(
+        title = stringResource(id = R.string.display) ,
+        onBackClicked = { activity.finish() }) { paddingValues ->
         LazyColumn(
             modifier = Modifier
                     .fillMaxHeight()

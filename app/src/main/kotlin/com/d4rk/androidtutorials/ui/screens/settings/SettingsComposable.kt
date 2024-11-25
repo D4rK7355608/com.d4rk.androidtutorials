@@ -33,8 +33,9 @@ import com.d4rk.androidtutorials.utils.IntentUtils
 fun SettingsComposable(activity : SettingsActivity) {
     val context : Context = LocalContext.current
 
-    TopAppBarScaffoldWithBackButton(title = stringResource(id = R.string.settings) ,
-                                    onBackClicked = { activity.finish() }) { paddingValues ->
+    TopAppBarScaffoldWithBackButton(
+        title = stringResource(id = R.string.settings) ,
+        onBackClicked = { activity.finish() }) { paddingValues ->
         LazyColumn(
             modifier = Modifier
                     .fillMaxHeight()

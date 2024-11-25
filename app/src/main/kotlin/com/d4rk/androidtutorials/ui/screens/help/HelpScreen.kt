@@ -152,7 +152,7 @@ fun HelpScreen(activity : HelpActivity , viewModel : HelpViewModel) {
                                              )
                                          })
                         DropdownMenuItem(modifier = Modifier.bounceClick() ,
-                                         text = { Text(text = stringResource(id= R.string.oss_license_title)) } ,
+                                         text = { Text(text = stringResource(id = R.string.oss_license_title)) } ,
                                          onClick = {
                                              view.playSoundEffect(SoundEffectConstants.CLICK)
                                              IntentUtils.openLicensesScreen(
@@ -173,20 +173,18 @@ fun HelpScreen(activity : HelpActivity , viewModel : HelpViewModel) {
                 )
         } ,
         floatingActionButton = {
-            AnimatedExtendedFloatingActionButton(
-                visible = isFabVisible,
-                onClick = {
-                    view.playSoundEffect(SoundEffectConstants.CLICK)
-                    viewModel.reviewInfo.value?.let { safeReviewInfo ->
-                        viewModel.launchReviewFlow(
-                            activity , safeReviewInfo
-                        )
-                    }
-                } , text = { Text(text = stringResource(id = R.string.feedback)) } , icon = {
-                    Icon(
-                        Icons.Default.MailOutline , contentDescription = null
+            AnimatedExtendedFloatingActionButton(visible = isFabVisible , onClick = {
+                view.playSoundEffect(SoundEffectConstants.CLICK)
+                viewModel.reviewInfo.value?.let { safeReviewInfo ->
+                    viewModel.launchReviewFlow(
+                        activity , safeReviewInfo
                     )
-                })
+                }
+            } , text = { Text(text = stringResource(id = R.string.feedback)) } , icon = {
+                Icon(
+                    Icons.Default.MailOutline , contentDescription = null
+                )
+            })
         } ,
     ) { paddingValues ->
         Box(
