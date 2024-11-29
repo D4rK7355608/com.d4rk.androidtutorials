@@ -6,6 +6,5 @@
         <item name="android:navigationBarColor">?attr/colorSurface</item>
         <item name="android:windowLightNavigationBar">true</item>
         <item name="android:windowLightStatusBar">true</item>
-        <item name="actionBarStyle">@style/ActionBarTheme</item>
     </style>
 </resources>
