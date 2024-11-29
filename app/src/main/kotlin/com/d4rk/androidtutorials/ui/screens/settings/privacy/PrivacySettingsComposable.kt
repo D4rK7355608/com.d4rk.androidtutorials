@@ -21,7 +21,7 @@ import com.d4rk.androidtutorials.utils.IntentUtils
 fun PrivacySettingsComposable(activity : PrivacySettingsActivity) {
     val context : Context = LocalContext.current
     TopAppBarScaffoldWithBackButton(
-        title = stringResource(id = R.string.settings) ,
+        title = stringResource(id = R.string.security_and_privacy) ,
         onBackClicked = { activity.finish() }) { paddingValues ->
         LazyColumn(
             modifier = Modifier
