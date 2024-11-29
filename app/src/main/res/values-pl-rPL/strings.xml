@@ -176,7 +176,5 @@
     <string name="learn_more">Dowiedz się więcej</string>
 
     <string name="close">Zamknąć?</string>
-    <string name="snack_network_error">Wystąpił błąd sieciowy podczas sprawdzania dostępności aktualizacji</string>
-    <string name="snack_general_error">Wystąpił błąd podczas sprawdzania dostępności aktualizacji</string>
     <string name="summary_close">Czy na pewno chcesz wyjść?</string>
 </resources>

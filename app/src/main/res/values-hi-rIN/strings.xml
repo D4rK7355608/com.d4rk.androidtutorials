@@ -176,7 +176,5 @@
     <string name="learn_more">और अधिक जानें</string>
 
     <string name="close">बंद करना?</string>
-    <string name="snack_network_error">अपडेट की जाँच करते समय नेटवर्क त्रुटि हुई</string>
-    <string name="snack_general_error">अपडेट की जाँच करते समय एक त्रुटि हुई</string>
     <string name="summary_close">क्या आप निश्चित हैं आपकी बाहर निकलने की इच्छा है?</string>
 </resources>

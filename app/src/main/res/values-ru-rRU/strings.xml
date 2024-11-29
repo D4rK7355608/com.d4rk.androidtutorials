@@ -176,7 +176,5 @@
     <string name="learn_more">Узнать больше</string>
 
     <string name="close">Закрывать?</string>
-    <string name="snack_network_error">Произошла ошибка сети при проверке обновлений</string>
-    <string name="snack_general_error">Произошла ошибка при проверке обновлений</string>
     <string name="summary_close">Вы уверены, что хотите выйти?</string>
 </resources>

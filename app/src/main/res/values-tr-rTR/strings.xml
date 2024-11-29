@@ -176,7 +176,5 @@
     <string name="learn_more">Daha fazla bilgi edin</string>
 
     <string name="close">Kapalı?</string>
-    <string name="snack_network_error">Güncellemeler kontrol edilirken ağ hatası oluştu</string>
-    <string name="snack_general_error">Güncellemeler kontrol edilirken bir hata oluştu</string>
     <string name="summary_close">Çıkmak istediğinize emin misiniz?</string>
 </resources>

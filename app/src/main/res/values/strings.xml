@@ -176,7 +176,5 @@
     <string name="learn_more">Learn more</string>
 
     <string name="close">Close?</string>
-    <string name="snack_network_error">Network error occurred while checking for updates</string>
-    <string name="snack_general_error">An error occurred while checking for updates</string>
     <string name="summary_close">Are you sure you want to exit?</string>
 </resources>

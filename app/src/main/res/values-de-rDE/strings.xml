@@ -176,7 +176,5 @@
     <string name="learn_more">Mehr erfahren</string>
 
     <string name="close">Schließen?</string>
-    <string name="snack_network_error">Beim Suchen nach Updates ist ein Netzwerkfehler aufgetreten</string>
-    <string name="snack_general_error">Beim Suchen nach Updates ist ein Fehler aufgetreten</string>
     <string name="summary_close">Möchten Sie wirklich beenden?</string>
 </resources>

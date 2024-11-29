@@ -176,7 +176,5 @@
     <string name="learn_more">了解更多</string>
 
     <string name="close">關閉？</string>
-    <string name="snack_network_error">檢查更新時出現網路錯誤</string>
-    <string name="snack_general_error">檢查更新時出錯</string>
     <string name="summary_close">您確定要退出嗎？</string>
 </resources>

@@ -176,7 +176,5 @@
     <string name="learn_more">เรียนรู้เพิ่มเติม</string>
 
     <string name="close">ปิด?</string>
-    <string name="snack_network_error">เกิดข้อผิดพลาดของเครือข่ายขณะตรวจสอบการอัปเดต</string>
-    <string name="snack_general_error">เกิดข้อผิดพลาดขณะตรวจสอบการอัปเดต</string>
     <string name="summary_close">คุณแน่ใจว่าต้องการออกใช่ไหม?</string>
 </resources>

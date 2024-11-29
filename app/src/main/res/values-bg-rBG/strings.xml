@@ -176,7 +176,5 @@
     <string name="learn_more">Научете повече</string>
 
     <string name="close">затвори?</string>
-    <string name="snack_network_error">Възникна мрежова грешка при проверка за актуализации</string>
-    <string name="snack_general_error">Възникна грешка при проверка за актуализации</string>
     <string name="summary_close">Сигурни ли сте, че искате да излезете?</string>
 </resources>

@@ -176,7 +176,5 @@
     <string name="learn_more">Läs mer</string>
 
     <string name="close">Nära?</string>
-    <string name="snack_network_error">Nätverksfel uppstod vid sökning efter uppdateringar</string>
-    <string name="snack_general_error">Ett fel uppstod vid sökning efter uppdateringar</string>
     <string name="summary_close">Är du säker på att du vill avsluta?</string>
 </resources>

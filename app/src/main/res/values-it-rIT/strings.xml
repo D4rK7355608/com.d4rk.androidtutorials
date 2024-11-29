@@ -176,7 +176,5 @@
     <string name="learn_more">Saperne di più</string>
 
     <string name="close">Vicino?</string>
-    <string name="snack_network_error">Si è verificato un errore di rete durante la verifica degli aggiornamenti</string>
-    <string name="snack_general_error">Si è verificato un errore durante la verifica degli aggiornamenti</string>
     <string name="summary_close">Sei sicuro di voler uscire?</string>
 </resources>

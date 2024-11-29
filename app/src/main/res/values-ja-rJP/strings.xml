@@ -176,7 +176,5 @@
     <string name="learn_more">もっと詳しく知る</string>
 
     <string name="close">近い？</string>
-    <string name="snack_network_error">アップデートの確認中にネットワークエラーが発生しました</string>
-    <string name="snack_general_error">アップデートの確認中にエラーが発生しました</string>
     <string name="summary_close">本当に終了してもよろしいですか?</string>
 </resources>

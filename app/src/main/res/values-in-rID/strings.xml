@@ -176,7 +176,5 @@
     <string name="learn_more">Pelajari lebih lanjut</string>
 
     <string name="close">Menutup?</string>
-    <string name="snack_network_error">Terjadi kesalahan jaringan saat memeriksa pembaruan</string>
-    <string name="snack_general_error">Terjadi kesalahan saat memeriksa pembaruan</string>
     <string name="summary_close">Apakah Anda yakin ingin keluar?</string>
 </resources>

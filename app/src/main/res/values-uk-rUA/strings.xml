@@ -176,7 +176,5 @@
     <string name="learn_more">Дізнайтесь більше</string>
 
     <string name="close">Закрити?</string>
-    <string name="snack_network_error">Під час перевірки оновлень сталася помилка мережі</string>
-    <string name="snack_general_error">Під час перевірки оновлень сталася помилка</string>
     <string name="summary_close">Ви впевнені, що бажаєте вийти?</string>
 </resources>
