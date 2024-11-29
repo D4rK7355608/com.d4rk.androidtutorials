@@ -18,12 +18,12 @@ import java.net.HttpURLConnection
 import java.net.URL
 
 object OpenSourceLicensesUtils {
-    const val packageName = BuildConfig.APPLICATION_ID
+    private const val PACKAGE_NAME = BuildConfig.APPLICATION_ID
 
     private suspend fun getChangelogMarkdown() : String {
         return withContext(Dispatchers.IO) {
             val url =
-                    URL("https://raw.githubusercontent.com/D4rK7355608/$packageName/refs/heads/master/CHANGELOG.md")
+                    URL("https://raw.githubusercontent.com/D4rK7355608/$PACKAGE_NAME/refs/heads/master/CHANGELOG.md")
             (url.openConnection() as? HttpURLConnection)?.let { connection ->
                 try {
                     connection.requestMethod = "GET"
@@ -45,7 +45,7 @@ object OpenSourceLicensesUtils {
     private suspend fun getEulaMarkdown() : String {
         return withContext(Dispatchers.IO) {
             val url =
-                    URL("https://raw.githubusercontent.com/D4rK7355608/$packageName/refs/heads/master/EULA.md")
+                    URL("https://raw.githubusercontent.com/D4rK7355608/$PACKAGE_NAME/refs/heads/master/EULA.md")
             (url.openConnection() as? HttpURLConnection)?.let { connection ->
                 try {
                     connection.requestMethod = "GET"
