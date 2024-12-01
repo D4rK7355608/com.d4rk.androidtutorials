@@ -1,4 +1,4 @@
-package com.d4rk.androidtutorials.ui.components.lessons
+package com.d4rk.androidtutorials.ui.components.layouts
 
 import android.content.Context
 import android.view.SoundEffectConstants
@@ -10,13 +10,16 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Favorite
@@ -40,9 +43,30 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import coil3.compose.AsyncImage
 import com.d4rk.androidtutorials.constants.ui.lessons.LessonConstants
 import com.d4rk.androidtutorials.data.model.ui.screens.UiLesson
+import com.d4rk.androidtutorials.ui.components.animations.animateVisibility
 import com.d4rk.androidtutorials.ui.components.animations.bounceClick
 import com.d4rk.androidtutorials.ui.components.navigation.openLessonDetailActivity
 import com.d4rk.androidtutorials.ui.screens.home.HomeViewModel
+
+@Composable
+fun LessonListLayout(lessons : List<UiLesson>, visibilityStates: List<Boolean>, context : Context) {
+    LazyColumn(
+        contentPadding = PaddingValues(16.dp) ,
+        verticalArrangement = Arrangement.spacedBy(16.dp) ,
+        modifier = Modifier.fillMaxSize()
+    ) {
+        itemsIndexed(lessons) { index , lesson ->
+            val isVisible = visibilityStates.getOrElse(index) { false }
+            LessonItem(
+                lesson = lesson ,
+                context = context ,
+                modifier = Modifier
+                        .animateVisibility(visible = isVisible)
+                        .animateItem()
+            )
+        }
+    }
+}
 
 @Composable
 fun LessonItem(lesson : UiLesson , context : Context , modifier : Modifier = Modifier) {

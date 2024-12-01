@@ -4,23 +4,15 @@ import android.content.Context
 import androidx.compose.animation.core.Transition
 import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.updateTransition
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.d4rk.androidtutorials.data.model.ui.error.UiErrorModel
 import com.d4rk.androidtutorials.data.model.ui.screens.UiLesson
-import com.d4rk.androidtutorials.ui.components.animations.animateVisibility
 import com.d4rk.androidtutorials.ui.components.dialogs.ErrorAlertDialog
-import com.d4rk.androidtutorials.ui.components.lessons.LessonItem
+import com.d4rk.androidtutorials.ui.components.layouts.LessonListLayout
 import com.d4rk.androidtutorials.ui.screens.loading.LoadingScreen
 
 @Composable
@@ -50,21 +42,10 @@ fun HomeScreen() {
         LoadingScreen(progressAlpha)
     }
     else {
-        LazyColumn(
-            contentPadding = PaddingValues(16.dp) ,
-            verticalArrangement = Arrangement.spacedBy(16.dp) ,
-            modifier = Modifier.fillMaxSize()
-        ) {
-            itemsIndexed(lessons) { index , lesson ->
-                val isVisible = visibilityStates.getOrElse(index) { false }
-                LessonItem(
-                    lesson = lesson ,
-                    context = context ,
-                    modifier = Modifier
-                            .animateVisibility(visible = isVisible)
-                            .animateItem()
-                )
-            }
-        }
+        LessonListLayout(
+            lessons = lessons,
+            context = context,
+            visibilityStates = visibilityStates
+        )
     }
 }
