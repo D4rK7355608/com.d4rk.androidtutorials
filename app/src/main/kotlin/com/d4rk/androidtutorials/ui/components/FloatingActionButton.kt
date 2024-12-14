@@ -9,7 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.graphicsLayer
-import com.d4rk.androidtutorials.ui.components.animations.bounceClick
+import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick
 
 @Composable
 fun AnimatedExtendedFloatingActionButton(

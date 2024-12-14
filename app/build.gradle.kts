@@ -3,6 +3,8 @@ import org.jetbrains.kotlin.konan.properties.Properties
 plugins {
     alias(notation = libs.plugins.androidApplication)
     alias(notation = libs.plugins.jetbrainsKotlinAndroid)
+    alias(notation = libs.plugins.jetbrainsKotlinParcelize)
+    alias(notation = libs.plugins.kotlin.serialization)
     alias(notation = libs.plugins.googlePlayServices)
     alias(notation = libs.plugins.googleFirebase)
     alias(notation = libs.plugins.compose.compiler)
@@ -17,8 +19,8 @@ android {
         applicationId = "com.d4rk.androidtutorials"
         minSdk = 23
         targetSdk = 35
-        versionCode = 90
-        versionName = "1.0.0"
+        versionCode = 91
+        versionName = "1.1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         resourceConfigurations += listOf(
             "en" ,
@@ -110,7 +112,6 @@ dependencies {
     implementation(dependencyNotation = libs.androidx.core.splashscreen)
     implementation(dependencyNotation = libs.androidx.multidex)
     implementation(dependencyNotation = libs.androidx.work.runtime.ktx)
-    implementation(dependencyNotation = libs.generativeai)
 
     // Compose
     implementation(dependencyNotation = platform(libs.androidx.compose.bom))
@@ -127,22 +128,8 @@ dependencies {
     implementation(dependencyNotation = libs.androidx.foundation)
     implementation(dependencyNotation = libs.androidx.navigation.compose)
 
-    // Lifecycle
-    implementation(dependencyNotation = libs.kotlinx.coroutines.android)
-    implementation(dependencyNotation = libs.androidx.lifecycle.runtime.ktx)
-    implementation(dependencyNotation = libs.androidx.lifecycle.livedata.ktx)
-    implementation(dependencyNotation = libs.androidx.lifecycle.process)
-    implementation(dependencyNotation = libs.androidx.lifecycle.viewmodel.ktx)
-    implementation(dependencyNotation = libs.androidx.lifecycle.viewmodel.compose)
-    implementation(dependencyNotation = libs.androidx.lifecycle.runtime.compose)
-
-    // Google
-    implementation(dependencyNotation = libs.play.services.ads)
-    implementation(dependencyNotation = libs.billing)
-    implementation(dependencyNotation = libs.material)
-    implementation(dependencyNotation = libs.app.update.ktx)
-    implementation(dependencyNotation = libs.review.ktx)
-    implementation(dependencyNotation = libs.gson)
+    // Code view
+    implementation(dependencyNotation = libs.compose.code.editor)
 
     // Firebase
     implementation(dependencyNotation = platform(libs.firebase.bom))
@@ -150,28 +137,45 @@ dependencies {
     implementation(dependencyNotation = libs.firebase.crashlytics.ktx)
     implementation(dependencyNotation = libs.firebase.perf)
 
+    // Google
+    implementation(dependencyNotation = libs.play.services.ads)
+    implementation(dependencyNotation = libs.billing)
+    implementation(dependencyNotation = libs.material)
+    implementation(dependencyNotation = libs.app.update.ktx)
+    implementation(dependencyNotation = libs.review.ktx)
+    implementation(dependencyNotation = libs.generativeai)
+
     // Images
     implementation(dependencyNotation = libs.coil.compose)
     implementation(dependencyNotation = libs.coil.gif)
     implementation(dependencyNotation = libs.coil.network.okhttp)
+
+    // Kotlin
+    implementation(dependencyNotation = libs.kotlinx.coroutines.android)
+    implementation(dependencyNotation = libs.kotlinx.serialization.json)
+
+    // Ktor
+    implementation(dependencyNotation = platform(libs.ktor.bom))
+    implementation(dependencyNotation = libs.ktor.client.android)
+    implementation(dependencyNotation = libs.ktor.client.serialization)
+    implementation(dependencyNotation = libs.ktor.client.logging)
+    implementation(dependencyNotation = libs.ktor.client.content.negotiation)
+    implementation(dependencyNotation = libs.ktor.serialization.kotlinx.json)
 
     // KSP
     ksp(dependencyNotation = libs.androidx.room.compiler)
     implementation(dependencyNotation = libs.androidx.room.ktx)
     implementation(dependencyNotation = libs.androidx.room.runtime)
 
-    // Code view
-    implementation(dependencyNotation = libs.compose.code.editor)
+    // Lifecycle
+    implementation(dependencyNotation = libs.androidx.lifecycle.runtime.ktx)
+    implementation(dependencyNotation = libs.androidx.lifecycle.livedata.ktx)
+    implementation(dependencyNotation = libs.androidx.lifecycle.process)
+    implementation(dependencyNotation = libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(dependencyNotation = libs.androidx.lifecycle.viewmodel.compose)
+    implementation(dependencyNotation = libs.androidx.lifecycle.runtime.compose)
 
     // About
     implementation(dependencyNotation = libs.aboutlibraries)
     implementation(dependencyNotation = libs.core)
-
-    // Test
-    testImplementation(dependencyNotation = libs.junit)
-    androidTestImplementation(dependencyNotation = libs.androidx.junit)
-    androidTestImplementation(dependencyNotation = libs.androidx.espresso.core)
-    androidTestImplementation(dependencyNotation = libs.ui.test.junit4)
-    debugImplementation(dependencyNotation = libs.androidx.ui.tooling)
-    debugImplementation(dependencyNotation = libs.androidx.ui.test.manifest)
 }

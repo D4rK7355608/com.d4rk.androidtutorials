@@ -47,11 +47,11 @@ import coil3.gif.GifDecoder
 import com.d4rk.androidtutorials.constants.ui.lessons.LessonCodeConstants
 import com.d4rk.androidtutorials.constants.ui.lessons.LessonContentTypes
 import com.d4rk.androidtutorials.data.datastore.DataStore
-import com.d4rk.androidtutorials.data.model.ui.screens.UiLessonScreenModel
+import com.d4rk.androidtutorials.data.model.ui.screens.UiLessonScreen
 import com.d4rk.androidtutorials.ui.components.ads.AdBanner
 import com.d4rk.androidtutorials.ui.components.ads.AdBannerFull
 import com.d4rk.androidtutorials.ui.components.ads.LargeBannerAdsComposable
-import com.d4rk.androidtutorials.ui.components.animations.bounceClick
+import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick
 import com.d4rk.androidtutorials.ui.screens.settings.display.theme.style.Colors
 import com.d4rk.androidtutorials.ui.screens.settings.display.theme.style.TextStyles
 import com.d4rk.androidtutorials.utils.ClipboardUtil
@@ -65,7 +65,7 @@ fun LessonContentLayout(
     paddingValues : PaddingValues ,
     scrollState : ScrollState ,
     dataStore : DataStore ,
-    lesson : UiLessonScreenModel ,
+    lesson : UiLessonScreen ,
 ) {
     Column(
         modifier = Modifier

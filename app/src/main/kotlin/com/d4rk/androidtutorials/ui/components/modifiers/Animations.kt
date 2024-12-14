@@ -1,4 +1,4 @@
-package com.d4rk.androidtutorials.ui.components.animations
+package com.d4rk.androidtutorials.ui.components.modifiers
 
 import android.content.Context
 import androidx.compose.animation.core.animateFloatAsState

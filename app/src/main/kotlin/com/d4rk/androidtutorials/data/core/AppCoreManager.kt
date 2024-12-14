@@ -12,10 +12,12 @@ import androidx.lifecycle.OnLifecycleEvent
 import androidx.lifecycle.ProcessLifecycleOwner
 import androidx.multidex.MultiDexApplication
 import androidx.room.Room
+import com.d4rk.androidtutorials.data.client.KtorClient
 import com.d4rk.androidtutorials.data.core.ads.AdsCoreManager
 import com.d4rk.androidtutorials.data.core.datastore.DataStoreCoreManager
 import com.d4rk.androidtutorials.data.database.AppDatabase
 import com.d4rk.androidtutorials.data.database.MIGRATION_1_2
+import io.ktor.client.HttpClient
 //import io.ktor.client.HttpClient
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -40,16 +42,19 @@ class AppCoreManager : MultiDexApplication() , Application.ActivityLifecycleCall
         @SuppressLint("StaticFieldLeak")
         lateinit var instance : AppCoreManager
             private set
+        lateinit var ktorClient: HttpClient
     }
 
     override fun onCreate() {
         super.onCreate()
         instance = this
+        ktorClient = KtorClient().createClient()
         registerActivityLifecycleCallbacks(this)
         ProcessLifecycleOwner.get().lifecycle.addObserver(observer = this)
         database = Room.databaseBuilder(this , AppDatabase::class.java , "Android Studio Tutorials")
-                .addMigrations(MIGRATION_1_2) // Add the migration here
-                .fallbackToDestructiveMigration() // Add this if you want destructive migrations in case of future changes
+                .addMigrations(MIGRATION_1_2)
+                .fallbackToDestructiveMigration()
+                .fallbackToDestructiveMigrationOnDowngrade()
                 .build()
         CoroutineScope(Dispatchers.Main).launch {
             if (dataStoreCoreManager.initializeDataStore()) {

@@ -29,10 +29,9 @@
     <string name="summary_preference_settings_license" translatable="false">General Public License-3.0</string>
 
     <string name="eula_title" translatable="false">EULA</string>
-    <string name="changelog">CHANGELOG</string>
-    <string name="loading_eula">Loading EULA</string>
-    <string name="error_loading_eula">Error loading EULA</string>
-    <string name="loading_changelog">Loading changelog</string>
-    <string name="error_loading_changelog">Error loading changelog</string>
-
+    <string name="changelog" translatable="false">CHANGELOG</string>
+    <string name="loading_eula" translatable="false">Loading EULA</string>
+    <string name="error_loading_eula" translatable="false">Error loading EULA</string>
+    <string name="loading_changelog" translatable="false">Loading changelog</string>
+    <string name="error_loading_changelog" translatable="false">Error loading changelog</string>
 </resources>

@@ -6,7 +6,7 @@ import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.viewModelScope
 import com.d4rk.androidtutorials.data.datastore.DataStore
-import com.d4rk.androidtutorials.data.model.ui.screens.UiMainModel
+import com.d4rk.androidtutorials.data.model.ui.screens.UiMainScreen
 import com.d4rk.androidtutorials.notifications.managers.AppUpdateNotificationsManager
 import com.d4rk.androidtutorials.ui.screens.main.repository.MainRepository
 import com.d4rk.androidtutorials.ui.screens.startup.StartupActivity
@@ -19,8 +19,8 @@ import kotlinx.coroutines.launch
 
 class MainViewModel(application : Application) : BaseViewModel(application) {
     private val repository = MainRepository(DataStore(application) , application)
-    private val _uiState = MutableStateFlow(UiMainModel())
-    val uiState : StateFlow<UiMainModel> = _uiState
+    private val _uiState = MutableStateFlow(UiMainScreen())
+    val uiState : StateFlow<UiMainScreen> = _uiState
 
     fun checkForUpdates(activity : Activity , appUpdateManager : AppUpdateManager) {
         viewModelScope.launch(coroutineExceptionHandler) {

@@ -1,3 +1,21 @@
+# Version 1.1.0:
+
+- **New**: Implemented a "No Lessons Found" message to provide user guidance.
+- **New**: Implemented a "No Favorite Lessons" message for empty favorites lists.
+- **New**: Migrated the application's networking to use KTor client for improved performance.
+- **New**: Refactored the UI structure to enhance organization and maintainability.
+- **New**: Added "Like" and "Dislike" feedback for Studio Bot messages.
+- **New**: Introduced new profile pictures for Studio Bot and user messages.
+- **Minor**: Improved the placement of the copy button in Studio Bot chat bubbles.
+- **Minor**: Optimized keyboard behavior on the Studio Bot screen.
+- **Patch**: Standardized naming of `packageName` for consistency.
+- **Patch**: Removed unused Gradle dependencies to streamline the build process.
+- **Patch**: Updated project dependencies to the latest stable versions.
+- **Patch**: Corrected the string used for "Security & Privacy" title on the Privacy screen.
+- **Patch**: Removed unused Data Store constants from the codebase.
+- **Patch**: Removed unused string resources from the project.
+- **Patch**: Removed unused themes to optimize the codebase.
+
 # Version 1.0.0:
 
 - **New**: Introduced a new lesson style incorporating more images for improved understanding.

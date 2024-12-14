@@ -1,4 +1,4 @@
-package com.d4rk.androidtutorials.ui.screens.loading
+package com.d4rk.androidtutorials.ui.components.layouts
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.layout.Box

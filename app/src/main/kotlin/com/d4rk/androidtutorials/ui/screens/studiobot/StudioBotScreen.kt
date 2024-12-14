@@ -1,9 +1,12 @@
 package com.d4rk.androidtutorials.ui.screens.studiobot
 
+import android.os.Bundle
 import android.widget.Toast
 import androidx.compose.animation.core.Transition
 import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.updateTransition
+import androidx.compose.foundation.ScrollState
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -12,20 +15,30 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.Send
+import androidx.compose.material.icons.filled.ThumbDown
+import androidx.compose.material.icons.filled.ThumbUp
+import androidx.compose.material.icons.outlined.Android
 import androidx.compose.material.icons.outlined.CopyAll
+import androidx.compose.material.icons.outlined.PersonOutline
+import androidx.compose.material.icons.outlined.ThumbDown
+import androidx.compose.material.icons.outlined.ThumbUp
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -39,14 +52,19 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.d4rk.androidtutorials.data.api.ApiMessageData
-import com.d4rk.androidtutorials.ui.components.animations.bounceClick
-import com.d4rk.androidtutorials.ui.screens.loading.LoadingScreen
+import com.d4rk.androidtutorials.data.model.api.ApiMessageData
+import com.d4rk.androidtutorials.ui.components.layouts.LoadingScreen
+import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick
 import com.d4rk.androidtutorials.utils.ClipboardUtil
+import com.google.firebase.analytics.FirebaseAnalytics
 import kotlinx.coroutines.delay
 
 @Composable
@@ -67,30 +85,45 @@ fun StudioBotScreen() {
         LoadingScreen(progressAlpha = progressAlpha)
     }
     else {
-        Column(modifier = Modifier.fillMaxSize()) {
+        Column(
+            modifier = Modifier
+                    .fillMaxSize()
+                    .imePadding()
+        ) {
             Box(modifier = Modifier.weight(1f)) {
                 ChatHistory(messages = chatHistory.value)
             }
             Row(
                 modifier = Modifier
                         .fillMaxWidth()
-                        .padding(16.dp) ,
+                        .padding(all = 16.dp) ,
                 verticalAlignment = Alignment.CenterVertically
             ) {
 
-                OutlinedTextField(
-                    value = userInput ,
-                    singleLine = true ,
-                    onValueChange = { userInput = it } ,
-                    modifier = Modifier
-                            .fillMaxWidth()
-                            .weight(1f)
-                            .padding(end = 8.dp) ,
-                    shape = CircleShape ,
-                    placeholder = { Text(text = "Type a message...") } ,
+                OutlinedTextField(value = userInput ,
+                                  singleLine = true ,
+                                  onValueChange = {
+                                      userInput = it.replaceFirstChar { char ->
+                                          if (char.isLowerCase()) char.titlecase() else char.toString()
+                                      }
+                                  } ,
+                                  modifier = Modifier
+                                          .fillMaxWidth()
+                                          .weight(1f)
+                                          .padding(end = 8.dp) ,
+                                  shape = CircleShape ,
+                                  placeholder = { Text(text = "Type a message...") } ,
+                                  keyboardOptions = KeyboardOptions(
+                                      capitalization = KeyboardCapitalization.Sentences ,
+                                      autoCorrectEnabled = true ,
+                                      imeAction = ImeAction.Send
+                                  ) ,
+                                  keyboardActions = KeyboardActions(onSend = {
+                                      viewModel.sendMessage(userInput)
+                                      userInput = ""
+                                  })
                 )
-
-                IconButton(onClick = {
+                IconButton(enabled = userInput.isNotBlank() , onClick = {
                     if (userInput.isNotBlank()) {
                         viewModel.sendMessage(userInput)
                         userInput = ""
@@ -110,89 +143,202 @@ fun StudioBotScreen() {
 
 @Composable
 fun ChatHistory(messages : List<ApiMessageData>) {
+    val scrollState = rememberScrollState()
+
+    LaunchedEffect(messages.size) {
+        scrollState.animateScrollTo(scrollState.maxValue)
+    }
+
     Column(
         modifier = Modifier
                 .fillMaxWidth()
-                .verticalScroll(rememberScrollState())
+                .verticalScroll(scrollState)
     ) {
         messages.forEach { message ->
             val isLatestBotMessage = message.isBot && message == messages.lastOrNull { it.isBot }
-
             MessageBubble(
                 text = message.text ,
                 isBot = message.isBot ,
-                showTypingAnimation = isLatestBotMessage
+                showTypingAnimation = isLatestBotMessage ,
+                scrollState = scrollState
             )
+        }
+    }
+}
 
+
+@Composable
+fun MessageBubble(
+    text : String , isBot : Boolean , showTypingAnimation : Boolean , scrollState : ScrollState
+) {
+    var currentVisibleCharacters by remember(text) { mutableIntStateOf(if (showTypingAnimation) 0 else text.length) }
+    val textToDisplay = remember(text , currentVisibleCharacters) {
+        text.substring(
+            0 , currentVisibleCharacters
+        )
+    }
+
+    LaunchedEffect(key1 = text , key2 = showTypingAnimation) {
+        when {
+            showTypingAnimation -> {
+                currentVisibleCharacters = 0
+                while (currentVisibleCharacters < text.length) {
+                    delay(timeMillis = 24)
+                    currentVisibleCharacters ++
+                }
+                scrollState.animateScrollTo(scrollState.maxValue)
+            }
+
+            else -> {
+                currentVisibleCharacters = text.length
+            }
+        }
+    }
+
+    Row(
+        modifier = Modifier
+                .fillMaxWidth()
+                .padding(all = 16.dp) ,
+        verticalAlignment = Alignment.Top ,
+        horizontalArrangement = Arrangement.SpaceBetween
+    ) {
+        if (isBot) {
+            ProfilePicture(
+                icon = Icons.Outlined.Android ,
+                backgroundColor = MaterialTheme.colorScheme.primaryContainer
+            )
+            Spacer(modifier = Modifier.width(width = 16.dp))
+        }
+
+        Card(
+            shape = RoundedCornerShape(16.dp) , modifier = Modifier.weight(1f)
+        ) {
+            Column {
+                Text(
+                    text = textToDisplay , modifier = Modifier.padding(16.dp)
+                )
+                MessageActions(text = text , isBot = isBot)
+            }
+        }
+
+        if (! isBot) {
+            Spacer(modifier = Modifier.width(width = 16.dp))
+            ProfilePicture(
+                icon = Icons.Outlined.PersonOutline ,
+                backgroundColor = MaterialTheme.colorScheme.primaryContainer
+            )
         }
     }
 }
 
 @Composable
-fun MessageBubble(text : String , isBot : Boolean , showTypingAnimation : Boolean) {
-    var visibleCharacters by remember(text) { mutableIntStateOf(if (showTypingAnimation) 0 else text.length) }
-    val textToDisplay = remember(text , visibleCharacters) { text.substring(0 , visibleCharacters) }
-
-    val context = LocalContext.current
-
-    LaunchedEffect(key1 = text , key2 = showTypingAnimation) {
-        when {
-            showTypingAnimation -> {
-                visibleCharacters = 0
-                while (visibleCharacters < text.length) {
-                    delay(timeMillis = 24)
-                    visibleCharacters ++
-                }
-            }
-
-            else -> {
-                visibleCharacters = text.length
-            }
-        }
-    }
-
+fun ProfilePicture(backgroundColor : Color , icon : ImageVector) {
     Box(
         modifier = Modifier
-                .fillMaxWidth()
-                .padding(16.dp) ,
-        contentAlignment = if (isBot) Alignment.CenterStart else Alignment.CenterEnd
+                .size(size = 48.dp)
+                .background(
+                    color = backgroundColor , shape = CircleShape
+                ) , contentAlignment = Alignment.Center
     ) {
-        Card(
-            shape = RoundedCornerShape(16.dp)
-        ) {
+        Icon(
+            modifier = Modifier.size(size = 32.dp) ,
+            imageVector = icon ,
+            contentDescription = "Profile Picture Icon" ,
+            tint = MaterialTheme.colorScheme.onPrimaryContainer
+        )
+    }
+}
 
-            Column {
-                Text(
-                    text = textToDisplay , modifier = Modifier.padding(16.dp)
-                )
-                Row(
-                    modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(end = 8.dp) ,
-                    horizontalArrangement = Arrangement.End
-                ) {
-                    TextButton(modifier = Modifier.bounceClick() , onClick = {
-                        ClipboardUtil.copyTextToClipboard(context = context ,
-                                                          label = "Message" ,
-                                                          text = text ,
-                                                          onShowSnackbar = {
-                                                              Toast.makeText(
-                                                                  context ,
-                                                                  "Message copied to clipboard" ,
-                                                                  Toast.LENGTH_SHORT
-                                                              ).show()
-                                                          })
-                    } , contentPadding = PaddingValues(horizontal = 8.dp)) {
-                        Icon(
-                            imageVector = Icons.Outlined.CopyAll ,
-                            contentDescription = "Copy Message" ,
-                            modifier = Modifier.size(ButtonDefaults.IconSize)
+@Composable
+fun MessageActions(text : String , isBot : Boolean) {
+    val context = LocalContext.current
+    var isLiked by remember { mutableStateOf(value = false) }
+    var isDisliked by remember { mutableStateOf(value = false) }
+    val firebaseAnalytics = remember { FirebaseAnalytics.getInstance(context) }
+
+    Row(
+        modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 8.dp) ,
+        horizontalArrangement = Arrangement.SpaceBetween ,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+
+        Row {
+            if (isBot) {
+                IconButton(
+                    modifier = Modifier.bounceClick() ,
+                    onClick = {
+                        if (isLiked) {
+                            isLiked = false
+                        }
+                        else {
+                            isLiked = true
+                            isDisliked = false
+                        }
+
+                        val params = Bundle().apply {
+                            putString("message" , text)
+                        }
+                        firebaseAnalytics.logEvent(
+                            if (isLiked) "message_liked" else "message_unliked" , params
                         )
-                        Spacer(modifier = Modifier.width(ButtonDefaults.IconSpacing))
-                        Text(text = stringResource(id = android.R.string.copy))
-                    }
+                    } ,
+                ) {
+                    Icon(
+                        modifier = Modifier.size(size = ButtonDefaults.IconSize) ,
+                        imageVector = if (isLiked) Icons.Filled.ThumbUp else Icons.Outlined.ThumbUp ,
+                        contentDescription = "Like Icon" ,
+                        tint = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
+                IconButton(
+                    modifier = Modifier.bounceClick() ,
+                    onClick = {
+                        if (isDisliked) {
+                            isDisliked = false
+                        }
+                        else {
+                            isDisliked = true
+                            isLiked = false
+                        }
+                        val params = Bundle().apply {
+                            putString("message" , text)
+                        }
+                        firebaseAnalytics.logEvent(
+                            if (isDisliked) "message_disliked" else "message_undisliked" , params
+                        )
+                    } ,
+                ) {
+                    Icon(
+                        modifier = Modifier.size(size = ButtonDefaults.IconSize) ,
+                        imageVector = if (isDisliked) Icons.Filled.ThumbDown else Icons.Outlined.ThumbDown ,
+                        contentDescription = "Dislike Icon" ,
+                        tint = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
                 }
             }
+        }
+
+        TextButton(modifier = Modifier.bounceClick() , onClick = {
+            ClipboardUtil.copyTextToClipboard(context = context ,
+                                              label = "Message" ,
+                                              text = text ,
+                                              onShowSnackbar = {
+                                                  Toast.makeText(
+                                                      context ,
+                                                      "Message copied to clipboard" ,
+                                                      Toast.LENGTH_SHORT
+                                                  ).show()
+                                              })
+        } , contentPadding = PaddingValues(horizontal = 8.dp)) {
+            Icon(
+                imageVector = Icons.Outlined.CopyAll ,
+                contentDescription = "Copy Message" ,
+                modifier = Modifier.size(size = ButtonDefaults.IconSize)
+            )
+            Spacer(modifier = Modifier.width(width = ButtonDefaults.IconSpacing))
+            Text(text = stringResource(id = android.R.string.copy))
         }
     }
 }

@@ -6,7 +6,8 @@ import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.data.core.AppCoreManager
 import com.d4rk.androidtutorials.data.database.table.FavoriteLessonTable
 import com.d4rk.androidtutorials.data.datastore.DataStore
-import com.d4rk.androidtutorials.data.model.ui.screens.UiLesson
+import com.d4rk.androidtutorials.data.model.ui.screens.UiHomeLesson
+import com.d4rk.androidtutorials.data.model.ui.screens.UiHomeScreen
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -21,11 +22,11 @@ class HomeRepository(
     dataStore : DataStore , application : Application ,
 ) : HomeRepositoryImplementation(application , dataStore) {
 
-    suspend fun getHomeLessonsRepository(onSuccess : (List<UiLesson>) -> Unit) {
+    suspend fun getHomeLessonsRepository(onSuccess : (UiHomeScreen) -> Unit) {
         withContext(Dispatchers.IO) {
             val lessons = getHomeLessonsImplementation()
-            return@withContext withContext(Dispatchers.Main) {
-                lessons?.let { onSuccess(it) }
+            withContext(Dispatchers.Main) {
+                onSuccess(lessons)
             }
         }
     }
@@ -71,7 +72,7 @@ class HomeRepository(
         }
     }
 
-    suspend fun shareLessonRepository(lesson : UiLesson) {
+    suspend fun shareLessonRepository(lesson : UiHomeLesson) {
         withContext(Dispatchers.IO) {
             val shareIntent : Intent = shareLessonImplementation(lesson)
             withContext(Dispatchers.Main) {

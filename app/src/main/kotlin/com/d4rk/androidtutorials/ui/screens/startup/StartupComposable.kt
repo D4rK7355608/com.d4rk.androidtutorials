@@ -34,7 +34,7 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import com.d4rk.androidtutorials.R
-import com.d4rk.androidtutorials.ui.components.animations.bounceClick
+import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick
 import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffold
 import com.d4rk.androidtutorials.ui.screens.main.MainActivity
 import com.d4rk.androidtutorials.utils.IntentUtils

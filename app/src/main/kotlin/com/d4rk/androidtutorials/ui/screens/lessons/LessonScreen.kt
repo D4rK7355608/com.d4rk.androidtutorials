@@ -9,15 +9,15 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import com.d4rk.androidtutorials.data.datastore.DataStore
 import com.d4rk.androidtutorials.data.model.ui.error.UiErrorModel
-import com.d4rk.androidtutorials.data.model.ui.screens.UiLessonScreenModel
+import com.d4rk.androidtutorials.data.model.ui.screens.UiLessonScreen
 import com.d4rk.androidtutorials.ui.components.dialogs.ErrorAlertDialog
 import com.d4rk.androidtutorials.ui.components.layouts.LessonContentLayout
 import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffoldWithBackButton
-import com.d4rk.androidtutorials.ui.screens.loading.LoadingScreen
+import com.d4rk.androidtutorials.ui.components.layouts.LoadingScreen
 
 @Composable
 fun LessonScreen(
-    lesson : UiLessonScreenModel ,
+    lesson : UiLessonScreen ,
     activity : LessonActivity ,
     viewModel : LessonViewModel ,
 ) {
@@ -36,8 +36,9 @@ fun LessonScreen(
                          onDismiss = { viewModel.dismissErrorDialog() })
     }
 
-    TopAppBarScaffoldWithBackButton(title = lesson.lessonTitle ,
-                                    onBackClicked = { activity.finish() }) { paddingValues ->
+    TopAppBarScaffoldWithBackButton(
+        title = lesson.lessonTitle ,
+        onBackClicked = { activity.finish() }) { paddingValues ->
         if (isLoading) {
             LoadingScreen(progressAlpha)
         }

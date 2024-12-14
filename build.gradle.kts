@@ -3,6 +3,8 @@ plugins {
     alias(notation = libs.plugins.androidLibrary) apply false
     alias(notation = libs.plugins.jetbrainsKotlinAndroid) apply false
     alias(notation = libs.plugins.compose.compiler) apply false
+    alias(notation = libs.plugins.jetbrainsKotlinParcelize) apply false
+    alias(notation = libs.plugins.kotlin.serialization) apply false
     alias(notation = libs.plugins.googlePlayServices) apply false
     alias(notation = libs.plugins.googleFirebase) apply false
     alias(notation = libs.plugins.devToolsKsp) apply false

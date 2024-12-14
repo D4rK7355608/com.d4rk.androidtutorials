@@ -36,15 +36,15 @@ import androidx.navigation.NavHostController
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.data.datastore.DataStore
 import com.d4rk.androidtutorials.data.model.ui.navigation.NavigationDrawerItem
-import com.d4rk.androidtutorials.ui.components.animations.bounceClick
-import com.d4rk.androidtutorials.ui.components.animations.hapticDrawerSwipe
+import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick
+import com.d4rk.androidtutorials.ui.components.modifiers.hapticDrawerSwipe
 import com.d4rk.androidtutorials.ui.screens.help.HelpActivity
+import com.d4rk.androidtutorials.ui.screens.main.MainScreenContent
 import com.d4rk.androidtutorials.ui.screens.support.SupportActivity
 import com.d4rk.androidtutorials.utils.IntentUtils
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NavigationDrawer(
     navHostController : NavHostController ,
@@ -144,51 +144,13 @@ fun NavigationDrawer(
                               }
                           } ,
                           content = {
-                              Scaffold(topBar = {
-                                  TopAppBar(title = { Text(text = stringResource(id = R.string.app_name)) } ,
-                                            navigationIcon = {
-                                                IconButton(modifier = Modifier.bounceClick() ,
-                                                           onClick = {
-                                                               view.playSoundEffect(
-                                                                   SoundEffectConstants.CLICK
-                                                               )
-                                                               scope.launch {
-                                                                   drawerState.apply {
-                                                                       if (isClosed) open() else close()
-                                                                   }
-                                                               }
-                                                           }) {
-                                                    Icon(
-                                                        imageVector = Icons.Default.Menu ,
-                                                        contentDescription = stringResource(id = R.string.navigation_drawer_open)
-                                                    )
-                                                }
-                                            } ,
-                                            actions = {
-                                                IconButton(modifier = Modifier.bounceClick() ,
-                                                           onClick = {
-                                                               view.playSoundEffect(
-                                                                   SoundEffectConstants.CLICK
-                                                               )
-                                                               IntentUtils.openActivity(
-                                                                   context ,
-                                                                   SupportActivity::class.java
-                                                               )
-                                                           }) {
-                                                    Icon(
-                                                        Icons.Outlined.VolunteerActivism ,
-                                                        contentDescription = stringResource(id = R.string.support_us)
-                                                    )
-                                                }
-                                            })
-                              } , bottomBar = {
-                                  BottomNavigationBar(navHostController , dataStore , view)
-                              }) { paddingValues ->
-                                  NavigationHost(
-                                      navHostController = navHostController ,
-                                      dataStore = dataStore ,
-                                      paddingValues = paddingValues
-                                  )
-                              }
+                              MainScreenContent(
+                                  view = view ,
+                                  drawerState = drawerState ,
+                                  context = context ,
+                                  coroutineScope = scope ,
+                                  navHostController = navHostController ,
+                                  dataStore = dataStore
+                              )
                           })
 }

@@ -1,4 +1,4 @@
-package com.d4rk.androidtutorials.data.api
+package com.d4rk.androidtutorials.data.model.api
 
 import java.util.UUID
 

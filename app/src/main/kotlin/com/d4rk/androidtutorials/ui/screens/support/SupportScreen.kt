@@ -37,7 +37,7 @@ import com.android.billingclient.api.BillingResult
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.data.datastore.DataStore
 import com.d4rk.androidtutorials.ui.components.ads.LargeBannerAdsComposable
-import com.d4rk.androidtutorials.ui.components.animations.bounceClick
+import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick
 import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffoldWithBackButton
 import com.d4rk.androidtutorials.utils.IntentUtils
 

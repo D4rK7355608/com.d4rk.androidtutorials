@@ -3,7 +3,7 @@ package com.d4rk.androidtutorials.ui.screens.studiobot
 import android.app.Application
 import androidx.lifecycle.viewModelScope
 import com.d4rk.androidtutorials.BuildConfig
-import com.d4rk.androidtutorials.data.api.ApiMessageData
+import com.d4rk.androidtutorials.data.model.api.ApiMessageData
 import com.d4rk.androidtutorials.ui.screens.studiobot.repository.StudioBotRepository
 import com.d4rk.androidtutorials.ui.viewmodel.BaseViewModel
 import kotlinx.coroutines.flow.MutableStateFlow

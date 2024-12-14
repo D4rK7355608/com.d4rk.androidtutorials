@@ -15,7 +15,7 @@ import androidx.navigation.compose.composable
 import com.d4rk.androidtutorials.constants.ui.bottombar.BottomBarRoutes
 import com.d4rk.androidtutorials.data.datastore.DataStore
 import com.d4rk.androidtutorials.data.model.ui.navigation.BottomNavigationScreen
-import com.d4rk.androidtutorials.data.model.ui.screens.UiLesson
+import com.d4rk.androidtutorials.data.model.ui.screens.UiHomeLesson
 import com.d4rk.androidtutorials.ui.screens.favorites.FavoritesScreen
 import com.d4rk.androidtutorials.ui.screens.home.HomeScreen
 import com.d4rk.androidtutorials.ui.screens.studiobot.StudioBotScreen
@@ -48,7 +48,7 @@ fun NavigationHost(
     }
 }
 
-fun openLessonDetailActivity(context : Context , lesson : UiLesson) {
+fun openLessonDetailActivity(context : Context , lesson : UiHomeLesson) {
     Intent(Intent.ACTION_VIEW , Uri.parse(lesson.deepLinkPath)).let { intent ->
         intent.resolveActivity(context.packageManager)?.let {
             context.startActivity(intent)

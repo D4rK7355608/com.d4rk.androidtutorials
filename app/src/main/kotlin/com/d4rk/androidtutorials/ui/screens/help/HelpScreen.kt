@@ -52,7 +52,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.ui.components.AnimatedExtendedFloatingActionButton
-import com.d4rk.androidtutorials.ui.components.animations.bounceClick
+import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick
 import com.d4rk.androidtutorials.ui.components.dialogs.VersionInfoAlertDialog
 import com.d4rk.androidtutorials.utils.IntentUtils
 import com.d4rk.androidtutorials.utils.rememberHtmlData

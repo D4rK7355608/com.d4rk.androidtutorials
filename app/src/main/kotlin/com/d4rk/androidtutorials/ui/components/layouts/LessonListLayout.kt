@@ -42,14 +42,16 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil3.compose.AsyncImage
 import com.d4rk.androidtutorials.constants.ui.lessons.LessonConstants
-import com.d4rk.androidtutorials.data.model.ui.screens.UiLesson
-import com.d4rk.androidtutorials.ui.components.animations.animateVisibility
-import com.d4rk.androidtutorials.ui.components.animations.bounceClick
+import com.d4rk.androidtutorials.data.model.ui.screens.UiHomeLesson
+import com.d4rk.androidtutorials.ui.components.modifiers.animateVisibility
+import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick
 import com.d4rk.androidtutorials.ui.components.navigation.openLessonDetailActivity
 import com.d4rk.androidtutorials.ui.screens.home.HomeViewModel
 
 @Composable
-fun LessonListLayout(lessons : List<UiLesson>, visibilityStates: List<Boolean>, context : Context) {
+fun LessonListLayout(
+    lessons : List<UiHomeLesson> , visibilityStates : List<Boolean> , context : Context
+) {
     LazyColumn(
         contentPadding = PaddingValues(16.dp) ,
         verticalArrangement = Arrangement.spacedBy(16.dp) ,
@@ -69,7 +71,7 @@ fun LessonListLayout(lessons : List<UiLesson>, visibilityStates: List<Boolean>, 
 }
 
 @Composable
-fun LessonItem(lesson : UiLesson , context : Context , modifier : Modifier = Modifier) {
+fun LessonItem(lesson : UiHomeLesson , context : Context , modifier : Modifier = Modifier) {
     val viewModel : HomeViewModel = viewModel()
     Card(
         modifier = modifier.fillMaxWidth()
@@ -94,7 +96,7 @@ fun LessonItem(lesson : UiLesson , context : Context , modifier : Modifier = Mod
 
 @Composable
 fun FullImageBannerLessonItem(
-    lesson : UiLesson , context : Context , viewModel : HomeViewModel
+    lesson : UiHomeLesson , context : Context , viewModel : HomeViewModel
 ) {
     Card(modifier = Modifier
             .fillMaxWidth()
@@ -135,7 +137,7 @@ fun FullImageBannerLessonItem(
 
 @Composable
 fun SquareImageLessonItem(
-    lesson : UiLesson , context : Context , viewModel : HomeViewModel
+    lesson : UiHomeLesson , context : Context , viewModel : HomeViewModel
 ) {
     Card(modifier = Modifier
             .fillMaxWidth()
@@ -204,7 +206,7 @@ fun TitleAndDescriptionColumn(title : String , description : String , maxLines :
 }
 
 @Composable
-fun ButtonsRow(lesson : UiLesson , viewModel : HomeViewModel) {
+fun ButtonsRow(lesson : UiHomeLesson , viewModel : HomeViewModel) {
     val view : View = LocalView.current
     val isFavorite = lesson.isFavorite
 
