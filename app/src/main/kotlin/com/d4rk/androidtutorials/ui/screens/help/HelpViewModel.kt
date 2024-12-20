@@ -1,27 +1,28 @@
 package com.d4rk.androidtutorials.ui.screens.help
 
 import android.app.Application
-import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.State
-import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.viewModelScope
+import com.d4rk.androidtutorials.data.datastore.DataStore
+import com.d4rk.androidtutorials.data.model.ui.screens.UiHelpScreen
+import com.d4rk.androidtutorials.ui.screens.help.repository.HelpRepository
 import com.d4rk.androidtutorials.ui.viewmodel.BaseViewModel
 import com.d4rk.androidtutorials.utils.IntentUtils
-import com.google.android.gms.tasks.Task
 import com.google.android.play.core.review.ReviewInfo
-import com.google.android.play.core.review.ReviewManager
-import com.google.android.play.core.review.ReviewManagerFactory
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
 class HelpViewModel(application : Application) : BaseViewModel(application) {
+    private val repository = HelpRepository(DataStore(application) , application)
 
-    private var _reviewInfo : MutableState<ReviewInfo?> = mutableStateOf(value = null)
-    val reviewInfo : State<ReviewInfo?> = _reviewInfo
+    private val _uiState = MutableStateFlow(UiHelpScreen())
+    val uiState : StateFlow<UiHelpScreen> = _uiState
 
     init {
         initializeVisibilityStates()
+        getFAQs()
+        requestReviewFlow()
     }
 
     private fun initializeVisibilityStates() {
@@ -31,32 +32,27 @@ class HelpViewModel(application : Application) : BaseViewModel(application) {
         }
     }
 
-    fun requestReviewFlow() {
-        viewModelScope.launch(Dispatchers.IO) {
-            val reviewManager : ReviewManager = ReviewManagerFactory.create(getApplication())
-            val request : Task<ReviewInfo> = reviewManager.requestReviewFlow()
-            val packageName : String = getApplication<Application>().packageName
-            request.addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    _reviewInfo.value = task.result
-                }
-                else {
-                    task.exception?.let {
-                        task.exception?.printStackTrace()
-                        IntentUtils.sendEmailToDeveloper(getApplication())
-                    }
-                }
-            }.addOnFailureListener {
-                IntentUtils.openUrl(
-                    getApplication() ,
-                    url = "https://play.google.com/store/apps/details?id=$packageName&showAllReviews=true"
-                )
+    private fun getFAQs() {
+        viewModelScope.launch(coroutineExceptionHandler) {
+            repository.getFAQsRepository { faqList ->
+                _uiState.value = _uiState.value.copy(questions = faqList)
             }
         }
     }
 
+    private fun requestReviewFlow() {
+        viewModelScope.launch(coroutineExceptionHandler) {
+            repository.requestReviewFlowRepository(onSuccess = { reviewInfo ->
+                _uiState.value = _uiState.value.copy(reviewInfo = reviewInfo)
+            } , onFailure = {
+                IntentUtils.sendEmailToDeveloper(getApplication())
+            })
+        }
+    }
+
     fun launchReviewFlow(activity : HelpActivity , reviewInfo : ReviewInfo) {
-        val reviewManager : ReviewManager = ReviewManagerFactory.create(activity)
-        reviewManager.launchReviewFlow(activity , reviewInfo)
+        viewModelScope.launch(coroutineExceptionHandler) {
+            repository.launchReviewFlowRepository(activity , reviewInfo)
+        }
     }
 }

@@ -7,8 +7,11 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Menu
+import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material.icons.outlined.VolunteerActivism
 import androidx.compose.material3.DrawerState
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -20,12 +23,19 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import com.d4rk.androidtutorials.R
+import com.d4rk.androidtutorials.ui.components.dialogs.VersionInfoAlertDialog
 import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick
+import com.d4rk.androidtutorials.ui.screens.help.HelpActivity
 import com.d4rk.androidtutorials.ui.screens.support.SupportActivity
 import com.d4rk.androidtutorials.utils.IntentUtils
 import kotlinx.coroutines.CoroutineScope
@@ -91,6 +101,104 @@ fun TopAppBarScaffoldWithBackButton(
              }) { paddingValues ->
         content(paddingValues)
     }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun TopAppBarScaffoldWithBackButtonAndActions(
+    context : Context ,
+    activity : HelpActivity ,
+    showDialog : MutableState<Boolean> ,
+    eulaHtmlString : String? ,
+    changelogHtmlString : String? ,
+    scrollBehavior : TopAppBarScrollBehavior ,
+    view : View
+) {
+    var showMenu : Boolean by remember { mutableStateOf(value = false) }
+
+    LargeTopAppBar(
+        title = { Text(text = stringResource(id = R.string.help)) } ,
+        navigationIcon = {
+            IconButton(modifier = Modifier.bounceClick() , onClick = {
+                view.playSoundEffect(SoundEffectConstants.CLICK)
+                activity.finish()
+            }) {
+                Icon(
+                    Icons.AutoMirrored.Filled.ArrowBack , contentDescription = null
+                )
+            }
+        } ,
+        actions = {
+            IconButton(modifier = Modifier.bounceClick() , onClick = {
+                view.playSoundEffect(SoundEffectConstants.CLICK)
+                showMenu = true
+            }) {
+                Icon(
+                    Icons.Default.MoreVert , contentDescription = "Localized description"
+                )
+            }
+            DropdownMenu(expanded = showMenu , onDismissRequest = {
+                showMenu = false
+            }) {
+                DropdownMenuItem(modifier = Modifier.bounceClick() ,
+                                 text = { Text(text = stringResource(id = R.string.view_in_google_play_store)) } ,
+                                 onClick = {
+                                     view.playSoundEffect(SoundEffectConstants.CLICK)
+                                     IntentUtils.openUrl(
+                                         context ,
+                                         url = "https://play.google.com/store/apps/details?id=${activity.packageName}"
+                                     )
+                                 })
+                DropdownMenuItem(modifier = Modifier.bounceClick() ,
+                                 text = { Text(text = stringResource(id = R.string.version_info)) } ,
+                                 onClick = {
+                                     view.playSoundEffect(SoundEffectConstants.CLICK)
+                                     showDialog.value = true
+                                 })
+                DropdownMenuItem(modifier = Modifier.bounceClick() ,
+                                 text = { Text(text = stringResource(id = R.string.beta_program)) } ,
+                                 onClick = {
+                                     view.playSoundEffect(SoundEffectConstants.CLICK)
+                                     IntentUtils.openUrl(
+                                         context ,
+                                         url = "https://play.google.com/apps/testing/${activity.packageName}"
+                                     )
+                                 })
+                DropdownMenuItem(modifier = Modifier.bounceClick() ,
+                                 text = { Text(text = stringResource(id = R.string.terms_of_service)) } ,
+                                 onClick = {
+                                     view.playSoundEffect(SoundEffectConstants.CLICK)
+                                     IntentUtils.openUrl(
+                                         context ,
+                                         url = "https://sites.google.com/view/d4rk7355608/more/apps/terms-of-service"
+                                     )
+                                 })
+                DropdownMenuItem(modifier = Modifier.bounceClick() ,
+                                 text = { Text(text = stringResource(id = R.string.privacy_policy)) } ,
+                                 onClick = {
+                                     view.playSoundEffect(SoundEffectConstants.CLICK)
+                                     IntentUtils.openUrl(
+                                         context ,
+                                         url = "https://sites.google.com/view/d4rk7355608/more/apps/privacy-policy"
+                                     )
+                                 })
+                DropdownMenuItem(modifier = Modifier.bounceClick() ,
+                                 text = { Text(text = stringResource(id = R.string.oss_license_title)) } ,
+                                 onClick = {
+                                     view.playSoundEffect(SoundEffectConstants.CLICK)
+                                     IntentUtils.openLicensesScreen(
+                                         context = context ,
+                                         eulaHtmlString = eulaHtmlString ,
+                                         changelogHtmlString = changelogHtmlString
+                                     )
+                                 })
+            }
+            if (showDialog.value) {
+                VersionInfoAlertDialog(onDismiss = { showDialog.value = false })
+            }
+        } ,
+        scrollBehavior = scrollBehavior ,
+    )
 }
 
 @OptIn(ExperimentalMaterial3Api::class)

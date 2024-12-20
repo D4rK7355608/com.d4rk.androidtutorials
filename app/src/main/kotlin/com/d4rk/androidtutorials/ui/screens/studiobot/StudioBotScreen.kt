@@ -102,8 +102,8 @@ fun StudioBotScreen() {
 
                 OutlinedTextField(value = userInput ,
                                   singleLine = true ,
-                                  onValueChange = {
-                                      userInput = it.replaceFirstChar { char ->
+                                  onValueChange = { input ->
+                                      userInput = input.replaceFirstChar { char ->
                                           if (char.isLowerCase()) char.titlecase() else char.toString()
                                       }
                                   } ,
@@ -321,16 +321,17 @@ fun MessageActions(text : String , isBot : Boolean) {
         }
 
         TextButton(modifier = Modifier.bounceClick() , onClick = {
-            ClipboardUtil.copyTextToClipboard(context = context ,
-                                              label = "Message" ,
-                                              text = text ,
-                                              onShowSnackbar = {
-                                                  Toast.makeText(
-                                                      context ,
-                                                      "Message copied to clipboard" ,
-                                                      Toast.LENGTH_SHORT
-                                                  ).show()
-                                              })
+            ClipboardUtil.copyTextToClipboard(
+                context = context ,
+                label = "Message" ,
+                text = text ,
+                onShowSnackbar = {
+                    Toast.makeText(
+                        context ,
+                        "Message copied to clipboard" ,
+                        Toast.LENGTH_SHORT
+                    ).show()
+                })
         } , contentPadding = PaddingValues(horizontal = 8.dp)) {
             Icon(
                 imageVector = Icons.Outlined.CopyAll ,
