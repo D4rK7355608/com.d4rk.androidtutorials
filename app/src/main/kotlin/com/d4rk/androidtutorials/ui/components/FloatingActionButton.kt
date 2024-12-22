@@ -22,7 +22,8 @@ fun AnimatedExtendedFloatingActionButton(
     scale : Float = 0.8f ,
     animationSpec : AnimationSpec<Float> = tween(
         durationMillis = 300 , easing = FastOutSlowInEasing
-    )
+    ) ,
+    expanded : Boolean = true
 ) {
     val animatedOffsetX by animateFloatAsState(
         targetValue = if (visible) 0f else offsetX ,
@@ -41,6 +42,7 @@ fun AnimatedExtendedFloatingActionButton(
     ExtendedFloatingActionButton(onClick = onClick ,
                                  icon = icon ,
                                  text = text ?: {} ,
+                                 expanded = expanded ,
                                  modifier = Modifier
                                          .bounceClick()
                                          .graphicsLayer {

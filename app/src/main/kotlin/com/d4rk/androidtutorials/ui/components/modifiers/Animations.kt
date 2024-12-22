@@ -7,7 +7,6 @@ import androidx.compose.foundation.gestures.awaitFirstDown
 import androidx.compose.foundation.gestures.waitForUpOrCancellation
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.pager.PagerState
 import androidx.compose.material3.DrawerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -77,23 +76,6 @@ fun Modifier.hapticDrawerSwipe(drawerState : DrawerState) : Modifier = composed 
         }
 
         if (! drawerState.isAnimationRunning) {
-            hasVibrated = false
-        }
-    }
-
-    return@composed this
-}
-
-fun Modifier.hapticPagerSwipe(pagerState : PagerState) : Modifier = composed {
-    val haptic : HapticFeedback = LocalHapticFeedback.current
-    var hasVibrated : Boolean by remember { mutableStateOf(value = false) }
-
-    LaunchedEffect(pagerState.isScrollInProgress) {
-        if (pagerState.isScrollInProgress && ! hasVibrated) {
-            haptic.performHapticFeedback(HapticFeedbackType.LongPress)
-            hasVibrated = true
-        }
-        else if (! pagerState.isScrollInProgress) {
             hasVibrated = false
         }
     }

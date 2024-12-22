@@ -6,6 +6,7 @@
 - **New**: Refactored the UI structure to enhance organization and maintainability.
 - **New**: Added "Like" and "Dislike" feedback for Studio Bot messages.
 - **New**: Introduced new profile pictures for Studio Bot and user messages.
+- **Minor**: Updated the Help screen UI for better UX.
 - **Minor**: Improved the placement of the copy button in Studio Bot chat bubbles.
 - **Minor**: Optimized keyboard behavior on the Studio Bot screen.
 - **Patch**: Standardized naming of `packageName` for consistency.

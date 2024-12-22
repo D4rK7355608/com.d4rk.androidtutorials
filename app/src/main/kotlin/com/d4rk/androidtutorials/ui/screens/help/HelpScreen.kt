@@ -6,7 +6,6 @@ import android.view.View
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -18,7 +17,7 @@ import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -36,6 +35,7 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -72,6 +72,11 @@ fun HelpScreen(activity : HelpActivity , viewModel : HelpViewModel) {
     val changelogHtmlString = htmlData.value.first
     val eulaHtmlString = htmlData.value.second
 
+    val isFabExtended = remember { mutableStateOf(value = true) }
+    LaunchedEffect(scrollBehavior.state.contentOffset) {
+        isFabExtended.value = scrollBehavior.state.contentOffset >= 0f
+    }
+
     Scaffold(
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection) ,
         topBar = {
@@ -97,20 +102,23 @@ fun HelpScreen(activity : HelpActivity , viewModel : HelpViewModel) {
                 Icon(
                     Icons.Default.MailOutline , contentDescription = null
                 )
-            })
+            } , expanded = isFabExtended.value)
         } ,
     ) { paddingValues ->
-        Box(
+        LazyColumn(
             modifier = Modifier
-                    .padding(start = 16.dp , end = 16.dp)
+                    .padding(paddingValues)
                     .fillMaxSize()
                     .safeDrawingPadding()
+                    .padding(horizontal = 16.dp) , state = rememberLazyListState()
         ) {
-            Column(modifier = Modifier.padding(paddingValues)) {
+            item {
                 Text(
                     text = stringResource(id = R.string.faq) ,
                     modifier = Modifier.padding(bottom = 24.dp)
                 )
+            }
+            item {
                 Card(modifier = Modifier.fillMaxWidth()) {
                     FAQComposable(questions = uiState.questions)
                 }
@@ -123,8 +131,8 @@ fun HelpScreen(activity : HelpActivity , viewModel : HelpViewModel) {
 fun FAQComposable(questions : List<UiHelpQuestion>) {
     val expandedStates = remember { mutableStateMapOf<Int , Boolean>() }
 
-    LazyColumn {
-        itemsIndexed(items = questions) { index , question ->
+    Column {
+        questions.forEachIndexed { index , question ->
             val isExpanded = expandedStates[index] ?: false
             QuestionComposable(title = question.question ,
                                summary = question.answer ,
@@ -136,51 +144,57 @@ fun FAQComposable(questions : List<UiHelpQuestion>) {
     }
 }
 
+
 @Composable
 fun QuestionComposable(
     title : String , summary : String , isExpanded : Boolean , onToggleExpand : () -> Unit
 ) {
-    Column(modifier = Modifier
-            .fillMaxWidth()
-            .animateContentSize()
+    Card(modifier = Modifier
             .clip(shape = RoundedCornerShape(size = 12.dp))
             .clickable { onToggleExpand() }
-            .padding(all = 16.dp)) {
-        Row(
-            verticalAlignment = Alignment.CenterVertically , modifier = Modifier.fillMaxWidth()
+            .padding(all = 16.dp)
+            .animateContentSize()
+            .fillMaxWidth()) {
+        Column(
+            modifier = Modifier.fillMaxSize()
         ) {
-            Icon(
-                imageVector = Icons.Outlined.QuestionAnswer ,
-                contentDescription = null ,
-                tint = MaterialTheme.colorScheme.primary ,
-                modifier = Modifier
-                        .size(size = 48.dp)
-                        .background(
-                            color = MaterialTheme.colorScheme.primaryContainer , shape = CircleShape
-                        )
-                        .padding(8.dp)
-            )
-            Spacer(modifier = Modifier.width(width = 16.dp))
+            Row(
+                verticalAlignment = Alignment.CenterVertically , modifier = Modifier.fillMaxWidth()
+            ) {
+                Icon(
+                    imageVector = Icons.Outlined.QuestionAnswer ,
+                    contentDescription = null ,
+                    tint = MaterialTheme.colorScheme.primary ,
+                    modifier = Modifier
+                            .size(size = 48.dp)
+                            .background(
+                                color = MaterialTheme.colorScheme.primaryContainer ,
+                                shape = CircleShape
+                            )
+                            .padding(8.dp)
+                )
+                Spacer(modifier = Modifier.width(width = 16.dp))
 
-            Text(
-                text = title ,
-                style = MaterialTheme.typography.titleMedium ,
-                modifier = Modifier.weight(weight = 1f)
-            )
+                Text(
+                    text = title ,
+                    style = MaterialTheme.typography.titleMedium ,
+                    modifier = Modifier.weight(weight = 1f)
+                )
 
-            Icon(
-                imageVector = if (isExpanded) Icons.Filled.ExpandLess else Icons.Filled.ExpandMore ,
-                contentDescription = null ,
-                tint = MaterialTheme.colorScheme.primary ,
-                modifier = Modifier.size(size = 24.dp)
-            )
-        }
-        if (isExpanded) {
-            Spacer(modifier = Modifier.height(height = 8.dp))
-            Text(
-                text = summary ,
-                style = MaterialTheme.typography.bodyMedium ,
-            )
+                Icon(
+                    imageVector = if (isExpanded) Icons.Filled.ExpandLess else Icons.Filled.ExpandMore ,
+                    contentDescription = null ,
+                    tint = MaterialTheme.colorScheme.primary ,
+                    modifier = Modifier.size(size = 24.dp)
+                )
+            }
+            if (isExpanded) {
+                Spacer(modifier = Modifier.height(height = 8.dp))
+                Text(
+                    text = summary ,
+                    style = MaterialTheme.typography.bodyMedium ,
+                )
+            }
         }
     }
 }
