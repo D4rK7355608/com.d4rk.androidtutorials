@@ -42,7 +42,7 @@ class AppCoreManager : MultiDexApplication() , Application.ActivityLifecycleCall
         @SuppressLint("StaticFieldLeak")
         lateinit var instance : AppCoreManager
             private set
-        lateinit var ktorClient: HttpClient
+        lateinit var ktorClient : HttpClient
     }
 
     override fun onCreate() {
@@ -51,11 +51,11 @@ class AppCoreManager : MultiDexApplication() , Application.ActivityLifecycleCall
         ktorClient = KtorClient().createClient()
         registerActivityLifecycleCallbacks(this)
         ProcessLifecycleOwner.get().lifecycle.addObserver(observer = this)
-        database = Room.databaseBuilder(this , AppDatabase::class.java , "Android Studio Tutorials")
-                .addMigrations(MIGRATION_1_2)
-                .fallbackToDestructiveMigration()
-                .fallbackToDestructiveMigrationOnDowngrade()
-                .build()
+        try {
+            initializeDatabase()
+        } catch (e : Exception) {
+            handleDatabaseError(e)
+        }
         CoroutineScope(Dispatchers.Main).launch {
             if (dataStoreCoreManager.initializeDataStore()) {
                 proceedToNextStage()
@@ -69,11 +69,10 @@ class AppCoreManager : MultiDexApplication() , Application.ActivityLifecycleCall
                 currentStage = AppInitializationStage.ADS
                 adsCoreManager.setDataStore(dataStoreCoreManager.dataStore)
                 adsCoreManager.initializeAds()
-                markAppAsLoaded()
             }
 
             else -> {
-                // All stages completed
+                markAppAsLoaded()
             }
         }
     }
@@ -89,6 +88,28 @@ class AppCoreManager : MultiDexApplication() , Application.ActivityLifecycleCall
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
     fun onMoveToForeground() {
         currentActivity?.let { adsCoreManager.showAdIfAvailable(it) }
+    }
+
+    private fun initializeDatabase() {
+        database = Room.databaseBuilder(
+            context = this , klass = AppDatabase::class.java , name = "Android Studio Tutorials"
+        ).addMigrations(MIGRATION_1_2).fallbackToDestructiveMigration()
+                .fallbackToDestructiveMigrationOnDowngrade().build()
+    }
+
+    private fun handleDatabaseError(exception : Exception) {
+        (exception as? IllegalStateException)
+                ?.takeIf { it.message?.contains(other = "Migration failed") == true }
+                ?.let { eraseDatabase() }
+    }
+
+    private fun eraseDatabase() {
+        runCatching {
+            val databaseName = "Android Studio Tutorials"
+            getDatabasePath(databaseName).delete()
+        }.onSuccess {
+            initializeDatabase()
+        }
     }
 
     private var currentActivity : Activity? = null
