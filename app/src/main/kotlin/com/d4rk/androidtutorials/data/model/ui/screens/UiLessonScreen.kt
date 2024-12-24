@@ -10,5 +10,5 @@ data class UiLessonContent(
     val contentText : String = "" ,
     val contentCode : String = "" ,
     val programmingLanguage : String = "" ,
-    val contentImageSrc : String = ""
+    val contentImageUrl : String = ""
 )

@@ -20,18 +20,19 @@ class LessonActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContent {
             val lessonId = intent?.data?.lastPathSegment
-            println("Android -> lesson id got is: $lessonId")
-            lessonId?.let {
-                viewModel.getLesson(it)
+            lessonId?.let { id ->
+                viewModel.getLesson(lessonId = id)
             }
             AppTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize() , color = MaterialTheme.colorScheme.background
                 ) {
                     val lesson = viewModel.lesson.collectAsState()
-                    lesson.value?.let {
+                    lesson.value?.let { content ->
                         LessonScreen(
-                            lesson = it , activity = this@LessonActivity , viewModel = viewModel
+                            lesson = content ,
+                            activity = this@LessonActivity ,
+                            viewModel = viewModel
                         )
                     }
                 }

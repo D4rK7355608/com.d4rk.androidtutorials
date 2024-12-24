@@ -20,8 +20,8 @@ import com.d4rk.androidtutorials.ui.components.PreferenceCategoryItem
 import com.d4rk.androidtutorials.ui.components.PreferenceItem
 import com.d4rk.androidtutorials.ui.components.Snackbar
 import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffoldWithBackButton
-import com.d4rk.androidtutorials.utils.ClipboardUtil
-import com.d4rk.androidtutorials.utils.IntentUtils
+import com.d4rk.androidtutorials.utils.helpers.ClipboardHelper
+import com.d4rk.androidtutorials.utils.helpers.IntentsHelper
 import com.d4rk.androidtutorials.utils.rememberHtmlData
 
 @Composable
@@ -60,7 +60,7 @@ fun AboutSettingsComposable(activity : AboutSettingsActivity) {
                     PreferenceItem(title = stringResource(R.string.oss_license_title) ,
                                    summary = stringResource(id = R.string.summary_preference_settings_oss) ,
                                    onClick = {
-                                       IntentUtils.openLicensesScreen(
+                                       IntentsHelper.openLicensesScreen(
                                            context = context ,
                                            eulaHtmlString = eulaHtmlString ,
                                            changelogHtmlString = changelogHtmlString
@@ -85,10 +85,10 @@ fun AboutSettingsComposable(activity : AboutSettingsActivity) {
                     PreferenceItem(title = stringResource(id = R.string.device_info) ,
                                    summary = version ,
                                    onClick = {
-                                       ClipboardUtil.copyTextToClipboard(context = context ,
-                                                                         label = "Device Info" ,
-                                                                         text = version ,
-                                                                         onShowSnackbar = {
+                                       ClipboardHelper.copyTextToClipboard(context = context ,
+                                                                           label = "Device Info" ,
+                                                                           text = version ,
+                                                                           onShowSnackbar = {
                                                                              showSnackbar = true
                                                                          })
                                    })

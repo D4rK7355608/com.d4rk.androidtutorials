@@ -27,7 +27,7 @@ import com.d4rk.androidtutorials.ui.screens.settings.about.AboutSettingsActivity
 import com.d4rk.androidtutorials.ui.screens.settings.advanced.AdvancedSettingsActivity
 import com.d4rk.androidtutorials.ui.screens.settings.display.DisplaySettingsActivity
 import com.d4rk.androidtutorials.ui.screens.settings.privacy.PrivacySettingsActivity
-import com.d4rk.androidtutorials.utils.IntentUtils
+import com.d4rk.androidtutorials.utils.helpers.IntentsHelper
 
 @Composable
 fun SettingsComposable(activity : SettingsActivity) {
@@ -52,14 +52,14 @@ fun SettingsComposable(activity : SettingsActivity) {
                                            title = stringResource(id = R.string.notifications) ,
                                            summary = stringResource(id = R.string.summary_preference_settings_notifications) ,
                                            onClick = {
-                                               IntentUtils.openAppNotificationSettings(context)
+                                               IntentsHelper.openAppNotificationSettings(context)
                                            })
                     Spacer(modifier = Modifier.height(2.dp))
                     SettingsPreferenceItem(Icons.Outlined.Palette ,
                                            title = stringResource(id = R.string.display) ,
                                            summary = stringResource(id = R.string.summary_preference_settings_display) ,
                                            onClick = {
-                                               IntentUtils.openActivity(
+                                               IntentsHelper.openActivity(
                                                    context , DisplaySettingsActivity::class.java
                                                )
                                            })
@@ -76,7 +76,7 @@ fun SettingsComposable(activity : SettingsActivity) {
                                            title = stringResource(id = R.string.security_and_privacy) ,
                                            summary = stringResource(id = R.string.summary_preference_settings_privacy_and_security) ,
                                            onClick = {
-                                               IntentUtils.openActivity(
+                                               IntentsHelper.openActivity(
                                                    context , PrivacySettingsActivity::class.java
                                                )
                                            })
@@ -85,7 +85,7 @@ fun SettingsComposable(activity : SettingsActivity) {
                                            title = stringResource(id = R.string.advanced) ,
                                            summary = stringResource(id = R.string.summary_preference_settings_advanced) ,
                                            onClick = {
-                                               IntentUtils.openActivity(
+                                               IntentsHelper.openActivity(
                                                    context , AdvancedSettingsActivity::class.java
                                                )
                                            })
@@ -94,7 +94,7 @@ fun SettingsComposable(activity : SettingsActivity) {
                                            title = stringResource(id = R.string.about) ,
                                            summary = stringResource(id = R.string.summary_preference_settings_about) ,
                                            onClick = {
-                                               IntentUtils.openActivity(
+                                               IntentsHelper.openActivity(
                                                    context , AboutSettingsActivity::class.java
                                                )
                                            })

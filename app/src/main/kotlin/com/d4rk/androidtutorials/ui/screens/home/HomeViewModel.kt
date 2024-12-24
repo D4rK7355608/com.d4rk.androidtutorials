@@ -2,16 +2,16 @@ package com.d4rk.androidtutorials.ui.screens.home
 
 import android.app.Application
 import androidx.lifecycle.viewModelScope
-import com.d4rk.androidtutorials.data.database.table.FavoriteLessonTable
 import com.d4rk.androidtutorials.data.datastore.DataStore
 import com.d4rk.androidtutorials.data.model.ui.screens.UiHomeLesson
 import com.d4rk.androidtutorials.data.model.ui.screens.UiHomeScreen
 import com.d4rk.androidtutorials.ui.screens.home.repository.HomeRepository
 import com.d4rk.androidtutorials.ui.viewmodel.LessonsViewModel
+import com.d4rk.androidtutorials.utils.extensions.toFavoriteLessonTable
 import kotlinx.coroutines.launch
 
 class HomeViewModel(application : Application) : LessonsViewModel(application) {
-    private val repository = HomeRepository(DataStore(application) , application)
+    private val repository : HomeRepository = HomeRepository(DataStore(application) , application)
 
     init {
         getHomeLessons()
@@ -19,10 +19,10 @@ class HomeViewModel(application : Application) : LessonsViewModel(application) {
     }
 
     private fun getHomeLessons() {
-        viewModelScope.launch(coroutineExceptionHandler) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
             showLoading()
             repository.getHomeLessonsRepository { fetchedLessons ->
-                _lessons.value = listOf(fetchedLessons) // Fix type mismatch
+                _lessons.value = listOf(element = fetchedLessons)
             }
             hideLoading()
             initializeVisibilityStates()
@@ -30,64 +30,52 @@ class HomeViewModel(application : Application) : LessonsViewModel(application) {
     }
 
     private fun observeFavorites() {
-        viewModelScope.launch(coroutineExceptionHandler) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
             repository.observeFavoritesChanges { favorites ->
                 val updatedLessons = _lessons.value.firstOrNull()?.lessons?.map { lesson ->
                     lesson.copy(isFavorite = favorites.any { it.lessonId == lesson.lessonId })
                 } ?: emptyList()
 
-                _lessons.value = listOf(UiHomeScreen(lessons = ArrayList(updatedLessons)))
+                _lessons.value = listOf(element = UiHomeScreen(lessons = ArrayList(updatedLessons)))
             }
         }
     }
 
     fun toggleFavorite(lesson : UiHomeLesson) {
-        viewModelScope.launch(coroutineExceptionHandler) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
             val updatedLesson = lesson.copy(isFavorite = ! lesson.isFavorite)
             val updatedLessons = _lessons.value.firstOrNull()?.lessons?.map {
                 if (it.lessonId == updatedLesson.lessonId) updatedLesson else it
             } ?: emptyList()
 
-            _lessons.value = listOf(UiHomeScreen(lessons = ArrayList(updatedLessons)))
+            _lessons.value = listOf(element = UiHomeScreen(lessons = ArrayList(updatedLessons)))
 
             if (updatedLesson.isFavorite) {
-                addLessonToFavorites(updatedLesson)
+                addLessonToFavorites(lesson = updatedLesson)
             }
             else {
-                removeLessonFromFavorites(updatedLesson)
+                removeLessonFromFavorites(lesson = updatedLesson)
             }
         }
     }
 
-    private fun UiHomeLesson.toFavoriteLessonTable() : FavoriteLessonTable = FavoriteLessonTable(
-        lessonId = lessonId ,
-        lessonTitle = lessonTitle ,
-        lessonDescription = lessonDescription ,
-        lessonType = lessonType ,
-        thumbnailImageUrl = thumbnailImageUrl ,
-        squareImageUrl = squareImageUrl ,
-        deepLinkPath = deepLinkPath ,
-        lessonTags = lessonTags ,
-        isFavorite = isFavorite
-    )
-
     private fun addLessonToFavorites(lesson : UiHomeLesson) {
-        viewModelScope.launch(coroutineExceptionHandler) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
             val favoriteLesson = lesson.toFavoriteLessonTable()
-            repository.addLessonToFavoritesRepository(favoriteLesson) {}
+            repository.addLessonToFavoritesRepository(lesson = favoriteLesson) {}
         }
     }
 
     private fun removeLessonFromFavorites(lesson : UiHomeLesson) {
-        viewModelScope.launch(coroutineExceptionHandler) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
             val favoriteLesson = lesson.toFavoriteLessonTable()
-            repository.removeLessonFromFavoritesRepository(favoriteLesson) {}
+            repository.removeLessonFromFavoritesRepository(lesson = favoriteLesson) {}
         }
     }
 
     fun shareLesson(lesson : UiHomeLesson) {
-        viewModelScope.launch(coroutineExceptionHandler) {
-            repository.shareLessonRepository(lesson)
+        viewModelScope.launch(context = coroutineExceptionHandler) {
+            repository.shareLessonRepository(lesson = lesson)
         }
     }
 }

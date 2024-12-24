@@ -6,8 +6,7 @@ import com.google.ai.client.generativeai.type.asTextOrNull
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class StudioBotRepository(application : Application) :
-    StudioBotRepositoryImplementation(application) {
+class StudioBotRepository : StudioBotRepositoryImplementation() {
 
     suspend fun createChatSessionRepository(
         modelName : String ,
@@ -24,10 +23,8 @@ class StudioBotRepository(application : Application) :
 
     suspend fun sendMessageRepository(message : String , onMessageSent : (String) -> Unit) {
         withContext(Dispatchers.IO) {
-            val response = sendMessageToChatImplementation(message)
-            val messageContent =
-                    response.candidates.firstOrNull()?.content?.parts?.firstOrNull()?.asTextOrNull()
-                        ?: ""
+            val response = sendMessageToChatImplementation(message = message)
+            val messageContent = response.candidates.firstOrNull()?.content?.parts?.firstOrNull()?.asTextOrNull() ?: ""
             withContext(Dispatchers.Main) {
                 onMessageSent(messageContent)
             }

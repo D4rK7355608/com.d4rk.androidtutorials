@@ -7,6 +7,7 @@ import androidx.annotation.RequiresApi
 import com.d4rk.androidtutorials.data.datastore.DataStore
 import com.d4rk.androidtutorials.notifications.managers.AppUpdateNotificationsManager
 import com.d4rk.androidtutorials.notifications.managers.AppUsageNotificationsManager
+import com.google.android.play.core.appupdate.AppUpdateInfo
 import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.install.model.ActivityResult
 import com.google.android.play.core.install.model.AppUpdateType
@@ -33,7 +34,7 @@ abstract class MainRepositoryImplementation(val application : Application) {
      *
      * @return `true` if it's the first launch, `false` otherwise.
      */
-    suspend fun checkStartup() : Boolean {
+    suspend fun checkStartupImplementation() : Boolean {
         val dataStore : DataStore = DataStore1.getInstance(application)
         val isFirstTime : Boolean = dataStore.startup.first()
         if (isFirstTime) {
@@ -50,46 +51,46 @@ abstract class MainRepositoryImplementation(val application : Application) {
      *
      * @param isEnabled `true` to enable data collection, `false` to disable.
      */
-    fun setupDiagnosticSettings(isEnabled : Boolean) {
+    fun setupDiagnosticSettingsImplementation(isEnabled : Boolean) {
         FirebaseAnalytics.getInstance(application).setAnalyticsCollectionEnabled(isEnabled)
         FirebaseCrashlytics.getInstance().isCrashlyticsCollectionEnabled = isEnabled
     }
 
-    suspend fun checkForUpdatesLogic(
-        activity : Activity , appUpdateManager : AppUpdateManager
-    ) : Int {
+    suspend fun checkForUpdatesImplementation(
+        activity: Activity,
+        appUpdateManager: AppUpdateManager
+    ): Int {
+        return runCatching {
+            var updateResult: Int = Activity.RESULT_CANCELED
+            val appUpdateInfo: AppUpdateInfo = appUpdateManager.appUpdateInfo.await()
 
-        try {
-            var updateResult = Activity.RESULT_CANCELED
-            val appUpdateInfo = appUpdateManager.appUpdateInfo.await()
-
-            if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE && appUpdateInfo.isUpdateTypeAllowed(
-                    AppUpdateType.IMMEDIATE
-                ) && appUpdateInfo.updateAvailability() != UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS
+            if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE &&
+                appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE) &&
+                appUpdateInfo.updateAvailability() != UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS
             ) {
                 appUpdateInfo.clientVersionStalenessDays()?.let { stalenessDays ->
                     val updateType =
                             if (stalenessDays > 90) AppUpdateType.IMMEDIATE else AppUpdateType.FLEXIBLE
-                    @Suppress("DEPRECATION") appUpdateManager.startUpdateFlowForResult(
-                        appUpdateInfo , updateType , activity , 1
+                    @Suppress("DEPRECATION")
+                    appUpdateManager.startUpdateFlowForResult(
+                        appUpdateInfo, updateType, activity, 1
                     )
                     updateResult = Activity.RESULT_OK
                 }
             }
-            return updateResult
-
-        } catch (e : Exception) {
-            return ActivityResult.RESULT_IN_APP_UPDATE_FAILED
+            updateResult
+        }.getOrElse {
+            ActivityResult.RESULT_IN_APP_UPDATE_FAILED
         }
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    fun checkAndScheduleUpdateNotificationsLogic(appUpdateNotificationsManager : AppUpdateNotificationsManager) {
+    fun checkAndScheduleUpdateNotificationsImplementation(appUpdateNotificationsManager : AppUpdateNotificationsManager) {
         appUpdateNotificationsManager.checkAndSendUpdateNotification()
     }
 
-    fun checkAppUsageNotificationsManager() {
-        val appUsageNotificationsManager = AppUsageNotificationsManager(application)
+    fun checkAppUsageNotificationsManagerImplementation() {
+        val appUsageNotificationsManager = AppUsageNotificationsManager(context = application)
         appUsageNotificationsManager.scheduleAppUsageCheck()
     }
 }

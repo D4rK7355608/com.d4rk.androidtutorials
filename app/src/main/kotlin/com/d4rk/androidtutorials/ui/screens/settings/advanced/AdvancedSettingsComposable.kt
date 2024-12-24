@@ -12,7 +12,7 @@ import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.ui.components.PreferenceCategoryItem
 import com.d4rk.androidtutorials.ui.components.PreferenceItem
 import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffoldWithBackButton
-import com.d4rk.androidtutorials.utils.IntentUtils
+import com.d4rk.androidtutorials.utils.helpers.IntentsHelper
 
 @Composable
 fun AdvancedSettingsComposable(activity : AdvancedSettingsActivity) {
@@ -32,7 +32,7 @@ fun AdvancedSettingsComposable(activity : AdvancedSettingsActivity) {
                 PreferenceItem(title = stringResource(id = R.string.bug_report) ,
                                summary = stringResource(id = R.string.summary_preference_settings_bug_report) ,
                                onClick = {
-                                   IntentUtils.openUrl(
+                                   IntentsHelper.openUrl(
                                        context ,
                                        url = "https://github.com/D4rK7355608/${context.packageName}/issues/new"
                                    )

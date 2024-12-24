@@ -13,10 +13,10 @@ import kotlinx.coroutines.launch
 import java.util.UUID
 
 class StudioBotViewModel(application : Application) : BaseViewModel(application) {
-    private val repository = StudioBotRepository(application)
+    private val repository = StudioBotRepository()
 
     private val _chatHistory = MutableStateFlow(
-        listOf(
+        value = listOf(
             ApiMessageData(
                 id = UUID.randomUUID() ,
                 text = "Welcome to Studio Bot! How can I help you today?" ,
@@ -31,25 +31,31 @@ class StudioBotViewModel(application : Application) : BaseViewModel(application)
     }
 
     private fun startChat() {
-        viewModelScope.launch(coroutineExceptionHandler) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
             showLoading()
-            repository.createChatSessionRepository(modelName = "gemini-1.0-pro" ,
+            repository.createChatSessionRepository(modelName = "gemini-1.5-pro" ,
                                                    apiKey = BuildConfig.API_KEY ,
-                                                   onChatCreated = { chat -> })
+                                                   onChatCreated = { _ -> })
             hideLoading()
         }
     }
 
     fun sendMessage(message : String) {
-        viewModelScope.launch(coroutineExceptionHandler) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
             val newHistory = chatHistory.value.toMutableList()
-            newHistory.add(ApiMessageData(id = UUID.randomUUID() , text = message , isBot = false))
+            newHistory.add(
+                element = ApiMessageData(
+                    id = UUID.randomUUID() ,
+                    text = message ,
+                    isBot = false
+                )
+            )
             _chatHistory.value = newHistory.toList()
 
-            repository.sendMessageRepository(message) { reply ->
+            repository.sendMessageRepository(message = message) { reply ->
                 val updatedHistory = _chatHistory.value.toMutableList()
                 updatedHistory.add(
-                    ApiMessageData(
+                    element = ApiMessageData(
                         id = UUID.randomUUID() , text = reply , isBot = true
                     )
                 )

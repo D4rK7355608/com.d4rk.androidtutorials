@@ -32,7 +32,7 @@ import com.d4rk.androidtutorials.ui.components.dialogs.SelectLanguageAlertDialog
 import com.d4rk.androidtutorials.ui.components.dialogs.SelectStartupScreenAlertDialog
 import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffoldWithBackButton
 import com.d4rk.androidtutorials.ui.screens.settings.display.theme.ThemeSettingsActivity
-import com.d4rk.androidtutorials.utils.IntentUtils
+import com.d4rk.androidtutorials.utils.helpers.IntentsHelper
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -89,7 +89,7 @@ fun DisplaySettingsComposable(activity : DisplaySettingsActivity) {
                                                     }
                                                 } ,
                                                 onClick = {
-                                                    IntentUtils.openActivity(
+                                                    IntentsHelper.openActivity(
                                                         context , ThemeSettingsActivity::class.java
                                                     )
                                                 })

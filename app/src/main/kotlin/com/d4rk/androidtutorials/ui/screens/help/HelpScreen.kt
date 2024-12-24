@@ -73,12 +73,12 @@ fun HelpScreen(activity : HelpActivity , viewModel : HelpViewModel) {
     val eulaHtmlString = htmlData.value.second
 
     val isFabExtended = remember { mutableStateOf(value = true) }
-    LaunchedEffect(scrollBehavior.state.contentOffset) {
+    LaunchedEffect(key1 = scrollBehavior.state.contentOffset) {
         isFabExtended.value = scrollBehavior.state.contentOffset >= 0f
     }
 
     Scaffold(
-        modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection) ,
+        modifier = Modifier.nestedScroll(connection = scrollBehavior.nestedScrollConnection) ,
         topBar = {
             TopAppBarScaffoldWithBackButtonAndActions(
                 context = context ,
@@ -95,7 +95,7 @@ fun HelpScreen(activity : HelpActivity , viewModel : HelpViewModel) {
                 view.playSoundEffect(SoundEffectConstants.CLICK)
                 uiState.reviewInfo?.let { safeReviewInfo ->
                     viewModel.launchReviewFlow(
-                        activity , safeReviewInfo
+                        activity = activity , reviewInfo = safeReviewInfo
                     )
                 }
             } , text = { Text(text = stringResource(id = R.string.feedback)) } , icon = {
@@ -107,7 +107,7 @@ fun HelpScreen(activity : HelpActivity , viewModel : HelpViewModel) {
     ) { paddingValues ->
         LazyColumn(
             modifier = Modifier
-                    .padding(paddingValues)
+                    .padding(paddingValues = paddingValues)
                     .fillMaxSize()
                     .safeDrawingPadding()
                     .padding(horizontal = 16.dp) , state = rememberLazyListState()
@@ -171,7 +171,7 @@ fun QuestionComposable(
                                 color = MaterialTheme.colorScheme.primaryContainer ,
                                 shape = CircleShape
                             )
-                            .padding(8.dp)
+                            .padding(all = 8.dp)
                 )
                 Spacer(modifier = Modifier.width(width = 16.dp))
 

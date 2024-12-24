@@ -1,4 +1,4 @@
-package com.d4rk.androidtutorials.constants.ads
+package com.d4rk.androidtutorials.utils.constants.ads
 
 import com.d4rk.androidtutorials.BuildConfig
 

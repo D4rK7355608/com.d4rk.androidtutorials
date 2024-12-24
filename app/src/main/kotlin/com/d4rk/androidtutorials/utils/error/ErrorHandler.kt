@@ -3,7 +3,7 @@ package com.d4rk.androidtutorials.utils.error
 import android.app.Activity
 import android.content.Context
 import com.d4rk.androidtutorials.R
-import com.d4rk.androidtutorials.constants.error.ErrorType
+import com.d4rk.androidtutorials.utils.constants.error.ErrorType
 import com.google.android.material.snackbar.Snackbar
 
 object ErrorHandler {

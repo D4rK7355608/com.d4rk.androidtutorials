@@ -41,7 +41,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil3.compose.AsyncImage
-import com.d4rk.androidtutorials.constants.ui.lessons.LessonConstants
+import com.d4rk.androidtutorials.utils.constants.ui.lessons.LessonConstants
 import com.d4rk.androidtutorials.data.model.ui.screens.UiHomeLesson
 import com.d4rk.androidtutorials.ui.components.modifiers.animateVisibility
 import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick

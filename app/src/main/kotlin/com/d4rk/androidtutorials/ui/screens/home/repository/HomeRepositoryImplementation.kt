@@ -4,7 +4,7 @@ import android.app.Application
 import android.content.Intent
 import com.d4rk.androidtutorials.BuildConfig
 import com.d4rk.androidtutorials.R
-import com.d4rk.androidtutorials.constants.api.ApiConstants
+import com.d4rk.androidtutorials.utils.constants.api.ApiConstants
 import com.d4rk.androidtutorials.data.core.AppCoreManager
 import com.d4rk.androidtutorials.data.database.table.FavoriteLessonTable
 import com.d4rk.androidtutorials.data.datastore.DataStore

@@ -37,7 +37,7 @@ import com.d4rk.androidtutorials.ui.components.dialogs.VersionInfoAlertDialog
 import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick
 import com.d4rk.androidtutorials.ui.screens.help.HelpActivity
 import com.d4rk.androidtutorials.ui.screens.support.SupportActivity
-import com.d4rk.androidtutorials.utils.IntentUtils
+import com.d4rk.androidtutorials.utils.helpers.IntentsHelper
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
@@ -67,7 +67,7 @@ fun TopAppBarMain(
             view.playSoundEffect(
                 SoundEffectConstants.CLICK
             )
-            IntentUtils.openActivity(
+            IntentsHelper.openActivity(
                 context , SupportActivity::class.java
             )
         }) {
@@ -144,7 +144,7 @@ fun TopAppBarScaffoldWithBackButtonAndActions(
                                  text = { Text(text = stringResource(id = R.string.view_in_google_play_store)) } ,
                                  onClick = {
                                      view.playSoundEffect(SoundEffectConstants.CLICK)
-                                     IntentUtils.openUrl(
+                                     IntentsHelper.openUrl(
                                          context ,
                                          url = "https://play.google.com/store/apps/details?id=${activity.packageName}"
                                      )
@@ -159,7 +159,7 @@ fun TopAppBarScaffoldWithBackButtonAndActions(
                                  text = { Text(text = stringResource(id = R.string.beta_program)) } ,
                                  onClick = {
                                      view.playSoundEffect(SoundEffectConstants.CLICK)
-                                     IntentUtils.openUrl(
+                                     IntentsHelper.openUrl(
                                          context ,
                                          url = "https://play.google.com/apps/testing/${activity.packageName}"
                                      )
@@ -168,7 +168,7 @@ fun TopAppBarScaffoldWithBackButtonAndActions(
                                  text = { Text(text = stringResource(id = R.string.terms_of_service)) } ,
                                  onClick = {
                                      view.playSoundEffect(SoundEffectConstants.CLICK)
-                                     IntentUtils.openUrl(
+                                     IntentsHelper.openUrl(
                                          context ,
                                          url = "https://sites.google.com/view/d4rk7355608/more/apps/terms-of-service"
                                      )
@@ -177,7 +177,7 @@ fun TopAppBarScaffoldWithBackButtonAndActions(
                                  text = { Text(text = stringResource(id = R.string.privacy_policy)) } ,
                                  onClick = {
                                      view.playSoundEffect(SoundEffectConstants.CLICK)
-                                     IntentUtils.openUrl(
+                                     IntentsHelper.openUrl(
                                          context ,
                                          url = "https://sites.google.com/view/d4rk7355608/more/apps/privacy-policy"
                                      )
@@ -186,7 +186,7 @@ fun TopAppBarScaffoldWithBackButtonAndActions(
                                  text = { Text(text = stringResource(id = R.string.oss_license_title)) } ,
                                  onClick = {
                                      view.playSoundEffect(SoundEffectConstants.CLICK)
-                                     IntentUtils.openLicensesScreen(
+                                     IntentsHelper.openLicensesScreen(
                                          context = context ,
                                          eulaHtmlString = eulaHtmlString ,
                                          changelogHtmlString = changelogHtmlString

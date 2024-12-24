@@ -1,4 +1,4 @@
-package com.d4rk.androidtutorials.utils
+package com.d4rk.androidtutorials.utils.helpers
 
 import android.Manifest
 import android.app.Activity
@@ -7,12 +7,12 @@ import android.content.pm.PackageManager
 import android.os.Build
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.d4rk.androidtutorials.constants.permissions.PermissionsConstants
+import com.d4rk.androidtutorials.utils.constants.permissions.PermissionsConstants
 
 /**
  * Utility class for handling runtime permissions.
  */
-object PermissionsUtils {
+object PermissionsHelper {
 
     /**
      * Checks if the app has permission to post notifications.

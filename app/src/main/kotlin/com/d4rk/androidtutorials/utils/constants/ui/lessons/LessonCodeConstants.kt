@@ -1,4 +1,4 @@
-package com.d4rk.androidtutorials.constants.ui.lessons
+package com.d4rk.androidtutorials.utils.constants.ui.lessons
 
 object LessonCodeConstants {
     const val C = "C"

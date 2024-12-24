@@ -44,8 +44,8 @@ import coil3.ImageLoader
 import coil3.compose.AsyncImage
 import coil3.gif.AnimatedImageDecoder
 import coil3.gif.GifDecoder
-import com.d4rk.androidtutorials.constants.ui.lessons.LessonCodeConstants
-import com.d4rk.androidtutorials.constants.ui.lessons.LessonContentTypes
+import com.d4rk.androidtutorials.utils.constants.ui.lessons.LessonCodeConstants
+import com.d4rk.androidtutorials.utils.constants.ui.lessons.LessonContentTypes
 import com.d4rk.androidtutorials.data.datastore.DataStore
 import com.d4rk.androidtutorials.data.model.ui.screens.UiLessonScreen
 import com.d4rk.androidtutorials.ui.components.ads.AdBanner
@@ -54,9 +54,10 @@ import com.d4rk.androidtutorials.ui.components.ads.LargeBannerAdsComposable
 import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick
 import com.d4rk.androidtutorials.ui.screens.settings.display.theme.style.Colors
 import com.d4rk.androidtutorials.ui.screens.settings.display.theme.style.TextStyles
-import com.d4rk.androidtutorials.utils.ClipboardUtil
+import com.d4rk.androidtutorials.utils.helpers.ClipboardHelper
 import com.wakaztahir.codeeditor.highlight.model.CodeLang
 import com.wakaztahir.codeeditor.highlight.prettify.PrettifyParser
+import com.wakaztahir.codeeditor.highlight.theme.CodeTheme
 import com.wakaztahir.codeeditor.highlight.theme.CodeThemeType
 import com.wakaztahir.codeeditor.highlight.utils.parseCodeAsAnnotatedString
 
@@ -70,9 +71,9 @@ fun LessonContentLayout(
     Column(
         modifier = Modifier
                 .fillMaxSize()
-                .padding(paddingValues)
+                .padding(paddingValues = paddingValues)
                 .padding(horizontal = 16.dp)
-                .verticalScroll(scrollState)
+                .verticalScroll(state = scrollState)
     ) {
         lesson.lessonContent.forEachIndexed { index , contentItem ->
             when (contentItem.contentType) {
@@ -94,7 +95,7 @@ fun LessonContentLayout(
 
                 LessonContentTypes.IMAGE -> {
                     StyledImage(
-                        imageUrl = contentItem.contentImageSrc , contentDescription = "Lesson Image"
+                        imageUrl = contentItem.contentImageUrl , contentDescription = "Lesson Image"
                     )
                 }
 
@@ -121,7 +122,7 @@ fun LessonContentLayout(
                 }
             }
             if (index < lesson.lessonContent.lastIndex) {
-                Spacer(modifier = Modifier.height(8.dp))
+                Spacer(modifier = Modifier.height(height = 8.dp))
             }
         }
     }
@@ -133,7 +134,7 @@ fun StyledText(
     style : TextStyle = TextStyles.body() ,
     color : Color = Colors.primaryText() ,
 ) {
-    val annotatedString = AnnotatedString.fromHtml(text)
+    val annotatedString = AnnotatedString.fromHtml(htmlString = text)
 
     Text(
         text = annotatedString , style = style , color = color
@@ -147,12 +148,12 @@ fun StyledImage(
     modifier : Modifier = Modifier ,
 ) {
     val context : Context = LocalContext.current
-    val imageLoader = ImageLoader.Builder(context).components {
+    val imageLoader = ImageLoader.Builder(context = context).components {
         if (SDK_INT >= 28) {
-            add(AnimatedImageDecoder.Factory())
+            add(factory = AnimatedImageDecoder.Factory())
         }
         else {
-            add(GifDecoder.Factory())
+            add(factory = GifDecoder.Factory())
         }
     }.build()
     Card(
@@ -321,13 +322,13 @@ fun CodeBlock(code : String , language : String?) {
         }
     }
 
-    val parser = remember { PrettifyParser() }
-    val themeState by remember { mutableStateOf(CodeThemeType.Default) }
-    val theme = remember(themeState) { themeState.theme() }
+    val parser : PrettifyParser = remember { PrettifyParser() }
+    val themeState : CodeThemeType by remember { mutableStateOf(value = CodeThemeType.Default) }
+    val theme : CodeTheme = remember(key1 = themeState) { themeState.theme() }
 
-    val textFieldValue by remember {
+    val textFieldValue : TextFieldValue by remember {
         mutableStateOf(
-            TextFieldValue(
+            value = TextFieldValue(
                 annotatedString = parseCodeAsAnnotatedString(
                     parser = parser , theme = theme , lang = lang , code = code
                 )
@@ -352,27 +353,28 @@ fun CodeBlock(code : String , language : String?) {
                     modifier = Modifier.padding(end = 8.dp)
                 )
                 TextButton(modifier = Modifier.bounceClick() , onClick = {
-                    ClipboardUtil.copyTextToClipboard(context = context ,
-                                                      label = "Code" ,
-                                                      text = code ,
-                                                      onShowSnackbar = {
-                                                          Toast.makeText(
-                                                              context ,
-                                                              "Code copied to clipboard" ,
-                                                              Toast.LENGTH_SHORT
-                                                          ).show()
-                                                      })
+                    ClipboardHelper.copyTextToClipboard(
+                        context = context ,
+                        label = "Code" ,
+                        text = code ,
+                        onShowSnackbar = {
+                            Toast.makeText(
+                                context ,
+                                "Code copied to clipboard" ,
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        })
                 } , contentPadding = PaddingValues(horizontal = 8.dp)) {
                     Icon(
                         imageVector = Icons.Outlined.CopyAll ,
                         contentDescription = "Copy Code" ,
-                        modifier = Modifier.size(ButtonDefaults.IconSize)
+                        modifier = Modifier.size(size = ButtonDefaults.IconSize)
                     )
-                    Spacer(modifier = Modifier.width(ButtonDefaults.IconSpacing))
+                    Spacer(modifier = Modifier.width(width = ButtonDefaults.IconSpacing))
                     Text(text = stringResource(id = android.R.string.copy))
                 }
             }
-            Spacer(modifier = Modifier.height(2.dp))
+            Spacer(modifier = Modifier.height(height = 2.dp))
             SelectionContainer {
                 Text(
                     text = textFieldValue.annotatedString ,
@@ -381,7 +383,7 @@ fun CodeBlock(code : String , language : String?) {
                             .padding(horizontal = 8.dp)
                 )
             }
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(height = 16.dp))
         }
     }
 }

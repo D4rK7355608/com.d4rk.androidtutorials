@@ -9,7 +9,7 @@ import androidx.compose.material.icons.sharp.AutoAwesome
 import androidx.compose.material.icons.sharp.FavoriteBorder
 import androidx.compose.ui.graphics.vector.ImageVector
 import com.d4rk.androidtutorials.R
-import com.d4rk.androidtutorials.constants.ui.bottombar.BottomBarRoutes
+import com.d4rk.androidtutorials.utils.constants.ui.bottombar.BottomBarRoutes
 
 sealed class BottomNavigationScreen(
     val route : String , val icon : ImageVector , val selectedIcon : ImageVector , val title : Int

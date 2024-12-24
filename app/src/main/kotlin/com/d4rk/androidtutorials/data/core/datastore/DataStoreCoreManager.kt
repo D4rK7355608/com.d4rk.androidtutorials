@@ -1,7 +1,7 @@
 package com.d4rk.androidtutorials.data.core.datastore
 
 import android.content.Context
-import com.d4rk.androidtutorials.constants.ui.bottombar.BottomBarRoutes
+import com.d4rk.androidtutorials.utils.constants.ui.bottombar.BottomBarRoutes
 import com.d4rk.androidtutorials.data.datastore.DataStore
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll

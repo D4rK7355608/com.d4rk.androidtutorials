@@ -25,7 +25,7 @@ class MainRepository(val dataStore : DataStore , application : Application) :
         appUpdateManager : AppUpdateManager ,
     ) {
         withContext(Dispatchers.IO) {
-            checkForUpdatesLogic(activity , appUpdateManager)
+            checkForUpdatesImplementation(activity = activity , appUpdateManager = appUpdateManager)
         }
     }
 
@@ -37,9 +37,9 @@ class MainRepository(val dataStore : DataStore , application : Application) :
      *
      * @param onSuccess A callback function that receives a boolean indicating if it's the first launch.
      */
-    suspend fun checkAndHandleStartup(onSuccess : (Boolean) -> Unit) {
+    suspend fun checkAndHandleStartupRepository(onSuccess : (Boolean) -> Unit) {
         withContext(Dispatchers.IO) {
-            val isFirstTime : Boolean = checkStartup()
+            val isFirstTime : Boolean = checkStartupImplementation()
             withContext(Dispatchers.Main) {
                 onSuccess(isFirstTime)
             }
@@ -47,15 +47,15 @@ class MainRepository(val dataStore : DataStore , application : Application) :
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    suspend fun checkAndScheduleUpdateNotifications(appUpdateNotificationsManager : AppUpdateNotificationsManager) {
+    suspend fun checkAndScheduleUpdateNotificationsRepository(appUpdateNotificationsManager : AppUpdateNotificationsManager) {
         withContext(Dispatchers.IO) {
-            checkAndScheduleUpdateNotificationsLogic(appUpdateNotificationsManager)
+            checkAndScheduleUpdateNotificationsImplementation(appUpdateNotificationsManager = appUpdateNotificationsManager)
         }
     }
 
-    suspend fun checkAppUsageNotifications() {
+    suspend fun checkAppUsageNotificationsRepository() {
         withContext(Dispatchers.IO) {
-            checkAppUsageNotificationsManager()
+            checkAppUsageNotificationsManagerImplementation()
         }
     }
 
@@ -65,11 +65,11 @@ class MainRepository(val dataStore : DataStore , application : Application) :
      * This function retrieves the "usageAndDiagnostics" setting from the data store and configures
      * Firebase Analytics and Crashlytics accordingly.
      */
-    suspend fun setupSettings() {
+    suspend fun setupSettingsRepository() {
         withContext(Dispatchers.IO) {
             val isEnabled : Boolean = dataStore.usageAndDiagnostics.first()
             withContext(Dispatchers.Main) {
-                setupDiagnosticSettings(isEnabled)
+                setupDiagnosticSettingsImplementation(isEnabled = isEnabled)
             }
         }
     }

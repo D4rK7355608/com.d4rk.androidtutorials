@@ -11,14 +11,11 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
-import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavController
-import androidx.navigation.compose.currentBackStackEntryAsState
 import com.d4rk.androidtutorials.data.datastore.DataStore
 import com.d4rk.androidtutorials.data.model.ui.navigation.BottomNavigationScreen
 import com.d4rk.androidtutorials.ui.components.ads.AdBannerFull
@@ -26,7 +23,11 @@ import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick
 
 @Composable
 fun BottomNavigationBar(
-    navController : NavController , dataStore : DataStore , view : View
+    navController : NavController ,
+    dataStore : DataStore ,
+    view : View ,
+    currentScreen : BottomNavigationScreen ,
+    onScreenSelected : (BottomNavigationScreen) -> Unit
 ) {
     val bottomBarItems : List<BottomNavigationScreen> = listOf(
         BottomNavigationScreen.Home ,
@@ -41,12 +42,10 @@ fun BottomNavigationBar(
             modifier = Modifier.fillMaxWidth() , dataStore = dataStore
         )
         NavigationBar {
-            val navBackStackEntry : NavBackStackEntry? by navController.currentBackStackEntryAsState()
-            val currentRoute : String? = navBackStackEntry?.destination?.route
             bottomBarItems.forEach { screen ->
                 NavigationBarItem(icon = {
                     val iconResource : ImageVector =
-                            if (currentRoute == screen.route) screen.selectedIcon else screen.icon
+                            if (currentScreen == screen) screen.selectedIcon else screen.icon
                     Icon(
                         imageVector = iconResource ,
                         modifier = Modifier.bounceClick() ,
@@ -58,9 +57,10 @@ fun BottomNavigationBar(
                         overflow = TextOverflow.Ellipsis ,
                         modifier = Modifier.basicMarquee()
                     )
-                } , selected = currentRoute == screen.route , onClick = {
+                } , selected = currentScreen == screen , onClick = {
                     view.playSoundEffect(SoundEffectConstants.CLICK)
-                    if (currentRoute != screen.route) {
+                    if (currentScreen != screen) {
+                        onScreenSelected(screen)
                         navController.navigate(screen.route) {
                             popUpTo(navController.graph.startDestinationId) {
                                 saveState = false

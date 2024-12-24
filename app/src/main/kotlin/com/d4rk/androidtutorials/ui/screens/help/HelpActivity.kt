@@ -13,6 +13,7 @@ import com.d4rk.androidtutorials.ui.screens.settings.display.theme.style.AppThem
 
 class HelpActivity : AppCompatActivity() {
     private val viewModel : HelpViewModel by viewModels()
+
     override fun onCreate(savedInstanceState : Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()

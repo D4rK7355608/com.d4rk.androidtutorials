@@ -40,7 +40,7 @@ fun LessonScreen(
         title = lesson.lessonTitle ,
         onBackClicked = { activity.finish() }) { paddingValues ->
         if (isLoading) {
-            LoadingScreen(progressAlpha)
+            LoadingScreen(progressAlpha = progressAlpha)
         }
         else {
             LessonContentLayout(

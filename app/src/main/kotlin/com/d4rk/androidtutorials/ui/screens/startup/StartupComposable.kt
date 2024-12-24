@@ -37,16 +37,16 @@ import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick
 import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffold
 import com.d4rk.androidtutorials.ui.screens.main.MainActivity
-import com.d4rk.androidtutorials.utils.IntentUtils
-import com.d4rk.androidtutorials.utils.PermissionsUtils
+import com.d4rk.androidtutorials.utils.helpers.IntentsHelper
+import com.d4rk.androidtutorials.utils.helpers.PermissionsHelper
 
 @Composable
 fun StartupComposable(activity : StartupActivity) {
     val context : Context = LocalContext.current
     val fabEnabled : MutableState<Boolean> = remember { mutableStateOf(value = false) }
     LaunchedEffect(context) {
-        if (! PermissionsUtils.hasNotificationPermission(context)) {
-            PermissionsUtils.requestNotificationPermission(context as Activity)
+        if (! PermissionsHelper.hasNotificationPermission(context)) {
+            PermissionsHelper.requestNotificationPermission(context as Activity)
         }
         activity.consentFormShown.collect { shown ->
             fabEnabled.value = shown
@@ -109,7 +109,7 @@ fun StartupComposable(activity : StartupActivity) {
                                         )
                                         .firstOrNull()
                                         ?.let { annotation ->
-                                            IntentUtils.openUrl(context , annotation.item)
+                                            IntentsHelper.openUrl(context , annotation.item)
                                         }
                             })
                 }
@@ -126,7 +126,7 @@ fun StartupComposable(activity : StartupActivity) {
                                          } ,
                                          text = { Text(text = stringResource(id = R.string.agree)) } ,
                                          onClick = {
-                                             IntentUtils.openActivity(
+                                             IntentsHelper.openActivity(
                                                  context , MainActivity::class.java
                                              )
                                          } ,

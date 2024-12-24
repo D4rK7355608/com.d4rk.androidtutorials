@@ -1,4 +1,4 @@
-package com.d4rk.androidtutorials.constants.datastore
+package com.d4rk.androidtutorials.utils.constants.datastore
 
 object DataStoreNamesConstants {
     const val DATA_STORE_SETTINGS = "settings"

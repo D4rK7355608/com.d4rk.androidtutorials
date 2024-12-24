@@ -39,7 +39,7 @@ import com.d4rk.androidtutorials.data.datastore.DataStore
 import com.d4rk.androidtutorials.ui.components.ads.LargeBannerAdsComposable
 import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick
 import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffoldWithBackButton
-import com.d4rk.androidtutorials.utils.IntentUtils
+import com.d4rk.androidtutorials.utils.helpers.IntentsHelper
 
 @Composable
 fun SupportComposable(viewModel : SupportViewModel , activity : SupportActivity) {
@@ -206,7 +206,7 @@ fun SupportComposable(viewModel : SupportViewModel , activity : SupportActivity)
                     FilledTonalButton(
                         onClick = {
                             view.playSoundEffect(SoundEffectConstants.CLICK)
-                            IntentUtils.openUrl(
+                            IntentsHelper.openUrl(
                                 context , url = "https://direct-link.net/548212/agOqI7123501341"
                             )
                         } ,

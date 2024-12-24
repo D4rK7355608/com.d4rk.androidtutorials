@@ -11,6 +11,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.data.model.ui.error.UiErrorModel
 import com.d4rk.androidtutorials.data.model.ui.screens.UiHomeScreen
 import com.d4rk.androidtutorials.ui.components.dialogs.ErrorAlertDialog
@@ -47,8 +48,7 @@ fun FavoritesScreen() {
         favoriteLessons.firstOrNull()?.lessons?.let { lessonList ->
             if (lessonList.isEmpty()) {
                 NoLessonsScreen(
-                    text = "No favorite lessons found." ,
-                    icon = Icons.Outlined.HeartBroken
+                    text = R.string.no_favorite_lessons_found , icon = Icons.Outlined.HeartBroken
                 )
             }
             else {

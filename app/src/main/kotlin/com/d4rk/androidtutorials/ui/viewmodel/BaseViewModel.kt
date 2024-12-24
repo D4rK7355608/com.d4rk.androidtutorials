@@ -6,7 +6,7 @@ import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.d4rk.androidtutorials.R
-import com.d4rk.androidtutorials.constants.error.ErrorType
+import com.d4rk.androidtutorials.utils.constants.error.ErrorType
 import com.d4rk.androidtutorials.data.model.ui.error.UiErrorModel
 import com.d4rk.androidtutorials.utils.error.ErrorHandler
 import kotlinx.coroutines.CoroutineExceptionHandler

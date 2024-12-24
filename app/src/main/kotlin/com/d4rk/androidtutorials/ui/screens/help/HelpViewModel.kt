@@ -6,7 +6,7 @@ import com.d4rk.androidtutorials.data.datastore.DataStore
 import com.d4rk.androidtutorials.data.model.ui.screens.UiHelpScreen
 import com.d4rk.androidtutorials.ui.screens.help.repository.HelpRepository
 import com.d4rk.androidtutorials.ui.viewmodel.BaseViewModel
-import com.d4rk.androidtutorials.utils.IntentUtils
+import com.d4rk.androidtutorials.utils.helpers.IntentsHelper
 import com.google.android.play.core.review.ReviewInfo
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -14,9 +14,13 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
 class HelpViewModel(application : Application) : BaseViewModel(application) {
-    private val repository = HelpRepository(DataStore(application) , application)
 
-    private val _uiState = MutableStateFlow(UiHelpScreen())
+    private val repository : HelpRepository = HelpRepository(
+        dataStore = DataStore(application) ,
+        application = application
+    )
+
+    private val _uiState : MutableStateFlow<UiHelpScreen> = MutableStateFlow(UiHelpScreen())
     val uiState : StateFlow<UiHelpScreen> = _uiState
 
     init {
@@ -26,14 +30,14 @@ class HelpViewModel(application : Application) : BaseViewModel(application) {
     }
 
     private fun initializeVisibilityStates() {
-        viewModelScope.launch(coroutineExceptionHandler) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
             delay(timeMillis = 100L)
             showFab()
         }
     }
 
     private fun getFAQs() {
-        viewModelScope.launch(coroutineExceptionHandler) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
             repository.getFAQsRepository { faqList ->
                 _uiState.value = _uiState.value.copy(questions = faqList)
             }
@@ -41,18 +45,18 @@ class HelpViewModel(application : Application) : BaseViewModel(application) {
     }
 
     private fun requestReviewFlow() {
-        viewModelScope.launch(coroutineExceptionHandler) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
             repository.requestReviewFlowRepository(onSuccess = { reviewInfo ->
                 _uiState.value = _uiState.value.copy(reviewInfo = reviewInfo)
             } , onFailure = {
-                IntentUtils.sendEmailToDeveloper(getApplication())
+                IntentsHelper.sendEmailToDeveloper(context = getApplication())
             })
         }
     }
 
     fun launchReviewFlow(activity : HelpActivity , reviewInfo : ReviewInfo) {
-        viewModelScope.launch(coroutineExceptionHandler) {
-            repository.launchReviewFlowRepository(activity , reviewInfo)
+        viewModelScope.launch(context = coroutineExceptionHandler) {
+            repository.launchReviewFlowRepository(activity = activity , reviewInfo = reviewInfo)
         }
     }
 }

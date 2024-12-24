@@ -4,7 +4,7 @@ import android.app.Application
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.data.datastore.DataStore
 import com.d4rk.androidtutorials.ui.screens.help.HelpActivity
-import com.d4rk.androidtutorials.utils.IntentUtils
+import com.d4rk.androidtutorials.utils.helpers.IntentsHelper
 import com.google.android.gms.tasks.Task
 import com.google.android.play.core.review.ReviewInfo
 import com.google.android.play.core.review.ReviewManager
@@ -42,8 +42,8 @@ abstract class HelpRepositoryImplementation(
                 onFailure()
             }
         }.addOnFailureListener {
-            IntentUtils.openUrl(
-                application ,
+            IntentsHelper.openUrl(
+                context = application ,
                 url = "https://play.google.com/store/apps/details?id=$packageName&showAllReviews=true"
             )
         }

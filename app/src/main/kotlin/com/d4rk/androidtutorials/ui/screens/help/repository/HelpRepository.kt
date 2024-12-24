@@ -19,7 +19,7 @@ class HelpRepository(
                     question = application.getString(questionRes) ,
                     answer = application.getString(summaryRes)
                 )
-            }.toCollection(ArrayList())
+            }.toCollection(destination = ArrayList())
 
             withContext(Dispatchers.Main) {
                 onSuccess(questions)
@@ -31,13 +31,13 @@ class HelpRepository(
         onSuccess : (ReviewInfo) -> Unit , onFailure : () -> Unit
     ) {
         withContext(Dispatchers.IO) {
-            requestReviewFlowImplementation(onSuccess , onFailure)
+            requestReviewFlowImplementation(onSuccess = onSuccess , onFailure = onFailure)
         }
     }
 
     suspend fun launchReviewFlowRepository(activity : HelpActivity , reviewInfo : ReviewInfo) {
         withContext(Dispatchers.IO) {
-            launchReviewFlowImplementation(activity , reviewInfo)
+            launchReviewFlowImplementation(activity = activity , reviewInfo = reviewInfo)
         }
     }
 }

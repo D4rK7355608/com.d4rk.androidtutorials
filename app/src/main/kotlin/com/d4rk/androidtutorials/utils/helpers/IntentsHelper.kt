@@ -1,4 +1,4 @@
-package com.d4rk.androidtutorials.utils
+package com.d4rk.androidtutorials.utils.helpers
 
 import android.content.Context
 import android.content.Intent
@@ -15,7 +15,7 @@ import com.mikepenz.aboutlibraries.LibsBuilder
  * This object provides functions to open a URL in the default browser, open an activity, and open the app's notification settings.
  * All operations are performed in the context of an Android application.
  */
-object IntentUtils {
+object IntentsHelper {
 
     /**
      * Opens a specified URL in the default browser.
@@ -57,7 +57,7 @@ object IntentUtils {
      * @param context The Android context in which the app's notification settings should be opened.
      */
     fun openAppNotificationSettings(context : Context) {
-        val intent = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+        val intent : Intent = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS).apply {
                 putExtra(Settings.EXTRA_APP_PACKAGE , context.packageName)
             }
@@ -127,9 +127,7 @@ object IntentUtils {
     }
 
     fun openLicensesScreen(
-        context : Context ,
-        eulaHtmlString : String? ,
-        changelogHtmlString : String?
+        context : Context , eulaHtmlString : String? , changelogHtmlString : String?
     ) {
         LibsBuilder().withActivityTitle(
             activityTitle = context.getString(R.string.oss_license_title)
@@ -158,7 +156,7 @@ object IntentUtils {
                         ?: context.getString(R.string.loading_changelog)
                 )
 
-                .withAboutDescription(context.getString(R.string.app_short_description))
-                .activity(context)
+                .withAboutDescription(aboutDescription = context.getString(R.string.app_short_description))
+                .activity(ctx = context)
     }
 }

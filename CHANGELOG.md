@@ -6,11 +6,15 @@
 - **New**: Refactored the UI structure to enhance organization and maintainability.
 - **New**: Added "Like" and "Dislike" feedback for Studio Bot messages.
 - **New**: Introduced new profile pictures for Studio Bot and user messages.
+- **New**: Updated Studio Bot with new system instructions for improved performance and accuracy.
+- **Major**: Upgraded the Studio Bot model from Gemini 1.0 Pro to 1.5 Pro for enhanced capabilities.
 - **Minor**: Updated the Help screen UI for better UX.
 - **Minor**: Improved the placement of the copy button in Studio Bot chat bubbles.
 - **Minor**: Optimized keyboard behavior on the Studio Bot screen.
 - **Patch**: Standardized naming of `packageName` for consistency.
 - **Patch**: Removed unused Gradle dependencies to streamline the build process.
+- **Patch**: Refactored code for better readability and maintainability.
+- **Patch**: Improved the functionality and efficiency of existing extensions.
 - **Patch**: Updated project dependencies to the latest stable versions.
 - **Patch**: Corrected the string used for "Security & Privacy" title on the Privacy screen.
 - **Patch**: Removed unused Data Store constants from the codebase.

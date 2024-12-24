@@ -13,9 +13,7 @@ import kotlinx.coroutines.withContext
  * @param application The application instance for accessing resources and external files directory.
  * @author Mihai-Cristian Condrea
  */
-class LessonRepository(
-    dataStore : DataStore , application : Application ,
-) : LessonRepositoryImplementation(application , dataStore) {
+class LessonRepository : LessonRepositoryImplementation() {
 
     suspend fun getLessonRepository(
         lessonId : String , onSuccess : (UiLessonScreen?) -> Unit

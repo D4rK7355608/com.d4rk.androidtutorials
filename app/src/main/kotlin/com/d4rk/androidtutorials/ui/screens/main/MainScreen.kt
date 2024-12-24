@@ -4,13 +4,11 @@ import android.content.Context
 import android.view.View
 import androidx.compose.foundation.layout.imePadding
 import androidx.compose.material3.DrawerState
-import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalView
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.d4rk.androidtutorials.data.datastore.DataStore
@@ -21,12 +19,14 @@ import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarMain
 import kotlinx.coroutines.CoroutineScope
 
 @Composable
-fun MainScreen() {
-    val drawerState : DrawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
-    val navController : NavHostController = rememberNavController()
-    val context : Context = LocalContext.current
-    val view : View = LocalView.current
-    val dataStore : DataStore = DataStore.getInstance(context = context)
+fun MainScreen(
+    navController : NavHostController = rememberNavController() ,
+    dataStore : DataStore ,
+    view : View ,
+    context : Context ,
+    drawerState : DrawerState ,
+    viewModel : MainViewModel
+) {
 
     NavigationDrawer(
         navHostController = navController ,
@@ -34,6 +34,7 @@ fun MainScreen() {
         view = view ,
         dataStore = dataStore ,
         context = context ,
+        viewModel = viewModel
     )
 }
 
@@ -44,8 +45,11 @@ fun MainScreenContent(
     context : Context ,
     coroutineScope : CoroutineScope ,
     navHostController : NavHostController ,
-    dataStore : DataStore
+    dataStore : DataStore ,
+    viewModel : MainViewModel
 ) {
+    val uiState by viewModel.uiState.collectAsState()
+
     Scaffold(modifier = Modifier.imePadding() , topBar = {
         TopAppBarMain(
             view = view ,
@@ -54,7 +58,13 @@ fun MainScreenContent(
             coroutineScope = coroutineScope
         )
     } , bottomBar = {
-        BottomNavigationBar(navHostController , dataStore , view)
+        BottomNavigationBar(navController = navHostController ,
+                            dataStore = dataStore ,
+                            view = view ,
+                            currentScreen = uiState.currentBottomNavigationScreen , // Pass the current screen
+                            onScreenSelected = { newScreen ->
+                                viewModel.updateBottomNavigationScreen(newScreen) // Trigger state change in ViewModel
+                            })
     }) { paddingValues ->
         NavigationHost(
             navHostController = navHostController ,

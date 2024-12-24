@@ -2,7 +2,7 @@ package com.d4rk.androidtutorials.data.core.ads
 
 import android.app.Activity
 import android.content.Context
-import com.d4rk.androidtutorials.constants.ads.AdsConstants
+import com.d4rk.androidtutorials.utils.constants.ads.AdsConstants
 import com.d4rk.androidtutorials.data.datastore.DataStore
 import com.d4rk.androidtutorials.utils.interfaces.OnShowAdCompleteListener
 import com.google.android.gms.ads.AdError

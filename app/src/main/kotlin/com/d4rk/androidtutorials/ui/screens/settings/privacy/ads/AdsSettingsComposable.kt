@@ -35,7 +35,7 @@ import com.d4rk.androidtutorials.ui.components.PreferenceItem
 import com.d4rk.androidtutorials.ui.components.SwitchCardComposable
 import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick
 import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffoldWithBackButton
-import com.d4rk.androidtutorials.utils.IntentUtils
+import com.d4rk.androidtutorials.utils.helpers.IntentsHelper
 import com.google.android.ump.ConsentInformation
 import com.google.android.ump.ConsentRequestParameters
 import com.google.android.ump.UserMessagingPlatform
@@ -132,7 +132,7 @@ fun AdsSettingsComposable(activity : AdsSettingsActivity) {
                                             )
                                             .firstOrNull()
                                             ?.let { annotation ->
-                                                IntentUtils.openUrl(context , annotation.item)
+                                                IntentsHelper.openUrl(context , annotation.item)
                                             }
                                 })
                     }

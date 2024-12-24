@@ -4,5 +4,4 @@ import com.d4rk.androidtutorials.data.model.ui.navigation.BottomNavigationScreen
 
 data class UiMainScreen(
     val currentBottomNavigationScreen : BottomNavigationScreen = BottomNavigationScreen.Home ,
-    val trashSize : String = "0 KB" ,
 )

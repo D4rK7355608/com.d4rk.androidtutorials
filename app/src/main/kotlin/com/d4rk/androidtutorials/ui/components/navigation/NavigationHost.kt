@@ -12,7 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.d4rk.androidtutorials.constants.ui.bottombar.BottomBarRoutes
+import com.d4rk.androidtutorials.utils.constants.ui.bottombar.BottomBarRoutes
 import com.d4rk.androidtutorials.data.datastore.DataStore
 import com.d4rk.androidtutorials.data.model.ui.navigation.BottomNavigationScreen
 import com.d4rk.androidtutorials.data.model.ui.screens.UiHomeLesson
@@ -30,18 +30,18 @@ fun NavigationHost(
             dataStore.getStartupPage().collectAsState(initial = BottomBarRoutes.HOME).value
 
     NavHost(navController = navHostController , startDestination = startupPage) {
-        composable(BottomNavigationScreen.Home.route) {
-            Box(modifier = Modifier.padding(paddingValues)) {
+        composable(route = BottomNavigationScreen.Home.route) {
+            Box(modifier = Modifier.padding(paddingValues = paddingValues)) {
                 HomeScreen()
             }
         }
-        composable(BottomNavigationScreen.StudioBot.route) {
-            Box(modifier = Modifier.padding(paddingValues)) {
+        composable(route = BottomNavigationScreen.StudioBot.route) {
+            Box(modifier = Modifier.padding(paddingValues = paddingValues)) {
                 StudioBotScreen()
             }
         }
-        composable(BottomNavigationScreen.Favorites.route) {
-            Box(modifier = Modifier.padding(paddingValues)) {
+        composable(route = BottomNavigationScreen.Favorites.route) {
+            Box(modifier = Modifier.padding(paddingValues = paddingValues)) {
                 FavoritesScreen()
             }
         }

@@ -60,10 +60,11 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.data.model.api.ApiMessageData
 import com.d4rk.androidtutorials.ui.components.layouts.LoadingScreen
 import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick
-import com.d4rk.androidtutorials.utils.ClipboardUtil
+import com.d4rk.androidtutorials.utils.helpers.ClipboardHelper
 import com.google.firebase.analytics.FirebaseAnalytics
 import kotlinx.coroutines.delay
 
@@ -90,7 +91,7 @@ fun StudioBotScreen() {
                     .fillMaxSize()
                     .imePadding()
         ) {
-            Box(modifier = Modifier.weight(1f)) {
+            Box(modifier = Modifier.weight(weight = 1f)) {
                 ChatHistory(messages = chatHistory.value)
             }
             Row(
@@ -109,27 +110,27 @@ fun StudioBotScreen() {
                                   } ,
                                   modifier = Modifier
                                           .fillMaxWidth()
-                                          .weight(1f)
+                                          .weight(weight = 1f)
                                           .padding(end = 8.dp) ,
                                   shape = CircleShape ,
-                                  placeholder = { Text(text = "Type a message...") } ,
+                                  placeholder = { Text(text = stringResource(id = R.string.type_a_message)) } ,
                                   keyboardOptions = KeyboardOptions(
                                       capitalization = KeyboardCapitalization.Sentences ,
                                       autoCorrectEnabled = true ,
                                       imeAction = ImeAction.Send
                                   ) ,
                                   keyboardActions = KeyboardActions(onSend = {
-                                      viewModel.sendMessage(userInput)
+                                      viewModel.sendMessage(message = userInput)
                                       userInput = ""
                                   })
                 )
                 IconButton(enabled = userInput.isNotBlank() , onClick = {
                     if (userInput.isNotBlank()) {
-                        viewModel.sendMessage(userInput)
+                        viewModel.sendMessage(message = userInput)
                         userInput = ""
                     }
                 } , modifier = Modifier
-                        .size(56.dp)
+                        .size(size = 56.dp)
                         .bounceClick()) {
                     Icon(
                         imageVector = Icons.AutoMirrored.Outlined.Send ,
@@ -145,14 +146,14 @@ fun StudioBotScreen() {
 fun ChatHistory(messages : List<ApiMessageData>) {
     val scrollState = rememberScrollState()
 
-    LaunchedEffect(messages.size) {
-        scrollState.animateScrollTo(scrollState.maxValue)
+    LaunchedEffect(key1 = messages.size) {
+        scrollState.animateScrollTo(value = scrollState.maxValue)
     }
 
     Column(
         modifier = Modifier
                 .fillMaxWidth()
-                .verticalScroll(scrollState)
+                .verticalScroll(state = scrollState)
     ) {
         messages.forEach { message ->
             val isLatestBotMessage = message.isBot && message == messages.lastOrNull { it.isBot }
@@ -171,8 +172,8 @@ fun ChatHistory(messages : List<ApiMessageData>) {
 fun MessageBubble(
     text : String , isBot : Boolean , showTypingAnimation : Boolean , scrollState : ScrollState
 ) {
-    var currentVisibleCharacters by remember(text) { mutableIntStateOf(if (showTypingAnimation) 0 else text.length) }
-    val textToDisplay = remember(text , currentVisibleCharacters) {
+    var currentVisibleCharacters by remember(text) { mutableIntStateOf(value = if (showTypingAnimation) 0 else text.length) }
+    val textToDisplay = remember(key1 = text , key2 = currentVisibleCharacters) {
         text.substring(
             0 , currentVisibleCharacters
         )
@@ -211,11 +212,11 @@ fun MessageBubble(
         }
 
         Card(
-            shape = RoundedCornerShape(16.dp) , modifier = Modifier.weight(1f)
+            shape = RoundedCornerShape(16.dp) , modifier = Modifier.weight(weight = 1f)
         ) {
             Column {
                 Text(
-                    text = textToDisplay , modifier = Modifier.padding(16.dp)
+                    text = textToDisplay , modifier = Modifier.padding(all = 16.dp)
                 )
                 MessageActions(text = text , isBot = isBot)
             }
@@ -321,7 +322,7 @@ fun MessageActions(text : String , isBot : Boolean) {
         }
 
         TextButton(modifier = Modifier.bounceClick() , onClick = {
-            ClipboardUtil.copyTextToClipboard(
+            ClipboardHelper.copyTextToClipboard(
                 context = context ,
                 label = "Message" ,
                 text = text ,

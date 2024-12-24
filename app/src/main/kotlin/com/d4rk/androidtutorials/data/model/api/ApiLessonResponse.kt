@@ -21,5 +21,5 @@ data class ApiLessonContent(
     @SerialName("content_text") val contentText : String = "" ,
     @SerialName("content_code") val contentCode : String = "" ,
     @SerialName("content_code_programming_language") val programmingLanguage : String = "" ,
-    @SerialName("content_image_src") val contentImageSrc : String = "" ,
+    @SerialName("content_image_url") val contentImageUrl : String = "" ,
 )

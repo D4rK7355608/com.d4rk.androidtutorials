@@ -9,21 +9,15 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.EventNote
 import androidx.compose.material.icons.automirrored.outlined.HelpOutline
-import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material.icons.outlined.Share
-import androidx.compose.material.icons.outlined.VolunteerActivism
 import androidx.compose.material3.DrawerState
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.ModalDrawerSheet
 import androidx.compose.material3.ModalNavigationDrawer
 import androidx.compose.material3.NavigationDrawerItem
 import androidx.compose.material3.NavigationDrawerItemDefaults
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
@@ -40,8 +34,8 @@ import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick
 import com.d4rk.androidtutorials.ui.components.modifiers.hapticDrawerSwipe
 import com.d4rk.androidtutorials.ui.screens.help.HelpActivity
 import com.d4rk.androidtutorials.ui.screens.main.MainScreenContent
-import com.d4rk.androidtutorials.ui.screens.support.SupportActivity
-import com.d4rk.androidtutorials.utils.IntentUtils
+import com.d4rk.androidtutorials.ui.screens.main.MainViewModel
+import com.d4rk.androidtutorials.utils.helpers.IntentsHelper
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
@@ -52,6 +46,7 @@ fun NavigationDrawer(
     view : View ,
     dataStore : DataStore ,
     context : Context ,
+    viewModel : MainViewModel
 ) {
     val scope : CoroutineScope = rememberCoroutineScope()
     val drawerItems : List<NavigationDrawerItem> = listOf(
@@ -89,7 +84,7 @@ fun NavigationDrawer(
                                                                        view.playSoundEffect(
                                                                            SoundEffectConstants.CLICK
                                                                        )
-                                                                       IntentUtils.openActivity(
+                                                                       IntentsHelper.openActivity(
                                                                            context ,
                                                                            com.d4rk.androidtutorials.ui.screens.settings.SettingsActivity::class.java
                                                                        )
@@ -99,7 +94,7 @@ fun NavigationDrawer(
                                                                        view.playSoundEffect(
                                                                            SoundEffectConstants.CLICK
                                                                        )
-                                                                       IntentUtils.openActivity(
+                                                                       IntentsHelper.openActivity(
                                                                            context ,
                                                                            HelpActivity::class.java
                                                                        )
@@ -109,7 +104,7 @@ fun NavigationDrawer(
                                                                        view.playSoundEffect(
                                                                            SoundEffectConstants.CLICK
                                                                        )
-                                                                       IntentUtils.openUrl(
+                                                                       IntentsHelper.openUrl(
                                                                            context ,
                                                                            url = "https://github.com/D4rK7355608/${context.packageName}/blob/master/CHANGELOG.md"
                                                                        )
@@ -119,7 +114,7 @@ fun NavigationDrawer(
                                                                        view.playSoundEffect(
                                                                            SoundEffectConstants.CLICK
                                                                        )
-                                                                       IntentUtils.shareApp(context)
+                                                                       IntentsHelper.shareApp(context)
                                                                    }
                                                                }
                                                                scope.launch { drawerState.close() }
@@ -150,7 +145,8 @@ fun NavigationDrawer(
                                   context = context ,
                                   coroutineScope = scope ,
                                   navHostController = navHostController ,
-                                  dataStore = dataStore
+                                  dataStore = dataStore,
+                                  viewModel = viewModel
                               )
                           })
 }

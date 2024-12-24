@@ -16,19 +16,21 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.d4rk.androidtutorials.R
 
 @Composable
 fun NoLessonsScreen(
-    text : String = "No lessons found." ,
+    text : Int = R.string.lesson_not_found ,
     icon : ImageVector = Icons.Default.Info ,
     iconDescription : String = "No lessons icon"
 ) {
     Box(
         modifier = Modifier
                 .fillMaxSize()
-                .wrapContentSize(Alignment.Center)
+                .wrapContentSize(align = Alignment.Center)
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally ,
@@ -38,12 +40,12 @@ fun NoLessonsScreen(
                 imageVector = icon ,
                 contentDescription = iconDescription ,
                 modifier = Modifier
-                        .size(58.dp)
+                        .size(size = 58.dp)
                         .padding(bottom = 16.dp) ,
                 tint = MaterialTheme.colorScheme.primary
             )
             Text(
-                text = text ,
+                text = stringResource(id = text) ,
                 style = MaterialTheme.typography.displaySmall.copy(textAlign = TextAlign.Center) ,
                 color = MaterialTheme.colorScheme.onBackground
             )

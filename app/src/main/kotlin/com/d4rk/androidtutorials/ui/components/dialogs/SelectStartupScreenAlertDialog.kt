@@ -29,7 +29,7 @@ import androidx.compose.ui.res.stringArrayResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.d4rk.androidtutorials.R
-import com.d4rk.androidtutorials.constants.ui.bottombar.BottomBarRoutes
+import com.d4rk.androidtutorials.utils.constants.ui.bottombar.BottomBarRoutes
 import com.d4rk.androidtutorials.data.datastore.DataStore
 import kotlinx.coroutines.flow.firstOrNull
 
