@@ -1,6 +1,5 @@
 package com.d4rk.androidtutorials.ui.screens.studiobot.repository
 
-import android.app.Application
 import com.google.ai.client.generativeai.Chat
 import com.google.ai.client.generativeai.type.asTextOrNull
 import kotlinx.coroutines.Dispatchers

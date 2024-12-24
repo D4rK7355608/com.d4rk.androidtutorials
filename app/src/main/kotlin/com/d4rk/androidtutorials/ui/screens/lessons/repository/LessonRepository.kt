@@ -1,7 +1,5 @@
 package com.d4rk.androidtutorials.ui.screens.lessons.repository
 
-import android.app.Application
-import com.d4rk.androidtutorials.data.datastore.DataStore
 import com.d4rk.androidtutorials.data.model.ui.screens.UiLessonScreen
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
