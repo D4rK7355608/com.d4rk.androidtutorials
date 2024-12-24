@@ -16,8 +16,9 @@ import java.util.concurrent.TimeUnit
  * @property context The application context used for scheduling app usage checks.
  */
 class AppUsageNotificationsManager(private val context : Context) {
-    private val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
-    private val notificationIntent =
+    private val alarmManager : AlarmManager =
+            context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+    private val notificationIntent : PendingIntent =
             Intent(context , AppUsageNotificationReceiver::class.java).let { intent ->
                 PendingIntent.getBroadcast(context , 0 , intent , PendingIntent.FLAG_IMMUTABLE)
             }

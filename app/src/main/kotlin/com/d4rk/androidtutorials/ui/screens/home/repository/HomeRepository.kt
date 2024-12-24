@@ -65,7 +65,7 @@ class HomeRepository(
         onSuccess : () -> Unit ,
     ) {
         withContext(Dispatchers.IO) {
-            removeLessonFromFavoritesImplementation(lesson)
+            removeLessonFromFavoritesImplementation(lesson = lesson)
             withContext(Dispatchers.Main) {
                 onSuccess()
             }

@@ -14,7 +14,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
@@ -48,10 +47,13 @@ import com.d4rk.androidtutorials.utils.constants.ui.lessons.LessonCodeConstants
 import com.d4rk.androidtutorials.utils.constants.ui.lessons.LessonContentTypes
 import com.d4rk.androidtutorials.data.datastore.DataStore
 import com.d4rk.androidtutorials.data.model.ui.screens.UiLessonScreen
+import com.d4rk.androidtutorials.ui.components.spacers.ButtonHorizontalSpacer
 import com.d4rk.androidtutorials.ui.components.ads.AdBanner
 import com.d4rk.androidtutorials.ui.components.ads.AdBannerFull
 import com.d4rk.androidtutorials.ui.components.ads.LargeBannerAdsComposable
 import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick
+import com.d4rk.androidtutorials.ui.components.spacers.LargeVerticalSpacer
+import com.d4rk.androidtutorials.ui.components.spacers.SmallVerticalSpacer
 import com.d4rk.androidtutorials.ui.screens.settings.display.theme.style.Colors
 import com.d4rk.androidtutorials.ui.screens.settings.display.theme.style.TextStyles
 import com.d4rk.androidtutorials.utils.helpers.ClipboardHelper
@@ -122,7 +124,7 @@ fun LessonContentLayout(
                 }
             }
             if (index < lesson.lessonContent.lastIndex) {
-                Spacer(modifier = Modifier.height(height = 8.dp))
+                SmallVerticalSpacer()
             }
         }
     }
@@ -370,7 +372,7 @@ fun CodeBlock(code : String , language : String?) {
                         contentDescription = "Copy Code" ,
                         modifier = Modifier.size(size = ButtonDefaults.IconSize)
                     )
-                    Spacer(modifier = Modifier.width(width = ButtonDefaults.IconSpacing))
+                    ButtonHorizontalSpacer()
                     Text(text = stringResource(id = android.R.string.copy))
                 }
             }
@@ -383,7 +385,7 @@ fun CodeBlock(code : String , language : String?) {
                             .padding(horizontal = 8.dp)
                 )
             }
-            Spacer(modifier = Modifier.height(height = 16.dp))
+            LargeVerticalSpacer()
         }
     }
 }

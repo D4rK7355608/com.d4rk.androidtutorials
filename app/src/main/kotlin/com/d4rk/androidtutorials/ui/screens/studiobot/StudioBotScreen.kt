@@ -12,13 +12,11 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -62,6 +60,8 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.data.model.api.ApiMessageData
+import com.d4rk.androidtutorials.ui.components.spacers.ButtonHorizontalSpacer
+import com.d4rk.androidtutorials.ui.components.spacers.LargeHorizontalSpacer
 import com.d4rk.androidtutorials.ui.components.layouts.LoadingScreen
 import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick
 import com.d4rk.androidtutorials.utils.helpers.ClipboardHelper
@@ -208,7 +208,7 @@ fun MessageBubble(
                 icon = Icons.Outlined.Android ,
                 backgroundColor = MaterialTheme.colorScheme.primaryContainer
             )
-            Spacer(modifier = Modifier.width(width = 16.dp))
+            LargeHorizontalSpacer()
         }
 
         Card(
@@ -223,7 +223,7 @@ fun MessageBubble(
         }
 
         if (! isBot) {
-            Spacer(modifier = Modifier.width(width = 16.dp))
+            LargeHorizontalSpacer()
             ProfilePicture(
                 icon = Icons.Outlined.PersonOutline ,
                 backgroundColor = MaterialTheme.colorScheme.primaryContainer
@@ -339,7 +339,7 @@ fun MessageActions(text : String , isBot : Boolean) {
                 contentDescription = "Copy Message" ,
                 modifier = Modifier.size(size = ButtonDefaults.IconSize)
             )
-            Spacer(modifier = Modifier.width(width = ButtonDefaults.IconSpacing))
+            ButtonHorizontalSpacer()
             Text(text = stringResource(id = android.R.string.copy))
         }
     }

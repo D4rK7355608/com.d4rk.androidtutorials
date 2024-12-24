@@ -8,14 +8,11 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.CircleShape
@@ -52,8 +49,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.data.model.ui.screens.UiHelpQuestion
-import com.d4rk.androidtutorials.ui.components.AnimatedExtendedFloatingActionButton
+import com.d4rk.androidtutorials.ui.components.buttons.AnimatedExtendedFloatingActionButton
+import com.d4rk.androidtutorials.ui.components.spacers.LargeHorizontalSpacer
 import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffoldWithBackButtonAndActions
+import com.d4rk.androidtutorials.ui.components.spacers.SmallVerticalSpacer
 import com.d4rk.androidtutorials.utils.rememberHtmlData
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -173,7 +172,7 @@ fun QuestionComposable(
                             )
                             .padding(all = 8.dp)
                 )
-                Spacer(modifier = Modifier.width(width = 16.dp))
+                LargeHorizontalSpacer()
 
                 Text(
                     text = title ,
@@ -189,7 +188,7 @@ fun QuestionComposable(
                 )
             }
             if (isExpanded) {
-                Spacer(modifier = Modifier.height(height = 8.dp))
+                SmallVerticalSpacer()
                 Text(
                     text = summary ,
                     style = MaterialTheme.typography.bodyMedium ,

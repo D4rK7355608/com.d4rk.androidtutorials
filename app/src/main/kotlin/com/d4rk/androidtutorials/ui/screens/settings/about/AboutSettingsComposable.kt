@@ -16,9 +16,9 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import com.d4rk.androidtutorials.BuildConfig
 import com.d4rk.androidtutorials.R
-import com.d4rk.androidtutorials.ui.components.PreferenceCategoryItem
-import com.d4rk.androidtutorials.ui.components.PreferenceItem
-import com.d4rk.androidtutorials.ui.components.Snackbar
+import com.d4rk.androidtutorials.ui.components.preferences.PreferenceCategoryItem
+import com.d4rk.androidtutorials.ui.components.preferences.PreferenceItem
+import com.d4rk.androidtutorials.ui.components.snackbar.Snackbar
 import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffoldWithBackButton
 import com.d4rk.androidtutorials.utils.helpers.ClipboardHelper
 import com.d4rk.androidtutorials.utils.helpers.IntentsHelper

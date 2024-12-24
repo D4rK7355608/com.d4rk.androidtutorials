@@ -6,8 +6,6 @@ import androidx.compose.foundation.layout.imePadding
 import androidx.compose.material3.DrawerState
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
@@ -48,28 +46,25 @@ fun MainScreenContent(
     dataStore : DataStore ,
     viewModel : MainViewModel
 ) {
-    val uiState by viewModel.uiState.collectAsState()
-
     Scaffold(modifier = Modifier.imePadding() , topBar = {
         TopAppBarMain(
             view = view ,
             drawerState = drawerState ,
             context = context ,
-            coroutineScope = coroutineScope
+            coroutineScope = coroutineScope ,
         )
     } , bottomBar = {
-        BottomNavigationBar(navController = navHostController ,
-                            dataStore = dataStore ,
-                            view = view ,
-                            currentScreen = uiState.currentBottomNavigationScreen , // Pass the current screen
-                            onScreenSelected = { newScreen ->
-                                viewModel.updateBottomNavigationScreen(newScreen) // Trigger state change in ViewModel
-                            })
+        BottomNavigationBar(
+            navController = navHostController ,
+            dataStore = dataStore ,
+            view = view ,
+            viewModel = viewModel ,
+        )
     }) { paddingValues ->
         NavigationHost(
             navHostController = navHostController ,
             dataStore = dataStore ,
-            paddingValues = paddingValues
+            paddingValues = paddingValues ,
         )
     }
 }

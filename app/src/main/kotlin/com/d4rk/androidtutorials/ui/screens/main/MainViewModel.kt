@@ -4,9 +4,16 @@ import android.app.Activity
 import android.app.Application
 import android.os.Build
 import androidx.annotation.RequiresApi
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.outlined.EventNote
+import androidx.compose.material.icons.automirrored.outlined.HelpOutline
+import androidx.compose.material.icons.outlined.Settings
+import androidx.compose.material.icons.outlined.Share
 import androidx.lifecycle.viewModelScope
+import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.data.datastore.DataStore
 import com.d4rk.androidtutorials.data.model.ui.navigation.BottomNavigationScreen
+import com.d4rk.androidtutorials.data.model.ui.navigation.NavigationDrawerItem
 import com.d4rk.androidtutorials.data.model.ui.screens.UiMainScreen
 import com.d4rk.androidtutorials.notifications.managers.AppUpdateNotificationsManager
 import com.d4rk.androidtutorials.ui.screens.main.repository.MainRepository
@@ -20,7 +27,7 @@ import kotlinx.coroutines.launch
 
 class MainViewModel(application : Application) : BaseViewModel(application) {
     private val repository = MainRepository(DataStore(application) , application)
-    private val _uiState : MutableStateFlow<UiMainScreen> = MutableStateFlow(UiMainScreen())
+    private val _uiState : MutableStateFlow<UiMainScreen> = MutableStateFlow(initializeUiState())
     val uiState : StateFlow<UiMainScreen> = _uiState
 
     fun checkForUpdates(activity : Activity , appUpdateManager : AppUpdateManager) {
@@ -29,6 +36,30 @@ class MainViewModel(application : Application) : BaseViewModel(application) {
                 appUpdateManager = appUpdateManager , activity = activity
             )
         }
+    }
+
+    private fun initializeUiState() : UiMainScreen {
+        return UiMainScreen(
+            navigationDrawerItems = listOf(
+                NavigationDrawerItem(
+                    title = R.string.settings ,
+                    selectedIcon = Icons.Outlined.Settings ,
+                ) , NavigationDrawerItem(
+                    title = R.string.help_and_feedback ,
+                    selectedIcon = Icons.AutoMirrored.Outlined.HelpOutline ,
+                ) , NavigationDrawerItem(
+                    title = R.string.updates ,
+                    selectedIcon = Icons.AutoMirrored.Outlined.EventNote ,
+                ) , NavigationDrawerItem(
+                    title = R.string.share ,
+                    selectedIcon = Icons.Outlined.Share ,
+                )
+            ) , bottomNavigationItems = listOf(
+                BottomNavigationScreen.Home ,
+                BottomNavigationScreen.StudioBot ,
+                BottomNavigationScreen.Favorites
+            ) , currentBottomNavigationScreen = BottomNavigationScreen.Home
+        )
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -49,8 +80,7 @@ class MainViewModel(application : Application) : BaseViewModel(application) {
             repository.checkAndHandleStartupRepository { isFirstTime ->
                 if (isFirstTime) {
                     IntentsHelper.openActivity(
-                        context = getApplication() ,
-                        activityClass = StartupActivity::class.java
+                        context = getApplication() , activityClass = StartupActivity::class.java
                     )
                 }
             }
@@ -63,7 +93,9 @@ class MainViewModel(application : Application) : BaseViewModel(application) {
         }
     }
 
-    fun updateBottomNavigationScreen(newScreen: BottomNavigationScreen) {
-        _uiState.value = _uiState.value.copy(currentBottomNavigationScreen = newScreen)
+    fun updateBottomNavigationScreen(newScreen : BottomNavigationScreen) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
+            _uiState.value = _uiState.value.copy(currentBottomNavigationScreen = newScreen)
+        }
     }
 }

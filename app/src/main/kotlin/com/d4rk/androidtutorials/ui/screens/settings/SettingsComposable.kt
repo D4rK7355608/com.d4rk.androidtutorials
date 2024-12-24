@@ -21,7 +21,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.d4rk.androidtutorials.R
-import com.d4rk.androidtutorials.ui.components.SettingsPreferenceItem
+import com.d4rk.androidtutorials.ui.components.preferences.SettingsPreferenceItem
 import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffoldWithBackButton
 import com.d4rk.androidtutorials.ui.screens.settings.about.AboutSettingsActivity
 import com.d4rk.androidtutorials.ui.screens.settings.advanced.AdvancedSettingsActivity

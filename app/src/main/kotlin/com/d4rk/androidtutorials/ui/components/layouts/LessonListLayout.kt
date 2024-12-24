@@ -8,14 +8,11 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
@@ -41,24 +38,27 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil3.compose.AsyncImage
-import com.d4rk.androidtutorials.utils.constants.ui.lessons.LessonConstants
 import com.d4rk.androidtutorials.data.model.ui.screens.UiHomeLesson
 import com.d4rk.androidtutorials.ui.components.modifiers.animateVisibility
 import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick
 import com.d4rk.androidtutorials.ui.components.navigation.openLessonDetailActivity
+import com.d4rk.androidtutorials.ui.components.spacers.MediumHorizontalSpacer
+import com.d4rk.androidtutorials.ui.components.spacers.MediumVerticalSpacer
+import com.d4rk.androidtutorials.ui.components.spacers.SmallHorizontalSpacer
 import com.d4rk.androidtutorials.ui.screens.home.HomeViewModel
+import com.d4rk.androidtutorials.utils.constants.ui.lessons.LessonConstants
 
 @Composable
 fun LessonListLayout(
     lessons : List<UiHomeLesson> , visibilityStates : List<Boolean> , context : Context
 ) {
     LazyColumn(
-        contentPadding = PaddingValues(16.dp) ,
-        verticalArrangement = Arrangement.spacedBy(16.dp) ,
+        contentPadding = PaddingValues(all = 16.dp) ,
+        verticalArrangement = Arrangement.spacedBy(space = 16.dp) ,
         modifier = Modifier.fillMaxSize()
     ) {
         itemsIndexed(lessons) { index , lesson ->
-            val isVisible = visibilityStates.getOrElse(index) { false }
+            val isVisible = visibilityStates.getOrElse(index = index) { false }
             LessonItem(
                 lesson = lesson ,
                 context = context ,
@@ -81,14 +81,14 @@ fun LessonItem(lesson : UiHomeLesson , context : Context , modifier : Modifier =
                 FullImageBannerLessonItem(
                     lesson = lesson , context = context , viewModel = viewModel
                 )
-                Spacer(modifier = Modifier.width(8.dp))
+
             }
 
             LessonConstants.TYPE_SQUARE_IMAGE -> {
                 SquareImageLessonItem(
                     lesson = lesson , context = context , viewModel = viewModel
                 )
-                Spacer(modifier = Modifier.width(8.dp))
+                SmallHorizontalSpacer()
             }
         }
     }
@@ -112,7 +112,7 @@ fun FullImageBannerLessonItem(
                         .aspectRatio(ratio = 16f / 9f) ,
                 contentScale = ContentScale.Crop
             )
-            Spacer(modifier = Modifier.height(12.dp))
+            MediumVerticalSpacer()
             Row(
                 modifier = Modifier
                         .fillMaxWidth()
@@ -124,12 +124,12 @@ fun FullImageBannerLessonItem(
                 )
             }
             if (lesson.lessonTags.isNotEmpty()) {
-                Spacer(modifier = Modifier.height(12.dp))
+                MediumVerticalSpacer()
                 TagRow(lesson.lessonTags)
             }
-            Spacer(modifier = Modifier.height(12.dp))
+            MediumVerticalSpacer()
             ButtonsRow(lesson = lesson , viewModel = viewModel)
-            Spacer(modifier = Modifier.height(12.dp))
+            MediumVerticalSpacer()
         }
     }
 }
@@ -145,7 +145,7 @@ fun SquareImageLessonItem(
                 openLessonDetailActivity(context = context , lesson = lesson)
             }) {
         Column {
-            Spacer(modifier = Modifier.height(12.dp))
+            MediumVerticalSpacer()
             Row(
                 modifier = Modifier
                         .fillMaxWidth()
@@ -156,14 +156,15 @@ fun SquareImageLessonItem(
                     model = lesson.squareImageUrl ,
                     contentDescription = null ,
                     modifier = Modifier
-                            .size(98.dp)
+                            .size(size = 98.dp)
                             .aspectRatio(ratio = 1f / 1f)
-                            .clip(RoundedCornerShape(12.dp)) ,
+                            .clip(RoundedCornerShape(size = 12.dp)) ,
                     contentScale = ContentScale.Crop
                 )
-                Spacer(modifier = Modifier.width(12.dp))
+                MediumHorizontalSpacer()
                 Column(
-                    modifier = Modifier.weight(1f) , verticalArrangement = Arrangement.SpaceBetween
+                    modifier = Modifier.weight(weight = 1f) ,
+                    verticalArrangement = Arrangement.SpaceBetween
                 ) {
                     TitleAndDescriptionColumn(
                         title = lesson.lessonTitle ,
@@ -173,12 +174,12 @@ fun SquareImageLessonItem(
                 }
             }
             if (lesson.lessonTags.isNotEmpty()) {
-                Spacer(modifier = Modifier.height(12.dp))
+                MediumVerticalSpacer()
                 TagRow(lesson.lessonTags)
             }
-            Spacer(modifier = Modifier.height(12.dp))
+            MediumVerticalSpacer()
             ButtonsRow(lesson = lesson , viewModel = viewModel)
-            Spacer(modifier = Modifier.height(12.dp))
+            MediumVerticalSpacer()
         }
     }
 }

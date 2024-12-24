@@ -37,10 +37,10 @@ fun HomeScreen() {
         }
     }
 
-    val visibilityStates by viewModel.visibilityStates.collectAsState()
+    val visibilityStates : List<Boolean> by viewModel.visibilityStates.collectAsState()
 
     if (isLoading) {
-        LoadingScreen(progressAlpha)
+        LoadingScreen(progressAlpha = progressAlpha)
     }
     else {
         println("Android Log -> lessons found: ${lessons.size}")

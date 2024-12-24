@@ -31,7 +31,7 @@ import androidx.compose.ui.unit.dp
 import com.d4rk.androidtutorials.BuildConfig
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.data.datastore.DataStore
-import com.d4rk.androidtutorials.ui.components.SwitchCardComposable
+import com.d4rk.androidtutorials.ui.components.preferences.SwitchCardComposable
 import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick
 import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffoldWithBackButton
 import com.d4rk.androidtutorials.utils.helpers.IntentsHelper

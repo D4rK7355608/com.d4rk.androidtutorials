@@ -82,7 +82,4 @@ object Colors {
 
     @Composable
     fun secondaryText() = MaterialTheme.colorScheme.onSurface
-
-    @Composable
-    fun highlightedText() = MaterialTheme.colorScheme.primary
 }

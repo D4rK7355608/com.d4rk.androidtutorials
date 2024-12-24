@@ -60,7 +60,7 @@ class AppUsageNotificationWorker(context : Context , workerParams : WorkerParame
                             .setAutoCancel(true)
             notificationManager.notify(appUsageNotificationId , notificationBuilder.build())
         }
-        runBlocking { dataStore.saveLastUsed(currentTimestamp) }
+        runBlocking { dataStore.saveLastUsed(timestamp = currentTimestamp) }
         return Result.success()
     }
 }

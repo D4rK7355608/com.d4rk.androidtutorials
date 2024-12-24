@@ -14,3 +14,17 @@ fun UiHomeLesson.toFavoriteLessonTable() : FavoriteLessonTable = FavoriteLessonT
     lessonTags = lessonTags ,
     isFavorite = isFavorite
 )
+
+fun FavoriteLessonTable.toUiLesson() : UiHomeLesson {
+    return UiHomeLesson(
+        lessonId = lessonId ,
+        lessonTitle = lessonTitle ,
+        lessonDescription = lessonDescription ,
+        lessonType = lessonType ,
+        thumbnailImageUrl = thumbnailImageUrl ,
+        squareImageUrl = squareImageUrl ,
+        deepLinkPath = deepLinkPath ,
+        lessonTags = lessonTags ,
+        isFavorite = isFavorite
+    )
+}

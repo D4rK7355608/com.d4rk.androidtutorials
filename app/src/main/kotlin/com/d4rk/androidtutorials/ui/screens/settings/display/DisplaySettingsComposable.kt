@@ -24,10 +24,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.core.os.LocaleListCompat
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.data.datastore.DataStore
-import com.d4rk.androidtutorials.ui.components.PreferenceCategoryItem
-import com.d4rk.androidtutorials.ui.components.PreferenceItem
-import com.d4rk.androidtutorials.ui.components.SwitchPreferenceItem
-import com.d4rk.androidtutorials.ui.components.SwitchPreferenceItemWithDivider
+import com.d4rk.androidtutorials.ui.components.preferences.PreferenceCategoryItem
+import com.d4rk.androidtutorials.ui.components.preferences.PreferenceItem
+import com.d4rk.androidtutorials.ui.components.preferences.SwitchPreferenceItem
+import com.d4rk.androidtutorials.ui.components.preferences.SwitchPreferenceItemWithDivider
 import com.d4rk.androidtutorials.ui.components.dialogs.SelectLanguageAlertDialog
 import com.d4rk.androidtutorials.ui.components.dialogs.SelectStartupScreenAlertDialog
 import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffoldWithBackButton

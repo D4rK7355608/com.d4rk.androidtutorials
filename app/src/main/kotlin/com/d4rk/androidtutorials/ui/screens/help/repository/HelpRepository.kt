@@ -8,9 +8,7 @@ import com.google.android.play.core.review.ReviewInfo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class HelpRepository(
-    dataStore : DataStore , application : Application
-) : HelpRepositoryImplementation(application , dataStore) {
+class HelpRepository(application : Application) : HelpRepositoryImplementation(application) {
 
     suspend fun getFAQsRepository(onSuccess : (ArrayList<UiHelpQuestion>) -> Unit) {
         withContext(Dispatchers.IO) {

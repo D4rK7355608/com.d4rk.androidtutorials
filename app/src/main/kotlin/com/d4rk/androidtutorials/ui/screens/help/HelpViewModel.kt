@@ -2,7 +2,6 @@ package com.d4rk.androidtutorials.ui.screens.help
 
 import android.app.Application
 import androidx.lifecycle.viewModelScope
-import com.d4rk.androidtutorials.data.datastore.DataStore
 import com.d4rk.androidtutorials.data.model.ui.screens.UiHelpScreen
 import com.d4rk.androidtutorials.ui.screens.help.repository.HelpRepository
 import com.d4rk.androidtutorials.ui.viewmodel.BaseViewModel
@@ -15,10 +14,7 @@ import kotlinx.coroutines.launch
 
 class HelpViewModel(application : Application) : BaseViewModel(application) {
 
-    private val repository : HelpRepository = HelpRepository(
-        dataStore = DataStore(application) ,
-        application = application
-    )
+    private val repository : HelpRepository = HelpRepository(application = application)
 
     private val _uiState : MutableStateFlow<UiHelpScreen> = MutableStateFlow(UiHelpScreen())
     val uiState : StateFlow<UiHelpScreen> = _uiState

@@ -1,4 +1,4 @@
-package com.d4rk.androidtutorials.ui.components
+package com.d4rk.androidtutorials.ui.components.snackbar
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize

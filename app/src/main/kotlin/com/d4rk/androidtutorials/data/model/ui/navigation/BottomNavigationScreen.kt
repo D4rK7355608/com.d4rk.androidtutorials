@@ -15,20 +15,23 @@ sealed class BottomNavigationScreen(
     val route : String , val icon : ImageVector , val selectedIcon : ImageVector , val title : Int
 ) {
     data object Home : BottomNavigationScreen(
-        BottomBarRoutes.HOME , Icons.Outlined.Home , Icons.Filled.Home , R.string.home
+        route = BottomBarRoutes.HOME ,
+        icon = Icons.Outlined.Home ,
+        selectedIcon = Icons.Filled.Home ,
+        title = R.string.home
     )
 
     data object StudioBot : BottomNavigationScreen(
-        BottomBarRoutes.STUDIO_BOT ,
-        Icons.Sharp.AutoAwesome ,
-        Icons.Rounded.AutoAwesome ,
-        R.string.studio_bot
+        route = BottomBarRoutes.STUDIO_BOT ,
+        icon = Icons.Sharp.AutoAwesome ,
+        selectedIcon = Icons.Rounded.AutoAwesome ,
+        title = R.string.studio_bot
     )
 
     data object Favorites : BottomNavigationScreen(
-        BottomBarRoutes.FAVORITES ,
-        Icons.Sharp.FavoriteBorder ,
-        Icons.Rounded.Favorite ,
-        R.string.favorites
+        route = BottomBarRoutes.FAVORITES ,
+        icon = Icons.Sharp.FavoriteBorder ,
+        selectedIcon = Icons.Rounded.Favorite ,
+        title = R.string.favorites
     )
 }

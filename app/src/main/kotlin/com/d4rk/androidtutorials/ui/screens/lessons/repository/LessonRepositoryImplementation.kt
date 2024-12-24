@@ -27,26 +27,29 @@ abstract class LessonRepositoryImplementation {
         val url = "$baseUrl/api_get_$lessonId.json"
 
         return runCatching {
-            val response : HttpResponse = client.get(url) {
-                contentType(ContentType.Application.Json)
+            val response : HttpResponse = client.get(urlString = url) {
+                contentType(type = ContentType.Application.Json)
             }
 
-            val lessonScreen : UiLessonScreen = response.bodyAsText().takeUnless { it.isBlank() }
-                    ?.let { Json.decodeFromString<ApiLessonResponse>(it) }?.data?.firstOrNull()
-                    ?.let { apiLesson ->
-                        UiLessonScreen(lessonTitle = apiLesson.lessonTitle ,
-                                       lessonContent = ArrayList(apiLesson.lessonContent.map { apiContent ->
-                                           UiLessonContent(
-                                               contentId = apiContent.contentId ,
-                                               contentType = apiContent.contentType ,
-                                               contentText = apiContent.contentText ,
-                                               contentImageUrl = apiContent.contentImageUrl ,
-                                               contentCode = apiContent.contentCode ,
-                                               programmingLanguage = apiContent.programmingLanguage
-                                           )
-                                       })
+            val lessonScreen : UiLessonScreen = response.bodyAsText().takeUnless { text ->
+                text.isBlank()
+            }?.let {
+                Json.decodeFromString<ApiLessonResponse>(it)
+            }?.data?.firstOrNull()?.let { apiLesson ->
+                UiLessonScreen(
+                    lessonTitle = apiLesson.lessonTitle ,
+                    lessonContent = ArrayList(apiLesson.lessonContent.map { apiContent ->
+                        UiLessonContent(
+                            contentId = apiContent.contentId ,
+                            contentType = apiContent.contentType ,
+                            contentText = apiContent.contentText ,
+                            contentImageUrl = apiContent.contentImageUrl ,
+                            contentCode = apiContent.contentCode ,
+                            programmingLanguage = apiContent.programmingLanguage
                         )
-                    } ?: UiLessonScreen()
+                    })
+                )
+            } ?: UiLessonScreen()
             lessonScreen
         }.getOrElse {
             UiLessonScreen()

@@ -32,7 +32,7 @@ fun FavoritesScreen() {
         if (it) 0f else 1f
     }
 
-    val visibilityStates by viewModel.visibilityStates.collectAsState()
+    val visibilityStates : List<Boolean> by viewModel.visibilityStates.collectAsState()
 
     val context : Context = LocalContext.current
 

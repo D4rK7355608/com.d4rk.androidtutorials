@@ -1,4 +1,4 @@
-package com.d4rk.androidtutorials.ui.components
+package com.d4rk.androidtutorials.ui.components.buttons
 
 import androidx.compose.animation.core.AnimationSpec
 import androidx.compose.animation.core.FastOutSlowInEasing
@@ -25,17 +25,17 @@ fun AnimatedExtendedFloatingActionButton(
     ) ,
     expanded : Boolean = true
 ) {
-    val animatedOffsetX by animateFloatAsState(
+    val animatedOffsetX : Float by animateFloatAsState(
         targetValue = if (visible) 0f else offsetX ,
         animationSpec = animationSpec ,
         label = "OffsetX"
     )
-    val animatedOffsetY by animateFloatAsState(
+    val animatedOffsetY : Float by animateFloatAsState(
         targetValue = if (visible) 0f else offsetY ,
         animationSpec = animationSpec ,
         label = "OffsetY"
     )
-    val animatedScale by animateFloatAsState(
+    val animatedScale : Float by animateFloatAsState(
         targetValue = if (visible) 1f else scale , animationSpec = animationSpec , label = "Scale"
     )
 

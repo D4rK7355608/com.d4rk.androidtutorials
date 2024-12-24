@@ -12,6 +12,6 @@ class AppUsageNotificationReceiver : BroadcastReceiver() {
     override fun onReceive(context : Context , intent : Intent?) {
         val workRequest : OneTimeWorkRequest =
                 OneTimeWorkRequestBuilder<AppUsageNotificationWorker>().build()
-        WorkManager.getInstance(context).enqueue(workRequest)
+        WorkManager.getInstance(context = context).enqueue(request = workRequest)
     }
 }

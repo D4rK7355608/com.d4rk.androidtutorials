@@ -30,6 +30,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.data.datastore.DataStore
+import com.d4rk.androidtutorials.ui.components.spacers.MediumVerticalSpacer
 import kotlinx.coroutines.flow.firstOrNull
 
 @Composable
@@ -69,7 +70,7 @@ fun SelectLanguageAlertDialogContent(
     languageEntries : List<String> ,
     languageValues : List<String>
 ) {
-    LaunchedEffect(Unit) {
+    LaunchedEffect(key1 = Unit) {
         selectedLanguage.value = dataStore.getLanguage().firstOrNull() ?: ""
     }
 
@@ -78,7 +79,7 @@ fun SelectLanguageAlertDialogContent(
         Box(
             modifier = Modifier
                     .fillMaxWidth()
-                    .weight(1f)
+                    .weight(weight = 1f)
         ) {
             LazyColumn {
                 items(languageEntries.size) { index ->
@@ -87,10 +88,11 @@ fun SelectLanguageAlertDialogContent(
                         verticalAlignment = Alignment.CenterVertically ,
                         horizontalArrangement = Arrangement.Start
                     ) {
-                        RadioButton(selected = selectedLanguage.value == languageValues[index] ,
-                                    onClick = {
-                                        selectedLanguage.value = languageValues[index]
-                                    })
+                        RadioButton(
+                            selected = selectedLanguage.value == languageValues[index] ,
+                            onClick = {
+                                selectedLanguage.value = languageValues[index]
+                            })
                         Text(
                             modifier = Modifier.padding(start = 8.dp) ,
                             text = languageEntries[index] ,
@@ -100,13 +102,13 @@ fun SelectLanguageAlertDialogContent(
                 }
             }
         }
-        Spacer(modifier = Modifier.height(24.dp))
+        Spacer(modifier = Modifier.height(height = 24.dp))
         Icon(imageVector = Icons.Outlined.Info , contentDescription = null)
-        Spacer(modifier = Modifier.height(12.dp))
+        MediumVerticalSpacer()
         Text(text = stringResource(id = R.string.dialog_info_language))
     }
 
-    LaunchedEffect(selectedLanguage.value) {
-        dataStore.saveLanguage(selectedLanguage.value)
+    LaunchedEffect(key1 = selectedLanguage.value) {
+        dataStore.saveLanguage(language = selectedLanguage.value)
     }
 }

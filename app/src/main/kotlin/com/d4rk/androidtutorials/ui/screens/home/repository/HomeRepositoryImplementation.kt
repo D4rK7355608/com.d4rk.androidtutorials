@@ -27,28 +27,29 @@ abstract class HomeRepositoryImplementation(
     private val client : HttpClient = AppCoreManager.ktorClient
 
     private val baseUrl = BuildConfig.DEBUG.let { isDebug ->
-        val environment = if (isDebug) "debug" else "release"
+        val environment : String = if (isDebug) "debug" else "release"
         "${ApiConstants.BASE_REPOSITORY_URL}/$environment/en/home/api_get_lessons.json"
     }
 
     suspend fun getHomeLessonsImplementation() : UiHomeScreen {
         return runCatching {
-            val response : HttpResponse = client.get(baseUrl) {
-                contentType(ContentType.Application.Json)
+            val response : HttpResponse = client.get(urlString = baseUrl) {
+                contentType(type = ContentType.Application.Json)
             }
 
-            val lessons : List<UiHomeLesson> = response.bodyAsText().takeUnless { it.isBlank() }
-                    ?.let { Json.decodeFromString<ApiHomeResponse>(it) }?.data?.map { apiLesson ->
-                        UiHomeLesson(lessonId = apiLesson.lessonId ,
-                                     lessonTitle = apiLesson.lessonTitle ,
-                                     lessonDescription = apiLesson.lessonDescription ,
-                                     lessonType = apiLesson.lessonType ,
-                                     lessonTags = apiLesson.lessonTags ,
-                                     thumbnailImageUrl = apiLesson.thumbnailImageUrl ,
-                                     squareImageUrl = apiLesson.squareImageUrl ,
-                                     deepLinkPath = apiLesson.deepLinkPath ,
-                                     isFavorite = loadFavoritesImplementation().any { it.lessonId == apiLesson.lessonId })
-                    } ?: emptyList()
+            val lessons : List<UiHomeLesson> =
+                    response.bodyAsText().takeUnless { text -> text.isBlank() }
+                            ?.let { Json.decodeFromString<ApiHomeResponse>(it) }?.data?.map { apiLesson ->
+                                UiHomeLesson(lessonId = apiLesson.lessonId ,
+                                             lessonTitle = apiLesson.lessonTitle ,
+                                             lessonDescription = apiLesson.lessonDescription ,
+                                             lessonType = apiLesson.lessonType ,
+                                             lessonTags = apiLesson.lessonTags ,
+                                             thumbnailImageUrl = apiLesson.thumbnailImageUrl ,
+                                             squareImageUrl = apiLesson.squareImageUrl ,
+                                             deepLinkPath = apiLesson.deepLinkPath ,
+                                             isFavorite = loadFavoritesImplementation().any { it.lessonId == apiLesson.lessonId })
+                            } ?: emptyList()
             UiHomeScreen(lessons = ArrayList(lessons))
         }.getOrElse {
             UiHomeScreen()
@@ -60,11 +61,11 @@ abstract class HomeRepositoryImplementation(
     }
 
     suspend fun addLessonToFavoritesImplementation(lesson : FavoriteLessonTable) {
-        AppCoreManager.database.favoriteLessonsDao().insert(lesson)
+        AppCoreManager.database.favoriteLessonsDao().insert(favoriteLesson = lesson)
     }
 
     suspend fun removeLessonFromFavoritesImplementation(lesson : FavoriteLessonTable) {
-        AppCoreManager.database.favoriteLessonsDao().delete(lesson)
+        AppCoreManager.database.favoriteLessonsDao().delete(favoriteLesson = lesson)
     }
 
     fun shareLessonImplementation(lesson : UiHomeLesson) : Intent {

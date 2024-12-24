@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.DrawerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.State
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -47,7 +48,7 @@ fun Modifier.bounceClick(
                     scaleX = scale
                     scaleY = scale
                 }
-                .pointerInput(buttonState) {
+                .pointerInput(key1 = buttonState) {
                     awaitPointerEventScope {
                         buttonState = if (buttonState == ButtonState.Pressed) {
                             waitForUpOrCancellation()
@@ -90,20 +91,22 @@ fun Modifier.animateVisibility(
     durationMillis : Int = 300 ,
     delayPerItem : Int = 64
 ) = composed {
-    val alpha = animateFloatAsState(
+    val alpha : State<Float> = animateFloatAsState(
         targetValue = if (visible) 1f else 0f , animationSpec = tween(
             durationMillis = durationMillis , delayMillis = index * delayPerItem
         ) , label = "Alpha"
     )
 
-    val offsetYState = animateFloatAsState(
+    val offsetYState : State<Float> = animateFloatAsState(
         targetValue = if (visible) 0f else offsetY.toFloat() , animationSpec = tween(
             durationMillis = durationMillis , delayMillis = index * delayPerItem
         ) , label = "OffsetY"
     )
 
     this
-            .offset { IntOffset(x = 0 , offsetYState.value.toInt()) }
+            .offset {
+                IntOffset(x = 0 , y = offsetYState.value.toInt())
+            }
             .graphicsLayer {
                 this.alpha = alpha.value
             }

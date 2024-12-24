@@ -8,6 +8,7 @@ import com.d4rk.androidtutorials.data.model.ui.screens.UiHomeLesson
 import com.d4rk.androidtutorials.data.model.ui.screens.UiHomeScreen
 import com.d4rk.androidtutorials.ui.screens.home.repository.HomeRepository
 import com.d4rk.androidtutorials.ui.viewmodel.LessonsViewModel
+import com.d4rk.androidtutorials.utils.extensions.toUiLesson
 import kotlinx.coroutines.launch
 
 class FavoritesViewModel(application : Application) : LessonsViewModel(application) {
@@ -18,26 +19,16 @@ class FavoritesViewModel(application : Application) : LessonsViewModel(applicati
         observeFavorites()
     }
 
-    private fun FavoriteLessonTable.toUiLesson() : UiHomeLesson {
-        return UiHomeLesson(
-            lessonId = lessonId ,
-            lessonTitle = lessonTitle ,
-            lessonDescription = lessonDescription ,
-            lessonType = lessonType ,
-            thumbnailImageUrl = thumbnailImageUrl ,
-            squareImageUrl = squareImageUrl ,
-            deepLinkPath = deepLinkPath ,
-            lessonTags = lessonTags ,
-            isFavorite = isFavorite
-        )
-    }
-
     private fun loadFavorites() {
-        viewModelScope.launch(coroutineExceptionHandler) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
             showLoading()
             repository.loadFavoritesRepository { favorites ->
-                val favoriteLessons = favorites.map { it.toUiLesson() }
-                _lessons.value = listOf(UiHomeScreen(lessons = ArrayList(favoriteLessons)))
+                val favoriteLessons = favorites.map { lesson ->
+                    lesson.toUiLesson()
+                }
+                listOf(UiHomeScreen(lessons = ArrayList(favoriteLessons))).also {
+                    _lessons.value = it
+                }
             }
             hideLoading()
             initializeVisibilityStates()
@@ -45,10 +36,13 @@ class FavoritesViewModel(application : Application) : LessonsViewModel(applicati
     }
 
     private fun observeFavorites() {
-        viewModelScope.launch(coroutineExceptionHandler) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
             repository.observeFavoritesChanges { favorites ->
-                val favoriteLessons = favorites.map { it.toUiLesson() }
-                _lessons.value = listOf(UiHomeScreen(lessons = ArrayList(favoriteLessons)))
+                val favoriteLessons = favorites.map { lesson ->
+                    lesson.toUiLesson()
+                }
+                _lessons.value =
+                        listOf(element = UiHomeScreen(lessons = ArrayList(favoriteLessons)))
             }
         }
     }

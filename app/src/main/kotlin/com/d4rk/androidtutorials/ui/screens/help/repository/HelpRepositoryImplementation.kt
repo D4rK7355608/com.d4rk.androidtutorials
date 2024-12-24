@@ -2,7 +2,6 @@ package com.d4rk.androidtutorials.ui.screens.help.repository
 
 import android.app.Application
 import com.d4rk.androidtutorials.R
-import com.d4rk.androidtutorials.data.datastore.DataStore
 import com.d4rk.androidtutorials.ui.screens.help.HelpActivity
 import com.d4rk.androidtutorials.utils.helpers.IntentsHelper
 import com.google.android.gms.tasks.Task
@@ -11,7 +10,7 @@ import com.google.android.play.core.review.ReviewManager
 import com.google.android.play.core.review.ReviewManagerFactory
 
 abstract class HelpRepositoryImplementation(
-    val application : Application , val dataStore : DataStore
+    val application : Application
 ) {
     fun getFAQsImplementation() : List<Pair<Int , Int>> {
         return listOf(
