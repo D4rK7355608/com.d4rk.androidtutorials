@@ -30,7 +30,7 @@ class AppCoreManager : MultiDexApplication() , Application.ActivityLifecycleCall
     private val adsCoreManager : AdsCoreManager = AdsCoreManager(context = this)
 
     private enum class AppInitializationStage {
-        DATA_STORE , ADS
+        DATA_STORE , ADS , FINALIZATION
     }
 
     private var currentStage = AppInitializationStage.DATA_STORE
@@ -64,17 +64,23 @@ class AppCoreManager : MultiDexApplication() , Application.ActivityLifecycleCall
     }
 
     private fun proceedToNextStage() {
-        when (currentStage) {
+        currentStage = when (currentStage) {
             AppInitializationStage.DATA_STORE -> {
-                currentStage = AppInitializationStage.ADS
                 adsCoreManager.setDataStore(dataStoreCoreManager.dataStore)
-                adsCoreManager.initializeAds()
+                AppInitializationStage.ADS
             }
 
-            else -> {
+            AppInitializationStage.ADS -> {
+                adsCoreManager.initializeAds()
+                AppInitializationStage.FINALIZATION
+            }
+
+            AppInitializationStage.FINALIZATION -> {
                 markAppAsLoaded()
+                return
             }
         }
+        proceedToNextStage()
     }
 
     fun isAppLoaded() : Boolean {

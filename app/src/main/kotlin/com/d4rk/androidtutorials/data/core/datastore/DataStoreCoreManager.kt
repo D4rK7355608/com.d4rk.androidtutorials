@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.firstOrNull
 
 open class DataStoreCoreManager(protected val context : Context) {
 
-    private var isDataStoreLoaded = false
+    private var isDataStoreLoaded : Boolean = false
     lateinit var dataStore : DataStore
 
     suspend fun initializeDataStore() : Boolean = coroutineScope {
