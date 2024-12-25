@@ -17,8 +17,8 @@ import kotlinx.coroutines.withContext
  * @property dataStore The data store used to persist settings and startup information.
  * @property application The application context.
  */
-class MainRepository(val dataStore : DataStore , application : Application) :
-    MainRepositoryImplementation(application) {
+class MainRepository(dataStore : DataStore , application : Application) :
+    MainRepositoryImplementation(application = application , dataStore = dataStore) {
 
     suspend fun checkForUpdates(
         activity : Activity ,

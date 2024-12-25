@@ -13,27 +13,27 @@ import kotlinx.serialization.json.Json
 
 class KtorClient {
 
-    private val networkTimeout = 10_000L
+    private val networkTimeout : Long = 10_000L
 
     fun createClient() : HttpClient {
-        return HttpClient(Android) {
-            install(ContentNegotiation) {
-                json(Json {
+        return HttpClient(engineFactory = Android) {
+            install(plugin = ContentNegotiation) {
+                json(json = Json {
                     prettyPrint = true
                     isLenient = true
                     ignoreUnknownKeys = true
                 })
             }
 
-            install(HttpTimeout) {
+            install(plugin = HttpTimeout) {
                 requestTimeoutMillis = networkTimeout
                 connectTimeoutMillis = networkTimeout
                 socketTimeoutMillis = networkTimeout
             }
 
-            install(DefaultRequest) {
-                contentType(ContentType.Application.Json)
-                accept(ContentType.Application.Json)
+            install(plugin = DefaultRequest) {
+                contentType(type = ContentType.Application.Json)
+                accept(contentType = ContentType.Application.Json)
             }
         }
     }

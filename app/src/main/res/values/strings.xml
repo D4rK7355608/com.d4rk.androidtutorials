@@ -20,6 +20,7 @@
     <string name="io_error">An input/output error occurred. Please check your network connection or storage and try again.</string>
     <string name="illegal_argument_error">Invalid input or argument provided. Please check the information and try again.</string>
     <string name="unknown_error">An unknown error occurred.</string>
+    <string name="initialization_error">Initialization failed. Please try again later.</string>
 
     <string name="studio_bot">Studio Bot</string>
     <string name="type_a_message">Type a message…</string>

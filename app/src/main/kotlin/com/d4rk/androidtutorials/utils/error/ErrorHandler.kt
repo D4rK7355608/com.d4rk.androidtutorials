@@ -24,4 +24,22 @@ object ErrorHandler {
             }
         }
     }
+
+    fun handleInitializationFailure(
+        applicationContext : Context ,
+        message : String ,
+        exception : Exception? = null
+    ) {
+        val displayMessage : String = message.ifEmpty { applicationContext.getString(R.string.initialization_error) }
+        exception?.printStackTrace()
+        (applicationContext as? Activity)?.let { activity ->
+            activity.runOnUiThread {
+                Snackbar.make(
+                    activity.findViewById(android.R.id.content) ,
+                    displayMessage ,
+                    Snackbar.LENGTH_LONG
+                ).show()
+            }
+        }
+    }
 }

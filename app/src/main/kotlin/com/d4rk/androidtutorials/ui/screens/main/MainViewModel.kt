@@ -11,7 +11,7 @@ import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material.icons.outlined.Share
 import androidx.lifecycle.viewModelScope
 import com.d4rk.androidtutorials.R
-import com.d4rk.androidtutorials.data.datastore.DataStore
+import com.d4rk.androidtutorials.data.core.AppCoreManager
 import com.d4rk.androidtutorials.data.model.ui.navigation.BottomNavigationScreen
 import com.d4rk.androidtutorials.data.model.ui.navigation.NavigationDrawerItem
 import com.d4rk.androidtutorials.data.model.ui.screens.UiMainScreen
@@ -26,7 +26,10 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
 class MainViewModel(application : Application) : BaseViewModel(application) {
-    private val repository = MainRepository(DataStore(application) , application)
+    private val repository = MainRepository(
+        dataStore = AppCoreManager.dataStore ,
+        application = application
+    )
     private val _uiState : MutableStateFlow<UiMainScreen> = MutableStateFlow(initializeUiState())
     val uiState : StateFlow<UiMainScreen> = _uiState
 

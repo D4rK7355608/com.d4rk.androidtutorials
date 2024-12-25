@@ -19,7 +19,7 @@ android {
         applicationId = "com.d4rk.androidtutorials"
         minSdk = 23
         targetSdk = 35
-        versionCode = 95
+        versionCode = 97
         versionName = "1.1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         resourceConfigurations += listOf(
@@ -60,10 +60,10 @@ android {
     }
 
     buildTypes.forEach { buildType ->
-        val keystoreFile = project.rootProject.file("apikeys.properties")
-        val properties = Properties()
+        val keystoreFile : File = project.rootProject.file("apikeys.properties")
+        val properties : Properties = Properties()
         properties.load(keystoreFile.inputStream())
-        val apiKey = properties.getProperty("API_KEY") ?: ""
+        val apiKey : String = properties.getProperty("API_KEY") ?: ""
 
         with(buildType) {
             multiDexEnabled = true

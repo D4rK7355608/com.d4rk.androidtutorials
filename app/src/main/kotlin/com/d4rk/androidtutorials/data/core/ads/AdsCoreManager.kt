@@ -2,6 +2,7 @@ package com.d4rk.androidtutorials.data.core.ads
 
 import android.app.Activity
 import android.content.Context
+import com.d4rk.androidtutorials.data.core.AppCoreManager
 import com.d4rk.androidtutorials.utils.constants.ads.AdsConstants
 import com.d4rk.androidtutorials.data.datastore.DataStore
 import com.d4rk.androidtutorials.utils.interfaces.OnShowAdCompleteListener
@@ -17,7 +18,7 @@ import java.util.Date
 
 open class AdsCoreManager(protected val context : Context) {
 
-    private lateinit var dataStore : DataStore
+    private var dataStore : DataStore = AppCoreManager.dataStore
     private var appOpenAdManager : AppOpenAdManager? = null
     val isShowingAd : Boolean
         get() = appOpenAdManager?.isShowingAd == true
@@ -28,11 +29,7 @@ open class AdsCoreManager(protected val context : Context) {
     }
 
     fun showAdIfAvailable(activity : Activity) {
-        appOpenAdManager?.showAdIfAvailable(activity)
-    }
-
-    fun setDataStore(dataStore : DataStore) {
-        this.dataStore = dataStore
+        appOpenAdManager?.showAdIfAvailable(activity = activity)
     }
 
     private inner class AppOpenAdManager {
@@ -75,16 +72,21 @@ open class AdsCoreManager(protected val context : Context) {
         }
 
         fun showAdIfAvailable(activity : Activity) {
-            showAdIfAvailable(activity = activity , onShowAdCompleteListener = object : OnShowAdCompleteListener {
-                override fun onShowAdComplete() {
-                }
-            })
+            showAdIfAvailable(
+                activity = activity ,
+                onShowAdCompleteListener = object : OnShowAdCompleteListener {
+                    override fun onShowAdComplete() {
+                    }
+                })
         }
 
         fun showAdIfAvailable(
             activity : Activity , onShowAdCompleteListener : OnShowAdCompleteListener
         ) {
-            val isAdsChecked : Boolean = runBlocking { dataStore.ads.first() }
+            val isAdsChecked : Boolean = runBlocking {
+                dataStore.ads.first()
+            }
+
             if (isShowingAd || ! isAdsChecked) {
                 return
             }

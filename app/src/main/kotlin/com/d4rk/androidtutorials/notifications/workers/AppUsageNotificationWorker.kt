@@ -9,7 +9,7 @@ import androidx.core.app.NotificationCompat
 import androidx.work.Worker
 import androidx.work.WorkerParameters
 import com.d4rk.androidtutorials.R
-import com.d4rk.androidtutorials.data.datastore.DataStore
+import com.d4rk.androidtutorials.data.core.AppCoreManager
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 
@@ -25,7 +25,7 @@ import kotlinx.coroutines.runBlocking
  */
 class AppUsageNotificationWorker(context : Context , workerParams : WorkerParameters) :
     Worker(context , workerParams) {
-    private val dataStore = DataStore.getInstance(context = context)
+    private val dataStore = AppCoreManager.dataStore
     private val appUsageChannelId = "app_usage_channel"
     private val appUsageNotificationId = 0
 

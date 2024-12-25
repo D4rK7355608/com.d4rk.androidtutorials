@@ -23,6 +23,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.core.os.LocaleListCompat
 import com.d4rk.androidtutorials.R
+import com.d4rk.androidtutorials.data.core.AppCoreManager
 import com.d4rk.androidtutorials.data.datastore.DataStore
 import com.d4rk.androidtutorials.ui.components.preferences.PreferenceCategoryItem
 import com.d4rk.androidtutorials.ui.components.preferences.PreferenceItem
@@ -40,7 +41,7 @@ import kotlinx.coroutines.launch
 @Composable
 fun DisplaySettingsComposable(activity : DisplaySettingsActivity) {
     val context : Context = LocalContext.current
-    val dataStore : DataStore = DataStore.getInstance(context = context)
+    val dataStore : DataStore = AppCoreManager.dataStore
     var showLanguageDialog : Boolean by remember { mutableStateOf(value = false) }
     var showStartupDialog : Boolean by remember { mutableStateOf(value = false) }
     val themeMode : String = dataStore.themeMode.collectAsState(initial = "follow_system").value

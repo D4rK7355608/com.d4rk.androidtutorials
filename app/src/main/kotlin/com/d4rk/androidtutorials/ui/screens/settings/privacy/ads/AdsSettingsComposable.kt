@@ -30,6 +30,7 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import com.d4rk.androidtutorials.BuildConfig
 import com.d4rk.androidtutorials.R
+import com.d4rk.androidtutorials.data.core.AppCoreManager
 import com.d4rk.androidtutorials.data.datastore.DataStore
 import com.d4rk.androidtutorials.ui.components.preferences.PreferenceItem
 import com.d4rk.androidtutorials.ui.components.preferences.SwitchCardComposable
@@ -46,7 +47,7 @@ import kotlinx.coroutines.launch
 @Composable
 fun AdsSettingsComposable(activity : AdsSettingsActivity) {
     val context : Context = LocalContext.current
-    val dataStore : DataStore = DataStore.getInstance(context = context)
+    val dataStore : DataStore = AppCoreManager.dataStore
     val switchState : State<Boolean> = dataStore.ads.collectAsState(initial = ! BuildConfig.DEBUG)
     val scope : CoroutineScope = rememberCoroutineScope()
     TopAppBarScaffoldWithBackButton(

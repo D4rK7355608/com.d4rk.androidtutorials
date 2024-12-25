@@ -16,7 +16,6 @@ import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.tasks.await
-import com.d4rk.androidtutorials.data.datastore.DataStore.Companion as DataStore1
 
 /**
  * Abstract base class for repository implementations related to main application functionality.
@@ -25,7 +24,7 @@ import com.d4rk.androidtutorials.data.datastore.DataStore.Companion as DataStore
  *
  * @property application The application context.
  */
-abstract class MainRepositoryImplementation(val application : Application) {
+abstract class MainRepositoryImplementation(val application : Application, val dataStore : DataStore) {
 
     /**
      * Checks if the application is being launched for the first time.
@@ -35,7 +34,6 @@ abstract class MainRepositoryImplementation(val application : Application) {
      * @return `true` if it's the first launch, `false` otherwise.
      */
     suspend fun checkStartupImplementation() : Boolean {
-        val dataStore : DataStore = DataStore1.getInstance(application)
         val isFirstTime : Boolean = dataStore.startup.first()
         if (isFirstTime) {
             dataStore.saveStartup(isFirstTime = false)

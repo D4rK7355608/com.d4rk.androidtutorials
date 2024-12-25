@@ -1,27 +1,18 @@
 package com.d4rk.androidtutorials.ui.screens.main
 
-import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.view.View
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.DrawerState
-import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.rememberDrawerState
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalView
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import androidx.navigation.NavHostController
-import androidx.navigation.compose.rememberNavController
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.data.core.AppCoreManager
 import com.d4rk.androidtutorials.data.datastore.DataStore
@@ -54,20 +45,7 @@ class MainActivity : AppCompatActivity() {
                 Surface(
                     modifier = Modifier.fillMaxSize() , color = MaterialTheme.colorScheme.background
                 ) {
-                    val drawerState : DrawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
-                    val navController : NavHostController = rememberNavController()
-                    val context : Context = LocalContext.current
-                    val view : View = LocalView.current
-                    val dataStore : DataStore = DataStore.getInstance(context = context)
-
-                    MainScreen(
-                        navController = navController ,
-                        dataStore = dataStore ,
-                        view = view ,
-                        context = context ,
-                        drawerState = drawerState ,
-                        viewModel = viewModel
-                    )
+                    MainScreen(viewModel = viewModel)
                 }
             }
         }
@@ -136,7 +114,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initializeActivityComponents() {
         MobileAds.initialize(this@MainActivity)
-        dataStore = DataStore.getInstance(context = this@MainActivity)
+        dataStore = AppCoreManager.dataStore
         appUpdateManager = AppUpdateManagerFactory.create(this@MainActivity)
         appUpdateNotificationsManager = AppUpdateNotificationsManager(context = this)
     }
