@@ -1,3 +1,7 @@
+# Version 1.1.1:
+
+- **Patch**: Addressed several crashes that were occurring during app startup.
+
 # Version 1.1.0:
 
 - **New**: Implemented a "No Lessons Found" message to provide user guidance.

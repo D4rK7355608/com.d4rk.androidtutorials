@@ -15,7 +15,6 @@ import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.data.core.AppCoreManager
-import com.d4rk.androidtutorials.data.datastore.DataStore
 import com.d4rk.androidtutorials.notifications.managers.AppUpdateNotificationsManager
 import com.d4rk.androidtutorials.ui.screens.settings.display.theme.style.AppTheme
 import com.google.android.gms.ads.MobileAds
@@ -26,7 +25,6 @@ import com.google.android.play.core.appupdate.AppUpdateManagerFactory
 import com.google.android.play.core.install.model.ActivityResult
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var dataStore : DataStore
     private val viewModel : MainViewModel by viewModels()
     private lateinit var appUpdateManager : AppUpdateManager
     private lateinit var appUpdateNotificationsManager : AppUpdateNotificationsManager
@@ -114,7 +112,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun initializeActivityComponents() {
         MobileAds.initialize(this@MainActivity)
-        dataStore = AppCoreManager.dataStore
         appUpdateManager = AppUpdateManagerFactory.create(this@MainActivity)
         appUpdateNotificationsManager = AppUpdateNotificationsManager(context = this)
     }

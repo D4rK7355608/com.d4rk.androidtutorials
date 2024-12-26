@@ -18,15 +18,18 @@ import com.d4rk.androidtutorials.data.core.datastore.DataStoreCoreManager
 import com.d4rk.androidtutorials.data.database.AppDatabase
 import com.d4rk.androidtutorials.data.database.MIGRATION_1_2
 import com.d4rk.androidtutorials.data.datastore.DataStore
-import com.d4rk.androidtutorials.utils.constants.core.AppInitializationStages
 import com.d4rk.androidtutorials.utils.error.ErrorHandler.handleInitializationFailure
 import io.ktor.client.HttpClient
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
+import kotlinx.coroutines.awaitAll
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
-class AppCoreManager : MultiDexApplication() , Application.ActivityLifecycleCallbacks , LifecycleObserver {
+class AppCoreManager : MultiDexApplication() , Application.ActivityLifecycleCallbacks ,
+    LifecycleObserver {
 
     private val dataStoreCoreManager by lazy {
         DataStoreCoreManager(context = this)
@@ -48,17 +51,30 @@ class AppCoreManager : MultiDexApplication() , Application.ActivityLifecycleCall
         }
     }
 
-    private suspend fun initializeApp() {
-        initializeKtorClient()
+    private suspend fun initializeApp() = coroutineScope {
+        val ktor = async { initializeKtorClient() }
+        val dataBase = async { initializeDatabase() }
+        val dataStore = async { initializeDataStore() }
+
+        ktor.await()
+        dataBase.await()
+        dataStore.await()
+
+        adsCoreManager.initializeAds()
+
+        initializeAds()
+        finalizeInitialization()
     }
 
     private suspend fun initializeKtorClient() {
         runCatching {
-            ktorClient = withContext(context = Dispatchers.IO) {
-                KtorClient().createClient()
+            coroutineScope {
+                val tasks : List<Deferred<Unit>> =
+                        listOf(element = async(context = Dispatchers.IO) {
+                            ktorClient = KtorClient().createClient()
+                        })
+                tasks.awaitAll()
             }
-        }.onSuccess {
-            proceedToNextStage(stage = AppInitializationStages.DATABASE)
         }.onFailure {
             handleInitializationFailure(
                 message = "Ktor client initialization failed" ,
@@ -70,16 +86,11 @@ class AppCoreManager : MultiDexApplication() , Application.ActivityLifecycleCall
 
     private suspend fun initializeDatabase() {
         runCatching {
-            withContext(context = Dispatchers.IO) {
-                database = Room.databaseBuilder(
-                    context = this@AppCoreManager ,
-                    klass = AppDatabase::class.java ,
-                    name = "Android Studio Tutorials"
-                ).addMigrations(MIGRATION_1_2).fallbackToDestructiveMigration()
-                        .fallbackToDestructiveMigrationOnDowngrade().build()
-            }
-        }.onSuccess {
-            proceedToNextStage(stage = AppInitializationStages.DATA_STORE)
+            database = Room.databaseBuilder(
+                context = this@AppCoreManager ,
+                klass = AppDatabase::class.java ,
+                name = "Android Studio Tutorials"
+            ).addMigrations(MIGRATION_1_2).fallbackToDestructiveMigration().fallbackToDestructiveMigrationOnDowngrade().build()
         }.onFailure {
             handleDatabaseError(exception = it as Exception)
         }
@@ -87,12 +98,8 @@ class AppCoreManager : MultiDexApplication() , Application.ActivityLifecycleCall
 
     private suspend fun initializeDataStore() {
         runCatching {
-            withContext(context = Dispatchers.IO) {
-                dataStore = DataStore.getInstance(context = this@AppCoreManager)
-                dataStoreCoreManager.initializeDataStore()
-            }
-        }.onSuccess {
-            proceedToNextStage(stage = AppInitializationStages.ADS)
+            dataStore = DataStore.getInstance(context = this@AppCoreManager)
+            dataStoreCoreManager.initializeDataStore()
         }.onFailure {
             handleInitializationFailure(
                 message = "DataStore initialization failed" ,
@@ -102,13 +109,9 @@ class AppCoreManager : MultiDexApplication() , Application.ActivityLifecycleCall
         }
     }
 
-    private suspend fun initializeAds() {
+    private fun initializeAds() {
         runCatching {
-            withContext(context = Dispatchers.IO) {
-                adsCoreManager.initializeAds()
-            }
-        }.onSuccess {
-            proceedToNextStage(stage = AppInitializationStages.FINALIZATION)
+            adsCoreManager.initializeAds()
         }.onFailure {
             handleInitializationFailure(
                 message = "Ads initialization failed" ,
@@ -121,19 +124,6 @@ class AppCoreManager : MultiDexApplication() , Application.ActivityLifecycleCall
     private fun finalizeInitialization() {
         markAppAsLoaded()
     }
-
-    private suspend fun proceedToNextStage(stage : AppInitializationStages) {
-        currentStage = stage
-        when (stage) {
-            AppInitializationStages.DATABASE -> initializeDatabase()
-            AppInitializationStages.DATA_STORE -> initializeDataStore()
-            AppInitializationStages.ADS -> initializeAds()
-            AppInitializationStages.FINALIZATION -> finalizeInitialization()
-            AppInitializationStages.KTOR_CLIENT -> { /*Initialization done in a separate step*/
-            }
-        }
-    }
-
 
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
     fun onMoveToForeground() {
@@ -189,9 +179,6 @@ class AppCoreManager : MultiDexApplication() , Application.ActivityLifecycleCall
             private set
 
         lateinit var ktorClient : HttpClient
-            private set
-
-        var currentStage : AppInitializationStages = AppInitializationStages.KTOR_CLIENT
             private set
 
         var isAppLoaded : Boolean = false
