@@ -12,10 +12,9 @@ import kotlinx.coroutines.flow.firstOrNull
 
 open class DataStoreCoreManager(protected val context : Context) {
 
-    var isDataStoreLoaded : Boolean = false
     var dataStore : DataStore = AppCoreManager.dataStore
 
-    suspend fun initializeDataStore() : Boolean = coroutineScope {
+    suspend fun initializeDataStore() = coroutineScope {
 
         listOf(async {
             dataStore.getStartupPage().firstOrNull() ?: BottomBarRoutes.HOME
@@ -40,8 +39,5 @@ open class DataStoreCoreManager(protected val context : Context) {
         } , async {
             dataStore.usageAndDiagnostics.firstOrNull() ?: ! BuildConfig.DEBUG
         }).awaitAll()
-
-        isDataStoreLoaded = true
-        return@coroutineScope this@DataStoreCoreManager.isDataStoreLoaded
     }
 }

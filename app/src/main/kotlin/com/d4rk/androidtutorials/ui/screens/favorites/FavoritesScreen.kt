@@ -5,6 +5,7 @@ import androidx.compose.animation.core.Transition
 import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.updateTransition
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.ErrorOutline
 import androidx.compose.material.icons.outlined.HeartBroken
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -41,21 +42,29 @@ fun FavoritesScreen() {
                          onDismiss = { viewModel.dismissErrorDialog() })
     }
 
-    if (isLoading) {
-        LoadingScreen(progressAlpha)
-    }
-    else {
-        favoriteLessons.firstOrNull()?.lessons?.let { lessonList ->
-            if (lessonList.isEmpty()) {
-                NoLessonsScreen(
-                    text = R.string.no_favorite_lessons_found , icon = Icons.Outlined.HeartBroken
+    when {
+        isLoading -> {
+            LoadingScreen(progressAlpha)
+        }
+
+        else -> {
+            when (val lessons = favoriteLessons.firstOrNull()?.lessons) {
+                null -> NoLessonsScreen(
+                    text = R.string.error_loading_favorites,
+                    icon = Icons.Outlined.ErrorOutline
+                )
+
+                emptyList<UiHomeScreen>() -> NoLessonsScreen(
+                    text = R.string.no_favorite_lessons_found,
+                    icon = Icons.Outlined.HeartBroken
+                )
+
+                else -> LessonListLayout(
+                    lessons = lessons,
+                    context = context,
+                    visibilityStates = visibilityStates
                 )
             }
-            else {
-                LessonListLayout(
-                    lessons = lessonList , context = context , visibilityStates = visibilityStates
-                )
-            }
-        } ?: NoLessonsScreen()
+        }
     }
 }

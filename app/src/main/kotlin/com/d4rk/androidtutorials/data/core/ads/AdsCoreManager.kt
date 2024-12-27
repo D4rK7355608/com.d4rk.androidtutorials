@@ -44,21 +44,18 @@ open class AdsCoreManager(protected val context : Context) {
             }
             isLoadingAd = true
             val request : AdRequest = AdRequest.Builder().build()
-            @Suppress("DEPRECATION") AppOpenAd.load(context ,
-                                                    AdsConstants.APP_OPEN_UNIT_ID ,
-                                                    request ,
-                                                    AppOpenAd.APP_OPEN_AD_ORIENTATION_PORTRAIT ,
-                                                    object : AppOpenAd.AppOpenAdLoadCallback() {
-                                                        override fun onAdLoaded(ad : AppOpenAd) {
-                                                            appOpenAd = ad
-                                                            isLoadingAd = false
-                                                            loadTime = Date().time
-                                                        }
+            @Suppress("DEPRECATION")
+            AppOpenAd.load(context , AdsConstants.APP_OPEN_UNIT_ID , request , AppOpenAd.APP_OPEN_AD_ORIENTATION_PORTRAIT , object : AppOpenAd.AppOpenAdLoadCallback() {
+                override fun onAdLoaded(ad : AppOpenAd) {
+                    appOpenAd = ad
+                    isLoadingAd = false
+                    loadTime = Date().time
+                }
 
-                                                        override fun onAdFailedToLoad(loadAdError : LoadAdError) {
-                                                            isLoadingAd = false
-                                                        }
-                                                    })
+                override fun onAdFailedToLoad(loadAdError : LoadAdError) {
+                    isLoadingAd = false
+                }
+            })
         }
 
         private fun wasLoadTimeLessThanNHoursAgo() : Boolean {
@@ -77,7 +74,8 @@ open class AdsCoreManager(protected val context : Context) {
                 onShowAdCompleteListener = object : OnShowAdCompleteListener {
                     override fun onShowAdComplete() {
                     }
-                })
+                }
+            )
         }
 
         fun showAdIfAvailable(

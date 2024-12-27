@@ -23,7 +23,7 @@ import com.d4rk.androidtutorials.R
 
 @Composable
 fun NoLessonsScreen(
-    text : Int = R.string.lesson_not_found ,
+    text : Int = R.string.no_lessons_found ,
     icon : ImageVector = Icons.Default.Info ,
     iconDescription : String = "No lessons icon"
 ) {

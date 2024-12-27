@@ -39,15 +39,21 @@ fun HomeScreen() {
 
     val visibilityStates : List<Boolean> by viewModel.visibilityStates.collectAsState()
 
-    if (isLoading) {
-        LoadingScreen(progressAlpha = progressAlpha)
-    }
-    else {
-        println("Android Log -> lessons found: ${lessons.size}")
-        lessons.firstOrNull()?.lessons?.let { lessonList ->
+    when {
+        isLoading -> {
+            LoadingScreen(progressAlpha = progressAlpha)
+        }
+
+        lessons.firstOrNull()?.lessons?.isNotEmpty() == true -> {
             LessonListLayout(
-                lessons = lessonList , context = context , visibilityStates = visibilityStates
+                lessons = lessons.first().lessons ,
+                context = context ,
+                visibilityStates = visibilityStates
             )
-        } ?: NoLessonsScreen()
+        }
+
+        else -> {
+            NoLessonsScreen()
+        }
     }
 }

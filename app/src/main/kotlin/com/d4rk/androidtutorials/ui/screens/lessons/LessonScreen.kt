@@ -22,7 +22,7 @@ fun LessonScreen(
     activity : LessonActivity ,
     viewModel : LessonViewModel ,
 ) {
-    val dataStore : DataStore =  AppCoreManager.dataStore
+    val dataStore : DataStore = AppCoreManager.dataStore
     val uiErrorModel : UiErrorModel by viewModel.uiErrorModel.collectAsState()
     val isLoading : Boolean by viewModel.isLoading.collectAsState()
     val scrollState = rememberScrollState()
@@ -37,19 +37,21 @@ fun LessonScreen(
                          onDismiss = { viewModel.dismissErrorDialog() })
     }
 
-    TopAppBarScaffoldWithBackButton(
-        title = lesson.lessonTitle ,
-        onBackClicked = { activity.finish() }) { paddingValues ->
-        if (isLoading) {
-            LoadingScreen(progressAlpha = progressAlpha)
-        }
-        else {
-            LessonContentLayout(
-                dataStore = dataStore ,
-                lesson = lesson ,
-                paddingValues = paddingValues ,
-                scrollState = scrollState ,
-            )
+    TopAppBarScaffoldWithBackButton(title = lesson.lessonTitle ,
+                                    onBackClicked = { activity.finish() }) { paddingValues ->
+        when {
+            isLoading -> {
+                LoadingScreen(progressAlpha = progressAlpha)
+            }
+
+            else -> {
+                LessonContentLayout(
+                    dataStore = dataStore ,
+                    lesson = lesson ,
+                    paddingValues = paddingValues ,
+                    scrollState = scrollState ,
+                )
+            }
         }
     }
 }

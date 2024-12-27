@@ -5,18 +5,22 @@ package com.d4rk.androidtutorials.data.core
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.Application
+import android.database.sqlite.SQLiteException
 import android.os.Bundle
+import android.util.Log
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 import androidx.lifecycle.ProcessLifecycleOwner
 import androidx.multidex.MultiDexApplication
 import androidx.room.Room
+import androidx.room.migration.Migration
 import com.d4rk.androidtutorials.data.client.KtorClient
 import com.d4rk.androidtutorials.data.core.ads.AdsCoreManager
 import com.d4rk.androidtutorials.data.core.datastore.DataStoreCoreManager
 import com.d4rk.androidtutorials.data.database.AppDatabase
-import com.d4rk.androidtutorials.data.database.MIGRATION_1_2
+import com.d4rk.androidtutorials.data.database.migrations.MIGRATION_1_2
+import com.d4rk.androidtutorials.data.database.migrations.MIGRATION_2_3
 import com.d4rk.androidtutorials.data.datastore.DataStore
 import com.d4rk.androidtutorials.utils.error.ErrorHandler.handleInitializationFailure
 import io.ktor.client.HttpClient
@@ -27,6 +31,7 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.supervisorScope
 
 class AppCoreManager : MultiDexApplication() , Application.ActivityLifecycleCallbacks ,
     LifecycleObserver {
@@ -51,7 +56,7 @@ class AppCoreManager : MultiDexApplication() , Application.ActivityLifecycleCall
         }
     }
 
-    private suspend fun initializeApp() = coroutineScope {
+    private suspend fun initializeApp() = supervisorScope  {
         val ktor = async { initializeKtorClient() }
         val dataBase = async { initializeDatabase() }
         val dataStore = async { initializeDataStore() }
@@ -87,13 +92,26 @@ class AppCoreManager : MultiDexApplication() , Application.ActivityLifecycleCall
     private suspend fun initializeDatabase() {
         runCatching {
             database = Room.databaseBuilder(
-                context = this@AppCoreManager ,
-                klass = AppDatabase::class.java ,
+                context = this@AppCoreManager,
+                klass = AppDatabase::class.java,
                 name = "Android Studio Tutorials"
-            ).addMigrations(MIGRATION_1_2).fallbackToDestructiveMigration().fallbackToDestructiveMigrationOnDowngrade().build()
+            )
+                    .addMigrations(migrations = getMigrations())
+                    .fallbackToDestructiveMigration()
+                    .fallbackToDestructiveMigrationOnDowngrade()
+                    .build()
+
+            database.openHelper.writableDatabase
         }.onFailure {
             handleDatabaseError(exception = it as Exception)
         }
+    }
+
+    private fun getMigrations() : Array<Migration> {
+        return arrayOf(
+            MIGRATION_1_2 ,
+            MIGRATION_2_3 ,
+        )
     }
 
     private suspend fun initializeDataStore() {
@@ -131,9 +149,9 @@ class AppCoreManager : MultiDexApplication() , Application.ActivityLifecycleCall
     }
 
     private suspend fun handleDatabaseError(exception : Exception) {
-        (exception as? IllegalStateException)
-                ?.takeIf { it.message?.contains("Migration failed") == true }
-                ?.let { eraseDatabase() }
+        if (exception is SQLiteException || (exception is IllegalStateException && exception.message?.contains(other = "Migration failed") == true)) {
+            eraseDatabase()
+        }
     }
 
     private suspend fun eraseDatabase() {
@@ -141,7 +159,13 @@ class AppCoreManager : MultiDexApplication() , Application.ActivityLifecycleCall
             deleteDatabase("Android Studio Tutorials")
         }.onSuccess {
             initializeDatabase()
+        }.onFailure {
+            logDatabaseError(exception = it as Exception)
         }
+    }
+
+    private fun logDatabaseError(exception : Exception) {
+        Log.e("AppCoreManager" , "Database error: ${exception.message}" , exception)
     }
 
     private fun markAppAsLoaded() {

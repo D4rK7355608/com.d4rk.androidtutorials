@@ -82,60 +82,63 @@ fun StudioBotScreen() {
     var userInput by remember { mutableStateOf(value = "") }
     val chatHistory = viewModel.chatHistory.collectAsState()
 
-    if (isLoading) {
-        LoadingScreen(progressAlpha = progressAlpha)
-    }
-    else {
-        Column(
-            modifier = Modifier
-                    .fillMaxSize()
-                    .imePadding()
-        ) {
-            Box(modifier = Modifier.weight(weight = 1f)) {
-                ChatHistory(messages = chatHistory.value)
-            }
-            Row(
-                modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(all = 16.dp) ,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
+    when {
+        isLoading -> {
+            LoadingScreen(progressAlpha = progressAlpha)
+        }
 
-                OutlinedTextField(value = userInput ,
-                                  singleLine = true ,
-                                  onValueChange = { input ->
-                                      userInput = input.replaceFirstChar { char ->
-                                          if (char.isLowerCase()) char.titlecase() else char.toString()
-                                      }
-                                  } ,
-                                  modifier = Modifier
-                                          .fillMaxWidth()
-                                          .weight(weight = 1f)
-                                          .padding(end = 8.dp) ,
-                                  shape = CircleShape ,
-                                  placeholder = { Text(text = stringResource(id = R.string.type_a_message)) } ,
-                                  keyboardOptions = KeyboardOptions(
-                                      capitalization = KeyboardCapitalization.Sentences ,
-                                      autoCorrectEnabled = true ,
-                                      imeAction = ImeAction.Send
-                                  ) ,
-                                  keyboardActions = KeyboardActions(onSend = {
-                                      viewModel.sendMessage(message = userInput)
-                                      userInput = ""
-                                  })
-                )
-                IconButton(enabled = userInput.isNotBlank() , onClick = {
-                    if (userInput.isNotBlank()) {
-                        viewModel.sendMessage(message = userInput)
-                        userInput = ""
-                    }
-                } , modifier = Modifier
-                        .size(size = 56.dp)
-                        .bounceClick()) {
-                    Icon(
-                        imageVector = Icons.AutoMirrored.Outlined.Send ,
-                        contentDescription = "Send" ,
+        else -> {
+            Column(
+                modifier = Modifier
+                        .fillMaxSize()
+                        .imePadding()
+            ) {
+                Box(modifier = Modifier.weight(weight = 1f)) {
+                    ChatHistory(messages = chatHistory.value)
+                }
+                Row(
+                    modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(all = 16.dp) ,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+
+                    OutlinedTextField(value = userInput ,
+                                      singleLine = true ,
+                                      onValueChange = { input ->
+                                          userInput = input.replaceFirstChar { char ->
+                                              if (char.isLowerCase()) char.titlecase() else char.toString()
+                                          }
+                                      } ,
+                                      modifier = Modifier
+                                              .fillMaxWidth()
+                                              .weight(weight = 1f)
+                                              .padding(end = 8.dp) ,
+                                      shape = CircleShape ,
+                                      placeholder = { Text(text = stringResource(id = R.string.type_a_message)) } ,
+                                      keyboardOptions = KeyboardOptions(
+                                          capitalization = KeyboardCapitalization.Sentences ,
+                                          autoCorrectEnabled = true ,
+                                          imeAction = ImeAction.Send
+                                      ) ,
+                                      keyboardActions = KeyboardActions(onSend = {
+                                          viewModel.sendMessage(message = userInput)
+                                          userInput = ""
+                                      })
                     )
+                    IconButton(enabled = userInput.isNotBlank() , onClick = {
+                        if (userInput.isNotBlank()) {
+                            viewModel.sendMessage(message = userInput)
+                            userInput = ""
+                        }
+                    } , modifier = Modifier
+                            .size(size = 56.dp)
+                            .bounceClick()) {
+                        Icon(
+                            imageVector = Icons.AutoMirrored.Outlined.Send ,
+                            contentDescription = "Send" ,
+                        )
+                    }
                 }
             }
         }
