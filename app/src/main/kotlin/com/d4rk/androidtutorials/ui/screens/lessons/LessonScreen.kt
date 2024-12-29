@@ -7,14 +7,12 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import com.d4rk.androidtutorials.data.core.AppCoreManager
-import com.d4rk.androidtutorials.data.datastore.DataStore
 import com.d4rk.androidtutorials.data.model.ui.error.UiErrorModel
 import com.d4rk.androidtutorials.data.model.ui.screens.UiLessonScreen
 import com.d4rk.androidtutorials.ui.components.dialogs.ErrorAlertDialog
 import com.d4rk.androidtutorials.ui.components.layouts.LessonContentLayout
-import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffoldWithBackButton
 import com.d4rk.androidtutorials.ui.components.layouts.LoadingScreen
+import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffoldWithBackButton
 
 @Composable
 fun LessonScreen(
@@ -22,7 +20,6 @@ fun LessonScreen(
     activity : LessonActivity ,
     viewModel : LessonViewModel ,
 ) {
-    val dataStore : DataStore = AppCoreManager.dataStore
     val uiErrorModel : UiErrorModel by viewModel.uiErrorModel.collectAsState()
     val isLoading : Boolean by viewModel.isLoading.collectAsState()
     val scrollState = rememberScrollState()
@@ -46,7 +43,6 @@ fun LessonScreen(
 
             else -> {
                 LessonContentLayout(
-                    dataStore = dataStore ,
                     lesson = lesson ,
                     paddingValues = paddingValues ,
                     scrollState = scrollState ,

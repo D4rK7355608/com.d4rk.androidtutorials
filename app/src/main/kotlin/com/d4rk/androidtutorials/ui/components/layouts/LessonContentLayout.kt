@@ -43,19 +43,18 @@ import coil3.ImageLoader
 import coil3.compose.AsyncImage
 import coil3.gif.AnimatedImageDecoder
 import coil3.gif.GifDecoder
-import com.d4rk.androidtutorials.utils.constants.ui.lessons.LessonCodeConstants
-import com.d4rk.androidtutorials.utils.constants.ui.lessons.LessonContentTypes
-import com.d4rk.androidtutorials.data.datastore.DataStore
 import com.d4rk.androidtutorials.data.model.ui.screens.UiLessonScreen
-import com.d4rk.androidtutorials.ui.components.spacers.ButtonHorizontalSpacer
 import com.d4rk.androidtutorials.ui.components.ads.AdBanner
 import com.d4rk.androidtutorials.ui.components.ads.AdBannerFull
 import com.d4rk.androidtutorials.ui.components.ads.LargeBannerAdsComposable
 import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick
+import com.d4rk.androidtutorials.ui.components.spacers.ButtonHorizontalSpacer
 import com.d4rk.androidtutorials.ui.components.spacers.LargeVerticalSpacer
 import com.d4rk.androidtutorials.ui.components.spacers.SmallVerticalSpacer
 import com.d4rk.androidtutorials.ui.screens.settings.display.theme.style.Colors
 import com.d4rk.androidtutorials.ui.screens.settings.display.theme.style.TextStyles
+import com.d4rk.androidtutorials.utils.constants.ui.lessons.LessonCodeConstants
+import com.d4rk.androidtutorials.utils.constants.ui.lessons.LessonContentTypes
 import com.d4rk.androidtutorials.utils.helpers.ClipboardHelper
 import com.wakaztahir.codeeditor.highlight.model.CodeLang
 import com.wakaztahir.codeeditor.highlight.prettify.PrettifyParser
@@ -67,7 +66,6 @@ import com.wakaztahir.codeeditor.highlight.utils.parseCodeAsAnnotatedString
 fun LessonContentLayout(
     paddingValues : PaddingValues ,
     scrollState : ScrollState ,
-    dataStore : DataStore ,
     lesson : UiLessonScreen ,
 ) {
     Column(
@@ -108,15 +106,15 @@ fun LessonContentLayout(
                 }
 
                 LessonContentTypes.AD_BANNER -> {
-                    AdBanner(dataStore = dataStore)
+                    AdBanner()
                 }
 
                 LessonContentTypes.AD_BANNER_FULL -> {
-                    AdBannerFull(dataStore = dataStore)
+                    AdBannerFull()
                 }
 
                 LessonContentTypes.AD_LARGE_BANNER -> {
-                    LargeBannerAdsComposable(dataStore = dataStore)
+                    LargeBannerAdsComposable()
                 }
 
                 else -> {

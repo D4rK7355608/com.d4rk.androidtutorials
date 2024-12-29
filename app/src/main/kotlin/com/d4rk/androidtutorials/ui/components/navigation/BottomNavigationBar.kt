@@ -35,12 +35,11 @@ fun BottomNavigationBar(
 ) {
     val uiState : UiMainScreen by viewModel.uiState.collectAsState()
     val bottomBarItems : List<BottomNavigationScreen> = uiState.bottomNavigationItems
-    val showLabels : Boolean =
-            dataStore.getShowBottomBarLabels().collectAsState(initial = true).value
+    val showLabels : Boolean = dataStore.getShowBottomBarLabels().collectAsState(initial = true).value
 
     Column {
         AdBannerFull(
-            modifier = Modifier.fillMaxWidth() , dataStore = dataStore
+            modifier = Modifier.fillMaxWidth()
         )
         NavigationBar {
             val navBackStackEntry : NavBackStackEntry? by navController.currentBackStackEntryAsState()

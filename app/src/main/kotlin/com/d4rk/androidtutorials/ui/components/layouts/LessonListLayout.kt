@@ -30,6 +30,8 @@ import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
@@ -38,7 +40,11 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil3.compose.AsyncImage
+import com.d4rk.androidtutorials.data.core.AppCoreManager
 import com.d4rk.androidtutorials.data.model.ui.screens.UiHomeLesson
+import com.d4rk.androidtutorials.ui.components.ads.AdBanner
+import com.d4rk.androidtutorials.ui.components.ads.AdBannerFull
+import com.d4rk.androidtutorials.ui.components.ads.LargeBannerAdsComposable
 import com.d4rk.androidtutorials.ui.components.modifiers.animateVisibility
 import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick
 import com.d4rk.androidtutorials.ui.components.navigation.openLessonDetailActivity
@@ -50,18 +56,30 @@ import com.d4rk.androidtutorials.utils.constants.ui.lessons.LessonConstants
 
 @Composable
 fun LessonListLayout(
-    lessons : List<UiHomeLesson> , visibilityStates : List<Boolean> , context : Context
+    lessons: List<UiHomeLesson>,
+    visibilityStates: List<Boolean>,
+    context: Context
 ) {
+    val showAds: Boolean by AppCoreManager.dataStore.ads.collectAsState(initial = true)
+
+    val filteredLessons = if (showAds) {
+        lessons
+    } else {
+        lessons.filterNot { lesson ->
+            lesson.lessonType == LessonConstants.TYPE_AD_BANNER || lesson.lessonType == LessonConstants.TYPE_AD_FULL_BANNER || lesson.lessonType == LessonConstants.TYPE_AD_LARGE_BANNER
+        }
+    }
+
     LazyColumn(
-        contentPadding = PaddingValues(all = 16.dp) ,
-        verticalArrangement = Arrangement.spacedBy(space = 16.dp) ,
+        contentPadding = PaddingValues(all = 16.dp),
+        verticalArrangement = Arrangement.spacedBy(space = 16.dp),
         modifier = Modifier.fillMaxSize()
     ) {
-        itemsIndexed(lessons) { index , lesson ->
-            val isVisible = visibilityStates.getOrElse(index = index) { false }
+        itemsIndexed(filteredLessons) { index, lesson ->
+            val isVisible = visibilityStates.getOrElse(index) { false }
             LessonItem(
-                lesson = lesson ,
-                context = context ,
+                lesson = lesson,
+                context = context,
                 modifier = Modifier
                         .animateVisibility(visible = isVisible)
                         .animateItem()
@@ -70,18 +88,17 @@ fun LessonListLayout(
     }
 }
 
+
 @Composable
 fun LessonItem(lesson : UiHomeLesson , context : Context , modifier : Modifier = Modifier) {
     val viewModel : HomeViewModel = viewModel()
+
     Card(
         modifier = modifier.fillMaxWidth()
     ) {
         when (lesson.lessonType) {
             LessonConstants.TYPE_FULL_IMAGE_BANNER -> {
-                FullImageBannerLessonItem(
-                    lesson = lesson , context = context , viewModel = viewModel
-                )
-
+                FullImageBannerLessonItem(lesson = lesson , context = context , viewModel = viewModel)
             }
 
             LessonConstants.TYPE_SQUARE_IMAGE -> {
@@ -90,6 +107,20 @@ fun LessonItem(lesson : UiHomeLesson , context : Context , modifier : Modifier =
                 )
                 SmallHorizontalSpacer()
             }
+        }
+    }
+
+    when (lesson.lessonType) {
+        LessonConstants.TYPE_AD_BANNER -> {
+            AdBanner()
+        }
+
+        LessonConstants.TYPE_AD_FULL_BANNER -> {
+            AdBannerFull()
+        }
+
+        LessonConstants.TYPE_AD_LARGE_BANNER -> {
+            LargeBannerAdsComposable()
         }
     }
 }
@@ -133,7 +164,6 @@ fun FullImageBannerLessonItem(
         }
     }
 }
-
 
 @Composable
 fun SquareImageLessonItem(

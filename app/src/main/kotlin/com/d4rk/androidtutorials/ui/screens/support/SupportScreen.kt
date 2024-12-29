@@ -35,8 +35,6 @@ import com.android.billingclient.api.BillingClient
 import com.android.billingclient.api.BillingClientStateListener
 import com.android.billingclient.api.BillingResult
 import com.d4rk.androidtutorials.R
-import com.d4rk.androidtutorials.data.core.AppCoreManager
-import com.d4rk.androidtutorials.data.datastore.DataStore
 import com.d4rk.androidtutorials.ui.components.ads.LargeBannerAdsComposable
 import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick
 import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffoldWithBackButton
@@ -46,7 +44,6 @@ import com.d4rk.androidtutorials.utils.helpers.IntentsHelper
 fun SupportComposable(viewModel : SupportViewModel , activity : SupportActivity) {
     val context : Context = LocalContext.current
     val view : View = LocalView.current
-    val dataStore : DataStore = AppCoreManager.dataStore
     val billingClient : BillingClient = rememberBillingClient(context , viewModel)
     TopAppBarScaffoldWithBackButton(
         title = stringResource(id = R.string.support_us) ,
@@ -227,7 +224,7 @@ fun SupportComposable(viewModel : SupportViewModel , activity : SupportActivity)
                 }
                 item {
                     LargeBannerAdsComposable(
-                        modifier = Modifier.padding(bottom = 12.dp) , dataStore = dataStore
+                        modifier = Modifier.padding(bottom = 12.dp)
                     )
                 }
             }
