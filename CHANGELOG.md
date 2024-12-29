@@ -1,3 +1,9 @@
+# Version 1.1.2:
+
+- **Minor**: Updated the app to support the latest changes in the API.
+- **Minor**: Updated Gradle dependencies to the latest versions for improved performance and
+  stability.
+
 # Version 1.1.1:
 
 - **Patch**: Addressed several crashes that were occurring during app startup.
