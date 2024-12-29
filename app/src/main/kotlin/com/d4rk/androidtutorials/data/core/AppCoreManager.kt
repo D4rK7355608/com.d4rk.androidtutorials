@@ -57,9 +57,9 @@ class AppCoreManager : MultiDexApplication() , Application.ActivityLifecycleCall
     }
 
     private suspend fun initializeApp() = supervisorScope  {
-        val ktor = async { initializeKtorClient() }
-        val dataBase = async { initializeDatabase() }
-        val dataStore = async { initializeDataStore() }
+        val ktor : Deferred<Unit> = async { initializeKtorClient() }
+        val dataBase : Deferred<Unit> = async { initializeDatabase() }
+        val dataStore : Deferred<Unit> = async { initializeDataStore() }
 
         ktor.await()
         dataBase.await()

@@ -3,7 +3,7 @@ package com.d4rk.androidtutorials.data.database.migrations
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 
-val MIGRATION_1_2 : Migration = object : Migration(1 , 2) {
+val MIGRATION_1_2 : Migration = object : Migration(startVersion = 1 , endVersion = 2) {
     override fun migrate(db : SupportSQLiteDatabase) {
         db.execSQL(
             sql = """
@@ -47,7 +47,7 @@ val MIGRATION_1_2 : Migration = object : Migration(1 , 2) {
     }
 }
 
-val MIGRATION_2_3 : Migration = object : Migration(2 , 3) {
+val MIGRATION_2_3 : Migration = object : Migration(startVersion = 2 , endVersion = 3) {
     override fun migrate(db : SupportSQLiteDatabase) {
         db.execSQL(
             sql = """

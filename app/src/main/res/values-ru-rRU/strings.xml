@@ -1,64 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_short_description">Изучите, как создавать простые приложения в Android Studio.</string>
+    <string name="app_short_description">Узнайте, как создавать простые приложения в Android Studio!</string>
     <string name="notification_update_title">Доступно новое обновление!</string>
     <string name="summary_notification_update">Доступна новая версия приложения. Нажмите для обновления!</string>
-    <string name="notification_last_time_used_title">Прошло много времени!</string>
+    <string name="notification_last_time_used_title">Прошло уже довольно много времени!</string>
     <string name="summary_notification_last_time_used">Давайте освободим немного места! Мы рады, что вы вернулись!</string>
 
     <string name="welcome">Добро пожаловать</string>
-    <string name="summary_browse_terms_of_service_and_privacy_policy">Прочитайте и примите наши Условия обслуживания и Политику конфиденциальности, чтобы продолжить.</string>
-    <string name="agree">Соглашаться</string>
+    <string name="summary_browse_terms_of_service_and_privacy_policy">Прочтите и согласитесь с нашими Условиями использования и Политикой конфиденциальности, чтобы продолжить</string>
+    <string name="agree">Согласен</string>
 
     <string name="navigation_drawer_open">Открыть панель навигации</string>
 
-    <string name="home">Дом</string>
-    <string name="get_the_app_to_watch">Загрузите приложение и посмотрите полный урок: %1$s</string>
-    <string name="activity_not_found">Активность не найдена.</string>
-    <string name="security_error">Произошла ошибка безопасности. Повторите попытку позже.</string>
-    <string name="io_error">Произошла ошибка ввода/вывода. Проверьте сетевое подключение или хранилище и повторите попытку.</string>
-    <string name="illegal_argument_error">Неверный ввод или аргумент. Проверьте информацию и попробуйте еще раз.</string>
+    <string name="home">Главная</string>
+    <string name="get_the_app_to_watch">Получите приложение и посмотрите полный урок: %1$s</string>
+    <string name="no_lessons_found">Уроки не найдены.</string>
+    <string name="activity_not_found">Действие не найдено.</string>
+    <string name="security_error">Произошла ошибка безопасности. Пожалуйста, попробуйте позже.</string>
+    <string name="io_error">Произошла ошибка ввода/вывода. Проверьте подключение к сети или хранилище и повторите попытку.</string>
+    <string name="illegal_argument_error">Предоставлен неверный ввод или аргумент. Проверьте информацию и повторите попытку.</string>
+    <string name="sqlite_error">Произошла ошибка базы данных. Выполните следующие действия:\n\n1. Перезапустите приложение.\n2. Если проблема не устранена, удалите данные приложения из «Настройки» > «Приложения» > «Android Studio Tutorials» > «Хранилище».\n3. Обратитесь в службу поддержки, если проблема не устранена.</string>
     <string name="unknown_error">Произошла неизвестная ошибка.</string>
+    <string name="initialization_error">Не удалось выполнить инициализацию. Пожалуйста, попробуйте позже.</string>
 
-    <string name="studio_bot">Студия Бот</string>
+    <string name="studio_bot">Studio Bot</string>
+    <string name="type_a_message">Введите сообщение…</string>
 
-    <string name="share">Делиться</string>
+    <string name="share">Поделиться</string>
     <string name="app_info">Информация о приложении</string>
 
     <string name="favorites">Избранное</string>
+    <string name="error_loading_favorites">Ошибка при загрузке избранных уроков. Пожалуйста, попробуйте позже.</string>
+    <string name="no_favorite_lessons_found">Избранные уроки не найдены.</string>
 
     <string name="settings">Настройки</string>
 
-    <string name="display">Отображать</string>
-    <string name="summary_preference_settings_display">Персонализируйте внешний вид и работу вашего приложения</string>
+    <string name="display">Дисплей</string>
+    <string name="summary_preference_settings_display">Персонализируйте внешний вид своего приложения</string>
 
-    <string name="appearance">Появление</string>
+    <string name="appearance">Внешний вид</string>
     <string name="dark_theme">Темная тема</string>
-    <string name="will_turn_on_automatically_by_system">Включится автоматически системой</string>
-    <string name="will_never_turn_on_automatically">Никогда не включится автоматически</string>
-    <string name="amoled_mode">AMOLED-режим</string>
-    <string name="follow_system">Следуйте системному режиму</string>
-    <string name="light_mode">Режим света</string>
+    <string name="will_turn_on_automatically_by_system">Будет включаться автоматически системой</string>
+    <string name="will_never_turn_on_automatically">Никогда не будет включаться автоматически</string>
+    <string name="amoled_mode">Режим AMOLED</string>
+    <string name="follow_system">Следовать системному режиму</string>
+    <string name="light_mode">Светлый режим</string>
     <string name="dark_mode">Темный режим</string>
-    <string name="summary_dark_theme">Темная тема использует насыщенный фон, чтобы продлить срок службы батареи.</string>
+    <string name="summary_dark_theme">В темной теме используется темный фон, который помогает дольше сохранять заряд аккумулятора</string>
 
-    <string name="dynamic_colors">Динамичные цвета</string>
-    <string name="summary_preference_settings_dynamic_colors">Применить цвета из обоев к теме приложения</string>
+    <string name="dynamic_colors">Динамические цвета</string>
+    <string name="summary_preference_settings_dynamic_colors">Применить цвета с обоев к теме приложения</string>
 
     <string name="app_behavior">Поведение приложения</string>
-    <string name="bounce_buttons">Щелчок отскока</string>
-    <string name="summary_preference_settings_bounce_buttons">Применяет легкую анимацию подпрыгивания ко всем интерактивным элементам при щелчке</string>
+    <string name="bounce_buttons">Клик с отскоком</string>
+    <string name="summary_preference_settings_bounce_buttons">Применяет тонкую анимацию отскока ко всем элементам, на которые можно нажать, при нажатии</string>
 
     <string name="navigation">Навигация</string>
-    <string name="startup_page">Стартовая страница</string>
+    <string name="startup_page">Начальная страница</string>
     <string name="summary_preference_settings_startup_page">Выберите экран, который будет отображаться при запуске приложения.</string>
-    <string name="dialog_startup_subtitle">Выберите предпочтительную стартовую страницу:</string>
-    <string name="dialog_info_startup">Настраивает начальный экран, отображаемый пользователям при запуске приложения. Этот параметр влияет на первое взаимодействие пользователя с приложением и может быть адаптирован к определенным сегментам пользователей или целям продукта.</string>
+    <string name="dialog_startup_subtitle">Выберите предпочитаемую начальную страницу:</string>
+    <string name="dialog_info_startup">Настраивает начальный экран, который отображается пользователям при запуске приложения. Этот параметр влияет на первое взаимодействие пользователя с приложением и может быть адаптирован к конкретным сегментам пользователей или целям продукта.</string>
 
     <string name="language">Язык</string>
     <string name="summary_preference_settings_language">Изменяет язык, используемый в приложении</string>
     <string name="dialog_language_subtitle">Выберите предпочитаемый язык</string>
-    <string name="dialog_info_language">Персонализируйте свой опыт с помощью предпочитаемого вами языка. Любые изменения языка вступают в силу немедленно, обеспечивая бесперебойный опыт на выбранном вами языке</string>
+    <string name="dialog_info_language">Персонализируйте свой опыт использования предпочитаемого языка. Любые изменения языка вступают в силу немедленно, обеспечивая удобство работы на выбранном языке</string>
 
     <string name="notifications">Уведомления</string>
     <string name="summary_preference_settings_notifications">Управление уведомлениями приложений</string>
@@ -66,115 +72,115 @@
     <string name="app_usage_notifications">Уведомления об использовании приложения</string>
     <string name="update_notifications">Уведомления об обновлениях</string>
 
-    <string name="advanced">Передовой</string>
-    <string name="summary_preference_settings_advanced">Изучите более продвинутые настройки</string>
-    <string name="error_reporting">Сообщение об ошибке</string>
+    <string name="advanced">Расширенные</string>
+    <string name="summary_preference_settings_advanced">Изучите дополнительные настройки</string>
+    <string name="error_reporting">Сообщения об ошибках</string>
     <string name="bug_report">Отчет об ошибке</string>
-    <string name="summary_preference_settings_bug_report">Отправляйте отчеты об ошибках и запросы на функции на страницу проблем репозитория GitHub приложения.</string>
+    <string name="summary_preference_settings_bug_report">Отправляйте отчеты об ошибках и запросы функций на страницу проблем репозитория GitHub приложения</string>
 
     <string name="security_and_privacy">Безопасность и конфиденциальность</string>
-    <string name="summary_preference_settings_privacy_and_security">Управляйте настройками конфиденциальности</string>
+    <string name="summary_preference_settings_privacy_and_security">Управление настройками конфиденциальности</string>
     <string name="privacy">Конфиденциальность</string>
-    <string name="privacy_policy">политика конфиденциальности</string>
-    <string name="summary_preference_settings_privacy_policy">Ознакомьтесь с политикой, регулирующей то, как мы обрабатываем ваши данные.</string>
-    <string name="terms_of_service">Условия обслуживания</string>
-    <string name="summary_preference_settings_terms_of_service">Ознакомьтесь с условиями, с которыми вы соглашаетесь при использовании нашего сервиса.</string>
-    <string name="code_of_conduct">Нормы поведения</string>
-    <string name="summary_preference_settings_code_of_conduct">Понять правила и рекомендации поведения в нашей службе</string>
+    <string name="privacy_policy">Политика конфиденциальности</string>
+    <string name="summary_preference_settings_privacy_policy">Просмотреть политику, регулирующую обработку ваших данных</string>
+    <string name="terms_of_service">Условия использования</string>
+    <string name="summary_preference_settings_terms_of_service">Просмотрите условия, с которыми вы соглашаетесь при использовании нашего сервиса</string>
+    <string name="code_of_conduct">Кодекс поведения</string>
+    <string name="summary_preference_settings_code_of_conduct">Ознакомьтесь с правилами и рекомендациями по поведению в рамках нашего сервиса</string>
 
     <string name="permissions">Разрешения</string>
-    <string name="summary_preference_settings_permissions">Управляйте разрешениями, предоставленными нашему сервису</string>
+    <string name="summary_preference_settings_permissions">Управление разрешениями, предоставленными нашему сервису</string>
     <string name="normal">Нормальный</string>
-    <string name="ad_id">Идентификатор объявления [AD_ID]</string>
-    <string name="summary_preference_permissions_ad_id">Позволяет приложению извлекать и использовать рекламный идентификатор, связанный с устройством пользователя, предоставляя персонализированную рекламу, измеряя эффективность рекламы и показывая рекламу на устройствах Android 13 или более поздних версий.</string>
-    <string name="internet">Интернет [ИНТЕРНЕТ]</string>
-    <string name="summary_preference_permissions_internet">Позволяет приложению устанавливать интернет-соединение для отправки отчетов об ошибках или проверки обновлений.</string>
-    <string name="post_notifications">Уведомления о публикации [POST_NOTIFICATIONS]</string>
+    <string name="ad_id">Идентификатор рекламы [AD_ID]</string>
+    <string name="summary_preference_permissions_ad_id">Позволяет приложению извлекать и использовать идентификатор рекламы, связанный с устройством пользователя, предоставляя персонализированную рекламу, измеряя эффективность рекламы и показывая рекламу на устройствах Android 13 или более поздней версии.</string>
+    <string name="internet">Интернет [INTERNET]</string>
+    <string name="summary_preference_permissions_internet">Позволяет приложению устанавливать интернет-соединение для отправки отчетов об ошибках или проверки наличия обновлений.</string>
+    <string name="post_notifications">Отправлять уведомления [POST_NOTIFICATIONS]</string>
     <string name="summary_preference_permissions_post_notifications">Позволяет приложению отображать уведомления на устройствах с Android 13 или более поздней версии.</string>
-    <string name="runtime">Время выполнения</string>
+    <string name="runtime">Среда выполнения</string>
     <string name="access_network_state">Доступ к состоянию сети [ACCESS_NETWORK_STATE]</string>
     <string name="summary_preference_permissions_access_network_state">Позволяет приложению проверять сетевое подключение и получать информацию о Wi-Fi, включая статус включения и имена подключенных устройств Wi-Fi.</string>
-    <string name="access_notification_policy">Политика уведомлений о доступе [ACCESS_NOTIFICATION_POLICY]</string>
-    <string name="summary_preference_permissions_access_notification_policy">Позволяет приложению получать доступ к политике уведомлений устройства и изменять ее, контролируя, как и когда уведомления отображаются для пользователя, а также предоставляя настраиваемые функции управления уведомлениями.</string>
+    <string name="access_notification_policy">Доступ к политике уведомлений [ACCESS_NOTIFICATION_POLICY]</string>
+    <string name="summary_preference_permissions_access_notification_policy">Позволяет приложению получать доступ к политике уведомлений устройства и изменять ее, контролируя, как и когда уведомления отображаются пользователю, и предоставляя настраиваемые функции управления уведомлениями.</string>
     <string name="billing">Выставление счетов [BILLING]</string>
-    <string name="summary_preference_permissions_billing">Позволяет приложению использовать библиотеку Google Play Billing Library для обработки покупок и пожертвований в приложении.</string>
+    <string name="summary_preference_permissions_billing">Позволяет приложению использовать библиотеку Google Play Billing для обработки покупок и пожертвований в приложении</string>
     <string name="check_license">Проверить лицензию [CHECK_LICENSE]</string>
-    <string name="summary_preference_permissions_check_license">Позволяет приложению проверять свое соответствие лицензионному соглашению и обеспечивать соблюдение условий лицензии для защиты интеллектуальной собственности.</string>
+    <string name="summary_preference_permissions_check_license">Позволяет приложению проверять соблюдение лицензионного соглашения и обеспечивать соблюдение условий лицензирования для защиты интеллектуальной собственности.</string>
     <string name="foreground_service">Служба переднего плана [FOREGROUND_SERVICE]</string>
     <string name="summary_preference_permissions_foreground_service">Позволяет приложению создавать и использовать службы, работающие на переднем плане, предоставляя им приоритет над другими фоновыми процессами и повышая производительность и надежность.</string>
 
     <string name="ads">Реклама</string>
-    <string name="summary_preference_settings_ads">Контролируйте, как мы используем вашу информацию для показа вам релевантной рекламы</string>
+    <string name="summary_preference_settings_ads">Управляйте тем, как мы используем вашу информацию, чтобы показывать вам релевантную рекламу</string>
     <string name="display_ads">Показывать рекламу</string>
     <string name="personalized_ads">Персонализированная реклама</string>
-    <string name="summary_ads_personalized_ads">Выберите, как мы персонализируем рекламу для вас на основе ваших интересов</string>
-    <string name="summary_ads">Смотрите рекламу, которая вам подходит. Управляйте информацией, используемой для показа персонализированной рекламы на основе вашей активности в приложении. Вы всегда можете отключить персонализацию здесь.\n</string>
+    <string name="summary_ads_personalized_ads">Выберите, как мы персонализируем для вас рекламу на основе ваших интересов</string>
+    <string name="summary_ads">Просматривайте рекламу, которая актуальна для вас. Управляйте информацией, используемой для показа персонализированной рекламы на основе вашей активности в приложении. Вы всегда можете отключить персонализацию здесь.\n</string>
 
     <string name="usage_and_diagnostics">Использование и диагностика</string>
-    <string name="summary_preference_settings_usage_and_diagnostics">Поделитесь данными, чтобы помочь улучшить Cleaner для Android</string>
-    <string name="summary_usage_and_diagnostics">Помогите нам улучшить свой опыт, автоматически отправляя нам данные диагностики, использования устройства и приложения. Это поможет улучшить производительность приложения, стабильность и другие улучшения. Некоторые обобщенные данные также помогут нашим приложениям.\n\nЭто общая информация о вашем устройстве и о том, как вы используете наши приложения (например, уровень заряда батареи, активность системы и приложений, а также ошибки). Эти данные будут использоваться для улучшения наших приложений\n\nОтключение этой функции не влияет на способность вашего устройства отправлять информацию, необходимую для основных служб, таких как обновления приложений и безопасность.\n</string>
+    <string name="summary_preference_settings_usage_and_diagnostics">Делитесь данными, чтобы помочь улучшить Cleaner для Android</string>
+    <string name="summary_usage_and_diagnostics">Помогите улучшить вашу работу, автоматически отправляя нам данные диагностики, устройства и использования приложения. Это поможет улучшить производительность, стабильность и другие улучшения приложения. Некоторые агрегированные данные также помогут нашим приложениям.\n\nЭто общая информация о вашем устройстве и о том, как вы используете наши приложения (например, об уровне заряда батареи, активности системы и приложений, а также об ошибках). Данные будут использоваться для улучшения наших приложений\n\nОтключение этой функции не повлияет на способность вашего устройства отправлять информацию, необходимую для важных служб, таких как обновления приложений и безопасность.\n</string>
 
-    <string name="legal">Юридический</string>
-    <string name="legal_notices">Юридические уведомления</string>
-    <string name="summary_preference_settings_legal_notices">Просмотреть юридическую информацию о нашем сервисе</string>
+    <string name="legal">Юридическая информация</string>
+    <string name="legal_notices">Правовые положения</string>
+    <string name="summary_preference_settings_legal_notices">Просмотр юридической информации о нашей услуге</string>
     <string name="license">Лицензия</string>
 
-    <string name="about">О</string>
-    <string name="summary_preference_settings_about">Узнайте больше об учебных пособиях Android Studio</string>
+    <string name="about">О программе</string>
+    <string name="summary_preference_settings_about">Подробнее о руководствах Android Studio</string>
 
     <string name="app_build_version">Версия сборки приложения</string>
-    <string name="summary_preference_settings_oss">Подробности лицензии на программное обеспечение с открытым исходным кодом</string>
+    <string name="summary_preference_settings_oss">Сведения о лицензии на программное обеспечение с открытым исходным кодом</string>
     <string name="device_info">Информация об устройстве</string>
     <string name="app_build">Сборка приложения: %6$s\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
-    <string name="debug">Отлаживать</string>
-    <string name="release">Выпускать</string>
+    <string name="debug">Отладка</string>
+    <string name="release">Релиз</string>
     <string name="manufacturer">Производитель:</string>
     <string name="device_model">Модель устройства:</string>
     <string name="android_version">Версия Android:</string>
     <string name="api_level">Уровень API:</string>
-    <string name="snack_device_info_copied">Информация об устройстве скопирована в буфер обмена.</string>
+    <string name="snack_device_info_copied">Информация об устройстве скопирована в буфер обмена</string>
 
-    <string name="help_and_feedback">Помощь и обратная связь</string>
-    <string name="help">Помощь</string>
+    <string name="help_and_feedback">Справка и отзывы</string>
+    <string name="help">Справка</string>
     <string name="faq">Часто задаваемые вопросы</string>
-    <string name="view_in_google_play_store">Посмотреть в магазине Google Play</string>
+    <string name="view_in_google_play_store">Посмотреть в Google Play Store</string>
     <string name="version_info">Информация о версии</string>
     <string name="version">Версия %1$s</string>
     <string name="beta_program">Бета-программа</string>
     <string name="question_1">Что такое Android Studio Tutorials: Kotlin Edition?</string>
-    <string name="summary_preference_faq_1">Учебные пособия по Android Studio: Kotlin Edition — это бесплатное приложение с открытым исходным кодом, которое содержит набор видеоуроков по использованию Android Studio, официальной интегрированной среды разработки (IDE) для разработки приложений Android.</string>
-    <string name="question_2">Как загрузить руководства по Android Studio: Kotlin Edition?</string>
-    <string name="summary_preference_faq_2">Android Studio Tutorials: Kotlin Edition доступен для загрузки в Google Play Store. Просто найдите \"Android Studio Tutorials\" в приложении Play Store на вашем Android-устройстве и нажмите \"Установить\", чтобы загрузить и установить приложение.</string>
-    <string name="question_3">Доступны ли руководства Android Studio: Kotlin Edition для устройств iOS?</string>
-    <string name="summary_preference_faq_3">Нет, Android Studio Tutorials: Kotlin Edition в настоящее время доступен только для устройств Android.</string>
-    <string name="question_4">Подходит ли Android Studio Tutorials: Kotlin Edition для новичков?</string>
-    <string name="summary_preference_faq_4">Да, Android Studio Tutorials: Kotlin Edition подходит для новичков, которые только знакомятся с разработкой приложений для Android и хотят научиться использовать Android Studio. Приложение предоставляет ряд видеоуроков, которые охватывают основы использования Android Studio, от установки IDE до создания и развертывания вашего первого приложения.</string>
-    <string name="question_5">Регулярно ли обновляется Android Studio Tutorials: Kotlin Edition?</string>
-    <string name="summary_preference_faq_5">Да, Android Studio Tutorials: Kotlin Edition регулярно обновляется новыми видеоуроками и контентом, чтобы держать пользователей в курсе последних функций и изменений в Android Studio.</string>
-    <string name="question_6">Как я могу получить поддержку, если у меня возникнут вопросы или проблемы с Android Studio Tutorials: Kotlin Edition?</string>
+    <string name="summary_preference_faq_1">Android Studio Tutorials: Kotlin Edition — это бесплатное приложение с открытым исходным кодом, которое содержит набор видеоуроков по использованию Android Studio — официальной интегрированной среды разработки (IDE) для разработки приложений Android.</string>
+    <string name="question_2">Как скачать Android Studio Tutorials: Kotlin Edition?</string>
+    <string name="summary_preference_faq_2">Android Studio Tutorials: Kotlin Edition доступно для скачивания в Google Play Store. Просто найдите «Android Studio Tutorials» в приложении Play Store на своем устройстве Android и нажмите «Установить», чтобы скачать и установить приложение.</string>
+    <string name="question_3">Доступно ли приложение Android Studio Tutorials: Kotlin Edition для устройств iOS?</string>
+    <string name="summary_preference_faq_3">Нет, Android Studio Tutorials: Kotlin Edition в настоящее время доступно только для устройств Android.</string>
+    <string name="question_4">Подходит ли Android Studio Tutorials: Kotlin Edition для начинающих?</string>
+    <string name="summary_preference_faq_4">Да, Android Studio Tutorials: Kotlin Edition подходит для начинающих, которые впервые занимаются разработкой приложений Android и хотят научиться пользоваться Android Studio. Приложение содержит ряд видеоуроков, которые охватывают основы использования Android Studio, от установки IDE до сборки и развертывания вашего первого приложения.</string>
+    <string name="question_5">Обновляется ли Android Studio Tutorials: Kotlin Edition регулярно?</string>
+    <string name="summary_preference_faq_5">Да, Android Studio Tutorials: Kotlin Edition регулярно обновляется новыми видеоуроками и контентом, чтобы пользователи были в курсе последних функций и изменений в Android Studio.</string>
+    <string name="question_6">Как получить поддержку, если у меня есть вопрос или проблема с Android Studio Tutorials: Kotlin Edition?</string>
     <string name="summary_preference_faq_6">Если у вас есть вопрос или проблема с Android Studio Tutorials: Kotlin Edition, вы можете связаться с нами через страницу поддержки приложения или по электронной почте d4rk7355608@gmail.com. Мы сделаем все возможное, чтобы помочь вам решить любые проблемы, с которыми вы можете столкнуться.</string>
-    <string name="question_7">Как отключить аналитику Firebase и Crashlytics в руководствах Android Studio: Kotlin Edition?</string>
-    <string name="summary_preference_faq_7">Вы можете отключить аналитику Firebase и Crashlytics, перейдя в меню настроек приложения и переключив переключатель для этих функций.</string>
+    <string name="question_7">Как отключить Firebase analytics и Crashlytics в Android Studio Tutorials: Kotlin Edition?</string>
+    <string name="summary_preference_faq_7">Вы можете отключить Firebase analytics и Crashlytics, перейдя в меню настроек в приложении и переключив переключатель для этих функций.</string>
     <string name="question_8">Как проверить наличие обновлений для Android Studio Tutorials: Kotlin Edition?</string>
-    <string name="summary_preference_faq_8">Вы можете проверить наличие обновлений для Android Studio Tutorials: Kotlin Edition, перейдя в меню настроек приложения и выбрав опцию «Проверить наличие обновлений».</string>
-    <string name="question_9">Как я могу поддержать разработку Android Studio Tutorials: Kotlin Edition?</string>
-    <string name="summary_preference_faq_9">Вы можете поддержать разработку Android Studio Tutorials: Kotlin Edition, оставив положительный отзыв в Google Play Store, поделившись приложением с друзьями и коллегами, а также поддержав разработчиков с помощью опции «Поделиться» в меню настроек.</string>
-    <string name="feedback">Обратная связь</string>
+    <string name="summary_preference_faq_8">Вы можете проверить наличие обновлений для Android Studio Tutorials: Kotlin Edition, перейдя в меню настроек в приложении и выбрав пункт «Проверить наличие обновлений».</string>
+    <string name="question_9">Как поддержать разработку Android Studio Tutorials: Kotlin Edition?</string>
+    <string name="summary_preference_faq_9">Вы можете поддержать разработку Android Studio Tutorials: Kotlin Edition, оставив положительный отзыв в Google Play Store, поделившись приложением с друзьями и коллегами и поддержав разработчиков с помощью опции «Поделиться» в меню настроек.</string>
+    <string name="feedback">Отзывы</string>
 
     <string name="updates">Обновления</string>
 
     <string name="support_us">Поддержите нас</string>
     <string name="paid_support">Платная поддержка</string>
-    <string name="summary_donations">Независимо от того, сколько вы пожертвуете, вы поможете нам поддерживать работу нашего приложения и улучшать его функции. Мы ценим вашу щедрость и доброту!</string>
-    <string name="non_paid_support">Неоплачиваемая поддержка</string>
+    <string name="summary_donations">Независимо от того, сколько вы пожертвуете, вы поможете нам поддерживать работу нашего приложения и улучшать его возможности. Мы ценим вашу щедрость и доброту!</string>
+    <string name="non_paid_support">Бесплатная поддержка</string>
     <string name="web_ad">Веб-реклама</string>
 
-    <string name="snack_app_updated">Приложение успешно обновлено.</string>
+    <string name="snack_app_updated">Приложение успешно обновлено</string>
     <string name="snack_update_failed">В процессе обновления возникла проблема</string>
-    <string name="try_again">Попробуйте еще раз</string>
-    <string name="summary_share_message">Посмотрите на это потрясающее приложение, которое я использую! В нем есть несколько действительно классных функций, которые могут вас заинтересовать. Вы можете загрузить его из Play Store по адресу: %1$s</string>
+    <string name="try_again">Попробовать еще раз</string>
+    <string name="summary_share_message">Посмотрите это замечательное приложение, которым я пользуюсь! В нем есть действительно крутые функции, которые могут вас заинтересовать. Вы можете скачать его из Play Store по адресу: %1$s</string>
     <string name="learn_more">Узнать больше</string>
 
-    <string name="close">Закрывать?</string>
+    <string name="close">Закрыть?</string>
     <string name="summary_close">Вы уверены, что хотите выйти?</string>
 </resources>

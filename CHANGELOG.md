@@ -3,6 +3,7 @@
 - **Minor**: Updated the app to support the latest changes in the API.
 - **Minor**: Updated Gradle dependencies to the latest versions for improved performance and
   stability.
+- **Minor**: Updated string resources for better clarity, consistency, and localization.
 
 # Version 1.1.1:
 

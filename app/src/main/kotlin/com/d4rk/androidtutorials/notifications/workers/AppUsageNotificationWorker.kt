@@ -10,6 +10,7 @@ import androidx.work.Worker
 import androidx.work.WorkerParameters
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.data.core.AppCoreManager
+import com.d4rk.androidtutorials.data.datastore.DataStore
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 
@@ -25,9 +26,9 @@ import kotlinx.coroutines.runBlocking
  */
 class AppUsageNotificationWorker(context : Context , workerParams : WorkerParameters) :
     Worker(context , workerParams) {
-    private val dataStore = AppCoreManager.dataStore
-    private val appUsageChannelId = "app_usage_channel"
-    private val appUsageNotificationId = 0
+    private val dataStore : DataStore = AppCoreManager.dataStore
+    private val appUsageChannelId : String = "app_usage_channel"
+    private val appUsageNotificationId : Int = 0
 
     /**
      * Performs the background work for app usage notification checks.

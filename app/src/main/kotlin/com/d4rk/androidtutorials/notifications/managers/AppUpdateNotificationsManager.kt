@@ -25,8 +25,8 @@ import com.google.android.play.core.install.model.UpdateAvailability
  * @property context The application context used for notification management.
  */
 class AppUpdateNotificationsManager(private val context : Context) {
-    private val updateChannelId = "update_channel"
-    private val updateNotificationId = 0
+    private val updateChannelId : String = "update_channel"
+    private val updateNotificationId : Int = 0
 
     /**
      * Checks for available app updates and sends a notification if an update is available.

@@ -1,118 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_short_description">Pelajari cara membuat aplikasi sederhana di Android Studio.</string>
+    <string name="app_short_description">Pelajari cara membuat aplikasi sederhana di Android Studio!</string>
     <string name="notification_update_title">Pembaruan baru tersedia!</string>
-    <string name="summary_notification_update">Versi baru aplikasi ini tersedia. Klik untuk memperbarui!</string>
-    <string name="notification_last_time_used_title">Sudah lama!</string>
-    <string name="summary_notification_last_time_used">Mari kita kosongkan ruang! Kami senang Anda kembali!</string>
+    <string name="summary_notification_update">Versi baru aplikasi tersedia. Klik untuk memperbarui!</string>
+    <string name="notification_last_time_used_title">Sudah lama sekali!</string>
+    <string name="summary_notification_last_time_used">Mari kita bebaskan ruang! Kami senang Anda kembali!</string>
 
     <string name="welcome">Selamat datang</string>
-    <string name="summary_browse_terms_of_service_and_privacy_policy">Baca dan setujui Persyaratan Layanan dan Kebijakan Privasi kami untuk melanjutkan</string>
+    <string name="summary_browse_terms_of_service_and_privacy_policy">Baca dan setujui Ketentuan Layanan dan Kebijakan Privasi kami untuk melanjutkan</string>
     <string name="agree">Setuju</string>
 
     <string name="navigation_drawer_open">Buka laci navigasi</string>
 
-    <string name="home">Rumah</string>
-    <string name="get_the_app_to_watch">Dapatkan aplikasinya dan lihat pelajaran lengkapnya: %1$s</string>
+    <string name="home">Beranda</string>
+    <string name="get_the_app_to_watch">Dapatkan aplikasi dan lihat pelajaran lengkapnya: %1$s</string>
+    <string name="no_lessons_found">Tidak ada pelajaran yang ditemukan.</string>
     <string name="activity_not_found">Aktivitas tidak ditemukan.</string>
-    <string name="security_error">Terjadi kesalahan keamanan. Coba lagi nanti.</string>
-    <string name="io_error">Terjadi kesalahan input/output. Harap periksa koneksi jaringan atau penyimpanan Anda dan coba lagi.</string>
-    <string name="illegal_argument_error">Masukan atau argumen yang diberikan tidak valid. Harap periksa informasinya dan coba lagi.</string>
+    <string name="security_error">Terjadi kesalahan keamanan. Silakan coba lagi nanti.</string>
+    <string name="io_error">Terjadi kesalahan input/output. Silakan periksa koneksi jaringan atau penyimpanan Anda, dan coba lagi.</string>
+    <string name="illegal_argument_error">Input atau argumen tidak valid diberikan. Silakan periksa informasi dan coba lagi.</string>
+    <string name="sqlite_error">Terjadi kesalahan database. Silakan coba langkah-langkah berikut:\n\n1. Mulai ulang aplikasi.\n2. Jika masalah tetap ada, hapus data aplikasi dari Setelan > Aplikasi > Tutorial Android Studio > Penyimpanan.\n3. Hubungi dukungan jika masalah berlanjut.</string>
     <string name="unknown_error">Terjadi kesalahan yang tidak diketahui.</string>
+    <string name="initialization_error">Inisialisasi gagal. Silakan coba lagi nanti.</string>
 
     <string name="studio_bot">Studio Bot</string>
+    <string name="type_a_message">Ketik pesan…</string>
 
-    <string name="share">Membagikan</string>
+    <string name="share">Bagikan</string>
     <string name="app_info">Info aplikasi</string>
 
     <string name="favorites">Favorit</string>
+    <string name="error_loading_favorites">Kesalahan saat memuat pelajaran favorit. Silakan coba lagi nanti.</string>
+    <string name="no_favorite_lessons_found">Tidak ada pelajaran favorit yang ditemukan.</string>
 
-    <string name="settings">Pengaturan</string>
+    <string name="settings">Setelan</string>
 
-    <string name="display">Menampilkan</string>
-    <string name="summary_preference_settings_display">Personalisasi tampilan dan nuansa aplikasi Anda</string>
+    <string name="display">Tampilan</string>
+    <string name="summary_preference_settings_display">Personalisasi tampilan aplikasi Anda</string>
 
-    <string name="appearance">Penampilan</string>
+    <string name="appearance">Tampilan</string>
     <string name="dark_theme">Tema gelap</string>
-    <string name="will_turn_on_automatically_by_system">Akan menyala secara otomatis oleh sistem</string>
-    <string name="will_never_turn_on_automatically">Tidak akan pernah menyala secara otomatis</string>
-    <string name="amoled_mode">Modus AMOLED</string>
+    <string name="will_turn_on_automatically_by_system">Akan aktif secara otomatis oleh sistem</string>
+    <string name="will_never_turn_on_automatically">Tidak akan pernah aktif secara otomatis</string>
+    <string name="amoled_mode">Mode AMOLED</string>
     <string name="follow_system">Ikuti Mode Sistem</string>
-    <string name="light_mode">Mode Cahaya</string>
+    <string name="light_mode">Mode Terang</string>
     <string name="dark_mode">Mode Gelap</string>
-    <string name="summary_dark_theme">Tema gelap menggunakan latar belakang yang gelap untuk membantu menjaga baterai Anda bertahan lebih lama</string>
+    <string name="summary_dark_theme">Tema gelap menggunakan latar belakang yang dalam untuk membantu menjaga baterai Anda tetap hidup lebih lama</string>
 
     <string name="dynamic_colors">Warna dinamis</string>
     <string name="summary_preference_settings_dynamic_colors">Terapkan warna dari wallpaper ke tema aplikasi</string>
 
     <string name="app_behavior">Perilaku aplikasi</string>
-    <string name="bounce_buttons">Klik pantul</string>
+    <string name="bounce_buttons">Klik memantul</string>
     <string name="summary_preference_settings_bounce_buttons">Menerapkan animasi pantulan halus ke semua elemen yang dapat diklik saat diklik</string>
 
     <string name="navigation">Navigasi</string>
     <string name="startup_page">Halaman awal</string>
     <string name="summary_preference_settings_startup_page">Pilih layar yang akan ditampilkan saat aplikasi dimulai.</string>
-    <string name="dialog_startup_subtitle">Pilih halaman awal yang Anda inginkan:</string>
-    <string name="dialog_info_startup">Mengonfigurasi layar awal yang ditampilkan kepada pengguna saat meluncurkan aplikasi. Pengaturan ini memengaruhi interaksi pertama pengguna dengan aplikasi dan dapat disesuaikan dengan segmen pengguna tertentu atau sasaran produk.</string>
+    <string name="dialog_startup_subtitle">Pilih halaman awal pilihan Anda:</string>
+    <string name="dialog_info_startup">Mengonfigurasi layar awal yang ditampilkan kepada pengguna saat meluncurkan aplikasi. Pengaturan ini memengaruhi interaksi pertama pengguna dengan aplikasi dan dapat disesuaikan dengan segmen pengguna tertentu atau tujuan produk.</string>
 
     <string name="language">Bahasa</string>
     <string name="summary_preference_settings_language">Mengubah bahasa yang digunakan dalam aplikasi</string>
     <string name="dialog_language_subtitle">Pilih bahasa pilihan Anda</string>
-    <string name="dialog_info_language">Personalisasikan pengalaman Anda dengan bahasa pilihan Anda. Setiap perubahan bahasa yang Anda buat akan segera berlaku, memastikan pengalaman yang lancar dalam bahasa pilihan Anda</string>
+    <string name="dialog_info_language">Personalisasi pengalaman Anda dengan bahasa pilihan Anda. Perubahan bahasa yang Anda lakukan akan langsung diterapkan, memastikan pengalaman yang lancar dalam bahasa pilihan Anda</string>
 
-    <string name="notifications">Pemberitahuan</string>
+    <string name="notifications">Notifikasi</string>
     <string name="summary_preference_settings_notifications">Kelola notifikasi aplikasi</string>
 
-    <string name="app_usage_notifications">Pemberitahuan Penggunaan Aplikasi</string>
-    <string name="update_notifications">Pemberitahuan Pembaruan</string>
+    <string name="app_usage_notifications">Notifikasi Penggunaan Aplikasi</string>
+    <string name="update_notifications">Notifikasi Pembaruan</string>
 
-    <string name="advanced">Canggih</string>
-    <string name="summary_preference_settings_advanced">Jelajahi pengaturan yang lebih canggih</string>
+    <string name="advanced">Lanjutan</string>
+    <string name="summary_preference_settings_advanced">Jelajahi pengaturan yang lebih lanjut</string>
     <string name="error_reporting">Pelaporan kesalahan</string>
     <string name="bug_report">Laporan bug</string>
     <string name="summary_preference_settings_bug_report">Kirim laporan bug dan permintaan fitur ke halaman masalah repositori GitHub aplikasi</string>
 
     <string name="security_and_privacy">Keamanan &amp; privasi</string>
     <string name="summary_preference_settings_privacy_and_security">Kelola pengaturan privasi Anda</string>
-    <string name="privacy">Pribadi</string>
+    <string name="privacy">Privasi</string>
     <string name="privacy_policy">Kebijakan Privasi</string>
     <string name="summary_preference_settings_privacy_policy">Lihat kebijakan yang mengatur cara kami menangani data Anda</string>
     <string name="terms_of_service">Ketentuan Layanan</string>
-    <string name="summary_preference_settings_terms_of_service">Tinjau kembali persyaratan yang Anda setujui saat menggunakan layanan kami</string>
+    <string name="summary_preference_settings_terms_of_service">Tinjau persyaratan yang Anda setujui saat menggunakan layanan kami</string>
     <string name="code_of_conduct">Kode Etik</string>
-    <string name="summary_preference_settings_code_of_conduct">Memahami aturan dan pedoman perilaku dalam layanan kami</string>
+    <string name="summary_preference_settings_code_of_conduct">Pahami aturan dan panduan perilaku dalam layanan kami</string>
 
     <string name="permissions">Izin</string>
     <string name="summary_preference_settings_permissions">Kelola izin yang diberikan ke layanan kami</string>
     <string name="normal">Normal</string>
     <string name="ad_id">ID iklan [AD_ID]</string>
-    <string name="summary_preference_permissions_ad_id">Memungkinkan aplikasi mengambil dan menggunakan pengenal iklan yang dikaitkan dengan perangkat pengguna, menyediakan iklan yang dipersonalisasi, mengukur efektivitas iklan, dan menampilkan iklan di perangkat Android 13 atau lebih baru.</string>
-    <string name="internet">Internet [Internet]</string>
-    <string name="summary_preference_permissions_internet">Memungkinkan aplikasi membuat koneksi internet untuk mengirim laporan kesalahan atau memeriksa pembaruan.</string>
-    <string name="post_notifications">Pemberitahuan posting [POST_NOTIFICATIONS]</string>
-    <string name="summary_preference_permissions_post_notifications">Memungkinkan aplikasi menampilkan pemberitahuan pada perangkat dengan Android 13 atau lebih baru.</string>
-    <string name="runtime">Waktu berjalan</string>
-    <string name="access_network_state">Status jaringan akses [ACCESS_NETWORK_STATE]</string>
-    <string name="summary_preference_permissions_access_network_state">Memungkinkan aplikasi untuk memeriksa konektivitas jaringan dan mengambil informasi tentang Wi-Fi, termasuk status aktivasi dan nama perangkat Wi-Fi yang terhubung.</string>
-    <string name="access_notification_policy">Kebijakan pemberitahuan akses [ACCESS_NOTIFICATION_POLICY]</string>
-    <string name="summary_preference_permissions_access_notification_policy">Memungkinkan aplikasi mengakses dan mengubah kebijakan notifikasi perangkat, mengendalikan bagaimana dan kapan notifikasi ditampilkan kepada pengguna dan menyediakan fitur manajemen notifikasi khusus.</string>
-    <string name="billing">Penagihan [PENAGIHAN]</string>
-    <string name="summary_preference_permissions_billing">Mengizinkan aplikasi menggunakan Pustaka Penagihan Google Play untuk menangani pembelian dan donasi dalam aplikasi</string>
+    <string name="summary_preference_permissions_ad_id">Memungkinkan aplikasi mengambil dan menggunakan pengenal iklan yang terkait dengan perangkat pengguna, menyediakan iklan yang dipersonalisasi, mengukur efektivitas iklan, dan menampilkan iklan di perangkat Android 13 atau yang lebih baru.</string>
+    <string name="internet">Internet [INTERNET]</string>
+    <string name="summary_preference_permissions_internet">Memungkinkan aplikasi untuk membuat koneksi internet untuk mengirim laporan kesalahan atau memeriksa pembaruan.</string>
+    <string name="post_notifications">Kirim notifikasi [POST_NOTIFICATIONS]</string>
+    <string name="summary_preference_permissions_post_notifications">Memungkinkan aplikasi untuk menampilkan notifikasi pada perangkat dengan Android 13 atau yang lebih baru.</string>
+    <string name="runtime">Runtime</string>
+    <string name="access_network_state">Akses status jaringan [ACCESS_NETWORK_STATE]</string>
+    <string name="summary_preference_permissions_access_network_state">Memungkinkan aplikasi untuk memeriksa konektivitas jaringan dan mengambil informasi tentang Wi-Fi, termasuk status aktif dan nama perangkat Wi-Fi yang terhubung.</string>
+    <string name="access_notification_policy">Akses kebijakan notifikasi [ACCESS_NOTIFICATION_POLICY]</string>
+    <string name="summary_preference_permissions_access_notification_policy">Memungkinkan aplikasi untuk mengakses dan memodifikasi kebijakan notifikasi perangkat, mengontrol bagaimana dan kapan notifikasi ditampilkan kepada pengguna dan menyediakan fitur manajemen notifikasi khusus.</string>
+    <string name="billing">Penagihan [BILLING]</string>
+    <string name="summary_preference_permissions_billing">Memungkinkan aplikasi menggunakan Google Play Billing Library untuk menangani pembelian dalam aplikasi dan donasi</string>
     <string name="check_license">Periksa lisensi [CHECK_LICENSE]</string>
-    <string name="summary_preference_permissions_check_license">Memungkinkan aplikasi memverifikasi kepatuhannya terhadap perjanjian lisensi dan menegakkan persyaratan lisensi untuk melindungi kekayaan intelektual.</string>
+    <string name="summary_preference_permissions_check_license">Memungkinkan aplikasi untuk memverifikasi kepatuhannya terhadap perjanjian lisensi dan menegakkan persyaratan lisensi untuk melindungi kekayaan intelektual.</string>
     <string name="foreground_service">Layanan latar depan [FOREGROUND_SERVICE]</string>
-    <string name="summary_preference_permissions_foreground_service">Memungkinkan aplikasi membuat dan menggunakan layanan yang berjalan di latar depan, memberi layanan tersebut prioritas dibandingkan proses latar belakang lainnya dan meningkatkan kinerja dan keandalan.</string>
+    <string name="summary_preference_permissions_foreground_service">Memungkinkan aplikasi untuk membuat dan menggunakan layanan yang berjalan di latar depan, memberikan prioritas lebih tinggi daripada proses latar belakang lainnya dan meningkatkan kinerja dan keandalan.</string>
 
     <string name="ads">Iklan</string>
-    <string name="summary_preference_settings_ads">Kontrol bagaimana kami menggunakan informasi Anda untuk menampilkan iklan yang relevan</string>
-    <string name="display_ads">Iklan bergambar</string>
+    <string name="summary_preference_settings_ads">Kontrol cara kami menggunakan informasi Anda untuk menampilkan iklan yang relevan untuk Anda</string>
+    <string name="display_ads">Tampilkan iklan</string>
     <string name="personalized_ads">Iklan yang dipersonalisasi</string>
     <string name="summary_ads_personalized_ads">Pilih cara kami mempersonalisasi iklan untuk Anda berdasarkan minat Anda</string>
     <string name="summary_ads">Lihat iklan yang relevan bagi Anda. Kelola informasi yang digunakan untuk menampilkan iklan yang dipersonalisasi berdasarkan aktivitas aplikasi Anda. Anda selalu dapat menonaktifkan personalisasi di sini.\n</string>
 
     <string name="usage_and_diagnostics">Penggunaan dan diagnostik</string>
-    <string name="summary_preference_settings_usage_and_diagnostics">Berbagi data untuk membantu meningkatkan Cleaner untuk Android</string>
-    <string name="summary_usage_and_diagnostics">Bantu tingkatkan pengalaman Anda dengan mengirimkan data diagnostik, perangkat, dan penggunaan aplikasi kepada kami secara otomatis. Ini akan membantu meningkatkan kinerja aplikasi, stabilitas, dan peningkatan lainnya. Beberapa data agregat juga akan membantu aplikasi kami.\n\nIni adalah informasi umum tentang perangkat Anda dan cara Anda menggunakan aplikasi kami (seperti tingkat baterai, aktivitas sistem dan aplikasi, serta kesalahan). Data tersebut akan digunakan untuk meningkatkan aplikasi kami\n\nMenonaktifkan fitur ini tidak memengaruhi kemampuan perangkat Anda untuk mengirim informasi yang diperlukan untuk layanan penting seperti pembaruan aplikasi dan keamanan.\n</string>
+    <string name="summary_preference_settings_usage_and_diagnostics">Bagikan data untuk membantu meningkatkan Cleaner untuk Android</string>
+    <string name="summary_usage_and_diagnostics">Bantu tingkatkan pengalaman Anda dengan secara otomatis mengirim data diagnostik, perangkat, dan penggunaan aplikasi kepada kami. Ini akan membantu meningkatkan kinerja, stabilitas, dan peningkatan lainnya pada aplikasi. Beberapa data agregat juga akan membantu aplikasi kami.\n\nIni adalah informasi umum tentang perangkat Anda dan cara Anda menggunakan aplikasi kami (seperti level baterai, aktivitas sistem dan aplikasi, dan kesalahan). Data akan digunakan untuk meningkatkan aplikasi kami\n\nMenonaktifkan fitur ini tidak memengaruhi kemampuan perangkat Anda untuk mengirim informasi yang diperlukan untuk layanan penting seperti pembaruan aplikasi dan keamanan.\n</string>
 
     <string name="legal">Legal</string>
     <string name="legal_notices">Pemberitahuan hukum</string>
@@ -120,23 +126,23 @@
     <string name="license">Lisensi</string>
 
     <string name="about">Tentang</string>
-    <string name="summary_preference_settings_about">Pelajari lebih lanjut tentang Android Studio Tutorials</string>
+    <string name="summary_preference_settings_about">Pelajari lebih lanjut tentang Tutorial Android Studio</string>
 
-    <string name="app_build_version">Versi pembuatan aplikasi</string>
+    <string name="app_build_version">Versi build aplikasi</string>
     <string name="summary_preference_settings_oss">Detail lisensi untuk perangkat lunak sumber terbuka</string>
     <string name="device_info">Info Perangkat</string>
-    <string name="app_build">Pembuatan Aplikasi: %6$s\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
-    <string name="debug">Mendebug</string>
-    <string name="release">Melepaskan</string>
+    <string name="app_build">Build Aplikasi: %6$s\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
+    <string name="debug">Debug</string>
+    <string name="release">Rilis</string>
     <string name="manufacturer">Pabrikan:</string>
     <string name="device_model">Model Perangkat:</string>
     <string name="android_version">Versi Android:</string>
-    <string name="api_level">Tingkat API:</string>
-    <string name="snack_device_info_copied">Info perangkat disalin ke clipboard</string>
+    <string name="api_level">Level API:</string>
+    <string name="snack_device_info_copied">Info perangkat disalin ke papan klip</string>
 
     <string name="help_and_feedback">Bantuan &amp; umpan balik</string>
-    <string name="help">Membantu</string>
-    <string name="faq">Tanya Jawab Umum</string>
+    <string name="help">Bantuan</string>
+    <string name="faq">FAQ</string>
     <string name="view_in_google_play_store">Lihat di Google Play Store</string>
     <string name="version_info">Info versi</string>
     <string name="version">Versi %1$s</string>
@@ -144,37 +150,37 @@
     <string name="question_1">Apa itu Tutorial Android Studio: Edisi Kotlin?</string>
     <string name="summary_preference_faq_1">Tutorial Android Studio: Edisi Kotlin adalah aplikasi gratis dan sumber terbuka yang menyediakan kumpulan tutorial video tentang cara menggunakan Android Studio, lingkungan pengembangan terintegrasi (IDE) resmi untuk pengembangan aplikasi Android.</string>
     <string name="question_2">Bagaimana cara mengunduh Tutorial Android Studio: Edisi Kotlin?</string>
-    <string name="summary_preference_faq_2">Tutorial Android Studio: Edisi Kotlin tersedia untuk diunduh di Google Play Store. Cukup cari "Tutorial Android Studio" di aplikasi Play Store pada perangkat Android Anda dan ketuk "Instal" untuk mengunduh dan menginstal aplikasi.</string>
+    <string name="summary_preference_faq_2">Tutorial Android Studio: Edisi Kotlin tersedia untuk diunduh di Google Play Store. Cukup cari "Tutorial Android Studio" di aplikasi Play Store di perangkat Android Anda dan ketuk "Instal" untuk mengunduh dan menginstal aplikasi.</string>
     <string name="question_3">Apakah Tutorial Android Studio: Edisi Kotlin tersedia untuk perangkat iOS?</string>
     <string name="summary_preference_faq_3">Tidak, Tutorial Android Studio: Edisi Kotlin saat ini hanya tersedia untuk perangkat Android.</string>
     <string name="question_4">Apakah Tutorial Android Studio: Edisi Kotlin cocok untuk pemula?</string>
-    <string name="summary_preference_faq_4">Ya, Tutorial Android Studio: Edisi Kotlin cocok untuk pemula yang baru dalam pengembangan aplikasi Android dan ingin mempelajari cara menggunakan Android Studio. Aplikasi ini menyediakan serangkaian tutorial video yang membahas dasar-dasar penggunaan Android Studio, mulai dari menginstal IDE hingga membangun dan menerapkan aplikasi pertama Anda.</string>
+    <string name="summary_preference_faq_4">Ya, Tutorial Android Studio: Edisi Kotlin cocok untuk pemula yang baru mengenal pengembangan aplikasi Android dan ingin mempelajari cara menggunakan Android Studio. Aplikasi ini menyediakan berbagai tutorial video yang mencakup dasar-dasar penggunaan Android Studio, mulai dari menginstal IDE hingga membuat dan menyebarkan aplikasi pertama Anda.</string>
     <string name="question_5">Apakah Tutorial Android Studio: Edisi Kotlin diperbarui secara berkala?</string>
-    <string name="summary_preference_faq_5">Ya, Tutorial Android Studio: Edisi Kotlin diperbarui secara berkala dengan tutorial video dan konten baru agar pengguna selalu mengetahui fitur dan perubahan terkini di Android Studio.</string>
-    <string name="question_6">Bagaimana saya bisa mendapatkan dukungan jika saya memiliki pertanyaan atau masalah dengan Tutorial Android Studio: Edisi Kotlin?</string>
-    <string name="summary_preference_faq_6">Jika Anda memiliki pertanyaan atau masalah dengan Tutorial Android Studio: Edisi Kotlin, Anda dapat menghubungi kami melalui halaman dukungan aplikasi atau melalui email di d4rk7355608@gmail.com. Kami akan berusaha sebaik mungkin untuk membantu Anda mengatasi masalah yang mungkin Anda alami.</string>
+    <string name="summary_preference_faq_5">Ya, Tutorial Android Studio: Edisi Kotlin diperbarui secara berkala dengan tutorial dan konten video baru untuk membuat pengguna tetap mendapatkan informasi terbaru tentang fitur dan perubahan terbaru di Android Studio.</string>
+    <string name="question_6">Bagaimana cara mendapatkan dukungan jika saya memiliki pertanyaan atau masalah dengan Tutorial Android Studio: Edisi Kotlin?</string>
+    <string name="summary_preference_faq_6">Jika Anda memiliki pertanyaan atau masalah dengan Tutorial Android Studio: Edisi Kotlin, Anda dapat menghubungi kami melalui halaman dukungan aplikasi atau melalui email di d4rk7355608@gmail.com. Kami akan melakukan yang terbaik untuk membantu Anda menyelesaikan masalah apa pun yang mungkin Anda alami.</string>
     <string name="question_7">Bagaimana cara menonaktifkan Firebase analytics dan crashlytics di Tutorial Android Studio: Edisi Kotlin?</string>
-    <string name="summary_preference_faq_7">Anda dapat menonaktifkan Firebase analytics dan crashlytics dengan membuka menu pengaturan di aplikasi dan mengaktifkan tombol untuk fitur ini.</string>
-    <string name="question_8">Bagaimana cara memeriksa pembaruan untuk Tutorial Android Studio: Edisi Kotlin?</string>
-    <string name="summary_preference_faq_8">Anda dapat memeriksa pembaruan untuk Tutorial Android Studio: Edisi Kotlin dengan membuka menu pengaturan di aplikasi dan memilih opsi \"Periksa pembaruan\".</string>
-    <string name="question_9">Bagaimana saya dapat mendukung pengembangan Tutorial Android Studio: Edisi Kotlin?</string>
-    <string name="summary_preference_faq_9">Anda dapat mendukung pengembangan Tutorial Android Studio: Edisi Kotlin dengan meninggalkan ulasan positif di Google Play Store, berbagi aplikasi dengan teman dan kolega, dan mendukung pengembang melalui opsi \"Bagikan\" di menu pengaturan.</string>
-    <string name="feedback">Masukan</string>
+    <string name="summary_preference_faq_7">Anda dapat menonaktifkan Firebase analytics dan crashlytics dengan membuka menu pengaturan di aplikasi dan mengalihkan sakelar untuk fitur-fitur ini.</string>
+    <string name="question_8">Bagaimana cara memeriksa pembaruan Tutorial Android Studio: Edisi Kotlin?</string>
+    <string name="summary_preference_faq_8">Anda dapat memeriksa pembaruan Tutorial Android Studio: Edisi Kotlin dengan membuka menu pengaturan di aplikasi dan memilih opsi "Periksa pembaruan".</string>
+    <string name="question_9">Bagaimana cara mendukung pengembangan Tutorial Android Studio: Edisi Kotlin?</string>
+    <string name="summary_preference_faq_9">Anda dapat mendukung pengembangan Tutorial Android Studio: Edisi Kotlin dengan memberikan ulasan positif di Google Play Store, membagikan aplikasi dengan teman dan kolega, dan mendukung pengembang melalui opsi "Bagikan" di menu pengaturan.</string>
+    <string name="feedback">Umpan balik</string>
 
     <string name="updates">Pembaruan</string>
 
     <string name="support_us">Dukung Kami</string>
     <string name="paid_support">Dukungan Berbayar</string>
-    <string name="summary_donations">Berapa pun jumlah donasi Anda, Anda akan membantu kami menjaga aplikasi kami tetap berjalan dan meningkatkan fitur-fitur kami. Kami menghargai kemurahan hati dan kebaikan Anda!</string>
+    <string name="summary_donations">Tidak peduli berapa banyak yang Anda sumbangkan, Anda akan membantu kami menjaga aplikasi kami tetap berjalan dan meningkatkan fitur kami. Kami menghargai kemurahan hati dan kebaikan Anda!</string>
     <string name="non_paid_support">Dukungan Tidak Berbayar</string>
     <string name="web_ad">Iklan Web</string>
 
     <string name="snack_app_updated">Aplikasi telah berhasil diperbarui</string>
     <string name="snack_update_failed">Proses pembaruan mengalami masalah</string>
     <string name="try_again">Coba lagi</string>
-    <string name="summary_share_message">Coba lihat aplikasi menakjubkan yang sedang saya gunakan ini! Aplikasi ini memiliki beberapa fitur yang sangat keren yang mungkin menarik bagi Anda. Anda dapat mengunduhnya dari Play Store di: %1$s</string>
+    <string name="summary_share_message">Lihat aplikasi luar biasa yang saya gunakan ini! Aplikasi ini memiliki beberapa fitur keren yang mungkin menarik bagi Anda. Anda dapat mengunduhnya dari Play Store di: %1$s</string>
     <string name="learn_more">Pelajari lebih lanjut</string>
 
-    <string name="close">Menutup?</string>
+    <string name="close">Tutup?</string>
     <string name="summary_close">Apakah Anda yakin ingin keluar?</string>
 </resources>
