@@ -49,6 +49,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.data.model.ui.screens.UiHelpQuestion
+import com.d4rk.androidtutorials.data.model.ui.screens.UiHelpScreen
 import com.d4rk.androidtutorials.ui.components.buttons.AnimatedExtendedFloatingActionButton
 import com.d4rk.androidtutorials.ui.components.spacers.LargeHorizontalSpacer
 import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffoldWithBackButtonAndActions
@@ -62,14 +63,14 @@ fun HelpScreen(activity : HelpActivity , viewModel : HelpViewModel) {
             TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
     val context : Context = LocalContext.current
     val view : View = LocalView.current
-    val isFabVisible by viewModel.isFabVisible.collectAsState()
+    val isFabVisible : Boolean by viewModel.isFabVisible.collectAsState()
     val showDialog : MutableState<Boolean> = remember { mutableStateOf(value = false) }
 
-    val uiState by viewModel.uiState.collectAsState()
+    val uiState : UiHelpScreen by viewModel.uiState.collectAsState()
 
     val htmlData = rememberHtmlData()
-    val changelogHtmlString = htmlData.value.first
-    val eulaHtmlString = htmlData.value.second
+    val changelogHtmlString : String? = htmlData.value.first
+    val eulaHtmlString : String? = htmlData.value.second
 
     val isFabExtended = remember { mutableStateOf(value = true) }
     LaunchedEffect(key1 = scrollBehavior.state.contentOffset) {
