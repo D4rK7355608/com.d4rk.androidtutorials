@@ -20,7 +20,6 @@ free and open-source software!
 - Kotlin and XML code examples
 - Data Binding examples
 - Easy-to-understand explanations
-- Offline access
 - Adaptive themes, including Material You support
 - Simple, fast, and lightweight
 - Free, open-source, and secure

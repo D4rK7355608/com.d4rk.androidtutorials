@@ -26,7 +26,7 @@ abstract class HomeRepositoryImplementation(
 
     private val client : HttpClient = AppCoreManager.ktorClient
 
-    private val baseUrl = BuildConfig.DEBUG.let { isDebug ->
+    private val baseUrl : String = BuildConfig.DEBUG.let { isDebug ->
         val environment : String = if (isDebug) "debug" else "release"
         "${ApiConstants.BASE_REPOSITORY_URL}/$environment/en/home/api_get_lessons.json"
     }

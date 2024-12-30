@@ -33,14 +33,13 @@ import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.supervisorScope
 
-class AppCoreManager : MultiDexApplication() , Application.ActivityLifecycleCallbacks ,
-    LifecycleObserver {
+class AppCoreManager : MultiDexApplication() , Application.ActivityLifecycleCallbacks , LifecycleObserver {
 
-    private val dataStoreCoreManager by lazy {
+    private val dataStoreCoreManager : DataStoreCoreManager by lazy {
         DataStoreCoreManager(context = this)
     }
 
-    private val adsCoreManager by lazy {
+    private val adsCoreManager : AdsCoreManager by lazy {
         AdsCoreManager(context = this)
     }
 
