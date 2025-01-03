@@ -35,7 +35,6 @@ import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffoldWithB
 import com.d4rk.androidtutorials.ui.screens.settings.display.theme.ThemeSettingsActivity
 import com.d4rk.androidtutorials.utils.helpers.IntentsHelper
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 @Composable
@@ -57,7 +56,7 @@ fun DisplaySettingsComposable(activity : DisplaySettingsActivity) {
 
 
     val isDynamicColors : State<Boolean> = dataStore.dynamicColors.collectAsState(initial = true)
-    val scope : CoroutineScope = rememberCoroutineScope()
+    val coroutineScope : CoroutineScope = rememberCoroutineScope()
 
     TopAppBarScaffoldWithBackButton(
         title = stringResource(id = R.string.display) ,
@@ -65,7 +64,7 @@ fun DisplaySettingsComposable(activity : DisplaySettingsActivity) {
         LazyColumn(
             modifier = Modifier
                     .fillMaxHeight()
-                    .padding(paddingValues) ,
+                    .padding(paddingValues = paddingValues) ,
         ) {
             item {
                 PreferenceCategoryItem(title = stringResource(id = R.string.appearance))
@@ -76,14 +75,14 @@ fun DisplaySettingsComposable(activity : DisplaySettingsActivity) {
                                                     switchState.value = isChecked
                                                 } ,
                                                 onSwitchClick = { isChecked ->
-                                                    scope.launch(Dispatchers.IO) {
+                                                    coroutineScope.launch {
                                                         if (isChecked) {
-                                                            dataStore.saveThemeMode(darkModeString)
+                                                            dataStore.saveThemeMode(mode = darkModeString)
                                                             dataStore.themeModeState.value =
                                                                     darkModeString
                                                         }
                                                         else {
-                                                            dataStore.saveThemeMode(lightModeString)
+                                                            dataStore.saveThemeMode(mode = lightModeString)
                                                             dataStore.themeModeState.value =
                                                                     lightModeString
                                                         }
@@ -101,8 +100,8 @@ fun DisplaySettingsComposable(activity : DisplaySettingsActivity) {
                         summary = stringResource(id = R.string.summary_preference_settings_dynamic_colors) ,
                         checked = isDynamicColors.value ,
                     ) { isChecked ->
-                        CoroutineScope(Dispatchers.IO).launch {
-                            dataStore.saveDynamicColors(isChecked)
+                        coroutineScope.launch {
+                            dataStore.saveDynamicColors(isChecked = isChecked)
                         }
                     }
                 }
@@ -114,8 +113,8 @@ fun DisplaySettingsComposable(activity : DisplaySettingsActivity) {
                     summary = stringResource(id = R.string.summary_preference_settings_bounce_buttons) ,
                     checked = bouncyButtons ,
                 ) { isChecked ->
-                    CoroutineScope(Dispatchers.IO).launch {
-                        dataStore.saveBouncyButtons(isChecked)
+                    coroutineScope.launch {
+                        dataStore.saveBouncyButtons(isChecked = isChecked)
                     }
                 }
             }
@@ -129,8 +128,8 @@ fun DisplaySettingsComposable(activity : DisplaySettingsActivity) {
                     SelectStartupScreenAlertDialog(dataStore = dataStore ,
                                                    onDismiss = { showStartupDialog = false } ,
                                                    onStartupSelected = { selectedStartup ->
-                                                       scope.launch {
-                                                           dataStore.saveStartupPage(selectedStartup)
+                                                       coroutineScope.launch {
+                                                           dataStore.saveStartupPage(startupPage = selectedStartup)
                                                        }
                                                    })
                 }

@@ -1,3 +1,7 @@
+# Version 1.1.3:
+
+- **Minor**: Enhanced the app's error handling mechanism for a better user experience.
+
 # Version 1.1.2:
 
 - **Minor**: Updated the app to support the latest changes in the API.

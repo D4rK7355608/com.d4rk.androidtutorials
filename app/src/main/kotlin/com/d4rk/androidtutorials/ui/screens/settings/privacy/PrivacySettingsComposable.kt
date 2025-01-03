@@ -20,13 +20,12 @@ import com.d4rk.androidtutorials.utils.helpers.IntentsHelper
 @Composable
 fun PrivacySettingsComposable(activity : PrivacySettingsActivity) {
     val context : Context = LocalContext.current
-    TopAppBarScaffoldWithBackButton(
-        title = stringResource(id = R.string.security_and_privacy) ,
-        onBackClicked = { activity.finish() }) { paddingValues ->
+    TopAppBarScaffoldWithBackButton(title = stringResource(id = R.string.security_and_privacy) ,
+                                    onBackClicked = { activity.finish() }) { paddingValues ->
         LazyColumn(
             modifier = Modifier
                     .fillMaxHeight()
-                    .padding(paddingValues) ,
+                    .padding(paddingValues = paddingValues) ,
         ) {
             item {
                 PreferenceCategoryItem(title = stringResource(id = R.string.privacy))
@@ -34,7 +33,7 @@ fun PrivacySettingsComposable(activity : PrivacySettingsActivity) {
                                summary = stringResource(id = R.string.summary_preference_settings_privacy_policy) ,
                                onClick = {
                                    IntentsHelper.openUrl(
-                                       context ,
+                                       context = context ,
                                        url = "https://sites.google.com/view/d4rk7355608/more/apps/privacy-policy"
                                    )
                                })
@@ -42,7 +41,7 @@ fun PrivacySettingsComposable(activity : PrivacySettingsActivity) {
                                summary = stringResource(id = R.string.summary_preference_settings_terms_of_service) ,
                                onClick = {
                                    IntentsHelper.openUrl(
-                                       context ,
+                                       context = context ,
                                        url = "https://sites.google.com/view/d4rk7355608/more/apps/terms-of-service"
                                    )
                                })
@@ -50,7 +49,7 @@ fun PrivacySettingsComposable(activity : PrivacySettingsActivity) {
                                summary = stringResource(id = R.string.summary_preference_settings_code_of_conduct) ,
                                onClick = {
                                    IntentsHelper.openUrl(
-                                       context ,
+                                       context = context ,
                                        url = "https://sites.google.com/view/d4rk7355608/more/code-of-conduct"
                                    )
                                })
@@ -58,21 +57,24 @@ fun PrivacySettingsComposable(activity : PrivacySettingsActivity) {
                                summary = stringResource(id = R.string.summary_preference_settings_permissions) ,
                                onClick = {
                                    IntentsHelper.openActivity(
-                                       context , PermissionsSettingsActivity::class.java
+                                       context = context ,
+                                       activityClass = PermissionsSettingsActivity::class.java
                                    )
                                })
                 PreferenceItem(title = stringResource(id = R.string.ads) ,
                                summary = stringResource(id = R.string.summary_preference_settings_ads) ,
                                onClick = {
                                    IntentsHelper.openActivity(
-                                       context , AdsSettingsActivity::class.java
+                                       context = context ,
+                                       activityClass = AdsSettingsActivity::class.java
                                    )
                                })
                 PreferenceItem(title = stringResource(id = R.string.usage_and_diagnostics) ,
                                summary = stringResource(id = R.string.summary_preference_settings_usage_and_diagnostics) ,
                                onClick = {
                                    IntentsHelper.openActivity(
-                                       context , UsageAndDiagnosticsActivity::class.java
+                                       context = context ,
+                                       activityClass = UsageAndDiagnosticsActivity::class.java
                                    )
                                })
             }
@@ -82,7 +84,7 @@ fun PrivacySettingsComposable(activity : PrivacySettingsActivity) {
                                summary = stringResource(id = R.string.summary_preference_settings_legal_notices) ,
                                onClick = {
                                    IntentsHelper.openUrl(
-                                       context ,
+                                       context = context ,
                                        url = "https://sites.google.com/view/d4rk7355608/more/apps/legal-notices"
                                    )
                                })
@@ -90,7 +92,8 @@ fun PrivacySettingsComposable(activity : PrivacySettingsActivity) {
                                summary = stringResource(id = R.string.summary_preference_settings_license) ,
                                onClick = {
                                    IntentsHelper.openUrl(
-                                       context , url = "https://www.gnu.org/licenses/gpl-3.0"
+                                       context = context ,
+                                       url = "https://www.gnu.org/licenses/gpl-3.0"
                                    )
                                })
             }

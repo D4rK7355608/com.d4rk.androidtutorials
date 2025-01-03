@@ -34,29 +34,28 @@ fun AboutSettingsComposable(activity : AboutSettingsActivity) {
     val changelogHtmlString = htmlData.value.first
     val eulaHtmlString = htmlData.value.second
 
-    TopAppBarScaffoldWithBackButton(
-        title = stringResource(id = R.string.about) ,
-        onBackClicked = { activity.finish() }) { paddingValues ->
-        Box(modifier = Modifier.padding(paddingValues)) {
+    TopAppBarScaffoldWithBackButton(title = stringResource(id = R.string.about) ,
+                                    onBackClicked = { activity.finish() }) { paddingValues ->
+        Box(modifier = Modifier.padding(paddingValues = paddingValues)) {
             LazyColumn(
                 modifier = Modifier.fillMaxHeight()
             ) {
-                item(key = "app_info_category") {
+                item {
                     PreferenceCategoryItem(title = stringResource(id = R.string.app_info))
                 }
-                item(key = "app_name") {
+                item {
                     PreferenceItem(
                         title = stringResource(id = R.string.app_name) ,
                         summary = stringResource(id = R.string.copyright) ,
                     )
                 }
-                item(key = "app_build_version") {
+                item {
                     PreferenceItem(
                         title = stringResource(id = R.string.app_build_version) ,
                         summary = "${BuildConfig.VERSION_NAME} (${BuildConfig.VERSION_CODE})"
                     )
                 }
-                item(key = "oss_licenses") {
+                item {
                     PreferenceItem(title = stringResource(R.string.oss_license_title) ,
                                    summary = stringResource(id = R.string.summary_preference_settings_oss) ,
                                    onClick = {
@@ -67,10 +66,10 @@ fun AboutSettingsComposable(activity : AboutSettingsActivity) {
                                        )
                                    })
                 }
-                item(key = "device_info_category") {
+                item {
                     PreferenceCategoryItem(title = stringResource(id = R.string.device_info))
                 }
-                item(key = "device_info") {
+                item {
                     val version : String = stringResource(
                         id = R.string.app_build ,
                         "${stringResource(id = R.string.manufacturer)} ${Build.MANUFACTURER}" ,
@@ -89,11 +88,12 @@ fun AboutSettingsComposable(activity : AboutSettingsActivity) {
                                                                            label = "Device Info" ,
                                                                            text = version ,
                                                                            onShowSnackbar = {
-                                                                             showSnackbar = true
-                                                                         })
+                                                                               showSnackbar = true
+                                                                           })
                                    })
                 }
             }
+
             Snackbar(message = stringResource(id = R.string.snack_device_info_copied) ,
                      showSnackbar = showSnackbar ,
                      onDismiss = { showSnackbar = false })

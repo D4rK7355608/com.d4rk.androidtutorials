@@ -1,6 +1,5 @@
 package com.d4rk.androidtutorials.ui.screens.settings.display.theme
 
-import android.content.Context
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -22,7 +21,6 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.d4rk.androidtutorials.R
@@ -32,14 +30,12 @@ import com.d4rk.androidtutorials.ui.components.preferences.SwitchCardComposable
 import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick
 import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffoldWithBackButton
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 @Composable
 fun ThemeSettingsComposable(activity : ThemeSettingsActivity) {
-    val context : Context = LocalContext.current
     val dataStore : DataStore = AppCoreManager.dataStore
-    val scope : CoroutineScope = rememberCoroutineScope()
+    val coroutineScope : CoroutineScope = rememberCoroutineScope()
     val themeMode : String = dataStore.themeMode.collectAsState(initial = "follow_system").value
     val isAmoledMode : State<Boolean> = dataStore.amoledMode.collectAsState(initial = false)
 
@@ -48,22 +44,21 @@ fun ThemeSettingsComposable(activity : ThemeSettingsActivity) {
         stringResource(id = R.string.dark_mode) ,
         stringResource(id = R.string.light_mode) ,
     )
-    TopAppBarScaffoldWithBackButton(
-        title = stringResource(id = R.string.dark_theme) ,
-        onBackClicked = { activity.finish() }) { paddingValues ->
+    TopAppBarScaffoldWithBackButton(title = stringResource(id = R.string.dark_theme) ,
+                                    onBackClicked = { activity.finish() }) { paddingValues ->
         Box(modifier = Modifier.fillMaxSize()) {
             LazyColumn(
                 modifier = Modifier
                         .fillMaxSize()
-                        .padding(paddingValues) ,
+                        .padding(paddingValues = paddingValues) ,
             ) {
                 item {
                     SwitchCardComposable(
                         title = stringResource(id = R.string.amoled_mode) ,
                         switchState = isAmoledMode
                     ) { isChecked ->
-                        scope.launch(Dispatchers.IO) {
-                            dataStore.saveAmoledMode(isChecked)
+                        coroutineScope.launch {
+                            dataStore.saveAmoledMode(isChecked = isChecked)
                         }
                     }
                 }
@@ -81,8 +76,8 @@ fun ThemeSettingsComposable(activity : ThemeSettingsActivity) {
                                 RadioButton(modifier = Modifier.bounceClick() ,
                                             selected = (text == themeMode) ,
                                             onClick = {
-                                                scope.launch(Dispatchers.IO) {
-                                                    dataStore.saveThemeMode(text)
+                                                coroutineScope.launch {
+                                                    dataStore.saveThemeMode(mode = text)
                                                     dataStore.themeModeState.value = text
                                                 }
                                             })
@@ -99,10 +94,10 @@ fun ThemeSettingsComposable(activity : ThemeSettingsActivity) {
                     Column(
                         modifier = Modifier
                                 .fillMaxWidth()
-                                .padding(24.dp)
+                                .padding(all = 24.dp)
                     ) {
                         Icon(imageVector = Icons.Outlined.Info , contentDescription = null)
-                        Spacer(modifier = Modifier.height(24.dp))
+                        Spacer(modifier = Modifier.height(height = 24.dp))
                         Text(text = stringResource(id = R.string.summary_dark_theme))
                     }
                 }
