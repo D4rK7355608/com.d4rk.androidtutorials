@@ -4,7 +4,7 @@
     <string name="notification_update_title">O nouă actualizare disponibilă!</string>
     <string name="summary_notification_update">O nouă versiune a aplicației este disponibilă. Faceți clic pentru a actualiza!</string>
     <string name="notification_last_time_used_title">A trecut ceva timp!</string>
-    <string name="summary_notification_last_time_used"> Să eliberăm puțin spațiu! Ne bucurăm că te-ai întors!</string>
+    <string name="summary_notification_last_time_used">Ne-a fost dor de tine! Să învățăm ceva nou despre Android!</string>
 
     <string name="welcome">Bun venit</string>
     <string name="summary_browse_terms_of_service_and_privacy_policy">Citiți și acceptați Termenii și condițiile și Politica de confidențialitate pentru a continua</string>

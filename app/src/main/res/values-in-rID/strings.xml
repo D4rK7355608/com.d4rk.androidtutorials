@@ -4,7 +4,7 @@
     <string name="notification_update_title">Pembaruan baru tersedia!</string>
     <string name="summary_notification_update">Versi baru aplikasi tersedia. Klik untuk memperbarui!</string>
     <string name="notification_last_time_used_title">Sudah lama sekali!</string>
-    <string name="summary_notification_last_time_used">Mari kita bebaskan ruang! Kami senang Anda kembali!</string>
+    <string name="summary_notification_last_time_used">Kami merindukanmu! Mari pelajari sesuatu yang baru tentang Android!</string>
 
     <string name="welcome">Selamat datang</string>
     <string name="summary_browse_terms_of_service_and_privacy_policy">Baca dan setujui Ketentuan Layanan dan Kebijakan Privasi kami untuk melanjutkan</string>

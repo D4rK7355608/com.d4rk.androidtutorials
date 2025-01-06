@@ -4,7 +4,7 @@
     <string name="notification_update_title">有新的更新可用！</string>
     <string name="summary_notification_update">應用程式的新版本已可用。單擊以更新！</string>
     <string name="notification_last_time_used_title">好久不見了！</string>
-    <string name="summary_notification_last_time_used"> 讓我們騰出一些空間！我們很高興您回來了！</string>
+    <string name="summary_notification_last_time_used">我們想念你！ 讓我們學習一些關於 Android 的新東西！</string>
 
     <string name="welcome">歡迎</string>
     <string name="summary_browse_terms_of_service_and_privacy_policy">閱讀並同意我們的服務條款和隱私權政策以繼續</string>

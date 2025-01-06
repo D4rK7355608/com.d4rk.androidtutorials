@@ -1,3 +1,7 @@
+# Version 1.1.4:
+
+- **Minor**: Updated the About Libraries dependency to the latest version for improved compatibility and bug fixes.
+
 # Version 1.1.3:
 
 - **Minor**: Enhanced the app's error handling mechanism for a better user experience.

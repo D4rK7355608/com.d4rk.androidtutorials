@@ -4,7 +4,7 @@
     <string name="notification_update_title">Uma nova atualização disponível!</string>
     <string name="summary_notification_update">Uma nova versão do aplicativo está disponível. Clique para atualizar!</string>
     <string name="notification_last_time_used_title">Faz um tempo!</string>
-    <string name="summary_notification_last_time_used"> Vamos liberar algum espaço! Estamos felizes que você voltou!</string>
+    <string name="summary_notification_last_time_used">Sentimos sua falta! Vamos aprender algo novo sobre o Android!</string>
 
     <string name="welcome">Bem-vindo</string>
     <string name="summary_browse_terms_of_service_and_privacy_policy">Leia e concorde com nossos Termos de Serviço e Política de Privacidade para continuar</string>

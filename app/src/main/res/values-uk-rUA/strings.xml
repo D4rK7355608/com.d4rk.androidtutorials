@@ -4,7 +4,7 @@
     <string name="notification_update_title">Доступне нове оновлення!</string>
     <string name="summary_notification_update">Доступна нова версія програми. Натисніть, щоб оновити!</string>
     <string name="notification_last_time_used_title">Це було давно!</string>
-    <string name="summary_notification_last_time_used"> Давайте звільнимо трохи місця! Ми раді, що ви повернулися!</string>
+    <string name="summary_notification_last_time_used">Ми сумували за вами! Давайте дізнаємося щось нове про Android!</string>
 
     <string name="welcome">Ласкаво просимо</string>
     <string name="summary_browse_terms_of_service_and_privacy_policy">Прочитайте та погодьтеся з нашими Умовами надання послуг і Політикою конфіденційності, щоб продовжити</string>
