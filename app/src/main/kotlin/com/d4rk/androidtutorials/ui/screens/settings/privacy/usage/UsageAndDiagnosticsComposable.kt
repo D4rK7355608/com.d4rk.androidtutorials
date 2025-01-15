@@ -28,14 +28,14 @@ import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
+import com.d4rk.android.libs.apptoolkit.ui.components.preferences.SwitchCardComposable
+import com.d4rk.android.libs.apptoolkit.utils.helpers.IntentsHelper
 import com.d4rk.androidtutorials.BuildConfig
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.data.core.AppCoreManager
 import com.d4rk.androidtutorials.data.datastore.DataStore
-import com.d4rk.androidtutorials.ui.components.preferences.SwitchCardComposable
 import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick
 import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffoldWithBackButton
-import com.d4rk.androidtutorials.utils.helpers.IntentsHelper
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
@@ -104,7 +104,10 @@ fun UsageAndDiagnosticsComposable(activity : UsageAndDiagnosticsActivity) {
                                             )
                                             .firstOrNull()
                                             ?.let { annotation ->
-                                                IntentsHelper.openUrl(context , annotation.item)
+                                                IntentsHelper.openUrl(
+                                                    context = context ,
+                                                    url = annotation.item
+                                                )
                                             }
                                 })
                     }

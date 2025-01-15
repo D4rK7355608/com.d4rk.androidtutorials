@@ -14,15 +14,15 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import com.d4rk.android.libs.apptoolkit.ui.components.preferences.PreferenceCategoryItem
+import com.d4rk.android.libs.apptoolkit.ui.components.preferences.PreferenceItem
+import com.d4rk.android.libs.apptoolkit.ui.components.snackbar.Snackbar
+import com.d4rk.android.libs.apptoolkit.utils.helpers.ClipboardHelper
+import com.d4rk.android.libs.apptoolkit.utils.helpers.IntentsHelper
+import com.d4rk.android.libs.apptoolkit.utils.rememberHtmlData
 import com.d4rk.androidtutorials.BuildConfig
 import com.d4rk.androidtutorials.R
-import com.d4rk.androidtutorials.ui.components.preferences.PreferenceCategoryItem
-import com.d4rk.androidtutorials.ui.components.preferences.PreferenceItem
-import com.d4rk.androidtutorials.ui.components.snackbar.Snackbar
 import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffoldWithBackButton
-import com.d4rk.androidtutorials.utils.helpers.ClipboardHelper
-import com.d4rk.androidtutorials.utils.helpers.IntentsHelper
-import com.d4rk.androidtutorials.utils.rememberHtmlData
 
 @Composable
 fun AboutSettingsComposable(activity : AboutSettingsActivity) {
@@ -30,12 +30,17 @@ fun AboutSettingsComposable(activity : AboutSettingsActivity) {
 
     var showSnackbar : Boolean by remember { mutableStateOf(value = false) }
 
-    val htmlData = rememberHtmlData()
+    val htmlData = rememberHtmlData(
+        packageName = BuildConfig.APPLICATION_ID ,
+        currentVersionName = BuildConfig.VERSION_NAME ,
+        context = context
+    )
     val changelogHtmlString = htmlData.value.first
     val eulaHtmlString = htmlData.value.second
 
-    TopAppBarScaffoldWithBackButton(title = stringResource(id = R.string.about) ,
-                                    onBackClicked = { activity.finish() }) { paddingValues ->
+    TopAppBarScaffoldWithBackButton(
+        title = stringResource(id = R.string.about) ,
+        onBackClicked = { activity.finish() }) { paddingValues ->
         Box(modifier = Modifier.padding(paddingValues = paddingValues)) {
             LazyColumn(
                 modifier = Modifier.fillMaxHeight()
@@ -56,13 +61,17 @@ fun AboutSettingsComposable(activity : AboutSettingsActivity) {
                     )
                 }
                 item {
-                    PreferenceItem(title = stringResource(R.string.oss_license_title) ,
+                    PreferenceItem(title = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.oss_license_title) ,
                                    summary = stringResource(id = R.string.summary_preference_settings_oss) ,
                                    onClick = {
                                        IntentsHelper.openLicensesScreen(
                                            context = context ,
                                            eulaHtmlString = eulaHtmlString ,
-                                           changelogHtmlString = changelogHtmlString
+                                           changelogHtmlString = changelogHtmlString ,
+                                           appName = R.string.app_name ,
+                                           appVersion = BuildConfig.VERSION_NAME ,
+                                           appVersionCode = BuildConfig.VERSION_CODE ,
+                                           appShortDescription = R.string.app_short_description
                                        )
                                    })
                 }

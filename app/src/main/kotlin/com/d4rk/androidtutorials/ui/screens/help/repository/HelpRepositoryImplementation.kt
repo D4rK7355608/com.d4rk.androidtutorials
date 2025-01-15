@@ -1,9 +1,9 @@
 package com.d4rk.androidtutorials.ui.screens.help.repository
 
 import android.app.Application
+import com.d4rk.android.libs.apptoolkit.utils.helpers.IntentsHelper
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.ui.screens.help.HelpActivity
-import com.d4rk.androidtutorials.utils.helpers.IntentsHelper
 import com.google.android.gms.tasks.Task
 import com.google.android.play.core.review.ReviewInfo
 import com.google.android.play.core.review.ReviewManager

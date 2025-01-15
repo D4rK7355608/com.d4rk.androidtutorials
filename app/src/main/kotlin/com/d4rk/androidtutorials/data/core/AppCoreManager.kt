@@ -15,7 +15,7 @@ import androidx.lifecycle.ProcessLifecycleOwner
 import androidx.multidex.MultiDexApplication
 import androidx.room.Room
 import androidx.room.migration.Migration
-import com.d4rk.androidtutorials.data.client.KtorClient
+import com.d4rk.android.libs.apptoolkit.data.client.KtorClient
 import com.d4rk.androidtutorials.data.core.ads.AdsCoreManager
 import com.d4rk.androidtutorials.data.core.datastore.DataStoreCoreManager
 import com.d4rk.androidtutorials.data.database.AppDatabase

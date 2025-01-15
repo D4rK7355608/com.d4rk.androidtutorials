@@ -2,8 +2,8 @@ package com.d4rk.androidtutorials.utils.error
 
 import android.app.Activity
 import android.content.Context
+import com.d4rk.android.libs.apptoolkit.utils.constants.error.ErrorType
 import com.d4rk.androidtutorials.R
-import com.d4rk.androidtutorials.utils.constants.error.ErrorType
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 
@@ -11,7 +11,7 @@ object ErrorHandler {
 
     private val crashlytics: FirebaseCrashlytics = FirebaseCrashlytics.getInstance()
 
-    fun handleError(applicationContext: Context, errorType: ErrorType, exception: Throwable?) {
+    fun handleError(applicationContext: Context , errorType: ErrorType , exception: Throwable?) {
         val message: String = applicationContext.getString(
             when (errorType) {
                 ErrorType.SECURITY_EXCEPTION -> R.string.security_error

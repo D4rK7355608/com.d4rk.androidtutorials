@@ -20,14 +20,14 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.d4rk.android.libs.apptoolkit.ui.components.preferences.SettingsPreferenceItem
+import com.d4rk.android.libs.apptoolkit.utils.helpers.IntentsHelper
 import com.d4rk.androidtutorials.R
-import com.d4rk.androidtutorials.ui.components.preferences.SettingsPreferenceItem
 import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffoldWithBackButton
 import com.d4rk.androidtutorials.ui.screens.settings.about.AboutSettingsActivity
 import com.d4rk.androidtutorials.ui.screens.settings.advanced.AdvancedSettingsActivity
 import com.d4rk.androidtutorials.ui.screens.settings.display.DisplaySettingsActivity
 import com.d4rk.androidtutorials.ui.screens.settings.privacy.PrivacySettingsActivity
-import com.d4rk.androidtutorials.utils.helpers.IntentsHelper
 
 @Composable
 fun SettingsComposable(activity : SettingsActivity) {
@@ -52,7 +52,7 @@ fun SettingsComposable(activity : SettingsActivity) {
                                            title = stringResource(id = R.string.notifications) ,
                                            summary = stringResource(id = R.string.summary_preference_settings_notifications) ,
                                            onClick = {
-                                               IntentsHelper.openAppNotificationSettings(context)
+                                               IntentsHelper.openAppNotificationSettings(context = context)
                                            })
                     Spacer(modifier = Modifier.height(2.dp))
                     SettingsPreferenceItem(Icons.Outlined.Palette ,

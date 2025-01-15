@@ -8,11 +8,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import com.d4rk.android.libs.apptoolkit.ui.components.preferences.PreferenceCategoryItem
+import com.d4rk.android.libs.apptoolkit.ui.components.preferences.PreferenceItem
+import com.d4rk.android.libs.apptoolkit.utils.helpers.IntentsHelper
 import com.d4rk.androidtutorials.R
-import com.d4rk.androidtutorials.ui.components.preferences.PreferenceCategoryItem
-import com.d4rk.androidtutorials.ui.components.preferences.PreferenceItem
 import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffoldWithBackButton
-import com.d4rk.androidtutorials.utils.helpers.IntentsHelper
 
 @Composable
 fun AdvancedSettingsComposable(activity : AdvancedSettingsActivity) {
@@ -41,3 +41,17 @@ fun AdvancedSettingsComposable(activity : AdvancedSettingsActivity) {
         }
     }
 }
+
+/*
+fun death(context : Context, appPackage : String) {
+    IssueReporterActivity
+            .forTarget("D4rK7355608", appPackage)
+            .guestToken("28f479f73db97d912611b27579aad7a76ad2baf5")
+            .guestEmailRequired(true)
+            .minDescriptionLength(20)
+            .putExtraInfo("Test 1", "Example string")
+            .putExtraInfo("Test 2", true)
+            .homeAsUpEnabled(false)
+            .launch(context)
+
+}*/

@@ -32,12 +32,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
+import com.d4rk.android.libs.apptoolkit.ui.components.dialogs.VersionInfoAlertDialog
+import com.d4rk.android.libs.apptoolkit.utils.helpers.IntentsHelper
+import com.d4rk.androidtutorials.BuildConfig
 import com.d4rk.androidtutorials.R
-import com.d4rk.androidtutorials.ui.components.dialogs.VersionInfoAlertDialog
 import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick
 import com.d4rk.androidtutorials.ui.screens.help.HelpActivity
 import com.d4rk.androidtutorials.ui.screens.support.SupportActivity
-import com.d4rk.androidtutorials.utils.helpers.IntentsHelper
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
@@ -88,17 +89,18 @@ fun TopAppBarScaffoldWithBackButton(
             TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
     val view : View = LocalView.current
 
-    Scaffold(modifier = Modifier.nestedScroll(scrollBehaviorState.nestedScrollConnection) ,
-             topBar = {
-                 LargeTopAppBar(title = { Text(text = title) } , navigationIcon = {
-                     IconButton(modifier = Modifier.bounceClick() , onClick = {
-                         onBackClicked()
-                         view.playSoundEffect(SoundEffectConstants.CLICK)
-                     }) {
-                         Icon(Icons.AutoMirrored.Filled.ArrowBack , contentDescription = null)
-                     }
-                 } , scrollBehavior = scrollBehaviorState)
-             }) { paddingValues ->
+    Scaffold(
+        modifier = Modifier.nestedScroll(scrollBehaviorState.nestedScrollConnection) ,
+        topBar = {
+            LargeTopAppBar(title = { Text(text = title) } , navigationIcon = {
+                IconButton(modifier = Modifier.bounceClick() , onClick = {
+                    onBackClicked()
+                    view.playSoundEffect(SoundEffectConstants.CLICK)
+                }) {
+                    Icon(Icons.AutoMirrored.Filled.ArrowBack , contentDescription = null)
+                }
+            } , scrollBehavior = scrollBehaviorState)
+        }) { paddingValues ->
         content(paddingValues)
     }
 }
@@ -183,18 +185,22 @@ fun TopAppBarScaffoldWithBackButtonAndActions(
                                      )
                                  })
                 DropdownMenuItem(modifier = Modifier.bounceClick() ,
-                                 text = { Text(text = stringResource(id = R.string.oss_license_title)) } ,
+                                 text = { Text(text = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.oss_license_title)) } ,
                                  onClick = {
                                      view.playSoundEffect(SoundEffectConstants.CLICK)
                                      IntentsHelper.openLicensesScreen(
                                          context = context ,
                                          eulaHtmlString = eulaHtmlString ,
-                                         changelogHtmlString = changelogHtmlString
+                                         changelogHtmlString = changelogHtmlString ,
+                                         appName = R.string.app_name ,
+                                         appVersion = BuildConfig.VERSION_NAME ,
+                                         appVersionCode = BuildConfig.VERSION_CODE ,
+                                         appShortDescription = R.string.app_short_description
                                      )
                                  })
             }
             if (showDialog.value) {
-                VersionInfoAlertDialog(onDismiss = { showDialog.value = false })
+                VersionInfoAlertDialog(onDismiss = { showDialog.value = false }, copyrightString = R.string.copyright, appName = R.string.app_name, versionName = BuildConfig.VERSION_NAME, versionString = R.string.version)
             }
         } ,
         scrollBehavior = scrollBehavior ,
@@ -209,11 +215,12 @@ fun TopAppBarScaffold(
     val scrollBehaviorState : TopAppBarScrollBehavior =
             TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
 
-    Scaffold(modifier = Modifier.nestedScroll(scrollBehaviorState.nestedScrollConnection) ,
-             topBar = {
-                 LargeTopAppBar(title = { Text(text = title) } ,
-                                scrollBehavior = scrollBehaviorState)
-             }) { paddingValues ->
+    Scaffold(
+        modifier = Modifier.nestedScroll(scrollBehaviorState.nestedScrollConnection) ,
+        topBar = {
+            LargeTopAppBar(title = { Text(text = title) } ,
+                           scrollBehavior = scrollBehaviorState)
+        }) { paddingValues ->
         content(paddingValues)
     }
 }

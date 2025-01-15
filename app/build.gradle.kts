@@ -22,7 +22,8 @@ android {
         versionCode = 107
         versionName = "1.1.3"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        resourceConfigurations += listOf(
+        @Suppress("UnstableApiUsage")
+        androidResources.localeFilters += listOf(
             "en" ,
             "bg-rBG" ,
             "de-rDE" ,
@@ -105,28 +106,10 @@ android {
 }
 
 dependencies {
-
-    //AndroidX
-    implementation(dependencyNotation = libs.androidx.core.ktx)
-    implementation(dependencyNotation = libs.androidx.appcompat)
-    implementation(dependencyNotation = libs.androidx.core.splashscreen)
-    implementation(dependencyNotation = libs.androidx.multidex)
-    implementation(dependencyNotation = libs.androidx.work.runtime.ktx)
-
-    // Compose
-    implementation(dependencyNotation = platform(libs.androidx.compose.bom))
-    implementation(dependencyNotation = libs.androidx.ui)
-    implementation(dependencyNotation = libs.androidx.activity.compose)
-    implementation(dependencyNotation = libs.androidx.ui.graphics)
-    implementation(dependencyNotation = libs.androidx.compose.runtime)
-    implementation(dependencyNotation = libs.androidx.runtime.livedata)
-    implementation(dependencyNotation = libs.androidx.ui.tooling.preview)
-    implementation(dependencyNotation = libs.androidx.material3)
-    implementation(dependencyNotation = libs.androidx.material.icons.extended)
-    implementation(dependencyNotation = libs.datastore.preferences)
-    implementation(dependencyNotation = libs.androidx.datastore.preferences)
-    implementation(dependencyNotation = libs.androidx.foundation)
-    implementation(dependencyNotation = libs.androidx.navigation.compose)
+    // App Core
+    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:0.0.18") {
+        isTransitive = true
+    }
 
     // Code view
     implementation(dependencyNotation = libs.compose.code.editor)
@@ -140,42 +123,12 @@ dependencies {
     // Google
     implementation(dependencyNotation = libs.play.services.ads)
     implementation(dependencyNotation = libs.billing)
-    implementation(dependencyNotation = libs.material)
     implementation(dependencyNotation = libs.app.update.ktx)
     implementation(dependencyNotation = libs.review.ktx)
     implementation(dependencyNotation = libs.generativeai)
-
-    // Images
-    implementation(dependencyNotation = libs.coil.compose)
-    implementation(dependencyNotation = libs.coil.gif)
-    implementation(dependencyNotation = libs.coil.network.okhttp)
-
-    // Kotlin
-    implementation(dependencyNotation = libs.kotlinx.coroutines.android)
-    implementation(dependencyNotation = libs.kotlinx.serialization.json)
-
-    // Ktor
-    implementation(dependencyNotation = platform(libs.ktor.bom))
-    implementation(dependencyNotation = libs.ktor.client.android)
-    implementation(dependencyNotation = libs.ktor.client.serialization)
-    implementation(dependencyNotation = libs.ktor.client.logging)
-    implementation(dependencyNotation = libs.ktor.client.content.negotiation)
-    implementation(dependencyNotation = libs.ktor.serialization.kotlinx.json)
 
     // KSP
     ksp(dependencyNotation = libs.androidx.room.compiler)
     implementation(dependencyNotation = libs.androidx.room.ktx)
     implementation(dependencyNotation = libs.androidx.room.runtime)
-
-    // Lifecycle
-    implementation(dependencyNotation = libs.androidx.lifecycle.runtime.ktx)
-    implementation(dependencyNotation = libs.androidx.lifecycle.livedata.ktx)
-    implementation(dependencyNotation = libs.androidx.lifecycle.process)
-    implementation(dependencyNotation = libs.androidx.lifecycle.viewmodel.ktx)
-    implementation(dependencyNotation = libs.androidx.lifecycle.viewmodel.compose)
-    implementation(dependencyNotation = libs.androidx.lifecycle.runtime.compose)
-
-    // About
-    implementation(dependencyNotation = libs.aboutlibraries)
-    implementation(dependencyNotation = libs.core)
 }

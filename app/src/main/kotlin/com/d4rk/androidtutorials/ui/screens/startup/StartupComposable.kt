@@ -33,12 +33,12 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
+import com.d4rk.android.libs.apptoolkit.utils.helpers.IntentsHelper
+import com.d4rk.android.libs.apptoolkit.utils.helpers.PermissionsHelper
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick
 import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffold
 import com.d4rk.androidtutorials.ui.screens.main.MainActivity
-import com.d4rk.androidtutorials.utils.helpers.IntentsHelper
-import com.d4rk.androidtutorials.utils.helpers.PermissionsHelper
 
 @Composable
 fun StartupComposable(activity : StartupActivity) {
@@ -109,7 +109,10 @@ fun StartupComposable(activity : StartupActivity) {
                                         )
                                         .firstOrNull()
                                         ?.let { annotation ->
-                                            IntentsHelper.openUrl(context , annotation.item)
+                                            IntentsHelper.openUrl(
+                                                context = context ,
+                                                url = annotation.item
+                                            )
                                         }
                             })
                 }

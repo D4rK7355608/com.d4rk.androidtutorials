@@ -22,18 +22,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.core.os.LocaleListCompat
+import com.d4rk.android.libs.apptoolkit.ui.components.preferences.PreferenceCategoryItem
+import com.d4rk.android.libs.apptoolkit.ui.components.preferences.PreferenceItem
+import com.d4rk.android.libs.apptoolkit.ui.components.preferences.SwitchPreferenceItem
+import com.d4rk.android.libs.apptoolkit.ui.components.preferences.SwitchPreferenceItemWithDivider
+import com.d4rk.android.libs.apptoolkit.utils.helpers.IntentsHelper
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.data.core.AppCoreManager
 import com.d4rk.androidtutorials.data.datastore.DataStore
-import com.d4rk.androidtutorials.ui.components.preferences.PreferenceCategoryItem
-import com.d4rk.androidtutorials.ui.components.preferences.PreferenceItem
-import com.d4rk.androidtutorials.ui.components.preferences.SwitchPreferenceItem
-import com.d4rk.androidtutorials.ui.components.preferences.SwitchPreferenceItemWithDivider
 import com.d4rk.androidtutorials.ui.components.dialogs.SelectLanguageAlertDialog
 import com.d4rk.androidtutorials.ui.components.dialogs.SelectStartupScreenAlertDialog
 import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffoldWithBackButton
 import com.d4rk.androidtutorials.ui.screens.settings.display.theme.ThemeSettingsActivity
-import com.d4rk.androidtutorials.utils.helpers.IntentsHelper
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 

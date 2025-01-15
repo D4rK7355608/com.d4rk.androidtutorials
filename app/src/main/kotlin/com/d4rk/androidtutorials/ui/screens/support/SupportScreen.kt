@@ -34,11 +34,11 @@ import androidx.compose.ui.unit.dp
 import com.android.billingclient.api.BillingClient
 import com.android.billingclient.api.BillingClientStateListener
 import com.android.billingclient.api.BillingResult
+import com.d4rk.android.libs.apptoolkit.utils.helpers.IntentsHelper
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.ui.components.ads.LargeBannerAdsComposable
 import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick
 import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffoldWithBackButton
-import com.d4rk.androidtutorials.utils.helpers.IntentsHelper
 
 @Composable
 fun SupportComposable(viewModel : SupportViewModel , activity : SupportActivity) {
@@ -205,7 +205,7 @@ fun SupportComposable(viewModel : SupportViewModel , activity : SupportActivity)
                         onClick = {
                             view.playSoundEffect(SoundEffectConstants.CLICK)
                             IntentsHelper.openUrl(
-                                context , url = "https://direct-link.net/548212/agOqI7123501341"
+                                context = context , url = "https://direct-link.net/548212/agOqI7123501341"
                             )
                         } ,
                         modifier = Modifier

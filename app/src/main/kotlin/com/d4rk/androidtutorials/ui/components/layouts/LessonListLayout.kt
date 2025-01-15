@@ -40,6 +40,9 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil3.compose.AsyncImage
+import com.d4rk.android.libs.apptoolkit.ui.components.spacers.MediumHorizontalSpacer
+import com.d4rk.android.libs.apptoolkit.ui.components.spacers.MediumVerticalSpacer
+import com.d4rk.android.libs.apptoolkit.ui.components.spacers.SmallHorizontalSpacer
 import com.d4rk.androidtutorials.data.core.AppCoreManager
 import com.d4rk.androidtutorials.data.model.ui.screens.UiHomeLesson
 import com.d4rk.androidtutorials.ui.components.ads.AdBanner
@@ -48,9 +51,6 @@ import com.d4rk.androidtutorials.ui.components.ads.LargeBannerAdsComposable
 import com.d4rk.androidtutorials.ui.components.modifiers.animateVisibility
 import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick
 import com.d4rk.androidtutorials.ui.components.navigation.openLessonDetailActivity
-import com.d4rk.androidtutorials.ui.components.spacers.MediumHorizontalSpacer
-import com.d4rk.androidtutorials.ui.components.spacers.MediumVerticalSpacer
-import com.d4rk.androidtutorials.ui.components.spacers.SmallHorizontalSpacer
 import com.d4rk.androidtutorials.ui.screens.home.HomeViewModel
 import com.d4rk.androidtutorials.utils.constants.ui.lessons.LessonConstants
 

@@ -8,14 +8,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import com.d4rk.android.libs.apptoolkit.ui.components.preferences.PreferenceCategoryItem
+import com.d4rk.android.libs.apptoolkit.ui.components.preferences.PreferenceItem
+import com.d4rk.android.libs.apptoolkit.utils.helpers.IntentsHelper
 import com.d4rk.androidtutorials.R
-import com.d4rk.androidtutorials.ui.components.preferences.PreferenceCategoryItem
-import com.d4rk.androidtutorials.ui.components.preferences.PreferenceItem
 import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffoldWithBackButton
 import com.d4rk.androidtutorials.ui.screens.settings.privacy.ads.AdsSettingsActivity
 import com.d4rk.androidtutorials.ui.screens.settings.privacy.permissions.PermissionsSettingsActivity
 import com.d4rk.androidtutorials.ui.screens.settings.privacy.usage.UsageAndDiagnosticsActivity
-import com.d4rk.androidtutorials.utils.helpers.IntentsHelper
 
 @Composable
 fun PrivacySettingsComposable(activity : PrivacySettingsActivity) {
