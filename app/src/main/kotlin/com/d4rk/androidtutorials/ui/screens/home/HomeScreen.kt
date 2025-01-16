@@ -11,9 +11,9 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.d4rk.android.libs.apptoolkit.data.model.ui.error.UiErrorModel
 import com.d4rk.android.libs.apptoolkit.ui.components.dialogs.ErrorAlertDialog
+import com.d4rk.android.libs.apptoolkit.ui.components.layouts.LoadingScreen
 import com.d4rk.androidtutorials.data.model.ui.screens.UiHomeScreen
 import com.d4rk.androidtutorials.ui.components.layouts.LessonListLayout
-import com.d4rk.androidtutorials.ui.components.layouts.LoadingScreen
 import com.d4rk.androidtutorials.ui.components.layouts.NoLessonsScreen
 
 @Composable

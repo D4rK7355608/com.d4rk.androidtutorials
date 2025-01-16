@@ -48,6 +48,7 @@ import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.d4rk.android.libs.apptoolkit.ui.components.buttons.AnimatedExtendedFloatingActionButton
+import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
 import com.d4rk.android.libs.apptoolkit.ui.components.spacers.LargeHorizontalSpacer
 import com.d4rk.android.libs.apptoolkit.ui.components.spacers.SmallVerticalSpacer
 import com.d4rk.android.libs.apptoolkit.utils.rememberHtmlData
@@ -55,7 +56,6 @@ import com.d4rk.androidtutorials.BuildConfig
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.data.model.ui.screens.UiHelpQuestion
 import com.d4rk.androidtutorials.data.model.ui.screens.UiHelpScreen
-import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick
 import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffoldWithBackButtonAndActions
 
 @OptIn(ExperimentalMaterial3Api::class)

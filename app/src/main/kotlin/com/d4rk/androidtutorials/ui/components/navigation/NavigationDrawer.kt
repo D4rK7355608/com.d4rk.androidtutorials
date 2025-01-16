@@ -18,13 +18,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
 import com.d4rk.android.libs.apptoolkit.data.model.ui.navigation.NavigationDrawerItem
+import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
+import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.hapticDrawerSwipe
 import com.d4rk.android.libs.apptoolkit.ui.components.spacers.LargeVerticalSpacer
 import com.d4rk.android.libs.apptoolkit.utils.helpers.IntentsHelper
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.data.datastore.DataStore
 import com.d4rk.androidtutorials.data.model.ui.screens.UiMainScreen
-import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick
-import com.d4rk.androidtutorials.ui.components.modifiers.hapticDrawerSwipe
 import com.d4rk.androidtutorials.ui.screens.help.HelpActivity
 import com.d4rk.androidtutorials.ui.screens.main.MainScreenContent
 import com.d4rk.androidtutorials.ui.screens.main.MainViewModel

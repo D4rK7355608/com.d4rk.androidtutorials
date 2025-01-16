@@ -33,10 +33,10 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
+import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
 import com.d4rk.android.libs.apptoolkit.utils.helpers.IntentsHelper
 import com.d4rk.android.libs.apptoolkit.utils.helpers.PermissionsHelper
 import com.d4rk.androidtutorials.R
-import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick
 import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffold
 import com.d4rk.androidtutorials.ui.screens.main.MainActivity
 

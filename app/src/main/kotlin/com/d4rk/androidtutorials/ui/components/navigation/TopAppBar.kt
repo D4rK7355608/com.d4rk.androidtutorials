@@ -33,10 +33,10 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import com.d4rk.android.libs.apptoolkit.ui.components.dialogs.VersionInfoAlertDialog
+import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
 import com.d4rk.android.libs.apptoolkit.utils.helpers.IntentsHelper
 import com.d4rk.androidtutorials.BuildConfig
 import com.d4rk.androidtutorials.R
-import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick
 import com.d4rk.androidtutorials.ui.screens.help.HelpActivity
 import com.d4rk.androidtutorials.ui.screens.support.SupportActivity
 import kotlinx.coroutines.CoroutineScope
@@ -65,9 +65,7 @@ fun TopAppBarMain(
         }
     } , actions = {
         IconButton(modifier = Modifier.bounceClick() , onClick = {
-            view.playSoundEffect(
-                SoundEffectConstants.CLICK
-            )
+            view.playSoundEffect(SoundEffectConstants.CLICK)
             IntentsHelper.openActivity(
                 context , SupportActivity::class.java
             )

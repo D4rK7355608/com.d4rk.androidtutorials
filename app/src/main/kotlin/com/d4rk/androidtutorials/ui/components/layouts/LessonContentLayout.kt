@@ -43,6 +43,7 @@ import coil3.ImageLoader
 import coil3.compose.AsyncImage
 import coil3.gif.AnimatedImageDecoder
 import coil3.gif.GifDecoder
+import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
 import com.d4rk.android.libs.apptoolkit.ui.components.spacers.ButtonHorizontalSpacer
 import com.d4rk.android.libs.apptoolkit.ui.components.spacers.LargeVerticalSpacer
 import com.d4rk.android.libs.apptoolkit.ui.components.spacers.SmallVerticalSpacer
@@ -51,7 +52,6 @@ import com.d4rk.androidtutorials.data.model.ui.screens.UiLessonScreen
 import com.d4rk.androidtutorials.ui.components.ads.AdBanner
 import com.d4rk.androidtutorials.ui.components.ads.AdBannerFull
 import com.d4rk.androidtutorials.ui.components.ads.LargeBannerAdsComposable
-import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick
 import com.d4rk.androidtutorials.ui.screens.settings.display.theme.style.Colors
 import com.d4rk.androidtutorials.ui.screens.settings.display.theme.style.TextStyles
 import com.d4rk.androidtutorials.utils.constants.ui.lessons.LessonCodeConstants

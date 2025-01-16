@@ -15,6 +15,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.itemsIndexed
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -40,16 +43,17 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil3.compose.AsyncImage
+import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.animateVisibility
+import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
 import com.d4rk.android.libs.apptoolkit.ui.components.spacers.MediumHorizontalSpacer
 import com.d4rk.android.libs.apptoolkit.ui.components.spacers.MediumVerticalSpacer
 import com.d4rk.android.libs.apptoolkit.ui.components.spacers.SmallHorizontalSpacer
+import com.d4rk.android.libs.apptoolkit.utils.helpers.ScreenHelper
 import com.d4rk.androidtutorials.data.core.AppCoreManager
 import com.d4rk.androidtutorials.data.model.ui.screens.UiHomeLesson
 import com.d4rk.androidtutorials.ui.components.ads.AdBanner
 import com.d4rk.androidtutorials.ui.components.ads.AdBannerFull
 import com.d4rk.androidtutorials.ui.components.ads.LargeBannerAdsComposable
-import com.d4rk.androidtutorials.ui.components.modifiers.animateVisibility
-import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick
 import com.d4rk.androidtutorials.ui.components.navigation.openLessonDetailActivity
 import com.d4rk.androidtutorials.ui.screens.home.HomeViewModel
 import com.d4rk.androidtutorials.utils.constants.ui.lessons.LessonConstants
@@ -66,28 +70,52 @@ fun LessonListLayout(
         lessons
     } else {
         lessons.filterNot { lesson ->
-            lesson.lessonType == LessonConstants.TYPE_AD_BANNER || lesson.lessonType == LessonConstants.TYPE_AD_FULL_BANNER || lesson.lessonType == LessonConstants.TYPE_AD_LARGE_BANNER
+            lesson.lessonType == LessonConstants.TYPE_AD_BANNER ||
+                    lesson.lessonType == LessonConstants.TYPE_AD_FULL_BANNER ||
+                    lesson.lessonType == LessonConstants.TYPE_AD_LARGE_BANNER
         }
     }
 
-    LazyColumn(
-        contentPadding = PaddingValues(all = 16.dp),
-        verticalArrangement = Arrangement.spacedBy(space = 16.dp),
-        modifier = Modifier.fillMaxSize()
-    ) {
-        itemsIndexed(filteredLessons) { index, lesson ->
-            val isVisible = visibilityStates.getOrElse(index) { false }
-            LessonItem(
-                lesson = lesson,
-                context = context,
-                modifier = Modifier
-                        .animateVisibility(visible = isVisible)
-                        .animateItem()
-            )
+    val showGrid = ScreenHelper.isLandscapeOrTablet(context)
+
+    if (showGrid) {
+        LazyVerticalGrid(
+            columns = GridCells.Adaptive(minSize = 150.dp) ,
+            contentPadding = PaddingValues(all = 16.dp) ,
+            verticalArrangement = Arrangement.spacedBy(16.dp) ,
+            horizontalArrangement = Arrangement.spacedBy(16.dp) ,
+            modifier = Modifier.fillMaxSize()
+        ) {
+            itemsIndexed(filteredLessons) { index, lesson ->
+                val isVisible = visibilityStates.getOrElse(index) { false }
+                LessonItem(
+                    lesson = lesson,
+                    context = context,
+                    modifier = Modifier
+                            .animateVisibility(visible = isVisible)
+                            .animateItem()
+                )
+            }
+        }
+    } else {
+        LazyColumn(
+            contentPadding = PaddingValues(all = 16.dp),
+            verticalArrangement = Arrangement.spacedBy(space = 16.dp),
+            modifier = Modifier.fillMaxSize()
+        ) {
+            itemsIndexed(filteredLessons) { index, lesson ->
+                val isVisible = visibilityStates.getOrElse(index) { false }
+                LessonItem(
+                    lesson = lesson,
+                    context = context,
+                    modifier = Modifier
+                            .animateVisibility(visible = isVisible)
+                            .animateItem()
+                )
+            }
         }
     }
 }
-
 
 @Composable
 fun LessonItem(lesson : UiHomeLesson , context : Context , modifier : Modifier = Modifier) {

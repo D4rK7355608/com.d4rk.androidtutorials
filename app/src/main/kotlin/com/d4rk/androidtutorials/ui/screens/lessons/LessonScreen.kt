@@ -9,9 +9,9 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import com.d4rk.android.libs.apptoolkit.data.model.ui.error.UiErrorModel
 import com.d4rk.android.libs.apptoolkit.ui.components.dialogs.ErrorAlertDialog
+import com.d4rk.android.libs.apptoolkit.ui.components.layouts.LoadingScreen
 import com.d4rk.androidtutorials.data.model.ui.screens.UiLessonScreen
 import com.d4rk.androidtutorials.ui.components.layouts.LessonContentLayout
-import com.d4rk.androidtutorials.ui.components.layouts.LoadingScreen
 import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffoldWithBackButton
 
 @Composable

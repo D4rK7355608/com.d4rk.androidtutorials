@@ -58,13 +58,13 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.d4rk.android.libs.apptoolkit.ui.components.layouts.LoadingScreen
+import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
 import com.d4rk.android.libs.apptoolkit.ui.components.spacers.ButtonHorizontalSpacer
 import com.d4rk.android.libs.apptoolkit.ui.components.spacers.LargeHorizontalSpacer
 import com.d4rk.android.libs.apptoolkit.utils.helpers.ClipboardHelper
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.data.model.api.ApiMessageData
-import com.d4rk.androidtutorials.ui.components.layouts.LoadingScreen
-import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick
 import com.google.firebase.analytics.FirebaseAnalytics
 import kotlinx.coroutines.delay
 

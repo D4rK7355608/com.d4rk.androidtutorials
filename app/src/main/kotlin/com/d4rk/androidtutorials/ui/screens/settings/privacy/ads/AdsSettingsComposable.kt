@@ -28,6 +28,7 @@ import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
+import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
 import com.d4rk.android.libs.apptoolkit.ui.components.preferences.PreferenceItem
 import com.d4rk.android.libs.apptoolkit.ui.components.preferences.SwitchCardComposable
 import com.d4rk.android.libs.apptoolkit.utils.helpers.IntentsHelper
@@ -35,7 +36,6 @@ import com.d4rk.androidtutorials.BuildConfig
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.data.core.AppCoreManager
 import com.d4rk.androidtutorials.data.datastore.DataStore
-import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick
 import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffoldWithBackButton
 import com.google.android.ump.ConsentInformation
 import com.google.android.ump.ConsentRequestParameters

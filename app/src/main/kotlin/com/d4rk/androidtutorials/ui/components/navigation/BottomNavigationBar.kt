@@ -19,11 +19,11 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
+import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
 import com.d4rk.androidtutorials.data.datastore.DataStore
 import com.d4rk.androidtutorials.data.model.ui.navigation.BottomNavigationScreen
 import com.d4rk.androidtutorials.data.model.ui.screens.UiMainScreen
 import com.d4rk.androidtutorials.ui.components.ads.AdBannerFull
-import com.d4rk.androidtutorials.ui.components.modifiers.bounceClick
 import com.d4rk.androidtutorials.ui.screens.main.MainViewModel
 
 @Composable

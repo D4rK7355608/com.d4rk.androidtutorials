@@ -20,7 +20,7 @@ android {
         minSdk = 23
         targetSdk = 35
         versionCode = 107
-        versionName = "1.1.3"
+        versionName = "1.1.4"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         @Suppress("UnstableApiUsage")
         androidResources.localeFilters += listOf(
@@ -107,7 +107,7 @@ android {
 
 dependencies {
     // App Core
-    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:0.0.18") {
+    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:0.0.21") {
         isTransitive = true
     }
 
