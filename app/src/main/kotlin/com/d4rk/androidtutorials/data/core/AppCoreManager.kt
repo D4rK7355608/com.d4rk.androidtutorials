@@ -16,13 +16,15 @@ import androidx.multidex.MultiDexApplication
 import androidx.room.Room
 import androidx.room.migration.Migration
 import com.d4rk.android.libs.apptoolkit.data.client.KtorClient
+import com.d4rk.android.libs.apptoolkit.utils.error.ErrorHandler
+import com.d4rk.android.libs.apptoolkit.utils.error.ErrorHandler.handleInitializationFailure
 import com.d4rk.androidtutorials.data.core.ads.AdsCoreManager
 import com.d4rk.androidtutorials.data.core.datastore.DataStoreCoreManager
 import com.d4rk.androidtutorials.data.database.AppDatabase
 import com.d4rk.androidtutorials.data.database.migrations.MIGRATION_1_2
 import com.d4rk.androidtutorials.data.database.migrations.MIGRATION_2_3
 import com.d4rk.androidtutorials.data.datastore.DataStore
-import com.d4rk.androidtutorials.utils.error.ErrorHandler.handleInitializationFailure
+import com.d4rk.androidtutorials.utils.error.CrashlyticsErrorReporter
 import io.ktor.client.HttpClient
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Deferred
@@ -49,6 +51,10 @@ class AppCoreManager : MultiDexApplication() , Application.ActivityLifecycleCall
         super.onCreate()
         instance = this
         registerActivityLifecycleCallbacks(this)
+
+        val crashlyticsReporter = CrashlyticsErrorReporter()
+        ErrorHandler.init(reporter = crashlyticsReporter)
+
         ProcessLifecycleOwner.get().lifecycle.addObserver(observer = this)
         CoroutineScope(context = Dispatchers.IO).launch {
             initializeApp()

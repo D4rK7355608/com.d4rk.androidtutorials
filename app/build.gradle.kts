@@ -107,7 +107,7 @@ android {
 
 dependencies {
     // App Core
-    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:0.0.21") {
+    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:0.0.24") {
         isTransitive = true
     }
 
@@ -126,6 +126,8 @@ dependencies {
     implementation(dependencyNotation = libs.app.update.ktx)
     implementation(dependencyNotation = libs.review.ktx)
     implementation(dependencyNotation = libs.generativeai)
+    // TODO For lib:
+    implementation("androidx.compose.material3:material3-adaptive-navigation-suite")
 
     // KSP
     ksp(dependencyNotation = libs.androidx.room.compiler)

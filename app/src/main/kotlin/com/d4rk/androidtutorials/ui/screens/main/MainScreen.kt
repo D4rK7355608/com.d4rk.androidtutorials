@@ -1,76 +1,62 @@
 package com.d4rk.androidtutorials.ui.screens.main
 
-import android.content.Context
-import android.view.View
 import androidx.compose.foundation.layout.imePadding
-import androidx.compose.material3.DrawerState
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
-import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.d4rk.android.libs.apptoolkit.utils.helpers.ScreenHelper
 import com.d4rk.androidtutorials.data.core.AppCoreManager
-import com.d4rk.androidtutorials.data.datastore.DataStore
+import com.d4rk.androidtutorials.data.model.ui.screens.MainScreenState
 import com.d4rk.androidtutorials.ui.components.navigation.BottomNavigationBar
 import com.d4rk.androidtutorials.ui.components.navigation.NavigationDrawer
 import com.d4rk.androidtutorials.ui.components.navigation.NavigationHost
 import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarMain
+import com.d4rk.androidtutorials.utils.constants.ui.DrawerStyle
 import kotlinx.coroutines.CoroutineScope
 
 @Composable
-fun MainScreen(
-    viewModel : MainViewModel
-) {
+fun MainScreen(viewModel : MainViewModel) {
+    val drawerState = rememberDrawerState(DrawerValue.Closed)
+    val navController = rememberNavController()
+    val context = LocalContext.current
+    val view = LocalView.current
+    val dataStore = AppCoreManager.dataStore
 
-    val drawerState : DrawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
-    val navController : NavHostController = rememberNavController()
-    val context : Context = LocalContext.current
-    val view : View = LocalView.current
-    val dataStore : DataStore = AppCoreManager.dataStore
+    val mainScreenState = remember {
+        MainScreenState(
+            context = context , view = view , drawerState = drawerState , navHostController = navController , dataStore = dataStore , viewModel = viewModel
+        )
+    }
+
+    val isTabletOrLandscape = ScreenHelper.isLandscapeOrTablet(context)
+    val drawerStyle = if (isTabletOrLandscape) DrawerStyle.PERMANENT else DrawerStyle.MODAL
 
     NavigationDrawer(
-        navHostController = navController ,
-        drawerState = drawerState ,
-        view = view ,
-        dataStore = dataStore ,
-        context = context ,
-        viewModel = viewModel
+        style = drawerStyle , mainScreenState = mainScreenState
     )
 }
 
 @Composable
-fun MainScreenContent(
-    view : View ,
-    drawerState : DrawerState ,
-    context : Context ,
-    coroutineScope : CoroutineScope ,
-    navHostController : NavHostController ,
-    dataStore : DataStore ,
-    viewModel : MainViewModel
+fun MainScaffoldContent(
+    mainScreenState : MainScreenState , coroutineScope : CoroutineScope
 ) {
     Scaffold(modifier = Modifier.imePadding() , topBar = {
         TopAppBarMain(
-            view = view ,
-            drawerState = drawerState ,
-            context = context ,
-            coroutineScope = coroutineScope ,
+            view = mainScreenState.view , drawerState = mainScreenState.drawerState , context = mainScreenState.context , coroutineScope = coroutineScope
         )
     } , bottomBar = {
         BottomNavigationBar(
-            navController = navHostController ,
-            dataStore = dataStore ,
-            view = view ,
-            viewModel = viewModel ,
+            navController = mainScreenState.navHostController , dataStore = mainScreenState.dataStore , view = mainScreenState.view , viewModel = mainScreenState.viewModel
         )
     }) { paddingValues ->
         NavigationHost(
-            navHostController = navHostController ,
-            dataStore = dataStore ,
-            paddingValues = paddingValues ,
+            navHostController = mainScreenState.navHostController , dataStore = mainScreenState.dataStore , paddingValues = paddingValues
         )
     }
 }

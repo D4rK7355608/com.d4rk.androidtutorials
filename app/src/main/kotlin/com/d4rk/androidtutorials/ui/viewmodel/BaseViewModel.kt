@@ -8,8 +8,8 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.d4rk.android.libs.apptoolkit.data.model.ui.error.UiErrorModel
 import com.d4rk.android.libs.apptoolkit.utils.constants.error.ErrorType
+import com.d4rk.android.libs.apptoolkit.utils.error.ErrorHandler
 import com.d4rk.androidtutorials.R
-import com.d4rk.androidtutorials.utils.error.ErrorHandler
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

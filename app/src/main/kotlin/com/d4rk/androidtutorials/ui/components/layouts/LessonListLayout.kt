@@ -15,11 +15,11 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.foundation.lazy.grid.itemsIndexed
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.lazy.staggeredgrid.LazyVerticalStaggeredGrid
+import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridCells
+import androidx.compose.foundation.lazy.staggeredgrid.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Favorite
@@ -60,54 +60,52 @@ import com.d4rk.androidtutorials.utils.constants.ui.lessons.LessonConstants
 
 @Composable
 fun LessonListLayout(
-    lessons: List<UiHomeLesson>,
-    visibilityStates: List<Boolean>,
-    context: Context
+    lessons : List<UiHomeLesson> , visibilityStates : List<Boolean> , context : Context
 ) {
-    val showAds: Boolean by AppCoreManager.dataStore.ads.collectAsState(initial = true)
+    val showAds : Boolean by AppCoreManager.dataStore.ads.collectAsState(initial = true)
 
     val filteredLessons = if (showAds) {
         lessons
-    } else {
+    }
+    else {
         lessons.filterNot { lesson ->
-            lesson.lessonType == LessonConstants.TYPE_AD_BANNER ||
-                    lesson.lessonType == LessonConstants.TYPE_AD_FULL_BANNER ||
-                    lesson.lessonType == LessonConstants.TYPE_AD_LARGE_BANNER
+            lesson.lessonType == LessonConstants.TYPE_AD_BANNER || lesson.lessonType == LessonConstants.TYPE_AD_FULL_BANNER || lesson.lessonType == LessonConstants.TYPE_AD_LARGE_BANNER
         }
     }
 
     val showGrid = ScreenHelper.isLandscapeOrTablet(context)
 
     if (showGrid) {
-        LazyVerticalGrid(
-            columns = GridCells.Adaptive(minSize = 150.dp) ,
-            contentPadding = PaddingValues(all = 16.dp) ,
-            verticalArrangement = Arrangement.spacedBy(16.dp) ,
+        LazyVerticalStaggeredGrid(
+            columns = StaggeredGridCells.Fixed(count = 3) ,
+            contentPadding = PaddingValues(16.dp) ,
+            verticalItemSpacing = 16.dp ,
             horizontalArrangement = Arrangement.spacedBy(16.dp) ,
             modifier = Modifier.fillMaxSize()
         ) {
-            itemsIndexed(filteredLessons) { index, lesson ->
+            itemsIndexed(filteredLessons) { index , lesson ->
                 val isVisible = visibilityStates.getOrElse(index) { false }
                 LessonItem(
-                    lesson = lesson,
-                    context = context,
+                    lesson = lesson ,
+                    context = context ,
                     modifier = Modifier
                             .animateVisibility(visible = isVisible)
                             .animateItem()
                 )
             }
         }
-    } else {
+    }
+    else {
         LazyColumn(
-            contentPadding = PaddingValues(all = 16.dp),
-            verticalArrangement = Arrangement.spacedBy(space = 16.dp),
+            contentPadding = PaddingValues(all = 16.dp) ,
+            verticalArrangement = Arrangement.spacedBy(space = 16.dp) ,
             modifier = Modifier.fillMaxSize()
         ) {
-            itemsIndexed(filteredLessons) { index, lesson ->
+            itemsIndexed(filteredLessons) { index , lesson ->
                 val isVisible = visibilityStates.getOrElse(index) { false }
                 LessonItem(
-                    lesson = lesson,
-                    context = context,
+                    lesson = lesson ,
+                    context = context ,
                     modifier = Modifier
                             .animateVisibility(visible = isVisible)
                             .animateItem()
@@ -126,7 +124,11 @@ fun LessonItem(lesson : UiHomeLesson , context : Context , modifier : Modifier =
     ) {
         when (lesson.lessonType) {
             LessonConstants.TYPE_FULL_IMAGE_BANNER -> {
-                FullImageBannerLessonItem(lesson = lesson , context = context , viewModel = viewModel)
+                FullImageBannerLessonItem(
+                    lesson = lesson ,
+                    context = context ,
+                    viewModel = viewModel
+                )
             }
 
             LessonConstants.TYPE_SQUARE_IMAGE -> {
