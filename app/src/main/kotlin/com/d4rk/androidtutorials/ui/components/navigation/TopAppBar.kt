@@ -152,7 +152,7 @@ fun TopAppBarScaffoldWithBackButtonAndActions(
                 DropdownMenuItem(modifier = Modifier.bounceClick() , text = { Text(text = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.oss_license_title)) } , onClick = {
                     view.playSoundEffect(SoundEffectConstants.CLICK)
                     IntentsHelper.openLicensesScreen(
-                        context = context , eulaHtmlString = eulaHtmlString , changelogHtmlString = changelogHtmlString , appName = R.string.app_name.toString() , appVersion = BuildConfig.VERSION_NAME , appVersionCode = BuildConfig.VERSION_CODE , appShortDescription = R.string.app_short_description
+                        context = context , eulaHtmlString = eulaHtmlString , changelogHtmlString = changelogHtmlString , appName = context.getString(R.string.app_name) , appVersion = BuildConfig.VERSION_NAME , appVersionCode = BuildConfig.VERSION_CODE , appShortDescription = R.string.app_short_description
                     )
                 })
             }
