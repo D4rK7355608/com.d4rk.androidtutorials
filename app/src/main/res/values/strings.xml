@@ -21,13 +21,11 @@
     <string name="illegal_argument_error">Invalid input or argument provided. Please check the information and try again.</string>
     <string name="sqlite_error">Database error encountered. Please try the following steps:\n\n1. Restart the app.\n2. If the issue persists, clear app data from Settings > Apps > Android Studio Tutorials > Storage.\n3. Contact support if the problem continues.</string>
     <string name="unknown_error">An unknown error occurred.</string>
-    <string name="initialization_error">Initialization failed. Please try again later.</string>
 
     <string name="studio_bot">Studio Bot</string>
     <string name="type_a_message">Type a message…</string>
 
     <string name="share">Share</string>
-    <string name="app_info">App info</string>
 
     <string name="favorites">Favorites</string>
     <string name="error_loading_favorites">Error loading favorite lessons. Please try again later.</string>
@@ -38,31 +36,13 @@
     <string name="display">Display</string>
     <string name="summary_preference_settings_display">Personalize your app\'s look and feel</string>
 
-    <string name="appearance">Appearance</string>
     <string name="dark_theme">Dark theme</string>
-    <string name="will_turn_on_automatically_by_system">Will turn on automatically by the system</string>
-    <string name="will_never_turn_on_automatically">Will never turn on automatically</string>
-    <string name="amoled_mode">AMOLED mode</string>
-    <string name="follow_system">Follow System Mode</string>
     <string name="light_mode">Light Mode</string>
     <string name="dark_mode">Dark Mode</string>
-    <string name="summary_dark_theme">Dark theme uses a deep background to help keep your battery alive longer</string>
 
-    <string name="dynamic_colors">Dynamic colors</string>
-    <string name="summary_preference_settings_dynamic_colors">Apply colors from wallpapers to the app theme</string>
-
-    <string name="app_behavior">App behavior</string>
-    <string name="bounce_buttons">Bounce click</string>
-    <string name="summary_preference_settings_bounce_buttons">Applies a subtle bounce animation to all clickable elements when clicked</string>
-
-    <string name="navigation">Navigation</string>
-    <string name="startup_page">Startup page</string>
-    <string name="summary_preference_settings_startup_page">Choose the screen to be displayed when the app starts.</string>
     <string name="dialog_startup_subtitle">Choose your preferred startup page:</string>
     <string name="dialog_info_startup">Configures the initial screen presented to users upon launching the application. This setting influences the user\'s first interaction with the app and can be tailored to specific user segments or product goals.</string>
 
-    <string name="language">Language</string>
-    <string name="summary_preference_settings_language">Changes the language used in the app</string>
     <string name="dialog_language_subtitle">Select your preferred language</string>
     <string name="dialog_info_language">Personalize your experience with your preferred language. Any language changes you make take effect right away, ensuring a seamless experience in your chosen language</string>
 
@@ -74,22 +54,13 @@
 
     <string name="advanced">Advanced</string>
     <string name="summary_preference_settings_advanced">Explore more advanced settings</string>
-    <string name="error_reporting">Error reporting</string>
-    <string name="bug_report">Bug report</string>
-    <string name="summary_preference_settings_bug_report">Send bug reports and feature requests to the app\'s GitHub repository issues page</string>
 
     <string name="security_and_privacy">Security &amp; privacy</string>
     <string name="summary_preference_settings_privacy_and_security">Manage your privacy settings</string>
-    <string name="privacy">Privacy</string>
     <string name="privacy_policy">Privacy Policy</string>
-    <string name="summary_preference_settings_privacy_policy">View the policy that governs how we handle your data</string>
     <string name="terms_of_service">Terms of Service</string>
-    <string name="summary_preference_settings_terms_of_service">Review the terms you agree to when using our service</string>
-    <string name="code_of_conduct">Code of Conduct</string>
-    <string name="summary_preference_settings_code_of_conduct">Understand the rules and guidelines for behavior within our service</string>
 
     <string name="permissions">Permissions</string>
-    <string name="summary_preference_settings_permissions">Manage the permissions granted to our service</string>
     <string name="normal">Normal</string>
     <string name="ad_id">Ad id [AD_ID]</string>
     <string name="summary_preference_permissions_ad_id">Allows the app to retrieve and use the advertising identifier associated with the user\'s device, providing personalized ads, measuring ad effectiveness, and showing ads on Android 13 or later devices.</string>
@@ -110,27 +81,17 @@
     <string name="summary_preference_permissions_foreground_service">Allows the app to create and use services that run in the foreground, giving them priority over other background processes and improving performance and reliability.</string>
 
     <string name="ads">Ads</string>
-    <string name="summary_preference_settings_ads">Control how we use your information to show you relevant ads</string>
     <string name="display_ads">Display ads</string>
     <string name="personalized_ads">Personalized ads</string>
     <string name="summary_ads_personalized_ads">Choose how we personalize ads for you based on your interests</string>
     <string name="summary_ads">See ads that are relevant to you. Manage the information used to show personalized ads based on your app activity. You can always turn off personalization here.\n</string>
 
     <string name="usage_and_diagnostics">Usage and diagnostics</string>
-    <string name="summary_preference_settings_usage_and_diagnostics">Share data to help improve Cleaner for Android</string>
     <string name="summary_usage_and_diagnostics">Help improve your experience by automatically sending diagnostic, device, and app usage data to us. This will help improve app performance, stability, and other enhancements. Some aggregate data will also help our apps.\n\nThis is general information about your device and how you use our apps (such as battery level, system and app activity, and errors). The data will be used to improve our apps\n\nTurning off this feature doesn\'t affect your device\'s ability to send the information needed for essential services such as app updates and security.\n</string>
-
-    <string name="legal">Legal</string>
-    <string name="legal_notices">Legal notices</string>
-    <string name="summary_preference_settings_legal_notices">View legal information about our service</string>
-    <string name="license">License</string>
 
     <string name="about">About</string>
     <string name="summary_preference_settings_about">Learn more about Android Studio Tutorials</string>
 
-    <string name="app_build_version">Application build version</string>
-    <string name="summary_preference_settings_oss">License details for open source software</string>
-    <string name="device_info">Device Info</string>
     <string name="app_build">App Build: %6$s\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
     <string name="debug">Debug</string>
     <string name="release">Release</string>
@@ -138,7 +99,6 @@
     <string name="device_model">Device Model:</string>
     <string name="android_version">Android Version:</string>
     <string name="api_level">API Level:</string>
-    <string name="snack_device_info_copied">Device info copied to clipboard</string>
 
     <string name="help_and_feedback">Help &amp; feedback</string>
     <string name="help">Help</string>
@@ -183,4 +143,6 @@
 
     <string name="close">Close?</string>
     <string name="summary_close">Are you sure you want to exit?</string>
+
+    <string name="get_help">Get help</string>
 </resources>

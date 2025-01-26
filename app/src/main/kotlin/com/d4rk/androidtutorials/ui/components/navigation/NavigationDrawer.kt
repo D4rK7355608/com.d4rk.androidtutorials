@@ -1,8 +1,6 @@
 package com.d4rk.androidtutorials.ui.components.navigation
 
 import android.content.Context
-import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.DrawerState
 import androidx.compose.material3.Icon
@@ -10,9 +8,6 @@ import androidx.compose.material3.ModalDrawerSheet
 import androidx.compose.material3.ModalNavigationDrawer
 import androidx.compose.material3.NavigationDrawerItem
 import androidx.compose.material3.NavigationDrawerItemDefaults
-import androidx.compose.material3.PermanentDrawerSheet
-import androidx.compose.material3.PermanentNavigationDrawer
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -20,7 +15,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import com.d4rk.android.libs.apptoolkit.data.model.ui.navigation.NavigationDrawerItem
 import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
 import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.hapticDrawerSwipe
@@ -31,61 +25,30 @@ import com.d4rk.androidtutorials.data.model.ui.screens.MainScreenState
 import com.d4rk.androidtutorials.ui.screens.help.HelpActivity
 import com.d4rk.androidtutorials.ui.screens.main.MainScaffoldContent
 import com.d4rk.androidtutorials.ui.screens.settings.SettingsActivity
-import com.d4rk.androidtutorials.utils.constants.ui.DrawerStyle
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
 @Composable
 fun NavigationDrawer(
-    style : DrawerStyle , mainScreenState : MainScreenState
+    mainScreenState : MainScreenState
 ) {
     val uiState by mainScreenState.viewModel.uiState.collectAsState()
     val drawerItems = uiState.navigationDrawerItems
     val coroutineScope : CoroutineScope = rememberCoroutineScope()
 
-    when (style) {
-        DrawerStyle.MODAL -> {
-            ModalNavigationDrawer(modifier = Modifier.hapticDrawerSwipe(drawerState = mainScreenState.drawerState) , drawerState = mainScreenState.drawerState , drawerContent = {
-                ModalDrawerSheet {
-                    LargeVerticalSpacer()
-                    drawerItems.forEach { item ->
-                        NavigationDrawerItemContent(
-                            item = item , coroutineScope = coroutineScope , drawerState = mainScreenState.drawerState , context = mainScreenState.context
-                        )
-                    }
-                }
-            }) {
-                MainScaffoldContent(
-                    mainScreenState = mainScreenState , coroutineScope = coroutineScope
+    ModalNavigationDrawer(modifier = Modifier.hapticDrawerSwipe(drawerState = mainScreenState.drawerState) , drawerState = mainScreenState.drawerState , drawerContent = {
+        ModalDrawerSheet {
+            LargeVerticalSpacer()
+            drawerItems.forEach { item ->
+                NavigationDrawerItemContent(
+                    item = item , coroutineScope = coroutineScope , drawerState = mainScreenState.drawerState , context = mainScreenState.context
                 )
             }
         }
-
-        DrawerStyle.PERMANENT -> {
-            Scaffold(modifier = Modifier.imePadding() , topBar = {
-                TopAppBarMain(
-                    view = mainScreenState.view , drawerState = mainScreenState.drawerState , context = mainScreenState.context , coroutineScope = coroutineScope
-                )
-            } , bottomBar = {
-                BottomNavigationBar(
-                    navController = mainScreenState.navHostController , dataStore = mainScreenState.dataStore , view = mainScreenState.view , viewModel = mainScreenState.viewModel
-                )
-            }) { paddingValues ->
-                PermanentNavigationDrawer(modifier = Modifier.hapticDrawerSwipe(drawerState = mainScreenState.drawerState).padding(paddingValues) , drawerContent = {
-                    PermanentDrawerSheet {
-                        drawerItems.forEach { item ->
-                            NavigationDrawerItemContent(
-                                item = item , coroutineScope = coroutineScope , drawerState = mainScreenState.drawerState , context = mainScreenState.context
-                            )
-                        }
-                    }
-                }) {
-                    NavigationHost(
-                        navHostController = mainScreenState.navHostController , dataStore = mainScreenState.dataStore , paddingValues = PaddingValues(0.dp)
-                    )
-                }
-            }
-        }
+    }) {
+        MainScaffoldContent(
+            mainScreenState = mainScreenState , coroutineScope = coroutineScope
+        )
     }
 }
 
@@ -128,6 +91,7 @@ private fun NavigationDrawerItemContent(
         if (item.badgeText.isNotBlank()) {
             Text(text = item.badgeText)
         }
-    } , modifier = Modifier.padding(paddingValues = NavigationDrawerItemDefaults.ItemPadding).bounceClick()
-    )
+    } , modifier = Modifier
+            .padding(paddingValues = NavigationDrawerItemDefaults.ItemPadding)
+            .bounceClick())
 }

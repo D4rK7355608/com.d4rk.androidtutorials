@@ -84,30 +84,14 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".ui.screens.settings.display.DisplaySettingsActivity"
-            android:parentActivityName=".ui.screens.settings.SettingsActivity"
-            android:windowSoftInputMode="adjustResize" />
 
-        <activity
-            android:name=".ui.screens.settings.display.theme.ThemeSettingsActivity"
-            android:parentActivityName=".ui.screens.settings.display.DisplaySettingsActivity"
-            android:windowSoftInputMode="adjustResize" />
-
-        <activity
-            android:name=".ui.screens.settings.advanced.AdvancedSettingsActivity"
-            android:parentActivityName=".ui.screens.settings.SettingsActivity"
-            android:windowSoftInputMode="adjustResize" />
-
-        <activity
-            android:name=".ui.screens.settings.privacy.PrivacySettingsActivity"
+        <activity android:name=".ui.screens.settings.general.GeneralSettingsActivity"
             android:parentActivityName=".ui.screens.settings.SettingsActivity"
             android:windowSoftInputMode="adjustResize" />
 
         <activity
             android:name=".ui.screens.settings.privacy.permissions.PermissionsSettingsActivity"
             android:exported="true"
-            android:parentActivityName=".ui.screens.settings.privacy.PrivacySettingsActivity"
             android:permission="android.permission.START_VIEW_PERMISSION_USAGE"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
@@ -119,18 +103,7 @@
         </activity>
 
         <activity
-            android:name=".ui.screens.settings.privacy.usage.UsageAndDiagnosticsActivity"
-            android:parentActivityName=".ui.screens.settings.privacy.PrivacySettingsActivity"
-            android:windowSoftInputMode="adjustResize" />
-
-        <activity
             android:name=".ui.screens.settings.privacy.ads.AdsSettingsActivity"
-            android:parentActivityName=".ui.screens.settings.privacy.PrivacySettingsActivity"
-            android:windowSoftInputMode="adjustResize" />
-
-        <activity
-            android:name=".ui.screens.settings.about.AboutSettingsActivity"
-            android:parentActivityName=".ui.screens.settings.SettingsActivity"
             android:windowSoftInputMode="adjustResize" />
 
         <activity

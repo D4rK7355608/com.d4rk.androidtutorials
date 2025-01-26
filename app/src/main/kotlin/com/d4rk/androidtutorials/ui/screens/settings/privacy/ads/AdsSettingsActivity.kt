@@ -29,7 +29,7 @@ class AdsSettingsActivity : AppCompatActivity() {
                 Surface(
                     modifier = Modifier.fillMaxSize() , color = MaterialTheme.colorScheme.background
                 ) {
-                    AdsSettingsComposable(activity = this@AdsSettingsActivity)
+                    AdsSettingsScreen(activity = this@AdsSettingsActivity)
                 }
             }
         }

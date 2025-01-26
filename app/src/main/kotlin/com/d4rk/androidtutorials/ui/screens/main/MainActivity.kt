@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         installSplashScreen().apply {
             setKeepOnScreenCondition {
-                ! (application as AppCoreManager).isAppLoaded()
+                !(application as AppCoreManager).isAppLoaded()
             }
         }
         enableEdgeToEdge()

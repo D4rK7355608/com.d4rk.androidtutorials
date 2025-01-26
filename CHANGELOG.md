@@ -1,5 +1,7 @@
-# Version 1.1.4:
+# Version 1.2.0:
 
+- **New**: Added navigation rail for tablets and landscape mode for better usability on larger screens.
+- **New**: Settings reorganized for clarity and better user experience on larger screens.
 - **Minor**: Improved app performance and stability.
 - **Minor**: Enhanced data management for a smoother user experience.
 

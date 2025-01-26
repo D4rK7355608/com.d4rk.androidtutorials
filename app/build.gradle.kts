@@ -19,8 +19,8 @@ android {
         applicationId = "com.d4rk.androidtutorials"
         minSdk = 23
         targetSdk = 35
-        versionCode = 107
-        versionName = "1.1.4"
+        versionCode = 108
+        versionName = "1.2.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         @Suppress("UnstableApiUsage")
         androidResources.localeFilters += listOf(
@@ -106,8 +106,9 @@ android {
 }
 
 dependencies {
+
     // App Core
-    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:0.0.24") {
+    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:0.0.40") {
         isTransitive = true
     }
 
@@ -121,13 +122,10 @@ dependencies {
     implementation(dependencyNotation = libs.firebase.perf)
 
     // Google
-    implementation(dependencyNotation = libs.play.services.ads)
     implementation(dependencyNotation = libs.billing)
     implementation(dependencyNotation = libs.app.update.ktx)
     implementation(dependencyNotation = libs.review.ktx)
     implementation(dependencyNotation = libs.generativeai)
-    // TODO For lib:
-    implementation("androidx.compose.material3:material3-adaptive-navigation-suite")
 
     // KSP
     ksp(dependencyNotation = libs.androidx.room.compiler)
