@@ -1,4 +1,4 @@
-package com.d4rk.androidtutorials.ui.screens.settings.privacy.usage
+package com.d4rk.androidtutorials.ui.screens.settings.privacy.ads
 
 import android.content.Context
 import androidx.compose.foundation.clickable
@@ -29,6 +29,7 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
+import com.d4rk.android.libs.apptoolkit.ui.components.preferences.PreferenceItem
 import com.d4rk.android.libs.apptoolkit.ui.components.preferences.SwitchCardComposable
 import com.d4rk.android.libs.apptoolkit.utils.helpers.IntentsHelper
 import com.d4rk.androidtutorials.BuildConfig
@@ -36,35 +37,61 @@ import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.data.core.AppCoreManager
 import com.d4rk.androidtutorials.data.datastore.DataStore
 import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffoldWithBackButton
+import com.google.android.ump.ConsentInformation
+import com.google.android.ump.ConsentRequestParameters
+import com.google.android.ump.UserMessagingPlatform
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
 @Composable
-fun UsageAndDiagnosticsComposable(activity : UsageAndDiagnosticsActivity) {
+fun AdsSettingsScreen(activity : AdsSettingsActivity) {
     val context : Context = LocalContext.current
     val dataStore : DataStore = AppCoreManager.dataStore
-    val switchState : State<Boolean> =
-            dataStore.usageAndDiagnostics.collectAsState(initial = ! BuildConfig.DEBUG)
+    val switchState : State<Boolean> = dataStore.ads.collectAsState(initial = ! BuildConfig.DEBUG)
     val coroutineScope : CoroutineScope = rememberCoroutineScope()
 
-    TopAppBarScaffoldWithBackButton(title = stringResource(id = R.string.usage_and_diagnostics) ,
+    TopAppBarScaffoldWithBackButton(title = stringResource(id = R.string.ads) ,
                                     onBackClicked = { activity.finish() }) { paddingValues ->
         Box(modifier = Modifier.fillMaxSize()) {
             LazyColumn(
                 modifier = Modifier
                         .fillMaxSize()
-                        .padding(paddingValues = paddingValues) ,
+                        .padding(paddingValues) ,
             ) {
-                item {
+                item(key = "display_ads") {
                     SwitchCardComposable(
-                        title = stringResource(id = R.string.usage_and_diagnostics) ,
+                        title = stringResource(id = R.string.display_ads) ,
                         switchState = switchState
                     ) { isChecked ->
                         coroutineScope.launch {
-                            dataStore.saveUsageAndDiagnostics(isChecked = isChecked)
+                            dataStore.saveAds(isChecked = isChecked)
                         }
                     }
                 }
+                item {
+                    Box(modifier = Modifier.padding(horizontal = 8.dp)) {
+                        PreferenceItem(title = stringResource(id = R.string.personalized_ads) ,
+                                       enabled = switchState.value ,
+                                       summary = stringResource(id = R.string.summary_ads_personalized_ads) ,
+                                       onClick = {
+                                           val params : ConsentRequestParameters =
+                                                   ConsentRequestParameters.Builder()
+                                                           .setTagForUnderAgeOfConsent(false)
+                                                           .build()
+                                           val consentInformation : ConsentInformation =
+                                                   UserMessagingPlatform.getConsentInformation(
+                                                       context
+                                                   )
+                                           consentInformation.requestConsentInfoUpdate(activity ,
+                                                                                       params ,
+                                                                                       {
+                                                                                           activity.openForm()
+                                                                                       } ,
+                                                                                       {})
+                                       })
+                    }
+                }
+
                 item {
                     Column(
                         modifier = Modifier
@@ -73,7 +100,8 @@ fun UsageAndDiagnosticsComposable(activity : UsageAndDiagnosticsActivity) {
                     ) {
                         Icon(imageVector = Icons.Outlined.Info , contentDescription = null)
                         Spacer(modifier = Modifier.height(height = 24.dp))
-                        Text(text = stringResource(id = R.string.summary_usage_and_diagnostics))
+                        Text(text = stringResource(id = R.string.summary_ads))
+
                         val annotatedString : AnnotatedString = buildAnnotatedString {
                             val startIndex : Int = length
                             withStyle(
@@ -88,11 +116,12 @@ fun UsageAndDiagnosticsComposable(activity : UsageAndDiagnosticsActivity) {
 
                             addStringAnnotation(
                                 tag = "URL" ,
-                                annotation = "https://sites.google.com/view/d4rk7355608/more/apps/privacy-policy" ,
+                                annotation = "https://sites.google.com/view/d4rk7355608/more/apps/ads-help-center" ,
                                 start = startIndex ,
                                 end = endIndex
                             )
                         }
+
                         Text(text = annotatedString , modifier = Modifier
                                 .bounceClick()
                                 .clickable {
@@ -105,8 +134,7 @@ fun UsageAndDiagnosticsComposable(activity : UsageAndDiagnosticsActivity) {
                                             .firstOrNull()
                                             ?.let { annotation ->
                                                 IntentsHelper.openUrl(
-                                                    context = context ,
-                                                    url = annotation.item
+                                                    context = context , url = annotation.item
                                                 )
                                             }
                                 })

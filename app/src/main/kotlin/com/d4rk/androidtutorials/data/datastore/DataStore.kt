@@ -17,7 +17,7 @@ class DataStore(context : Context) : CommonDataStore(context) {
         private var instance : DataStore? = null
 
         fun getInstance(context : Context) : DataStore {
-            return instance ?: synchronized(this) {
+            return instance ?: synchronized(lock = this) {
                 instance ?: DataStore(context.applicationContext).also { instance = it }
             }
         }
