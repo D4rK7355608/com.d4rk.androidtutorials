@@ -1,5 +1,6 @@
 package com.d4rk.androidtutorials.ui.screens.help.repository
 
+import android.app.Activity
 import android.app.Application
 import com.d4rk.androidtutorials.data.model.ui.screens.UiHelpQuestion
 import com.d4rk.androidtutorials.ui.screens.help.HelpActivity
@@ -35,6 +36,12 @@ class HelpRepository(application : Application) : HelpRepositoryImplementation(a
     suspend fun launchReviewFlowRepository(activity : HelpActivity , reviewInfo : ReviewInfo) {
         withContext(Dispatchers.IO) {
             launchReviewFlowImplementation(activity = activity , reviewInfo = reviewInfo)
+        }
+    }
+
+    suspend fun sendEmailToDeveloperRepository(activity: Activity) {
+        withContext(Dispatchers.IO) {
+            sendEmailToDeveloperImplementation(activity = activity)
         }
     }
 }

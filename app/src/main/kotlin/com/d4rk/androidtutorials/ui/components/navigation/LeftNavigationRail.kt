@@ -65,7 +65,7 @@ fun LeftNavigationRail(
                     }
                 } , icon = {
                     Icon(
-                        imageVector = screen.selectedIcon , contentDescription = stringResource(id = screen.title)
+                        imageVector = if (currentRoute == screen.route) screen.selectedIcon else screen.icon , contentDescription = stringResource(id = screen.title)
                     )
                 } , label = if (isRailExpanded) {
                     { Text(text = stringResource(id = screen.title)) }

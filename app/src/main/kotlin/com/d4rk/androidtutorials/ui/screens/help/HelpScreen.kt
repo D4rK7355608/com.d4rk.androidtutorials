@@ -6,12 +6,15 @@ import android.view.View
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.rememberLazyListState
@@ -20,8 +23,9 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ExpandLess
 import androidx.compose.material.icons.filled.ExpandMore
-import androidx.compose.material.icons.filled.MailOutline
 import androidx.compose.material.icons.outlined.QuestionAnswer
+import androidx.compose.material.icons.outlined.RateReview
+import androidx.compose.material.icons.outlined.Support
 import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -34,11 +38,13 @@ import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.State
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateMapOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.snapshots.SnapshotStateMap
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -50,6 +56,7 @@ import androidx.compose.ui.unit.dp
 import com.d4rk.android.libs.apptoolkit.ui.components.buttons.AnimatedExtendedFloatingActionButton
 import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
 import com.d4rk.android.libs.apptoolkit.ui.components.spacers.LargeHorizontalSpacer
+import com.d4rk.android.libs.apptoolkit.ui.components.spacers.MediumVerticalSpacer
 import com.d4rk.android.libs.apptoolkit.ui.components.spacers.SmallVerticalSpacer
 import com.d4rk.android.libs.apptoolkit.utils.rememberHtmlData
 import com.d4rk.androidtutorials.BuildConfig
@@ -61,8 +68,7 @@ import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffoldWithB
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HelpScreen(activity : HelpActivity , viewModel : HelpViewModel) {
-    val scrollBehavior : TopAppBarScrollBehavior =
-            TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
+    val scrollBehavior : TopAppBarScrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
     val context : Context = LocalContext.current
     val view : View = LocalView.current
     val isFabVisible : Boolean by viewModel.isFabVisible.collectAsState()
@@ -70,16 +76,14 @@ fun HelpScreen(activity : HelpActivity , viewModel : HelpViewModel) {
 
     val uiState : UiHelpScreen by viewModel.uiState.collectAsState()
 
-    val htmlData = rememberHtmlData(
-        context = context ,
-        currentVersionName = BuildConfig.VERSION_NAME ,
-        packageName = BuildConfig.APPLICATION_ID
+    val htmlData : State<Pair<String? , String?>> = rememberHtmlData(
+        context = context , currentVersionName = BuildConfig.VERSION_NAME , packageName = BuildConfig.APPLICATION_ID
     )
 
     val changelogHtmlString : String? = htmlData.value.first
     val eulaHtmlString : String? = htmlData.value.second
 
-    val isFabExtended = remember { mutableStateOf(value = true) }
+    val isFabExtended : MutableState<Boolean> = remember { mutableStateOf(value = true) }
     LaunchedEffect(key1 = scrollBehavior.state.contentOffset) {
         isFabExtended.value = scrollBehavior.state.contentOffset >= 0f
     }
@@ -88,13 +92,7 @@ fun HelpScreen(activity : HelpActivity , viewModel : HelpViewModel) {
         modifier = Modifier.nestedScroll(connection = scrollBehavior.nestedScrollConnection) ,
         topBar = {
             TopAppBarScaffoldWithBackButtonAndActions(
-                context = context ,
-                activity = activity ,
-                showDialog = showDialog ,
-                eulaHtmlString = eulaHtmlString ,
-                changelogHtmlString = changelogHtmlString ,
-                scrollBehavior = scrollBehavior ,
-                view = view
+                context = context , activity = activity , showDialog = showDialog , eulaHtmlString = eulaHtmlString , changelogHtmlString = changelogHtmlString , scrollBehavior = scrollBehavior , view = view
             )
         } ,
         floatingActionButton = {
@@ -104,10 +102,11 @@ fun HelpScreen(activity : HelpActivity , viewModel : HelpViewModel) {
                     viewModel.launchReviewFlow(
                         activity = activity , reviewInfo = safeReviewInfo
                     )
+                    viewModel.requestReviewFlow()
                 }
             } , text = { Text(text = stringResource(id = R.string.feedback)) } , icon = {
                 Icon(
-                    Icons.Default.MailOutline , contentDescription = null
+                    Icons.Outlined.RateReview , contentDescription = null
                 )
             } , expanded = isFabExtended.value , modifier = Modifier.bounceClick())
         } ,
@@ -116,20 +115,25 @@ fun HelpScreen(activity : HelpActivity , viewModel : HelpViewModel) {
             modifier = Modifier
                     .padding(paddingValues = paddingValues)
                     .fillMaxSize()
-                    .safeDrawingPadding()
-                    .padding(horizontal = 16.dp) ,
-            state = rememberLazyListState()
+                    .padding(horizontal = 16.dp) , state = rememberLazyListState()
         ) {
             item {
                 Text(
-                    text = stringResource(id = R.string.faq) ,
-                    modifier = Modifier.padding(bottom = 24.dp)
+                    text = stringResource(id = R.string.popular_help_resources)
                 )
-            }
-            item {
+
+                MediumVerticalSpacer()
+
                 Card(modifier = Modifier.fillMaxWidth()) {
                     FAQComposable(questions = uiState.questions)
                 }
+
+                MediumVerticalSpacer()
+                ContactUsCard(onClick = {
+                    view.playSoundEffect(SoundEffectConstants.CLICK)
+                    viewModel.sendEmailToDeveloper(activity = activity)
+                })
+                Spacer(modifier = Modifier.height(height = 64.dp))
             }
         }
     }
@@ -137,17 +141,14 @@ fun HelpScreen(activity : HelpActivity , viewModel : HelpViewModel) {
 
 @Composable
 fun FAQComposable(questions : List<UiHelpQuestion>) {
-    val expandedStates = remember { mutableStateMapOf<Int , Boolean>() }
+    val expandedStates : SnapshotStateMap<Int , Boolean> = remember { mutableStateMapOf() }
 
     Column {
         questions.forEachIndexed { index , question ->
             val isExpanded = expandedStates[index] ?: false
-            QuestionComposable(title = question.question ,
-                               summary = question.answer ,
-                               isExpanded = isExpanded ,
-                               onToggleExpand = {
-                                   expandedStates[index] = ! isExpanded
-                               })
+            QuestionComposable(title = question.question , summary = question.answer , isExpanded = isExpanded , onToggleExpand = {
+                expandedStates[index] = ! isExpanded
+            })
         }
     }
 }
@@ -170,30 +171,21 @@ fun QuestionComposable(
                 verticalAlignment = Alignment.CenterVertically , modifier = Modifier.fillMaxWidth()
             ) {
                 Icon(
-                    imageVector = Icons.Outlined.QuestionAnswer ,
-                    contentDescription = null ,
-                    tint = MaterialTheme.colorScheme.primary ,
-                    modifier = Modifier
+                    imageVector = Icons.Outlined.QuestionAnswer , contentDescription = null , tint = MaterialTheme.colorScheme.primary , modifier = Modifier
                             .size(size = 48.dp)
                             .background(
-                                color = MaterialTheme.colorScheme.primaryContainer ,
-                                shape = CircleShape
+                                color = MaterialTheme.colorScheme.primaryContainer , shape = CircleShape
                             )
                             .padding(all = 8.dp)
                 )
                 LargeHorizontalSpacer()
 
                 Text(
-                    text = title ,
-                    style = MaterialTheme.typography.titleMedium ,
-                    modifier = Modifier.weight(weight = 1f)
+                    text = title , style = MaterialTheme.typography.titleMedium , modifier = Modifier.weight(weight = 1f)
                 )
 
                 Icon(
-                    imageVector = if (isExpanded) Icons.Filled.ExpandLess else Icons.Filled.ExpandMore ,
-                    contentDescription = null ,
-                    tint = MaterialTheme.colorScheme.primary ,
-                    modifier = Modifier.size(size = 24.dp)
+                    imageVector = if (isExpanded) Icons.Filled.ExpandLess else Icons.Filled.ExpandMore , contentDescription = null , tint = MaterialTheme.colorScheme.primary , modifier = Modifier.size(size = 24.dp)
                 )
             }
             if (isExpanded) {
@@ -202,6 +194,32 @@ fun QuestionComposable(
                     text = summary ,
                     style = MaterialTheme.typography.bodyMedium ,
                 )
+            }
+        }
+    }
+}
+
+@Composable
+fun ContactUsCard(onClick : () -> Unit) {
+    Card(modifier = Modifier
+            .fillMaxWidth()
+            .clip(shape = RoundedCornerShape(size = 12.dp))
+            .clickable {
+                onClick()
+            }) {
+        Row(
+            modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(all = 16.dp) , verticalAlignment = Alignment.CenterVertically , horizontalArrangement = Arrangement.Center
+        ) {
+            Icon(Icons.Outlined.Support , contentDescription = null , modifier = Modifier.padding(end = 16.dp))
+            Column(
+                modifier = Modifier
+                        .weight(1f)
+                        .fillMaxHeight()
+            ) {
+                Text(text = "Contact Us")
+                Text("Tell us more and we'll help you get there")
             }
         }
     }

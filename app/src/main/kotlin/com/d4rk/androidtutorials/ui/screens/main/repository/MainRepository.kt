@@ -2,10 +2,11 @@ package com.d4rk.androidtutorials.ui.screens.main.repository
 
 import android.app.Activity
 import android.app.Application
+import android.content.Context
 import android.os.Build
 import androidx.annotation.RequiresApi
+import com.d4rk.android.libs.apptoolkit.notifications.managers.AppUpdateNotificationsManager
 import com.d4rk.androidtutorials.data.datastore.DataStore
-import com.d4rk.androidtutorials.notifications.managers.AppUpdateNotificationsManager
 import com.google.android.play.core.appupdate.AppUpdateManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
@@ -53,9 +54,9 @@ class MainRepository(dataStore : DataStore , application : Application) :
         }
     }
 
-    suspend fun checkAppUsageNotificationsRepository() {
+    suspend fun checkAppUsageNotificationsRepository(context : Context) {
         withContext(Dispatchers.IO) {
-            checkAppUsageNotificationsManagerImplementation()
+            checkAppUsageNotificationsManagerImplementation(context = context)
         }
     }
 

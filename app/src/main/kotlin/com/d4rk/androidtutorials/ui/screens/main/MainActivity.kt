@@ -13,9 +13,9 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.d4rk.android.libs.apptoolkit.notifications.managers.AppUpdateNotificationsManager
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.data.core.AppCoreManager
-import com.d4rk.androidtutorials.notifications.managers.AppUpdateNotificationsManager
 import com.d4rk.androidtutorials.ui.screens.settings.display.theme.style.AppTheme
 import com.google.android.gms.ads.MobileAds
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
             configureSettings()
             checkForUpdates(activity = this@MainActivity , appUpdateManager = appUpdateManager)
             checkAndScheduleUpdateNotifications(appUpdateNotificationsManager = appUpdateNotificationsManager)
-            checkAppUsageNotifications()
+            checkAppUsageNotifications(context = this@MainActivity)
         }
     }
 
@@ -113,7 +113,7 @@ class MainActivity : AppCompatActivity() {
     private fun initializeActivityComponents() {
         MobileAds.initialize(this@MainActivity)
         appUpdateManager = AppUpdateManagerFactory.create(this@MainActivity)
-        appUpdateNotificationsManager = AppUpdateNotificationsManager(context = this)
+        appUpdateNotificationsManager = AppUpdateNotificationsManager(context = this, channelId = "update_channel")
     }
 
     private fun showUpdateSuccessfulSnackbar() {

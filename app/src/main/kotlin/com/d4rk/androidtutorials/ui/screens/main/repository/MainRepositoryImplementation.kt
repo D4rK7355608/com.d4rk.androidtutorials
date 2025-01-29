@@ -2,11 +2,12 @@ package com.d4rk.androidtutorials.ui.screens.main.repository
 
 import android.app.Activity
 import android.app.Application
+import android.content.Context
 import android.os.Build
 import androidx.annotation.RequiresApi
+import com.d4rk.android.libs.apptoolkit.notifications.managers.AppUpdateNotificationsManager
+import com.d4rk.android.libs.apptoolkit.notifications.managers.AppUsageNotificationsManager
 import com.d4rk.androidtutorials.data.datastore.DataStore
-import com.d4rk.androidtutorials.notifications.managers.AppUpdateNotificationsManager
-import com.d4rk.androidtutorials.notifications.managers.AppUsageNotificationsManager
 import com.google.android.play.core.appupdate.AppUpdateInfo
 import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.install.model.ActivityResult
@@ -87,8 +88,8 @@ abstract class MainRepositoryImplementation(val application : Application, val d
         appUpdateNotificationsManager.checkAndSendUpdateNotification()
     }
 
-    fun checkAppUsageNotificationsManagerImplementation() {
-        val appUsageNotificationsManager = AppUsageNotificationsManager(context = application)
+    fun checkAppUsageNotificationsManagerImplementation(context : Context) {
+        val appUsageNotificationsManager = AppUsageNotificationsManager(context = context)
         appUsageNotificationsManager.scheduleAppUsageCheck()
     }
 }

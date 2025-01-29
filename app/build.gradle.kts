@@ -19,7 +19,7 @@ android {
         applicationId = "com.d4rk.androidtutorials"
         minSdk = 23
         targetSdk = 35
-        versionCode = 108
+        versionCode = 109
         versionName = "1.2.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         @Suppress("UnstableApiUsage")
@@ -108,7 +108,7 @@ android {
 dependencies {
 
     // App Core
-    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:0.0.40") {
+    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:0.0.43") {
         isTransitive = true
     }
 
@@ -123,7 +123,6 @@ dependencies {
 
     // Google
     implementation(dependencyNotation = libs.billing)
-    implementation(dependencyNotation = libs.app.update.ktx)
     implementation(dependencyNotation = libs.review.ktx)
     implementation(dependencyNotation = libs.generativeai)
 

@@ -1,9 +1,8 @@
 package com.d4rk.androidtutorials.ui.screens.help
 
+import android.app.Activity
 import android.app.Application
 import androidx.lifecycle.viewModelScope
-import com.d4rk.android.libs.apptoolkit.utils.helpers.IntentsHelper
-import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.data.model.ui.screens.UiHelpScreen
 import com.d4rk.androidtutorials.ui.screens.help.repository.HelpRepository
 import com.d4rk.androidtutorials.ui.viewmodel.BaseViewModel
@@ -41,19 +40,23 @@ class HelpViewModel(application : Application) : BaseViewModel(application) {
         }
     }
 
-    private fun requestReviewFlow() {
+    fun requestReviewFlow() {
         viewModelScope.launch(context = coroutineExceptionHandler) {
             repository.requestReviewFlowRepository(onSuccess = { reviewInfo ->
                 _uiState.value = _uiState.value.copy(reviewInfo = reviewInfo)
-            } , onFailure = {
-                IntentsHelper.sendEmailToDeveloper(context = getApplication(), applicationName = R.string.app_name)
-            })
+            } , onFailure = {})
         }
     }
 
     fun launchReviewFlow(activity : HelpActivity , reviewInfo : ReviewInfo) {
         viewModelScope.launch(context = coroutineExceptionHandler) {
             repository.launchReviewFlowRepository(activity = activity , reviewInfo = reviewInfo)
+        }
+    }
+
+    fun sendEmailToDeveloper(activity: Activity) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
+            repository.sendEmailToDeveloperRepository(activity = activity)
         }
     }
 }

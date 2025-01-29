@@ -1,5 +1,6 @@
 package com.d4rk.androidtutorials.ui.screens.help.repository
 
+import android.app.Activity
 import android.app.Application
 import com.d4rk.android.libs.apptoolkit.utils.helpers.IntentsHelper
 import com.d4rk.androidtutorials.R
@@ -51,5 +52,9 @@ abstract class HelpRepositoryImplementation(
     fun launchReviewFlowImplementation(activity : HelpActivity , reviewInfo : ReviewInfo) {
         val reviewManager : ReviewManager = ReviewManagerFactory.create(activity)
         reviewManager.launchReviewFlow(activity , reviewInfo)
+    }
+
+    fun sendEmailToDeveloperImplementation(activity : Activity) {
+        IntentsHelper.sendEmailToDeveloper(context = activity, applicationName = R.string.app_name)
     }
 }

@@ -1,6 +1,5 @@
 [versions]
 agp = "8.8.0"
-appUpdateKtx = "2.1.0"
 billing = "7.1.1"
 aboutlibraries = "11.3.0"
 composeCodeEditor = "2.0.3"
@@ -14,8 +13,6 @@ generativeai = "0.9.0"
 reviewKtx = "2.0.2"
 
 [libraries]
-
-app-update-ktx = { module = "com.google.android.play:app-update-ktx", version.ref = "appUpdateKtx" }
 billing = { module = "com.android.billingclient:billing", version.ref = "billing" }
 compose-code-editor = { module = "com.github.qawaz:compose-code-editor", version.ref = "composeCodeEditor" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomKtx" }

@@ -2,6 +2,7 @@ package com.d4rk.androidtutorials.ui.screens.main
 
 import android.app.Activity
 import android.app.Application
+import android.content.Context
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.compose.material.icons.Icons
@@ -11,12 +12,12 @@ import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material.icons.outlined.Share
 import androidx.lifecycle.viewModelScope
 import com.d4rk.android.libs.apptoolkit.data.model.ui.navigation.NavigationDrawerItem
+import com.d4rk.android.libs.apptoolkit.notifications.managers.AppUpdateNotificationsManager
 import com.d4rk.android.libs.apptoolkit.utils.helpers.IntentsHelper
 import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.data.core.AppCoreManager
 import com.d4rk.androidtutorials.data.model.ui.navigation.BottomNavigationScreen
 import com.d4rk.androidtutorials.data.model.ui.screens.UiMainScreen
-import com.d4rk.androidtutorials.notifications.managers.AppUpdateNotificationsManager
 import com.d4rk.androidtutorials.ui.screens.main.repository.MainRepository
 import com.d4rk.androidtutorials.ui.screens.startup.StartupActivity
 import com.d4rk.androidtutorials.ui.viewmodel.BaseViewModel
@@ -72,9 +73,9 @@ class MainViewModel(application : Application) : BaseViewModel(application) {
         }
     }
 
-    fun checkAppUsageNotifications() {
+    fun checkAppUsageNotifications(context : Context) {
         viewModelScope.launch(context = coroutineExceptionHandler) {
-            repository.checkAppUsageNotificationsRepository()
+            repository.checkAppUsageNotificationsRepository(context = context)
         }
     }
 
