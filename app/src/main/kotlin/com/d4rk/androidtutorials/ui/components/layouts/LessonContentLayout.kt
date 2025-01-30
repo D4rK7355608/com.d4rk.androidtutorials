@@ -43,6 +43,7 @@ import coil3.ImageLoader
 import coil3.compose.AsyncImage
 import coil3.gif.AnimatedImageDecoder
 import coil3.gif.GifDecoder
+import coil3.request.crossfade
 import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
 import com.d4rk.android.libs.apptoolkit.ui.components.spacers.ButtonHorizontalSpacer
 import com.d4rk.android.libs.apptoolkit.ui.components.spacers.LargeVerticalSpacer
@@ -50,12 +51,11 @@ import com.d4rk.android.libs.apptoolkit.ui.components.spacers.SmallVerticalSpace
 import com.d4rk.android.libs.apptoolkit.utils.helpers.ClipboardHelper
 import com.d4rk.androidtutorials.data.model.ui.screens.UiLessonScreen
 import com.d4rk.androidtutorials.ui.components.ads.AdBanner
-import com.d4rk.androidtutorials.ui.components.ads.AdBannerFull
-import com.d4rk.androidtutorials.ui.components.ads.LargeBannerAdsComposable
 import com.d4rk.androidtutorials.ui.screens.settings.display.theme.style.Colors
 import com.d4rk.androidtutorials.ui.screens.settings.display.theme.style.TextStyles
 import com.d4rk.androidtutorials.utils.constants.ui.lessons.LessonCodeConstants
 import com.d4rk.androidtutorials.utils.constants.ui.lessons.LessonContentTypes
+import com.google.android.gms.ads.AdSize
 import com.wakaztahir.codeeditor.highlight.model.CodeLang
 import com.wakaztahir.codeeditor.highlight.prettify.PrettifyParser
 import com.wakaztahir.codeeditor.highlight.theme.CodeTheme
@@ -79,17 +79,13 @@ fun LessonContentLayout(
             when (contentItem.contentType) {
                 LessonContentTypes.HEADER -> {
                     StyledText(
-                        text = contentItem.contentText ,
-                        style = TextStyles.header() ,
-                        color = Colors.primaryText()
+                        text = contentItem.contentText , style = TextStyles.header() , color = Colors.primaryText()
                     )
                 }
 
                 LessonContentTypes.TEXT -> {
                     StyledText(
-                        text = contentItem.contentText ,
-                        style = TextStyles.body() ,
-                        color = Colors.secondaryText()
+                        text = contentItem.contentText , style = TextStyles.body() , color = Colors.secondaryText()
                     )
                 }
 
@@ -110,11 +106,11 @@ fun LessonContentLayout(
                 }
 
                 LessonContentTypes.AD_BANNER_FULL -> {
-                    AdBannerFull()
+                    AdBanner(adSize = AdSize.FULL_BANNER)
                 }
 
                 LessonContentTypes.AD_LARGE_BANNER -> {
-                    LargeBannerAdsComposable()
+                    AdBanner(adSize = AdSize.LARGE_BANNER)
                 }
 
                 else -> {
@@ -134,7 +130,7 @@ fun StyledText(
     style : TextStyle = TextStyles.body() ,
     color : Color = Colors.primaryText() ,
 ) {
-    val annotatedString = AnnotatedString.fromHtml(htmlString = text)
+    val annotatedString : AnnotatedString = AnnotatedString.fromHtml(htmlString = text)
 
     Text(
         text = annotatedString , style = style , color = color
@@ -148,14 +144,14 @@ fun StyledImage(
     modifier : Modifier = Modifier ,
 ) {
     val context : Context = LocalContext.current
-    val imageLoader = ImageLoader.Builder(context = context).components {
+    val imageLoader : ImageLoader = ImageLoader.Builder(context = context).components {
         if (SDK_INT >= 28) {
             add(factory = AnimatedImageDecoder.Factory())
         }
         else {
             add(factory = GifDecoder.Factory())
         }
-    }.build()
+    }.crossfade(enable = true).build()
     Card(
         modifier = modifier.fillMaxWidth() ,
     ) {
@@ -343,32 +339,20 @@ fun CodeBlock(code : String , language : String?) {
             Row(
                 modifier = Modifier
                         .fillMaxWidth()
-                        .padding(horizontal = 16.dp) ,
-                horizontalArrangement = Arrangement.SpaceBetween ,
-                verticalAlignment = Alignment.CenterVertically
+                        .padding(horizontal = 16.dp) , horizontalArrangement = Arrangement.SpaceBetween , verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
-                    text = language ?: "unknown" ,
-                    style = MaterialTheme.typography.bodyMedium ,
-                    modifier = Modifier.padding(end = 8.dp)
+                    text = language ?: "unknown" , style = MaterialTheme.typography.bodyMedium , modifier = Modifier.padding(end = 8.dp)
                 )
                 TextButton(modifier = Modifier.bounceClick() , onClick = {
-                    ClipboardHelper.copyTextToClipboard(
-                        context = context ,
-                        label = "Code" ,
-                        text = code ,
-                        onShowSnackbar = {
-                            Toast.makeText(
-                                context ,
-                                "Code copied to clipboard" ,
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        })
+                    ClipboardHelper.copyTextToClipboard(context = context , label = "Code" , text = code , onShowSnackbar = {
+                        Toast.makeText(
+                            context , "Code copied to clipboard" , Toast.LENGTH_SHORT
+                        ).show()
+                    })
                 } , contentPadding = PaddingValues(horizontal = 8.dp)) {
                     Icon(
-                        imageVector = Icons.Outlined.CopyAll ,
-                        contentDescription = "Copy Code" ,
-                        modifier = Modifier.size(size = ButtonDefaults.IconSize)
+                        imageVector = Icons.Outlined.CopyAll , contentDescription = "Copy Code" , modifier = Modifier.size(size = ButtonDefaults.IconSize)
                     )
                     ButtonHorizontalSpacer()
                     Text(text = stringResource(id = android.R.string.copy))
@@ -377,8 +361,7 @@ fun CodeBlock(code : String , language : String?) {
             Spacer(modifier = Modifier.height(height = 2.dp))
             SelectionContainer {
                 Text(
-                    text = textFieldValue.annotatedString ,
-                    modifier = Modifier
+                    text = textFieldValue.annotatedString , modifier = Modifier
                             .fillMaxWidth()
                             .padding(horizontal = 8.dp)
                 )

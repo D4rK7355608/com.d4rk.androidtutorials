@@ -7,6 +7,7 @@ import android.os.Build
 import androidx.annotation.RequiresApi
 import com.d4rk.android.libs.apptoolkit.notifications.managers.AppUpdateNotificationsManager
 import com.d4rk.android.libs.apptoolkit.notifications.managers.AppUsageNotificationsManager
+import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.data.datastore.DataStore
 import com.google.android.play.core.appupdate.AppUpdateInfo
 import com.google.android.play.core.appupdate.AppUpdateManager
@@ -90,6 +91,6 @@ abstract class MainRepositoryImplementation(val application : Application, val d
 
     fun checkAppUsageNotificationsManagerImplementation(context : Context) {
         val appUsageNotificationsManager = AppUsageNotificationsManager(context = context)
-        appUsageNotificationsManager.scheduleAppUsageCheck()
+        appUsageNotificationsManager.scheduleAppUsageCheck(notificationSummary = R.string.summary_notification_last_time_used)
     }
 }

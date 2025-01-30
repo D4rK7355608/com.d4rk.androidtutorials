@@ -18,9 +18,7 @@ class StudioBotViewModel(application : Application) : BaseViewModel(application)
     private val _chatHistory = MutableStateFlow(
         value = listOf(
             ApiMessageData(
-                id = UUID.randomUUID() ,
-                text = "Welcome to Studio Bot! How can I help you today?" ,
-                isBot = true
+                id = UUID.randomUUID() , text = "Welcome to Studio Bot! How can I help you today?" , isBot = true
             )
         )
     )
@@ -33,9 +31,7 @@ class StudioBotViewModel(application : Application) : BaseViewModel(application)
     private fun startChat() {
         viewModelScope.launch(context = coroutineExceptionHandler) {
             showLoading()
-            repository.createChatSessionRepository(modelName = "gemini-1.5-pro" ,
-                                                   apiKey = BuildConfig.API_KEY ,
-                                                   onChatCreated = { _ -> })
+            repository.createChatSessionRepository(modelName = "gemini-1.5-flash" , apiKey = BuildConfig.API_KEY , onChatCreated = { _ -> })
             hideLoading()
         }
     }
@@ -45,9 +41,7 @@ class StudioBotViewModel(application : Application) : BaseViewModel(application)
             val newHistory = chatHistory.value.toMutableList()
             newHistory.add(
                 element = ApiMessageData(
-                    id = UUID.randomUUID() ,
-                    text = message ,
-                    isBot = false
+                    id = UUID.randomUUID() , text = message , isBot = false
                 )
             )
             _chatHistory.value = newHistory.toList()

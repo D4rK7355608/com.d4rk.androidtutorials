@@ -37,17 +37,16 @@ import com.android.billingclient.api.BillingResult
 import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
 import com.d4rk.android.libs.apptoolkit.utils.helpers.IntentsHelper
 import com.d4rk.androidtutorials.R
-import com.d4rk.androidtutorials.ui.components.ads.LargeBannerAdsComposable
+import com.d4rk.androidtutorials.ui.components.ads.AdBanner
 import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffoldWithBackButton
+import com.google.android.gms.ads.AdSize
 
 @Composable
 fun SupportComposable(viewModel : SupportViewModel , activity : SupportActivity) {
     val context : Context = LocalContext.current
     val view : View = LocalView.current
     val billingClient : BillingClient = rememberBillingClient(context , viewModel)
-    TopAppBarScaffoldWithBackButton(
-        title = stringResource(id = R.string.support_us) ,
-        onBackClicked = { activity.finish() }) { paddingValues ->
+    TopAppBarScaffoldWithBackButton(title = stringResource(id = R.string.support_us) , onBackClicked = { activity.finish() }) { paddingValues ->
         Box(
             modifier = Modifier
                     .padding(paddingValues)
@@ -69,14 +68,12 @@ fun SupportComposable(viewModel : SupportViewModel , activity : SupportActivity)
                     ) {
                         Column {
                             Text(
-                                text = stringResource(id = R.string.summary_donations) ,
-                                modifier = Modifier.padding(16.dp)
+                                text = stringResource(id = R.string.summary_donations) , modifier = Modifier.padding(16.dp)
                             )
                             LazyRow(
                                 modifier = Modifier
                                         .fillMaxWidth()
-                                        .padding(horizontal = 16.dp) ,
-                                horizontalArrangement = Arrangement.SpaceEvenly
+                                        .padding(horizontal = 16.dp) , horizontalArrangement = Arrangement.SpaceEvenly
                             ) {
                                 item {
                                     FilledTonalButton(
@@ -93,9 +90,7 @@ fun SupportComposable(viewModel : SupportViewModel , activity : SupportActivity)
                                         } ,
                                     ) {
                                         Icon(
-                                            Icons.Outlined.Paid ,
-                                            contentDescription = null ,
-                                            modifier = Modifier.size(ButtonDefaults.IconSize)
+                                            Icons.Outlined.Paid , contentDescription = null , modifier = Modifier.size(ButtonDefaults.IconSize)
                                         )
                                         Spacer(modifier = Modifier.size(ButtonDefaults.IconSpacing))
                                         Text(
@@ -118,14 +113,11 @@ fun SupportComposable(viewModel : SupportViewModel , activity : SupportActivity)
                                         } ,
                                     ) {
                                         Icon(
-                                            Icons.Outlined.Paid ,
-                                            contentDescription = null ,
-                                            modifier = Modifier.size(ButtonDefaults.IconSize)
+                                            Icons.Outlined.Paid , contentDescription = null , modifier = Modifier.size(ButtonDefaults.IconSize)
                                         )
                                         Spacer(modifier = Modifier.size(ButtonDefaults.IconSpacing))
                                         Text(
-                                            text = viewModel.skuDetails["normal_donation"]?.price
-                                                ?: ""
+                                            text = viewModel.skuDetails["normal_donation"]?.price ?: ""
                                         )
                                     }
                                 }
@@ -133,8 +125,7 @@ fun SupportComposable(viewModel : SupportViewModel , activity : SupportActivity)
                             LazyRow(
                                 modifier = Modifier
                                         .fillMaxWidth()
-                                        .padding(16.dp) ,
-                                horizontalArrangement = Arrangement.SpaceEvenly
+                                        .padding(16.dp) , horizontalArrangement = Arrangement.SpaceEvenly
                             ) {
                                 item {
                                     FilledTonalButton(
@@ -151,14 +142,11 @@ fun SupportComposable(viewModel : SupportViewModel , activity : SupportActivity)
                                         } ,
                                     ) {
                                         Icon(
-                                            Icons.Outlined.Paid ,
-                                            contentDescription = null ,
-                                            modifier = Modifier.size(ButtonDefaults.IconSize)
+                                            Icons.Outlined.Paid , contentDescription = null , modifier = Modifier.size(ButtonDefaults.IconSize)
                                         )
                                         Spacer(modifier = Modifier.size(ButtonDefaults.IconSpacing))
                                         Text(
-                                            text = viewModel.skuDetails["high_donation"]?.price
-                                                ?: ""
+                                            text = viewModel.skuDetails["high_donation"]?.price ?: ""
                                         )
                                     }
                                 }
@@ -178,14 +166,11 @@ fun SupportComposable(viewModel : SupportViewModel , activity : SupportActivity)
                                         } ,
                                     ) {
                                         Icon(
-                                            Icons.Outlined.Paid ,
-                                            contentDescription = null ,
-                                            modifier = Modifier.size(ButtonDefaults.IconSize)
+                                            Icons.Outlined.Paid , contentDescription = null , modifier = Modifier.size(ButtonDefaults.IconSize)
                                         )
                                         Spacer(modifier = Modifier.size(ButtonDefaults.IconSpacing))
                                         Text(
-                                            text = viewModel.skuDetails["extreme_donation"]?.price
-                                                ?: ""
+                                            text = viewModel.skuDetails["extreme_donation"]?.price ?: ""
                                         )
                                     }
                                 }
@@ -214,18 +199,14 @@ fun SupportComposable(viewModel : SupportViewModel , activity : SupportActivity)
                                 .padding(16.dp) ,
                     ) {
                         Icon(
-                            Icons.Outlined.Paid ,
-                            contentDescription = null ,
-                            modifier = Modifier.size(ButtonDefaults.IconSize)
+                            Icons.Outlined.Paid , contentDescription = null , modifier = Modifier.size(ButtonDefaults.IconSize)
                         )
                         Spacer(modifier = Modifier.size(ButtonDefaults.IconSpacing))
                         Text(text = stringResource(id = R.string.web_ad))
                     }
                 }
                 item {
-                    LargeBannerAdsComposable(
-                        modifier = Modifier.padding(bottom = 12.dp)
-                    )
+                    AdBanner(modifier = Modifier.padding(bottom = 12.dp) , adSize = AdSize.LARGE_BANNER)
                 }
             }
         }

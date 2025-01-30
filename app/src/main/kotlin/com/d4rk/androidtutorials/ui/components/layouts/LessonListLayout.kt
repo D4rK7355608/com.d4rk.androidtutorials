@@ -35,28 +35,32 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalView
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import coil3.ImageLoader
 import coil3.compose.AsyncImage
+import coil3.request.crossfade
 import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.animateVisibility
 import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
 import com.d4rk.android.libs.apptoolkit.ui.components.spacers.MediumHorizontalSpacer
 import com.d4rk.android.libs.apptoolkit.ui.components.spacers.MediumVerticalSpacer
 import com.d4rk.android.libs.apptoolkit.ui.components.spacers.SmallHorizontalSpacer
 import com.d4rk.android.libs.apptoolkit.utils.helpers.ScreenHelper
+import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.data.core.AppCoreManager
 import com.d4rk.androidtutorials.data.model.ui.screens.UiHomeLesson
 import com.d4rk.androidtutorials.ui.components.ads.AdBanner
-import com.d4rk.androidtutorials.ui.components.ads.AdBannerFull
-import com.d4rk.androidtutorials.ui.components.ads.LargeBannerAdsComposable
 import com.d4rk.androidtutorials.ui.components.navigation.openLessonDetailActivity
 import com.d4rk.androidtutorials.ui.screens.home.HomeViewModel
 import com.d4rk.androidtutorials.utils.constants.ui.lessons.LessonConstants
+import com.google.android.gms.ads.AdSize
 
 @Composable
 fun LessonListLayout(
@@ -64,7 +68,7 @@ fun LessonListLayout(
 ) {
     val showAds : Boolean by AppCoreManager.dataStore.ads.collectAsState(initial = true)
 
-    val filteredLessons = if (showAds) {
+    val filteredLessons : List<UiHomeLesson> = if (showAds) {
         lessons
     }
     else {
@@ -73,22 +77,16 @@ fun LessonListLayout(
         }
     }
 
-    val showGrid = ScreenHelper.isLandscapeOrTablet(context)
+    val showGrid : Boolean = ScreenHelper.isLandscapeOrTablet(context)
 
     if (showGrid) {
         LazyVerticalStaggeredGrid(
-            columns = StaggeredGridCells.Fixed(count = 3) ,
-            contentPadding = PaddingValues(16.dp) ,
-            verticalItemSpacing = 16.dp ,
-            horizontalArrangement = Arrangement.spacedBy(16.dp) ,
-            modifier = Modifier.fillMaxSize()
+            columns = StaggeredGridCells.Fixed(count = 3) , contentPadding = PaddingValues(all = 16.dp) , verticalItemSpacing = 16.dp , horizontalArrangement = Arrangement.spacedBy(space = 16.dp) , modifier = Modifier.fillMaxSize()
         ) {
-            itemsIndexed(filteredLessons) { index , lesson ->
-                val isVisible = visibilityStates.getOrElse(index) { false }
+            itemsIndexed(items = filteredLessons) { index , lesson ->
+                val isVisible = visibilityStates.getOrElse(index = index) { false }
                 LessonItem(
-                    lesson = lesson ,
-                    context = context ,
-                    modifier = Modifier
+                    lesson = lesson , context = context , modifier = Modifier
                             .animateVisibility(visible = isVisible)
                             .animateItem()
                 )
@@ -97,16 +95,12 @@ fun LessonListLayout(
     }
     else {
         LazyColumn(
-            contentPadding = PaddingValues(all = 16.dp) ,
-            verticalArrangement = Arrangement.spacedBy(space = 16.dp) ,
-            modifier = Modifier.fillMaxSize()
+            contentPadding = PaddingValues(all = 16.dp) , verticalArrangement = Arrangement.spacedBy(space = 16.dp) , modifier = Modifier.fillMaxSize()
         ) {
             itemsIndexed(filteredLessons) { index , lesson ->
                 val isVisible = visibilityStates.getOrElse(index) { false }
                 LessonItem(
-                    lesson = lesson ,
-                    context = context ,
-                    modifier = Modifier
+                    lesson = lesson , context = context , modifier = Modifier
                             .animateVisibility(visible = isVisible)
                             .animateItem()
                 )
@@ -118,6 +112,9 @@ fun LessonListLayout(
 @Composable
 fun LessonItem(lesson : UiHomeLesson , context : Context , modifier : Modifier = Modifier) {
     val viewModel : HomeViewModel = viewModel()
+    val imageLoader : ImageLoader = remember {
+        ImageLoader.Builder(context = context).crossfade(enable = true).build()
+    }
 
     Card(
         modifier = modifier.fillMaxWidth()
@@ -125,15 +122,13 @@ fun LessonItem(lesson : UiHomeLesson , context : Context , modifier : Modifier =
         when (lesson.lessonType) {
             LessonConstants.TYPE_FULL_IMAGE_BANNER -> {
                 FullImageBannerLessonItem(
-                    lesson = lesson ,
-                    context = context ,
-                    viewModel = viewModel
+                    lesson = lesson , context = context , viewModel = viewModel , imageLoader = imageLoader
                 )
             }
 
             LessonConstants.TYPE_SQUARE_IMAGE -> {
                 SquareImageLessonItem(
-                    lesson = lesson , context = context , viewModel = viewModel
+                    lesson = lesson , context = context , viewModel = viewModel , imageLoader = imageLoader
                 )
                 SmallHorizontalSpacer()
             }
@@ -146,18 +141,18 @@ fun LessonItem(lesson : UiHomeLesson , context : Context , modifier : Modifier =
         }
 
         LessonConstants.TYPE_AD_FULL_BANNER -> {
-            AdBannerFull()
+            AdBanner(adSize = AdSize.FULL_BANNER)
         }
 
         LessonConstants.TYPE_AD_LARGE_BANNER -> {
-            LargeBannerAdsComposable()
+            AdBanner(adSize = AdSize.LARGE_BANNER)
         }
     }
 }
 
 @Composable
 fun FullImageBannerLessonItem(
-    lesson : UiHomeLesson , context : Context , viewModel : HomeViewModel
+    lesson : UiHomeLesson , context : Context , viewModel : HomeViewModel , imageLoader : ImageLoader
 ) {
     Card(modifier = Modifier
             .fillMaxWidth()
@@ -171,14 +166,14 @@ fun FullImageBannerLessonItem(
                 modifier = Modifier
                         .fillMaxWidth()
                         .aspectRatio(ratio = 16f / 9f) ,
-                contentScale = ContentScale.Crop
+                contentScale = ContentScale.Crop ,
+                imageLoader = imageLoader ,
             )
             MediumVerticalSpacer()
             Row(
                 modifier = Modifier
                         .fillMaxWidth()
-                        .padding(horizontal = 16.dp) ,
-                horizontalArrangement = Arrangement.SpaceBetween
+                        .padding(horizontal = 16.dp) , horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 TitleAndDescriptionColumn(
                     title = lesson.lessonTitle , description = lesson.lessonDescription
@@ -197,7 +192,7 @@ fun FullImageBannerLessonItem(
 
 @Composable
 fun SquareImageLessonItem(
-    lesson : UiHomeLesson , context : Context , viewModel : HomeViewModel
+    lesson : UiHomeLesson , context : Context , viewModel : HomeViewModel , imageLoader : ImageLoader
 ) {
     Card(modifier = Modifier
             .fillMaxWidth()
@@ -209,8 +204,7 @@ fun SquareImageLessonItem(
             Row(
                 modifier = Modifier
                         .fillMaxWidth()
-                        .padding(horizontal = 12.dp) ,
-                horizontalArrangement = Arrangement.SpaceBetween
+                        .padding(horizontal = 12.dp) , horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 AsyncImage(
                     model = lesson.squareImageUrl ,
@@ -219,12 +213,13 @@ fun SquareImageLessonItem(
                             .size(size = 98.dp)
                             .aspectRatio(ratio = 1f / 1f)
                             .clip(RoundedCornerShape(size = 12.dp)) ,
-                    contentScale = ContentScale.Crop
+                    contentScale = ContentScale.Crop ,
+                    imageLoader = imageLoader ,
+                    error = painterResource(id = R.drawable.il_square_image_error)
                 )
                 MediumHorizontalSpacer()
                 Column(
-                    modifier = Modifier.weight(weight = 1f) ,
-                    verticalArrangement = Arrangement.SpaceBetween
+                    modifier = Modifier.weight(weight = 1f) , verticalArrangement = Arrangement.SpaceBetween
                 ) {
                     TitleAndDescriptionColumn(
                         title = lesson.lessonTitle ,
@@ -249,18 +244,12 @@ fun TitleAndDescriptionColumn(title : String , description : String , maxLines :
     Column {
         if (title.isNotEmpty()) {
             Text(
-                text = title ,
-                style = MaterialTheme.typography.titleMedium ,
-                maxLines = 1 ,
-                overflow = TextOverflow.Ellipsis
+                text = title , style = MaterialTheme.typography.titleMedium , maxLines = 1 , overflow = TextOverflow.Ellipsis
             )
         }
         if (description.isNotEmpty()) {
             Text(
-                text = description ,
-                style = MaterialTheme.typography.bodyMedium ,
-                maxLines = maxLines ,
-                overflow = TextOverflow.Ellipsis
+                text = description , style = MaterialTheme.typography.bodyMedium , maxLines = maxLines , overflow = TextOverflow.Ellipsis
             )
         }
     }
@@ -288,9 +277,7 @@ fun ButtonsRow(lesson : UiHomeLesson , viewModel : HomeViewModel) {
             viewModel.toggleFavorite(lesson)
         }) {
             Icon(
-                imageVector = if (isFavorite) Icons.Outlined.Favorite else Icons.Outlined.FavoriteBorder ,
-                contentDescription = null ,
-                tint = if (isFavorite) MaterialTheme.colorScheme.error else LocalContentColor.current
+                imageVector = if (isFavorite) Icons.Outlined.Favorite else Icons.Outlined.FavoriteBorder , contentDescription = null , tint = if (isFavorite) MaterialTheme.colorScheme.error else LocalContentColor.current
             )
         }
     }
@@ -300,9 +287,7 @@ fun ButtonsRow(lesson : UiHomeLesson , viewModel : HomeViewModel) {
 @Composable
 fun TagRow(tags : List<String>) {
     LazyRow(
-        modifier = Modifier.fillMaxWidth() ,
-        contentPadding = PaddingValues(horizontal = 16.dp) ,
-        horizontalArrangement = Arrangement.spacedBy(8.dp)
+        modifier = Modifier.fillMaxWidth() , contentPadding = PaddingValues(horizontal = 16.dp) , horizontalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         items(tags) { tag ->
             AssistChip(

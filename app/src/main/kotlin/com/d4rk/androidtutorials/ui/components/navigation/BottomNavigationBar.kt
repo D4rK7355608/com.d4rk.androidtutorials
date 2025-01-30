@@ -4,7 +4,6 @@ import android.view.SoundEffectConstants
 import android.view.View
 import androidx.compose.foundation.basicMarquee
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
@@ -23,8 +22,9 @@ import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
 import com.d4rk.androidtutorials.data.datastore.DataStore
 import com.d4rk.androidtutorials.data.model.ui.navigation.BottomNavigationScreen
 import com.d4rk.androidtutorials.data.model.ui.screens.UiMainScreen
-import com.d4rk.androidtutorials.ui.components.ads.AdBannerFull
+import com.d4rk.androidtutorials.ui.components.ads.AdBanner
 import com.d4rk.androidtutorials.ui.screens.main.MainViewModel
+import com.google.android.gms.ads.AdSize
 
 @Composable
 fun BottomNavigationBar(
@@ -38,9 +38,7 @@ fun BottomNavigationBar(
     val showLabels : Boolean = dataStore.getShowBottomBarLabels().collectAsState(initial = true).value
 
     Column {
-        AdBannerFull(
-            modifier = Modifier.fillMaxWidth()
-        )
+        AdBanner(adSize = AdSize.FULL_BANNER)
         NavigationBar {
             val navBackStackEntry : NavBackStackEntry? by navController.currentBackStackEntryAsState()
             val currentRoute : String? = navBackStackEntry?.destination?.route
