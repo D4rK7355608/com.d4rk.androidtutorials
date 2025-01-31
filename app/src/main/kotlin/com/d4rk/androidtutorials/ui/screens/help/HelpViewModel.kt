@@ -53,10 +53,4 @@ class HelpViewModel(application : Application) : BaseViewModel(application) {
             repository.launchReviewFlowRepository(activity = activity , reviewInfo = reviewInfo)
         }
     }
-
-    fun sendEmailToDeveloper(activity: Activity) {
-        viewModelScope.launch(context = coroutineExceptionHandler) {
-            repository.sendEmailToDeveloperRepository(activity = activity)
-        }
-    }
 }

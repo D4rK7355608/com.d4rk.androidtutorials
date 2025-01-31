@@ -21,4 +21,6 @@
     <string name="thai" translatable="false">ไทย</string>
     <string name="brazilian_portuguese" translatable="false">Português (Brasil)</string>
     <string name="copyright" translatable="false">Copyright ©2022-2025, D4rK</string>
+
+    <string name="feedback_for" translatable="false">Feedback for %1$s</string>
 </resources>

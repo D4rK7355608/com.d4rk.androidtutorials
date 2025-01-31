@@ -1,9 +1,10 @@
 package com.d4rk.androidtutorials.ui.screens.main
 
-import android.app.Activity
 import android.app.Application
 import android.content.Context
 import android.os.Build
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.IntentSenderRequest
 import androidx.annotation.RequiresApi
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.EventNote
@@ -14,7 +15,6 @@ import androidx.lifecycle.viewModelScope
 import com.d4rk.android.libs.apptoolkit.data.model.ui.navigation.NavigationDrawerItem
 import com.d4rk.android.libs.apptoolkit.notifications.managers.AppUpdateNotificationsManager
 import com.d4rk.android.libs.apptoolkit.utils.helpers.IntentsHelper
-import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.data.core.AppCoreManager
 import com.d4rk.androidtutorials.data.model.ui.navigation.BottomNavigationScreen
 import com.d4rk.androidtutorials.data.model.ui.screens.UiMainScreen
@@ -28,16 +28,15 @@ import kotlinx.coroutines.launch
 
 class MainViewModel(application : Application) : BaseViewModel(application) {
     private val repository = MainRepository(
-        dataStore = AppCoreManager.dataStore ,
-        application = application
+        dataStore = AppCoreManager.dataStore , application = application
     )
     private val _uiState : MutableStateFlow<UiMainScreen> = MutableStateFlow(initializeUiState())
     val uiState : StateFlow<UiMainScreen> = _uiState
 
-    fun checkForUpdates(activity : Activity , appUpdateManager : AppUpdateManager) {
+    fun checkForUpdates(updateResultLauncher : ActivityResultLauncher<IntentSenderRequest> , appUpdateManager : AppUpdateManager) {
         viewModelScope.launch(context = coroutineExceptionHandler) {
             repository.checkForUpdates(
-                appUpdateManager = appUpdateManager , activity = activity
+                appUpdateManager = appUpdateManager , updateResultLauncher = updateResultLauncher
             )
         }
     }
@@ -59,9 +58,7 @@ class MainViewModel(application : Application) : BaseViewModel(application) {
                     selectedIcon = Icons.Outlined.Share ,
                 )
             ) , bottomNavigationItems = listOf(
-                BottomNavigationScreen.Home ,
-                BottomNavigationScreen.StudioBot ,
-                BottomNavigationScreen.Favorites
+                BottomNavigationScreen.Home , BottomNavigationScreen.StudioBot , BottomNavigationScreen.Favorites
             ) , currentBottomNavigationScreen = BottomNavigationScreen.Home
         )
     }

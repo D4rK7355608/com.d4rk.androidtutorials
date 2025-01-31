@@ -5,6 +5,9 @@ import android.os.Build
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.IntentSenderRequest
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
@@ -14,7 +17,6 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.d4rk.android.libs.apptoolkit.notifications.managers.AppUpdateNotificationsManager
-import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.data.core.AppCoreManager
 import com.d4rk.androidtutorials.ui.screens.settings.display.theme.style.AppTheme
 import com.google.android.gms.ads.MobileAds
@@ -28,12 +30,13 @@ class MainActivity : AppCompatActivity() {
     private val viewModel : MainViewModel by viewModels()
     private lateinit var appUpdateManager : AppUpdateManager
     private lateinit var appUpdateNotificationsManager : AppUpdateNotificationsManager
+    private lateinit var updateResultLauncher : ActivityResultLauncher<IntentSenderRequest>
 
     override fun onCreate(savedInstanceState : Bundle?) {
         super.onCreate(savedInstanceState)
         installSplashScreen().apply {
             setKeepOnScreenCondition {
-                !(application as AppCoreManager).isAppLoaded()
+                ! (application as AppCoreManager).isAppLoaded()
             }
         }
         enableEdgeToEdge()
@@ -55,7 +58,9 @@ class MainActivity : AppCompatActivity() {
         with(receiver = viewModel) {
             checkAndHandleStartup()
             configureSettings()
-            checkForUpdates(activity = this@MainActivity , appUpdateManager = appUpdateManager)
+            viewModel.checkForUpdates(
+                appUpdateManager = appUpdateManager , updateResultLauncher = updateResultLauncher
+            )
             checkAndScheduleUpdateNotifications(appUpdateNotificationsManager = appUpdateNotificationsManager)
             checkAppUsageNotifications(context = this@MainActivity)
         }
@@ -74,11 +79,10 @@ class MainActivity : AppCompatActivity() {
     @Deprecated("Deprecated in Java")
     @Suppress("DEPRECATION")
     override fun onBackPressed() {
-        MaterialAlertDialogBuilder(this).setTitle(com.d4rk.android.libs.apptoolkit.R.string.close).setMessage(com.d4rk.android.libs.apptoolkit.R.string.summary_close)
-                .setPositiveButton(android.R.string.yes) { _ , _ ->
-                    super.onBackPressed()
-                    moveTaskToBack(true)
-                }.setNegativeButton(android.R.string.no , null).apply { show() }
+        MaterialAlertDialogBuilder(this).setTitle(com.d4rk.android.libs.apptoolkit.R.string.close).setMessage(com.d4rk.android.libs.apptoolkit.R.string.summary_close).setPositiveButton(android.R.string.yes) { _ , _ ->
+            super.onBackPressed()
+            moveTaskToBack(true)
+        }.setNegativeButton(android.R.string.no , null).apply { show() }
     }
 
     /**
@@ -112,8 +116,14 @@ class MainActivity : AppCompatActivity() {
 
     private fun initializeActivityComponents() {
         MobileAds.initialize(this@MainActivity)
+        updateResultLauncher = registerForActivityResult(ActivityResultContracts.StartIntentSenderForResult()) { result ->
+            when (result.resultCode) {
+                RESULT_OK -> showUpdateSuccessfulSnackbar()
+                else -> showUpdateFailedSnackbar()
+            }
+        }
         appUpdateManager = AppUpdateManagerFactory.create(this@MainActivity)
-        appUpdateNotificationsManager = AppUpdateNotificationsManager(context = this, channelId = "update_channel")
+        appUpdateNotificationsManager = AppUpdateNotificationsManager(context = this , channelId = "update_channel")
     }
 
     private fun showUpdateSuccessfulSnackbar() {
@@ -135,7 +145,7 @@ class MainActivity : AppCompatActivity() {
             findViewById(android.R.id.content) , com.d4rk.android.libs.apptoolkit.R.string.snack_update_failed , Snackbar.LENGTH_LONG
         ).setAction(com.d4rk.android.libs.apptoolkit.R.string.try_again) {
             viewModel.checkForUpdates(
-                activity = this@MainActivity , appUpdateManager = appUpdateManager
+                appUpdateManager = appUpdateManager , updateResultLauncher = updateResultLauncher
             )
         }
         snackbar.show()

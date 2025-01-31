@@ -1,103 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_short_description">Дізнайтеся, як створювати прості програми в Android Studio!</string>
-    <string name="notification_update_title">Доступне нове оновлення!</string>
-    <string name="summary_notification_update">Доступна нова версія програми. Натисніть, щоб оновити!</string>
-    <string name="notification_last_time_used_title">Це було давно!</string>
     <string name="summary_notification_last_time_used">Ми сумували за вами! Давайте дізнаємося щось нове про Android!</string>
 
-    <string name="welcome">Ласкаво просимо</string>
-    <string name="summary_browse_terms_of_service_and_privacy_policy">Прочитайте та погодьтеся з нашими Умовами надання послуг і Політикою конфіденційності, щоб продовжити</string>
-    <string name="agree">Згоден</string>
-
-    <string name="navigation_drawer_open">Відкрити панель навігації</string>
-
-    <string name="home">Домашня сторінка</string>
     <string name="get_the_app_to_watch">Завантажте програму та перегляньте повний урок: %1$s</string>
     <string name="no_lessons_found">Уроки не знайдено.</string>
-    <string name="activity_not_found">Діяльність не знайдено.</string>
-    <string name="security_error">Сталася помилка безпеки. Спробуйте ще раз пізніше.</string>
-    <string name="io_error">Сталася помилка вводу-виводу. Перевірте підключення до мережі або пам’ять і повторіть спробу.</string>
-    <string name="illegal_argument_error">Введено недійсні вхідні дані або аргумент. Перевірте інформацію та повторіть спробу.</string>
     <string name="sqlite_error">Виявлено помилку бази даних. Спробуйте виконати такі кроки:\n\n1. Перезапустіть програму.\n2. Якщо проблема не зникає, видаліть дані програми з розділу «Налаштування» > «Програми» > «Підручники Android Studio» > «Сховище».\n3. Зверніться до служби підтримки, якщо проблема не зникає.</string>
-    <string name="unknown_error">Сталася невідома помилка.</string>
-    <string name="initialization_error">Не вдалося виконати ініціалізацію. Спробуйте ще раз пізніше.</string>
-
     <string name="studio_bot">Studio Bot</string>
     <string name="type_a_message">Введіть повідомлення…</string>
-
-    <string name="share">Поділитися</string>
-    <string name="app_info">Інформація про програму</string>
 
     <string name="favorites">Улюблене</string>
     <string name="error_loading_favorites">Помилка завантаження улюблених уроків. Спробуйте ще раз пізніше.</string>
     <string name="no_favorite_lessons_found">Улюблені уроки не знайдено.</string>
 
-    <string name="settings">Налаштування</string>
-
-    <string name="display">Дисплей</string>
-    <string name="summary_preference_settings_display">Персоналізуйте зовнішній вигляд і відчуття вашої програми</string>
-
-    <string name="appearance">Зовнішній вигляд</string>
-    <string name="dark_theme">Темна тема</string>
-    <string name="will_turn_on_automatically_by_system">Автоматично ввімкнеться системою</string>
-    <string name="will_never_turn_on_automatically">Ніколи не ввімкнеться автоматично</string>
-    <string name="amoled_mode">Режим AMOLED</string>
-    <string name="follow_system">Дотримуватися системного режиму</string>
-    <string name="light_mode">Світлий режим</string>
-    <string name="dark_mode">Темний режим</string>
-    <string name="summary_dark_theme">Темна тема використовує глибокий фон, щоб довше зберігати заряд акумулятора</string>
-
-    <string name="dynamic_colors">Динамічні кольори</string>
-    <string name="summary_preference_settings_dynamic_colors">Застосуйте кольори зі шпалер до теми програми</string>
-
-    <string name="app_behavior">Поведінка програми</string>
-    <string name="bounce_buttons">Клацання відскоку</string>
-    <string name="summary_preference_settings_bounce_buttons">Застосовує тонку анімацію відскоку до всіх елементів, на які можна натиснути, під час натискання</string>
-
-    <string name="navigation">Навігація</string>
-    <string name="startup_page">Сторінка запуску</string>
-    <string name="summary_preference_settings_startup_page">Виберіть екран, який буде відображатися під час запуску програми.</string>
-    <string name="dialog_startup_subtitle">Виберіть бажану сторінку запуску:</string>
-    <string name="dialog_info_startup">Налаштовує початковий екран, який відображається користувачам під час запуску програми. Цей параметр впливає на першу взаємодію користувача з програмою та може бути адаптований до певних сегментів користувачів або цілей продукту.</string>
-
-    <string name="language">Мова</string>
-    <string name="summary_preference_settings_language">Змінює мову, яка використовується в програмі</string>
-    <string name="dialog_language_subtitle">Виберіть бажану мову</string>
-    <string name="dialog_info_language">Персоналізуйте свою роботу з потрібною вам мовою. Будь-які зміни мови, які ви вносите, вступають в силу відразу, забезпечуючи безперебійну роботу на вибраній вами мові</string>
-
-    <string name="notifications">Сповіщення</string>
-    <string name="summary_preference_settings_notifications">Керування сповіщеннями програм</string>
-
-    <string name="app_usage_notifications">Сповіщення про використання програм</string>
-    <string name="update_notifications">Сповіщення про оновлення</string>
-
-    <string name="advanced">Розширені</string>
-    <string name="summary_preference_settings_advanced">Ознайомтеся з іншими додатковими налаштуваннями</string>
-    <string name="error_reporting">Звітування про помилки</string>
-    <string name="bug_report">Звіт про помилку</string>
-    <string name="summary_preference_settings_bug_report">Надішліть звіти про помилки та запити функцій на сторінку проблем репозиторію GitHub програми</string>
-
-    <string name="security_and_privacy">Безпека та конфіденційність</string>
-    <string name="summary_preference_settings_privacy_and_security">Керуйте своїми налаштуваннями конфіденційності</string>
-    <string name="privacy">Конфіденційність</string>
-    <string name="privacy_policy">Політика конфіденційності</string>
-    <string name="summary_preference_settings_privacy_policy">Перегляньте політику, яка визначає, як ми обробляємо ваші дані</string>
-    <string name="terms_of_service">Умови надання послуг</string>
-    <string name="summary_preference_settings_terms_of_service">Перегляньте умови, з якими ви погоджуєтеся, користуючись нашим сервісом</string>
-    <string name="code_of_conduct">Кодекс поведінки</string>
-    <string name="summary_preference_settings_code_of_conduct">Ознайомтеся з правилами та настановами щодо поведінки в рамках нашого сервісу</string>
-
-    <string name="permissions">Дозволи</string>
-    <string name="summary_preference_settings_permissions">Керуйте дозволами, наданими нашому сервісу</string>
-    <string name="normal">Звичайний</string>
     <string name="ad_id">Ідентифікатор реклами [AD_ID]</string>
     <string name="summary_preference_permissions_ad_id">Дозволяє програмі отримувати та використовувати ідентифікатор реклами, пов’язаний із пристроєм користувача, надаючи персоналізовану рекламу, вимірюючи ефективність реклами та показуючи рекламу на пристроях з Android 13 або новішої версії.</string>
     <string name="internet">Інтернет [INTERNET]</string>
     <string name="summary_preference_permissions_internet">Дозволяє програмі встановлювати підключення до Інтернету для надсилання звітів про помилки або перевірки наявності оновлень.</string>
     <string name="post_notifications">Публікувати сповіщення [POST_NOTIFICATIONS]</string>
     <string name="summary_preference_permissions_post_notifications">Дозволяє програмі відображати сповіщення на пристроях з Android 13 або новішої версії.</string>
-    <string name="runtime">Середовище виконання</string>
     <string name="access_network_state">Доступ до стану мережі [ACCESS_NETWORK_STATE]</string>
     <string name="summary_preference_permissions_access_network_state">Дозволяє програмі перевіряти підключення до мережі та отримувати інформацію про Wi-Fi, зокрема статус увімкнення та імена підключених пристроїв Wi-Fi.</string>
     <string name="access_notification_policy">Доступ до політики сповіщень [ACCESS_NOTIFICATION_POLICY]</string>
@@ -109,44 +30,8 @@
     <string name="foreground_service">Служба переднього плану [FOREGROUND_SERVICE]</string>
     <string name="summary_preference_permissions_foreground_service">Дозволяє програмі створювати та використовувати служби, які працюють на передньому плані, надаючи їм пріоритет над іншими фоновими процесами та підвищуючи продуктивність і надійність.</string>
 
-    <string name="ads">Реклама</string>
-    <string name="summary_preference_settings_ads">Контролюйте, як ми використовуємо вашу інформацію, щоб показувати вам релевантну рекламу</string>
-    <string name="display_ads">Показувати рекламу</string>
-    <string name="personalized_ads">Персоналізовані оголошення</string>
-    <string name="summary_ads_personalized_ads">Виберіть, як ми персоналізуємо для вас рекламу на основі ваших інтересів</string>
-    <string name="summary_ads">Переглядайте рекламу, яка є актуальною для вас. Керуйте інформацією, яка використовується для показу персоналізованих реклам на основі вашої активності в програмі. Ви завжди можете вимкнути персоналізацію тут.\n</string>
-
-    <string name="usage_and_diagnostics">Використання та діагностика</string>
-    <string name="summary_preference_settings_usage_and_diagnostics">Поділіться даними, щоб допомогти покращити Cleaner для Android</string>
-    <string name="summary_usage_and_diagnostics">Допоможіть покращити ваш досвід, автоматично надсилаючи нам діагностичні дані, дані про пристрій і використання програми. Це допоможе покращити продуктивність програми, стабільність та інші покращення. Деякі агреговані дані також допоможуть нашим програмам.\n\nЦе загальна інформація про ваш пристрій і про те, як ви використовуєте наші програми (наприклад, рівень заряду акумулятора, активність системи та програми та помилки). Дані використовуватимуться для покращення наших програм\n\nВимкнення цієї функції не впливає на здатність вашого пристрою надсилати інформацію, необхідну для основних служб, таких як оновлення програм і безпека.\n</string>
-
-    <string name="legal">Юридична інформація</string>
-    <string name="legal_notices">Юридичні повідомлення</string>
-    <string name="summary_preference_settings_legal_notices">Переглянути юридичну інформацію про наш сервіс</string>
-    <string name="license">Ліцензія</string>
-
-    <string name="about">Про програму</string>
     <string name="summary_preference_settings_about">Дізнайтеся більше про Android Studio Tutorials</string>
 
-    <string name="app_build_version">Версія збірки програми</string>
-    <string name="summary_preference_settings_oss">Деталі ліцензії на програмне забезпечення з відкритим вихідним кодом</string>
-    <string name="device_info">Інформація про пристрій</string>
-    <string name="app_build">Збірка програми: %6$s\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
-    <string name="debug">Налагодження</string>
-    <string name="release">Випуск</string>
-    <string name="manufacturer">Виробник:</string>
-    <string name="device_model">Модель пристрою:</string>
-    <string name="android_version">Версія Android:</string>
-    <string name="api_level">Рівень API:</string>
-    <string name="snack_device_info_copied">Інформація про пристрій скопійована в буфер обміну</string>
-
-    <string name="help_and_feedback">Довідка та відгуки</string>
-    <string name="help">Довідка</string>
-    <string name="faq">FAQ</string>
-    <string name="view_in_google_play_store">Переглянути в Google Play Store</string>
-    <string name="version_info">Інформація про версію</string>
-    <string name="version">Версія %1$s</string>
-    <string name="beta_program">Бета-програма</string>
     <string name="question_1">Що таке Android Studio Tutorials: Kotlin Edition?</string>
     <string name="summary_preference_faq_1">Android Studio Tutorials: Kotlin Edition – це безкоштовна програма з відкритим кодом, яка містить колекцію відеоуроків про те, як використовувати Android Studio, офіційне інтегроване середовище розробки (IDE) для розробки програм для Android.</string>
     <string name="question_2">Як завантажити Android Studio Tutorials: Kotlin Edition?</string>
@@ -165,22 +50,4 @@
     <string name="summary_preference_faq_8">Ви можете перевірити наявність оновлень для Android Studio Tutorials: Kotlin Edition, перейшовши в меню налаштувань у програмі та вибравши пункт «Перевірити наявність оновлень».</string>
     <string name="question_9">Як я можу підтримати розробку Android Studio Tutorials: Kotlin Edition?</string>
     <string name="summary_preference_faq_9">Ви можете підтримати розробку Android Studio Tutorials: Kotlin Edition, залишивши позитивний відгук у Google Play Store, поділившись програмою з друзями та колегами та підтримавши розробників за допомогою опції «Поділитися» в меню налаштувань.</string>
-    <string name="feedback">Відгуки</string>
-
-    <string name="updates">Оновлення</string>
-
-    <string name="support_us">Підтримайте нас</string>
-    <string name="paid_support">Платна підтримка</string>
-    <string name="summary_donations">Незалежно від того, скільки ви пожертвуєте, ви допоможете нам підтримувати роботу нашої програми та покращувати її функції. Ми цінуємо вашу щедрість і доброту!</string>
-    <string name="non_paid_support">Неоплачувана підтримка</string>
-    <string name="web_ad">Веб-реклама</string>
-
-    <string name="snack_app_updated">Програма успішно оновлено</string>
-    <string name="snack_update_failed">Під час оновлення сталася помилка</string>
-    <string name="try_again">Спробувати ще раз</string>
-    <string name="summary_share_message">Перегляньте цей чудовий додаток, яким я користуюся! Він має кілька дійсно цікавих функцій, які можуть вас зацікавити. Ви можете завантажити його з Play Store за адресою: %1$s</string>
-    <string name="learn_more">Дізнатися більше</string>
-
-    <string name="close">Закрити?</string>
-    <string name="summary_close">Ви впевнені, що хочете вийти?</string>
 </resources>

@@ -59,8 +59,10 @@ import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
 import com.d4rk.android.libs.apptoolkit.ui.components.spacers.LargeHorizontalSpacer
 import com.d4rk.android.libs.apptoolkit.ui.components.spacers.MediumVerticalSpacer
 import com.d4rk.android.libs.apptoolkit.ui.components.spacers.SmallVerticalSpacer
+import com.d4rk.android.libs.apptoolkit.utils.helpers.IntentsHelper
 import com.d4rk.android.libs.apptoolkit.utils.rememberHtmlData
 import com.d4rk.androidtutorials.BuildConfig
+import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.data.model.ui.screens.UiHelpQuestion
 import com.d4rk.androidtutorials.data.model.ui.screens.UiHelpScreen
 import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffoldWithBackButtonAndActions
@@ -131,7 +133,7 @@ fun HelpScreen(activity : Activity , viewModel : HelpViewModel) {
                 MediumVerticalSpacer()
                 ContactUsCard(onClick = {
                     view.playSoundEffect(SoundEffectConstants.CLICK)
-                    viewModel.sendEmailToDeveloper(activity = activity)
+                    IntentsHelper.sendEmailToDeveloper(context = activity , applicationNameRes = R.string.app_name)
                 })
                 Spacer(modifier = Modifier.height(height = 64.dp))
             }

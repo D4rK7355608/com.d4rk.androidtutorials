@@ -20,7 +20,7 @@ android {
         applicationId = "com.d4rk.androidtutorials"
         minSdk = 23
         targetSdk = 35
-        versionCode = 112
+        versionCode = 114
         versionName = "1.2.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         @Suppress("UnstableApiUsage")
@@ -109,7 +109,7 @@ android {
 dependencies {
 
     // App Core
-    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:0.0.48") {
+    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:0.0.49") {
         isTransitive = true
     }
 

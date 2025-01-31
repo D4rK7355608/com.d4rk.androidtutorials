@@ -42,8 +42,7 @@ abstract class HelpRepositoryImplementation(
             }
         }.addOnFailureListener {
             IntentsHelper.openUrl(
-                context = application ,
-                url = "https://play.google.com/store/apps/details?id=$packageName&showAllReviews=true"
+                context = application , url = "https://play.google.com/store/apps/details?id=$packageName&showAllReviews=true"
             )
         }
     }
@@ -51,9 +50,5 @@ abstract class HelpRepositoryImplementation(
     fun launchReviewFlowImplementation(activity : Activity , reviewInfo : ReviewInfo) {
         val reviewManager : ReviewManager = ReviewManagerFactory.create(activity)
         reviewManager.launchReviewFlow(activity , reviewInfo)
-    }
-
-    fun sendEmailToDeveloperImplementation(activity : Activity) {
-        IntentsHelper.sendEmailToDeveloper(context = activity, applicationName = R.string.app_name)
     }
 }

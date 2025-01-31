@@ -13,8 +13,7 @@ class HelpRepository(application : Application) : HelpRepositoryImplementation(a
         withContext(Dispatchers.IO) {
             val questions = getFAQsImplementation().map { (questionRes , summaryRes) ->
                 UiHelpQuestion(
-                    question = application.getString(questionRes) ,
-                    answer = application.getString(summaryRes)
+                    question = application.getString(questionRes) , answer = application.getString(summaryRes)
                 )
             }.toCollection(destination = ArrayList())
 
@@ -35,12 +34,6 @@ class HelpRepository(application : Application) : HelpRepositoryImplementation(a
     suspend fun launchReviewFlowRepository(activity : Activity , reviewInfo : ReviewInfo) {
         withContext(Dispatchers.IO) {
             launchReviewFlowImplementation(activity = activity , reviewInfo = reviewInfo)
-        }
-    }
-
-    suspend fun sendEmailToDeveloperRepository(activity: Activity) {
-        withContext(Dispatchers.IO) {
-            sendEmailToDeveloperImplementation(activity = activity)
         }
     }
 }
