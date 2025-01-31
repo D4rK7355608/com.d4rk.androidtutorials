@@ -36,9 +36,9 @@ free and open-source software!
 
 <table>
   <tr>
-    <td><img src="/app/src/main/play/listings/en-US/graphics/phone-screenshots/1-screenshot_main.png" width="300"></td>
-    <td><img src="/app/src/main/play/listings/en-US/graphics/phone-screenshots/2-screenshot_tutorials.png" width="300"></td>
-    <td><img src="/app/src/main/play/listings/en-US/graphics/phone-screenshots/3-screenshot_codes.png" width="300"></td>
+    <td><img src="/app/src/main/play/listings/en-US/graphics/phone-screenshots/1-screenshot_home.png" width="300"></td>
+    <td><img src="/app/src/main/play/listings/en-US/graphics/tablet-screenshots/2-screenshot_studio_bot.png" width="300"></td>
+    <td><img src="/app/src/main/play/listings/en-US/graphics/chromebook-screenshots/3-screenshot_favorites.png" width="300"></td>
   </tr>
 </table>
 
