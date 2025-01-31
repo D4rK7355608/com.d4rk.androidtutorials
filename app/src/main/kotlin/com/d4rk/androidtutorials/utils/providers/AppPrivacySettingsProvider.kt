@@ -26,7 +26,7 @@ class AppPrivacySettingsProvider : PrivacySettingsProvider {
     override fun openUsageAndDiagnosticsScreen() {
 
         val intent : Intent = Intent(context , GeneralSettingsActivity::class.java).apply {
-            putExtra("extra_title" , context.getString(R.string.usage_and_diagnostics))
+            putExtra("extra_title" , context.getString(com.d4rk.android.libs.apptoolkit.R.string.usage_and_diagnostics))
             putExtra("extra_content" , SettingsContent.USAGE_AND_DIAGNOSTICS.name)
             addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         }

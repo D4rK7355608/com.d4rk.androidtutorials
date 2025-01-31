@@ -32,13 +32,13 @@ class AppAboutSettingsProvider : AboutSettingsProvider {
     override val deviceInfo : String
         get() {
             return context.getString(
-                R.string.app_build ,
-                "${context.getString(R.string.manufacturer)} ${Build.MANUFACTURER}" ,
-                "${context.getString(R.string.device_model)} ${Build.MODEL}" ,
-                "${context.getString(R.string.android_version)} ${Build.VERSION.RELEASE}" ,
-                "${context.getString(R.string.api_level)} ${Build.VERSION.SDK_INT}" ,
-                "${context.getString(R.string.arch)} ${Build.SUPPORTED_ABIS.joinToString()}" ,
-                if (BuildConfig.DEBUG) context.getString(R.string.debug) else context.getString(R.string.release)
+                com.d4rk.android.libs.apptoolkit.R.string.app_build ,
+                "${context.getString(com.d4rk.android.libs.apptoolkit.R.string.manufacturer)} ${Build.MANUFACTURER}" ,
+                "${context.getString(com.d4rk.android.libs.apptoolkit.R.string.device_model)} ${Build.MODEL}" ,
+                "${context.getString(com.d4rk.android.libs.apptoolkit.R.string.android_version)} ${Build.VERSION.RELEASE}" ,
+                "${context.getString(com.d4rk.android.libs.apptoolkit.R.string.api_level)} ${Build.VERSION.SDK_INT}" ,
+                "${context.getString(com.d4rk.android.libs.apptoolkit.R.string.arch)} ${Build.SUPPORTED_ABIS.joinToString()}" ,
+                if (BuildConfig.DEBUG) context.getString(com.d4rk.android.libs.apptoolkit.R.string.debug) else context.getString(com.d4rk.android.libs.apptoolkit.R.string.release)
             )
         }
 }

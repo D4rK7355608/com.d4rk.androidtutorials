@@ -54,7 +54,7 @@ fun StartupComposable(activity : StartupActivity) {
     }
 
     TopAppBarScaffold(
-        title = stringResource(id = R.string.welcome) ,
+        title = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.welcome) ,
     ) { paddingValues ->
         Box(
             modifier = Modifier
@@ -78,7 +78,7 @@ fun StartupComposable(activity : StartupActivity) {
                 }
                 item {
                     Text(
-                        text = stringResource(id = R.string.summary_browse_terms_of_service_and_privacy_policy) ,
+                        text = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.summary_browse_terms_of_service_and_privacy_policy) ,
                         modifier = Modifier.padding(top = 24.dp , bottom = 24.dp)
                     )
                     val annotatedString : AnnotatedString = buildAnnotatedString {
@@ -89,7 +89,7 @@ fun StartupComposable(activity : StartupActivity) {
                                 textDecoration = TextDecoration.Underline
                             )
                         ) {
-                            append(stringResource(id = R.string.learn_more))
+                            append(stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.learn_more))
                         }
                         val endIndex : Int = length
 
@@ -127,7 +127,7 @@ fun StartupComposable(activity : StartupActivity) {
                                          else {
                                              Gray
                                          } ,
-                                         text = { Text(text = stringResource(id = R.string.agree)) } ,
+                                         text = { Text(text = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.agree)) } ,
                                          onClick = {
                                              IntentsHelper.openActivity(
                                                  context , MainActivity::class.java

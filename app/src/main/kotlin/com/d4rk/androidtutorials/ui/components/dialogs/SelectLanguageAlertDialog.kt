@@ -75,7 +75,7 @@ fun SelectLanguageAlertDialogContent(
     }
 
     Column {
-        Text(text = stringResource(id = R.string.dialog_language_subtitle))
+        Text(text = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.dialog_language_subtitle))
         Box(
             modifier = Modifier
                     .fillMaxWidth()
@@ -105,7 +105,7 @@ fun SelectLanguageAlertDialogContent(
         Spacer(modifier = Modifier.height(height = 24.dp))
         Icon(imageVector = Icons.Outlined.Info , contentDescription = null)
         MediumVerticalSpacer()
-        Text(text = stringResource(id = R.string.dialog_info_language))
+        Text(text = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.dialog_info_language))
     }
 
     LaunchedEffect(key1 = selectedLanguage.value) {

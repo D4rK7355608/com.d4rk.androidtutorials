@@ -1,5 +1,6 @@
 package com.d4rk.androidtutorials.ui.screens.help
 
+import android.app.Activity
 import android.content.Context
 import android.view.SoundEffectConstants
 import android.view.View
@@ -60,14 +61,13 @@ import com.d4rk.android.libs.apptoolkit.ui.components.spacers.MediumVerticalSpac
 import com.d4rk.android.libs.apptoolkit.ui.components.spacers.SmallVerticalSpacer
 import com.d4rk.android.libs.apptoolkit.utils.rememberHtmlData
 import com.d4rk.androidtutorials.BuildConfig
-import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.data.model.ui.screens.UiHelpQuestion
 import com.d4rk.androidtutorials.data.model.ui.screens.UiHelpScreen
 import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffoldWithBackButtonAndActions
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HelpScreen(activity : HelpActivity , viewModel : HelpViewModel) {
+fun HelpScreen(activity : Activity , viewModel : HelpViewModel) {
     val scrollBehavior : TopAppBarScrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
     val context : Context = LocalContext.current
     val view : View = LocalView.current
@@ -104,7 +104,7 @@ fun HelpScreen(activity : HelpActivity , viewModel : HelpViewModel) {
                     )
                     viewModel.requestReviewFlow()
                 }
-            } , text = { Text(text = stringResource(id = R.string.feedback)) } , icon = {
+            } , text = { Text(text = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.feedback)) } , icon = {
                 Icon(
                     Icons.Outlined.RateReview , contentDescription = null
                 )
@@ -119,7 +119,7 @@ fun HelpScreen(activity : HelpActivity , viewModel : HelpViewModel) {
         ) {
             item {
                 Text(
-                    text = stringResource(id = R.string.popular_help_resources)
+                    text = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.popular_help_resources)
                 )
 
                 MediumVerticalSpacer()
@@ -218,8 +218,8 @@ fun ContactUsCard(onClick : () -> Unit) {
                         .weight(1f)
                         .fillMaxHeight()
             ) {
-                Text(text = "Contact Us")
-                Text("Tell us more and we'll help you get there")
+                Text(text = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.contact_us))
+                Text(text = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.contact_us_description))
             }
         }
     }

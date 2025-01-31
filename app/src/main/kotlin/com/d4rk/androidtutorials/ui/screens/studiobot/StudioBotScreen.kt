@@ -60,7 +60,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.d4rk.android.libs.apptoolkit.ui.components.layouts.LoadingScreen
 import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
-import com.d4rk.android.libs.apptoolkit.ui.components.spacers.ButtonHorizontalSpacer
+import com.d4rk.android.libs.apptoolkit.ui.components.spacers.ButtonIconSpacer
 import com.d4rk.android.libs.apptoolkit.ui.components.spacers.LargeHorizontalSpacer
 import com.d4rk.android.libs.apptoolkit.utils.helpers.ClipboardHelper
 import com.d4rk.androidtutorials.R
@@ -342,7 +342,7 @@ fun MessageActions(text : String , isBot : Boolean) {
                 contentDescription = "Copy Message" ,
                 modifier = Modifier.size(size = ButtonDefaults.IconSize)
             )
-            ButtonHorizontalSpacer()
+            ButtonIconSpacer()
             Text(text = stringResource(id = android.R.string.copy))
         }
     }

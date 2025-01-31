@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="share_lesson_subject" translatable="false">%1$s</string>
     <string name="app_name" translatable="false">Android Studio Tutorials</string>
+    <string name="share_lesson_subject" translatable="false">%1$s</string>
     <string name="bulgarian" translatable="false">Български</string>
     <string name="english" translatable="false">English</string>
     <string name="french" translatable="false">Français</string>
@@ -21,6 +21,4 @@
     <string name="thai" translatable="false">ไทย</string>
     <string name="brazilian_portuguese" translatable="false">Português (Brasil)</string>
     <string name="copyright" translatable="false">Copyright ©2022-2025, D4rK</string>
-    <string name="arch" translatable="false">Arch:</string>
-    <string name="settings_placeholder_description">No settings selected. Choose an option to view its details here.</string>
 </resources>

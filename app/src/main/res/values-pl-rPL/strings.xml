@@ -1,103 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_short_description">Dowiedz się, jak tworzyć proste aplikacje w Android Studio!</string>
-    <string name="notification_update_title">Dostępna jest nowa aktualizacja!</string>
-    <string name="summary_notification_update">Dostępna jest nowa wersja aplikacji. Kliknij, aby zaktualizować!</string>
-    <string name="notification_last_time_used_title">Minęło trochę czasu!</string>
     <string name="summary_notification_last_time_used">Tęskniliśmy! Dowiedzmy się czegoś nowego o Androidzie!</string>
 
-    <string name="welcome">Witaj</string>
-    <string name="summary_browse_terms_of_service_and_privacy_policy">Przeczytaj i zaakceptuj Regulamin i Politykę prywatności, aby kontynuować</string>
-    <string name="agree">Zgadzam się</string>
-
-    <string name="navigation_drawer_open">Otwórz szufladę nawigacyjną</string>
-
-    <string name="home">Strona główna</string>
     <string name="get_the_app_to_watch">Pobierz aplikację i zobacz pełną lekcję: %1$s</string>
     <string name="no_lessons_found">Nie znaleziono lekcji.</string>
-    <string name="activity_not_found">Nie znaleziono aktywności.</string>
-    <string name="security_error">Wystąpił błąd zabezpieczeń. Spróbuj ponownie później.</string>
-    <string name="io_error">Wystąpił błąd wejścia/wyjścia. Sprawdź połączenie sieciowe lub pamięć i spróbuj ponownie.</string>
-    <string name="illegal_argument_error">Podano nieprawidłowe dane wejściowe lub argument. Sprawdź informacje i spróbuj ponownie.</string>
     <string name="sqlite_error">Wystąpił błąd bazy danych. Wykonaj następujące kroki:\n\n1. Uruchom ponownie aplikację.\n2. Jeśli problem nadal występuje, wyczyść dane aplikacji w Ustawienia > Aplikacje > Android Studio Tutorials > Pamięć.\n3. Skontaktuj się z pomocą techniczną, jeśli problem nadal występuje.</string>
-    <string name="unknown_error">Wystąpił nieznany błąd.</string>
-    <string name="initialization_error">Inicjalizacja nie powiodła się. Spróbuj ponownie później.</string>
 
     <string name="studio_bot">Studio Bot</string>
     <string name="type_a_message">Wpisz wiadomość…</string>
-
-    <string name="share">Udostępnij</string>
-    <string name="app_info">Informacje o aplikacji</string>
 
     <string name="favorites">Ulubione</string>
     <string name="error_loading_favorites">Błąd ładowania ulubionych lekcji. Spróbuj ponownie później.</string>
     <string name="no_favorite_lessons_found">Nie znaleziono ulubionych lekcji.</string>
 
-    <string name="settings">Ustawienia</string>
-
-    <string name="display">Wyświetlacz</string>
-    <string name="summary_preference_settings_display">Spersonalizuj wygląd swojej aplikacji</string>
-
-    <string name="appearance">Wygląd</string>
-    <string name="dark_theme">Ciemny motyw</string>
-    <string name="will_turn_on_automatically_by_system">Włączy się automatycznie przez system</string>
-    <string name="will_never_turn_on_automatically">Nigdy nie włączy się automatycznie</string>
-    <string name="amoled_mode">Tryb AMOLED</string>
-    <string name="follow_system">Tryb zgodny z systemem</string>
-    <string name="light_mode">Tryb jasny</string>
-    <string name="dark_mode">Tryb ciemny</string>
-    <string name="summary_dark_theme">Ciemny motyw wykorzystuje ciemne tło, aby bateria działała dłużej</string>
-
-    <string name="dynamic_colors">Kolory dynamiczne</string>
-    <string name="summary_preference_settings_dynamic_colors">Zastosuj kolory z tapet do motywu aplikacji</string>
-
-    <string name="app_behavior">Zachowanie aplikacji</string>
-    <string name="bounce_buttons">Odbijanie kliknięcia</string>
-    <string name="summary_preference_settings_bounce_buttons">Stosuje subtelną animację odbicia do wszystkich elementów, które można kliknąć po kliknięciu</string>
-
-    <string name="navigation">Nawigacja</string>
-    <string name="startup_page">Strona startowa</string>
-    <string name="summary_preference_settings_startup_page">Wybierz ekran, który ma być wyświetlany po uruchomieniu aplikacji.</string>
-    <string name="dialog_startup_subtitle">Wybierz preferowaną stronę startową:</string>
-    <string name="dialog_info_startup">Konfiguruje ekran początkowy prezentowany użytkownikom po uruchomieniu aplikacji. To ustawienie wpływa na pierwszą interakcję użytkownika z aplikacją i można je dostosować do konkretnych segmentów użytkowników lub celów produktu.</string>
-
-    <string name="language">Język</string>
-    <string name="summary_preference_settings_language">Zmienia język używany w aplikacji</string>
-    <string name="dialog_language_subtitle">Wybierz preferowany język</string>
-    <string name="dialog_info_language">Spersonalizuj swoje doświadczenie za pomocą preferowanego języka. Wszelkie zmiany języka, które wprowadzisz, zaczną obowiązywać od razu, zapewniając płynne korzystanie z wybranego języka</string>
-
-    <string name="notifications">Powiadomienia</string>
-    <string name="summary_preference_settings_notifications">Zarządzaj powiadomieniami aplikacji</string>
-
-    <string name="app_usage_notifications">Powiadomienia o korzystaniu z aplikacji</string>
-    <string name="update_notifications">Powiadomienia o aktualizacjach</string>
-
-    <string name="advanced">Zaawansowane</string>
-    <string name="summary_preference_settings_advanced">Poznaj bardziej zaawansowane ustawienia</string>
-    <string name="error_reporting">Raportowanie błędów</string>
-    <string name="bug_report">Raport o błędzie</string>
-    <string name="summary_preference_settings_bug_report">Wysyłaj raporty o błędach i prośby o nowe funkcje do strony zgłaszania problemów w repozytorium GitHub aplikacji</string>
-
-    <string name="security_and_privacy">Bezpieczeństwo i prywatność</string>
-    <string name="summary_preference_settings_privacy_and_security">Zarządzaj swoimi ustawieniami prywatności</string>
-    <string name="privacy">Prywatność</string>
-    <string name="privacy_policy">Polityka prywatności</string>
-    <string name="summary_preference_settings_privacy_policy">Zobacz zasady, które regulują sposób, w jaki przetwarzamy Twoje dane</string>
-    <string name="terms_of_service">Warunki korzystania z usługi</string>
-    <string name="summary_preference_settings_terms_of_service">Przejrzyj warunki, które akceptujesz, korzystając z naszej usługi</string>
-    <string name="code_of_conduct">Kodeks postępowania</string>
-    <string name="summary_preference_settings_code_of_conduct">Zapoznaj się z zasadami i wytycznymi dotyczącymi zachowania w ramach naszej usługi</string>
-
-    <string name="permissions">Uprawnienia</string>
-    <string name="summary_preference_settings_permissions">Zarządzaj uprawnieniami przyznanymi naszej usłudze</string>
-    <string name="normal">Normalne</string>
     <string name="ad_id">Identyfikator reklamy [AD_ID]</string>
     <string name="summary_preference_permissions_ad_id">Umożliwia aplikacji pobieranie i wykorzystywanie identyfikatora reklamowego powiązanego z urządzeniem użytkownika, zapewniając spersonalizowane reklamy, mierząc skuteczność reklam i wyświetlając reklamy na urządzeniach z systemem Android 13 lub nowszym.</string>
     <string name="internet">Internet [INTERNET]</string>
     <string name="summary_preference_permissions_internet">Umożliwia aplikacji nawiązanie połączenia internetowego w celu wysyłania raportów o błędach lub sprawdzania aktualizacji.</string>
     <string name="post_notifications">Publikuj powiadomienia [POST_NOTIFICATIONS]</string>
     <string name="summary_preference_permissions_post_notifications">Umożliwia aplikacji wyświetlanie powiadomień na urządzeniach z systemem Android 13 lub nowszym.</string>
-    <string name="runtime">Środowisko wykonawcze</string>
     <string name="access_network_state">Dostęp do stanu sieci [ACCESS_NETWORK_STATE]</string>
     <string name="summary_preference_permissions_access_network_state">Umożliwia aplikacji sprawdzanie połączenia sieciowego i pobieranie informacji o Wi-Fi, w tym stanu włączenia i nazw podłączonych urządzeń Wi-Fi.</string>
     <string name="access_notification_policy">Dostęp do zasad powiadomień [ACCESS_NOTIFICATION_POLICY]</string>
@@ -109,44 +31,8 @@
     <string name="foreground_service">Usługa pierwszoplanowa [FOREGROUND_SERVICE]</string>
     <string name="summary_preference_permissions_foreground_service">Umożliwia aplikacji tworzenie i korzystanie z usług działających na pierwszym planie, przyznając im priorytet w stosunku do innych procesów w tle i poprawiając wydajność i niezawodność.</string>
 
-    <string name="ads">Reklamy</string>
-    <string name="summary_preference_settings_ads">Kontroluj, w jaki sposób wykorzystujemy Twoje informacje, aby wyświetlać Ci odpowiednie reklamy</string>
-    <string name="display_ads">Wyświetlaj reklamy</string>
-    <string name="personalized_ads">Reklamy spersonalizowane</string>
-    <string name="summary_ads_personalized_ads">Wybierz, jak spersonalizujemy reklamy dla Ciebie na podstawie Twoich zainteresowań</string>
-    <string name="summary_ads">Zobacz reklamy, które są dla Ciebie istotne. Zarządzaj informacjami wykorzystywanymi do wyświetlania spersonalizowanych reklam na podstawie aktywności w aplikacji. Zawsze możesz wyłączyć personalizację tutaj.\n</string>
-
-    <string name="usage_and_diagnostics">Użycie i diagnostyka</string>
-    <string name="summary_preference_settings_usage_and_diagnostics">Udostępniaj dane, aby pomóc w ulepszaniu Cleaner dla systemu Android</string>
-    <string name="summary_usage_and_diagnostics">Pomóż nam ulepszyć Twoje wrażenia, automatycznie wysyłając nam dane diagnostyczne, dotyczące urządzenia i użytkowania aplikacji. Pomoże to poprawić wydajność, stabilność i inne ulepszenia aplikacji. Niektóre zagregowane dane pomogą również naszym aplikacjom.\n\nSą to ogólne informacje o Twoim urządzeniu i sposobie korzystania z naszych aplikacji (takie jak poziom naładowania baterii, aktywność systemu i aplikacji oraz błędy). Dane zostaną wykorzystane do ulepszenia naszych aplikacji.\n\nWłączenie lub wyłączenie tej funkcji nie wpływa na zdolność urządzenia do wysyłania informacji wymaganych do podstawowych usług, takich jak aktualizacje aplikacji i bezpieczeństwo.\n</string>
-
-    <string name="legal">Prawne</string>
-    <string name="legal_notices">Informacje prawne</string>
-    <string name="summary_preference_settings_legal_notices">Zobacz informacje prawne dotyczące naszej usługi</string>
-    <string name="license">Licencja</string>
-
-    <string name="about">O aplikacji</string>
     <string name="summary_preference_settings_about">Dowiedz się więcej o samouczkach Android Studio</string>
 
-    <string name="app_build_version">Wersja kompilacji aplikacji</string>
-    <string name="summary_preference_settings_oss">Szczegóły licencji dla oprogramowania open source</string>
-    <string name="device_info">Informacje o urządzeniu</string>
-    <string name="app_build">Kompilacja aplikacji: %6$s\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
-    <string name="debug">Debugowanie</string>
-    <string name="release">Wydanie</string>
-    <string name="manufacturer">Producent:</string>
-    <string name="device_model">Model urządzenia:</string>
-    <string name="android_version">Wersja Androida:</string>
-    <string name="api_level">Poziom API:</string>
-    <string name="snack_device_info_copied">Informacje o urządzeniu skopiowane do schowka</string>
-
-    <string name="help_and_feedback">Pomoc i opinie</string>
-    <string name="help">Pomoc</string>
-    <string name="faq">FAQ</string>
-    <string name="view_in_google_play_store">Zobacz w Sklepie Google Play</string>
-    <string name="version_info">Informacje o wersji</string>
-    <string name="version">Wersja %1$s</string>
-    <string name="beta_program">Program beta</string>
     <string name="question_1">Co to jest Android Studio Tutorials: Kotlin Edition?</string>
     <string name="summary_preference_faq_1">Android Studio Tutorials: Kotlin Edition to bezpłatna aplikacja o otwartym kodzie źródłowym, która zawiera zbiór samouczków wideo na temat korzystania z Android Studio, oficjalnego zintegrowanego środowiska programistycznego (IDE) do tworzenia aplikacji na Androida.</string>
     <string name="question_2">Jak mogę pobrać aplikację Android Studio Tutorials: Kotlin Edition?</string>
@@ -165,22 +51,4 @@
     <string name="summary_preference_faq_8">Możesz sprawdzić dostępność aktualizacji aplikacji Android Studio Tutorials: Kotlin Edition, przechodząc do menu ustawień w aplikacji i wybierając opcję „Sprawdź aktualizacje”.</string>
     <string name="question_9">Jak mogę wesprzeć rozwój aplikacji Android Studio Tutorials: Kotlin Edition?</string>
     <string name="summary_preference_faq_9">Możesz wesprzeć rozwój aplikacji Android Studio Tutorials: Kotlin Edition, pozostawiając pozytywną opinię w Sklepie Google Play, udostępniając aplikację znajomym i współpracownikom oraz wspierając programistów za pomocą opcji „Udostępnij” w menu ustawień.</string>
-    <string name="feedback">Opinie</string>
-
-    <string name="updates">Aktualizacje</string>
-
-    <string name="support_us">Wesprzyj nas</string>
-    <string name="paid_support">Wsparcie płatne</string>
-    <string name="summary_donations">Bez względu na to, jaką kwotę przekażesz, pomożesz nam utrzymać naszą aplikację w działaniu i ulepszyć nasze funkcje. Dziękujemy za hojność i życzliwość!</string>
-    <string name="non_paid_support">Wsparcie nieodpłatne</string>
-    <string name="web_ad">Reklama internetowa</string>
-
-    <string name="snack_app_updated">Aplikacja została pomyślnie zaktualizowana</string>
-    <string name="snack_update_failed">Podczas procesu aktualizacji wystąpił problem</string>
-    <string name="try_again">Spróbuj ponownie</string>
-    <string name="summary_share_message">Sprawdź tę niesamowitą aplikację, z której korzystam! Ma kilka naprawdę fajnych funkcji, które mogą Cię zainteresować. Możesz ją pobrać ze Sklepu Play pod adresem: %1$s</string>
-    <string name="learn_more">Dowiedz się więcej</string>
-
-    <string name="close">Zamknąć?</string>
-    <string name="summary_close">Na pewno chcesz wyjść?</string>
 </resources>

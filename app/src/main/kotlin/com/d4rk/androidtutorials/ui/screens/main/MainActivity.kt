@@ -74,7 +74,7 @@ class MainActivity : AppCompatActivity() {
     @Deprecated("Deprecated in Java")
     @Suppress("DEPRECATION")
     override fun onBackPressed() {
-        MaterialAlertDialogBuilder(this).setTitle(R.string.close).setMessage(R.string.summary_close)
+        MaterialAlertDialogBuilder(this).setTitle(com.d4rk.android.libs.apptoolkit.R.string.close).setMessage(com.d4rk.android.libs.apptoolkit.R.string.summary_close)
                 .setPositiveButton(android.R.string.yes) { _ , _ ->
                     super.onBackPressed()
                     moveTaskToBack(true)
@@ -118,7 +118,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun showUpdateSuccessfulSnackbar() {
         val snackbar : Snackbar = Snackbar.make(
-            findViewById(android.R.id.content) , R.string.snack_app_updated , Snackbar.LENGTH_LONG
+            findViewById(android.R.id.content) , com.d4rk.android.libs.apptoolkit.R.string.snack_app_updated , Snackbar.LENGTH_LONG
         ).setAction(android.R.string.ok , null)
         snackbar.show()
     }
@@ -132,8 +132,8 @@ class MainActivity : AppCompatActivity() {
      */
     private fun showUpdateFailedSnackbar() {
         val snackbar : Snackbar = Snackbar.make(
-            findViewById(android.R.id.content) , R.string.snack_update_failed , Snackbar.LENGTH_LONG
-        ).setAction(R.string.try_again) {
+            findViewById(android.R.id.content) , com.d4rk.android.libs.apptoolkit.R.string.snack_update_failed , Snackbar.LENGTH_LONG
+        ).setAction(com.d4rk.android.libs.apptoolkit.R.string.try_again) {
             viewModel.checkForUpdates(
                 activity = this@MainActivity , appUpdateManager = appUpdateManager
             )

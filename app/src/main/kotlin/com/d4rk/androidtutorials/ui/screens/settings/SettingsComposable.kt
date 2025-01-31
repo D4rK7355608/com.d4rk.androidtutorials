@@ -20,7 +20,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -52,6 +51,7 @@ import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
 import com.d4rk.android.libs.apptoolkit.ui.components.preferences.SettingsPreferenceItem
+import com.d4rk.android.libs.apptoolkit.ui.components.spacers.ButtonIconSpacer
 import com.d4rk.android.libs.apptoolkit.ui.screens.settings.about.AboutSettingsList
 import com.d4rk.android.libs.apptoolkit.ui.screens.settings.advanced.AdvancedSettingsList
 import com.d4rk.android.libs.apptoolkit.ui.screens.settings.display.DisplaySettingsList
@@ -72,7 +72,7 @@ import com.d4rk.androidtutorials.utils.providers.AppPrivacySettingsProvider
 fun SettingsComposable(activity : SettingsActivity) {
     val context : Context = LocalContext.current
 
-    TopAppBarScaffoldWithBackButton(title = stringResource(id = R.string.settings) , onBackClicked = { activity.finish() }) { paddingValues ->
+    TopAppBarScaffoldWithBackButton(title = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.settings) , onBackClicked = { activity.finish() }) { paddingValues ->
         val isTabletOrLandscape : Boolean = ScreenHelper.isLandscapeOrTablet(context = context)
         if (isTabletOrLandscape) {
             TabletSettingsScreen(paddingValues = paddingValues , context = context)
@@ -89,19 +89,19 @@ fun PhoneSettingsScreen(paddingValues : PaddingValues , context : Context) {
         when (preference) {
             "notifications" -> IntentsHelper.openAppNotificationSettings(context)
             "display" -> GeneralSettingsActivity.start(
-                context , title = context.getString(R.string.display) , content = SettingsContent.DISPLAY
+                context , title = context.getString(com.d4rk.android.libs.apptoolkit.R.string.display) , content = SettingsContent.DISPLAY
             )
 
             "privacy" -> GeneralSettingsActivity.start(
-                context , title = context.getString(R.string.security_and_privacy) , content = SettingsContent.PRIVACY
+                context , title = context.getString(com.d4rk.android.libs.apptoolkit.R.string.security_and_privacy) , content = SettingsContent.PRIVACY
             )
 
             "advanced" -> GeneralSettingsActivity.start(
-                context , title = context.getString(R.string.advanced) , content = SettingsContent.ADVANCED
+                context , title = context.getString(com.d4rk.android.libs.apptoolkit.R.string.advanced) , content = SettingsContent.ADVANCED
             )
 
             "about" -> GeneralSettingsActivity.start(
-                context , title = context.getString(R.string.about) , content = SettingsContent.ABOUT
+                context , title = context.getString(com.d4rk.android.libs.apptoolkit.R.string.about) , content = SettingsContent.ABOUT
             )
         }
     })
@@ -181,7 +181,7 @@ fun SettingsDetailPlaceholder(paddingValues : PaddingValues) {
                         )
                         Spacer(modifier = Modifier.height(height = 8.dp))
                         Text(
-                            modifier = Modifier.fillMaxWidth() , text = stringResource(id = R.string.settings_placeholder_description) , style = MaterialTheme.typography.bodyMedium , color = MaterialTheme.colorScheme.onSurfaceVariant , textAlign = TextAlign.Center
+                            modifier = Modifier.fillMaxWidth() , text = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.settings_placeholder_description) , style = MaterialTheme.typography.bodyMedium , color = MaterialTheme.colorScheme.onSurfaceVariant , textAlign = TextAlign.Center
                         )
                     }
 
@@ -196,8 +196,8 @@ fun SettingsDetailPlaceholder(paddingValues : PaddingValues) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Outlined.ContactSupport , contentDescription = null
                         )
-                        Spacer(modifier = Modifier.width(width = 8.dp))
-                        Text(text = stringResource(id = R.string.get_help))
+                        ButtonIconSpacer()
+                        Text(text = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.get_help))
                     }
                 }
             }
@@ -245,9 +245,9 @@ fun SettingsList(
             Column(modifier = Modifier.run {
                 padding(start = 16.dp , end = 16.dp).clip(RoundedCornerShape(24.dp))
             }) {
-                SettingsPreferenceItem(Icons.Outlined.Notifications , title = stringResource(id = R.string.notifications) , summary = stringResource(id = R.string.summary_preference_settings_notifications) , onClick = { onPreferenceClick("notifications") })
+                SettingsPreferenceItem(Icons.Outlined.Notifications , title = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.notifications) , summary = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.summary_preference_settings_notifications) , onClick = { onPreferenceClick("notifications") })
                 Spacer(modifier = Modifier.height(2.dp))
-                SettingsPreferenceItem(Icons.Outlined.Palette , title = stringResource(id = R.string.display) , summary = stringResource(id = R.string.summary_preference_settings_display) , onClick = { onPreferenceClick("display") })
+                SettingsPreferenceItem(Icons.Outlined.Palette , title = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.display) , summary = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.summary_preference_settings_display) , onClick = { onPreferenceClick("display") })
             }
             Spacer(modifier = Modifier.height(24.dp))
         }
@@ -257,11 +257,11 @@ fun SettingsList(
                         .padding(start = 16.dp , end = 16.dp)
                         .clip(RoundedCornerShape(24.dp))
             ) {
-                SettingsPreferenceItem(Icons.Outlined.SafetyCheck , title = stringResource(id = R.string.security_and_privacy) , summary = stringResource(id = R.string.summary_preference_settings_privacy_and_security) , onClick = { onPreferenceClick("privacy") })
+                SettingsPreferenceItem(Icons.Outlined.SafetyCheck , title = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.security_and_privacy) , summary = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.summary_preference_settings_privacy_and_security) , onClick = { onPreferenceClick("privacy") })
                 Spacer(modifier = Modifier.height(2.dp))
-                SettingsPreferenceItem(Icons.Outlined.Build , title = stringResource(id = R.string.advanced) , summary = stringResource(id = R.string.summary_preference_settings_advanced) , onClick = { onPreferenceClick("advanced") })
+                SettingsPreferenceItem(Icons.Outlined.Build , title = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.advanced) , summary = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.summary_preference_settings_advanced) , onClick = { onPreferenceClick("advanced") })
                 Spacer(modifier = Modifier.height(2.dp))
-                SettingsPreferenceItem(Icons.Outlined.Info , title = stringResource(id = R.string.about) , summary = stringResource(id = R.string.summary_preference_settings_about) , onClick = { onPreferenceClick("about") })
+                SettingsPreferenceItem(Icons.Outlined.Info , title = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.about) , summary = stringResource(id = R.string.summary_preference_settings_about) , onClick = { onPreferenceClick("about") })
             }
         }
     }

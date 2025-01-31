@@ -1,103 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_short_description">Tanuld meg, hogyan készíthetsz egyszerű alkalmazásokat az Android Studioban!</string>
-    <string name="notification_update_title">Új frissítés érhető el!</string>
-    <string name="summary_notification_update">Az alkalmazás új verziója érhető el. Kattints a frissítéshez!</string>
-    <string name="notification_last_time_used_title">Már egy ideje volt!</string>
     <string name="summary_notification_last_time_used">Hiányoztál! Tanuljunk valami újat az Androidról!</string>
 
-    <string name="welcome">Üdvözöljük</string>
-    <string name="summary_browse_terms_of_service_and_privacy_policy">A folytatáshoz olvasd el és fogadd el a Szolgáltatási Feltételeinket és az Adatvédelmi Szabályzatunkat</string>
-    <string name="agree">Elfogadom</string>
-
-    <string name="navigation_drawer_open">Navigációs fiók megnyitása</string>
-
-    <string name="home">Kezdőlap</string>
     <string name="get_the_app_to_watch">Töltsd le az alkalmazást, és nézd meg a teljes leckét: %1$s</string>
     <string name="no_lessons_found">Nem található lecke.</string>
-    <string name="activity_not_found">Nem található tevékenység.</string>
-    <string name="security_error">Biztonsági hiba történt. Kérjük, próbálja újra később.</string>
-    <string name="io_error">Bemeneti/kimeneti hiba történt. Kérjük, ellenőrizd a hálózati kapcsolatot vagy a tárhelyet, és próbáld újra.</string>
-    <string name="illegal_argument_error">Érvénytelen bemenet vagy argumentum megadva. Kérjük, ellenőrizd az információkat, és próbáld újra.</string>
     <string name="sqlite_error">Adatbázis-hiba történt. Kérjük, próbáld meg a következő lépéseket:\n\n1. Indítsd újra az alkalmazást.\n2. Ha a probléma továbbra is fennáll, töröld az alkalmazás adatait a Beállítások > Alkalmazások > Android Studio Tutorials > Tárhely menüpontban.\n3. Ha a probléma továbbra is fennáll, vedd fel a kapcsolatot az ügyfélszolgálattal.</string>
-    <string name="unknown_error">Ismeretlen hiba történt.</string>
-    <string name="initialization_error">Az inicializálás nem sikerült. Kérjük, próbálja újra később.</string>
 
     <string name="studio_bot">Studio Bot</string>
     <string name="type_a_message">Írj egy üzenetet…</string>
-
-    <string name="share">Megosztás</string>
-    <string name="app_info">Alkalmazásinformáció</string>
 
     <string name="favorites">Kedvencek</string>
     <string name="error_loading_favorites">Hiba történt a kedvenc leckék betöltésekor. Kérjük, próbálja újra később.</string>
     <string name="no_favorite_lessons_found">Nem található kedvenc lecke.</string>
 
-    <string name="settings">Beállítások</string>
-
-    <string name="display">Kijelző</string>
-    <string name="summary_preference_settings_display">Szabd testre az alkalmazás megjelenését</string>
-
-    <string name="appearance">Megjelenés</string>
-    <string name="dark_theme">Sötét téma</string>
-    <string name="will_turn_on_automatically_by_system">A rendszer automatikusan bekapcsolja</string>
-    <string name="will_never_turn_on_automatically">Soha nem kapcsol be automatikusan</string>
-    <string name="amoled_mode">AMOLED mód</string>
-    <string name="follow_system">Rendszermód követése</string>
-    <string name="light_mode">Világos mód</string>
-    <string name="dark_mode">Sötét mód</string>
-    <string name="summary_dark_theme">A sötét téma mély hátteret használ, hogy meghosszabbítsa az akkumulátor élettartamát</string>
-
-    <string name="dynamic_colors">Dinamikus színek</string>
-    <string name="summary_preference_settings_dynamic_colors">Alkalmazd a háttérképek színeit az alkalmazás témájára</string>
-
-    <string name="app_behavior">Alkalmazás viselkedése</string>
-    <string name="bounce_buttons">Kattintáskor ugrás</string>
-    <string name="summary_preference_settings_bounce_buttons">Egy finom ugrási animációt alkalmaz az összes kattintható elemre a kattintáskor</string>
-
-    <string name="navigation">Navigáció</string>
-    <string name="startup_page">Indítóoldal</string>
-    <string name="summary_preference_settings_startup_page">Válaszd ki a képernyőt, amely az alkalmazás indításakor jelenjen meg.</string>
-    <string name="dialog_startup_subtitle">Válaszd ki a kívánt indítóoldalt:</string>
-    <string name="dialog_info_startup">Beállítja az alkalmazás elindításakor a felhasználóknak megjelenő kezdőképernyőt. Ez a beállítás befolyásolja a felhasználó első interakcióját az alkalmazással, és testre szabható az adott felhasználói szegmensekhez vagy termékcélokhoz.</string>
-
-    <string name="language">Nyelv</string>
-    <string name="summary_preference_settings_language">Megváltoztatja az alkalmazásban használt nyelvet</string>
-    <string name="dialog_language_subtitle">Válaszd ki a kívánt nyelvet</string>
-    <string name="dialog_info_language">Személyre szabhatod az élményt a kívánt nyelven. Az általad végzett nyelvi változtatások azonnal életbe lépnek, így biztosítva a zökkenőmentes élményt a választott nyelven</string>
-
-    <string name="notifications">Értesítések</string>
-    <string name="summary_preference_settings_notifications">Alkalmazásértesítések kezelése</string>
-
-    <string name="app_usage_notifications">Alkalmazáshasználati értesítések</string>
-    <string name="update_notifications">Frissítési értesítések</string>
-
-    <string name="advanced">Haladó</string>
-    <string name="summary_preference_settings_advanced">Fedezd fel a további speciális beállításokat</string>
-    <string name="error_reporting">Hibajelentés</string>
-    <string name="bug_report">Hibajelentés</string>
-    <string name="summary_preference_settings_bug_report">Küldj hibajelentéseket és funkciókéréseket az alkalmazás GitHub-tárhelyének problémái oldalára</string>
-
-    <string name="security_and_privacy">Biztonság és adatvédelem</string>
-    <string name="summary_preference_settings_privacy_and_security">Kezeld az adatvédelmi beállításaidat</string>
-    <string name="privacy">Adatvédelem</string>
-    <string name="privacy_policy">Adatvédelmi szabályzat</string>
-    <string name="summary_preference_settings_privacy_policy">Tekintsd meg a szabályzatot, amely szabályozza, hogyan kezeljük az adataidat</string>
-    <string name="terms_of_service">Szolgáltatási feltételek</string>
-    <string name="summary_preference_settings_terms_of_service">Tekintsd át azokat a feltételeket, amelyeket elfogadsz a szolgáltatásunk használatakor</string>
-    <string name="code_of_conduct">Magatartási kódex</string>
-    <string name="summary_preference_settings_code_of_conduct">Ismerd meg a szolgáltatásunkon belüli viselkedés szabályait és irányelveit</string>
-
-    <string name="permissions">Engedélyek</string>
-    <string name="summary_preference_settings_permissions">Kezeld a szolgáltatásunknak adott engedélyeket</string>
-    <string name="normal">Normál</string>
     <string name="ad_id">Hirdetésazonosító [AD_ID]</string>
     <string name="summary_preference_permissions_ad_id">Lehetővé teszi az alkalmazás számára, hogy lekérje és felhasználja a felhasználó eszközéhez társított hirdetési azonosítót, személyre szabott hirdetéseket biztosítva, mérve a hirdetések hatékonyságát, és hirdetéseket jelenítsen meg Android 13 vagy újabb rendszerű eszközökön.</string>
     <string name="internet">Internet [INTERNET]</string>
     <string name="summary_preference_permissions_internet">Lehetővé teszi az alkalmazás számára, hogy internetkapcsolatot hozzon létre hibajelentések küldéséhez vagy frissítések kereséséhez.</string>
     <string name="post_notifications">Értesítések küldése [POST_NOTIFICATIONS]</string>
     <string name="summary_preference_permissions_post_notifications">Lehetővé teszi az alkalmazás számára, hogy értesítéseket jelenítsen meg Android 13 vagy újabb rendszerű eszközökön.</string>
-    <string name="runtime">Futtatás</string>
     <string name="access_network_state">Hálózati állapot elérése [ACCESS_NETWORK_STATE]</string>
     <string name="summary_preference_permissions_access_network_state">Lehetővé teszi az alkalmazás számára a hálózati kapcsolat ellenőrzését és a Wi-Fi-vel kapcsolatos információk lekérését, beleértve az engedélyezett állapotot és a csatlakoztatott Wi-Fi-eszközök neveit.</string>
     <string name="access_notification_policy">Értesítési szabályzat elérése [ACCESS_NOTIFICATION_POLICY]</string>
@@ -109,44 +31,8 @@
     <string name="foreground_service">Előtérszolgáltatás [FOREGROUND_SERVICE]</string>
     <string name="summary_preference_permissions_foreground_service">Lehetővé teszi az alkalmazás számára, hogy előtérben futó szolgáltatásokat hozzon létre és használjon, ezzel prioritást adva nekik más háttérfolyamatokkal szemben, és javítva a teljesítményt és a megbízhatóságot.</string>
 
-    <string name="ads">Hirdetések</string>
-    <string name="summary_preference_settings_ads">Szabályozd, hogyan használjuk az adataidat, hogy releváns hirdetéseket jelenítsünk meg</string>
-    <string name="display_ads">Hirdetések megjelenítése</string>
-    <string name="personalized_ads">Személyre szabott hirdetések</string>
-    <string name="summary_ads_personalized_ads">Válaszd ki, hogyan személyre szabjuk a hirdetéseket érdeklődési köreid alapján</string>
-    <string name="summary_ads">Tekintsd meg azokat a hirdetéseket, amelyek relevánsak számodra. Kezeld azokat az adatokat, amelyek a személyre szabott hirdetések megjelenítéséhez használnak az alkalmazástevékenységed alapján. A személyre szabást bármikor kikapcsolhatod itt.\n</string>
-
-    <string name="usage_and_diagnostics">Használat és diagnosztika</string>
-    <string name="summary_preference_settings_usage_and_diagnostics">Oszd meg az adatokat, hogy segíts javítani a Cleaner for Android alkalmazást</string>
-    <string name="summary_usage_and_diagnostics">Segíts javítani az élményt azáltal, hogy automatikusan diagnosztikai, eszköz- és alkalmazáshasználati adatokat küldesz nekünk. Ez segít javítani az alkalmazás teljesítményét, stabilitását és egyéb fejlesztéseket. Néhány összesített adat is segíteni fogja az alkalmazásainkat.\n\nEz egy általános információ az eszközről és arról, hogyan használod az alkalmazásainkat (például az akkumulátor töltöttségi szintje, a rendszer és az alkalmazás aktivitása, valamint a hibák). Az adatokat az alkalmazásaink fejlesztésére fogjuk használni\n\nEnnek a funkciónak a kikapcsolása nincs hatással az eszköz azon képességére, hogy elküldje az olyan alapvető szolgáltatásokhoz szükséges információkat, mint az alkalmazásfrissítések és a biztonság.\n</string>
-
-    <string name="legal">Jogi</string>
-    <string name="legal_notices">Jogi közlemények</string>
-    <string name="summary_preference_settings_legal_notices">Tekintsd meg a szolgáltatásunkkal kapcsolatos jogi információkat</string>
-    <string name="license">Licenc</string>
-
-    <string name="about">Névjegy</string>
     <string name="summary_preference_settings_about">Tudj meg többet az Android Studio Tutorials alkalmazásról</string>
 
-    <string name="app_build_version">Alkalmazás build verziója</string>
-    <string name="summary_preference_settings_oss">A nyílt forráskódú szoftverek licencadatai</string>
-    <string name="device_info">Eszközinformációk</string>
-    <string name="app_build">Alkalmazás build: %6$s\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
-    <string name="debug">Hibakeresés</string>
-    <string name="release">Kiadás</string>
-    <string name="manufacturer">Gyártó:</string>
-    <string name="device_model">Eszközmodell:</string>
-    <string name="android_version">Android verzió:</string>
-    <string name="api_level">API-szint:</string>
-    <string name="snack_device_info_copied">Eszközadatok a vágólapra másolva</string>
-
-    <string name="help_and_feedback">Súgó és visszajelzés</string>
-    <string name="help">Súgó</string>
-    <string name="faq">GYIK</string>
-    <string name="view_in_google_play_store">Megtekintés a Google Play Áruházban</string>
-    <string name="version_info">Verzióinformáció</string>
-    <string name="version">Verzió %1$s</string>
-    <string name="beta_program">Bétaprogram</string>
     <string name="question_1">Mi az Android Studio Tutorials: Kotlin Edition?</string>
     <string name="summary_preference_faq_1">Az Android Studio Tutorials: Kotlin Edition egy ingyenes és nyílt forráskódú alkalmazás, amely videóoktatóanyagokat tartalmaz az Android Studio, az Android alkalmazásfejlesztés hivatalos integrált fejlesztői környezete (IDE) használatáról.</string>
     <string name="question_2">Hogyan tölthetem le az Android Studio Tutorials: Kotlin Edition alkalmazást?</string>
@@ -165,22 +51,4 @@
     <string name="summary_preference_faq_8">Ellenőrizheted az Android Studio Tutorials: Kotlin Edition frissítéseit az alkalmazás beállítások menüjében, és kiválaszthatod a „Frissítések keresése” opciót.</string>
     <string name="question_9">Hogyan támogathatom az Android Studio Tutorials: Kotlin Edition fejlesztését?</string>
     <string name="summary_preference_faq_9">Támogathatod az Android Studio Tutorials: Kotlin Edition fejlesztését egy pozitív vélemény közzétételével a Google Play Áruházban, az alkalmazás megosztásával barátaiddal és kollégáiddal, valamint a fejlesztők támogatásával a beállítások menü „Megosztás” opcióján keresztül.</string>
-    <string name="feedback">Visszajelzés</string>
-
-    <string name="updates">Frissítések</string>
-
-    <string name="support_us">Támogass minket</string>
-    <string name="paid_support">Fizetett támogatás</string>
-    <string name="summary_donations">Nem számít, mennyit adományozol, segítesz nekünk az alkalmazásunk működtetésében és a funkcióink fejlesztésében. Nagyra értékeljük a nagylelkűségedet és a kedvességedet!</string>
-    <string name="non_paid_support">Nem fizetett támogatás</string>
-    <string name="web_ad">Webes hirdetés</string>
-
-    <string name="snack_app_updated">Az alkalmazás sikeresen frissítve lett</string>
-    <string name="snack_update_failed">A frissítési folyamat során hiba történt</string>
-    <string name="try_again">Próbáld újra</string>
-    <string name="summary_share_message">Nézd meg ezt a fantasztikus alkalmazást, amelyet használok! Vannak benne igazán klassz funkciók, amelyek érdekesek lehetnek számodra. Letöltheted a Play Áruházból innen: %1$s</string>
-    <string name="learn_more">Tudj meg többet</string>
-
-    <string name="close">Bezárás?</string>
-    <string name="summary_close">Biztosan ki szeretnél lépni?</string>
 </resources>

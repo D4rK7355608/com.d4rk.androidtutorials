@@ -18,7 +18,7 @@ sealed class BottomNavigationScreen(
         route = BottomBarRoutes.HOME ,
         icon = Icons.Outlined.Home ,
         selectedIcon = Icons.Filled.Home ,
-        title = R.string.home
+        title = com.d4rk.android.libs.apptoolkit.R.string.home
     )
 
     data object StudioBot : BottomNavigationScreen(

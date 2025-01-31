@@ -1,5 +1,6 @@
 package com.d4rk.androidtutorials.ui.components.navigation
 
+import android.app.Activity
 import android.content.Context
 import android.view.SoundEffectConstants
 import android.view.View
@@ -36,7 +37,6 @@ import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
 import com.d4rk.android.libs.apptoolkit.utils.helpers.IntentsHelper
 import com.d4rk.androidtutorials.BuildConfig
 import com.d4rk.androidtutorials.R
-import com.d4rk.androidtutorials.ui.screens.help.HelpActivity
 import com.d4rk.androidtutorials.ui.screens.support.SupportActivity
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -53,7 +53,7 @@ fun TopAppBarMain(
             onNavigationIconClick()
         }) {
             Icon(
-                imageVector = navigationIcon , contentDescription = stringResource(id = R.string.navigation_drawer_open)
+                imageVector = navigationIcon , contentDescription = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.navigation_drawer_open)
             )
         }
     } , actions = {
@@ -62,7 +62,7 @@ fun TopAppBarMain(
             IntentsHelper.openActivity(context , SupportActivity::class.java)
         }) {
             Icon(
-                Icons.Outlined.VolunteerActivism , contentDescription = stringResource(id = R.string.support_us)
+                Icons.Outlined.VolunteerActivism , contentDescription = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.support_us)
             )
         }
     })
@@ -93,12 +93,12 @@ fun TopAppBarScaffoldWithBackButton(
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TopAppBarScaffoldWithBackButtonAndActions(
-    context : Context , activity : HelpActivity , showDialog : MutableState<Boolean> , eulaHtmlString : String? , changelogHtmlString : String? , scrollBehavior : TopAppBarScrollBehavior , view : View
+    context : Context , activity : Activity , showDialog : MutableState<Boolean> , eulaHtmlString : String? , changelogHtmlString : String? , scrollBehavior : TopAppBarScrollBehavior , view : View
 ) {
     var showMenu : Boolean by remember { mutableStateOf(value = false) }
 
     LargeTopAppBar(
-        title = { Text(text = stringResource(id = R.string.help)) } ,
+        title = { Text(text = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.help)) } ,
         navigationIcon = {
             IconButton(modifier = Modifier.bounceClick() , onClick = {
                 view.playSoundEffect(SoundEffectConstants.CLICK)
@@ -121,29 +121,29 @@ fun TopAppBarScaffoldWithBackButtonAndActions(
             DropdownMenu(expanded = showMenu , onDismissRequest = {
                 showMenu = false
             }) {
-                DropdownMenuItem(modifier = Modifier.bounceClick() , text = { Text(text = stringResource(id = R.string.view_in_google_play_store)) } , onClick = {
+                DropdownMenuItem(modifier = Modifier.bounceClick() , text = { Text(text = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.view_in_google_play_store)) } , onClick = {
                     view.playSoundEffect(SoundEffectConstants.CLICK)
                     IntentsHelper.openUrl(
                         context , url = "https://play.google.com/store/apps/details?id=${activity.packageName}"
                     )
                 })
-                DropdownMenuItem(modifier = Modifier.bounceClick() , text = { Text(text = stringResource(id = R.string.version_info)) } , onClick = {
+                DropdownMenuItem(modifier = Modifier.bounceClick() , text = { Text(text = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.version_info)) } , onClick = {
                     view.playSoundEffect(SoundEffectConstants.CLICK)
                     showDialog.value = true
                 })
-                DropdownMenuItem(modifier = Modifier.bounceClick() , text = { Text(text = stringResource(id = R.string.beta_program)) } , onClick = {
+                DropdownMenuItem(modifier = Modifier.bounceClick() , text = { Text(text = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.beta_program)) } , onClick = {
                     view.playSoundEffect(SoundEffectConstants.CLICK)
                     IntentsHelper.openUrl(
                         context , url = "https://play.google.com/apps/testing/${activity.packageName}"
                     )
                 })
-                DropdownMenuItem(modifier = Modifier.bounceClick() , text = { Text(text = stringResource(id = R.string.terms_of_service)) } , onClick = {
+                DropdownMenuItem(modifier = Modifier.bounceClick() , text = { Text(text = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.terms_of_service)) } , onClick = {
                     view.playSoundEffect(SoundEffectConstants.CLICK)
                     IntentsHelper.openUrl(
                         context , url = "https://sites.google.com/view/d4rk7355608/more/apps/terms-of-service"
                     )
                 })
-                DropdownMenuItem(modifier = Modifier.bounceClick() , text = { Text(text = stringResource(id = R.string.privacy_policy)) } , onClick = {
+                DropdownMenuItem(modifier = Modifier.bounceClick() , text = { Text(text = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.privacy_policy)) } , onClick = {
                     view.playSoundEffect(SoundEffectConstants.CLICK)
                     IntentsHelper.openUrl(
                         context , url = "https://sites.google.com/view/d4rk7355608/more/apps/privacy-policy"
@@ -157,7 +157,7 @@ fun TopAppBarScaffoldWithBackButtonAndActions(
                 })
             }
             if (showDialog.value) {
-                VersionInfoAlertDialog(onDismiss = { showDialog.value = false } , copyrightString = R.string.copyright , appName = R.string.app_name , versionName = BuildConfig.VERSION_NAME , versionString = R.string.version)
+                VersionInfoAlertDialog(onDismiss = { showDialog.value = false } , copyrightString = R.string.copyright , appName = R.string.app_name , versionName = BuildConfig.VERSION_NAME , versionString = com.d4rk.android.libs.apptoolkit.R.string.version)
             }
         } ,
         scrollBehavior = scrollBehavior ,

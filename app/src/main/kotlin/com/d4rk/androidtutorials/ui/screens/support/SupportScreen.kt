@@ -8,7 +8,6 @@ import android.view.View
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -35,8 +34,8 @@ import com.android.billingclient.api.BillingClient
 import com.android.billingclient.api.BillingClientStateListener
 import com.android.billingclient.api.BillingResult
 import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
+import com.d4rk.android.libs.apptoolkit.ui.components.spacers.ButtonIconSpacer
 import com.d4rk.android.libs.apptoolkit.utils.helpers.IntentsHelper
-import com.d4rk.androidtutorials.R
 import com.d4rk.androidtutorials.ui.components.ads.AdBanner
 import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffoldWithBackButton
 import com.google.android.gms.ads.AdSize
@@ -46,7 +45,7 @@ fun SupportComposable(viewModel : SupportViewModel , activity : SupportActivity)
     val context : Context = LocalContext.current
     val view : View = LocalView.current
     val billingClient : BillingClient = rememberBillingClient(context , viewModel)
-    TopAppBarScaffoldWithBackButton(title = stringResource(id = R.string.support_us) , onBackClicked = { activity.finish() }) { paddingValues ->
+    TopAppBarScaffoldWithBackButton(title = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.support_us) , onBackClicked = { activity.finish() }) { paddingValues ->
         Box(
             modifier = Modifier
                     .padding(paddingValues)
@@ -55,7 +54,7 @@ fun SupportComposable(viewModel : SupportViewModel , activity : SupportActivity)
             LazyColumn {
                 item {
                     Text(
-                        text = stringResource(id = R.string.paid_support) ,
+                        text = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.paid_support) ,
                         modifier = Modifier.padding(start = 16.dp , top = 16.dp) ,
                         style = MaterialTheme.typography.titleLarge ,
                     )
@@ -68,7 +67,7 @@ fun SupportComposable(viewModel : SupportViewModel , activity : SupportActivity)
                     ) {
                         Column {
                             Text(
-                                text = stringResource(id = R.string.summary_donations) , modifier = Modifier.padding(16.dp)
+                                text = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.summary_donations) , modifier = Modifier.padding(16.dp)
                             )
                             LazyRow(
                                 modifier = Modifier
@@ -92,7 +91,7 @@ fun SupportComposable(viewModel : SupportViewModel , activity : SupportActivity)
                                         Icon(
                                             Icons.Outlined.Paid , contentDescription = null , modifier = Modifier.size(ButtonDefaults.IconSize)
                                         )
-                                        Spacer(modifier = Modifier.size(ButtonDefaults.IconSpacing))
+                                        ButtonIconSpacer()
                                         Text(
                                             text = viewModel.skuDetails["low_donation"]?.price ?: ""
                                         )
@@ -115,7 +114,7 @@ fun SupportComposable(viewModel : SupportViewModel , activity : SupportActivity)
                                         Icon(
                                             Icons.Outlined.Paid , contentDescription = null , modifier = Modifier.size(ButtonDefaults.IconSize)
                                         )
-                                        Spacer(modifier = Modifier.size(ButtonDefaults.IconSpacing))
+                                        ButtonIconSpacer()
                                         Text(
                                             text = viewModel.skuDetails["normal_donation"]?.price ?: ""
                                         )
@@ -144,7 +143,7 @@ fun SupportComposable(viewModel : SupportViewModel , activity : SupportActivity)
                                         Icon(
                                             Icons.Outlined.Paid , contentDescription = null , modifier = Modifier.size(ButtonDefaults.IconSize)
                                         )
-                                        Spacer(modifier = Modifier.size(ButtonDefaults.IconSpacing))
+                                        ButtonIconSpacer()
                                         Text(
                                             text = viewModel.skuDetails["high_donation"]?.price ?: ""
                                         )
@@ -168,7 +167,7 @@ fun SupportComposable(viewModel : SupportViewModel , activity : SupportActivity)
                                         Icon(
                                             Icons.Outlined.Paid , contentDescription = null , modifier = Modifier.size(ButtonDefaults.IconSize)
                                         )
-                                        Spacer(modifier = Modifier.size(ButtonDefaults.IconSpacing))
+                                        ButtonIconSpacer()
                                         Text(
                                             text = viewModel.skuDetails["extreme_donation"]?.price ?: ""
                                         )
@@ -180,7 +179,7 @@ fun SupportComposable(viewModel : SupportViewModel , activity : SupportActivity)
                 }
                 item {
                     Text(
-                        text = stringResource(id = R.string.non_paid_support) ,
+                        text = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.non_paid_support) ,
                         modifier = Modifier.padding(start = 16.dp) ,
                         style = MaterialTheme.typography.titleLarge ,
                     )
@@ -201,8 +200,8 @@ fun SupportComposable(viewModel : SupportViewModel , activity : SupportActivity)
                         Icon(
                             Icons.Outlined.Paid , contentDescription = null , modifier = Modifier.size(ButtonDefaults.IconSize)
                         )
-                        Spacer(modifier = Modifier.size(ButtonDefaults.IconSpacing))
-                        Text(text = stringResource(id = R.string.web_ad))
+                        ButtonIconSpacer()
+                        Text(text = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.web_ad))
                     }
                 }
                 item {

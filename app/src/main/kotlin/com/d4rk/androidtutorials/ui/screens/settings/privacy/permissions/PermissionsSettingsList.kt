@@ -15,7 +15,7 @@ import com.d4rk.androidtutorials.ui.components.navigation.TopAppBarScaffoldWithB
 
 @Composable
 fun PermissionsSettingsScreen(activity : AppCompatActivity) {
-    TopAppBarScaffoldWithBackButton(title = activity.getString(R.string.permissions) , onBackClicked = {
+    TopAppBarScaffoldWithBackButton(title = activity.getString(com.d4rk.android.libs.apptoolkit.R.string.permissions) , onBackClicked = {
         activity.finish()
     }) { paddingValues ->
         PermissionsSettingsList(paddingValues = paddingValues)
@@ -30,7 +30,7 @@ fun PermissionsSettingsList(paddingValues : PaddingValues) {
                 .padding(paddingValues) ,
     ) {
         item {
-            PreferenceCategoryItem(title = stringResource(id = R.string.normal))
+            PreferenceCategoryItem(title = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.normal))
             PreferenceItem(
                 title = stringResource(id = R.string.ad_id) ,
                 summary = stringResource(id = R.string.summary_preference_permissions_ad_id) ,
@@ -45,7 +45,7 @@ fun PermissionsSettingsList(paddingValues : PaddingValues) {
             )
         }
         item {
-            PreferenceCategoryItem(title = stringResource(id = R.string.runtime))
+            PreferenceCategoryItem(title = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.runtime))
             PreferenceItem(
                 title = stringResource(id = R.string.access_network_state) ,
                 summary = stringResource(id = R.string.summary_preference_permissions_access_network_state) ,

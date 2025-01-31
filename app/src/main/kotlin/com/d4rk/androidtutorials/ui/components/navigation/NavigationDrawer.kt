@@ -60,27 +60,27 @@ private fun NavigationDrawerItemContent(
     val title = stringResource(id = item.title)
     NavigationDrawerItem(label = { Text(text = title) } , selected = false , onClick = {
         when (item.title) {
-            R.string.settings -> {
+            com.d4rk.android.libs.apptoolkit.R.string.settings -> {
                 IntentsHelper.openActivity(
                     context = context , activityClass = SettingsActivity::class.java
                 )
             }
 
-            R.string.help_and_feedback -> {
+            com.d4rk.android.libs.apptoolkit.R.string.help_and_feedback -> {
                 IntentsHelper.openActivity(
                     context = context , activityClass = HelpActivity::class.java
                 )
             }
 
-            R.string.updates -> {
+            com.d4rk.android.libs.apptoolkit.R.string.updates -> {
                 IntentsHelper.openUrl(
                     context = context , url = "https://github.com/D4rK7355608/${context.packageName}/blob/master/CHANGELOG.md"
                 )
             }
 
-            R.string.share -> {
+            com.d4rk.android.libs.apptoolkit.R.string.share -> {
                 IntentsHelper.shareApp(
-                    context = context , shareMessageFormat = R.string.summary_share_message
+                    context = context , shareMessageFormat = com.d4rk.android.libs.apptoolkit.R.string.summary_share_message
                 )
             }
         }

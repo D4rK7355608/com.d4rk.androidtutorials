@@ -1,74 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_short_description">Learn how to make simple apps in Android Studio!</string>
-    <string name="notification_update_title">A new update available!</string>
-    <string name="summary_notification_update">A new version of the app is available. Click to update!</string>
-    <string name="notification_last_time_used_title">It\'s been a while!</string>
     <string name="summary_notification_last_time_used">We missed you! Let\'s learn something new about Android!</string>
 
-    <string name="welcome">Welcome</string>
-    <string name="summary_browse_terms_of_service_and_privacy_policy">Read and agree to our Terms of Service and Privacy Policy to continue</string>
-    <string name="agree">Agree</string>
-
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-
-    <string name="home">Home</string>
     <string name="get_the_app_to_watch">Get the app and see the full lesson: %1$s</string>
     <string name="no_lessons_found">No lessons found.</string>
-    <string name="activity_not_found">Activity not found.</string>
-    <string name="security_error">A security error occurred. Please try again later.</string>
-    <string name="io_error">An input/output error occurred. Please check your network connection or storage and try again.</string>
-    <string name="illegal_argument_error">Invalid input or argument provided. Please check the information and try again.</string>
     <string name="sqlite_error">Database error encountered. Please try the following steps:\n\n1. Restart the app.\n2. If the issue persists, clear app data from Settings > Apps > Android Studio Tutorials > Storage.\n3. Contact support if the problem continues.</string>
-    <string name="unknown_error">An unknown error occurred.</string>
 
     <string name="studio_bot">Studio Bot</string>
     <string name="type_a_message">Type a message…</string>
-
-    <string name="share">Share</string>
 
     <string name="favorites">Favorites</string>
     <string name="error_loading_favorites">Error loading favorite lessons. Please try again later.</string>
     <string name="no_favorite_lessons_found">No favorite lessons found.</string>
 
-    <string name="settings">Settings</string>
-
-    <string name="display">Display</string>
-    <string name="summary_preference_settings_display">Personalize your app\'s look and feel</string>
-
-    <string name="dark_theme">Dark theme</string>
-    <string name="light_mode">Light Mode</string>
-    <string name="dark_mode">Dark Mode</string>
-
-    <string name="dialog_startup_subtitle">Choose your preferred startup page:</string>
-    <string name="dialog_info_startup">Configures the initial screen presented to users upon launching the application. This setting influences the user\'s first interaction with the app and can be tailored to specific user segments or product goals.</string>
-
-    <string name="dialog_language_subtitle">Select your preferred language</string>
-    <string name="dialog_info_language">Personalize your experience with your preferred language. Any language changes you make take effect right away, ensuring a seamless experience in your chosen language</string>
-
-    <string name="notifications">Notifications</string>
-    <string name="summary_preference_settings_notifications">Manage app notifications</string>
-
-    <string name="app_usage_notifications">App Usage Notifications</string>
-    <string name="update_notifications">Update Notifications</string>
-
-    <string name="advanced">Advanced</string>
-    <string name="summary_preference_settings_advanced">Explore more advanced settings</string>
-
-    <string name="security_and_privacy">Security &amp; privacy</string>
-    <string name="summary_preference_settings_privacy_and_security">Manage your privacy settings</string>
-    <string name="privacy_policy">Privacy Policy</string>
-    <string name="terms_of_service">Terms of Service</string>
-
-    <string name="permissions">Permissions</string>
-    <string name="normal">Normal</string>
     <string name="ad_id">Ad id [AD_ID]</string>
     <string name="summary_preference_permissions_ad_id">Allows the app to retrieve and use the advertising identifier associated with the user\'s device, providing personalized ads, measuring ad effectiveness, and showing ads on Android 13 or later devices.</string>
     <string name="internet">Internet [INTERNET]</string>
     <string name="summary_preference_permissions_internet">Allows the app to establish an internet connection to send error reports or check for updates.</string>
     <string name="post_notifications">Post notifications [POST_NOTIFICATIONS]</string>
     <string name="summary_preference_permissions_post_notifications">Allows the app to display notifications on the devices with Android 13 or later.</string>
-    <string name="runtime">Runtime</string>
     <string name="access_network_state">Access network state [ACCESS_NETWORK_STATE]</string>
     <string name="summary_preference_permissions_access_network_state">Allows the app to check network connectivity and retrieve information about Wi-Fi, including enabled status and connected Wi-Fi device names.</string>
     <string name="access_notification_policy">Access notification policy [ACCESS_NOTIFICATION_POLICY]</string>
@@ -80,34 +31,8 @@
     <string name="foreground_service">Foreground service [FOREGROUND_SERVICE]</string>
     <string name="summary_preference_permissions_foreground_service">Allows the app to create and use services that run in the foreground, giving them priority over other background processes and improving performance and reliability.</string>
 
-    <string name="ads">Ads</string>
-    <string name="display_ads">Display ads</string>
-    <string name="personalized_ads">Personalized ads</string>
-    <string name="summary_ads_personalized_ads">Choose how we personalize ads for you based on your interests</string>
-    <string name="summary_ads">See ads that are relevant to you. Manage the information used to show personalized ads based on your app activity. You can always turn off personalization here.\n</string>
-
-    <string name="usage_and_diagnostics">Usage and diagnostics</string>
-    <string name="summary_usage_and_diagnostics">Help improve your experience by automatically sending diagnostic, device, and app usage data to us. This will help improve app performance, stability, and other enhancements. Some aggregate data will also help our apps.\n\nThis is general information about your device and how you use our apps (such as battery level, system and app activity, and errors). The data will be used to improve our apps\n\nTurning off this feature doesn\'t affect your device\'s ability to send the information needed for essential services such as app updates and security.\n</string>
-
-    <string name="about">About</string>
     <string name="summary_preference_settings_about">Learn more about Android Studio Tutorials</string>
 
-    <string name="app_build">App Build: %6$s\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
-    <string name="debug">Debug</string>
-    <string name="release">Release</string>
-    <string name="manufacturer">Manufacturer:</string>
-    <string name="device_model">Device Model:</string>
-    <string name="android_version">Android Version:</string>
-    <string name="api_level">API Level:</string>
-
-    <string name="help_and_feedback">Help &amp; feedback</string>
-    <string name="help">Help</string>
-    <string name="faq">FAQ</string>
-    <string name="popular_help_resources">Popular help resources</string>
-    <string name="view_in_google_play_store">View in Google Play Store</string>
-    <string name="version_info">Version info</string>
-    <string name="version">Version %1$s</string>
-    <string name="beta_program">Beta program</string>
     <string name="question_1">What is Android Studio Tutorials: Kotlin Edition?</string>
     <string name="summary_preference_faq_1">Android Studio Tutorials: Kotlin Edition is a free and open-source app that provides a collection of video tutorials on how to use Android Studio, the official integrated development environment (IDE) for Android app development.</string>
     <string name="question_2">How can I download Android Studio Tutorials: Kotlin Edition?</string>
@@ -126,24 +51,4 @@
     <string name="summary_preference_faq_8">You can check for updates to Android Studio Tutorials: Kotlin Edition by going to the settings menu in the app and selecting the \"Check for updates\" option.</string>
     <string name="question_9">How can I support the development of Android Studio Tutorials: Kotlin Edition?</string>
     <string name="summary_preference_faq_9">ou can support the development of Android Studio Tutorials: Kotlin Edition by leaving a positive review on the Google Play Store, sharing the app with friends and colleagues, and supporting the developers through the \"Share\" option in the settings menu.</string>
-    <string name="feedback">Feedback</string>
-
-    <string name="updates">Updates</string>
-
-    <string name="support_us">Support Us</string>
-    <string name="paid_support">Paid Support</string>
-    <string name="summary_donations">No matter how much you donate, you will help us keep our app running and improve our features. We appreciate your generosity and kindness!</string>
-    <string name="non_paid_support">Non-Paid Support</string>
-    <string name="web_ad">Web Ad</string>
-
-    <string name="snack_app_updated">The app has been successfully updated</string>
-    <string name="snack_update_failed">The update process encountered an issue</string>
-    <string name="try_again">Try again</string>
-    <string name="summary_share_message">Check out this amazing app that I\'m using! It has some really cool features that you might find interesting. You can download it from the Play Store at: %1$s</string>
-    <string name="learn_more">Learn more</string>
-
-    <string name="close">Close?</string>
-    <string name="summary_close">Are you sure you want to exit?</string>
-
-    <string name="get_help">Get help</string>
 </resources>

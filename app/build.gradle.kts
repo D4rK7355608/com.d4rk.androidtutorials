@@ -15,11 +15,12 @@ plugins {
 android {
     compileSdk = 35
     namespace = "com.d4rk.androidtutorials"
+
     defaultConfig {
         applicationId = "com.d4rk.androidtutorials"
         minSdk = 23
         targetSdk = 35
-        versionCode = 110
+        versionCode = 112
         versionName = "1.2.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         @Suppress("UnstableApiUsage")
@@ -108,7 +109,7 @@ android {
 dependencies {
 
     // App Core
-    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:0.0.44") {
+    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:0.0.48") {
         isTransitive = true
     }
 

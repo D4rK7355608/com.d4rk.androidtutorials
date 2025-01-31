@@ -3,7 +3,6 @@ package com.d4rk.androidtutorials.ui.screens.help.repository
 import android.app.Activity
 import android.app.Application
 import com.d4rk.androidtutorials.data.model.ui.screens.UiHelpQuestion
-import com.d4rk.androidtutorials.ui.screens.help.HelpActivity
 import com.google.android.play.core.review.ReviewInfo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -33,7 +32,7 @@ class HelpRepository(application : Application) : HelpRepositoryImplementation(a
         }
     }
 
-    suspend fun launchReviewFlowRepository(activity : HelpActivity , reviewInfo : ReviewInfo) {
+    suspend fun launchReviewFlowRepository(activity : Activity , reviewInfo : ReviewInfo) {
         withContext(Dispatchers.IO) {
             launchReviewFlowImplementation(activity = activity , reviewInfo = reviewInfo)
         }

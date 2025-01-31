@@ -34,14 +34,14 @@
         <aapt:attr name="android:animation">
             <set>
                 <objectAnimator
-                    android:duration="1000"
+                    android:duration="600"
                     android:interpolator="@android:interpolator/fast_out_slow_in"
                     android:propertyName="fillAlpha"
                     android:valueFrom="0"
                     android:valueTo="1"
                     android:valueType="floatType" />
                 <objectAnimator
-                    android:duration="1000"
+                    android:duration="600"
                     android:interpolator="@android:interpolator/fast_out_slow_in"
                     android:propertyName="pathData"
                     android:valueFrom="M 153.3 267.5 L 158 267.5 L 158 287.6 L 273.9 287.6 L 273.9 267.5 L 278.6 267.5 L 278.6 304 C 278.6 307.8 277.3 310.9 274.8 313.5 C 272.2 316.1 269.1 317.3 265.3 317.3 L 166.6 317.3 C 162.8 317.3 159.7 316 157.1 313.5 C 154.5 310.9 153.3 307.8 153.3 304 L 153.3 267.5 Z M 158 292.3 L 158 303.9 C 158 306.1 158.9 308 160.7 309.8 C 162.5 311.6 164.5 312.5 166.6 312.5 L 265.2 312.5 C 267.4 312.5 269.3 311.6 271.1 309.8 C 272.9 308 273.8 306 273.8 303.9 L 273.8 292.3 L 215.9 292.3 L 158 292.3 Z M 158 292.3 L 158 312.6 L 158 292.3 Z"
@@ -54,14 +54,14 @@
         <aapt:attr name="android:animation">
             <set>
                 <objectAnimator
-                    android:duration="1000"
+                    android:duration="600"
                     android:interpolator="@android:interpolator/fast_out_slow_in"
                     android:propertyName="fillAlpha"
                     android:valueFrom="0"
                     android:valueTo="1"
                     android:valueType="floatType" />
                 <objectAnimator
-                    android:duration="1000"
+                    android:duration="600"
                     android:interpolator="@android:interpolator/linear_out_slow_in"
                     android:propertyName="pathData"
                     android:valueFrom="M 260.5 250.8 L 256.9 247.8 L 288.8 215.9 L 256.9 184 L 260.5 181 L 295.3 215.8 L 260.5 250.8 Z"
@@ -74,14 +74,14 @@
         <aapt:attr name="android:animation">
             <set>
                 <objectAnimator
-                    android:duration="1000"
+                    android:duration="600"
                     android:interpolator="@android:interpolator/fast_out_slow_in"
                     android:propertyName="fillAlpha"
                     android:valueFrom="0"
                     android:valueTo="1"
                     android:valueType="floatType" />
                 <objectAnimator
-                    android:duration="1000"
+                    android:duration="600"
                     android:interpolator="@android:interpolator/linear_out_slow_in"
                     android:propertyName="pathData"
                     android:valueFrom="M 171.4 250.8 L 136.5 216 L 171.3 181.2 L 174.9 184.2 L 143.1 216 L 175 247.9 L 171.4 250.8 Z"
@@ -94,14 +94,14 @@
         <aapt:attr name="android:animation">
             <set>
                 <objectAnimator
-                    android:duration="1000"
+                    android:duration="600"
                     android:interpolator="@android:interpolator/fast_out_slow_in"
                     android:propertyName="fillAlpha"
                     android:valueFrom="0"
                     android:valueTo="1"
                     android:valueType="floatType" />
                 <objectAnimator
-                    android:duration="1000"
+                    android:duration="600"
                     android:interpolator="@android:interpolator/fast_out_slow_in"
                     android:propertyName="pathData"
                     android:valueFrom="M 159.1 164.5 L 154.4 164.5 L 154.4 152.333 L 154.4 140.167 C 154.4 136.111 154.4 132.056 154.4 128 C 154.4 124.2 155.7 121.1 158.2 118.5 C 160.8 115.9 163.9 114.7 167.7 114.7 L 266.4 114.7 C 270.2 114.7 273.3 116 275.9 118.5 C 278.5 121.1 279.7 124.2 279.7 128 C 279.7 134.083 279.7 140.167 279.7 146.25 L 279.7 164.5 L 275 164.5 L 275 144.4 L 159.1 144.4 L 159.1 164.5 Z M 163.929 139.7 L 159.1 139.7 L 159.2 139.7 L 159.2 128.1 C 159.2 126 160.1 124 161.9 122.2 C 163.7 120.4 165.6 119.5 167.8 119.5 L 266.4 119.5 C 268.5 119.5 270.5 120.4 272.3 122.2 C 274.1 124 275 125.9 275 128.1 L 275 132.698 L 275 133.651 L 275 135.62 L 275 136.508 L 275 137.46 L 275 137.46 L 275 138.095 L 275 138.413 L 275 138.413 L 275 139.365 L 275 139.365 L 275 139.365 L 275 139.7 L 275 139.7 L 163.929 139.7 M 159.1 139.7 L 159.1 119.4 L 159.1 139.7 L 159.1 139.7"

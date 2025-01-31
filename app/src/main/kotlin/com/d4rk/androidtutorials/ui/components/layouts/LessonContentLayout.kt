@@ -45,7 +45,7 @@ import coil3.gif.AnimatedImageDecoder
 import coil3.gif.GifDecoder
 import coil3.request.crossfade
 import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
-import com.d4rk.android.libs.apptoolkit.ui.components.spacers.ButtonHorizontalSpacer
+import com.d4rk.android.libs.apptoolkit.ui.components.spacers.ButtonIconSpacer
 import com.d4rk.android.libs.apptoolkit.ui.components.spacers.LargeVerticalSpacer
 import com.d4rk.android.libs.apptoolkit.ui.components.spacers.SmallVerticalSpacer
 import com.d4rk.android.libs.apptoolkit.utils.helpers.ClipboardHelper
@@ -354,7 +354,7 @@ fun CodeBlock(code : String , language : String?) {
                     Icon(
                         imageVector = Icons.Outlined.CopyAll , contentDescription = "Copy Code" , modifier = Modifier.size(size = ButtonDefaults.IconSize)
                     )
-                    ButtonHorizontalSpacer()
+                    ButtonIconSpacer()
                     Text(text = stringResource(id = android.R.string.copy))
                 }
             }

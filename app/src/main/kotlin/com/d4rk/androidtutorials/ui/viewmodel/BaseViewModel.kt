@@ -61,12 +61,12 @@ open class BaseViewModel(application : Application) : AndroidViewModel(applicati
     private fun getErrorMessage(errorType : ErrorType) : String {
         return getApplication<Application>().getString(
             when (errorType) {
-                ErrorType.SECURITY_EXCEPTION -> R.string.security_error
-                ErrorType.IO_EXCEPTION -> R.string.io_error
-                ErrorType.ACTIVITY_NOT_FOUND -> R.string.activity_not_found
-                ErrorType.ILLEGAL_ARGUMENT -> R.string.illegal_argument_error
+                ErrorType.SECURITY_EXCEPTION -> com.d4rk.android.libs.apptoolkit.R.string.security_error
+                ErrorType.IO_EXCEPTION -> com.d4rk.android.libs.apptoolkit.R.string.io_error
+                ErrorType.ACTIVITY_NOT_FOUND -> com.d4rk.android.libs.apptoolkit.R.string.activity_not_found
+                ErrorType.ILLEGAL_ARGUMENT -> com.d4rk.android.libs.apptoolkit.R.string.illegal_argument_error
                 ErrorType.SQLITE_EXCEPTION -> R.string.sqlite_error
-                else -> R.string.unknown_error
+                else -> com.d4rk.android.libs.apptoolkit.R.string.unknown_error
             }
         )
     }

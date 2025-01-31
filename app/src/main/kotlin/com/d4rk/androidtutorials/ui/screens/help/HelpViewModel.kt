@@ -48,7 +48,7 @@ class HelpViewModel(application : Application) : BaseViewModel(application) {
         }
     }
 
-    fun launchReviewFlow(activity : HelpActivity , reviewInfo : ReviewInfo) {
+    fun launchReviewFlow(activity : Activity , reviewInfo : ReviewInfo) {
         viewModelScope.launch(context = coroutineExceptionHandler) {
             repository.launchReviewFlowRepository(activity = activity , reviewInfo = reviewInfo)
         }

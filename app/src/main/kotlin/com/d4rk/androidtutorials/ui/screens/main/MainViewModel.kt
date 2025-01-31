@@ -46,16 +46,16 @@ class MainViewModel(application : Application) : BaseViewModel(application) {
         return UiMainScreen(
             navigationDrawerItems = listOf(
                 NavigationDrawerItem(
-                    title = R.string.settings ,
+                    title = com.d4rk.android.libs.apptoolkit.R.string.settings ,
                     selectedIcon = Icons.Outlined.Settings ,
                 ) , NavigationDrawerItem(
-                    title = R.string.help_and_feedback ,
+                    title = com.d4rk.android.libs.apptoolkit.R.string.help_and_feedback ,
                     selectedIcon = Icons.AutoMirrored.Outlined.HelpOutline ,
                 ) , NavigationDrawerItem(
-                    title = R.string.updates ,
+                    title = com.d4rk.android.libs.apptoolkit.R.string.updates ,
                     selectedIcon = Icons.AutoMirrored.Outlined.EventNote ,
                 ) , NavigationDrawerItem(
-                    title = R.string.share ,
+                    title = com.d4rk.android.libs.apptoolkit.R.string.share ,
                     selectedIcon = Icons.Outlined.Share ,
                 )
             ) , bottomNavigationItems = listOf(
