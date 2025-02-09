@@ -20,8 +20,8 @@ android {
         applicationId = "com.d4rk.androidtutorials"
         minSdk = 23
         targetSdk = 35
-        versionCode = 114
-        versionName = "1.2.0"
+        versionCode = 115
+        versionName = "1.2.1"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         @Suppress("UnstableApiUsage")
         androidResources.localeFilters += listOf(
@@ -109,22 +109,14 @@ android {
 dependencies {
 
     // App Core
-    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:0.0.49") {
+    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:0.0.53") {
         isTransitive = true
     }
 
     // Code view
     implementation(dependencyNotation = libs.compose.code.editor)
 
-    // Firebase
-    implementation(dependencyNotation = platform(libs.firebase.bom))
-    implementation(dependencyNotation = libs.firebase.analytics.ktx)
-    implementation(dependencyNotation = libs.firebase.crashlytics.ktx)
-    implementation(dependencyNotation = libs.firebase.perf)
-
     // Google
-    implementation(dependencyNotation = libs.billing)
-    implementation(dependencyNotation = libs.review.ktx)
     implementation(dependencyNotation = libs.generativeai)
 
     // KSP

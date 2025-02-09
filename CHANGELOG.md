@@ -1,3 +1,11 @@
+# Version 1.2.1:
+
+- **New**: Improved app navigation with a smoother experience for both the side menu and navigation options.
+- **New**: Updated ads integration to ensure better performance and reliability.
+- **Minor**: Enhanced app stability by upgrading to the latest versions of core components.
+- **Minor**: Improved internal performance for faster and more responsive app interactions.
+- **Minor**: Made small refinements to optimize the app's overall behavior.
+
 # Version 1.2.0:
 
 - **New**: Added navigation rail for tablets and landscape mode for better usability on larger screens.

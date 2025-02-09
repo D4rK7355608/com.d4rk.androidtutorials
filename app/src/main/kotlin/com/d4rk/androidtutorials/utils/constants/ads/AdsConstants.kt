@@ -9,7 +9,7 @@ object AdsConstants {
             DebugAdsConstants.BANNER_AD_UNIT_ID
         }
         else {
-            "ca-app-pub-5294151573817700/8040893463"
+            "ca-app-pub-5294151573817700/4974008668"
         }
 
     val APP_OPEN_UNIT_ID : String
@@ -17,6 +17,6 @@ object AdsConstants {
             DebugAdsConstants.APP_OPEN_AD_UNIT_ID
         }
         else {
-            "ca-app-pub-5294151573817700/9208287867"
+            "ca-app-pub-5294151573817700/1738685282"
         }
 }
