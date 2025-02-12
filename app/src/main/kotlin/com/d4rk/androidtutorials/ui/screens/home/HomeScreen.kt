@@ -54,7 +54,7 @@ fun HomeScreen() {
                 }
 
                 else -> {
-                    NoLessonsScreen()
+                    NoLessonsScreen(showRetry = true , onRetry = { viewModel.getHomeLessons() })
                 }
             }
         }

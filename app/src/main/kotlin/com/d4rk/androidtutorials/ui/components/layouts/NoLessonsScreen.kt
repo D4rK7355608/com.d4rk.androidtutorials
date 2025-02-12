@@ -3,12 +3,15 @@ package com.d4rk.androidtutorials.ui.components.layouts
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Info
+import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -23,9 +26,11 @@ import com.d4rk.androidtutorials.R
 
 @Composable
 fun NoLessonsScreen(
-    text : Int = R.string.no_lessons_found ,
-    icon : ImageVector = Icons.Default.Info ,
-    iconDescription : String = "No lessons icon"
+    text: Int = R.string.no_lessons_found,
+    icon: ImageVector = Icons.Default.Info,
+    iconDescription: String = "No lessons icon",
+    showRetry: Boolean = false,
+    onRetry: () -> Unit = {}
 ) {
     Box(
         modifier = Modifier
@@ -33,22 +38,28 @@ fun NoLessonsScreen(
                 .wrapContentSize(align = Alignment.Center)
     ) {
         Column(
-            horizontalAlignment = Alignment.CenterHorizontally ,
+            horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
             Icon(
-                imageVector = icon ,
-                contentDescription = iconDescription ,
+                imageVector = icon,
+                contentDescription = iconDescription,
                 modifier = Modifier
-                        .size(size = 58.dp)
-                        .padding(bottom = 16.dp) ,
+                        .size(58.dp)
+                        .padding(bottom = 16.dp),
                 tint = MaterialTheme.colorScheme.primary
             )
             Text(
-                text = stringResource(id = text) ,
-                style = MaterialTheme.typography.displaySmall.copy(textAlign = TextAlign.Center) ,
+                text = stringResource(id = text),
+                style = MaterialTheme.typography.displaySmall.copy(textAlign = TextAlign.Center),
                 color = MaterialTheme.colorScheme.onBackground
             )
+            if (showRetry) {
+                Spacer(modifier = Modifier.height(height = 16.dp))
+                Button(onClick = onRetry) {
+                    Text(text = stringResource(id = R.string.try_again))
+                }
+            }
         }
     }
 }
