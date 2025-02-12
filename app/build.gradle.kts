@@ -20,7 +20,7 @@ android {
         applicationId = "com.d4rk.androidtutorials"
         minSdk = 23
         targetSdk = 35
-        versionCode = 115
+        versionCode = 116
         versionName = "1.2.2"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         @Suppress("UnstableApiUsage")
