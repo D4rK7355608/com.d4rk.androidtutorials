@@ -3,6 +3,7 @@
     <string name="app_short_description">Узнайте, как создавать простые приложения в Android Studio!</string>
     <string name="summary_notification_last_time_used">Мы скучали по тебе! Давай узнаем что-нибудь новое об Android!</string>
 
+    <string name="try_again">Попробовать снова</string>
     <string name="get_the_app_to_watch">Получите приложение и посмотрите полный урок: %1$s</string>
     <string name="no_lessons_found">Уроки не найдены.</string>
     <string name="sqlite_error">Произошла ошибка базы данных. Выполните следующие действия:\n\n1. Перезапустите приложение.\n2. Если проблема не устранена, удалите данные приложения из «Настройки» > «Приложения» > «Android Studio Tutorials» > «Хранилище».\n3. Обратитесь в службу поддержки, если проблема не устранена.</string>

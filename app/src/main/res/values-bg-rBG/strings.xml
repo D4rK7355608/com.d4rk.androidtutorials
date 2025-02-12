@@ -3,6 +3,7 @@
     <string name="app_short_description">Научете как да създавате прости приложения в Android Studio!</string>
     <string name="summary_notification_last_time_used">Липсвахте ни! Нека научим нещо ново за Android!</string>
 
+    <string name="try_again">Опитай пак</string>
     <string name="get_the_app_to_watch">Изтеглете приложението и вижте пълния урок: %1$s</string>
     <string name="no_lessons_found">Не бяха намерени уроци.</string>
     <string name="sqlite_error">Възникна грешка в базата данни. Моля, опитайте следните стъпки:\n\n1. Рестартирайте приложението.\n2. Ако проблемът продължава, изчистете данните на приложението от Настройки > Приложения > Android Studio Tutorials > Съхранение.\n3. Свържете се с поддръжката, ако проблемът продължава.</string>

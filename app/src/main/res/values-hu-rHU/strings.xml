@@ -3,6 +3,7 @@
     <string name="app_short_description">Tanuld meg, hogyan készíthetsz egyszerű alkalmazásokat az Android Studioban!</string>
     <string name="summary_notification_last_time_used">Hiányoztál! Tanuljunk valami újat az Androidról!</string>
 
+    <string name="try_again">Próbáld újra</string>
     <string name="get_the_app_to_watch">Töltsd le az alkalmazást, és nézd meg a teljes leckét: %1$s</string>
     <string name="no_lessons_found">Nem található lecke.</string>
     <string name="sqlite_error">Adatbázis-hiba történt. Kérjük, próbáld meg a következő lépéseket:\n\n1. Indítsd újra az alkalmazást.\n2. Ha a probléma továbbra is fennáll, töröld az alkalmazás adatait a Beállítások > Alkalmazások > Android Studio Tutorials > Tárhely menüpontban.\n3. Ha a probléma továbbra is fennáll, vedd fel a kapcsolatot az ügyfélszolgálattal.</string>

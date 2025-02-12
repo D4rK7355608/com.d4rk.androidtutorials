@@ -1,6 +1,7 @@
 [versions]
 agp = "8.8.0"
 aboutlibraries = "11.3.0"
+coilSvg = "3.1.0"
 composeCodeEditor = "2.0.3"
 roomKtx = "2.6.1"
 kotlin = "2.1.0"
@@ -10,6 +11,7 @@ google-firebase-crashlytics = "3.0.3"
 generativeai = "0.9.0"
 
 [libraries]
+coil-svg = { module = "io.coil-kt.coil3:coil-svg", version.ref = "coilSvg" }
 compose-code-editor = { module = "com.github.qawaz:compose-code-editor", version.ref = "composeCodeEditor" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomKtx" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomKtx" }

@@ -3,6 +3,7 @@
     <string name="app_short_description">เรียนรู้วิธีสร้างแอปง่ายๆ ใน Android Studio!</string>
     <string name="summary_notification_last_time_used">เราคิดถึงคุณ! มาเรียนรู้สิ่งใหม่ๆ เกี่ยวกับ Android กันเถอะ!</string>
 
+    <string name="try_again">ลองอีกครั้ง</string>
     <string name="get_the_app_to_watch">รับแอปและดูบทเรียนแบบเต็ม: %1$s</string>
     <string name="no_lessons_found">ไม่พบบทเรียน</string>
     <string name="sqlite_error">พบข้อผิดพลาดของฐานข้อมูล โปรดลองทำตามขั้นตอนต่อไปนี้:\n\n1. รีสตาร์ทแอป\n2. หากปัญหายังคงอยู่ ให้ล้างข้อมูลแอปจาก การตั้งค่า > แอป > Android Studio Tutorials > ที่เก็บข้อมูล\n3. ติดต่อฝ่ายสนับสนุนหากปัญหายังคงอยู่</string>

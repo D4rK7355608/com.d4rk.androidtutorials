@@ -1,3 +1,9 @@
+# Version 1.2.2:
+
+- **New**: Implemented "Pull to Refresh" functionality on the home screen.
+- **Minor**: Added a "Retry" button to address scenarios where no lessons are found.
+- **Minor**: Expanded image type support to include a wider range of image formats.
+
 # Version 1.2.1:
 
 - **New**: Improved app navigation with a smoother experience for both the side menu and navigation options.
@@ -5,7 +11,7 @@
 - **Minor**: Enhanced app stability by upgrading to the latest versions of core components.
 - **Minor**: Improved internal performance for faster and more responsive app interactions.
 - **Minor**: Made small refinements to optimize the app's overall behavior.
-
+  
 # Version 1.2.0:
 
 - **New**: Added navigation rail for tablets and landscape mode for better usability on larger screens.

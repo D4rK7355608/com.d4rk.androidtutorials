@@ -3,6 +3,7 @@
     <string name="app_short_description">¡Aprende a crear aplicaciones sencillas en Android Studio!</string>
     <string name="summary_notification_last_time_used">¡Te extrañamos! ¡Aprendamos algo nuevo sobre Android!</string>
 
+    <string name="try_again">Intentar otra vez</string>
     <string name="get_the_app_to_watch">Obtén la aplicación y mira la lección completa: %1$s</string>
     <string name="no_lessons_found">No se encontraron lecciones.</string>
     <string name="sqlite_error">Se encontró un error en la base de datos. Por favor, intenta los siguientes pasos:\n\n1. Reinicia la aplicación.\n2. Si el problema persiste, borra los datos de la aplicación desde Ajustes > Aplicaciones > Android Studio Tutorials > Almacenamiento.\n3. Contacta con soporte si el problema continúa.</string>

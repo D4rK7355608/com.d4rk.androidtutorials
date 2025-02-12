@@ -3,6 +3,7 @@
     <string name="app_short_description">Android Studio\'da basit uygulamaların nasıl yapılacağını öğrenin!</string>
     <string name="summary_notification_last_time_used">Seni özledik! Android hakkında yeni bir şeyler öğrenelim!</string>
 
+    <string name="try_again">Tekrar dene</string>
     <string name="get_the_app_to_watch">Uygulamayı edinin ve tam dersi görün: %1$s</string>
     <string name="no_lessons_found">Ders bulunamadı.</string>
     <string name="sqlite_error">Veritabanı hatasıyla karşılaşıldı. Lütfen aşağıdaki adımları deneyin:\n\n1. Uygulamayı yeniden başlatın.\n2. Sorun devam ederse, uygulama verilerini Ayarlar > Uygulamalar > Android Studio Tutorials > Depolama bölümünden temizleyin.\n3. Sorun devam ederse destek ile iletişime geçin.</string>

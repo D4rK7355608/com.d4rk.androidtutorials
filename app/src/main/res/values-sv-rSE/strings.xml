@@ -3,6 +3,7 @@
     <string name="app_short_description">Lär dig hur man gör enkla appar i Android Studio!</string>
     <string name="summary_notification_last_time_used">Vi saknade dig! Låt oss lära oss något nytt om Android!</string>
 
+    <string name="try_again">Försök igen</string>
     <string name="get_the_app_to_watch">Hämta appen och se hela lektionen: %1$s</string>
     <string name="no_lessons_found">Inga lektioner hittades.</string>
     <string name="sqlite_error">Databasfel påträffades. Försök med följande steg:\n\n1. Starta om appen.\n2. Om problemet kvarstår, rensa appdata från Inställningar > Appar > Android Studio Tutorials > Lagring.\n3. Kontakta support om problemet fortsätter.</string>

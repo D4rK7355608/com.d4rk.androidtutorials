@@ -3,6 +3,7 @@
     <string name="app_short_description">Impara a creare semplici app in Android Studio!</string>
     <string name="summary_notification_last_time_used">Ci sei mancato! Impariamo qualcosa di nuovo su Android!</string>
 
+    <string name="try_again">Riprova</string>
     <string name="get_the_app_to_watch">Scarica l\'app e guarda la lezione completa: %1$s</string>
     <string name="no_lessons_found">Nessuna lezione trovata.</string>
     <string name="sqlite_error">Si è verificato un errore del database. Prova a eseguire le seguenti operazioni:\n\n1. Riavvia l\'app.\n2. Se il problema persiste, cancella i dati dell\'app da Impostazioni > App > Android Studio Tutorials > Archiviazione.\n3. Contatta l\'assistenza se il problema persiste.</string>

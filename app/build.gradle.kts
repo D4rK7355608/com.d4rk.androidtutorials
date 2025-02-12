@@ -21,7 +21,7 @@ android {
         minSdk = 23
         targetSdk = 35
         versionCode = 115
-        versionName = "1.2.1"
+        versionName = "1.2.2"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         @Suppress("UnstableApiUsage")
         androidResources.localeFilters += listOf(
@@ -115,6 +115,9 @@ dependencies {
 
     // Code view
     implementation(dependencyNotation = libs.compose.code.editor)
+
+    // Coil
+    implementation(dependencyNotation = libs.coil.svg)
 
     // Google
     implementation(dependencyNotation = libs.generativeai)

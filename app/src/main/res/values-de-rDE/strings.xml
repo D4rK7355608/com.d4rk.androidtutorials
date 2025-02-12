@@ -3,6 +3,7 @@
     <string name="app_short_description">Erfahre, wie du einfache Apps in Android Studio erstellst!</string>
     <string name="summary_notification_last_time_used">Wir haben dich vermisst! Lass uns etwas Neues über Android lernen!</string>
 
+    <string name="try_again">Erneut versuchen</string>
     <string name="get_the_app_to_watch">Hole dir die App und sieh dir die vollständige Lektion an: %1$s</string>
     <string name="no_lessons_found">Keine Lektionen gefunden.</string>
     <string name="sqlite_error">Datenbankfehler aufgetreten. Bitte versuche folgende Schritte:\n\n1. Starte die App neu.\n2. Wenn das Problem weiterhin besteht, lösche die App-Daten unter Einstellungen > Apps > Android Studio Tutorials > Speicher.\n3. Wende dich an den Support, wenn das Problem weiterhin besteht.</string>

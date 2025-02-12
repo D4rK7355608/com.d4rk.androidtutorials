@@ -44,6 +44,7 @@ import coil3.compose.AsyncImage
 import coil3.gif.AnimatedImageDecoder
 import coil3.gif.GifDecoder
 import coil3.request.crossfade
+import coil3.svg.SvgDecoder
 import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
 import com.d4rk.android.libs.apptoolkit.ui.components.spacers.ButtonIconSpacer
 import com.d4rk.android.libs.apptoolkit.ui.components.spacers.LargeVerticalSpacer
@@ -144,14 +145,17 @@ fun StyledImage(
     modifier : Modifier = Modifier ,
 ) {
     val context : Context = LocalContext.current
-    val imageLoader : ImageLoader = ImageLoader.Builder(context = context).components {
-        if (SDK_INT >= 28) {
-            add(factory = AnimatedImageDecoder.Factory())
-        }
-        else {
-            add(factory = GifDecoder.Factory())
-        }
-    }.crossfade(enable = true).build()
+    val imageLoader: ImageLoader = ImageLoader.Builder(context)
+            .components {
+                if (SDK_INT >= 28) {
+                    add(AnimatedImageDecoder.Factory())
+                } else {
+                    add(GifDecoder.Factory())
+                }
+                add(SvgDecoder.Factory())
+            }
+            .crossfade(enable = true)
+            .build()
     Card(
         modifier = modifier.fillMaxWidth() ,
     ) {

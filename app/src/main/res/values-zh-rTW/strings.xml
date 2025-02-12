@@ -3,6 +3,7 @@
     <string name="app_short_description">學習如何在 Android Studio 中製作簡單的應用程式！</string>
     <string name="summary_notification_last_time_used">我們想念你！ 讓我們學習一些關於 Android 的新東西！</string>
 
+    <string name="try_again">再試一次</string>
     <string name="get_the_app_to_watch">取得應用程式並查看完整課程： %1$s</string>
     <string name="no_lessons_found">找不到課程。</string>
     <string name="sqlite_error">遇到資料庫錯誤。請嘗試以下步驟：\n\n1. 重新啟動應用程式。\n2. 如果問題仍然存在，請從「設定」>「應用程式」>「Android Studio Tutorials」>「儲存空間」中清除應用程式資料。\n3. 如果問題仍然存在，請聯絡支援部門。</string>

@@ -3,6 +3,7 @@
     <string name="app_short_description">Learn how to make simple apps in Android Studio!</string>
     <string name="summary_notification_last_time_used">We missed you! Let\'s learn something new about Android!</string>
 
+    <string name="try_again">Try again</string>
     <string name="get_the_app_to_watch">Get the app and see the full lesson: %1$s</string>
     <string name="no_lessons_found">No lessons found.</string>
     <string name="sqlite_error">Database error encountered. Please try the following steps:\n\n1. Restart the app.\n2. If the issue persists, clear app data from Settings > Apps > Android Studio Tutorials > Storage.\n3. Contact support if the problem continues.</string>

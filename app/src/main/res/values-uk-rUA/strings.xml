@@ -3,9 +3,11 @@
     <string name="app_short_description">Дізнайтеся, як створювати прості програми в Android Studio!</string>
     <string name="summary_notification_last_time_used">Ми сумували за вами! Давайте дізнаємося щось нове про Android!</string>
 
+    <string name="try_again">Спробуйте ще раз</string>
     <string name="get_the_app_to_watch">Завантажте програму та перегляньте повний урок: %1$s</string>
     <string name="no_lessons_found">Уроки не знайдено.</string>
     <string name="sqlite_error">Виявлено помилку бази даних. Спробуйте виконати такі кроки:\n\n1. Перезапустіть програму.\n2. Якщо проблема не зникає, видаліть дані програми з розділу «Налаштування» > «Програми» > «Підручники Android Studio» > «Сховище».\n3. Зверніться до служби підтримки, якщо проблема не зникає.</string>
+
     <string name="studio_bot">Studio Bot</string>
     <string name="type_a_message">Введіть повідомлення…</string>
 

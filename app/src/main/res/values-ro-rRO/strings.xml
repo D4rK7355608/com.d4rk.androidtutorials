@@ -3,6 +3,7 @@
     <string name="app_short_description">Învață cum să creezi aplicații simple în Android Studio!</string>
     <string name="summary_notification_last_time_used">Ne-a fost dor de tine! Să învățăm ceva nou despre Android!</string>
 
+    <string name="try_again">Încearcă din nou</string>
     <string name="get_the_app_to_watch">Obțineți aplicația și vedeți lecția completă: %1$s</string>
     <string name="no_lessons_found">Nu s-au găsit lecții.</string>
     <string name="sqlite_error">S-a întâmpinat o eroare de bază de date. Vă rugăm să încercați pașii următori:\n\n1. Reporniți aplicația.\n2. Dacă problema persistă, ștergeți datele aplicației din Setări > Aplicații > Tutoriale Android Studio > Stocare.\n3. Contactați asistența dacă problema continuă.</string>

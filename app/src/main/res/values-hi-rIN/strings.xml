@@ -3,6 +3,7 @@
     <string name="app_short_description">एंड्रॉइड स्टूडियो में सरल ऐप बनाना सीखें!</string>
     <string name="summary_notification_last_time_used">हमें आपकी याद आई! आइए Android के बारे में कुछ नया सीखें!</string>
 
+    <string name="try_again">पुनः प्रयास करें</string>
     <string name="get_the_app_to_watch">ऐप प्राप्त करें और पूरा पाठ देखें: %1$s</string>
     <string name="no_lessons_found">कोई सबक नहीं मिला.</string>
     <string name="sqlite_error">डेटाबेस त्रुटि का सामना करना पड़ा. कृपया निम्नलिखित चरणों का प्रयास करें:\n\n1. ऐप को पुनरारंभ करें.\n2. यदि समस्या बनी रहती है, तो सेटिंग > ऐप्स > एंड्रॉइड स्टूडियो ट्यूटोरियल > स्टोरेज से ऐप डेटा साफ़ करें.\n3. यदि समस्या बनी रहती है तो सहायता से संपर्क करें.</string>

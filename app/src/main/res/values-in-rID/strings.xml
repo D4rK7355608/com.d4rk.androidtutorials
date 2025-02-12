@@ -3,6 +3,7 @@
     <string name="app_short_description">Pelajari cara membuat aplikasi sederhana di Android Studio!</string>
     <string name="summary_notification_last_time_used">Kami merindukanmu! Mari pelajari sesuatu yang baru tentang Android!</string>
 
+    <string name="try_again">Coba lagi</string>
     <string name="get_the_app_to_watch">Dapatkan aplikasi dan lihat pelajaran lengkapnya: %1$s</string>
     <string name="no_lessons_found">Tidak ada pelajaran yang ditemukan.</string>
     <string name="sqlite_error">Terjadi kesalahan database. Silakan coba langkah-langkah berikut:\n\n1. Mulai ulang aplikasi.\n2. Jika masalah tetap ada, hapus data aplikasi dari Setelan > Aplikasi > Tutorial Android Studio > Penyimpanan.\n3. Hubungi dukungan jika masalah berlanjut.</string>

@@ -3,6 +3,7 @@
     <string name="app_short_description">Android Studio で簡単なアプリを作成する方法を学びましょう！</string>
     <string name="summary_notification_last_time_used">会えなくて寂しかったです！Android について何か新しいことを学びましょう！</string>
 
+    <string name="try_again">もう一度お試しください</string>
     <string name="get_the_app_to_watch">アプリを入手して、レッスン全体を見てください: %1$s</string>
     <string name="no_lessons_found">レッスンが見つかりません。</string>
     <string name="sqlite_error">データベースエラーが発生しました。次の手順をお試しください:\n\n1. アプリを再起動してください。\n2. 問題が解決しない場合は、[設定] > [アプリ] > [Android Studio Tutorials] > [ストレージ] からアプリのデータをクリアしてください。\n3. 問題が続く場合は、サポートにお問い合わせください。</string>
