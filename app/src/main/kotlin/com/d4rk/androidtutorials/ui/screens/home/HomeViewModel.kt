@@ -18,7 +18,7 @@ class HomeViewModel(application : Application) : LessonsViewModel(application) {
         observeFavorites()
     }
 
-    private fun getHomeLessons() {
+    fun getHomeLessons() {
         viewModelScope.launch(context = coroutineExceptionHandler) {
             showLoading()
             repository.getHomeLessonsRepository { fetchedLessons ->
