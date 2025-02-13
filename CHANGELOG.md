@@ -1,5 +1,9 @@
 # Version 1.2.2:
 
+- **Minor**: Made small refinements to the project and under the hood improvements.
+
+# Version 1.2.2:
+
 - **New**: Implemented "Pull to Refresh" functionality on the home screen.
 - **Minor**: Added a "Retry" button to address scenarios where no lessons are found.
 - **Minor**: Expanded image type support to include a wider range of image formats.
