@@ -1,5 +1,5 @@
 [versions]
-agp = "8.8.0"
+agp = "8.8.1"
 aboutlibraries = "11.3.0"
 coilSvg = "3.1.0"
 composeCodeEditor = "2.0.3"

@@ -1,3 +1,7 @@
+# Version 1.2.3:
+
+- **Minor**: Small under-the-hood improvements for a better overall app experience.
+
 # Version 1.2.2:
 
 - **Minor**: Made small refinements to the project and under the hood improvements.
